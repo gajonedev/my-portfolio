@@ -60,6 +60,9 @@ const Hero = () => {
             words="Je vous construis n'importe quel application ou site web"
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />
+          {/* <h1 className="text-center text-[40px] md:text-5xl lg:text-6xl  dark:text-white text-black leading-snug tracking-wide">
+            Je vous construis n&apos;importe quel application ou site web
+          </h1> */}
 
           <div>
             <Spotlight
