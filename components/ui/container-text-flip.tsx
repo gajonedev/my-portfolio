@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useEffect, useId, useRef } from "react";
-import gsap from "gsap";
+import React, { useState, useEffect, useId } from "react";
+
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export interface ContainerTextFlipProps {
@@ -27,14 +28,13 @@ export function ContainerTextFlip({
   const id = useId();
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [width, setWidth] = useState(100);
-  const containerRef = useRef<HTMLParagraphElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
-  const lettersRef = useRef<HTMLDivElement>(null);
+  const textRef = React.useRef(null);
 
   const updateWidthForWord = () => {
     if (textRef.current) {
       // Add some padding to the text width (30px on each side)
-      const textWidth = textRef.current.scrollWidth + 60;
+      // @ts-ignore
+      const textWidth = textRef.current.scrollWidth + 30;
       setWidth(textWidth);
     }
   };
@@ -42,50 +42,23 @@ export function ContainerTextFlip({
   useEffect(() => {
     // Update width whenever the word changes
     updateWidthForWord();
-    
-    // Animate container width
-    if (containerRef.current) {
-      gsap.to(containerRef.current, {
-        width: width,
-        duration: animationDuration / 2000,
-        ease: "power2.inOut"
-      });
-    }
-  }, [currentWordIndex, width, animationDuration]);
-
-  useEffect(() => {
-    // Animate letters
-    if (lettersRef.current) {
-      const letters = lettersRef.current.querySelectorAll('.letter');
-      
-      gsap.fromTo(
-        letters,
-        { 
-          opacity: 0,
-          filter: "blur(10px)"
-        },
-        { 
-          opacity: 1,
-          filter: "blur(0px)",
-          duration: animationDuration / 1000,
-          stagger: 0.02,
-          ease: "power2.out"
-        }
-      );
-    }
-  }, [currentWordIndex, animationDuration]);
+  }, [currentWordIndex]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+      // Width will be updated in the effect that depends on currentWordIndex
     }, interval);
 
     return () => clearInterval(intervalId);
   }, [words, interval]);
 
   return (
-    <p
-      ref={containerRef}
+    <motion.p
+      layout
+      layoutId={`words-here-${id}`}
+      animate={{ width }}
+      transition={{ duration: animationDuration / 2000 }}
       className={cn(
         "relative inline-block rounded-lg pt-2 pb-3 text-center text-4xl font-bold text-black md:text-7xl dark:text-white",
         "[background:linear-gradient(to_bottom,#f3f4f6,#e5e7eb)]",
@@ -94,22 +67,38 @@ export function ContainerTextFlip({
         "dark:shadow-[inset_0_-1px_#10171e,inset_0_0_0_1px_hsla(205,89%,46%,.24),0_4px_8px_#00000052]",
         className,
       )}
+      key={words[currentWordIndex]}
     >
-      <div
-        ref={textRef}
+      <motion.div
+        transition={{
+          duration: animationDuration / 1000,
+          ease: "easeInOut",
+        }}
         className={cn("inline-block", textClassName)}
+        ref={textRef}
+        layoutId={`word-div-${words[currentWordIndex]}-${id}`}
       >
-        <div ref={lettersRef} className="inline-block">
+        <motion.div className="inline-block">
           {words[currentWordIndex].split("").map((letter, index) => (
-            <span
-              key={`${letter}-${index}-${currentWordIndex}`}
-              className="letter"
+            <motion.span
+              key={index}
+              initial={{
+                opacity: 0,
+                filter: "blur(10px)",
+              }}
+              animate={{
+                opacity: 1,
+                filter: "blur(0px)",
+              }}
+              transition={{
+                delay: index * 0.02,
+              }}
             >
               {letter}
-            </span>
+            </motion.span>
           ))}
-        </div>
-      </div>
-    </p>
+        </motion.div>
+      </motion.div>
+    </motion.p>
   );
 }

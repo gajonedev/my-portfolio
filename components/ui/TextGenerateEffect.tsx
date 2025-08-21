@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import { useEffect } from "react";
+import { motion, stagger, useAnimate } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export const TextGenerateEffect = ({
@@ -11,48 +11,47 @@ export const TextGenerateEffect = ({
   words: string;
   className?: string;
 }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [scope, animate] = useAnimate();
   let wordsArray = words.split(" ");
-  
   useEffect(() => {
-    if (!containerRef.current) return;
-    
-    const wordElements = containerRef.current.querySelectorAll("span");
-    
-    gsap.fromTo(
-      wordElements,
-      { opacity: 0 },
-      { 
-        opacity: 1, 
+    console.log(wordsArray);
+    animate(
+      "span",
+      {
+        opacity: 1,
+      },
+      {
         duration: 2,
-        stagger: 0.2,
-        ease: "power1.out"
+        delay: stagger(0.2),
       }
     );
-  }, []);
+  }, [scope.current]);
 
   const renderWords = () => {
     return (
-      <div ref={containerRef}>
+      <motion.div ref={scope}>
         {wordsArray.map((word, idx) => {
           return (
-            <span
+            <motion.span
               key={word + idx}
-              className={`${
+              // change here if idx is greater than 2, change the text color to #CBACF9
+              className={` ${
                 idx > 2 ? "text-purple" : "dark:text-white text-black"
               } opacity-0`}
             >
               {word}{" "}
-            </span>
+            </motion.span>
           );
         })}
-      </div>
+      </motion.div>
     );
   };
 
   return (
     <div className={cn("font-bold", className)}>
+      {/* mt-4 to my-4 */}
       <div className="my-4">
+        {/* remove  text-2xl from the original */}
         <div className="dark:text-white text-black leading-snug tracking-wide">
           {renderWords()}
         </div>

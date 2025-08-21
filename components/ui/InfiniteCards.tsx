@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 export const InfiniteMovingCards = ({
@@ -90,8 +91,7 @@ export const InfiniteMovingCards = ({
         {items.map((item, idx) => (
           <li
             //   change md:w-[450px] to md:w-[60vw] , px-8 py-6 to p-16, border-slate-700 to border-slate-800
-            className="w-[90vw] max-w-full relative rounded-2xl border border-b-0
-             flex-shrink-0 border-slate-800 p-5 md:p-16 md:w-[60vw]"
+            className="w-[95vw] max-w-full relative rounded-2xl border flex-shrink-0 border-slate-800 p-5 md:p-16 md:w-[60vw]"
             style={{
               //   background:
               //     "linear-gradient(180deg, var(--slate-800), var(--slate-900)", //remove this one
@@ -113,18 +113,23 @@ export const InfiniteMovingCards = ({
               <span className=" relative z-20 text-sm md:text-lg leading-[1.6] text-white font-normal">
                 {item.quote}
               </span>
-              <div className="relative z-20 mt-6 flex flex-row items-center">
+              <div className="relative z-20 mt-6 flex flex-row items-center gap-4">
                 {/* add this div for the profile img */}
-                <div className="me-3">
-                  <img src="/profile.svg" alt="profile" />
+                <div className="">
+                  <Image
+                    src="/profile.svg"
+                    alt="profile"
+                    width={45}
+                    height={45}
+                  />
                 </div>
-                <span className="flex flex-col gap-1">
+                <span className="flex flex-col">
                   {/* change text color, font-normal to font-bold, text-xl */}
-                  <span className="text-xl font-bold leading-[1.6] text-white">
+                  <span className="text-md sm:text-lg font-bold text-white">
                     {item.name}
                   </span>
                   {/* change text color */}
-                  <span className=" text-sm leading-[1.6] text-white-200 font-normal">
+                  <span className=" text-sm text-white-200/80 font-normal">
                     {item.title}
                   </span>
                 </span>

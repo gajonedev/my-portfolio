@@ -87,7 +87,7 @@ const Hero = async () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-md md:text-md lg:text-xl mt-12 md:mt-16 text-slate-400 font-light lg:max-w-[60%]">
-            Salut! Je suis Néhémie Gandonou, et je transforme vos idées en
+            Salut! Je suis <a href="https://facebook.com/gajonedev" className="text-purple font-semibold" target="_blank">Néhémie Gandonou</a>, et je transforme vos idées en
             applications web modernes et performantes
           </p>
 

@@ -35,9 +35,6 @@ importers:
       framer-motion:
         specifier: ^11.0.25
         version: 11.18.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      gsap:
-        specifier: ^3.13.0
-        version: 3.13.0
       lucide-react:
         specifier: ^0.365.0
         version: 0.365.0(react@18.3.1)
@@ -1722,9 +1719,6 @@ packages:
 
   graphemer@1.4.0:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
-
-  gsap@3.13.0:
-    resolution: {integrity: sha512-QL7MJ2WMjm1PHWsoFrAQH/J8wUeqZvMtHO58qdekHpCfhvhSL4gSiz6vJf5EeMP0LOn3ZCprL2ki/gjED8ghVw==}
 
   h3-js@4.2.1:
     resolution: {integrity: sha512-HYiUrq5qTRFqMuQu3jEHqxXLk1zsSJiby9Lja/k42wHjabZG7tN9rOuzT/PEFf+Wa7rsnHLMHRWIu0mgcJ0ewQ==}
@@ -5009,8 +5003,6 @@ snapshots:
   graceful-fs@4.2.11: {}
 
   graphemer@1.4.0: {}
-
-  gsap@3.13.0: {}
 
   h3-js@4.2.1: {}
 
