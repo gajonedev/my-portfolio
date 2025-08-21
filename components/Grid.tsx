@@ -1,7 +1,7 @@
 import { gridItems } from "@/data";
 import { BentoGrid, BentoGridItem } from "./ui/BentoGrid";
 
-const Grid = () => {
+const Grid = async () => {
   return (
     <section id="about">
       <BentoGrid className="w-full py-20">

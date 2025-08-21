@@ -1,82 +1,86 @@
-"use client";
-
-import { FaLocationArrow } from "react-icons/fa6";
-
 import { projects } from "@/data";
-import { PinContainer } from "./ui/Pin";
+import React from "react";
+import { ShineBorder } from "@/components/ui/shine-border";
+import Image from "next/image";
+import Link from "next/link";
+import { FaGithub } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
 
-const RecentProjects = () => {
+const RecentProjects = async () => {
   return (
-    <div className="py-20">
+    <section className="py-20" id="realisations">
       <h1 className="heading">
-        A small selection of{" "}
-        <span className="text-purple">recent projects</span>
+        Quelques uns de mes <span className="text-purple">projets récents</span>
       </h1>
-      <div className="flex flex-wrap items-center justify-center p-4 gap-16 mt-10">
+      <div className="flex flex-wrap items-center justify-center p-4 gap-8 mt-5">
         {projects.map((item) => (
           <div
-            className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
+            className="relative overflow-hidden rounded-xl bg-black-100 max-w-xs lg:max-w-sm border"
             key={item.id}
           >
-            <PinContainer
-              title="/ui.aceternity.com"
-              href="https://twitter.com/mannupaaji"
-            >
-              <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10">
-                <div
-                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                  style={{ backgroundColor: "#13162D" }}
-                >
-                  <img src="/bg.png" alt="bgimg" />
+            <ShineBorder shineColor={["#A07CFE", "#FE8FB5", "#FFBE7B"]} />
+            <div className="p-6 bg-black-100 rounded-lg">
+              {item.img && (
+                <div className="mb-4 overflow-hidden rounded-md">
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    width={200}
+                    height={150}
+                    className="object-cover w-full h-full transition-transform hover:scale-105"
+                  />
                 </div>
-                <img
-                  src={item.img}
-                  alt="cover"
-                  className="z-10 absolute bottom-0"
-                />
-              </div>
-
-              <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
-                {item.title}
-              </h1>
-
-              <p
-                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
-                style={{
-                  color: "#BEC1DD",
-                  margin: "1vh 0",
-                }}
-              >
+              )}
+              <h3 className="text-xl font-bold mb-2 max-sm:line-clamp-1">{item.title}</h3>
+              <p className="text-gray-300 mb-4 text-sm line-clamp-2">
                 {item.des}
               </p>
 
-              <div className="flex items-center justify-between mt-7 mb-3">
-                <div className="flex items-center">
-                  {item.iconLists.map((icon, index) => (
-                    <div
-                      key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                      style={{
-                        transform: `translateX(-${5 * index + 2}px)`,
-                      }}
-                    >
-                      <img src={icon} alt="icon5" className="p-2" />
-                    </div>
-                  ))}
-                </div>
+              <div className="flex flex-1 items-center justify-between">
+                {item.iconLists && (
+                  <div className="flex flex-wrap gap-2">
+                    {item.iconLists.map((tech, index) => (
+                      <div
+                        className="-mr-3 p-2 bg-black rounded-full border border-neutral-800 flex justify-center items-center"
+                        key={index}
+                      >
+                        <Image
+                          src={tech}
+                          alt={`Icon ${index + 1}`}
+                          width={14}
+                          height={14}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
 
-                <div className="flex justify-center items-center">
-                  <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                    Check Live Site
-                  </p>
-                  <FaLocationArrow className="ms-3" color="#CBACF9" />
+                <div className="flex gap-1">
+                  {item.link && (
+                    <Link
+                      href={item.link}
+                      target="_blank"
+                      className="flex items-center p-2 bg-[#161A31] rounded-full hover:bg-[#1c2040] transition-colors"
+                    >
+                      <FaGithub />
+                    </Link>
+                  )}
+                  {item.link && (
+                    <Link
+                      href={item.link}
+                      target="_blank"
+                      className="flex items-center p-2 bg-purple/20 rounded-full hover:bg-purple/30 transition-colors"
+                    >
+                      <FiExternalLink />
+                    </Link>
+                  )}
                 </div>
               </div>
-            </PinContainer>
+            </div>
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
