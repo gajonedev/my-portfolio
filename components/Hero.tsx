@@ -5,6 +5,7 @@ import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { ContainerTextFlip } from "./ui/container-text-flip";
 import { ShinyButton } from "./ui/shiny-button";
+import { LuMail } from "react-icons/lu";
 
 const Hero = async () => {
   return (
@@ -46,6 +47,7 @@ const Hero = async () => {
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           <a href="mailto:gajonedev@gmail.com">
             <ShinyButton className="rounded-full text-sm mb-6">
+              <LuMail />
               Me contacter
             </ShinyButton>
           </a>
@@ -57,23 +59,12 @@ const Hero = async () => {
            */}
           <TextGenerateEffect
             words="Je vous construis n'importe quel application ou site web"
-            className="text-center text-[40px] md:text-5xl lg:text-7xl"
+            className="text-center text-[40px] md:text-6xl lg:text-[5rem] font-extrabold"
           />
           {/* <h1 className="text-center text-[40px] md:text-5xl lg:text-6xl  dark:text-white text-black leading-snug tracking-wide">
             Je vous construis n&apos;importe quel application ou site web
           </h1> */}
 
-          <div>
-            <Spotlight
-              className="top-40 -left-10 md:-left-32 md:-top-20 h-screen"
-              fill="white"
-            />
-            <Spotlight
-              className="h-[80vh] w-[50vw] top-52 left-full"
-              fill="purple"
-            />
-            <Spotlight className="left-80 sm:hidden" fill="blue" />
-          </div>
           <ContainerTextFlip
             words={[
               "SAAS",
@@ -87,8 +78,16 @@ const Hero = async () => {
           />
 
           <p className="text-center md:tracking-wider mb-4 text-md md:text-md lg:text-xl mt-12 md:mt-16 text-slate-400 font-light lg:max-w-[60%]">
-            Salut! Je suis <a href="https://facebook.com/gajonedev" className="text-purple font-semibold" target="_blank">Néhémie Gandonou</a>, et je transforme vos idées en
-            applications web modernes et performantes
+            Salut! Je suis{" "}
+            <a
+              href="https://facebook.com/gajonedev"
+              className="text-purple font-semibold"
+              target="_blank"
+            >
+              Néhémie Gandonou
+            </a>
+            , et je transforme vos idées en applications web modernes et
+            performantes
           </p>
 
           <a href="#realisations" className="mt-4">

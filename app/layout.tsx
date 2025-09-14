@@ -12,7 +12,7 @@ const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 export const metadata: Metadata = {
   title: "Néhémie Gandonou | Développeur web fullstack et codeur passioné",
   description:
-    "Développeur web et mobile spécialisé en code et no-code. Je vous construit votre prochaine application. Découvrez mes projets et ma méthodologie.",
+    "Développeur web et mobile. Je vous construit votre prochaine application. Découvrez mes projets et ma méthodologie.",
   keywords: [
     "Next.js",
     "React",
@@ -50,10 +50,6 @@ export const metadata: Metadata = {
     description: "Développeur Full-Stack passionné..",
     images: ["/og-image.png"],
   },
-  // icons: {
-  //   icon: "/favicon.ico",
-  //   apple: "/favicon.ico",
-  // },
 };
 
 export default function RootLayout({
@@ -62,12 +58,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="fr" suppressHydrationWarning>
       <body className={cn(outfit.className, "font-outfit")}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
+          forcedTheme="dark"
           disableTransitionOnChange
         >
           {children}

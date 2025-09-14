@@ -31,7 +31,7 @@ const Approach = () => {
           des="Je conçois et développe des solutions performantes et évolutives en utilisant des technologies modernes (code ou no-code). L’IA pour accélérer la productivité, optimisation de la qualité du code et exploration de nouvelles solutions créatives."
         >
           <CanvasRevealEffect
-            animationSpeed={3}
+            animationSpeed={5.1}
             // change bg-black to bg-pink-900
             containerClassName="bg-pink-900 rounded-3xl overflow-hidden"
             colors={[
@@ -39,7 +39,7 @@ const Approach = () => {
               [255, 166, 158],
               [221, 255, 247],
             ]}
-            dotSize={2}
+            dotSize={1}
           />
           {/* Radial gradient for the cute fade */}
           {/* remove this one */}
@@ -51,7 +51,7 @@ const Approach = () => {
           des="Des tests fonctionnels et techniques pour garantir fiabilité, sécurité et fluidité de l’expérience utilisateur avant la livraison. Je m’assure également que le projet soit optimisé pour évoluer facilement et répondre aux besoins futurs."
         >
           <CanvasRevealEffect
-            animationSpeed={3}
+            animationSpeed={5.1}
             containerClassName="bg-sky-600 rounded-3xl overflow-hidden"
             colors={[[125, 211, 252]]}
           />

@@ -9,7 +9,7 @@ export const gridItems = [
   {
     id: 1,
     title:
-      "Codeur passionné et développeur no-code, je crée des applications web modernes, accessibles et performantes",
+      "Développeur passionné, je crée des applications web modernes, accessibles et robustes",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -19,7 +19,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "Mes compétences s'adaptent à vos besoins",
+    title: "N'importe quel projet ... ou idée",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -50,8 +50,8 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "Code ou no-code ?",
-    description: "Le choix idéal pour votre projet",
+    title: "OpenAI, Facebook",
+    description: "J'utilise des technologies utilisées par les plus grandes entreprises, pour vous garantir une expérience utilisateur optimale",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -60,7 +60,7 @@ export const gridItems = [
   },
   {
     id: 6,
-    title: "On discute sur votre prochain projet ?",
+    title: "On collabore sur votre prochain projet ?",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -77,7 +77,7 @@ export const projects = [
     des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
     img: "/p1.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "/ui.earth.com",
+    link: "https://github.com/gajonedev",
   },
   {
     id: 2,
@@ -85,7 +85,7 @@ export const projects = [
     des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
     img: "/p2.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "/ui.yoom.com",
+    link: "https://github.com/gajonedev",
   },
   {
     id: 3,
@@ -93,7 +93,7 @@ export const projects = [
     des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
     img: "/p3.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
-    link: "/ui.aiimg.com",
+    link: "https://github.com/gajonedev",
   },
   {
     id: 4,
@@ -101,7 +101,7 @@ export const projects = [
     des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
     img: "/p4.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "/ui.apple.com",
+    link: "https://github.com/gajonedev",
   },
 ];
 
@@ -180,21 +180,21 @@ export const workExperience = [
   },
   {
     id: 2,
-    title: "FullStack avec Next.js & PostrgeSQL",
+    title: "FullStack avec Node.js & PostgreSQL",
     desc: "Conception et développement d'applications web avec Next.js et PostgreSQL. Expérience avec l'intégration d'API et la gestion de bases de données.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Bubble.io",
+    title: "Bubble.io | Wordpress | WooCommerce",
     desc: "Prototypage rapide d’applications web avec workflows, base de données interne et intégration d’API.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Zapier / Make (ex Integromat) / n8n",
+    title: "Zapier | Make (ex Integromat) | n8n",
     desc: "Automatisation de workflows entre applications (CRM, emails, bases de données).",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",

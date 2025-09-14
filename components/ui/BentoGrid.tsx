@@ -1,17 +1,13 @@
-"use client";
-
-import { useState } from "react";
 import { LuMail } from "react-icons/lu";
 
 // Also install this npm i --save-dev @types/react-lottie
-import Lottie from "react-lottie";
 
 import { cn } from "@/lib/utils";
 
 import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
-import animationData from "@/data/confetti.json";
 import MagicButton from "../MagicButton";
+import Link from "next/link";
 
 export const BentoGrid = ({
   className,
@@ -53,25 +49,8 @@ export const BentoGridItem = ({
   titleClassName?: string;
   spareImg?: string;
 }) => {
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
-
-  const [copied, setCopied] = useState(false);
-
-  const defaultOptions = {
-    loop: copied,
-    autoplay: copied,
-    animationData: animationData,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
-
-  const handleCopy = () => {
-    const text = "hsu@jsmastery.pro";
-    navigator.clipboard.writeText(text);
-    setCopied(true);
-  };
+  const leftLists = ["NextJS", "NodeJs", "Typescript"];
+  const rightLists = ["tRPC", "OpenAI", "n8n"];
 
   return (
     <div
@@ -127,7 +106,7 @@ export const BentoGridItem = ({
           )}
         >
           {/* change the order of the title and des, font-extralight, remove text-xs text-neutral-600 dark:text-neutral-300 , change the text-color */}
-          <div className="font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
+          <div className="font-extralight md:max-w-[17rem] md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
             {description}
           </div>
           {/* add text-3xl max-w-96 , remove text-neutral-600 dark:text-neutral-300*/}
@@ -171,15 +150,18 @@ export const BentoGridItem = ({
           )}
           {id === 6 && (
             <div className="mt-5 relative">
-              <a href="mailto:gajonedev@gmail.com">
+              <Link
+                href="https://wa.me/22946897322?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services.%20Pouvez-vous%20me%20fournir%20plus%20d'informations%20pour%20un%20devis%20gratuit%3F"
+                target="_blank"
+              >
                 <MagicButton
-                  title="Envoyer un mail"
+                  title="Obtenir un devis gratuit"
                   icon={<LuMail />}
                   position="left"
                   // handleClick={handleCopy}
                   otherClasses="bg-[#161A31]!"
                 />
-              </a>
+              </Link>
             </div>
           )}
         </div>

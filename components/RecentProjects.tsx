@@ -1,10 +1,11 @@
-import { projects } from "@/data";
 import React from "react";
-import { ShineBorder } from "@/components/ui/shine-border";
 import Image from "next/image";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
+
+import { projects } from "@/data";
+import { ShineBorder } from "@/components/ui/shine-border";
 
 const RecentProjects = async () => {
   return (

@@ -1,7 +1,8 @@
 import { socialMedia } from "@/data";
 import MagicButton from "./MagicButton";
 import Image from "next/image";
-import { LuMail } from "react-icons/lu";
+import { FaWhatsapp } from "react-icons/fa6";
+import Link from "next/link";
 
 const Footer = async () => {
   return (
@@ -19,18 +20,20 @@ const Footer = async () => {
 
       <div className="flex flex-col items-center">
         <h1 className="heading lg:max-w-[45vw]">
-          Prêt à faire la différence pour <span className="text-purple">votre</span> prochain projet ?
+          Prêt à faire la différence pour{" "}
+          <span className="text-purple">votre</span> prochain projet ?
         </h1>
         <p className="text-white-200 md:mt-10 my-5 text-center">
-          Contactez-moi dès aujourd&apos;hui et discutons de la manière dont je peux vous aider à atteindre vos objectifs.
+          Contactez-moi dès aujourd&apos;hui et discutons de la manière dont je
+          peux vous aider à atteindre vos objectifs.
         </p>
-        <a href="mailto:contact@jsmastery.pro">
+        <Link href="https://wa.me/22946897322" target="_blank">
           <MagicButton
             title="Me contacter"
-            icon={<LuMail />}
+            icon={<FaWhatsapp />}
             position="right"
           />
-        </a>
+        </Link>
       </div>
       <div className="flex mt-16 md:flex-row flex-col-reverse justify-between items-center max-md:gap-8">
         <p className="md:text-base text-sm md:font-normal font-light">
@@ -48,7 +51,6 @@ const Footer = async () => {
             </a>
           ))}
         </div>
-
       </div>
     </footer>
   );
