@@ -27,11 +27,12 @@ export const metadata: Metadata = {
   authors: [{ name: "Néhémie Gandonou", url: "https://gajone.me" }],
   creator: "Néhémie Gandonou",
   publisher: "Néhémie Gandonou",
+  metadataBase: new URL("https://gajone.me"),
   openGraph: {
     title: "Néhémie Gandonou | Développeur web passionné.",
     description:
       "Découvrez mes projets, mon approche de travail et mes compétences en développement.",
-    url: "https://gajone.tech",
+    url: "https://gajone.dev",
     siteName: "Portfolio Néhémie",
     images: [
       {
