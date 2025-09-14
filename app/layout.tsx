@@ -24,10 +24,10 @@ export const metadata: Metadata = {
     "Néhémie",
     "Néhémie Gandonou",
   ],
-  authors: [{ name: "Néhémie Gandonou", url: "https://gajone.me" }],
+  authors: [{ name: "Néhémie Gandonou", url: "https://gajone.dev" }],
   creator: "Néhémie Gandonou",
   publisher: "Néhémie Gandonou",
-  metadataBase: new URL("https://gajone.me"),
+  metadataBase: new URL("https://gajone.dev"),
   openGraph: {
     title: "Néhémie Gandonou | Développeur web passionné.",
     description:
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "Portfolio Néhémie",
     images: [
       {
-        url: "https://gajone.me/og-image.png",
+        url: "https://gajone.dev/og-image.png",
         width: 1200,
         height: 630,
         alt: "Néhémie Gandonou | Développeur web passionné.",
@@ -49,7 +49,14 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Portfolio de Néhémie",
     description: "Développeur Full-Stack passionné..",
-    images: ["https://gajone.me/og-image.png"],
+    images: ["https://gajone.dev/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://gajone.dev",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
