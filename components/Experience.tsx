@@ -1,8 +1,7 @@
-import React from "react";
+import Image from "next/image";
 
 import { workExperience } from "@/data";
 import { Button } from "./ui/MovingBorders";
-import Image from "next/image";
 
 const Experience = async () => {
   return (

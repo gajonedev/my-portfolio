@@ -27,18 +27,18 @@ export const metadata: Metadata = {
   authors: [{ name: "Néhémie Gandonou", url: "https://gajone.me" }],
   creator: "Néhémie Gandonou",
   publisher: "Néhémie Gandonou",
-  metadataBase: new URL("https://gajone.me"),
   openGraph: {
     title: "Néhémie Gandonou | Développeur web passionné.",
     description:
       "Découvrez mes projets, mon approche de travail et mes compétences en développement.",
-    url: "https://gajone.me",
+    url: "https://gajone.tech",
     siteName: "Portfolio Néhémie",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://gajone.me/og-image.png",
         width: 1200,
         height: 630,
+        alt: "Néhémie Gandonou | Développeur web passionné.",
       },
     ],
     locale: "fr_FR",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Portfolio de Néhémie",
     description: "Développeur Full-Stack passionné..",
-    images: ["/og-image.png"],
+    images: ["https://gajone.me/og-image.png"],
   },
 };
 
