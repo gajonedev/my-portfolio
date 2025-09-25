@@ -2,10 +2,10 @@ import { FaLocationArrow } from "react-icons/fa6";
 
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
-import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import { ContainerTextFlip } from "./ui/container-text-flip";
 import { ShinyButton } from "./ui/shiny-button";
 import { LuMail } from "react-icons/lu";
+import Image from "next/image";
 
 const Hero = async () => {
   return (
@@ -72,26 +72,41 @@ const Hero = async () => {
             interval={1200}
           />
 
-          <p className="text-center md:tracking-wider mb-4 text-md md:text-md lg:text-xl mt-12 md:mt-16 text-slate-400 font-light lg:max-w-[80%]">
-            Salut! Je suis{" "}
-            <a
-              href="https://facebook.com/gajonedev"
-              className="text-purple font-semibold"
-              target="_blank"
-            >
-              Néhémie Gandonou
-            </a>
-            , et je transforme vos idées en applications web modernes et
-            performantes
-          </p>
+          <div className="flex flex-1 flex-col md:flex-row-reverse items-center justify-center mt-10 md:mt-20 gap-10 md:gap-16 w-full">
+            <div className="flex items-center justify-center md:w-1/2 mt-10 md:mt-0 rounded-3xl overflow-hidden border-2 border-purple/20 bg-purple/5 p-3 backdrop-blur-lg">
+              <div className="flex flex-1 items-center justify-center overflow-hidden rounded-xl border-2 border-purple/10">
+                <Image
+                  src="/gajone.jpg"
+                  alt="Gajone"
+                  width={500}
+                  height={500}
+                  // className="object-contain"
+                />
+              </div>
+            </div>
+            <div className="flex md:w-1/2 flex-col items-center justify-center max-md:gap-5">
+              <p className="text-center text-[20px]  text-slate-400 font-medium">
+                Salut! Je suis{" "}
+                <a
+                  href="https://facebook.com/gajonedev"
+                  className="text-purple font-semibold"
+                  target="_blank"
+                >
+                  Néhémie Gandonou
+                </a>
+                , et je transforme vos idées en applications web modernes et
+                performantes
+              </p>
 
-          <a href="#realisations" className="mt-4">
-            <MagicButton
-              title="Voir mes réalisations"
-              icon={<FaLocationArrow />}
-              position="right"
-            />
-          </a>
+              <a href="#realisations">
+                <MagicButton
+                  title="Voir mes réalisations"
+                  icon={<FaLocationArrow />}
+                  position="right"
+                />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
