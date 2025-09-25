@@ -52,12 +52,12 @@ const Hero = async () => {
             </ShinyButton>
           </a>
 
-          <div className="my-4 text-white leading-snug tracking-wide text-center text-[50px] md:text-6xl lg:text-[70px] font-extrabold">
+          <h1 className="my-4 text-white leading-snug tracking-wide text-center text-[50px] md:text-6xl lg:text-[70px] font-extrabold">
             Je vous construis{" "}
             <span className="text-purple">n&apos;importe quel</span> application
             <span className="text-purple"> web</span> ou{" "}
             <span className="text-purple">mobile</span>{" "}
-          </div>
+          </h1>
 
           <ContainerTextFlip
             words={[
@@ -85,7 +85,7 @@ const Hero = async () => {
               </div>
             </div>
             <div className="flex md:w-1/2 flex-col items-center justify-center max-md:gap-5">
-              <p className="text-center text-[20px]  text-slate-400 font-medium">
+              <h3 className="text-center text-[20px]  text-slate-400 font-medium">
                 Salut! Je suis{" "}
                 <a
                   href="https://facebook.com/gajonedev"
@@ -96,7 +96,7 @@ const Hero = async () => {
                 </a>
                 , et je transforme vos idées en applications web modernes et
                 performantes
-              </p>
+              </h3>
 
               <a href="#realisations">
                 <MagicButton
