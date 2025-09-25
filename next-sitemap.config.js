@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "https://ton-domaine.com",
+  siteUrl: "https://gajone.dev",
   generateRobotsTxt: true,
   sitemapSize: 7000,
 };
