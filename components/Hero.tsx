@@ -52,18 +52,12 @@ const Hero = async () => {
             </ShinyButton>
           </a>
 
-          {/**
-           *  Link: https://ui.aceternity.com/components/text-generate-effect
-           *
-           *  change md:text-6xl, add more responsive code
-           */}
-          <TextGenerateEffect
-            words="Je vous construis n'importe quel application ou site web"
-            className="text-center text-[40px] md:text-6xl lg:text-[5rem] font-extrabold"
-          />
-          {/* <h1 className="text-center text-[40px] md:text-5xl lg:text-6xl  dark:text-white text-black leading-snug tracking-wide">
-            Je vous construis n&apos;importe quel application ou site web
-          </h1> */}
+          <div className="my-4 text-white leading-snug tracking-wide text-center text-[50px] md:text-6xl lg:text-[70px] font-extrabold">
+            Je vous construis{" "}
+            <span className="text-purple">n&apos;importe quel</span> application
+            <span className="text-purple"> web</span> ou{" "}
+            <span className="text-purple">mobile</span>{" "}
+          </div>
 
           <ContainerTextFlip
             words={[
@@ -73,11 +67,12 @@ const Hero = async () => {
               "landing page",
               "site vitrine",
               "e-commerce",
+              "restau",
             ]}
-            interval={1500}
+            interval={1200}
           />
 
-          <p className="text-center md:tracking-wider mb-4 text-md md:text-md lg:text-xl mt-12 md:mt-16 text-slate-400 font-light lg:max-w-[60%]">
+          <p className="text-center md:tracking-wider mb-4 text-md md:text-md lg:text-xl mt-12 md:mt-16 text-slate-400 font-light lg:max-w-[80%]">
             Salut! Je suis{" "}
             <a
               href="https://facebook.com/gajonedev"

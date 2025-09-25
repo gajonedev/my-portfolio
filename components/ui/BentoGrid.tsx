@@ -155,10 +155,9 @@ export const BentoGridItem = ({
                 target="_blank"
               >
                 <MagicButton
-                  title="Obtenir un devis gratuit"
+                  title="Devis gratuit"
                   icon={<LuMail />}
                   position="left"
-                  // handleClick={handleCopy}
                   otherClasses="bg-[#161A31]!"
                 />
               </Link>
