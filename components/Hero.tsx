@@ -43,16 +43,16 @@ const Hero = async () => {
         />
       </div>
 
-      <div className="flex justify-center relative my-10 z-10">
+      <div className="flex justify-center relative md:my-10 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <a href="mailto:gajonedev@gmail.com">
-            <ShinyButton className="rounded-full text-sm mb-6">
+          <a href="mailto:gajonedev@gmail.com" className="mb-6">
+            <ShinyButton className="rounded-full text-sm">
               <LuMail />
               Me contacter
             </ShinyButton>
           </a>
 
-          <h1 className="my-4 text-white text-center text-[45px] md:text-6xl lg:text-[70px] font-extrabold">
+          <h1 className="my-4 text-white text-center text-5xl leading-tight md:text-6xl lg:text-8xl font-extrabold">
             Je vous construis{" "}
             <span className="text-purple">n&apos;importe quel</span> application
             <span className="text-purple"> web</span> ou{" "}
