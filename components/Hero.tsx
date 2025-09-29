@@ -52,7 +52,7 @@ const Hero = async () => {
             </ShinyButton>
           </a>
 
-          <h1 className="my-4 text-white leading-snug tracking-wide text-center text-[50px] md:text-6xl lg:text-[70px] font-extrabold">
+          <h1 className="my-4 text-white text-center text-[45px] md:text-6xl lg:text-[70px] font-extrabold">
             Je vous construis{" "}
             <span className="text-purple">n&apos;importe quel</span> application
             <span className="text-purple"> web</span> ou{" "}
