@@ -151,7 +151,7 @@ export const BentoGridItem = ({
           {id === 6 && (
             <div className="mt-5 relative">
               <Link
-                href="https://wa.me/22946897322?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services.%20Pouvez-vous%20me%20fournir%20plus%20d'informations%20pour%20un%20devis%20gratuit%3F"
+                href="https://wa.me/22946897322?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services."
                 target="_blank"
               >
                 <MagicButton

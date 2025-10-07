@@ -28,7 +28,7 @@ const Approach = () => {
         <Card
           title="⚙️ Développement"
           icon={<AceternityIcon order="Phase 2" />}
-          des="Je conçois et développe des solutions performantes et évolutives en utilisant des technologies modernes (code ou no-code). L’IA pour accélérer la productivité, optimisation de la qualité du code et exploration de nouvelles solutions créatives."
+          des="Ensuite la conception et le développement de solution en utilisant la technologie adaptée. Je privilégie les solutions robustes, évolutives et maintenables, tout en assurant une communication régulière avec le client pour garantir que le projet reste aligné avec ses attentes."
         >
           <CanvasRevealEffect
             animationSpeed={5.1}
@@ -48,7 +48,7 @@ const Approach = () => {
         <Card
           title="🚀 Livraison"
           icon={<AceternityIcon order="Phase 3" />}
-          des="Des tests fonctionnels et techniques pour garantir fiabilité, sécurité et fluidité de l’expérience utilisateur avant la livraison. Je m’assure également que le projet soit optimisé pour évoluer facilement et répondre aux besoins futurs."
+          des="J'effectue ensuite des tests fonctionnels et techniques pour garantir fiabilité, sécurité et fluidité de l’expérience utilisateur avant la livraison. Je m’assure également que le projet soit optimisé pour évoluer facilement et répondre aux besoins futurs."
         >
           <CanvasRevealEffect
             animationSpeed={5.1}

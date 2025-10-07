@@ -6,6 +6,7 @@ import { ContainerTextFlip } from "./ui/container-text-flip";
 import { ShinyButton } from "./ui/shiny-button";
 import { LuMail } from "react-icons/lu";
 import Image from "next/image";
+import Link from "next/link";
 
 const Hero = async () => {
   return (
@@ -45,12 +46,16 @@ const Hero = async () => {
 
       <div className="flex justify-center relative md:my-10 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
-          <a href="mailto:gajonedev@gmail.com" className="mb-6">
+          <Link
+            href="https://wa.me/22946897322?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services."
+            className="mb-6"
+            target="_blank"
+          >
             <ShinyButton className="rounded-full text-sm">
               <LuMail />
               Me contacter
             </ShinyButton>
-          </a>
+          </Link>
 
           <h1 className="my-4 text-white text-center text-5xl leading-tight md:text-6xl lg:text-8xl font-extrabold">
             Je vous construis{" "}
@@ -89,7 +94,7 @@ const Hero = async () => {
                 Salut! Je suis{" "}
                 <a
                   href="https://facebook.com/gajonedev"
-                  className="text-purple font-semibold"
+                  className="text-purple font-semibold underline"
                   target="_blank"
                 >
                   Néhémie Gandonou

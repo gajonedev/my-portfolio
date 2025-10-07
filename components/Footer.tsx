@@ -27,7 +27,10 @@ const Footer = async () => {
           Contactez-moi dès aujourd&apos;hui et discutons de la manière dont je
           peux vous aider à atteindre vos objectifs.
         </p>
-        <Link href="https://wa.me/22946897322" target="_blank">
+        <Link
+          href="https://wa.me/22946897322?text=Bonjour%2C%20je%20suis%20int%C3%A9ress%C3%A9%20par%20vos%20services."
+          target="_blank"
+        >
           <MagicButton
             title="Me contacter"
             icon={<FaWhatsapp />}
