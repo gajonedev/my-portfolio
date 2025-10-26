@@ -9,7 +9,7 @@ export const gridItems = [
   {
     id: 1,
     title:
-      "Développeur passionné, je crée des applications web modernes, accessibles et robustes",
+      "Développeur passionné, je crée des applications web & mobiles modernes, accessibles et robustes",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -19,7 +19,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "N'importe quel projet ... ou idée",
+    title: "Peut importe la complexité ou la simplicité du projet",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -29,8 +29,9 @@ export const gridItems = [
   },
   {
     id: 3,
-    title: "Ma stack technique",
-    description: "Je mets à jour en continu",
+    title: "On discute ?",
+    description:
+      "Solution sur-mesure ou clé en main, adaptées à vos objectifs et à votre budget.",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
     titleClassName: "justify-center",
@@ -39,7 +40,7 @@ export const gridItems = [
   },
   {
     id: 4,
-    title: "Plusieurs années de passion et d'action",
+    title: "+ 3 années de passion et d'action",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
     imgClassName: "",
@@ -50,8 +51,9 @@ export const gridItems = [
 
   {
     id: 5,
-    title: "OpenAI, Facebook",
-    description: "J'utilise des technologies utilisées par les plus grandes entreprises, pour vous garantir une expérience utilisateur optimale",
+    title: "Sécurité & Performance",
+    description:
+      "Chaque projet offre des performances optimales et la sécurité qu'il faut.",
     className: "md:col-span-3 md:row-span-2",
     imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
     titleClassName: "justify-center md:justify-start lg:justify-center",
@@ -73,32 +75,32 @@ export const gridItems = [
 export const projects = [
   {
     id: 1,
-    title: "3D Solar System Planets to Explore",
-    des: "Explore the wonders of our solar system with this captivating 3D simulation of the planets using Three.js.",
-    img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://github.com/gajonedev",
-  },
-  {
-    id: 2,
-    title: "Yoom - Video Conferencing App",
-    des: "Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
-    link: "https://github.com/gajonedev",
-  },
-  {
-    id: 3,
-    title: "AI Image SaaS - Canva Application",
-    des: "A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.",
+    title: "EasyCampus - La vie étudiante simplifiée",
+    des: "Une plateforme tout-en-un pour gérer les cours, emplois du temps et ressources académiques facilement.",
     img: "/p3.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
     link: "https://github.com/gajonedev",
   },
   {
+    id: 2,
+    title: "Système Solaire 3D - Three.js",
+    des: "Explorez les merveilles de notre système solaire avec cette captivante simulation 3D des planètes utilisant Three.js.",
+    img: "/p1.svg",
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+    link: "https://github.com/gajonedev",
+  },
+  {
+    id: 3,
+    title: "Yoom - Video Conferencing App",
+    des: "Simplifiez votre expérience de visioconférence avec Yoom. Connectez-vous facilement avec vos collègues et amis.",
+    img: "/p2.svg",
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+    link: "https://github.com/gajonedev",
+  },
+  {
     id: 4,
-    title: "Animated Apple Iphone 3D Website",
-    des: "Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects..",
+    title: "MeetAI",
+    des: "Application de visioconférence intégrant des fonctionnalités d'IA pour améliorer l'expérience utilisateur.",
     img: "/p4.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "https://github.com/gajonedev",
@@ -205,23 +207,23 @@ export const workExperience = [
     desc: "Développement d’applications mobiles cross-platform (iOS & Android) avec React Native.",
     className: "md:col-span-2",
     thumbnail: "/exp1.svg",
-  }
+  },
 ];
 
 export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
-    link: "https://github.com/gajonedev"
+    link: "https://github.com/gajonedev",
   },
   {
     id: 2,
     img: "/twit.svg",
-    link: "https://twitter.com/gajonedev"
+    link: "https://twitter.com/gajonedev",
   },
   {
     id: 3,
     img: "/link.svg",
-    link: "https://www.linkedin.com/in/gajonedev/"
+    link: "https://www.linkedin.com/in/gajonedev",
   },
 ];
