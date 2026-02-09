@@ -1,65 +1,33 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Lexend } from "next/font/google";
+import "./globals.css";
+import ThemeProvider from "./components/ThemeProvider";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import "./globals.css";
-import { ThemeProvider } from "./provider";
-import { cn } from "@/lib/utils";
-
-const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
+const geistSans = Lexend({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
-  title: "Néhémie Gandonou | Développeur web fullstack et codeur passioné",
+  title: "Néhémie Gandonou — Développeur Web & Mobile",
   description:
-    "Développeur web et mobile. Je vous construit votre prochaine application. Découvrez mes projets et ma méthodologie.",
-  keywords: [
-    "Next.js",
-    "React",
-    "Node.js",
-    "Développeur Web",
-    "Portfolio",
-    "Gajone",
-    "Gajone Dev",
-    "Néhémie",
-    "Néhémie Gandonou",
-  ],
-  authors: [{ name: "Néhémie Gandonou", url: "https://gajone.dev" }],
-  creator: "Néhémie Gandonou",
-  publisher: "Néhémie Gandonou",
-  metadataBase: new URL("https://gajone.dev"),
+    "Portfolio de développeur web & mobile basé à Cotonou, Bénin : sites vitrines, e-commerce, SaaS, marketplace, automatisation IA et applications mobiles.",
+  applicationName: "Néhémie Gandonou",
   openGraph: {
-    title: "Néhémie Gandonou | Développeur web passionné.",
+    title: "Néhémie Gandonou — Développeur Web & Mobile",
     description:
-      "Découvrez mes projets, mon approche de travail et mes compétences en développement.",
-    url: "https://gajone.dev",
-    siteName: "Portfolio Néhémie",
-    images: [
-      {
-        url: "https://gajone.dev/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Néhémie Gandonou | Développeur web passionné.",
-      },
-    ],
-    locale: "fr_FR",
+      "Sites vitrines, e-commerce, SaaS, marketplace, automatisation IA et apps mobiles.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio de Néhémie",
-    description: "Développeur Full-Stack passionné..",
-    images: ["https://gajone.dev/og-image.png"],
-  },
-  alternates: {
-    canonical: "https://gajone.dev",
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-  icons: {
-    icon: "/favicon.svg",
+    title: "Néhémie Gandonou — Développeur Web & Mobile",
+    description:
+      "Portfolio de développeur web & mobile avec une approche orientée design et performance.",
   },
 };
 
@@ -70,14 +38,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" suppressHydrationWarning>
-      <body className={cn(outfit.className, "font-outfit")}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          forcedTheme="dark"
-          disableTransitionOnChange
-        >
-          {children}
+      <body
+        className={`${geistSans.variable} antialiased bg-background font-sans`}
+      >
+        <ThemeProvider>
+          <Header />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>

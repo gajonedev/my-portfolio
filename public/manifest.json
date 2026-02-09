@@ -1,0 +1,21 @@
+{
+  "name": "Néhémie Gandonou",
+  "short_name": "NG Dev",
+  "description": "Développeur web & mobile basé à Cotonou, Bénin. Sites vitrines, e-commerce, SaaS et applications mobiles.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0a1f",
+  "theme_color": "#c1a5ef",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

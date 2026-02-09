@@ -1,0 +1,73 @@
+<svg width="420" height="520" viewBox="0 0 420 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1640"/>
+      <stop offset="100%" stop-color="#0b0a1f"/>
+    </linearGradient>
+    <linearGradient id="primaryGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c1a5ef"/>
+      <stop offset="100%" stop-color="#a882e8"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="420" height="520" rx="32" fill="url(#bgGrad)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="60" cy="80" r="40" fill="#c1a5ef" opacity="0.1"/>
+  <circle cx="360" cy="120" r="60" fill="#c1a5ef" opacity="0.08"/>
+  <circle cx="340" cy="450" r="80" fill="#c1a5ef" opacity="0.06"/>
+  
+  <!-- Person silhouette -->
+  <ellipse cx="210" cy="480" rx="140" ry="60" fill="url(#primaryGrad)" opacity="0.3"/>
+  
+  <!-- Body -->
+  <path d="M140 520 L150 380 C160 340 180 320 210 320 C240 320 260 340 270 380 L280 520" fill="#1f1a45"/>
+  
+  <!-- Suit jacket -->
+  <path d="M150 400 L160 520 L260 520 L270 400 C260 370 240 350 210 350 C180 350 160 370 150 400Z" fill="#2a2555"/>
+  
+  <!-- Tie -->
+  <path d="M200 350 L210 400 L220 350 L215 350 L210 380 L205 350Z" fill="#c1a5ef"/>
+  
+  <!-- Shirt collar -->
+  <path d="M190 350 L200 370 L210 350 L220 370 L230 350 C225 340 215 335 210 335 C205 335 195 340 190 350Z" fill="#f5f2ff"/>
+  
+  <!-- Head -->
+  <ellipse cx="210" cy="250" rx="70" ry="85" fill="#8B6914"/>
+  
+  <!-- Face features -->
+  <ellipse cx="185" cy="240" rx="8" ry="5" fill="#1a1625"/>
+  <ellipse cx="235" cy="240" rx="8" ry="5" fill="#1a1625"/>
+  
+  <!-- Eyebrows -->
+  <path d="M172 228 Q185 222 198 228" stroke="#1a1625" stroke-width="3" fill="none"/>
+  <path d="M222 228 Q235 222 248 228" stroke="#1a1625" stroke-width="3" fill="none"/>
+  
+  <!-- Nose -->
+  <path d="M210 250 L205 275 L215 275" stroke="#6B4A0A" stroke-width="2" fill="none"/>
+  
+  <!-- Smile -->
+  <path d="M190 295 Q210 310 230 295" stroke="#1a1625" stroke-width="3" fill="none"/>
+  
+  <!-- Hair -->
+  <path d="M140 220 C140 160 170 130 210 130 C250 130 280 160 280 220 C280 190 260 170 210 170 C160 170 140 190 140 220Z" fill="#1a1625"/>
+  
+  <!-- Ears -->
+  <ellipse cx="140" cy="250" rx="12" ry="20" fill="#8B6914"/>
+  <ellipse cx="280" cy="250" rx="12" ry="20" fill="#8B6914"/>
+  
+  <!-- Tech icons floating -->
+  <g opacity="0.8">
+    <!-- Code bracket -->
+    <rect x="50" y="200" width="40" height="40" rx="8" fill="#c1a5ef" opacity="0.2"/>
+    <text x="70" y="228" font-family="monospace" font-size="20" fill="#c1a5ef" text-anchor="middle">&lt;/&gt;</text>
+    
+    <!-- React-like icon -->
+    <circle cx="350" cy="280" r="25" fill="#c1a5ef" opacity="0.2"/>
+    <circle cx="350" cy="280" r="6" fill="#c1a5ef"/>
+    <ellipse cx="350" cy="280" rx="18" ry="7" stroke="#c1a5ef" stroke-width="1.5" fill="none"/>
+    <ellipse cx="350" cy="280" rx="18" ry="7" stroke="#c1a5ef" stroke-width="1.5" fill="none" transform="rotate(60 350 280)"/>
+    <ellipse cx="350" cy="280" rx="18" ry="7" stroke="#c1a5ef" stroke-width="1.5" fill="none" transform="rotate(-60 350 280)"/>
+  </g>
+</svg>
