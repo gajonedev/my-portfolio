@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import gsap from "gsap";
 import Container from "./Container";
 import ThemeToggle from "./ThemeToggle";
 import { Menu, X } from "lucide-react";
@@ -26,10 +25,11 @@ export default function Header() {
 
   // Close menu on route change
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsOpen(false);
   }, [pathname]);
 
-  // GSAP animations
+  // Native JS animations
   useEffect(() => {
     const menu = menuRef.current;
     const overlay = overlayRef.current;
@@ -42,48 +42,64 @@ export default function Header() {
       document.body.style.overflow = "hidden";
 
       // Animate overlay
-      gsap.to(overlay, {
-        opacity: 1,
-        duration: 0.3,
-        ease: "power2.out",
+      overlay.animate([{ opacity: 0 }, { opacity: 1 }], {
+        duration: 300,
+        easing: "cubic-bezier(0.33, 1, 0.68, 1)",
+        fill: "forwards",
       });
 
       // Animate menu panel
-      gsap.to(menu, {
-        x: 0,
-        duration: 0.4,
-        ease: "power3.out",
-      });
-
-      // Animate menu items with stagger
-      gsap.fromTo(
-        items,
-        { opacity: 0, x: 30 },
+      menu.animate(
+        [{ transform: "translateX(100%)" }, { transform: "translateX(0)" }],
         {
-          opacity: 1,
-          x: 0,
-          duration: 0.4,
-          stagger: 0.08,
-          ease: "power2.out",
-          delay: 0.2,
+          duration: 400,
+          easing: "cubic-bezier(0.33, 1, 0.68, 1)",
+          fill: "forwards",
         },
       );
+
+      // Animate menu items with stagger
+      items.forEach((item, index) => {
+        if (item) {
+          item.style.opacity = "0";
+          item.style.transform = "translateX(30px)";
+          setTimeout(
+            () => {
+              item.animate(
+                [
+                  { opacity: 0, transform: "translateX(30px)" },
+                  { opacity: 1, transform: "translateX(0)" },
+                ],
+                {
+                  duration: 400,
+                  easing: "cubic-bezier(0.33, 1, 0.68, 1)",
+                  fill: "forwards",
+                },
+              );
+            },
+            200 + index * 80,
+          ); // 200ms delay + 80ms stagger
+        }
+      });
     } else {
       // Restore body scroll
       document.body.style.overflow = "";
 
       // Animate out
-      gsap.to(overlay, {
-        opacity: 0,
-        duration: 0.3,
-        ease: "power2.in",
+      overlay.animate([{ opacity: 1 }, { opacity: 0 }], {
+        duration: 300,
+        easing: "cubic-bezier(0.33, 0, 0.67, 0)",
+        fill: "forwards",
       });
 
-      gsap.to(menu, {
-        x: "100%",
-        duration: 0.3,
-        ease: "power3.in",
-      });
+      menu.animate(
+        [{ transform: "translateX(0)" }, { transform: "translateX(100%)" }],
+        {
+          duration: 300,
+          easing: "cubic-bezier(0.33, 0, 0.67, 0)",
+          fill: "forwards",
+        },
+      );
     }
 
     return () => {
@@ -181,7 +197,7 @@ export default function Header() {
       {/* Mobile Menu Panel */}
       <div
         ref={menuRef}
-        className="md:hidden top-0 right-0 bottom-0 z-50 fixed flex flex-col bg-background border-stroke border-l w-[280px]"
+        className="md:hidden top-0 right-0 bottom-0 z-50 fixed flex flex-col bg-background border-stroke border-l w-70"
         style={{ transform: "translateX(100%)" }}
         role="dialog"
         aria-modal="true"

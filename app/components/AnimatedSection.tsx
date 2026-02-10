@@ -2,10 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import type { HTMLAttributes, ReactNode } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface AnimatedSectionProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
@@ -22,28 +18,41 @@ export default function AnimatedSection({
     const element = sectionRef.current;
     if (!element) return;
 
-    const targets = element.querySelectorAll("[data-animate]");
+    const targets = element.querySelectorAll<HTMLElement>("[data-animate]");
 
-    gsap.fromTo(
-      targets,
-      { opacity: 0, y: 24 },
+    // Set initial state
+    targets.forEach((target) => {
+      target.style.opacity = "0";
+      target.style.transform = "translateY(24px)";
+      target.style.transition =
+        "opacity 0.8s cubic-bezier(0.33, 1, 0.68, 1), transform 0.8s cubic-bezier(0.33, 1, 0.68, 1)";
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animate each target with stagger
+            targets.forEach((target, index) => {
+              setTimeout(() => {
+                target.style.opacity = "1";
+                target.style.transform = "translateY(0)";
+              }, index * 120); // 120ms stagger
+            });
+            observer.disconnect();
+          }
+        });
+      },
       {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        stagger: 0.12,
-        scrollTrigger: {
-          trigger: element,
-          start: "top 80%",
-        },
+        threshold: 0,
+        rootMargin: "-20% 0px", // Trigger when top 80% of viewport
       },
     );
 
+    observer.observe(element);
+
     return () => {
-      ScrollTrigger.getAll().forEach((trigger: { kill: () => void }) =>
-        trigger.kill(),
-      );
+      observer.disconnect();
     };
   }, []);
 
