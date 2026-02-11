@@ -26,6 +26,7 @@ export default function Header() {
 
   // Close menu on route change
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsOpen(false);
   }, [pathname]);
 
@@ -181,7 +182,7 @@ export default function Header() {
       {/* Mobile Menu Panel */}
       <div
         ref={menuRef}
-        className="md:hidden top-0 right-0 bottom-0 z-50 fixed flex flex-col bg-background border-stroke border-l w-[280px]"
+        className="md:hidden top-0 right-0 bottom-0 z-50 fixed flex flex-col bg-background border-stroke border-l w-70"
         style={{ transform: "translateX(100%)" }}
         role="dialog"
         aria-modal="true"
