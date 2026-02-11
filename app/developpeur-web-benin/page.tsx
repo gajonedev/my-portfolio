@@ -2,110 +2,31 @@ import type { Metadata } from "next";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 import Link from "next/link";
+import { getIcon, MapPin, CheckCircle, ArrowRight } from "@/lib/icons";
 import {
-  MapPin,
-  Globe,
-  ShoppingCart,
-  Smartphone,
-  Bot,
-  CheckCircle,
-  ArrowRight,
-} from "lucide-react";
+  cities,
+  localServices,
+  localAdvantages,
+  remoteCountries,
+  seoKeywords,
+  siteConfig,
+} from "@/data";
 
 export const metadata: Metadata = {
   title: "Développeur Web & Mobile au Bénin — Cotonou, Porto-Novo, Lokossa",
   description:
     "Recherchez un développeur web freelance au Bénin ? Création de sites internet, e-commerce, applications mobiles à Cotonou, Porto-Novo, Lokossa, Parakou. Devis gratuit.",
-  keywords: [
-    "développeur web Bénin",
-    "développeur Cotonou",
-    "création site internet Bénin",
-    "développeur freelance Porto-Novo",
-    "agence web Cotonou",
-    "développeur mobile Bénin",
-    "e-commerce Bénin",
-    "développeur Lokossa",
-    "développeur Parakou",
-    "site web Abomey-Calavi",
-  ],
+  keywords: seoKeywords.slice(0, 10),
   alternates: {
-    canonical: "https://gajone.dev/developpeur-web-benin",
+    canonical: `${siteConfig.url}/developpeur-web-benin`,
   },
   openGraph: {
     title: "Développeur Web & Mobile au Bénin",
     description:
       "Votre développeur freelance pour sites web, e-commerce et apps mobiles à Cotonou, Porto-Novo, Lokossa et partout au Bénin.",
-    url: "https://gajone.dev/developpeur-web-benin",
+    url: `${siteConfig.url}/developpeur-web-benin`,
   },
 };
-
-const cities = [
-  {
-    name: "Cotonou",
-    description: "Capitale économique du Bénin",
-    available: true,
-  },
-  {
-    name: "Porto-Novo",
-    description: "Capitale administrative",
-    available: true,
-  },
-  {
-    name: "Lokossa",
-    description: "Chef-lieu du Mono",
-    available: true,
-  },
-  {
-    name: "Parakou",
-    description: "Capitale du Nord",
-    available: true,
-  },
-  {
-    name: "Abomey-Calavi",
-    description: "Ville universitaire",
-    available: true,
-  },
-  {
-    name: "Bohicon",
-    description: "Carrefour du Sud",
-    available: true,
-  },
-];
-
-const services = [
-  {
-    icon: Globe,
-    title: "Sites vitrines",
-    description:
-      "Sites internet professionnels pour entreprises béninoises, optimisés pour Google.",
-  },
-  {
-    icon: ShoppingCart,
-    title: "E-commerce",
-    description:
-      "Boutiques en ligne avec paiement mobile money, FedaPay, et livraison locale.",
-  },
-  {
-    icon: Smartphone,
-    title: "Applications mobiles",
-    description: "Apps iOS et Android pour startups et entreprises au Bénin.",
-  },
-  {
-    icon: Bot,
-    title: "Automatisation",
-    description:
-      "Chatbots WhatsApp, automatisation des processus métier et intégrations API.",
-  },
-];
-
-const advantages = [
-  "Développeur local, disponible en présentiel à Cotonou",
-  "Connaissance du marché béninois et des moyens de paiement locaux",
-  "Intégration FedaPay, MTN MoMo, Moov Money",
-  "Support en français et accompagnement personnalisé",
-  "Prix adaptés au marché africain",
-  "Délais respectés et communication transparente",
-];
 
 export default function DeveloppeurWebBeninPage() {
   return (
@@ -145,8 +66,8 @@ export default function DeveloppeurWebBeninPage() {
               Services disponibles au Bénin
             </h2>
             <div className="gap-4 grid md:grid-cols-2">
-              {services.map((service) => {
-                const Icon = service.icon;
+              {localServices.map((service) => {
+                const Icon = getIcon(service.iconName);
                 return (
                   <div
                     key={service.title}
@@ -192,8 +113,12 @@ export default function DeveloppeurWebBeninPage() {
             </div>
             <p className="mt-4 text-foreground-muted text-sm">
               Je travaille également en remote avec des clients au{" "}
-              <strong>Togo</strong>, <strong>Niger</strong>,{" "}
-              <strong>Burkina Faso</strong>, <strong>Côte d&apos;Ivoire</strong>{" "}
+              {remoteCountries.map((country, index) => (
+                <span key={country}>
+                  <strong>{country}</strong>
+                  {index < remoteCountries.length - 1 ? ", " : " "}
+                </span>
+              ))}
               et partout dans le monde.
             </p>
           </section>
@@ -204,7 +129,7 @@ export default function DeveloppeurWebBeninPage() {
               Pourquoi choisir un développeur local ?
             </h2>
             <div className="gap-3 grid md:grid-cols-2">
-              {advantages.map((advantage) => (
+              {localAdvantages.map((advantage) => (
                 <div key={advantage} className="flex items-start gap-3">
                   <CheckCircle className="mt-0.5 w-5 h-5 text-green-500 shrink-0" />
                   <p className="text-foreground-muted text-sm">{advantage}</p>

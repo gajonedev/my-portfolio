@@ -1,140 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 import AnimatedSection from "./components/AnimatedSection";
 import Container from "./components/Container";
 import SectionHeader from "./components/SectionHeader";
+import { getIcon, Quote } from "@/lib/icons";
 import {
-  Globe,
-  ShoppingCart,
-  LayoutDashboard,
-  Smartphone,
-  Bot,
-  RefreshCw,
-  Briefcase,
-  Store,
-  Palette,
-  Truck,
-  Search,
-  Lightbulb,
-  Code,
-  Rocket,
-  Quote,
-} from "lucide-react";
-import Link from "next/link";
-
-const services = [
-  {
-    title: "Site vitrine",
-    icon: Globe,
-    description:
-      "Identité digitale moderne avec performance Core Web Vitals, SEO et contenu orienté conversion.",
-  },
-  {
-    title: "E-commerce & marketplace",
-    icon: ShoppingCart,
-    description:
-      "Expérience d'achat fluide, catalogue optimisés performances, paiements sécurisés et automatisations métier.",
-  },
-  {
-    title: "SaaS & dashboards",
-    icon: LayoutDashboard,
-    description:
-      "Interfaces produit fluides, onboarding guidé et architecture scalable pour vos équipes.",
-  },
-  {
-    title: "Apps mobiles",
-    icon: Smartphone,
-    description:
-      "Applications mobiles ou PWA pour offrir une expérience mobile rapide et intuitive.",
-  },
-  {
-    title: "Automatisation IA",
-    icon: Bot,
-    description:
-      "Workflows intelligents, chatbots, intégrations API et analyse de données assistée.",
-  },
-  {
-    title: "Refonte & optimisation",
-    icon: RefreshCw,
-    description:
-      "Audit UX, refonte UI, optimisation des temps de chargement et accessibilité AA.",
-  },
-];
-
-const projects = [
-  {
-    title: "NovaPay",
-    tag: "Fintech • SaaS",
-    icon: Briefcase,
-    description:
-      "Plateforme de paiement multi-pays avec dashboard temps réel et onboarding KYC.",
-  },
-  {
-    title: "AfroMarket",
-    tag: "Marketplace",
-    icon: Store,
-    description:
-      "Marketplace multi-vendeurs avec gestion logistique et expérience mobile-first.",
-  },
-  {
-    title: "Bloom Studio",
-    tag: "Site vitrine",
-    icon: Palette,
-    description:
-      "Landing page premium avec storytelling visuel et génération de leads.",
-  },
-  {
-    title: "Pulse Logistics",
-    tag: "Dashboard",
-    icon: Truck,
-    description:
-      "Solution B2B de suivi de flotte avec analytics et alertes temps réel.",
-  },
-];
-
-const testimonials = [
-  {
-    name: "Mariam A.",
-    role: "CEO, AfroMarket",
-    quote:
-      "Une collaboration fluide et un résultat au-dessus de nos attentes. Les performances du site ont doublé.",
-  },
-  {
-    name: "Jean K.",
-    role: "Product Manager, NovaPay",
-    quote:
-      "Design précis, rendu propre et délai respecté. Nous avons apprécié la vision produit.",
-  },
-  {
-    name: "Claire S.",
-    role: "Fondatrice, Bloom Studio",
-    quote:
-      "Le site convertit mieux et reflète parfaitement notre image de marque. Merci !",
-  },
-];
-
-const processSteps = [
-  {
-    title: "Reconnaissance",
-    icon: Search,
-    description:
-      "Comprendre vos objectifs business, cible, concurrence et KPI clés.",
-  },
-  {
-    title: "Design System",
-    icon: Lightbulb,
-    description: "Création d'une identité UI/UX cohérente et modulaire.",
-  },
-  {
-    title: "Développement",
-    icon: Code,
-    description: "Code moderne, composants scalables, tests et performance.",
-  },
-  {
-    title: "Optimisation",
-    icon: Rocket,
-    description: "SEO, accessibilité, analytics et optimisation continue.",
-  },
-];
+  servicesPreview,
+  projectsPreview,
+  testimonials,
+  processSteps,
+  stats,
+  stackAndTools,
+  aboutHighlights,
+} from "@/data";
 
 export default function Home() {
   return (
@@ -178,12 +56,7 @@ export default function Home() {
               className="gap-6 grid grid-cols-2 sm:grid-cols-4 text-foreground-muted text-sm"
               data-animate
             >
-              {[
-                { label: "Projets livrés", value: "+5" },
-                { label: "Clients", value: "+2" },
-                { label: "Temps moyen", value: "4-8 sem" },
-                { label: "Satisfaction", value: "4.9/5" },
-              ].map((stat) => (
+              {stats.map((stat) => (
                 <div key={stat.label} className="flex flex-col gap-1">
                   <span className="font-semibold text-foreground text-lg">
                     {stat.value}
@@ -220,8 +93,8 @@ export default function Home() {
             subtitle="Je combine design UI et system, développement full-stack et optimisation pour livrer des produits performants et élégants."
           />
           <div className="gap-6 grid md:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => {
-              const Icon = service.icon;
+            {servicesPreview.map((service) => {
+              const Icon = getIcon(service.iconName);
               return (
                 <div
                   key={service.title}
@@ -252,8 +125,8 @@ export default function Home() {
             subtitle="Chaque projet est construit pour convertir, rassurer et accélérer la croissance de votre marque."
           />
           <div className="gap-6 grid md:grid-cols-2">
-            {projects.map((project) => {
-              const Icon = project.icon;
+            {projectsPreview.map((project) => {
+              const Icon = getIcon(project.iconName);
               return (
                 <div
                   key={project.title}
@@ -302,7 +175,7 @@ export default function Home() {
           />
           <div className="gap-6 grid md:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step, index) => {
-              const Icon = step.icon;
+              const Icon = getIcon(step.iconName);
               return (
                 <div
                   key={step.title}
@@ -339,11 +212,7 @@ export default function Home() {
               subtitle="J'accorde beaucoup d'importance à l'expérience utilisateur, la vitesse et la clarté des parcours afin de convertir vos visiteurs en clients."
             />
             <div className="gap-4 grid text-foreground-muted text-sm">
-              {[
-                "Design system cohérent et scalable",
-                "Stratégie SEO et contenu optimisés",
-                "Livrables prêts pour la croissance",
-              ].map((item) => (
+              {aboutHighlights.map((item) => (
                 <div key={item} className="flex items-center gap-3">
                   <span className="bg-primary rounded-full w-2 h-2" />
                   <span>{item}</span>
@@ -359,18 +228,10 @@ export default function Home() {
               Stack & outils
             </h3>
             <p className="mt-3 text-foreground-muted text-sm">
-              Next.js, React, TailwindCSS, GSAP, Node.js, Supabase, WordPress,
-              WooCommerce.
+              {stackAndTools.main}
             </p>
             <div className="flex flex-wrap gap-2 mt-6 text-foreground-muted text-xs">
-              {[
-                "Design system",
-                "API REST",
-                "SEO",
-                "Performance",
-                "Monitoring",
-                "Analytics",
-              ].map((tag) => (
+              {stackAndTools.tags.map((tag) => (
                 <span
                   key={tag}
                   className="bg-background px-3 py-1 border border-stroke rounded-full"

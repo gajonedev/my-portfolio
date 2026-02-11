@@ -1,26 +1,22 @@
 import Link from "next/link";
 import Container from "./Container";
-import { Github, Linkedin, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, Phone, MapPin } from "@/lib/icons";
+import {
+  navLinks,
+  footerLinks,
+  socialLinks,
+  siteConfig,
+  contactInfo,
+} from "@/data";
 
-const navLinks = [
-  { label: "Accueil", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Projets", href: "/projects" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/contact" },
-];
-
-const socialLinks = [
-  { label: "GitHub", href: "https://github.com/gajonedev", icon: Github },
-  {
-    label: "LinkedIn",
-    href: "https://linkedin.com/in/gajonedev",
-    icon: Linkedin,
-  },
-  { label: "Twitter", href: "https://twitter.com/gajonedev", icon: Twitter },
-  { label: "Email", href: "mailto:gajonedev@gmail.com", icon: Mail },
-  { label: "Phone", href: "tel:+22901468973222", icon: Phone },
-];
+const socialIconMap: Record<
+  string,
+  React.ComponentType<{ className?: string }>
+> = {
+  GitHub: Github,
+  LinkedIn: Linkedin,
+  Twitter: Twitter,
+};
 
 export default function Footer() {
   return (
@@ -29,32 +25,45 @@ export default function Footer() {
         <div className="flex flex-col gap-4">
           <Link href="/" className="flex items-center gap-3">
             <div className="flex justify-center items-center bg-primary rounded-xl w-9 h-9 font-bold text-[#1a1625] text-sm">
-              NG
+              {siteConfig.shortName}
             </div>
             <span className="font-semibold text-foreground text-lg">
-              Néhémie Gandonou
+              {siteConfig.name}
             </span>
           </Link>
           <p className="max-w-md text-foreground-muted text-sm">
-            Développeur web & mobile basé à Cotonou, Bénin. Je conçois des
-            expériences digitales modernes, rapides et prêtes à convertir.
+            {siteConfig.description}
           </p>
           <div className="flex gap-3">
             {socialLinks.map((social) => {
-              const Icon = social.icon;
+              const Icon = socialIconMap[social.name];
               return (
                 <a
-                  key={social.label}
+                  key={social.name}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex justify-center items-center bg-background border border-stroke hover:border-primary rounded-full w-9 h-9 text-foreground-muted hover:text-primary transition"
-                  aria-label={social.label}
+                  aria-label={social.name}
                 >
                   <Icon className="w-4 h-4" />
                 </a>
               );
             })}
+            <a
+              href={`mailto:${contactInfo.email}`}
+              className="flex justify-center items-center bg-background border border-stroke hover:border-primary rounded-full w-9 h-9 text-foreground-muted hover:text-primary transition"
+              aria-label="Email"
+            >
+              <Mail className="w-4 h-4" />
+            </a>
+            <a
+              href={`tel:${contactInfo.phoneRaw}`}
+              className="flex justify-center items-center bg-background border border-stroke hover:border-primary rounded-full w-9 h-9 text-foreground-muted hover:text-primary transition"
+              aria-label="Phone"
+            >
+              <Phone className="w-4 h-4" />
+            </a>
           </div>
         </div>
 
@@ -81,42 +90,41 @@ export default function Footer() {
           </span>
           <div className="flex flex-col gap-3 text-foreground-muted text-sm">
             <a
-              href="mailto:gajonedev@gmail.com"
+              href={`mailto:${contactInfo.email}`}
               className="flex items-center gap-2 hover:text-foreground transition"
             >
               <Mail className="w-4 h-4" />
-              gajonedev@gmail.com
+              {contactInfo.email}
             </a>
             <a
-              href="tel:+22901468973222"
+              href={`tel:${contactInfo.phoneRaw}`}
               className="flex items-center gap-2 hover:text-foreground transition"
             >
               <Phone className="w-4 h-4" />
-              +229 01 46 89 73 22
+              {contactInfo.phone}
             </a>
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4" />
-              Cotonou, Bénin
+              {contactInfo.location}
             </div>
           </div>
         </div>
       </Container>
 
       <Container className="flex md:flex-row flex-col justify-between items-center gap-4 mt-10 pt-6 border-stroke border-t text-foreground-muted/60 text-xs">
-        <p>© 2026 Néhémie Gandonou. Tous droits réservés.</p>
+        <p>
+          © {new Date().getFullYear()} {siteConfig.name}. Tous droits réservés.
+        </p>
         <div className="flex gap-4">
-          <Link
-            href="/mentions-legales"
-            className="hover:text-foreground transition"
-          >
-            Mentions légales
-          </Link>
-          <Link
-            href="/politique-confidentialite"
-            className="hover:text-foreground transition"
-          >
-            Politique de confidentialité
-          </Link>
+          {footerLinks.legal.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="hover:text-foreground transition"
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
       </Container>
     </footer>

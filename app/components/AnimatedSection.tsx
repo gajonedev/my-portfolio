@@ -2,10 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import type { HTMLAttributes, ReactNode } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 interface AnimatedSectionProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
@@ -23,28 +19,31 @@ export default function AnimatedSection({
     if (!element) return;
 
     const targets = element.querySelectorAll("[data-animate]");
+    if (targets.length === 0) return;
 
-    gsap.fromTo(
-      targets,
-      { opacity: 0, y: 24 },
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Stagger animation avec délai progressif
+            targets.forEach((target, index) => {
+              setTimeout(() => {
+                target.classList.add("animated");
+              }, index * 180); // 180ms stagger
+            });
+            observer.disconnect();
+          }
+        });
+      },
       {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power3.out",
-        stagger: 0.12,
-        scrollTrigger: {
-          trigger: element,
-          start: "top 80%",
-        },
+        rootMargin: "-20% 0px",
+        threshold: 0,
       },
     );
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger: { kill: () => void }) =>
-        trigger.kill(),
-      );
-    };
+    observer.observe(element);
+
+    return () => observer.disconnect();
   }, []);
 
   return (

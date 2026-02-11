@@ -1,6 +1,7 @@
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock } from "@/lib/icons";
+import { contactInfo } from "@/data";
 
 export default function ContactPage() {
   return (
@@ -33,22 +34,22 @@ export default function ContactPage() {
               </p>
               <div className="flex flex-col gap-3 mt-4">
                 <a
-                  href="mailto:gajonedev@gmail.com"
+                  href={`mailto:${contactInfo.email}`}
                   className="flex items-center gap-3 text-foreground hover:text-primary transition"
                 >
                   <Mail className="w-5 h-5 text-primary" />
-                  gajonedev@gmail.com
+                  {contactInfo.email}
                 </a>
                 <a
-                  href="tel:+22901468973222"
+                  href={`tel:${contactInfo.phoneRaw}`}
                   className="flex items-center gap-3 text-foreground-muted hover:text-foreground transition"
                 >
                   <Phone className="w-5 h-5 text-primary" />
-                  +229 01 46 89 73 22
+                  {contactInfo.phone}
                 </a>
                 <div className="flex items-center gap-3 text-foreground-muted">
                   <MapPin className="w-5 h-5 text-primary" />
-                  Cotonou, Bénin
+                  {contactInfo.location}
                 </div>
               </div>
             </div>
@@ -58,13 +59,13 @@ export default function ContactPage() {
                 <p className="font-medium">Planning</p>
               </div>
               <p className="mt-2 text-foreground-muted text-sm">
-                Prise de brief sous 48h.
+                {contactInfo.responseTime}
               </p>
             </div>
             <div className="flex flex-wrap gap-2 text-foreground-muted/60 text-xs">
-              <span>Cotonou, Bénin</span>
+              <span>{contactInfo.location}</span>
               <span>•</span>
-              <span>Remote / Worldwide</span>
+              <span>{contactInfo.availability}</span>
             </div>
           </div>
         </Container>

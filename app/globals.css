@@ -104,6 +104,20 @@ body {
     0 0 50px rgba(193, 165, 239, 0.2);
 }
 
+/* Animation styles - état initial invisible pour éviter le flash */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+[data-animate].animated {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 /* Shadcn-style inputs */
 .input {
   display: flex;

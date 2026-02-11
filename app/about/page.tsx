@@ -1,43 +1,7 @@
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
-import { Code, Palette, Rocket, Users, Award, Heart } from "lucide-react";
-
-const skills = [
-  {
-    name: "Frontend",
-    items: ["React", "Next.js", "TypeScript", "TailwindCSS", "GSAP"],
-  },
-  {
-    name: "Backend",
-    items: ["Node.js", "Express", "Prisma", "PostgreSQL", "Supabase"],
-  },
-  { name: "Mobile", items: ["React Native", "Expo", "PWA"] },
-  { name: "CMS", items: ["WordPress", "WooCommerce", "Strapi", "Sanity"] },
-];
-
-const values = [
-  {
-    icon: Code,
-    title: "Code propre",
-    description:
-      "Architecture scalable, composants réutilisables et bonnes pratiques.",
-  },
-  {
-    icon: Palette,
-    title: "Design system",
-    description: "Cohérence visuelle et expérience utilisateur optimale.",
-  },
-  {
-    icon: Rocket,
-    title: "Performance",
-    description: "Sites rapides, optimisés SEO et Core Web Vitals.",
-  },
-  {
-    icon: Users,
-    title: "Collaboration",
-    description: "Communication transparente et suivi régulier du projet.",
-  },
-];
+import { getIcon, Award, Users, Heart, Rocket } from "@/lib/icons";
+import { skills, values, aboutStats } from "@/data";
 
 export default function AboutPage() {
   return (
@@ -51,7 +15,7 @@ export default function AboutPage() {
           {/* Introduction */}
           <section className="lg:items-center gap-8 grid lg:grid-cols-2">
             <div className="bg-card p-8 border border-stroke rounded-3xl">
-              <div className="flex justify-center items-center bg-primary rounded-2xl w-20 h-20 font-bold text-white text-2xl">
+              <div className="flex justify-center items-center bg-primary rounded-2xl w-20 h-20 font-bold text-[#1a1625] text-2xl">
                 NG
               </div>
               <h2 className="mt-6 font-semibold text-foreground text-2xl">
@@ -73,7 +37,7 @@ export default function AboutPage() {
             </div>
             <div className="gap-4 grid">
               {values.map((value) => {
-                const Icon = value.icon;
+                const Icon = getIcon(value.iconName);
                 return (
                   <div
                     key={value.title}
@@ -131,13 +95,9 @@ export default function AboutPage() {
           {/* Stats */}
           <section className="bg-card p-8 border border-stroke rounded-3xl">
             <div className="gap-8 grid md:grid-cols-4 text-center">
-              {[
-                { icon: Award, value: "+48", label: "Projets livrés" },
-                { icon: Users, value: "12", label: "Clients internationaux" },
-                { icon: Heart, value: "4.9/5", label: "Satisfaction client" },
-                { icon: Rocket, value: "5+", label: "Années d'expérience" },
-              ].map((stat) => {
-                const Icon = stat.icon;
+              {aboutStats.map((stat, index) => {
+                const icons = [Award, Users, Heart, Rocket];
+                const Icon = icons[index];
                 return (
                   <div
                     key={stat.label}

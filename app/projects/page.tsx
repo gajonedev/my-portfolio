@@ -1,47 +1,8 @@
 import Link from "next/link";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
-import { Briefcase, Store, Palette, Truck, ExternalLink } from "lucide-react";
-import { link } from "fs";
-
-const projects = [
-  {
-    name: "NovaPay",
-    sector: "Fintech • SaaS",
-    icon: Briefcase,
-    summary:
-      "Plateforme de paiement avec dashboard en temps réel, KYC et automatisations back-office.",
-    tech: ["Next.js", "Node.js", "PostgreSQL"],
-    link: "https://github.com/gajonedev",
-  },
-  {
-    name: "AfroMarket",
-    sector: "Marketplace",
-    icon: Store,
-    summary:
-      "Marketplace multi-vendeurs, gestion logistique et parcours mobile-first optimisé.",
-    tech: ["React", "Supabase", "Stripe"],
-    link: "https://github.com/gajonedev",
-  },
-  {
-    name: "Bloom Studio",
-    sector: "Site vitrine",
-    icon: Palette,
-    summary:
-      "Branding digital et landing page premium pour maximiser la conversion.",
-    tech: ["Next.js", "GSAP", "TailwindCSS"],
-    link: "https://github.com/gajonedev",
-  },
-  {
-    name: "Pulse Logistics",
-    sector: "Dashboard B2B",
-    icon: Truck,
-    summary:
-      "Visualisation de flotte et alertes temps réel pour les équipes opérations.",
-    tech: ["React", "D3.js", "Firebase"],
-    link: "https://github.com/gajonedev",
-  },
-];
+import { getIcon, ExternalLink } from "@/lib/icons";
+import { projects } from "@/data";
 
 export default function ProjectsPage() {
   return (
@@ -53,7 +14,7 @@ export default function ProjectsPage() {
       <main className="py-16">
         <Container className="gap-6 grid md:grid-cols-2">
           {projects.map((project) => {
-            const Icon = project.icon;
+            const Icon = getIcon(project.iconName);
             return (
               <div
                 key={project.name}
