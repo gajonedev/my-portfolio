@@ -88,8 +88,7 @@ const services = [
   {
     icon: Smartphone,
     title: "Applications mobiles",
-    description:
-      "Apps iOS et Android pour startups et entreprises au Bénin.",
+    description: "Apps iOS et Android pour startups et entreprises au Bénin.",
   },
   {
     icon: Bot,
@@ -142,7 +141,7 @@ export default function DeveloppeurWebBeninPage() {
 
           {/* Services */}
           <section>
-            <h2 className="font-semibold text-foreground text-xl mb-6">
+            <h2 className="mb-6 font-semibold text-foreground text-xl">
               Services disponibles au Bénin
             </h2>
             <div className="gap-4 grid md:grid-cols-2">
@@ -172,7 +171,7 @@ export default function DeveloppeurWebBeninPage() {
 
           {/* Villes couvertes */}
           <section>
-            <h2 className="font-semibold text-foreground text-xl mb-6">
+            <h2 className="mb-6 font-semibold text-foreground text-xl">
               Villes où j&apos;interviens
             </h2>
             <div className="gap-3 grid grid-cols-2 md:grid-cols-3">
@@ -201,13 +200,13 @@ export default function DeveloppeurWebBeninPage() {
 
           {/* Avantages */}
           <section className="bg-card p-8 border border-stroke rounded-3xl">
-            <h2 className="font-semibold text-foreground text-xl mb-6">
+            <h2 className="mb-6 font-semibold text-foreground text-xl">
               Pourquoi choisir un développeur local ?
             </h2>
             <div className="gap-3 grid md:grid-cols-2">
               {advantages.map((advantage) => (
                 <div key={advantage} className="flex items-start gap-3">
-                  <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                  <CheckCircle className="mt-0.5 w-5 h-5 text-green-500 shrink-0" />
                   <p className="text-foreground-muted text-sm">{advantage}</p>
                 </div>
               ))}
