@@ -124,7 +124,7 @@ export default function Header() {
       <header className="top-0 z-40 sticky bg-background/80 backdrop-blur-md border-stroke border-b">
         <Container className="flex justify-between items-center py-4">
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex justify-center items-center bg-primary rounded-xl w-9 h-9 font-bold text-white text-sm">
+            <div className="flex justify-center items-center bg-primary rounded-xl w-9 h-9 font-bold text-[#1a1625] text-sm">
               NG
             </div>
             <div>
@@ -153,7 +153,7 @@ export default function Header() {
             <ThemeToggle />
             <Link
               href="/contact"
-              className="hidden sm:inline-flex bg-primary hover:bg-primary-strong px-5 py-2 rounded-full font-semibold text-white text-sm transition"
+              className="hidden sm:inline-flex bg-primary hover:bg-primary-strong px-5 py-2 rounded-full font-semibold text-[#1a1625] text-sm transition"
             >
               Démarrer un projet
             </Link>
@@ -230,7 +230,7 @@ export default function Header() {
           <Link
             href="/contact"
             onClick={() => setIsOpen(false)}
-            className="block bg-primary hover:bg-primary-strong px-5 py-3 rounded-full w-full font-semibold text-white text-sm text-center transition"
+            className="block bg-primary hover:bg-primary-strong px-5 py-3 rounded-full w-full font-semibold text-[#1a1625] text-sm text-center transition"
           >
             Démarrer un projet
           </Link>
