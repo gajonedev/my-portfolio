@@ -99,7 +99,7 @@ export default function Home() {
                 <div
                   key={service.title}
                   data-animate
-                  className="group bg-card/80 hover:shadow-lg p-6 border border-stroke hover:border-primary/50 rounded-3xl transition hover:-translate-y-1"
+                  className="group bg-card/80 hover:shadow-lg p-6 border border-stroke hover:border-primary/50 rounded-3xl transition-all hover:-translate-y-1"
                 >
                   <div className="flex justify-center items-center bg-primary/20 mb-4 rounded-2xl w-12 h-12 text-primary">
                     <Icon className="w-6 h-6" />
