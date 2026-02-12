@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import gsap from "gsap";
 import Container from "./Container";
 import ThemeToggle from "./ThemeToggle";
 import { Menu, X } from "@/lib/icons";
@@ -21,7 +22,7 @@ export default function Header() {
     setIsOpen(false);
   }, [pathname]);
 
-  // Native JS animations
+  // GSAP animations
   useEffect(() => {
     const menu = menuRef.current;
     const overlay = overlayRef.current;
@@ -34,64 +35,48 @@ export default function Header() {
       document.body.style.overflow = "hidden";
 
       // Animate overlay
-      overlay.animate([{ opacity: 0 }, { opacity: 1 }], {
-        duration: 300,
-        easing: "cubic-bezier(0.33, 1, 0.68, 1)",
-        fill: "forwards",
+      gsap.to(overlay, {
+        opacity: 1,
+        duration: 0.3,
+        ease: "power2.out",
       });
 
       // Animate menu panel
-      menu.animate(
-        [{ transform: "translateX(100%)" }, { transform: "translateX(0)" }],
-        {
-          duration: 400,
-          easing: "cubic-bezier(0.33, 1, 0.68, 1)",
-          fill: "forwards",
-        },
-      );
+      gsap.to(menu, {
+        x: 0,
+        duration: 0.4,
+        ease: "power3.out",
+      });
 
       // Animate menu items with stagger
-      items.forEach((item, index) => {
-        if (item) {
-          item.style.opacity = "0";
-          item.style.transform = "translateX(30px)";
-          setTimeout(
-            () => {
-              item.animate(
-                [
-                  { opacity: 0, transform: "translateX(30px)" },
-                  { opacity: 1, transform: "translateX(0)" },
-                ],
-                {
-                  duration: 400,
-                  easing: "cubic-bezier(0.33, 1, 0.68, 1)",
-                  fill: "forwards",
-                },
-              );
-            },
-            200 + index * 80,
-          );
-        }
-      });
+      gsap.fromTo(
+        items,
+        { opacity: 0, x: 30 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.4,
+          ease: "power3.out",
+          stagger: 0.08,
+          delay: 0.2,
+        },
+      );
     } else {
       // Restore body scroll
       document.body.style.overflow = "";
 
       // Animate out
-      overlay.animate([{ opacity: 1 }, { opacity: 0 }], {
-        duration: 300,
-        easing: "cubic-bezier(0.33, 0, 0.67, 0)",
-        fill: "forwards",
+      gsap.to(overlay, {
+        opacity: 0,
+        duration: 0.3,
+        ease: "power2.in",
       });
 
-      menu.animate(
-        [{ transform: "translateX(0)" }, { transform: "translateX(100%)" }],
-        {
-          duration: 300,
-          easing: "cubic-bezier(0.33, 0, 0.67, 0)",
-          fill: "forwards",
-        },
-      );
+      gsap.to(menu, {
+        x: "100%",
+        duration: 0.3,
+        ease: "power2.in",
+      });
     }
 
     return () => {
