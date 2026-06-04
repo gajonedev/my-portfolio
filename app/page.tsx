@@ -73,12 +73,12 @@ export default function Home() {
             <div className="right-0 -bottom-8 absolute bg-primary/20 blur-2xl rounded-full w-28 h-28" />
             <div className="bg-card/80 shadow-xl p-4 border border-stroke rounded-4xl">
               <Image
-                src="/portrait.svg"
+                src="/portrait.jpeg"
                 alt="Portrait de Néhémie Gandonou"
                 width={360}
                 height={440}
                 priority
-                className="rounded-3xl"
+                className="rounded-3xl object-cover"
               />
             </div>
           </div>
