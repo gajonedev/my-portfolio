@@ -8,25 +8,10 @@ export default function ContactPage() {
     <>
       <PageHeader
         title="Contact"
-        description="Parlons de votre prochain site ou produit digital."
+        description="Parlons de votre prochain site web ou application mobile."
       />
       <main className="py-16">
         <Container className="gap-10 grid lg:grid-cols-[0.6fr_0.4fr]">
-          <form className="gap-4 grid bg-card p-6 border border-stroke rounded-3xl">
-            <div className="gap-4 grid md:grid-cols-2">
-              <input type="text" placeholder="Nom complet" className="input" />
-              <input type="email" placeholder="Email" className="input" />
-            </div>
-            <input type="text" placeholder="Type de projet" className="input" />
-            <textarea
-              placeholder="Décrivez votre besoin"
-              rows={5}
-              className="textarea"
-            />
-            <button type="button" className="w-fit btn-primary">
-              Envoyer la demande
-            </button>
-          </form>
           <div className="flex flex-col gap-6 bg-card p-6 border border-stroke rounded-3xl">
             <div>
               <p className="text-foreground-muted/60 text-sm uppercase tracking-[0.25em]">
@@ -68,6 +53,21 @@ export default function ContactPage() {
               <span>{contactInfo.availability}</span>
             </div>
           </div>
+          <form className="gap-4 grid bg-card p-6 border border-stroke rounded-3xl">
+            <div className="gap-4 grid md:grid-cols-2">
+              <input type="text" placeholder="Nom complet" className="input" />
+              <input type="email" placeholder="Email" className="input" />
+            </div>
+            <input type="text" placeholder="Type de projet" className="input" />
+            <textarea
+              placeholder="Décrivez votre besoin"
+              rows={5}
+              className="textarea"
+            />
+            <button type="button" className="w-fit btn-primary">
+              Envoyer la demande
+            </button>
+          </form>
         </Container>
       </main>
     </>

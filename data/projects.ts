@@ -16,6 +16,7 @@ export interface ProjectPreview {
   tag: string;
   iconName: string;
   description: string;
+  year?: string;
 }
 
 export const projectsPreview: ProjectPreview[] = [
@@ -25,6 +26,7 @@ export const projectsPreview: ProjectPreview[] = [
     iconName: "Briefcase",
     description:
       "Plateforme de paiement multi-pays avec dashboard temps réel et onboarding KYC.",
+    year: "2025",
   },
   {
     title: "AfroMarket",
@@ -32,6 +34,7 @@ export const projectsPreview: ProjectPreview[] = [
     iconName: "Store",
     description:
       "Marketplace multi-vendeurs avec gestion logistique et expérience mobile-first.",
+    year: "2025",
   },
   {
     title: "Bloom Studio",
@@ -39,6 +42,7 @@ export const projectsPreview: ProjectPreview[] = [
     iconName: "Palette",
     description:
       "Landing page premium avec storytelling visuel et génération de leads.",
+    year: "2025",
   },
   {
     title: "Pulse Logistics",
@@ -46,6 +50,7 @@ export const projectsPreview: ProjectPreview[] = [
     iconName: "Truck",
     description:
       "Solution B2B de suivi de flotte avec analytics et alertes temps réel.",
+    year: "2025",
   },
 ];
 

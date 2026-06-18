@@ -14,7 +14,13 @@ export interface ServiceDetailed extends Service {
 // Services résumés (page d'accueil)
 export const servicesPreview: Service[] = [
   {
-    title: "Site vitrine",
+    title: "Applications mobiles",
+    iconName: "Smartphone",
+    description:
+      "Applications mobiles professionnelles et complètes ou PWA pour offrir une expérience mobile rapide et intuitive.",
+  },
+  {
+    title: "Site web vitrine & fullstack",
     iconName: "Globe",
     description:
       "Identité digitale moderne avec performance Core Web Vitals, SEO et contenu orienté conversion.",
@@ -30,12 +36,6 @@ export const servicesPreview: Service[] = [
     iconName: "LayoutDashboard",
     description:
       "Interfaces produit fluides, onboarding guidé et architecture scalable pour vos équipes.",
-  },
-  {
-    title: "Apps mobiles",
-    iconName: "Smartphone",
-    description:
-      "Applications mobiles ou PWA pour offrir une expérience mobile rapide et intuitive.",
   },
   {
     title: "Automatisation IA",
@@ -54,10 +54,10 @@ export const servicesPreview: Service[] = [
 // Services détaillés (page services)
 export const servicesDetailed: ServiceDetailed[] = [
   {
-    title: "Site vitrine premium",
+    title: "Site web vitrine & fullstack",
     iconName: "Globe",
     description:
-      "Identité digitale moderne avec performance Core Web Vitals, SEO et contenu orienté conversion.",
+      "Identité digitale moderne avec performance Core Web Vitals, SEO et contenu orienté conversion. ",
     details:
       "UI/UX haut de gamme, SEO technique, performance Core Web Vitals, et copywriting orienté conversion. Livré avec un design system complet.",
     features: [
@@ -91,12 +91,12 @@ export const servicesDetailed: ServiceDetailed[] = [
     features: ["Multi-tenant", "Auth SSO", "API REST", "Monitoring"],
   },
   {
-    title: "Apps mobiles",
+    title: "Applications mobiles",
     iconName: "Smartphone",
     description:
       "Applications mobiles ou PWA pour offrir une expérience mobile rapide et intuitive.",
     details:
-      "Applications React Native ou PWA optimisées pour la rétention. Publication App Store et Google Play incluse.",
+      "Applications mobiles natives et performantes pour un expérience mobile optimale. Publication App Store et Google Play incluse.",
     features: [
       "Cross-platform",
       "Push notifications",

@@ -40,8 +40,9 @@ export default function Home() {
                 Je suis Néhémie, développeur web & mobile basé à Cotonou, Bénin.
                 Je conçois des expériences digitales modernes, rapides et qui
                 convertissent. J&apos;accompagne les startups et PME à créer des
-                expériences web et mobile qui en valent la peine : sites
-                vitrines | e-commerce, marketplaces, SaaS et automatisations IA.
+                expériences web et mobile qui en valent la peine : applications
+                mobiles, sites web full-stack | e-commerce, marketplaces, SaaS
+                et automatisations IA.
               </p>
             </div>
             <div className="flex flex-wrap gap-4" data-animate>
@@ -138,7 +139,7 @@ export default function Home() {
                       {project.tag}
                     </span>
                     <span className="text-foreground-muted/60 text-xs">
-                      2025
+                      {project.year}
                     </span>
                   </div>
                   <div className="flex items-center gap-3">

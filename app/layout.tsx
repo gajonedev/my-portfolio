@@ -87,7 +87,7 @@ const jsonLd = {
       "@id": `${baseUrl}/#person`,
       name: "Néhémie Gandonou",
       url: baseUrl,
-      image: `${baseUrl}/photo.jpg`,
+      image: `${baseUrl}/portrait.jpeg`,
       sameAs: [
         "https://github.com/gajonedev",
         "https://linkedin.com/in/gajonedev",
@@ -119,7 +119,7 @@ const jsonLd = {
       "@type": "LocalBusiness",
       "@id": `${baseUrl}/#business`,
       name: "Néhémie Gandonou - Développeur Web",
-      image: `${baseUrl}/photo.jpg`,
+      image: `${baseUrl}/portrait.jpeg`,
       url: baseUrl,
       telephone: "+22901468973222",
       email: "gajonedev@gmail.com",
