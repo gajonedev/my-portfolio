@@ -13,23 +13,19 @@ interface GlowButtonProps {
   type?: "button" | "submit";
   className?: string;
   external?: boolean;
-  pulse?: boolean;
   ariaLabel?: string;
 }
 
-const baseClass = "btn-primary";
+const hover = { y: -2, scale: 1.02 };
+const tap = { scale: 0.97 };
 
-const hover = { scale: 1.02 };
-const tap = { scale: 0.98 };
-
-// Subtle continuous glow pulse for primary CTAs
-const pulseAnim = {
-  boxShadow: [
-    "0 4px 20px var(--primary-glow-strong)",
-    "0 6px 34px var(--primary-glow-strong), 0 0 44px var(--primary-glow)",
-    "0 4px 20px var(--primary-glow-strong)",
-  ],
-};
+// Track cursor inside the button to drive the radial highlight (.btn-shine)
+function handleMove(e: React.MouseEvent<HTMLElement>) {
+  const el = e.currentTarget;
+  const rect = el.getBoundingClientRect();
+  el.style.setProperty("--mx", `${e.clientX - rect.left}px`);
+  el.style.setProperty("--my", `${e.clientY - rect.top}px`);
+}
 
 export default function GlowButton({
   children,
@@ -38,13 +34,14 @@ export default function GlowButton({
   type = "button",
   className = "",
   external = false,
-  pulse = false,
   ariaLabel,
 }: GlowButtonProps) {
-  const animate = pulse ? pulseAnim : undefined;
-  const transition = pulse
-    ? { duration: 3, repeat: Infinity, ease: "easeInOut" as const }
-    : undefined;
+  const content = (
+    <>
+      <span className="btn-shine" aria-hidden="true" />
+      <span className="inline-flex items-center gap-2">{children}</span>
+    </>
+  );
 
   if (href) {
     const linkProps = external
@@ -54,13 +51,12 @@ export default function GlowButton({
       <MotionLink
         {...linkProps}
         aria-label={ariaLabel}
-        className={`${baseClass} ${className}`}
+        onMouseMove={handleMove}
+        className={`btn-primary ${className}`}
         whileHover={hover}
         whileTap={tap}
-        animate={animate}
-        transition={transition}
       >
-        {children}
+        {content}
       </MotionLink>
     );
   }
@@ -70,13 +66,12 @@ export default function GlowButton({
       type={type}
       onClick={onClick}
       aria-label={ariaLabel}
-      className={`${baseClass} ${className}`}
+      onMouseMove={handleMove}
+      className={`btn-primary ${className}`}
       whileHover={hover}
       whileTap={tap}
-      animate={animate}
-      transition={transition}
     >
-      {children}
+      {content}
     </motion.button>
   );
 }

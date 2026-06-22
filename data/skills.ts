@@ -13,7 +13,11 @@ export interface Value {
 
 export const skills: SkillCategory[] = [
   {
-    name: "Frontend",
+    name: "Mobile",
+    items: ["Flutter", "Dart", "PWA", "App / Play Store"],
+  },
+  {
+    name: "Web",
     items: ["React", "Next.js", "TypeScript", "TailwindCSS"],
   },
   {
@@ -21,12 +25,8 @@ export const skills: SkillCategory[] = [
     items: ["Node.js", "Express", "Prisma", "PostgreSQL", "Supabase"],
   },
   {
-    name: "Mobile",
-    items: ["Flutter", "PWA"],
-  },
-  {
-    name: "CMS",
-    items: ["WordPress", "WooCommerce", "Strapi", "Sanity"],
+    name: "CMS Headless",
+    items: ["Sanity", "Strapi", "Payload"],
   },
 ];
 

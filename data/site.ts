@@ -54,14 +54,15 @@ export const aboutStats = [
 ] as const;
 
 export const stackAndTools = {
-  main: "Next.js, React, TailwindCSS, Node.js, Supabase, WordPress, WooCommerce.",
+  main: "Flutter, Next.js, React, TypeScript, Node.js, Supabase, Sanity & Payload — et, à l'occasion, des systèmes embarqués ESP32 / Arduino.",
   tags: [
-    "Design system",
+    "Mobile Flutter",
+    "Web Next.js",
     "API REST",
+    "Design system",
     "SEO",
     "Performance",
-    "Monitoring",
-    "Analytics",
+    "IoT / Embedded",
   ],
 } as const;
 

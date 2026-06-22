@@ -3,7 +3,7 @@ import Container from "./components/Container";
 import Hero from "./components/sections/Hero";
 import SectionWrapper from "./components/layout/SectionWrapper";
 import SectionHeading from "./components/ui/SectionHeading";
-import GlassCard from "./components/ui/GlassCard";
+import SpotlightCard from "./components/ui/SpotlightCard";
 import {
   StaggerContainer,
   StaggerItem,
@@ -11,9 +11,7 @@ import {
 import ScrollReveal from "./components/ui/ScrollReveal";
 import GlowButton from "./components/ui/GlowButton";
 import OutlineButton from "./components/ui/OutlineButton";
-import GradientText from "./components/ui/GradientText";
 import TechBadge from "./components/ui/TechBadge";
-import AnimatedBorder from "./components/ui/AnimatedBorder";
 import DotPattern from "./components/ui/DotPattern";
 import { getIcon, Quote, ArrowRight, CheckCircle } from "@/lib/icons";
 import {
@@ -26,6 +24,12 @@ import {
   aboutHighlights,
   contactInfo,
 } from "@/data";
+
+// Rotating accent palette for card corner glows (coral / blue / amber)
+const ACCENTS = ["#ff4d3d", "#3b82f6", "#f59e0b"];
+const CORNERS = ["tr", "tl", "br", "bl"] as const;
+const accentFor = (i: number) => ACCENTS[i % ACCENTS.length];
+const cornerFor = (i: number) => CORNERS[i % CORNERS.length];
 
 export default function Home() {
   return (
@@ -44,7 +48,7 @@ export default function Home() {
               title={
                 <>
                   Un partenaire produit concentré sur la{" "}
-                  <GradientText>performance</GradientText>
+                  <span className="text-primary">performance</span>
                 </>
               }
               subtitle="J'accorde une importance particulière à l'expérience utilisateur, la vitesse et la clarté des parcours afin de transformer vos visiteurs en clients."
@@ -63,19 +67,21 @@ export default function Home() {
           </div>
 
           <ScrollReveal direction="left">
-            <GlassCard className="p-8" hover={false}>
-              <h3 className="font-display text-lg font-semibold text-foreground">
-                Stack & outils
-              </h3>
-              <p className="mt-3 font-body text-sm leading-relaxed text-foreground-muted">
-                {stackAndTools.main}
-              </p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {stackAndTools.tags.map((tag) => (
-                  <TechBadge key={tag}>{tag}</TechBadge>
-                ))}
+            <SpotlightCard corner="br" cornerColor="#ff4d3d" hover={false}>
+              <div className="p-8">
+                <h3 className="font-display text-lg font-semibold text-foreground">
+                  Stack &amp; outils
+                </h3>
+                <p className="mt-3 font-body text-sm leading-relaxed text-foreground-muted">
+                  {stackAndTools.main}
+                </p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {stackAndTools.tags.map((tag) => (
+                    <TechBadge key={tag}>{tag}</TechBadge>
+                  ))}
+                </div>
               </div>
-            </GlassCard>
+            </SpotlightCard>
           </ScrollReveal>
         </Container>
       </SectionWrapper>
@@ -89,25 +95,32 @@ export default function Home() {
             kicker="Compétences"
             title={
               <>
-                Une stack <GradientText>fullstack</GradientText> complète
+                Du <span className="text-primary">mobile</span> au{" "}
+                <span className="text-primary">web</span>, une stack complète
               </>
             }
-            subtitle="Du frontend au matériel embarqué, je maîtrise chaque couche pour livrer des produits cohérents de bout en bout."
+            subtitle="Applications mobiles Flutter, plateformes web Next.js / Node.js et CMS headless — chaque couche maîtrisée pour des produits cohérents de bout en bout."
             className="mx-auto"
           />
           <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {skills.map((category) => (
+            {skills.map((category, i) => (
               <StaggerItem key={category.name}>
-                <GlassCard className="h-full p-6">
-                  <h3 className="font-display text-lg font-semibold text-primary">
-                    {category.name}
-                  </h3>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {category.items.map((item) => (
-                      <TechBadge key={item}>{item}</TechBadge>
-                    ))}
+                <SpotlightCard
+                  corner={cornerFor(i)}
+                  cornerColor={accentFor(i)}
+                  className="h-full"
+                >
+                  <div className="p-6">
+                    <h3 className="font-display text-lg font-semibold text-primary">
+                      {category.name}
+                    </h3>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {category.items.map((item) => (
+                        <TechBadge key={item}>{item}</TechBadge>
+                      ))}
+                    </div>
                   </div>
-                </GlassCard>
+                </SpotlightCard>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -129,38 +142,44 @@ export default function Home() {
             </OutlineButton>
           </div>
           <StaggerContainer className="grid gap-6 md:grid-cols-2">
-            {projectsPreview.map((project) => {
+            {projectsPreview.map((project, i) => {
               const Icon = getIcon(project.iconName);
               return (
                 <StaggerItem key={project.title} className="h-full">
-                  <GlassCard className="flex h-full flex-col gap-4 p-6">
-                    <div className="flex items-center justify-between">
-                      <span className="rounded-full bg-primary/10 px-4 py-1 font-body text-xs text-primary">
-                        {project.tag}
-                      </span>
-                      <span className="font-body text-xs text-foreground-subtle">
-                        {project.year}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15 text-primary">
-                        <Icon className="h-5 w-5" />
+                  <SpotlightCard
+                    corner={cornerFor(i)}
+                    cornerColor={accentFor(i)}
+                    className="h-full"
+                  >
+                    <div className="flex h-full flex-col gap-4 p-6">
+                      <div className="flex items-center justify-between">
+                        <span className="rounded-full bg-primary/10 px-4 py-1 font-body text-xs text-primary">
+                          {project.tag}
+                        </span>
+                        <span className="font-body text-xs text-foreground-subtle">
+                          {project.year}
+                        </span>
                       </div>
-                      <h3 className="font-display text-xl font-semibold text-foreground">
-                        {project.title}
-                      </h3>
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15 text-primary">
+                          <Icon className="h-5 w-5" />
+                        </div>
+                        <h3 className="font-display text-xl font-semibold text-foreground">
+                          {project.title}
+                        </h3>
+                      </div>
+                      <p className="font-body text-sm text-foreground-muted">
+                        {project.description}
+                      </p>
+                      <div className="mt-auto flex items-center gap-2 font-mono text-xs text-foreground-subtle">
+                        <span>Next.js</span>
+                        <span>•</span>
+                        <span>Flutter</span>
+                        <span>•</span>
+                        <span>Node.js</span>
+                      </div>
                     </div>
-                    <p className="font-body text-sm text-foreground-muted">
-                      {project.description}
-                    </p>
-                    <div className="mt-auto flex items-center gap-2 font-mono text-xs text-foreground-subtle">
-                      <span>Next.js</span>
-                      <span>•</span>
-                      <span>Node.js</span>
-                      <span>•</span>
-                      <span>TypeScript</span>
-                    </div>
-                  </GlassCard>
+                  </SpotlightCard>
                 </StaggerItem>
               );
             })}
@@ -180,21 +199,27 @@ export default function Home() {
             className="mx-auto"
           />
           <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {servicesPreview.map((service) => {
+            {servicesPreview.map((service, i) => {
               const Icon = getIcon(service.iconName);
               return (
                 <StaggerItem key={service.title} className="h-full">
-                  <GlassCard className="group h-full p-6">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
-                      <Icon className="h-6 w-6" />
+                  <SpotlightCard
+                    corner={cornerFor(i)}
+                    cornerColor={accentFor(i)}
+                    className="group h-full"
+                  >
+                    <div className="p-6">
+                      <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/15 text-primary transition-transform duration-300 group-hover:scale-110">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <h3 className="font-display text-lg font-semibold text-foreground">
+                        {service.title}
+                      </h3>
+                      <p className="mt-3 font-body text-sm leading-relaxed text-foreground-muted">
+                        {service.description}
+                      </p>
                     </div>
-                    <h3 className="font-display text-lg font-semibold text-foreground">
-                      {service.title}
-                    </h3>
-                    <p className="mt-3 font-body text-sm leading-relaxed text-foreground-muted">
-                      {service.description}
-                    </p>
-                  </GlassCard>
+                  </SpotlightCard>
                 </StaggerItem>
               );
             })}
@@ -215,22 +240,28 @@ export default function Home() {
               const Icon = getIcon(step.iconName);
               return (
                 <StaggerItem key={step.title} className="h-full">
-                  <GlassCard className="h-full p-6">
-                    <div className="flex items-center gap-3">
-                      <span className="font-display text-sm font-semibold text-primary">
-                        0{index + 1}
-                      </span>
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/15 text-primary">
-                        <Icon className="h-4 w-4" />
+                  <SpotlightCard
+                    corner={cornerFor(index)}
+                    cornerColor={accentFor(index)}
+                    className="h-full"
+                  >
+                    <div className="p-6">
+                      <div className="flex items-center gap-3">
+                        <span className="font-display text-sm font-semibold text-primary">
+                          0{index + 1}
+                        </span>
+                        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/15 text-primary">
+                          <Icon className="h-4 w-4" />
+                        </div>
                       </div>
+                      <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
+                        {step.title}
+                      </h3>
+                      <p className="mt-2 font-body text-sm text-foreground-muted">
+                        {step.description}
+                      </p>
                     </div>
-                    <h3 className="mt-4 font-display text-lg font-semibold text-foreground">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 font-body text-sm text-foreground-muted">
-                      {step.description}
-                    </p>
-                  </GlassCard>
+                  </SpotlightCard>
                 </StaggerItem>
               );
             })}
@@ -249,22 +280,28 @@ export default function Home() {
             className="mx-auto"
           />
           <StaggerContainer className="grid gap-6 md:grid-cols-3">
-            {testimonials.map((testimonial) => (
+            {testimonials.map((testimonial, i) => (
               <StaggerItem key={testimonial.name} className="h-full">
-                <GlassCard className="h-full p-6" hover={false}>
-                  <Quote className="mb-3 h-6 w-6 text-primary/60" />
-                  <p className="font-body text-sm text-foreground-muted">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </p>
-                  <div className="mt-5">
-                    <p className="font-display text-sm font-semibold text-foreground">
-                      {testimonial.name}
+                <SpotlightCard
+                  corner={cornerFor(i)}
+                  cornerColor={accentFor(i)}
+                  className="h-full"
+                >
+                  <div className="p-6">
+                    <Quote className="mb-3 h-6 w-6 text-primary/60" />
+                    <p className="font-body text-sm text-foreground-muted">
+                      &ldquo;{testimonial.quote}&rdquo;
                     </p>
-                    <p className="font-body text-xs text-foreground-subtle">
-                      {testimonial.role}
-                    </p>
+                    <div className="mt-5">
+                      <p className="font-display text-sm font-semibold text-foreground">
+                        {testimonial.name}
+                      </p>
+                      <p className="font-body text-xs text-foreground-subtle">
+                        {testimonial.role}
+                      </p>
+                    </div>
                   </div>
-                </GlassCard>
+                </SpotlightCard>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -275,14 +312,24 @@ export default function Home() {
       <SectionWrapper variant="dark" beam id="contact" className="relative py-24">
         <DotPattern />
         <Container className="relative">
-          <AnimatedBorder>
-            <div className="grid gap-10 p-8 md:p-12 lg:grid-cols-[0.55fr_0.45fr]">
+          <div className="relative overflow-hidden rounded-[2rem] border border-stroke bg-background-soft">
+            {/* warm mesh glow rising from the bottom (huly/conversion style) */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 -bottom-32 mx-auto h-72 w-3/4 rounded-full blur-[110px]"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(255,77,61,0.35), rgba(59,130,246,0.18) 50%, transparent 70%)",
+              }}
+            />
+            <div className="relative grid gap-10 p-8 md:p-12 lg:grid-cols-[0.55fr_0.45fr]">
               <div className="flex flex-col gap-6">
                 <SectionHeading
                   kicker="Contact"
                   title={
                     <>
-                      Parlons de votre <GradientText>projet</GradientText>
+                      Parlons de votre{" "}
+                      <span className="text-primary">projet</span>
                     </>
                   }
                   subtitle="Décrivez votre besoin, votre délai et vos objectifs — je reviens vers vous sous 48h."
@@ -300,13 +347,8 @@ export default function Home() {
                   </span>
                 </div>
                 <div className="flex flex-wrap gap-4">
-                  <GlowButton href="/contact" pulse>
-                    Démarrer un projet
-                  </GlowButton>
-                  <OutlineButton
-                    href="https://comeup.com"
-                    external
-                  >
+                  <GlowButton href="/contact">Démarrer un projet</GlowButton>
+                  <OutlineButton href="https://comeup.com" external>
                     Profil Comeup
                   </OutlineButton>
                 </div>
@@ -336,7 +378,7 @@ export default function Home() {
                 </GlowButton>
               </form>
             </div>
-          </AnimatedBorder>
+          </div>
 
           <p className="mt-8 text-center font-body text-sm text-foreground-muted">
             Préférez un échange direct ?{" "}

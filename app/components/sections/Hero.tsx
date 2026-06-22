@@ -7,15 +7,22 @@ import AuroraBackground from "../ui/AuroraBackground";
 import DotPattern from "../ui/DotPattern";
 import GlowButton from "../ui/GlowButton";
 import OutlineButton from "../ui/OutlineButton";
+import HoverWord from "../ui/HoverWord";
 import { wordContainer, wordItem, easeOutExpo } from "@/lib/animations";
 import { stats } from "@/data";
 
-const titlePre = "Développeur";
-const titleAccent = "Fullstack";
-const titlePost = "qui transforme vos idées en produits digitaux";
-
-const words = `${titlePre} ${titleAccent} ${titlePost}`.split(" ");
-const accentIndex = 1; // "Fullstack"
+// Title tokens — accent words ride the hover wave (HoverWord)
+const titleTokens: { text: string; accent?: boolean }[] = [
+  { text: "Développeur" },
+  { text: "Web", accent: true },
+  { text: "&" },
+  { text: "Mobile", accent: true },
+  { text: "—" },
+  { text: "de" },
+  { text: "l'idée" },
+  { text: "au" },
+  { text: "produit." },
+];
 
 export default function Hero() {
   return (
@@ -41,16 +48,18 @@ export default function Hero() {
             animate="visible"
             className="font-display text-4xl font-bold leading-[1.08] tracking-tight text-foreground md:text-5xl lg:text-6xl"
           >
-            {words.map((word, i) => (
+            {titleTokens.map((token, i) => (
               <motion.span
-                key={`${word}-${i}`}
+                key={`${token.text}-${i}`}
                 variants={wordItem}
-                className="inline-block whitespace-nowrap"
+                className="inline-block"
               >
-                <span className={i === accentIndex ? "text-gradient" : ""}>
-                  {word}
-                </span>
-                {i < words.length - 1 ? " " : ""}
+                {token.accent ? (
+                  <HoverWord text={token.text} />
+                ) : (
+                  token.text
+                )}
+                {i < titleTokens.length - 1 ? " " : ""}
               </motion.span>
             ))}
           </motion.h1>
@@ -61,10 +70,10 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.5, ease: easeOutExpo }}
             className="max-w-xl font-body text-base leading-relaxed text-foreground-muted md:text-lg"
           >
-            Je suis Néhémie Gandonou, développeur web, mobile & IoT basé à
-            Cotonou. Je conçois des applications Flutter, des plateformes
-            Next.js / Node.js et des systèmes embarqués — rapides, élégants et
-            prêts à convertir.
+            Je suis Néhémie Gandonou, développeur web &amp; mobile basé à
+            Cotonou. Je conçois des applications mobiles Flutter et des
+            plateformes web Next.js / Node.js — rapides, élégantes et prêtes à
+            convertir.
           </motion.p>
 
           <motion.div
@@ -73,9 +82,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.7, ease: easeOutExpo }}
             className="flex flex-wrap gap-4"
           >
-            <GlowButton href="/projects" pulse>
-              Voir mes projets
-            </GlowButton>
+            <GlowButton href="/projects">Voir mes projets</GlowButton>
             <OutlineButton href="/contact">Me contacter</OutlineButton>
           </motion.div>
 
@@ -108,7 +115,7 @@ export default function Hero() {
           <div className="relative rounded-[2rem] border border-stroke bg-background-soft/60 p-3 backdrop-blur-md glass">
             <Image
               src="/portrait.jpeg"
-              alt="Portrait de Néhémie Gandonou, développeur fullstack"
+              alt="Portrait de Néhémie Gandonou, développeur web et mobile"
               width={360}
               height={440}
               priority

@@ -8,22 +8,22 @@
    ============================================================ */
 
 @theme {
-  /* Magenta ramp (primary) */
-  --color-magenta-50: #fdf2f8;
-  --color-magenta-100: #fce7f3;
-  --color-magenta-200: #fbcfe8;
-  --color-magenta-300: #f9a8d4;
-  --color-magenta-400: #f472b6;
-  --color-magenta-500: #ec4899;
-  --color-magenta-600: #db2777;
-  --color-magenta-700: #be185d;
-  --color-magenta-800: #9d174d;
-  --color-magenta-900: #831843;
-  --color-magenta-950: #500724;
+  /* Coral ramp (primary) */
+  --color-coral-50: #fff2f0;
+  --color-coral-100: #ffe1dc;
+  --color-coral-200: #ffc4ba;
+  --color-coral-300: #ff9e8d;
+  --color-coral-400: #ff6f59;
+  --color-coral-500: #ff4d3d;
+  --color-coral-600: #ed3424;
+  --color-coral-700: #c8271a;
+  --color-coral-800: #a3251b;
+  --color-coral-900: #86241d;
+  --color-coral-950: #490d09;
 
   /* Fixed accents (do not change per section) */
-  --color-accent: #a855f7;
-  --color-accent-alt: #6366f1;
+  --color-accent: #ff7a45; /* warm orange */
+  --color-accent-alt: #3b82f6; /* cool blue counterpoint for mesh */
   --color-success: #10b981;
   --color-warning: #f59e0b;
   --color-error: #ef4444;
@@ -43,19 +43,19 @@
   --stroke: #1e1e2e; /* dark-border */
   --stroke-hover: #2a2a3e; /* dark-border-hover */
 
-  --primary: #ec4899; /* magenta-500 */
-  --primary-strong: #f472b6; /* magenta-400 (hover, brighter on dark) */
+  --primary: #ff4d3d; /* coral-500 */
+  --primary-strong: #ff6f59; /* coral-400 (hover, brighter on dark) */
   --primary-foreground: #ffffff;
-  --primary-glow: rgba(236, 72, 153, 0.15);
-  --primary-glow-strong: rgba(236, 72, 153, 0.3);
+  --primary-glow: rgba(255, 77, 61, 0.16);
+  --primary-glow-strong: rgba(255, 77, 61, 0.32);
 
-  --accent: #a855f7;
-  --accent-alt: #6366f1;
+  --accent: #ff7a45;
+  --accent-alt: #3b82f6;
 
   /* glass tokens for the dark context */
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.06);
-  --glass-border-hover: rgba(236, 72, 153, 0.35);
+  --glass-border-hover: rgba(255, 77, 61, 0.35);
   --dot-color: rgba(255, 255, 255, 0.06);
 }
 
@@ -73,15 +73,15 @@
   --stroke: #e2e2ea; /* light-border */
   --stroke-hover: #d0d0da; /* light-border-hover */
 
-  --primary: #db2777; /* primary-on-light */
-  --primary-strong: #be185d;
-  --primary-glow: rgba(219, 39, 119, 0.08);
-  --primary-glow-strong: rgba(219, 39, 119, 0.16);
+  --primary: #ed3424; /* coral-600, deeper for contrast on white */
+  --primary-strong: #c8271a;
+  --primary-glow: rgba(237, 52, 36, 0.1);
+  --primary-glow-strong: rgba(237, 52, 36, 0.18);
 
   /* glass tokens for the light context */
   --glass-bg: rgba(255, 255, 255, 0.7);
   --glass-border: rgba(0, 0, 0, 0.06);
-  --glass-border-hover: rgba(219, 39, 119, 0.35);
+  --glass-border-hover: rgba(237, 52, 36, 0.35);
   --dot-color: rgba(0, 0, 0, 0.06);
 }
 
@@ -99,14 +99,14 @@
   --stroke: #1e1e2e;
   --stroke-hover: #2a2a3e;
 
-  --primary: #ec4899;
-  --primary-strong: #f472b6;
-  --primary-glow: rgba(236, 72, 153, 0.15);
-  --primary-glow-strong: rgba(236, 72, 153, 0.3);
+  --primary: #ff4d3d;
+  --primary-strong: #ff6f59;
+  --primary-glow: rgba(255, 77, 61, 0.16);
+  --primary-glow-strong: rgba(255, 77, 61, 0.32);
 
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.06);
-  --glass-border-hover: rgba(236, 72, 153, 0.35);
+  --glass-border-hover: rgba(255, 77, 61, 0.35);
   --dot-color: rgba(255, 255, 255, 0.06);
 }
 
@@ -264,18 +264,96 @@ h6 {
   }
 }
 
+/* ---- Spotlight card : cursor-tracked glow + corner light bleed ---- */
+.spotlight-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid var(--stroke);
+  background: var(--background-soft);
+  transition:
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+.spotlight-card:hover {
+  border-color: var(--glass-border-hover);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+}
+.section-light .spotlight-card:hover {
+  box-shadow: 0 24px 60px rgba(15, 15, 20, 0.12);
+}
+
+/* Static corner light bleed (color set per-card via --corner) */
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 75%;
+  height: 75%;
+  pointer-events: none;
+  opacity: 0.16;
+  filter: blur(28px);
+  background: radial-gradient(circle, var(--corner, var(--primary)), transparent 70%);
+  transition: opacity 0.4s ease;
+}
+.spotlight-card:hover::before {
+  opacity: 0.32;
+}
+.corner-tl::before {
+  top: -22%;
+  left: -22%;
+}
+.corner-tr::before {
+  top: -22%;
+  right: -22%;
+}
+.corner-bl::before {
+  bottom: -22%;
+  left: -22%;
+}
+.corner-br::before {
+  bottom: -22%;
+  right: -22%;
+}
+
+/* Cursor-following spotlight overlay */
+.spotlight-card .spotlight-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(
+    440px circle at var(--mx, 50%) var(--my, 50%),
+    var(--primary-glow-strong),
+    transparent 55%
+  );
+}
+.spotlight-card:hover .spotlight-glow {
+  opacity: 1;
+}
+.spotlight-card > .spotlight-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}
+
 /* ============================================================
    BUTTONS & INPUTS (token-driven, used across pages)
    ============================================================ */
 
 .btn-primary {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+  overflow: hidden;
   border-radius: 9999px;
   background-color: var(--primary);
-  padding: 0.75rem 1.5rem;
+  padding: 0.8rem 1.6rem;
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--primary-foreground);
@@ -283,19 +361,65 @@ h6 {
     0 4px 20px var(--primary-glow-strong),
     0 0 0 1px rgba(255, 255, 255, 0.04) inset;
   transition:
-    background-color 0.2s ease,
-    box-shadow 0.2s ease,
-    transform 0.15s ease;
+    box-shadow 0.3s ease,
+    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* keep label above the FX layers */
+.btn-primary > * {
+  position: relative;
+  z-index: 2;
+}
+/* cursor-tracked soft light */
+.btn-primary .btn-shine {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: radial-gradient(
+    130px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 255, 255, 0.4),
+    transparent 60%
+  );
+}
+.btn-primary:hover .btn-shine {
+  opacity: 1;
+}
+/* one-shot diagonal sheen sweep on hover */
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -160%;
+  z-index: 1;
+  width: 55%;
+  height: 100%;
+  transform: skewX(-20deg);
+  background: linear-gradient(
+    100deg,
+    transparent,
+    rgba(255, 255, 255, 0.45),
+    transparent
+  );
+}
+.btn-primary:hover::after {
+  animation: btn-sheen 0.8s ease forwards;
+}
+@keyframes btn-sheen {
+  to {
+    left: 160%;
+  }
 }
 .btn-primary:hover {
-  background-color: var(--primary-strong);
   box-shadow:
-    0 6px 28px var(--primary-glow-strong),
-    0 0 40px var(--primary-glow);
-  transform: translateY(-1px);
+    0 10px 34px var(--primary-glow-strong),
+    0 0 48px var(--primary-glow);
 }
-.btn-primary:active {
-  transform: translateY(0) scale(0.98);
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary:hover::after {
+    animation: none;
+  }
 }
 
 .btn-secondary {
