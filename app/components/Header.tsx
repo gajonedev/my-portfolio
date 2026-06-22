@@ -1,235 +1,211 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import gsap from "gsap";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "framer-motion";
 import Container from "./Container";
-import ThemeToggle from "./ThemeToggle";
 import { Menu, X } from "@/lib/icons";
 import { navLinks, siteConfig } from "@/data";
 
+const menuLinks = navLinks.slice(1, 5);
+
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null);
-  const menuItemsRef = useRef<HTMLAnchorElement[]>([]);
-  const overlayRef = useRef<HTMLDivElement>(null);
+  const [hidden, setHidden] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const { scrollY } = useScroll();
 
-  // Close menu on route change
+  // Hide on scroll down, show on scroll up
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0;
+    setHidden(latest > previous && latest > 120);
+    setScrolled(latest > 12);
+  });
+
+  // Body scroll lock + escape handling for the mobile menu
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIsOpen(false);
-  }, [pathname]);
-
-  // GSAP animations
-  useEffect(() => {
-    const menu = menuRef.current;
-    const overlay = overlayRef.current;
-    const items = menuItemsRef.current;
-
-    if (!menu || !overlay) return;
-
     if (isOpen) {
-      // Prevent body scroll
       document.body.style.overflow = "hidden";
-
-      // Animate overlay
-      gsap.to(overlay, {
-        opacity: 1,
-        duration: 0.3,
-        ease: "power2.out",
-      });
-
-      // Animate menu panel
-      gsap.to(menu, {
-        x: 0,
-        duration: 0.4,
-        ease: "power3.out",
-      });
-
-      // Animate menu items with stagger
-      gsap.fromTo(
-        items,
-        { opacity: 0, x: 30 },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 0.4,
-          ease: "power3.out",
-          stagger: 0.08,
-          delay: 0.2,
-        },
-      );
     } else {
-      // Restore body scroll
       document.body.style.overflow = "";
-
-      // Animate out
-      gsap.to(overlay, {
-        opacity: 0,
-        duration: 0.3,
-        ease: "power2.in",
-      });
-
-      gsap.to(menu, {
-        x: "100%",
-        duration: 0.3,
-        ease: "power2.in",
-      });
     }
-
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    document.addEventListener("keydown", handleEscape);
     return () => {
       document.body.style.overflow = "";
-    };
-  }, [isOpen]);
-
-  // Click outside to close
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (
-        isOpen &&
-        menuRef.current &&
-        !menuRef.current.contains(e.target as Node)
-      ) {
-        setIsOpen(false);
-      }
-    };
-
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && isOpen) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("keydown", handleEscape);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
       document.removeEventListener("keydown", handleEscape);
     };
   }, [isOpen]);
 
   return (
     <>
-      <header className="top-0 z-40 sticky bg-background/80 backdrop-blur-md border-stroke border-b">
-        <Container className="flex justify-between items-center py-4">
-          <Link href="/" className="flex items-center gap-3">
-            <div className="flex justify-center items-center bg-primary rounded-xl w-9 h-9 font-bold text-[#1a1625] text-sm">
-              {siteConfig.shortName}
-            </div>
-            <div>
-              <p className="font-semibold text-foreground text-sm">
-                {siteConfig.name}
-              </p>
-              <p className="text-foreground-muted text-xs">
-                {siteConfig.title}
-              </p>
-            </div>
-          </Link>
-
-          <nav className="hidden md:flex items-center gap-6 text-foreground-muted text-sm">
-            {navLinks.slice(1, 5).map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`hover:text-foreground transition ${
-                  pathname === link.href ? "text-primary" : ""
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <ThemeToggle />
-            <Link
-              href="/contact"
-              className="hidden sm:inline-flex bg-primary hover:bg-primary-strong px-5 py-2 rounded-full font-semibold text-[#1a1625] text-sm transition"
-            >
-              Démarrer un projet
-            </Link>
-            <button
-              type="button"
-              onClick={() => setIsOpen(true)}
-              className="md:hidden flex justify-center items-center bg-card/50 border border-stroke hover:border-primary rounded-full w-9 h-9 text-foreground-muted hover:text-foreground transition-colors"
-              aria-label="Ouvrir le menu"
-            >
-              <Menu className="w-4 h-4" />
-            </button>
-          </div>
-        </Container>
-      </header>
-
-      {/* Mobile Menu Overlay */}
-      <div
-        ref={overlayRef}
-        className={`fixed inset-0 bg-black/60 backdrop-blur-sm z-50 md:hidden ${
-          isOpen ? "pointer-events-auto" : "pointer-events-none"
-        }`}
-        style={{ opacity: 0 }}
-        aria-hidden="true"
-      />
-
-      {/* Mobile Menu Panel */}
-      <div
-        ref={menuRef}
-        className="md:hidden top-0 right-0 bottom-0 z-50 fixed flex flex-col bg-background border-stroke border-l w-70"
-        style={{ transform: "translateX(100%)" }}
-        role="dialog"
-        aria-modal="true"
-        aria-label="Menu de navigation"
+      <motion.header
+        initial={{ y: 0 }}
+        animate={{ y: hidden ? "-110%" : "0%" }}
+        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+        className="section-dark fixed inset-x-0 top-0 z-50 text-foreground"
       >
-        {/* Menu Header */}
-        <div className="flex justify-between items-center p-4 border-stroke border-b">
-          <span className="font-semibold text-foreground">Menu</span>
-          <button
-            type="button"
-            onClick={() => setIsOpen(false)}
-            className="flex justify-center items-center bg-card/50 border border-stroke hover:border-primary rounded-full w-9 h-9 text-foreground-muted hover:text-foreground transition-colors"
-            aria-label="Fermer le menu"
-          >
-            <X className="w-4 h-4" />
-          </button>
-        </div>
+        <div
+          className={`transition-colors duration-300 ${
+            scrolled
+              ? "border-b border-[color:var(--stroke)] bg-[rgba(5,5,7,0.8)] backdrop-blur-xl"
+              : "border-b border-transparent bg-transparent"
+          }`}
+        >
+          <Container className="flex items-center justify-between py-4">
+            <Link href="/" className="group flex items-center gap-3">
+              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary font-display text-sm font-bold text-primary-foreground glow-sm">
+                {siteConfig.shortName}
+              </span>
+              <span className="flex flex-col leading-tight">
+                <span className="font-display text-sm font-semibold text-foreground">
+                  Gajone Dev
+                </span>
+                <span className="font-body text-xs text-foreground-muted">
+                  {siteConfig.title}
+                </span>
+              </span>
+            </Link>
 
-        {/* Menu Links */}
-        <nav className="flex-1 p-4 overflow-y-auto">
-          <ul className="space-y-2">
-            {navLinks.map((link, index) => (
-              <li key={link.href}>
-                <Link
-                  ref={(el) => {
-                    if (el) menuItemsRef.current[index] = el;
-                  }}
-                  href={link.href}
+            <nav className="hidden items-center gap-1 md:flex">
+              {menuLinks.map((link) => {
+                const active = pathname === link.href;
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`relative rounded-full px-4 py-2 font-body text-sm transition-colors ${
+                      active
+                        ? "text-foreground"
+                        : "text-foreground-muted hover:text-foreground"
+                    }`}
+                  >
+                    {active && (
+                      <motion.span
+                        layoutId="nav-indicator"
+                        className="absolute inset-0 -z-10 rounded-full border border-[color:var(--stroke-hover)] bg-[color:var(--background-muted)]"
+                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      />
+                    )}
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </nav>
+
+            <div className="flex items-center gap-3">
+              <Link
+                href="/contact"
+                className="hidden btn-primary sm:inline-flex"
+              >
+                Démarrer un projet
+              </Link>
+              <button
+                type="button"
+                onClick={() => setIsOpen(true)}
+                className="flex h-9 w-9 items-center justify-center rounded-full border border-stroke bg-background-soft text-foreground-muted transition-colors hover:border-primary hover:text-foreground md:hidden"
+                aria-label="Ouvrir le menu"
+              >
+                <Menu className="h-4 w-4" />
+              </button>
+            </div>
+          </Container>
+        </div>
+      </motion.header>
+
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <div className="section-dark fixed inset-0 z-[60] md:hidden">
+            <motion.div
+              className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              onClick={() => setIsOpen(false)}
+              aria-hidden="true"
+            />
+            <motion.div
+              className="absolute inset-y-0 right-0 flex w-72 flex-col border-l border-stroke bg-background text-foreground"
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              role="dialog"
+              aria-modal="true"
+              aria-label="Menu de navigation"
+            >
+              <div className="flex items-center justify-between border-b border-stroke p-4">
+                <span className="font-display font-semibold text-foreground">
+                  Menu
+                </span>
+                <button
+                  type="button"
                   onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-3 rounded-xl text-base font-medium transition-colors ${
-                    pathname === link.href
-                      ? "bg-primary/10 text-primary"
-                      : "text-foreground-muted hover:bg-card hover:text-foreground"
-                  }`}
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-stroke bg-background-soft text-foreground-muted transition-colors hover:border-primary hover:text-foreground"
+                  aria-label="Fermer le menu"
                 >
-                  {link.label}
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+              <motion.nav
+                className="flex-1 overflow-y-auto p-4"
+                initial="hidden"
+                animate="visible"
+                variants={{
+                  visible: { transition: { staggerChildren: 0.06, delayChildren: 0.1 } },
+                }}
+              >
+                <ul className="space-y-2">
+                  {navLinks.map((link) => {
+                    const active = pathname === link.href;
+                    return (
+                      <motion.li
+                        key={link.href}
+                        variants={{
+                          hidden: { opacity: 0, x: 24 },
+                          visible: { opacity: 1, x: 0 },
+                        }}
+                      >
+                        <Link
+                          href={link.href}
+                          onClick={() => setIsOpen(false)}
+                          className={`block rounded-xl px-4 py-3 font-body text-base font-medium transition-colors ${
+                            active
+                              ? "bg-primary/10 text-primary"
+                              : "text-foreground-muted hover:bg-background-muted hover:text-foreground"
+                          }`}
+                        >
+                          {link.label}
+                        </Link>
+                      </motion.li>
+                    );
+                  })}
+                </ul>
+              </motion.nav>
+              <div className="border-t border-stroke p-4">
+                <Link
+                  href="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="btn-primary w-full"
+                >
+                  Démarrer un projet
                 </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        {/* Menu Footer */}
-        <div className="p-4 border-stroke border-t">
-          <Link
-            href="/contact"
-            onClick={() => setIsOpen(false)}
-            className="block bg-primary hover:bg-primary-strong px-5 py-3 rounded-full w-full font-semibold text-[#1a1625] text-sm text-center transition"
-          >
-            Démarrer un projet
-          </Link>
-        </div>
-      </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

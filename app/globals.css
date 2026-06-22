@@ -1,181 +1,272 @@
 @import "tailwindcss";
 
-/* Light mode (default) */
+/* ============================================================
+   THEME — Neon Dark SaaS
+   Single design, no light/dark toggle. Sections alternate
+   between dark and light contexts via .section-dark /
+   .section-light, which remap the semantic tokens below.
+   ============================================================ */
+
+@theme {
+  /* Magenta ramp (primary) */
+  --color-magenta-50: #fdf2f8;
+  --color-magenta-100: #fce7f3;
+  --color-magenta-200: #fbcfe8;
+  --color-magenta-300: #f9a8d4;
+  --color-magenta-400: #f472b6;
+  --color-magenta-500: #ec4899;
+  --color-magenta-600: #db2777;
+  --color-magenta-700: #be185d;
+  --color-magenta-800: #9d174d;
+  --color-magenta-900: #831843;
+  --color-magenta-950: #500724;
+
+  /* Fixed accents (do not change per section) */
+  --color-accent: #a855f7;
+  --color-accent-alt: #6366f1;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+}
+
+/* ---- Semantic tokens : default = DARK context ---- */
 :root {
-  color-scheme: light;
-  --background: #faf9fc;
-  --background-soft: #f3f1f8;
-  --foreground: #1a1625;
-  --foreground-muted: #5c5470;
-  --card: #ffffff;
-  --stroke: #e5e1ed;
-  --primary: #a776f4;
-  --primary-strong: #a882e8;
-  --accent: #c1a5ef;
-  --accent-strong: #a882e8;
-  --success: #2dd4bf;
-  --warning: #fbbf24;
-  --shadow: 0 18px 60px rgba(193, 165, 239, 0.15);
-  --input-bg: #ffffff;
-  --input-border: #e5e1ed;
-  --input-focus: #c1a5ef;
-}
-
-/* Dark mode */
-.dark {
   color-scheme: dark;
-  --background: #0b0a1f;
-  --background-soft: #11102a;
-  --foreground: #f5f2ff;
-  --foreground-muted: #b9b2d9;
-  --card: #141233;
-  --stroke: #2a2552;
-  --primary: #c1a5ef;
-  --primary-strong: #d4c2f5;
-  --accent: #c1a5ef;
-  --accent-strong: #d4c2f5;
-  --success: #2dd4bf;
-  --warning: #fbbf24;
-  --shadow: 0 18px 60px rgba(13, 7, 41, 0.45);
-  --input-bg: #141233;
-  --input-border: #2a2552;
-  --input-focus: #c1a5ef;
+
+  --background: #050507; /* dark-bg */
+  --background-soft: #0a0a0f; /* dark-bg-subtle */
+  --background-muted: #12121a; /* dark-bg-muted */
+  --foreground: #f0f0f5; /* dark-fg */
+  --foreground-muted: #8888a0; /* dark-fg-muted */
+  --foreground-subtle: #55556a; /* dark-fg-subtle */
+  --card: #0a0a0f;
+  --stroke: #1e1e2e; /* dark-border */
+  --stroke-hover: #2a2a3e; /* dark-border-hover */
+
+  --primary: #ec4899; /* magenta-500 */
+  --primary-strong: #f472b6; /* magenta-400 (hover, brighter on dark) */
+  --primary-foreground: #ffffff;
+  --primary-glow: rgba(236, 72, 153, 0.15);
+  --primary-glow-strong: rgba(236, 72, 153, 0.3);
+
+  --accent: #a855f7;
+  --accent-alt: #6366f1;
+
+  /* glass tokens for the dark context */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-border-hover: rgba(236, 72, 153, 0.35);
+  --dot-color: rgba(255, 255, 255, 0.06);
 }
 
+/* ---- LIGHT context : applied to any subtree ---- */
+.section-light {
+  color-scheme: light;
+
+  --background: #fafafa; /* light-bg */
+  --background-soft: #ffffff; /* light-bg-subtle */
+  --background-muted: #f0f0f5; /* light-bg-muted */
+  --foreground: #0f0f14; /* light-fg */
+  --foreground-muted: #55556a; /* light-fg-muted */
+  --foreground-subtle: #8888a0; /* light-fg-subtle */
+  --card: #ffffff;
+  --stroke: #e2e2ea; /* light-border */
+  --stroke-hover: #d0d0da; /* light-border-hover */
+
+  --primary: #db2777; /* primary-on-light */
+  --primary-strong: #be185d;
+  --primary-glow: rgba(219, 39, 119, 0.08);
+  --primary-glow-strong: rgba(219, 39, 119, 0.16);
+
+  /* glass tokens for the light context */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.06);
+  --glass-border-hover: rgba(219, 39, 119, 0.35);
+  --dot-color: rgba(0, 0, 0, 0.06);
+}
+
+/* Explicit dark wrapper (re-asserts the defaults inside a light parent) */
+.section-dark {
+  color-scheme: dark;
+
+  --background: #050507;
+  --background-soft: #0a0a0f;
+  --background-muted: #12121a;
+  --foreground: #f0f0f5;
+  --foreground-muted: #8888a0;
+  --foreground-subtle: #55556a;
+  --card: #0a0a0f;
+  --stroke: #1e1e2e;
+  --stroke-hover: #2a2a3e;
+
+  --primary: #ec4899;
+  --primary-strong: #f472b6;
+  --primary-glow: rgba(236, 72, 153, 0.15);
+  --primary-glow-strong: rgba(236, 72, 153, 0.3);
+
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-border-hover: rgba(236, 72, 153, 0.35);
+  --dot-color: rgba(255, 255, 255, 0.06);
+}
+
+/* ---- Map semantic tokens to Tailwind color/font utilities ---- */
 @theme inline {
   --color-background: var(--background);
+  --color-background-soft: var(--background-soft);
+  --color-background-muted: var(--background-muted);
   --color-foreground: var(--foreground);
   --color-foreground-muted: var(--foreground-muted);
+  --color-foreground-subtle: var(--foreground-subtle);
   --color-card: var(--card);
   --color-stroke: var(--stroke);
+  --color-stroke-hover: var(--stroke-hover);
   --color-primary: var(--primary);
   --color-primary-strong: var(--primary-strong);
-  --color-accent: var(--accent);
-  --font-sans: var(--font-geist-sans);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --font-sans: var(--font-body);
+  --font-body: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   min-height: 100vh;
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
+  font-family: var(--font-body), system-ui, sans-serif;
 }
 
-.dark body {
-  background:
-    radial-gradient(1200px 800px at 10% 10%, #1c1850, transparent 60%),
-    radial-gradient(900px 700px at 90% 20%, #1f1458, transparent 55%),
-    var(--background);
-}
-
-* {
-  scroll-behavior: smooth;
+/* All headings use the display font (Outfit) by default.
+   Use `font-body` explicitly to opt out on a given element. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), system-ui, sans-serif;
 }
 
 ::selection {
-  background: rgba(193, 165, 239, 0.45);
-  color: #fff;
+  background: var(--primary-glow-strong);
+  color: var(--foreground);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ============================================================
+   SIGNATURE EFFECTS
+   ============================================================ */
+
+/* 6 — Gradient text (magenta → violet) */
 .text-gradient {
-  background: linear-gradient(90deg, var(--foreground) 10%, var(--primary) 90%);
+  background: linear-gradient(
+    100deg,
+    var(--primary) 0%,
+    var(--accent) 55%,
+    var(--accent-alt) 100%
+  );
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
-.bg-grid {
-  background-image:
-    linear-gradient(transparent 24px, var(--stroke) 25px),
-    linear-gradient(90deg, transparent 24px, var(--stroke) 25px);
-  background-size: 25px 25px;
-  background-position: center;
-  opacity: 0.4;
+/* 2 — Glassmorphism */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
 }
 
-.dark .bg-grid {
-  opacity: 0.15;
-}
-
+/* 1 — Glow halo */
 .glow {
   box-shadow:
-    0 0 25px rgba(193, 165, 239, 0.35),
-    0 0 50px rgba(193, 165, 239, 0.2);
+    0 0 25px var(--primary-glow-strong),
+    0 0 60px var(--primary-glow);
+}
+.glow-sm {
+  box-shadow: 0 0 18px var(--primary-glow-strong);
 }
 
-/* Animation styles - état initial invisible pour éviter le flash */
-[data-animate] {
-  opacity: 0;
-  transform: translateY(24px);
+/* 4 — Dot grid pattern */
+.bg-dots {
+  background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+  background-size: 22px 22px;
 }
 
-[data-animate].animated {
-  opacity: 1;
-  transform: translateY(0);
-  transition:
-    opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+/* Reduce heavy blur/glow on touch devices for perf */
+@media (hover: none) {
+  .glass {
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .glow,
+  .glow-sm {
+    box-shadow: 0 0 18px var(--primary-glow);
+  }
 }
 
-/* Shadcn-style inputs */
-.input {
-  display: flex;
-  height: 2.75rem;
-  width: 100%;
-  border-radius: 0.75rem;
-  border: 1px solid var(--input-border);
-  background-color: var(--input-bg);
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  color: var(--foreground);
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+/* 5 — Animated conic gradient border */
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes border-spin {
+  to {
+    --border-angle: 360deg;
+  }
+}
+.animated-border {
+  position: relative;
+  background:
+    linear-gradient(var(--card), var(--card)) padding-box,
+    conic-gradient(
+        from var(--border-angle),
+        transparent 0%,
+        var(--primary) 25%,
+        var(--accent) 50%,
+        transparent 70%
+      )
+      border-box;
+  border: 1px solid transparent;
+  animation: border-spin 5s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animated-border {
+    animation: none;
+    background:
+      linear-gradient(var(--card), var(--card)) padding-box,
+      linear-gradient(120deg, var(--primary), var(--accent)) border-box;
+  }
 }
 
-.input::placeholder {
-  color: var(--foreground-muted);
-  opacity: 0.6;
-}
-
-.input:focus {
-  outline: none;
-  border-color: var(--input-focus);
-  box-shadow: 0 0 0 3px rgba(193, 165, 239, 0.2);
-}
-
-.input:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.textarea {
-  display: flex;
-  min-height: 120px;
-  width: 100%;
-  border-radius: 0.75rem;
-  border: 1px solid var(--input-border);
-  background-color: var(--input-bg);
-  padding: 0.75rem 1rem;
-  font-size: 0.875rem;
-  color: var(--foreground);
-  resize: vertical;
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.textarea::placeholder {
-  color: var(--foreground-muted);
-  opacity: 0.6;
-}
-
-.textarea:focus {
-  outline: none;
-  border-color: var(--input-focus);
-  box-shadow: 0 0 0 3px rgba(193, 165, 239, 0.2);
-}
+/* ============================================================
+   BUTTONS & INPUTS (token-driven, used across pages)
+   ============================================================ */
 
 .btn-primary {
   display: inline-flex;
@@ -187,16 +278,24 @@ body {
   padding: 0.75rem 1.5rem;
   font-size: 0.875rem;
   font-weight: 600;
-  color: #1a1625;
+  color: var(--primary-foreground);
+  box-shadow:
+    0 4px 20px var(--primary-glow-strong),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
   transition:
     background-color 0.2s ease,
+    box-shadow 0.2s ease,
     transform 0.15s ease;
-  box-shadow: 0 4px 14px rgba(193, 165, 239, 0.4);
 }
-
 .btn-primary:hover {
   background-color: var(--primary-strong);
+  box-shadow:
+    0 6px 28px var(--primary-glow-strong),
+    0 0 40px var(--primary-glow);
   transform: translateY(-1px);
+}
+.btn-primary:active {
+  transform: translateY(0) scale(0.98);
 }
 
 .btn-secondary {
@@ -205,7 +304,7 @@ body {
   justify-content: center;
   gap: 0.5rem;
   border-radius: 9999px;
-  border: 1px solid var(--stroke);
+  border: 1px solid var(--stroke-hover);
   background-color: transparent;
   padding: 0.75rem 1.5rem;
   font-size: 0.875rem;
@@ -213,16 +312,50 @@ body {
   color: var(--foreground);
   transition:
     border-color 0.2s ease,
-    background-color 0.2s ease;
+    background-color 0.2s ease,
+    color 0.2s ease;
 }
-
 .btn-secondary:hover {
   border-color: var(--primary);
-  background-color: var(--primary);
-  background-opacity: 0.1;
+  color: var(--primary);
+  background-color: var(--primary-glow);
 }
 
-/* ===== Blog article prose styles ===== */
+.input,
+.textarea {
+  display: flex;
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--stroke);
+  background-color: var(--background-soft);
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  color: var(--foreground);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.input {
+  height: 2.85rem;
+}
+.textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--foreground-subtle);
+}
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+/* ============================================================
+   BLOG ARTICLE PROSE STYLES
+   ============================================================ */
 .prose-blog {
   font-size: 1rem;
   line-height: 1.85;
@@ -234,11 +367,17 @@ body {
   margin-top: 0;
 }
 
-/* Headings */
+.prose-blog h1,
+.prose-blog h2,
+.prose-blog h3,
+.prose-blog h4 {
+  font-family: var(--font-display), system-ui, sans-serif;
+  color: var(--foreground);
+}
+
 .prose-blog h1 {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--foreground);
   margin-top: 2.5rem;
   margin-bottom: 1rem;
   line-height: 1.3;
@@ -247,7 +386,6 @@ body {
 .prose-blog h2 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--foreground);
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
   line-height: 1.35;
@@ -258,7 +396,6 @@ body {
 .prose-blog h3 {
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--foreground);
   margin-top: 2rem;
   margin-bottom: 0.5rem;
   line-height: 1.4;
@@ -267,18 +404,15 @@ body {
 .prose-blog h4 {
   font-size: 1.05rem;
   font-weight: 600;
-  color: var(--foreground);
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
-/* Paragraphs */
 .prose-blog p {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
 
-/* Links */
 .prose-blog a {
   color: var(--primary);
   text-decoration: underline;
@@ -291,7 +425,6 @@ body {
   color: var(--primary-strong);
 }
 
-/* Strong & emphasis */
 .prose-blog strong {
   color: var(--foreground);
   font-weight: 600;
@@ -301,7 +434,6 @@ body {
   font-style: italic;
 }
 
-/* Lists */
 .prose-blog ul {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -328,12 +460,11 @@ body {
   margin-bottom: 0.25rem;
 }
 
-/* Blockquote */
 .prose-blog blockquote {
   border-left: 3px solid var(--primary);
   padding: 0.75rem 1.25rem;
   margin: 1.5rem 0;
-  background: var(--card);
+  background: var(--background-soft);
   border-radius: 0 0.75rem 0.75rem 0;
   color: var(--foreground);
   font-style: italic;
@@ -343,21 +474,19 @@ body {
   margin: 0.25rem 0;
 }
 
-/* Code inline */
 .prose-blog code {
-  background: var(--card);
+  background: var(--background-soft);
   border: 1px solid var(--stroke);
   padding: 0.15rem 0.4rem;
   border-radius: 0.375rem;
   font-size: 0.875em;
-  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
   color: var(--primary);
   word-break: break-word;
 }
 
-/* Code blocks */
 .prose-blog pre {
-  background: var(--card);
+  background: var(--background-soft);
   border: 1px solid var(--stroke);
   border-radius: 0.75rem;
   padding: 1.25rem 1.5rem;
@@ -377,7 +506,6 @@ body {
   word-break: normal;
 }
 
-/* Tables */
 .prose-blog table {
   width: 100%;
   margin: 1.5rem 0;
@@ -403,17 +531,15 @@ body {
 }
 
 .prose-blog tbody tr:hover {
-  background: var(--card);
+  background: var(--background-soft);
 }
 
-/* Horizontal rule */
 .prose-blog hr {
   border: none;
   border-top: 1px solid var(--stroke);
   margin: 2.5rem 0;
 }
 
-/* Images */
 .prose-blog img {
   max-width: 100%;
   height: auto;
@@ -421,7 +547,6 @@ body {
   margin: 1.5rem 0;
 }
 
-/* Task list (checkboxes in markdown) */
 .prose-blog input[type="checkbox"] {
   margin-right: 0.5rem;
   accent-color: var(--primary);

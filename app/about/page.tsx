@@ -15,7 +15,7 @@ export default function AboutPage() {
           {/* Introduction */}
           <section className="lg:items-center gap-8 grid lg:grid-cols-2">
             <div className="bg-card p-8 border border-stroke rounded-3xl">
-              <div className="flex justify-center items-center bg-primary rounded-2xl w-20 h-20 font-bold text-[#1a1625] text-2xl">
+              <div className="flex justify-center items-center bg-primary rounded-2xl w-20 h-20 font-bold text-primary-foreground text-2xl">
                 NG
               </div>
               <h2 className="mt-6 font-semibold text-foreground text-2xl">

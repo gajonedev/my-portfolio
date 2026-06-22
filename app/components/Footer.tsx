@@ -20,15 +20,19 @@ const socialIconMap: Record<
 
 export default function Footer() {
   return (
-    <footer className="bg-card/50 py-12 border-stroke border-t">
+    <footer className="section-dark relative bg-background py-14 text-foreground border-stroke border-t">
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 mx-auto h-px w-1/3 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50 blur-[1px]"
+      />
       <Container className="gap-10 grid md:grid-cols-3">
         <div className="flex flex-col gap-4">
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex justify-center items-center bg-primary rounded-xl w-9 h-9 font-bold text-[#1a1625] text-sm">
+            <div className="flex justify-center items-center bg-primary rounded-xl w-9 h-9 font-display font-bold text-primary-foreground text-sm glow-sm">
               {siteConfig.shortName}
             </div>
-            <span className="font-semibold text-foreground text-lg">
-              {siteConfig.name}
+            <span className="font-display font-semibold text-foreground text-lg">
+              Gajone Dev
             </span>
           </Link>
           <p className="max-w-md text-foreground-muted text-sm">
@@ -115,7 +119,7 @@ export default function Footer() {
         <p>
           © {new Date().getFullYear()} {siteConfig.name}. Tous droits réservés.
         </p>
-        <div className="flex gap-4">
+        <div className="flex items-center gap-4">
           {footerLinks.legal.map((link) => (
             <Link
               key={link.href}
@@ -125,6 +129,7 @@ export default function Footer() {
               {link.label}
             </Link>
           ))}
+          <span className="text-foreground-subtle">Built with Next.js</span>
         </div>
       </Container>
     </footer>
