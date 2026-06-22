@@ -217,6 +217,99 @@ h6 {
   background-size: 22px 22px;
 }
 
+/* Border-beam : two glowing traces (blue + coral) circulate around a card's
+   border at irregular speed — Huly-style. Wrap the card in .beam-frame. */
+@property --beam-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+/* Irregular cadence: bursts of speed punctuated by near-stops. Angle is
+   strictly increasing so the loop stays seamless; the per-segment deltas
+   create the fast / slow / almost-frozen / dash rhythm. */
+@keyframes beam-rotate {
+  0% {
+    --beam-angle: 0deg;
+  }
+  11% {
+    --beam-angle: 95deg;
+  }
+  23% {
+    --beam-angle: 118deg;
+  }
+  33% {
+    --beam-angle: 205deg;
+  }
+  46% {
+    --beam-angle: 225deg;
+  }
+  56% {
+    --beam-angle: 300deg;
+  }
+  70% {
+    --beam-angle: 320deg;
+  }
+  82% {
+    --beam-angle: 345deg;
+  }
+  100% {
+    --beam-angle: 360deg;
+  }
+}
+.beam-frame {
+  position: relative;
+  border-radius: 2rem;
+}
+.beam-frame > * {
+  position: relative;
+  z-index: 1;
+}
+/* crisp line (::before) + blurred bloom (::after), both masked to the ring */
+.beam-frame::before,
+.beam-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(
+    from var(--beam-angle),
+    transparent 0deg,
+    #60a5fa 12deg,
+    #3b82f6 45deg,
+    #3b82f6 72deg,
+    transparent 104deg,
+    transparent 180deg,
+    #ff6f59 192deg,
+    #ff4d3d 225deg,
+    #ff4d3d 252deg,
+    transparent 284deg,
+    transparent 360deg
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: beam-rotate 6s linear infinite;
+  pointer-events: none;
+}
+.beam-frame::before {
+  z-index: 2;
+}
+.beam-frame::after {
+  z-index: 0;
+  padding: 3px;
+  filter: blur(8px);
+  opacity: 0.9;
+}
+@media (prefers-reduced-motion: reduce) {
+  .beam-frame::before,
+  .beam-frame::after {
+    animation: none;
+  }
+}
+
 /* Reduce heavy blur/glow on touch devices for perf */
 @media (hover: none) {
   .glass {
@@ -265,6 +358,17 @@ h6 {
 }
 
 /* ---- Spotlight card : cursor-tracked glow + corner light bleed ---- */
+/* Registered so the spotlight position can EASE toward the cursor (lag) */
+@property --mx {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 50%;
+}
+@property --my {
+  syntax: "<length-percentage>";
+  inherits: true;
+  initial-value: 50%;
+}
 .spotlight-card {
   position: relative;
   isolation: isolate;
@@ -274,7 +378,9 @@ h6 {
   background: var(--background-soft);
   transition:
     border-color 0.35s ease,
-    box-shadow 0.35s ease;
+    box-shadow 0.35s ease,
+    --mx 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    --my 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 .spotlight-card:hover {
   border-color: var(--glass-border-hover);
@@ -294,7 +400,11 @@ h6 {
   pointer-events: none;
   opacity: 0.16;
   filter: blur(28px);
-  background: radial-gradient(circle, var(--corner, var(--primary)), transparent 70%);
+  background: radial-gradient(
+    circle,
+    var(--corner, var(--primary)),
+    transparent 70%
+  );
   transition: opacity 0.4s ease;
 }
 .spotlight-card:hover::before {
@@ -317,7 +427,8 @@ h6 {
   right: -22%;
 }
 
-/* Cursor-following spotlight overlay */
+/* Cursor-following spotlight overlay — tinted with the card's corner accent
+   so the moving glow alternates color across the grid (coral / blue / amber) */
 .spotlight-card .spotlight-glow {
   position: absolute;
   inset: 0;
@@ -325,14 +436,20 @@ h6 {
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.4s ease;
-  background: radial-gradient(
-    440px circle at var(--mx, 50%) var(--my, 50%),
-    var(--primary-glow-strong),
-    transparent 55%
-  );
+  background:
+    radial-gradient(
+      440px circle at var(--mx) var(--my),
+      color-mix(in srgb, var(--corner, var(--primary)) 34%, transparent),
+      transparent 55%
+    ),
+    radial-gradient(
+      240px circle at var(--mx) var(--my),
+      color-mix(in srgb, var(--primary) 12%, transparent),
+      transparent 60%
+    );
 }
 .spotlight-card:hover .spotlight-glow {
-  opacity: 1;
+  opacity: 0.85;
 }
 .spotlight-card > .spotlight-content {
   position: relative;
@@ -404,7 +521,7 @@ h6 {
   );
 }
 .btn-primary:hover::after {
-  animation: btn-sheen 0.8s ease forwards;
+  animation: btn-sheen 1.3s ease forwards;
 }
 @keyframes btn-sheen {
   to {

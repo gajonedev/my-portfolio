@@ -313,13 +313,22 @@ export default function Home() {
         <DotPattern />
         <Container className="relative">
           <div className="relative overflow-hidden rounded-[2rem] border border-stroke bg-background-soft">
-            {/* warm mesh glow rising from the bottom (huly/conversion style) */}
+            {/* pronounced warm mesh glow rising from the bottom */}
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-x-0 -bottom-32 mx-auto h-72 w-3/4 rounded-full blur-[110px]"
+              className="pointer-events-none absolute inset-x-0 -bottom-28 mx-auto h-80 w-4/5 rounded-full blur-[90px]"
               style={{
                 background:
-                  "radial-gradient(circle, rgba(255,77,61,0.35), rgba(59,130,246,0.18) 50%, transparent 70%)",
+                  "radial-gradient(circle, rgba(255,77,61,0.65), rgba(255,122,69,0.4) 38%, rgba(59,130,246,0.32) 62%, transparent 75%)",
+              }}
+            />
+            {/* second tighter core for a brighter, more manifest hotspot */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 -bottom-10 mx-auto h-44 w-1/2 rounded-full blur-[70px]"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(255,99,71,0.55), transparent 70%)",
               }}
             />
             <div className="relative grid gap-10 p-8 md:p-12 lg:grid-cols-[0.55fr_0.45fr]">

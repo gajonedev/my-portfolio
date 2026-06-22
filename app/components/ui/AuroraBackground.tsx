@@ -37,6 +37,13 @@ export default function AuroraBackground({
         animate={{ x: [0, 25, 0], y: [0, 20, 0] }}
         transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
       />
+      {/* top-right corner halo */}
+      <motion.div
+        className="absolute -right-24 -top-24 h-[34rem] w-[34rem] rounded-full blur-[130px]"
+        style={{ background: "radial-gradient(circle, rgba(255,77,61,0.24), transparent 60%)" }}
+        animate={{ x: [0, -25, 0], y: [0, 20, 0] }}
+        transition={{ duration: 19, repeat: Infinity, ease: "easeInOut" }}
+      />
     </div>
   );
 }

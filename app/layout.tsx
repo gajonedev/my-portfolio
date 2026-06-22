@@ -99,7 +99,7 @@ const jsonLd = {
       "@id": `${baseUrl}/#person`,
       name: "Néhémie Gandonou",
       url: baseUrl,
-      image: `${baseUrl}/portrait.jpeg`,
+      image: `${baseUrl}/portrait.png`,
       sameAs: [
         "https://github.com/gajonedev",
         "https://linkedin.com/in/gajonedev",
@@ -131,7 +131,7 @@ const jsonLd = {
       "@type": "LocalBusiness",
       "@id": `${baseUrl}/#business`,
       name: "Néhémie Gandonou - Développeur Web",
-      image: `${baseUrl}/portrait.jpeg`,
+      image: `${baseUrl}/portrait.png`,
       url: baseUrl,
       telephone: "+22901468973222",
       email: "gajonedev@gmail.com",
@@ -200,7 +200,7 @@ export default function RootLayout({
         className={`${outfit.variable} ${plusJakarta.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground font-sans`}
       >
         <Header />
-        <main className="min-h-screen pt-[68px]">{children}</main>
+        <main className="pt-[68px] min-h-screen">{children}</main>
         <Footer />
         <Analytics />
         <SpeedInsights />

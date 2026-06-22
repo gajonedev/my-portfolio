@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Container from "./Container";
+import SocialButton from "./ui/SocialButton";
 import { Github, Linkedin, Twitter, Mail, Phone, MapPin } from "@/lib/icons";
 import {
   navLinks,
@@ -42,32 +43,26 @@ export default function Footer() {
             {socialLinks.map((social) => {
               const Icon = socialIconMap[social.name];
               return (
-                <a
+                <SocialButton
                   key={social.name}
                   href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex justify-center items-center bg-background border border-stroke hover:border-primary rounded-full w-9 h-9 text-foreground-muted hover:text-primary transition"
-                  aria-label={social.name}
-                >
-                  <Icon className="w-4 h-4" />
-                </a>
+                  label={social.name}
+                  icon={<Icon className="h-4 w-4" />}
+                />
               );
             })}
-            <a
+            <SocialButton
               href={`mailto:${contactInfo.email}`}
-              className="flex justify-center items-center bg-background border border-stroke hover:border-primary rounded-full w-9 h-9 text-foreground-muted hover:text-primary transition"
-              aria-label="Email"
-            >
-              <Mail className="w-4 h-4" />
-            </a>
-            <a
+              label="Email"
+              icon={<Mail className="h-4 w-4" />}
+              external={false}
+            />
+            <SocialButton
               href={`tel:${contactInfo.phoneRaw}`}
-              className="flex justify-center items-center bg-background border border-stroke hover:border-primary rounded-full w-9 h-9 text-foreground-muted hover:text-primary transition"
-              aria-label="Phone"
-            >
-              <Phone className="w-4 h-4" />
-            </a>
+              label="Téléphone"
+              icon={<Phone className="h-4 w-4" />}
+              external={false}
+            />
           </div>
         </div>
 
