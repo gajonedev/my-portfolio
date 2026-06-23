@@ -4,7 +4,7 @@ import PageHeader from "../components/PageHeader";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { getAllPosts } from "@/lib/blog";
 
-export default function BlogPage() {
+export default async function BlogPage() {
   const posts = getAllPosts();
 
   return (

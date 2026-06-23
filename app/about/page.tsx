@@ -3,7 +3,7 @@ import PageHeader from "../components/PageHeader";
 import { getIcon, Award, Users, Heart, Rocket } from "@/lib/icons";
 import { skills, values, aboutStats } from "@/data";
 
-export default function AboutPage() {
+export default async function AboutPage() {
   return (
     <>
       <PageHeader
@@ -24,14 +24,15 @@ export default function AboutPage() {
               <p className="mt-2 text-primary">Développeur Web & Mobile</p>
               <p className="mt-4 text-foreground-muted text-sm leading-relaxed">
                 Je conçois des applications mobiles et des logiciels web
-                complets : des produits propres, fluides et pensés pour
-                résoudre un vrai problème. Mon obsession, c&apos;est la qualité
-                — pas le produit au rabais.
+                complets : des produits propres, fluides et pensés pour résoudre
+                un vrai problème. Mon obsession, c&apos;est la qualité — pas le
+                produit au rabais.
               </p>
               <p className="mt-4 text-foreground-muted text-sm leading-relaxed">
                 Du frontend soigné au backend solide (API, base de données,
-                tâches en arrière-plan), je gère toute la chaîne proprement, avec
-                une architecture scalable prête à grandir avec votre activité.
+                tâches en arrière-plan), je gère toute la chaîne proprement,
+                avec une architecture scalable prête à grandir avec votre
+                activité.
               </p>
             </div>
             <div className="gap-4 grid">
