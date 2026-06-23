@@ -34,7 +34,7 @@ const CORNERS = ["tr", "tl", "br", "bl"] as const;
 const accentFor = (i: number) => ACCENTS[i % ACCENTS.length];
 const cornerFor = (i: number) => CORNERS[i % CORNERS.length];
 
-export default function Home() {
+export default async function Home() {
   return (
     <>
       {/* ============ HERO (dark) ============ */}

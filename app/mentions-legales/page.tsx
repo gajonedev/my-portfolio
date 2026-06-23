@@ -1,7 +1,7 @@
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 
-export default function MentionsLegalesPage() {
+export default async function MentionsLegalesPage() {
   return (
     <>
       <PageHeader

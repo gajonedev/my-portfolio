@@ -4,7 +4,7 @@ import ContactForm from "../components/ui/ContactForm";
 import { Mail, Phone, MapPin, Clock } from "@/lib/icons";
 import { contactInfo } from "@/data";
 
-export default function ContactPage() {
+export default async function ContactPage() {
   return (
     <>
       <PageHeader

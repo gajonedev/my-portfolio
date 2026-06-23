@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function DeveloppeurWebBeninPage() {
+export default async function DeveloppeurWebBeninPage() {
   return (
     <>
       <PageHeader

@@ -1,7 +1,7 @@
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 
-export default function PolitiqueConfidentialitePage() {
+export default async function PolitiqueConfidentialitePage() {
   return (
     <>
       <PageHeader
