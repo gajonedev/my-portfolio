@@ -296,7 +296,7 @@ export default function Home() {
       >
         <DotPattern />
         <Container className="relative">
-          <div className="relative bg-background-soft border border-stroke rounded-[2rem] overflow-hidden">
+          <div className="relative bg-background-soft border border-stroke rounded-4xl overflow-hidden">
             {/* pronounced warm mesh glow rising from the bottom */}
             <div
               aria-hidden="true"
