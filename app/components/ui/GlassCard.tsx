@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import type { ReactNode } from "react";
 import { springSoft } from "@/lib/animations";
 
@@ -17,7 +17,7 @@ export default function GlassCard({
   hover = true,
   as = "div",
 }: GlassCardProps) {
-  const MotionTag = motion[as];
+  const MotionTag = m[as];
   return (
     <MotionTag
       className={`glassw rounded-3xl transition-colors duration-300 hover:border-[color:var(--glass-border-hover)] ${className}`}

@@ -42,16 +42,16 @@ légales, une page SEO dédiée et un formulaire de contact sécurisé.
   remappées par section via les classes `.section-dark` / `.section-light`
   (pas de toggle clair/sombre, le markup s'adapte tout seul).
 - **Animations signature**
-  - *Hero* : reveal mot-à-mot piloté en **CSS** (joue dès la première frame, sans
+  - _Hero_ : reveal mot-à-mot piloté en **CSS** (joue dès la première frame, sans
     attendre l'hydratation → LCP préservé), border-beam à double trace autour du portrait.
-  - *Spotlight cards* : glow qui suit le curseur avec **parallax** (cœur rapide,
+  - _Spotlight cards_ : glow qui suit le curseur avec **parallax** (cœur rapide,
     halo lent) et corner-light alternée — implémenté en `requestAnimationFrame`
     pour éviter un bug de repaint Firefox.
-  - *Aurora* + dot pattern en fond de hero.
-  - *Carrousel de témoignages* swipeable (drag/tactile), autoplay, pastilles.
+  - _Aurora_ + dot pattern en fond de hero.
+  - _Carrousel de témoignages_ swipeable (drag/tactile), autoplay, pastilles.
 - **Formulaire de contact sécurisé** — `react-hook-form` + `zod`, envoi par e-mail
   via **Resend**, et anti-bot multi-couches : honeypot, time-trap, rate-limit par IP,
-  et **Cloudflare Turnstile** (vérification serveur *fail-closed*).
+  et **Cloudflare Turnstile** (vérification serveur _fail-closed_).
 - **Blog en Markdown** — contenu dans `content/blog/`, parsé avec `gray-matter` + `remark`.
 - **SEO** — métadonnées par page, `sitemap.xml`, OpenGraph image, page d'atterrissage
   dédiée (`/developpeur-web-benin`).
@@ -62,18 +62,18 @@ légales, une page SEO dédiée et un formulaire de contact sécurisé.
 
 ## 🧱 Stack technique
 
-| Domaine            | Technologies                                                            |
-| ------------------ | ----------------------------------------------------------------------- |
-| Framework          | [Next.js 16](https://nextjs.org) (App Router), [React 19](https://react.dev) |
-| Langage            | [TypeScript 5](https://www.typescriptlang.org)                          |
-| Styles             | [Tailwind CSS 4](https://tailwindcss.com) (`@theme`, tokens CSS)         |
-| Animations         | [Framer Motion 12](https://www.framer.com/motion/) + keyframes CSS      |
-| Formulaires        | [react-hook-form](https://react-hook-form.com) + [Zod](https://zod.dev) |
-| E-mail             | [Resend](https://resend.com)                                            |
-| Anti-bot           | [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/)  |
-| Contenu / Blog     | Markdown + [gray-matter](https://github.com/jonschlinkert/gray-matter) + [remark](https://remark.js.org) |
-| Icônes             | [lucide-react](https://lucide.dev)                                      |
-| Analytics          | [@vercel/analytics](https://vercel.com/analytics) + Speed Insights      |
+| Domaine        | Technologies                                                                                             |
+| -------------- | -------------------------------------------------------------------------------------------------------- |
+| Framework      | [Next.js 16](https://nextjs.org) (App Router), [React 19](https://react.dev)                             |
+| Langage        | [TypeScript 5](https://www.typescriptlang.org)                                                           |
+| Styles         | [Tailwind CSS 4](https://tailwindcss.com) (`@theme`, tokens CSS)                                         |
+| Animations     | [Framer Motion 12](https://www.framer.com/motion/) + keyframes CSS                                       |
+| Formulaires    | [react-hook-form](https://react-hook-form.com) + [Zod](https://zod.dev)                                  |
+| E-mail         | [Resend](https://resend.com)                                                                             |
+| Anti-bot       | [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/)                                   |
+| Contenu / Blog | Markdown + [gray-matter](https://github.com/jonschlinkert/gray-matter) + [remark](https://remark.js.org) |
+| Icônes         | [lucide-react](https://lucide.dev)                                                                       |
+| Analytics      | [@vercel/analytics](https://vercel.com/analytics) + Speed Insights                                       |
 
 ---
 
@@ -122,8 +122,8 @@ légales, une page SEO dédiée et un formulaire de contact sécurisé.
 ### Installation
 
 ```bash
-git clone https://github.com/gajonedev/portfolio.git
-cd portfolio
+git clone https://github.com/gajonedev/my-portfolio.git
+cd my-portfolio
 pnpm install
 ```
 
@@ -135,13 +135,13 @@ Copie le fichier d'exemple puis renseigne tes clés :
 cp .env.example .env.local
 ```
 
-| Variable                          | Rôle                                                        | Requis |
-| --------------------------------- | ----------------------------------------------------------- | :----: |
-| `RESEND_API_KEY`                  | Clé API Resend (envoi des e-mails)                          |   ✅   |
-| `CONTACT_FROM_EMAIL`              | Expéditeur (domaine vérifié sur Resend)                     |   ✅   |
-| `CONTACT_TO_EMAIL`                | Adresse de réception des messages                           |   ✅   |
-| `NEXT_PUBLIC_TURNSTILE_SITE_KEY`  | Clé publique Cloudflare Turnstile (exposée au navigateur)   |   ✅   |
-| `TURNSTILE_SECRET_KEY`            | Clé secrète Turnstile (serveur uniquement)                  |   ✅   |
+| Variable                         | Rôle                                                      | Requis |
+| -------------------------------- | --------------------------------------------------------- | :----: |
+| `RESEND_API_KEY`                 | Clé API Resend (envoi des e-mails)                        |   ✅   |
+| `CONTACT_FROM_EMAIL`             | Expéditeur (domaine vérifié sur Resend)                   |   ✅   |
+| `CONTACT_TO_EMAIL`               | Adresse de réception des messages                         |   ✅   |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Clé publique Cloudflare Turnstile (exposée au navigateur) |   ✅   |
+| `TURNSTILE_SECRET_KEY`           | Clé secrète Turnstile (serveur uniquement)                |   ✅   |
 
 > 💡 **Dév local sans configuration** : Cloudflare fournit des clés de test qui
 > passent toujours la vérification — voir les valeurs commentées dans
@@ -168,7 +168,7 @@ les couches suivantes, dans l'ordre :
 2. **Time-trap** — un envoi trop rapide (< 3 s après l'affichage) est rejeté.
 3. **Validation Zod** — schéma partagé client/serveur (`lib/contact-schema.ts`).
 4. **Rate-limit par IP** — 3 messages / 60 s (en mémoire).
-5. **Cloudflare Turnstile** — vérification serveur *fail-closed* (siteverify).
+5. **Cloudflare Turnstile** — vérification serveur _fail-closed_ (siteverify).
 6. **Resend** — envoi de l'e-mail avec `replyTo` sur l'adresse du visiteur.
 
 ---
@@ -206,7 +206,7 @@ Tout hébergeur supportant Next.js 16 convient également.
 ## 🤝 Contribution
 
 Ce dépôt est avant tout mon portfolio personnel, mais vos retours, suggestions et
-corrections sont les bienvenus — ouvrez une *issue* ou une *pull request*.
+corrections sont les bienvenus — ouvrez une _issue_ ou une _pull request_.
 
 > ⚠️ Les **contenus** (textes, projets, photo, témoignages) sont les miens.
 > Réutilisez librement le **code et l'architecture**, mais remplacez mes contenus
@@ -222,7 +222,7 @@ Distribué sous licence **MIT**. Voir le fichier [`LICENSE`](./LICENSE).
 
 ## 👤 Auteur
 
-**Néhémie Gandonou** — *Gajone Dev*
+**Néhémie Gandonou** — _Gajone Dev_
 Développeur Web & Mobile · Cotonou, Bénin
 
 - 🌐 [gajone.dev](https://gajone.dev)

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { easeSmooth, viewportOnce } from "@/lib/animations";
 
 interface SectionHeadingProps {
@@ -21,7 +21,7 @@ export default function SectionHeading({
   const alignClass =
     align === "center" ? "items-center text-center" : "items-start";
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
       whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={viewportOnce}
@@ -42,6 +42,6 @@ export default function SectionHeading({
           {subtitle}
         </p>
       ) : null}
-    </motion.div>
+    </m.div>
   );
 }

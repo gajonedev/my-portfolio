@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  motion,
+  m,
   AnimatePresence,
   useScroll,
   useMotionValueEvent,
@@ -48,7 +48,7 @@ export default function Header() {
 
   return (
     <>
-      <motion.header
+      <m.header
         initial={{ y: 0 }}
         animate={{ y: hidden ? "-110%" : "0%" }}
         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
@@ -90,7 +90,7 @@ export default function Header() {
                     }`}
                   >
                     {active && (
-                      <motion.span
+                      <m.span
                         layoutId="nav-indicator"
                         className="-z-10 absolute inset-0 bg-[color:var(--background-muted)] border-[color:var(--stroke-hover)] border rounded-full"
                         transition={{
@@ -124,13 +124,13 @@ export default function Header() {
             </div>
           </Container>
         </div>
-      </motion.header>
+      </m.header>
 
       {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
           <div className="md:hidden z-[60] fixed inset-0 section-dark">
-            <motion.div
+            <m.div
               className="absolute inset-0 bg-black/60 backdrop-blur-sm"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -139,7 +139,7 @@ export default function Header() {
               onClick={() => setIsOpen(false)}
               aria-hidden="true"
             />
-            <motion.div
+            <m.div
               className="right-0 absolute inset-y-0 flex flex-col bg-background border-stroke border-l w-72 text-foreground"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
@@ -162,7 +162,7 @@ export default function Header() {
                   <X className="w-4 h-4" />
                 </button>
               </div>
-              <motion.nav
+              <m.nav
                 className="flex-1 p-4 overflow-y-auto"
                 initial="hidden"
                 animate="visible"
@@ -176,7 +176,7 @@ export default function Header() {
                   {navLinks.map((link) => {
                     const active = pathname === link.href;
                     return (
-                      <motion.li
+                      <m.li
                         key={link.href}
                         variants={{
                           hidden: { opacity: 0, x: 24 },
@@ -194,11 +194,11 @@ export default function Header() {
                         >
                           {link.label}
                         </Link>
-                      </motion.li>
+                      </m.li>
                     );
                   })}
                 </ul>
-              </motion.nav>
+              </m.nav>
               <div className="p-4 border-stroke border-t">
                 <Link
                   href="/contact"
@@ -208,7 +208,7 @@ export default function Header() {
                   Démarrer un projet
                 </Link>
               </div>
-            </motion.div>
+            </m.div>
           </div>
         )}
       </AnimatePresence>

@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "Développeur Web & Mobile au Bénin — Cotonou, Porto-Novo, Lokossa",
   description:
-    "Recherchez un développeur web freelance au Bénin ? Création de sites internet, e-commerce, applications mobiles à Cotonou, Porto-Novo, Lokossa, Parakou. Devis gratuit.",
+    "Recherchez un développeur web & mobile freelance au Bénin ? Applications web fullstack, apps mobiles, plateformes SaaS et e-commerce, backends solides — à Cotonou, Porto-Novo, Lokossa, Parakou. Devis sous 24h.",
   keywords: seoKeywords.slice(0, 10),
   alternates: {
     canonical: `${siteConfig.url}/developpeur-web-benin`,
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Développeur Web & Mobile au Bénin",
     description:
-      "Votre développeur freelance pour sites web, e-commerce et apps mobiles à Cotonou, Porto-Novo, Lokossa et partout au Bénin.",
+      "Votre développeur freelance pour des applications web fullstack, apps mobiles, SaaS et e-commerce à Cotonou, Porto-Novo, Lokossa et partout au Bénin.",
     url: `${siteConfig.url}/developpeur-web-benin`,
   },
 };
@@ -33,7 +33,7 @@ export default async function DeveloppeurWebBeninPage() {
     <>
       <PageHeader
         title="Développeur Web & Mobile au Bénin"
-        description="Votre partenaire digital à Cotonou pour créer des sites web, e-commerce et applications mobiles performants."
+        description="Votre partenaire digital à Cotonou pour des applications web fullstack, des apps mobiles et des plateformes e-commerce / SaaS performantes."
       />
 
       <main className="py-16">
@@ -45,9 +45,10 @@ export default async function DeveloppeurWebBeninPage() {
             </h2>
             <p className="mt-4 text-foreground-muted leading-relaxed">
               Je suis <strong>Néhémie Gandonou</strong>, développeur web et
-              mobile freelance basé à <strong>Cotonou, Bénin</strong>. Je
-              propose des services de création de sites internet, boutiques
-              e-commerce, applications mobiles et automatisation pour les
+              mobile freelance basé à <strong>Cotonou, Bénin</strong>. Je conçois
+              des <strong>applications web fullstack</strong>, des{" "}
+              <strong>applications mobiles</strong> et des plateformes SaaS /
+              e-commerce, avec un backend solide et scalable, pour les
               entreprises, startups et entrepreneurs au Bénin et en Afrique de
               l&apos;Ouest.
             </p>

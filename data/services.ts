@@ -127,26 +127,27 @@ export const servicesDetailed: ServiceDetailed[] = [
 // Services pour la page SEO locale
 export const localServices: Service[] = [
   {
-    title: "Sites vitrines",
+    title: "Applications web & SaaS",
     iconName: "Globe",
     description:
-      "Sites internet professionnels pour entreprises béninoises, optimisés pour Google.",
-  },
-  {
-    title: "E-commerce",
-    iconName: "ShoppingCart",
-    description:
-      "Boutiques en ligne avec paiement mobile money, FedaPay, et livraison locale.",
+      "Logiciels web complets et plateformes sur-mesure, du site professionnel au SaaS scalable, optimisés pour Google.",
   },
   {
     title: "Applications mobiles",
     iconName: "Smartphone",
-    description: "Apps iOS et Android pour startups et entreprises au Bénin.",
+    description:
+      "Apps iOS et Android performantes et fluides (Flutter), pour startups et entreprises au Bénin.",
   },
   {
-    title: "Automatisation",
-    iconName: "Bot",
+    title: "E-commerce & paiement mobile",
+    iconName: "ShoppingCart",
     description:
-      "Chatbots WhatsApp, automatisation des processus métier et intégrations API.",
+      "Boutiques en ligne avec FedaPay, MTN MoMo et Moov Money intégrés, et livraison locale.",
+  },
+  {
+    title: "Backend & API",
+    iconName: "Code",
+    description:
+      "API, bases de données et automatisations métier : un backend solide, sécurisé et prêt à grandir.",
   },
 ];

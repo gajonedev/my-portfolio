@@ -3,6 +3,7 @@ import { Outfit, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import MotionProvider from "./components/MotionProvider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -33,24 +34,26 @@ export const metadata: Metadata = {
     template: "%s | Néhémie Gandonou",
   },
   description:
-    "Développeur web & mobile freelance basé à Cotonou, Bénin. Création de sites vitrines, e-commerce, SaaS, marketplace et applications mobiles. Disponible à Lokossa, Porto-Novo, Parakou et partout au Bénin.",
+    "Développeur web & mobile freelance basé à Cotonou, Bénin. Je conçois des applications web fullstack, des applications mobiles et des plateformes SaaS / e-commerce, avec un backend solide et scalable. Disponible à Cotonou, Porto-Novo, Lokossa, Parakou et partout au Bénin.",
   applicationName: "Néhémie Gandonou",
   authors: [{ name: "Néhémie Gandonou", url: baseUrl }],
   creator: "Néhémie Gandonou",
   keywords: [
     "développeur web Cotonou",
     "développeur mobile Bénin",
-    "freelance Cotonou",
-    "création site web Bénin",
+    "développeur fullstack Bénin",
+    "application web Bénin",
+    "application mobile Bénin",
+    "développeur Flutter Bénin",
     "développeur React Bénin",
     "développeur Next.js Afrique",
+    "création site web Bénin",
     "e-commerce Cotonou",
-    "application mobile Bénin",
     "SaaS Afrique de l'Ouest",
+    "freelance Cotonou",
     "développeur Porto-Novo",
-    "développeur Lokossa",
     "développeur Parakou",
-    "agence web Bénin",
+    "développeur Lokossa",
   ],
   alternates: {
     canonical: baseUrl,
@@ -58,7 +61,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Néhémie Gandonou — Développeur Web & Mobile à Cotonou, Bénin",
     description:
-      "Développeur freelance au Bénin : sites vitrines, e-commerce, SaaS, marketplace et apps mobiles. Basé à Cotonou, disponible partout.",
+      "Développeur freelance au Bénin : applications web fullstack, apps mobiles, plateformes SaaS et e-commerce, backends solides. Basé à Cotonou, disponible partout.",
     type: "website",
     url: baseUrl,
     siteName: "Néhémie Gandonou",
@@ -68,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Néhémie Gandonou — Développeur Web & Mobile à Cotonou, Bénin",
     description:
-      "Développeur freelance au Bénin spécialisé en React, Next.js et applications mobiles.",
+      "Développeur freelance au Bénin : applications web fullstack (Next.js, Node.js), apps mobiles (Flutter) et backends solides.",
     creator: "@gajonedev",
   },
   robots: {
@@ -199,9 +202,11 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} ${plusJakarta.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground font-sans`}
       >
-        <Header />
-        <main className="pt-17 min-h-screen">{children}</main>
-        <Footer />
+        <MotionProvider>
+          <Header />
+          <main className="pt-17 min-h-screen">{children}</main>
+          <Footer />
+        </MotionProvider>
         <Analytics />
         <SpeedInsights />
       </body>

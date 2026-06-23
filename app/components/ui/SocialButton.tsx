@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import type { ReactNode } from "react";
 
 interface SocialButtonProps {
@@ -30,7 +30,7 @@ export default function SocialButton({
     : {};
 
   return (
-    <motion.a
+    <m.a
       href={href}
       {...linkProps}
       aria-label={label}
@@ -49,14 +49,14 @@ export default function SocialButton({
       className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border bg-background text-foreground-muted"
     >
       {/* coral fill rising from the bottom */}
-      <motion.span
+      <m.span
         aria-hidden="true"
         className="absolute inset-0 z-0 rounded-full bg-primary"
         variants={{ rest: { y: "101%" }, hover: { y: "0%" } }}
         transition={{ type: "spring", stiffness: 320, damping: 28 }}
       />
       {/* ring pulse radiating outward on hover */}
-      <motion.span
+      <m.span
         aria-hidden="true"
         className="absolute inset-0 z-0 rounded-full border border-primary"
         variants={{
@@ -67,21 +67,21 @@ export default function SocialButton({
       />
       {/* icon barrel-roll swap */}
       <span className="relative z-10 block h-4 w-4">
-        <motion.span
+        <m.span
           className="absolute inset-0 flex items-center justify-center"
           variants={{ rest: { y: 0, opacity: 1 }, hover: { y: "-150%", opacity: 0 } }}
           transition={{ duration: 0.32, ease: easeOut }}
         >
           {icon}
-        </motion.span>
-        <motion.span
+        </m.span>
+        <m.span
           className="absolute inset-0 flex items-center justify-center text-primary-foreground"
           variants={{ rest: { y: "150%", opacity: 0 }, hover: { y: 0, opacity: 1 } }}
           transition={{ duration: 0.32, ease: easeOut }}
         >
           {icon}
-        </motion.span>
+        </m.span>
       </span>
-    </motion.a>
+    </m.a>
   );
 }

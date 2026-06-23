@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-const MotionLink = motion.create(Link);
+const MotionLink = m.create(Link);
 
 interface GlowButtonProps {
   children: ReactNode;
@@ -64,7 +64,7 @@ export default function GlowButton({
   }
 
   return (
-    <motion.button
+    <m.button
       type={type}
       onClick={onClick}
       disabled={disabled}
@@ -75,6 +75,6 @@ export default function GlowButton({
       whileTap={disabled ? undefined : tap}
     >
       {content}
-    </motion.button>
+    </m.button>
   );
 }

@@ -54,7 +54,7 @@ export default async function Home() {
                   <span className="text-primary">qualité</span>
                 </>
               }
-              subtitle="Je ne livre pas de produit au rabais. Apps mobiles et logiciels web complets, soignés dans le détail, avec un backend solide et une architecture prête à grandir."
+              subtitle="Je ne livre pas de produit au rabais. Applis mobiles et logiciels web complets, soignés dans le détail, avec un backend solide et une architecture prête à grandir."
             />
             <StaggerContainer className="gap-4 grid">
               {aboutHighlights.map((item) => (
