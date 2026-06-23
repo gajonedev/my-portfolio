@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -16,12 +16,6 @@ const outfit = Outfit({
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-body",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
   display: "swap",
 });
 
@@ -102,7 +96,7 @@ const jsonLd = {
       "@id": `${baseUrl}/#person`,
       name: "Néhémie Gandonou",
       url: baseUrl,
-      image: `${baseUrl}/portrait.png`,
+      image: `${baseUrl}/portrait.webp`,
       sameAs: [
         "https://github.com/gajonedev",
         "https://linkedin.com/in/gajonedev",
@@ -134,7 +128,7 @@ const jsonLd = {
       "@type": "LocalBusiness",
       "@id": `${baseUrl}/#business`,
       name: "Néhémie Gandonou - Développeur Web",
-      image: `${baseUrl}/portrait.png`,
+      image: `${baseUrl}/portrait.webp`,
       url: baseUrl,
       telephone: "+22901468973222",
       email: "gajonedev@gmail.com",
@@ -200,7 +194,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${outfit.variable} ${plusJakarta.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground font-sans`}
+        className={`${outfit.variable} ${plusJakarta.variable} antialiased bg-background text-foreground font-sans`}
       >
         <MotionProvider>
           <Header />
