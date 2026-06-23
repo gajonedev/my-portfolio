@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useAnimationControls } from "framer-motion";
+import { m, useAnimationControls } from "framer-motion";
 
 interface HoverWordProps {
   text: string;
@@ -35,7 +35,7 @@ export default function HoverWord({ text, className = "" }: HoverWordProps) {
       onMouseEnter={trigger}
     >
       {chars.map((char, i) => (
-        <motion.span
+        <m.span
           key={`${char}-${i}`}
           custom={i}
           animate={controls}
@@ -43,7 +43,7 @@ export default function HoverWord({ text, className = "" }: HoverWordProps) {
           style={{ whiteSpace: "pre" }}
         >
           {char}
-        </motion.span>
+        </m.span>
       ))}
     </span>
   );

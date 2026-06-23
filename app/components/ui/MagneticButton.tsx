@@ -1,10 +1,10 @@
 "use client";
 
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import { m, useMotionValue, useSpring } from "framer-motion";
 import Link from "next/link";
 import { useRef, type ReactNode } from "react";
 
-const MotionLink = motion.create(Link);
+const MotionLink = m.create(Link);
 
 interface MagneticButtonProps {
   children: ReactNode;
@@ -70,8 +70,8 @@ export default function MagneticButton({
   }
 
   return (
-    <motion.button type="button" onClick={onClick} {...sharedProps}>
+    <m.button type="button" onClick={onClick} {...sharedProps}>
       {children}
-    </motion.button>
+    </m.button>
   );
 }

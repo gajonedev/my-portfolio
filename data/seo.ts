@@ -44,7 +44,7 @@ export const localAdvantages = [
   "Connaissance du marché béninois et des moyens de paiement locaux",
   "Intégration FedaPay, MTN MoMo, Moov Money",
   "Support en français et accompagnement personnalisé",
-  "Prix adaptés au marché africain",
+  "Tarification transparente et devis clair sous 24h",
   "Délais respectés et communication transparente",
 ];
 
@@ -65,15 +65,17 @@ export const geoData = {
 export const seoKeywords = [
   "développeur web Cotonou",
   "développeur mobile Bénin",
-  "freelance Cotonou",
-  "création site web Bénin",
+  "développeur fullstack Bénin",
+  "application web Bénin",
+  "application mobile Bénin",
+  "développeur Flutter Bénin",
   "développeur React Bénin",
   "développeur Next.js Afrique",
+  "création site web Bénin",
   "e-commerce Cotonou",
-  "application mobile Bénin",
   "SaaS Afrique de l'Ouest",
+  "freelance Cotonou",
   "développeur Porto-Novo",
-  "développeur Lokossa",
   "développeur Parakou",
-  "agence web Bénin",
+  "développeur Lokossa",
 ];

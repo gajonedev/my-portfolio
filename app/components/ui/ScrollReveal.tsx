@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import type { ReactNode } from "react";
 import { easeSmooth, viewportOnce } from "@/lib/animations";
 
@@ -25,7 +25,7 @@ export default function ScrollReveal({
   className,
 }: ScrollRevealProps) {
   return (
-    <motion.div
+    <m.div
       className={className}
       initial={{ opacity: 0, ...directionMap[direction] }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
@@ -33,6 +33,6 @@ export default function ScrollReveal({
       transition={{ duration: 0.6, delay, ease: easeSmooth }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

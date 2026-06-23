@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { motion, type PanInfo } from "framer-motion";
+import { m, type PanInfo } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Quote } from "@/lib/icons";
 import type { Testimonial } from "@/data";
@@ -53,7 +53,7 @@ export default function TestimonialsCarousel({
       onFocusCapture={() => setPaused(true)}
       onBlurCapture={() => setPaused(false)}
     >
-      <motion.div
+      <m.div
         className="relative mx-auto h-[340px] max-w-3xl cursor-grab overflow-hidden active:cursor-grabbing sm:h-[300px]"
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
@@ -67,7 +67,7 @@ export default function TestimonialsCarousel({
           const isActive = off === 0;
           const visible = Math.abs(off) <= 1;
           return (
-            <motion.div
+            <m.div
               key={t.name}
               className="absolute inset-0 flex justify-center px-4"
               initial={false}
@@ -99,7 +99,7 @@ export default function TestimonialsCarousel({
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           );
         })}
 
@@ -124,7 +124,7 @@ export default function TestimonialsCarousel({
         >
           <ChevronRight className="h-5 w-5" />
         </button>
-      </motion.div>
+      </m.div>
 
       {/* dots */}
       <div className="mt-8 flex justify-center gap-2">

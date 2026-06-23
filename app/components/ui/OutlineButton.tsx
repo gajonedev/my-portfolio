@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Link from "next/link";
 import type { ReactNode } from "react";
 
-const MotionLink = motion.create(Link);
+const MotionLink = m.create(Link);
 
 interface OutlineButtonProps {
   children: ReactNode;
@@ -46,7 +46,7 @@ export default function OutlineButton({
   }
 
   return (
-    <motion.button
+    <m.button
       type={type}
       onClick={onClick}
       aria-label={ariaLabel}
@@ -55,6 +55,6 @@ export default function OutlineButton({
       whileTap={tap}
     >
       {children}
-    </motion.button>
+    </m.button>
   );
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useEffect, useRef, type ReactNode } from "react";
 import { springSoft } from "@/lib/animations";
 
@@ -96,7 +96,7 @@ export default function SpotlightCard({
   const cornerClass = corner === "none" ? "" : `corner-${corner}`;
 
   return (
-    <motion.div
+    <m.div
       ref={ref}
       onMouseMove={handleMove}
       whileHover={hover ? { y: -6 } : undefined}
@@ -110,6 +110,6 @@ export default function SpotlightCard({
     >
       <span className="spotlight-glow" aria-hidden="true" />
       <div className="spotlight-content">{children}</div>
-    </motion.div>
+    </m.div>
   );
 }
