@@ -37,13 +37,12 @@ export const staggerContainer: Variants = {
   },
 };
 
-// Stagger child item
+// Stagger child item (fade + slide; blur dropped — cheap paint on large blocks)
 export const staggerItem: Variants = {
-  hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: { duration: 0.5, ease: easeSmooth },
   },
 };
