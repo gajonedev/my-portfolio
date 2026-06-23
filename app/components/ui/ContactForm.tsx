@@ -140,7 +140,7 @@ export default function ContactForm({
         <textarea
           placeholder="Expliquez votre besoin"
           rows={4}
-          className="textarea"
+          className="resize-none textarea"
           aria-invalid={!!errors.message}
           {...register("message")}
         />
@@ -164,14 +164,16 @@ export default function ContactForm({
 
       {/* Cloudflare Turnstile */}
       {SITE_KEY ? (
-        <Turnstile
-          ref={turnstileRef}
-          siteKey={SITE_KEY}
-          options={{ theme: "dark", size: "flexible" }}
-          onSuccess={setToken}
-          onExpire={() => setToken("")}
-          onError={() => setToken("")}
-        />
+        <div className="flex flex-col gap-1 overflow-x-auto">
+          <Turnstile
+            ref={turnstileRef}
+            siteKey={SITE_KEY}
+            options={{ theme: "dark", size: "flexible" }}
+            onSuccess={setToken}
+            onExpire={() => setToken("")}
+            onError={() => setToken("")}
+          />
+        </div>
       ) : (
         <p className="font-body text-warning text-xs">
           Turnstile non configuré (NEXT_PUBLIC_TURNSTILE_SITE_KEY manquant).
