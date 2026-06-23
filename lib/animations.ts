@@ -15,12 +15,13 @@ export const springSoft: Transition = {
   damping: 30,
 };
 
-// Fade + slide up (single element)
+// Fade + slide up + un-blur (single element)
 export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 24, filter: "blur(8px)" },
   visible: {
     opacity: 1,
     y: 0,
+    filter: "blur(0px)",
     transition: { duration: 0.6, ease: easeSmooth },
   },
 };
@@ -38,10 +39,11 @@ export const staggerContainer: Variants = {
 
 // Stagger child item
 export const staggerItem: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 30, filter: "blur(8px)" },
   visible: {
     opacity: 1,
     y: 0,
+    filter: "blur(0px)",
     transition: { duration: 0.5, ease: easeSmooth },
   },
 };
@@ -55,10 +57,11 @@ export const wordContainer: Variants = {
 };
 
 export const wordItem: Variants = {
-  hidden: { opacity: 0, y: "0.5em" },
+  hidden: { opacity: 0, y: "0.5em", filter: "blur(8px)" },
   visible: {
     opacity: 1,
     y: 0,
+    filter: "blur(0px)",
     transition: { duration: 0.5, ease: easeOutExpo },
   },
 };

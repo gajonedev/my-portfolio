@@ -22,8 +22,8 @@ export default function SectionHeading({
     align === "center" ? "items-center text-center" : "items-start";
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
+      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
       viewport={viewportOnce}
       transition={{ duration: 0.6, ease: easeSmooth }}
       className={`flex flex-col gap-4 ${alignClass} ${className}`}

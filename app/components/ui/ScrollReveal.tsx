@@ -27,8 +27,8 @@ export default function ScrollReveal({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, ...directionMap[direction] }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      initial={{ opacity: 0, filter: "blur(8px)", ...directionMap[direction] }}
+      whileInView={{ opacity: 1, x: 0, y: 0, filter: "blur(0px)" }}
       viewport={viewportOnce}
       transition={{ duration: 0.6, delay, ease: easeSmooth }}
     >

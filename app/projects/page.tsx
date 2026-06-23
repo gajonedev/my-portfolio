@@ -3,6 +3,7 @@ import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 import SpotlightCard from "../components/ui/SpotlightCard";
 import TechBadge from "../components/ui/TechBadge";
+import ProjectStatus from "../components/ui/ProjectStatus";
 import { getIcon, ExternalLink } from "@/lib/icons";
 import { projects } from "@/data";
 
@@ -28,10 +29,13 @@ export default function ProjectsPage() {
                 className="group"
               >
                 <div className="p-6">
-                  <div className="flex items-center justify-between">
-                    <span className="rounded-full bg-primary/10 px-4 py-1 font-body text-xs text-primary">
-                      {project.sector}
-                    </span>
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="rounded-full bg-primary/10 px-4 py-1 font-body text-xs text-primary">
+                        {project.sector}
+                      </span>
+                      <ProjectStatus status={project.status} />
+                    </div>
                     <Link
                       href={project.link}
                       target="_blank"

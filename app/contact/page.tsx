@@ -1,5 +1,6 @@
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
+import ContactForm from "../components/ui/ContactForm";
 import { Mail, Phone, MapPin, Clock } from "@/lib/icons";
 import { contactInfo } from "@/data";
 
@@ -53,21 +54,7 @@ export default function ContactPage() {
               <span>{contactInfo.availability}</span>
             </div>
           </div>
-          <form className="gap-4 grid bg-card p-6 border border-stroke rounded-3xl">
-            <div className="gap-4 grid md:grid-cols-2">
-              <input type="text" placeholder="Nom complet" className="input" />
-              <input type="email" placeholder="Email" className="input" />
-            </div>
-            <input type="text" placeholder="Type de projet" className="input" />
-            <textarea
-              placeholder="Décrivez votre besoin"
-              rows={5}
-              className="textarea"
-            />
-            <button type="button" className="w-fit btn-primary">
-              Envoyer la demande
-            </button>
-          </form>
+          <ContactForm className="bg-card p-6 border border-stroke rounded-3xl" />
         </Container>
       </main>
     </>

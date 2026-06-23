@@ -14,6 +14,7 @@ interface GlowButtonProps {
   className?: string;
   external?: boolean;
   ariaLabel?: string;
+  disabled?: boolean;
 }
 
 const hover = { y: -2, scale: 1.02 };
@@ -35,6 +36,7 @@ export default function GlowButton({
   className = "",
   external = false,
   ariaLabel,
+  disabled = false,
 }: GlowButtonProps) {
   const content = (
     <>
@@ -65,11 +67,12 @@ export default function GlowButton({
     <motion.button
       type={type}
       onClick={onClick}
+      disabled={disabled}
       aria-label={ariaLabel}
       onMouseMove={handleMove}
-      className={`btn-primary ${className}`}
-      whileHover={hover}
-      whileTap={tap}
+      className={`btn-primary disabled:cursor-not-allowed disabled:opacity-60 ${className}`}
+      whileHover={disabled ? undefined : hover}
+      whileTap={disabled ? undefined : tap}
     >
       {content}
     </motion.button>

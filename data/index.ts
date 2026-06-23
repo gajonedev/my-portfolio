@@ -24,12 +24,7 @@ export {
 } from "./services";
 
 // Projets
-export {
-  projects,
-  projectsPreview,
-  type Project,
-  type ProjectPreview,
-} from "./projects";
+export { projects, projectsPreview, type Project } from "./projects";
 
 // Témoignages
 export { testimonials, type Testimonial } from "./testimonials";

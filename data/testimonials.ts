@@ -1,5 +1,4 @@
-// Témoignages clients
-
+// Témoignages clients et collaborateurs
 export interface Testimonial {
   name: string;
   role: string;
@@ -9,21 +8,27 @@ export interface Testimonial {
 
 export const testimonials: Testimonial[] = [
   {
-    name: "Mariam A.",
-    role: "CEO, AfroMarket",
+    name: "Rodolphe Gandonou",
+    role: "Client — ArchiForm",
     quote:
-      "Une collaboration fluide et un résultat au-dessus de nos attentes. Les performances du site ont doublé.",
+      "Néhémie a parfaitement compris le besoin : une page claire pour présenter la formation, un paiement simple, et tout le reste automatisé derrière. Depuis le lancement, chaque inscrit reçoit ses accès sans que j'aie à intervenir.",
   },
   {
-    name: "Jean K.",
-    role: "Product Manager, NovaPay",
+    name: "Raphaël Houngbedji",
+    role: "Graphiste — Collaborateur",
     quote:
-      "Design précis, rendu propre et délai respecté. Nous avons apprécié la vision produit.",
+      "Travailler avec Néhémie, c'est livrer un design et voir le résultat fidèle au pixel près. Il comprend les intentions derrière les maquettes et sait les traduire en interfaces qui fonctionnent vraiment.",
   },
   {
-    name: "Claire S.",
-    role: "Fondatrice, Bloom Studio",
+    name: "ChristDay Kouadio",
+    role: "Graphiste — Collaborateur",
     quote:
-      "Le site convertit mieux et reflète parfaitement notre image de marque. Merci !",
+      "Ce qui me plaît dans notre collaboration, c'est qu'il ne se contente pas d'intégrer — il propose des améliorations techniques qui rendent le design encore meilleur à l'usage.",
+  },
+  {
+    name: "Nassamou Rachad",
+    role: "Co-développeur — iVeges",
+    quote:
+      "Sur le projet iVeges, Néhémie a géré toute la partie application mobile et l'architecture de communication avec les capteurs. Sa capacité à connecter le hardware au software, c'est ce qui a rendu le système complet.",
   },
 ];

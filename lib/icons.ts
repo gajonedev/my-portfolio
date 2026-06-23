@@ -32,10 +32,22 @@ import {
   ExternalLink,
   Menu,
   X,
+  GraduationCap,
+  Home,
+  CreditCard,
+  Sprout,
+  Receipt,
+  Wallet,
   type LucideIcon,
 } from "lucide-react";
 
 export const iconMap: Record<string, LucideIcon> = {
+  GraduationCap,
+  Home,
+  CreditCard,
+  Sprout,
+  Receipt,
+  Wallet,
   Globe,
   ShoppingCart,
   LayoutDashboard,

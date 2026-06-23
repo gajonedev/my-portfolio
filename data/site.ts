@@ -17,7 +17,7 @@ export const contactInfo = {
   phoneRaw: "+22901468973222",
   location: "Cotonou, Bénin",
   availability: "Remote / Worldwide",
-  responseTime: "Prise de brief sous 48h.",
+  responseTime: "Prise de brief sous 24h.",
   averageDelivery: "4 à 8 semaines selon le scope.",
 } as const;
 
