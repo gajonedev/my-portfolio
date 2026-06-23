@@ -365,17 +365,10 @@ h6 {
 }
 
 /* ---- Spotlight card : cursor-tracked glow + corner light bleed ---- */
-/* Registered so the spotlight position can EASE toward the cursor (lag) */
-@property --mx {
-  syntax: "<length-percentage>";
-  inherits: true;
-  initial-value: 50%;
-}
-@property --my {
-  syntax: "<length-percentage>";
-  inherits: true;
-  initial-value: 50%;
-}
+/* --mx / --my are eased toward the cursor in JS (rAF lerp in SpotlightCard).
+   We intentionally do NOT register them via @property or transition them in
+   CSS: Firefox fails to repaint the gradient once a registered-custom-property
+   transition settles, blanking the glow in production. */
 .spotlight-card {
   position: relative;
   isolation: isolate;
@@ -385,9 +378,7 @@ h6 {
   background: var(--background-soft);
   transition:
     border-color 0.35s ease,
-    box-shadow 0.35s ease,
-    --mx 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    --my 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow 0.35s ease;
 }
 .spotlight-card:hover {
   border-color: var(--glass-border-hover);
@@ -445,12 +436,12 @@ h6 {
   transition: opacity 0.4s ease;
   background:
     radial-gradient(
-      440px circle at var(--mx) var(--my),
+      440px circle at var(--mx2, 50%) var(--my2, 50%),
       color-mix(in srgb, var(--corner, var(--primary)) 34%, transparent),
       transparent 55%
     ),
     radial-gradient(
-      240px circle at var(--mx) var(--my),
+      240px circle at var(--mx, 50%) var(--my, 50%),
       color-mix(in srgb, var(--primary) 12%, transparent),
       transparent 60%
     );
