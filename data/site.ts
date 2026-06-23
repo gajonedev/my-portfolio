@@ -67,7 +67,7 @@ export const stackAndTools = {
 } as const;
 
 export const aboutHighlights = [
-  "Design system cohérent et scalable",
-  "Stratégie SEO et contenu optimisés",
-  "Livrables prêts pour la croissance",
+  "Produits premium : propres, robustes et durables",
+  "Backend solide et architecture scalable",
+  "Expérience fluide, soignée jusque dans le détail",
 ] as const;

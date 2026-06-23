@@ -17,110 +17,110 @@ export const servicesPreview: Service[] = [
     title: "Applications mobiles",
     iconName: "Smartphone",
     description:
-      "Applications mobiles professionnelles et complètes ou PWA pour offrir une expérience mobile rapide et intuitive.",
+      "Des apps mobiles pro, propres et fluides qui résolvent un vrai problème — et qui font le job : vendre, automatiser, fidéliser.",
   },
   {
-    title: "Site web vitrine & fullstack",
+    title: "Applications & logiciels web",
     iconName: "Globe",
     description:
-      "Identité digitale moderne avec performance Core Web Vitals, SEO et contenu orienté conversion.",
-  },
-  {
-    title: "E-commerce & marketplace",
-    iconName: "ShoppingCart",
-    description:
-      "Expérience d'achat fluide, catalogue optimisés performances, paiements sécurisés et automatisations métier.",
+      "De vrais logiciels web complets, pas des vitrines : des outils qui résolvent des problèmes et facilitent le travail au quotidien.",
   },
   {
     title: "SaaS & dashboards",
     iconName: "LayoutDashboard",
     description:
-      "Interfaces produit fluides, onboarding guidé et architecture scalable pour vos équipes.",
+      "Produits SaaS et tableaux de bord fluides, multi-tenant et pensés dès le départ pour monter en charge.",
   },
   {
-    title: "Automatisation IA",
-    iconName: "Bot",
+    title: "E-commerce & vente en ligne",
+    iconName: "ShoppingCart",
     description:
-      "Workflows intelligents, chatbots, intégrations API et analyse de données assistée.",
+      "Des boutiques qui vendent vraiment : parcours d'achat fluide, paiements sécurisés et back-office maîtrisé.",
   },
   {
-    title: "Refonte & optimisation",
-    iconName: "RefreshCw",
+    title: "Backend & API",
+    iconName: "Code",
     description:
-      "Audit UX, refonte UI, optimisation des temps de chargement et accessibilité AA.",
+      "Le moteur de vos apps mobiles et web : API et infrastructure robustes, sécurisées et scalables, faites proprement.",
+  },
+  {
+    title: "Qualité & scalabilité",
+    iconName: "Award",
+    description:
+      "Pas de produit au rabais. Code propre, performances soignées et architecture prête à grandir avec vous.",
   },
 ];
 
 // Services détaillés (page services)
 export const servicesDetailed: ServiceDetailed[] = [
   {
-    title: "Site web vitrine & fullstack",
-    iconName: "Globe",
-    description:
-      "Identité digitale moderne avec performance Core Web Vitals, SEO et contenu orienté conversion. ",
-    details:
-      "UI/UX haut de gamme, SEO technique, performance Core Web Vitals, et copywriting orienté conversion. Livré avec un design system complet.",
-    features: [
-      "Design responsive",
-      "SEO optimisé",
-      "Performance A+",
-      "Analytics",
-    ],
-  },
-  {
-    title: "E-commerce & marketplace",
-    iconName: "ShoppingCart",
-    description:
-      "Expérience d'achat fluide, catalogue optimisés performances, paiements sécurisés et automatisations métier.",
-    details:
-      "Gestion catalogue, paiement sécurisé, back-office, automatisations et analytics avancés. Intégration Stripe, PayPal, ou solutions locales.",
-    features: [
-      "Multi-vendeurs",
-      "Paiements sécurisés",
-      "Gestion stocks",
-      "Dashboard",
-    ],
-  },
-  {
-    title: "SaaS & dashboard",
-    iconName: "LayoutDashboard",
-    description:
-      "Interfaces produit fluides, onboarding guidé et architecture scalable pour vos équipes.",
-    details:
-      "Interfaces modulaires, design system complet, onboarding guidé et architecture scalable pour vos équipes produit.",
-    features: ["Multi-tenant", "Auth SSO", "API REST", "Monitoring"],
-  },
-  {
     title: "Applications mobiles",
     iconName: "Smartphone",
     description:
-      "Applications mobiles ou PWA pour offrir une expérience mobile rapide et intuitive.",
+      "Des apps mobiles pro, propres et fluides qui résolvent un vrai problème.",
     details:
-      "Applications mobiles natives et performantes pour un expérience mobile optimale. Publication App Store et Google Play incluse.",
+      "Applications mobiles Flutter performantes et soignées dans le moindre détail, adossées à un backend solide. Conçues pour résoudre un vrai problème, vendre ou automatiser — et publiées sur l'App Store et Google Play.",
     features: [
-      "Cross-platform",
-      "Push notifications",
-      "Offline mode",
-      "Analytics",
+      "Flutter cross-platform",
+      "Backend solide",
+      "Mode hors-ligne",
+      "Publication stores",
     ],
   },
   {
-    title: "Automatisation IA",
-    iconName: "Bot",
+    title: "Applications & logiciels web",
+    iconName: "Globe",
     description:
-      "Workflows intelligents, chatbots, intégrations API et analyse de données assistée.",
+      "De vrais logiciels web complets qui résolvent des problèmes et facilitent le travail.",
     details:
-      "Chatbots intelligents, workflows automatisés, intégrations API tierces et analyse de données assistée par IA.",
-    features: ["Chatbots", "Workflows", "Intégrations API", "Analytics IA"],
+      "Pas des vitrines : de véritables produits web complets (outils métier, plateformes, espaces clients) qui automatisent et fluidifient le travail. Frontend soigné, logique métier robuste et infrastructure background maîtrisée.",
+    features: [
+      "Outils métier",
+      "Logique robuste",
+      "Temps réel",
+      "Scalable",
+    ],
   },
   {
-    title: "Refonte & optimisation",
-    iconName: "RefreshCw",
+    title: "SaaS & dashboards",
+    iconName: "LayoutDashboard",
     description:
-      "Audit UX, refonte UI, optimisation des temps de chargement et accessibilité AA.",
+      "Produits SaaS et tableaux de bord fluides, pensés pour monter en charge.",
     details:
-      "Audit UX complet, refonte UI moderne, optimisation des temps de chargement et mise en conformité accessibilité AA.",
-    features: ["Audit UX", "Refonte UI", "Performance", "Accessibilité"],
+      "Interfaces produit fluides et lisibles, architecture multi-tenant, design system complet et onboarding guidé — pensés dès le départ pour scaler proprement.",
+    features: ["Multi-tenant", "Auth & rôles", "API REST", "Monitoring"],
+  },
+  {
+    title: "E-commerce & vente en ligne",
+    iconName: "ShoppingCart",
+    description:
+      "Des boutiques qui vendent vraiment, sécurisées et maîtrisées de bout en bout.",
+    details:
+      "Parcours d'achat fluide, catalogue performant, paiements sécurisés et back-office complet. Intégrations Stripe, PayPal ou solutions locales (mobile money, FedaPay).",
+    features: [
+      "Parcours optimisé",
+      "Paiements sécurisés",
+      "Gestion stocks",
+      "Back-office",
+    ],
+  },
+  {
+    title: "Backend & API",
+    iconName: "Code",
+    description:
+      "Le moteur robuste et sécurisé derrière vos apps mobiles et web.",
+    details:
+      "API REST propres, base de données bien modélisée, authentification, jobs en arrière-plan et infrastructure scalable. Le socle technique de vos produits, fait proprement et documenté.",
+    features: ["API REST", "Base de données", "Auth & sécurité", "Jobs background"],
+  },
+  {
+    title: "Qualité & optimisation",
+    iconName: "Award",
+    description:
+      "Du soin, de la robustesse et des performances — pas de produit au rabais.",
+    details:
+      "Audit technique, refonte d'un produit existant, optimisation des performances et de la fluidité, montée en charge et mise en conformité accessibilité. L'exigence de qualité du premier au dernier commit.",
+    features: ["Audit technique", "Performance", "Scalabilité", "Accessibilité"],
   },
 ];
 

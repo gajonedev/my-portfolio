@@ -47,11 +47,11 @@ export default function Home() {
               kicker="À propos"
               title={
                 <>
-                  Un partenaire produit concentré sur la{" "}
-                  <span className="text-primary">performance</span>
+                  Un partenaire produit obsédé par la{" "}
+                  <span className="text-primary">qualité</span>
                 </>
               }
-              subtitle="J'accorde une importance particulière à l'expérience utilisateur, la vitesse et la clarté des parcours afin de transformer vos visiteurs en clients."
+              subtitle="Je ne livre pas de produit au rabais. Apps mobiles et logiciels web complets, soignés dans le détail, avec un backend solide et une architecture prête à grandir."
             />
             <StaggerContainer className="grid gap-4">
               {aboutHighlights.map((item) => (
@@ -134,7 +134,7 @@ export default function Home() {
             <SectionHeading
               kicker="Projets"
               title="Des réalisations à fort impact"
-              subtitle="Chaque projet est conçu pour convertir, rassurer et accélérer la croissance de la marque."
+              subtitle="Des produits soignés, pensés pour résoudre un problème concret, rester fluides et tenir la charge."
             />
             <OutlineButton href="/projects" className="shrink-0">
               Tous les projets
@@ -194,8 +194,8 @@ export default function Home() {
           <SectionHeading
             align="center"
             kicker="Services"
-            title="Des solutions sur mesure pour chaque projet"
-            subtitle="Design system, développement fullstack et optimisation pour livrer des produits performants et élégants."
+            title="Des produits complets, faits proprement"
+            subtitle="Applications mobiles et logiciels web complets, backend solide et exigence de qualité — pensés pour résoudre un vrai problème et durer dans le temps."
             className="mx-auto"
           />
           <StaggerContainer className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
