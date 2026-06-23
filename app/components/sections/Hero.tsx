@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Image from "next/image";
 import Container from "../Container";
 import AuroraBackground from "../ui/AuroraBackground";
@@ -39,16 +40,18 @@ export default function Hero() {
 
           <h1 className="font-display font-bold text-foreground text-4xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight">
             {titleTokens.map((token, i) => (
-              <span
-                key={`${token.text}-${i}`}
-                className="hero-word"
-                style={{
-                  animationDelay: `${WORD_BASE_DELAY + i * WORD_STAGGER}s`,
-                }}
-              >
-                {token.accent ? <HoverWord text={token.text} /> : token.text}
+              <Fragment key={`${token.text}-${i}`}>
+                <span
+                  className="hero-word"
+                  style={{
+                    animationDelay: `${WORD_BASE_DELAY + i * WORD_STAGGER}s`,
+                  }}
+                >
+                  {token.accent ? <HoverWord text={token.text} /> : token.text}
+                </span>
+                {/* space sits OUTSIDE the inline-block span so it isn't trimmed */}
                 {i < titleTokens.length - 1 ? " " : ""}
-              </span>
+              </Fragment>
             ))}
           </h1>
 
