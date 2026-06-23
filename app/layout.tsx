@@ -200,7 +200,7 @@ export default function RootLayout({
         className={`${outfit.variable} ${plusJakarta.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground font-sans`}
       >
         <Header />
-        <main className="pt-[68px] min-h-screen">{children}</main>
+        <main className="pt-17 min-h-screen">{children}</main>
         <Footer />
         <Analytics />
         <SpeedInsights />
