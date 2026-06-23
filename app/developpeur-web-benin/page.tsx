@@ -144,7 +144,7 @@ export default function DeveloppeurWebBeninPage() {
               Prêt à lancer votre projet ?
             </h2>
             <p className="mt-3 text-foreground-muted">
-              Discutons de votre projet digital. Devis gratuit sous 48h.
+              Discutons de votre projet digital. Devis gratuit sous 24h.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
               <Link href="/contact" className="btn-primary">

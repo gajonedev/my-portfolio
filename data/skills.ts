@@ -13,7 +13,11 @@ export interface Value {
 
 export const skills: SkillCategory[] = [
   {
-    name: "Frontend",
+    name: "Mobile",
+    items: ["Flutter", "Dart", "PWA", "App / Play Store"],
+  },
+  {
+    name: "Web",
     items: ["React", "Next.js", "TypeScript", "TailwindCSS"],
   },
   {
@@ -21,31 +25,29 @@ export const skills: SkillCategory[] = [
     items: ["Node.js", "Express", "Prisma", "PostgreSQL", "Supabase"],
   },
   {
-    name: "Mobile",
-    items: ["Flutter", "PWA"],
-  },
-  {
-    name: "CMS",
-    items: ["WordPress", "WooCommerce", "Strapi", "Sanity"],
+    name: "CMS Headless",
+    items: ["Sanity", "Strapi", "Payload"],
   },
 ];
 
 export const values: Value[] = [
   {
-    iconName: "Code",
-    title: "Code propre",
+    iconName: "Award",
+    title: "Qualité avant tout",
     description:
-      "Architecture scalable, composants réutilisables et bonnes pratiques.",
+      "Pas de produit au rabais : du soin, de la robustesse et du durable, dans chaque détail.",
   },
   {
-    iconName: "Palette",
-    title: "Design system",
-    description: "Cohérence visuelle et expérience utilisateur optimale.",
+    iconName: "Code",
+    title: "Code propre & scalable",
+    description:
+      "Architecture claire, maintenable et prête à monter en charge, backend compris.",
   },
   {
     iconName: "Rocket",
-    title: "Performance",
-    description: "Sites rapides, optimisés SEO et Core Web Vitals.",
+    title: "Performance & fluidité",
+    description:
+      "Des apps mobiles et web rapides, fluides et agréables à utiliser.",
   },
   {
     iconName: "Users",
@@ -56,24 +58,27 @@ export const values: Value[] = [
 
 export const processSteps = [
   {
-    title: "Reconnaissance",
+    title: "Cadrage",
     iconName: "Search",
     description:
-      "Comprendre vos objectifs business, cible, concurrence et KPI clés.",
+      "Comprendre le problème à résoudre, les utilisateurs et les objectifs business.",
   },
   {
-    title: "Design System",
+    title: "Conception",
     iconName: "Lightbulb",
-    description: "Création d'une identité UI/UX cohérente et modulaire.",
+    description:
+      "UX claire et design system cohérent, pour un produit fluide et lisible.",
   },
   {
     title: "Développement",
     iconName: "Code",
-    description: "Code moderne, composants scalables, tests et performance.",
+    description:
+      "Code propre, backend solide, architecture scalable et soin du détail.",
   },
   {
-    title: "Optimisation",
+    title: "Livraison & suivi",
     iconName: "Rocket",
-    description: "SEO, accessibilité, analytics et optimisation continue.",
+    description:
+      "Optimisation, mise en production soignée et accompagnement dans la durée.",
   },
 ];

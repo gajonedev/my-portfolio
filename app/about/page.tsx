@@ -15,7 +15,7 @@ export default function AboutPage() {
           {/* Introduction */}
           <section className="lg:items-center gap-8 grid lg:grid-cols-2">
             <div className="bg-card p-8 border border-stroke rounded-3xl">
-              <div className="flex justify-center items-center bg-primary rounded-2xl w-20 h-20 font-bold text-[#1a1625] text-2xl">
+              <div className="flex justify-center items-center bg-primary rounded-2xl w-20 h-20 font-bold text-primary-foreground text-2xl">
                 NG
               </div>
               <h2 className="mt-6 font-semibold text-foreground text-2xl">
@@ -23,16 +23,15 @@ export default function AboutPage() {
               </h2>
               <p className="mt-2 text-primary">Développeur Web & Mobile</p>
               <p className="mt-4 text-foreground-muted text-sm leading-relaxed">
-                Passionné par le développement web depuis plus de 5 ans, je crée
-                des expériences digitales modernes et performantes. Mon approche
-                combine design system rigoureux, code propre et optimisation
-                pour la conversion.
+                Je conçois des applications mobiles et des logiciels web
+                complets : des produits propres, fluides et pensés pour
+                résoudre un vrai problème. Mon obsession, c&apos;est la qualité
+                — pas le produit au rabais.
               </p>
               <p className="mt-4 text-foreground-muted text-sm leading-relaxed">
-                Je travaille principalement avec des startups et PME qui
-                souhaitent lancer ou améliorer leur présence digitale : sites
-                vitrines, e-commerce, SaaS, applications mobiles et
-                automatisations IA.
+                Du frontend soigné au backend solide (API, base de données,
+                tâches en arrière-plan), je gère toute la chaîne proprement, avec
+                une architecture scalable prête à grandir avec votre activité.
               </p>
             </div>
             <div className="gap-4 grid">

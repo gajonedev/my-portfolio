@@ -1,15 +1,27 @@
 import type { Metadata } from "next";
-import { Lexend } from "next/font/google";
+import { Outfit, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
-import ThemeProvider from "./components/ThemeProvider";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const geistSans = Lexend({
-  variable: "--font-geist-sans",
+const outfit = Outfit({
   subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
 });
 
 const baseUrl = "https://gajone.dev";
@@ -87,7 +99,7 @@ const jsonLd = {
       "@id": `${baseUrl}/#person`,
       name: "Néhémie Gandonou",
       url: baseUrl,
-      image: `${baseUrl}/portrait.jpeg`,
+      image: `${baseUrl}/portrait.png`,
       sameAs: [
         "https://github.com/gajonedev",
         "https://linkedin.com/in/gajonedev",
@@ -119,7 +131,7 @@ const jsonLd = {
       "@type": "LocalBusiness",
       "@id": `${baseUrl}/#business`,
       name: "Néhémie Gandonou - Développeur Web",
-      image: `${baseUrl}/portrait.jpeg`,
+      image: `${baseUrl}/portrait.png`,
       url: baseUrl,
       telephone: "+22901468973222",
       email: "gajonedev@gmail.com",
@@ -177,7 +189,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
+    <html lang="fr">
       <head>
         <script
           type="application/ld+json"
@@ -185,15 +197,13 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} antialiased bg-background font-sans`}
+        className={`${outfit.variable} ${plusJakarta.variable} ${jetbrainsMono.variable} antialiased bg-background text-foreground font-sans`}
       >
-        <ThemeProvider>
-          <Header />
-          <main className="min-h-screen">{children}</main>
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
-        </ThemeProvider>
+        <Header />
+        <main className="pt-17 min-h-screen">{children}</main>
+        <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

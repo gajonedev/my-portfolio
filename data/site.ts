@@ -17,7 +17,7 @@ export const contactInfo = {
   phoneRaw: "+22901468973222",
   location: "Cotonou, Bénin",
   availability: "Remote / Worldwide",
-  responseTime: "Prise de brief sous 48h.",
+  responseTime: "Prise de brief sous 24h.",
   averageDelivery: "4 à 8 semaines selon le scope.",
 } as const;
 
@@ -54,19 +54,20 @@ export const aboutStats = [
 ] as const;
 
 export const stackAndTools = {
-  main: "Next.js, React, TailwindCSS, Node.js, Supabase, WordPress, WooCommerce.",
+  main: "Flutter, Next.js, React, TypeScript, Node.js, Supabase, Sanity & Payload — et, à l'occasion, des systèmes embarqués ESP32 / Arduino.",
   tags: [
-    "Design system",
+    "Mobile Flutter",
+    "Web Next.js",
     "API REST",
+    "Design system",
     "SEO",
     "Performance",
-    "Monitoring",
-    "Analytics",
+    "IoT / Embedded",
   ],
 } as const;
 
 export const aboutHighlights = [
-  "Design system cohérent et scalable",
-  "Stratégie SEO et contenu optimisés",
-  "Livrables prêts pour la croissance",
+  "Produits premium : propres, robustes et durables",
+  "Backend solide et architecture scalable",
+  "Expérience fluide, soignée jusque dans le détail",
 ] as const;
