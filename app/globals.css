@@ -107,7 +107,7 @@
   --glass-bg: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.06);
   --glass-border-hover: rgba(255, 77, 61, 0.35);
-  --dot-color: rgba(255, 255, 255, 0.06);
+  --dot-color: rgba(255, 255, 255, 0.08);
 }
 
 /* ---- Map semantic tokens to Tailwind color/font utilities ---- */
