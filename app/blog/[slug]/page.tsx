@@ -129,7 +129,7 @@ export default async function BlogPostPage({ params }: Props) {
           </p>
 
           <div className="flex items-center gap-3 pt-2">
-            <div className="flex justify-center items-center bg-primary rounded-full w-10 h-10 font-bold text-primary-foreground text-sm">
+            <div className="flex justify-center items-center bg-primary/20 rounded-full w-10 h-10 font-bold text-primary text-sm">
               NG
             </div>
             <div>
@@ -158,7 +158,7 @@ export default async function BlogPostPage({ params }: Props) {
             {/* Author card */}
             <div className="top-24 sticky bg-card p-6 border border-stroke rounded-2xl">
               <div className="flex items-center gap-3">
-                <div className="flex justify-center items-center bg-primary rounded-full w-12 h-12 font-bold text-primary-foreground text-sm">
+                <div className="flex justify-center items-center bg-primary/20 rounded-full w-12 h-12 font-bold text-primary text-sm">
                   NG
                 </div>
                 <div>
