@@ -15,7 +15,7 @@ export default async function ContactPage() {
         <Container className="gap-10 grid lg:grid-cols-[0.6fr_0.4fr]">
           <div className="flex flex-col gap-6 bg-card p-6 border border-stroke rounded-3xl">
             <div>
-              <p className="text-foreground-muted/60 text-sm uppercase tracking-[0.25em]">
+              <p className="text-foreground-muted text-sm uppercase tracking-[0.25em]">
                 Coordonnées
               </p>
               <div className="flex flex-col gap-3 mt-4">
@@ -48,7 +48,7 @@ export default async function ContactPage() {
                 {contactInfo.responseTime}
               </p>
             </div>
-            <div className="flex flex-wrap gap-2 text-foreground-muted/60 text-xs">
+            <div className="flex flex-wrap gap-2 text-foreground-muted text-xs">
               <span>{contactInfo.location}</span>
               <span>•</span>
               <span>{contactInfo.availability}</span>

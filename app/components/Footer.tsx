@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <span className="font-semibold text-foreground-muted/60 text-sm uppercase tracking-[0.2em]">
+          <span className="font-semibold text-foreground-muted text-sm uppercase tracking-[0.2em]">
             Navigation
           </span>
           <div className="gap-2 grid grid-cols-2 text-sm">
@@ -84,7 +84,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-4">
-          <span className="font-semibold text-foreground-muted/60 text-sm uppercase tracking-[0.2em]">
+          <span className="font-semibold text-foreground-muted text-sm uppercase tracking-[0.2em]">
             Contact
           </span>
           <div className="flex flex-col gap-3 text-foreground-muted text-sm">
@@ -110,7 +110,7 @@ export default function Footer() {
         </div>
       </Container>
 
-      <Container className="flex md:flex-row flex-col justify-between items-center gap-4 mt-10 pt-6 border-stroke border-t text-foreground-muted/60 text-xs">
+      <Container className="flex md:flex-row flex-col justify-between items-center gap-4 mt-10 pt-6 border-stroke border-t text-foreground-muted text-xs">
         <p>
           © {new Date().getFullYear()} {siteConfig.name}. Tous droits réservés.
         </p>
