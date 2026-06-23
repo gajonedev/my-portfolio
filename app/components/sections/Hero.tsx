@@ -110,14 +110,14 @@ export default function Hero() {
           {/* two glowing traces circulating around the border (Huly style) */}
           <div className="beam-frame">
             {/* glass card kept as-is */}
-            <div className="bg-background-soft/60 backdrop-blur-md p-3 border border-stroke rounded-[2rem] glass">
+            <div className="bg-background-soft/60 backdrop-blur-md p-3 border border-stroke rounded-4xl glassw">
               <Image
                 src="/portrait.png"
                 alt="Portrait de Néhémie Gandonou, développeur web et mobile"
                 width={360}
                 height={440}
                 priority
-                className="rounded-[1.5rem] object-cover"
+                className="rounded-3xl object-cover"
               />
             </div>
           </div>

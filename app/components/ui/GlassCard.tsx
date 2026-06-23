@@ -20,7 +20,7 @@ export default function GlassCard({
   const MotionTag = motion[as];
   return (
     <MotionTag
-      className={`glass rounded-3xl transition-colors duration-300 hover:border-[color:var(--glass-border-hover)] ${className}`}
+      className={`glassw rounded-3xl transition-colors duration-300 hover:border-[color:var(--glass-border-hover)] ${className}`}
       whileHover={
         hover
           ? {
