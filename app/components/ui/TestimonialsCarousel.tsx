@@ -126,8 +126,8 @@ export default function TestimonialsCarousel({
         </button>
       </m.div>
 
-      {/* dots */}
-      <div className="mt-8 flex justify-center gap-2">
+      {/* dots — the button is a ≥24×24px tap target; the visible pill stays small */}
+      <div className="mt-6 flex justify-center gap-1">
         {testimonials.map((t, i) => (
           <button
             key={t.name}
@@ -135,12 +135,16 @@ export default function TestimonialsCarousel({
             onClick={() => setActive(i)}
             aria-label={`Aller au témoignage ${i + 1}`}
             aria-current={i === active}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              i === active
-                ? "w-6 bg-primary"
-                : "w-2 bg-foreground-subtle/40 hover:bg-foreground-subtle"
-            }`}
-          />
+            className="group flex h-6 min-w-6 items-center justify-center"
+          >
+            <span
+              className={`block h-2 rounded-full transition-all duration-300 ${
+                i === active
+                  ? "w-6 bg-primary"
+                  : "w-2 bg-foreground-subtle/40 group-hover:bg-foreground-subtle"
+              }`}
+            />
+          </button>
         ))}
       </div>
     </div>
