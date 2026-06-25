@@ -230,4 +230,4 @@ Développeur Web & Mobile · Cotonou, Bénin
 - 💼 [linkedin.com/in/gajonedev](https://linkedin.com/in/gajonedev)
 - ✉️ gajonedev@gmail.com
 
-<div align="center"><sub>Conçu et développé avec soin — pas de produit au rabais.</sub></div>
+<div align="center"><sub>Conçu et développé avec soin.</sub></div>

@@ -35,7 +35,7 @@ export const values: Value[] = [
     iconName: "Award",
     title: "Qualité avant tout",
     description:
-      "Pas de produit au rabais : du soin, de la robustesse et du durable, dans chaque détail.",
+      "Produits modernes et premium : du soin, de la robustesse et du durable, dans chaque détail.",
   },
   {
     iconName: "Code",

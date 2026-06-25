@@ -47,7 +47,7 @@ export const servicesPreview: Service[] = [
     title: "Qualité & scalabilité",
     iconName: "Award",
     description:
-      "Pas de produit au rabais. Code propre, performances soignées et architecture prête à grandir avec vous.",
+      "Expérience moderne. Code propre, performances soignées et architecture prête à grandir avec vous.",
   },
 ];
 
@@ -74,12 +74,7 @@ export const servicesDetailed: ServiceDetailed[] = [
       "De vrais logiciels web complets qui résolvent des problèmes et facilitent le travail.",
     details:
       "Pas des vitrines : de véritables produits web complets (outils métier, plateformes, espaces clients) qui automatisent et fluidifient le travail. Frontend soigné, logique métier robuste et infrastructure background maîtrisée.",
-    features: [
-      "Outils métier",
-      "Logique robuste",
-      "Temps réel",
-      "Scalable",
-    ],
+    features: ["Outils métier", "Logique robuste", "Temps réel", "Scalable"],
   },
   {
     title: "SaaS & dashboards",
@@ -111,16 +106,26 @@ export const servicesDetailed: ServiceDetailed[] = [
       "Le moteur robuste et sécurisé derrière vos apps mobiles et web.",
     details:
       "API REST propres, base de données bien modélisée, authentification, jobs en arrière-plan et infrastructure scalable. Le socle technique de vos produits, fait proprement et documenté.",
-    features: ["API REST", "Base de données", "Auth & sécurité", "Jobs background"],
+    features: [
+      "API REST",
+      "Base de données",
+      "Auth & sécurité",
+      "Jobs background",
+    ],
   },
   {
     title: "Qualité & optimisation",
     iconName: "Award",
     description:
-      "Du soin, de la robustesse et des performances — pas de produit au rabais.",
+      "Du soin, de la robustesse et des performances — expériences utilisateur optimales.",
     details:
       "Audit technique, refonte d'un produit existant, optimisation des performances et de la fluidité, montée en charge et mise en conformité accessibilité. L'exigence de qualité du premier au dernier commit.",
-    features: ["Audit technique", "Performance", "Scalabilité", "Accessibilité"],
+    features: [
+      "Audit technique",
+      "Performance",
+      "Scalabilité",
+      "Accessibilité",
+    ],
   },
 ];
 
