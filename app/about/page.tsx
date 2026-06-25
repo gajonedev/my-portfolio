@@ -25,8 +25,8 @@ export default async function AboutPage() {
               <p className="mt-4 text-foreground-muted text-sm leading-relaxed">
                 Je conçois des applications mobiles et des logiciels web
                 complets : des produits propres, fluides et pensés pour résoudre
-                un vrai problème. Mon obsession, c&apos;est la qualité — pas le
-                produit au rabais.
+                un vrai problème. Mon obsession, c&apos;est la qualité et la
+                performance.
               </p>
               <p className="mt-4 text-foreground-muted text-sm leading-relaxed">
                 Du frontend soigné au backend solide (API, base de données,
