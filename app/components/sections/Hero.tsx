@@ -33,7 +33,7 @@ export default function Hero() {
 
       <Container className="relative items-center gap-12 grid lg:grid-cols-[1.15fr_0.85fr] py-16 md:py-24">
         <div className="flex flex-col gap-8">
-          <span className="hero-anim-up flex items-center gap-2 bg-primary/10 px-3 py-1 border border-primary/40 rounded-full w-fit font-body text-primary text-xs uppercase tracking-[0.25em]">
+          <span className="flex items-center gap-2 bg-primary/10 px-3 py-1 border border-primary/40 rounded-full w-fit font-body text-primary text-xs uppercase tracking-[0.25em] hero-anim-up">
             <span className="inline-block bg-success rounded-full w-2 h-2" />
             Disponible pour freelance
           </span>
@@ -56,17 +56,16 @@ export default function Hero() {
           </h1>
 
           <p
-            className="hero-anim-up max-w-xl font-body text-foreground-muted text-base md:text-lg leading-relaxed"
+            className="max-w-xl font-body text-foreground-muted text-base md:text-lg leading-relaxed hero-anim-up"
             style={{ animationDelay: "0.5s" }}
           >
             Je suis Néhémie Gandonou, développeur web &amp; mobile basé à
-            Cotonou. Je conçois des applications mobiles Flutter et des
-            plateformes web Next.js / Node.js — rapides, élégantes et prêtes à
-            convertir.
+            Cotonou. Je conçois des applications mobiles et des plateformes web
+            rapides, élégantes et prêtes à convertir.
           </p>
 
           <div
-            className="hero-anim-up flex flex-wrap gap-4"
+            className="flex flex-wrap gap-4 hero-anim-up"
             style={{ animationDelay: "0.7s" }}
           >
             <GlowButton href="/projects">Voir mes projets</GlowButton>
@@ -74,7 +73,7 @@ export default function Hero() {
           </div>
 
           <div
-            className="hero-anim-up gap-6 grid grid-cols-2 sm:grid-cols-4"
+            className="gap-6 grid grid-cols-2 sm:grid-cols-4 hero-anim-up"
             style={{ animationDelay: "0.9s" }}
           >
             {stats.map((stat) => (
@@ -91,7 +90,7 @@ export default function Hero() {
         </div>
 
         <div
-          className="hero-anim-pop relative flex justify-center mx-auto"
+          className="relative flex justify-center mx-auto hero-anim-pop"
           style={{ animationDelay: "0.3s" }}
         >
           {/* two glowing traces circulating around the border (Huly style) */}
