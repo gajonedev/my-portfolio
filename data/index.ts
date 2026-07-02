@@ -47,3 +47,16 @@ export {
   seoKeywords,
   type City,
 } from "./seo";
+
+// Pages SEO locales par ville
+export {
+  localCities,
+  featuredCitySlugs,
+  cityFullSlug,
+  getCityByFullSlug,
+  getCityBySlug,
+  CITY_SLUG_PREFIX,
+  type LocalCity,
+  type CityFaq,
+  type CityOpportunity,
+} from "./cities";

@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
+import { localCities, cityFullSlug } from "@/data/cities";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://gajone.dev";
@@ -9,6 +10,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(post.date),
     changeFrequency: "monthly" as const,
     priority: 0.7,
+  }));
+
+  const cityPages = localCities.map((city) => ({
+    url: `${baseUrl}/${cityFullSlug(city)}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
   }));
 
   return [
@@ -36,6 +44,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    ...cityPages,
     {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),

@@ -8,6 +8,9 @@ import {
   socialLinks,
   siteConfig,
   contactInfo,
+  localCities,
+  featuredCitySlugs,
+  cityFullSlug,
 } from "@/data";
 
 const socialIconMap: Record<
@@ -19,6 +22,10 @@ const socialIconMap: Record<
   Twitter: Twitter,
 };
 
+const featuredCities = featuredCitySlugs
+  .map((slug) => localCities.find((city) => city.slug === slug))
+  .filter((city) => city !== undefined);
+
 export default function Footer() {
   return (
     <footer className="section-dark relative bg-background py-14 text-foreground border-stroke border-t">
@@ -26,7 +33,7 @@ export default function Footer() {
         aria-hidden="true"
         className="absolute inset-x-0 top-0 mx-auto h-px w-1/3 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50 blur-[1px]"
       />
-      <Container className="gap-10 grid md:grid-cols-3">
+      <Container className="gap-10 grid md:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col gap-4">
           <Link href="/" className="flex items-center gap-3">
             <div className="flex justify-center items-center bg-primary rounded-xl w-9 h-9 font-display font-bold text-primary-foreground text-sm glow-sm">
@@ -80,6 +87,29 @@ export default function Footer() {
                 {link.label}
               </Link>
             ))}
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-4">
+          <span className="font-semibold text-foreground-muted text-sm uppercase tracking-[0.2em]">
+            Zones d&apos;intervention
+          </span>
+          <div className="flex flex-col gap-2 text-sm">
+            {featuredCities.map((city) => (
+              <Link
+                key={city.slug}
+                href={`/${cityFullSlug(city)}`}
+                className="text-foreground-muted hover:text-foreground transition"
+              >
+                Développeur web à {city.name}
+              </Link>
+            ))}
+            <Link
+              href="/developpeur-web-benin"
+              className="text-primary hover:underline"
+            >
+              Tout le Bénin →
+            </Link>
           </div>
         </div>
 

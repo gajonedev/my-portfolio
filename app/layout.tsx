@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import MotionProvider from "./components/MotionProvider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { localCities } from "@/data/cities";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -130,7 +131,7 @@ const jsonLd = {
       name: "Néhémie Gandonou - Développeur Web",
       image: `${baseUrl}/portrait.webp`,
       url: baseUrl,
-      telephone: "+22901468973222",
+      telephone: "+2290146897322",
       email: "gajonedev@gmail.com",
       address: {
         "@type": "PostalAddress",
@@ -146,11 +147,10 @@ const jsonLd = {
         longitude: 2.4183,
       },
       areaServed: [
-        { "@type": "City", name: "Cotonou" },
-        { "@type": "City", name: "Porto-Novo" },
-        { "@type": "City", name: "Lokossa" },
-        { "@type": "City", name: "Parakou" },
-        { "@type": "City", name: "Abomey-Calavi" },
+        ...localCities.map((city) => ({
+          "@type": "City",
+          name: city.name,
+        })),
         { "@type": "Country", name: "Bénin" },
         { "@type": "Country", name: "Togo" },
         { "@type": "Country", name: "Niger" },
