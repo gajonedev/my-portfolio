@@ -4,12 +4,13 @@ import PageHeader from "../components/PageHeader";
 import Link from "next/link";
 import { getIcon, MapPin, CheckCircle, ArrowRight } from "@/lib/icons";
 import {
-  cities,
   localServices,
   localAdvantages,
   remoteCountries,
   seoKeywords,
   siteConfig,
+  localCities,
+  cityFullSlug,
 } from "@/data";
 
 export const metadata: Metadata = {
@@ -97,19 +98,22 @@ export default async function DeveloppeurWebBeninPage() {
               Villes où j&apos;interviens
             </h2>
             <div className="gap-3 grid grid-cols-2 md:grid-cols-3">
-              {cities.map((city) => (
-                <div
-                  key={city.name}
-                  className="flex items-center gap-3 bg-card/50 p-4 border border-stroke rounded-xl"
+              {localCities.map((city) => (
+                <Link
+                  key={city.slug}
+                  href={`/${cityFullSlug(city)}`}
+                  className="group flex items-center gap-3 bg-card/50 hover:bg-card p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
                 >
                   <MapPin className="w-5 h-5 text-primary shrink-0" />
                   <div>
-                    <p className="font-medium text-foreground">{city.name}</p>
+                    <p className="font-medium text-foreground group-hover:text-primary transition">
+                      {city.name}
+                    </p>
                     <p className="text-foreground-muted text-xs">
-                      {city.description}
+                      {city.tagline}
                     </p>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
             <p className="mt-4 text-foreground-muted text-sm">
