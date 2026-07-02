@@ -14,7 +14,7 @@ export const siteConfig = {
 export const contactInfo = {
   email: "gajonedev@gmail.com",
   phone: "+229 01 46 89 73 22",
-  phoneRaw: "+22901468973222",
+  phoneRaw: "+2290146897322",
   location: "Cotonou, Bénin",
   availability: "Remote / Worldwide",
   responseTime: "Prise de brief sous 24h.",
