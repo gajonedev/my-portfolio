@@ -19,7 +19,8 @@ const ACCENTS = ["#ff4d3d", "#3b82f6", "#f59e0b"];
 const CORNERS = ["tr", "tl", "br", "bl"] as const;
 
 export const metadata: Metadata = {
-  title: "Tarifs — Prix d'un Site Web, d'une App Mobile ou d'un E-commerce au Bénin",
+  title:
+    "Tarifs — Prix d'un Site Web, d'une App Mobile ou d'un E-commerce au Bénin",
   description:
     "Combien coûte un site web, une boutique en ligne ou une application mobile au Bénin ? Fourchettes de prix transparentes en FCFA, ce qui est inclus, et devis précis sous 24h.",
   keywords: [
@@ -106,59 +107,61 @@ export default async function TarifsPage() {
 
           {/* Grille tarifaire */}
           <section>
-            <div className="gap-4 grid md:grid-cols-2 lg:grid-cols-3">
+            <div className="gap-4 sm:gap-6 grid md:grid-cols-2 lg:grid-cols-3">
               {pricingTiers.map((tier, index) => (
                 <SpotlightCard
                   key={tier.title}
                   corner={CORNERS[index % CORNERS.length]}
                   cornerColor={ACCENTS[index % ACCENTS.length]}
+                  hover={false}
+                  glow={false}
                 >
                   <div className="flex flex-col p-6 h-full">
-                  <h2 className="font-display font-semibold text-foreground text-lg">
-                    {tier.title}
-                  </h2>
-                  <p className="mt-2 text-foreground-muted text-sm">
-                    {tier.description}
-                  </p>
-                  <div className="mt-5">
-                    <span className="block mb-2 text-foreground-muted text-xs uppercase tracking-wider">
-                      À partir de
-                    </span>
-                    <PriceTag
-                      tilt={index % 2 === 0 ? "left" : "right"}
-                      className="text-xl"
-                    >
-                      {tier.priceFrom}
-                    </PriceTag>
-                  </div>
-                  <p className="mt-3 text-foreground-muted text-xs">
-                    {tier.priceNote}
-                  </p>
-                  <ul className="flex flex-col gap-2 mt-5">
-                    {tier.includes.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5">
-                        <CheckCircle className="mt-0.5 w-4 h-4 text-green-500 shrink-0" />
-                        <span className="text-foreground-muted text-sm">
-                          {item}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                  <p className="mt-4 text-foreground-muted text-xs">
-                    <span className="font-medium text-foreground">
-                      Idéal pour :
-                    </span>{" "}
-                    {tier.idealFor}
-                  </p>
-                  {tier.serviceSlug && (
-                    <Link
-                      href={`/services/${tier.serviceSlug}`}
-                      className="inline-flex items-center gap-1.5 mt-auto pt-5 font-medium text-primary text-sm hover:underline"
-                    >
-                      Détails du service
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  )}
+                    <h2 className="font-display font-semibold text-foreground text-lg">
+                      {tier.title}
+                    </h2>
+                    <p className="mt-2 text-foreground-muted text-sm">
+                      {tier.description}
+                    </p>
+                    <div className="mt-5">
+                      <span className="block mb-2 text-foreground-muted text-xs uppercase tracking-wider">
+                        À partir de
+                      </span>
+                      <PriceTag
+                        tilt={index % 2 === 0 ? "left" : "right"}
+                        className="text-xl"
+                      >
+                        {tier.priceFrom}
+                      </PriceTag>
+                    </div>
+                    <p className="mt-3 text-foreground-muted text-xs">
+                      {tier.priceNote}
+                    </p>
+                    <ul className="flex flex-col gap-2 mt-5">
+                      {tier.includes.map((item) => (
+                        <li key={item} className="flex items-start gap-2.5">
+                          <CheckCircle className="mt-0.5 w-4 h-4 text-green-500 shrink-0" />
+                          <span className="text-foreground-muted text-sm">
+                            {item}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-4 text-foreground-muted text-xs">
+                      <span className="font-medium text-foreground">
+                        Idéal pour :
+                      </span>{" "}
+                      {tier.idealFor}
+                    </p>
+                    {tier.serviceSlug && (
+                      <Link
+                        href={`/services/${tier.serviceSlug}`}
+                        className="inline-flex items-center gap-1.5 mt-auto pt-5 font-medium text-primary text-sm hover:underline"
+                      >
+                        Détails du service
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    )}
                   </div>
                 </SpotlightCard>
               ))}
@@ -211,11 +214,11 @@ export default async function TarifsPage() {
               {pricingFaq.map((item) => (
                 <details
                   key={item.question}
-                  className="group bg-card border border-stroke rounded-2xl open:pb-5"
+                  className="group bg-card open:pb-5 border border-stroke rounded-2xl"
                 >
                   <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
                     {item.question}
-                    <ChevronRight className="w-5 h-5 text-foreground-muted transition-transform group-open:rotate-90 shrink-0" />
+                    <ChevronRight className="w-5 h-5 text-foreground-muted group-open:rotate-90 transition-transform shrink-0" />
                   </summary>
                   <p className="px-5 text-foreground-muted text-sm leading-relaxed">
                     {item.answer}

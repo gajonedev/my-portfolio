@@ -178,6 +178,7 @@ export default async function ServicePage({
           {/* Introduction */}
           <section className="max-w-3xl">
             <div className="flex justify-center items-center bg-primary/15 mb-6 rounded-2xl w-14 h-14 text-primary">
+              {/* eslint-disable-next-line react-hooks/static-components */}
               <Icon className="w-7 h-7" />
             </div>
             {service.intro.map((paragraph) => (
@@ -241,7 +242,7 @@ export default async function ServicePage({
               Des périmètres clairs pour situer votre budget — le devis précis
               arrive sous 24h, gratuitement.
             </p>
-            <div className="items-stretch gap-4 grid md:grid-cols-3">
+            <div className="items-stretch gap-6 grid md:grid-cols-3">
               {service.offers.map((offer, index) => (
                 <div
                   key={offer.name}
@@ -357,11 +358,11 @@ export default async function ServicePage({
               {service.faq.map((item) => (
                 <details
                   key={item.question}
-                  className="group bg-card border border-stroke rounded-2xl open:pb-5"
+                  className="group bg-card open:pb-5 border border-stroke rounded-2xl"
                 >
                   <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
                     {item.question}
-                    <ChevronRight className="w-5 h-5 text-foreground-muted transition-transform group-open:rotate-90 shrink-0" />
+                    <ChevronRight className="w-5 h-5 text-foreground-muted group-open:rotate-90 transition-transform shrink-0" />
                   </summary>
                   <p className="px-5 text-foreground-muted text-sm leading-relaxed">
                     {item.answer}
