@@ -6,7 +6,7 @@ Informations clés :
 - Nom : Néhémie Gandonou (Gajone Dev)
 - Localisation : Cotonou, Bénin (disponible dans tout le pays et en remote)
 - Contact : https://gajone.dev/contact — email : gajonedev@gmail.com
-- Langues : français (anglais possible pour les projets internationaux)
+- Langues : français (anglais pour les projets internationaux)
 - Spécialités : offline-first, intégration Mobile Money, SEO, IoT/systèmes embarqués
 - Stack : Flutter, Next.js, React, TypeScript, Node.js, PostgreSQL, Supabase
 
