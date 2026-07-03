@@ -23,6 +23,16 @@ export {
   type ServiceDetailed,
 } from "./services";
 
+// Tarifs
+export {
+  pricingTiers,
+  alwaysIncluded,
+  priceFactors,
+  pricingFaq,
+  type PricingTier,
+  type PricingFaq,
+} from "./pricing";
+
 // Pages services dédiées
 export {
   servicePages,

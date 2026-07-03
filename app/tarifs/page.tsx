@@ -1,0 +1,235 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Container from "../components/Container";
+import PageHeader from "../components/PageHeader";
+import { CheckCircle, ArrowRight, ChevronRight } from "@/lib/icons";
+import {
+  pricingTiers,
+  alwaysIncluded,
+  priceFactors,
+  pricingFaq,
+  siteConfig,
+} from "@/data";
+
+const url = `${siteConfig.url}/tarifs`;
+
+export const metadata: Metadata = {
+  title: "Tarifs — Prix d'un Site Web, d'une App Mobile ou d'un E-commerce au Bénin",
+  description:
+    "Combien coûte un site web, une boutique en ligne ou une application mobile au Bénin ? Fourchettes de prix transparentes en FCFA, ce qui est inclus, et devis précis sous 24h.",
+  keywords: [
+    "prix site web Bénin",
+    "coût application mobile Bénin",
+    "tarif création site internet Cotonou",
+    "prix boutique en ligne FCFA",
+    "devis site web Bénin",
+    "combien coûte un site web",
+  ],
+  alternates: { canonical: url },
+  openGraph: {
+    title: "Tarifs — Création de sites et applications au Bénin",
+    description:
+      "Des fourchettes de prix transparentes en FCFA pour votre site web, boutique en ligne ou application mobile. Devis précis sous 24h.",
+    url,
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${url}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Accueil",
+          item: siteConfig.url,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Tarifs",
+          item: url,
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: pricingFaq.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    },
+  ],
+};
+
+export default async function TarifsPage() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
+      <PageHeader
+        title="Tarifs transparents"
+        description="Combien coûte un site web, une boutique en ligne ou une application mobile ? Voici des fourchettes honnêtes en FCFA — et un devis précis sous 24h."
+      />
+
+      <main className="py-16">
+        <Container className="gap-14 grid">
+          {/* Intro */}
+          <section className="max-w-3xl">
+            <p className="text-foreground-muted leading-relaxed">
+              La plupart des prestataires cachent leurs prix. Je préfère la
+              transparence : les fourchettes ci-dessous vous donnent un ordre de
+              grandeur réaliste pour situer votre budget. Chaque projet étant
+              unique, le chiffrage précis se fait sur devis —{" "}
+              <strong className="text-foreground">
+                gratuit, détaillé et envoyé sous 24h
+              </strong>
+              .
+            </p>
+          </section>
+
+          {/* Grille tarifaire */}
+          <section>
+            <div className="gap-4 grid md:grid-cols-2 lg:grid-cols-3">
+              {pricingTiers.map((tier) => (
+                <div
+                  key={tier.title}
+                  className="flex flex-col bg-card p-6 border border-stroke rounded-2xl"
+                >
+                  <h2 className="font-display font-semibold text-foreground text-lg">
+                    {tier.title}
+                  </h2>
+                  <p className="mt-2 text-foreground-muted text-sm">
+                    {tier.description}
+                  </p>
+                  <p className="mt-4 font-display font-bold text-primary text-2xl">
+                    À partir de {tier.priceFrom}
+                  </p>
+                  <p className="mt-1 text-foreground-muted text-xs">
+                    {tier.priceNote}
+                  </p>
+                  <ul className="flex flex-col gap-2 mt-5">
+                    {tier.includes.map((item) => (
+                      <li key={item} className="flex items-start gap-2.5">
+                        <CheckCircle className="mt-0.5 w-4 h-4 text-green-500 shrink-0" />
+                        <span className="text-foreground-muted text-sm">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-4 text-foreground-muted text-xs">
+                    <span className="font-medium text-foreground">
+                      Idéal pour :
+                    </span>{" "}
+                    {tier.idealFor}
+                  </p>
+                  {tier.serviceSlug && (
+                    <Link
+                      href={`/services/${tier.serviceSlug}`}
+                      className="inline-flex items-center gap-1.5 mt-auto pt-5 font-medium text-primary text-sm hover:underline"
+                    >
+                      Détails du service
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  )}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Toujours inclus */}
+          <section className="bg-card p-8 border border-stroke rounded-3xl">
+            <h2 className="mb-6 font-semibold text-foreground text-xl">
+              Toujours inclus, quel que soit le projet
+            </h2>
+            <div className="gap-3 grid md:grid-cols-2">
+              {alwaysIncluded.map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <CheckCircle className="mt-0.5 w-5 h-5 text-green-500 shrink-0" />
+                  <p className="text-foreground-muted text-sm">{item}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Facteurs de prix */}
+          <section>
+            <h2 className="mb-6 font-semibold text-foreground text-2xl">
+              Ce qui fait varier le prix
+            </h2>
+            <div className="gap-4 grid md:grid-cols-2">
+              {priceFactors.map((factor) => (
+                <div
+                  key={factor.title}
+                  className="bg-card p-5 border border-stroke rounded-2xl"
+                >
+                  <h3 className="font-semibold text-foreground">
+                    {factor.title}
+                  </h3>
+                  <p className="mt-2 text-foreground-muted text-sm leading-relaxed">
+                    {factor.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* FAQ */}
+          <section>
+            <h2 className="mb-6 font-semibold text-foreground text-xl">
+              Questions fréquentes sur les prix
+            </h2>
+            <div className="flex flex-col gap-4">
+              {pricingFaq.map((item) => (
+                <details
+                  key={item.question}
+                  className="group bg-card border border-stroke rounded-2xl open:pb-5"
+                >
+                  <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
+                    {item.question}
+                    <ChevronRight className="w-5 h-5 text-foreground-muted transition-transform group-open:rotate-90 shrink-0" />
+                  </summary>
+                  <p className="px-5 text-foreground-muted text-sm leading-relaxed">
+                    {item.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          {/* CTA */}
+          <section className="text-center">
+            <h2 className="font-semibold text-foreground text-2xl">
+              Votre devis précis, sous 24h
+            </h2>
+            <p className="mt-3 text-foreground-muted">
+              Décrivez-moi votre projet en quelques lignes — je reviens vers
+              vous avec un chiffrage clair et sans engagement.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mt-6">
+              <Link href="/contact" className="btn-primary">
+                Demander un devis gratuit
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link href="/projects" className="btn-secondary">
+                Voir mes réalisations
+              </Link>
+            </div>
+          </section>
+        </Container>
+      </main>
+    </>
+  );
+}
