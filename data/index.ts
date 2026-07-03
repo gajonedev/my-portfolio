@@ -40,6 +40,7 @@ export {
   type ServicePage,
   type ServiceFaq,
   type ServiceProcessStep,
+  type ServiceOffer,
 } from "./service-pages";
 
 // Projets

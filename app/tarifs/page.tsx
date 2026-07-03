@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
+import PriceTag from "../components/ui/PriceTag";
 import { CheckCircle, ArrowRight, ChevronRight } from "@/lib/icons";
 import {
   pricingTiers,
@@ -102,7 +103,7 @@ export default async function TarifsPage() {
           {/* Grille tarifaire */}
           <section>
             <div className="gap-4 grid md:grid-cols-2 lg:grid-cols-3">
-              {pricingTiers.map((tier) => (
+              {pricingTiers.map((tier, index) => (
                 <div
                   key={tier.title}
                   className="flex flex-col bg-card p-6 border border-stroke rounded-2xl"
@@ -113,10 +114,18 @@ export default async function TarifsPage() {
                   <p className="mt-2 text-foreground-muted text-sm">
                     {tier.description}
                   </p>
-                  <p className="mt-4 font-display font-bold text-primary text-2xl">
-                    À partir de {tier.priceFrom}
-                  </p>
-                  <p className="mt-1 text-foreground-muted text-xs">
+                  <div className="mt-5">
+                    <span className="block mb-2 text-foreground-muted text-xs uppercase tracking-wider">
+                      À partir de
+                    </span>
+                    <PriceTag
+                      tilt={index % 2 === 0 ? "left" : "right"}
+                      className="text-xl"
+                    >
+                      {tier.priceFrom}
+                    </PriceTag>
+                  </div>
+                  <p className="mt-3 text-foreground-muted text-xs">
                     {tier.priceNote}
                   </p>
                   <ul className="flex flex-col gap-2 mt-5">

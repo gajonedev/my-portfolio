@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Container from "../../components/Container";
 import PageHeader from "../../components/PageHeader";
 import TechBadge from "../../components/ui/TechBadge";
+import PriceTag from "../../components/ui/PriceTag";
 import {
   getIcon,
   CheckCircle,
@@ -229,6 +230,92 @@ export default async function ServicePage({
                 </div>
               ))}
             </div>
+          </section>
+
+          {/* Offres */}
+          <section>
+            <h2 className="mb-2 font-semibold text-foreground text-2xl">
+              Trois formules, un même niveau d&apos;exigence
+            </h2>
+            <p className="mb-8 text-foreground-muted text-sm">
+              Des périmètres clairs pour situer votre budget — le devis précis
+              arrive sous 24h, gratuitement.
+            </p>
+            <div className="items-stretch gap-4 grid md:grid-cols-3">
+              {service.offers.map((offer, index) => (
+                <div
+                  key={offer.name}
+                  className={`relative flex flex-col p-6 border rounded-2xl ${
+                    offer.recommended
+                      ? "bg-card border-primary/60 shadow-[0_0_30px_var(--primary-glow)]"
+                      : "bg-card/60 border-stroke"
+                  }`}
+                >
+                  {offer.recommended && (
+                    <PriceTag
+                      tilt="right"
+                      className="-top-4 right-5 absolute text-xs uppercase tracking-wider"
+                    >
+                      Recommandé
+                    </PriceTag>
+                  )}
+                  <h3 className="font-display font-semibold text-foreground text-lg">
+                    {offer.name}
+                  </h3>
+                  <p className="mt-2 text-foreground-muted text-sm">
+                    {offer.description}
+                  </p>
+                  <div className="mt-5">
+                    <span className="block mb-2 text-foreground-muted text-xs uppercase tracking-wider">
+                      À partir de
+                    </span>
+                    <PriceTag
+                      tilt={index % 2 === 0 ? "left" : "right"}
+                      className="text-lg"
+                    >
+                      {offer.price}
+                    </PriceTag>
+                    {offer.priceNote && (
+                      <p className="mt-2 text-foreground-muted text-xs">
+                        {offer.priceNote}
+                      </p>
+                    )}
+                  </div>
+                  <ul className="flex flex-col gap-2 mt-5">
+                    {offer.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2.5">
+                        <CheckCircle className="mt-0.5 w-4 h-4 text-green-500 shrink-0" />
+                        <span className="text-foreground-muted text-sm">
+                          {feature}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href="/contact"
+                    className={`mt-auto pt-6 ${
+                      offer.recommended ? "" : "opacity-90"
+                    }`}
+                  >
+                    <span
+                      className={`inline-flex justify-center items-center gap-2 w-full ${
+                        offer.recommended ? "btn-primary" : "btn-secondary"
+                      }`}
+                    >
+                      Demander un devis
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </Link>
+                </div>
+              ))}
+            </div>
+            <p className="mt-4 text-foreground-muted text-sm">
+              Besoin d&apos;un périmètre différent ? Chaque projet est unique —{" "}
+              <Link href="/contact" className="text-primary hover:underline">
+                décrivez-moi le vôtre
+              </Link>{" "}
+              et je vous propose une formule adaptée.
+            </p>
           </section>
 
           {/* Projets liés */}

@@ -12,6 +12,18 @@ export interface ServiceProcessStep {
   description: string;
 }
 
+// ⚠️ TODO(Néhémie) : comme pour data/pricing.ts, les prix des offres sont des
+// fourchettes placeholder cohérentes avec la page /tarifs — à valider.
+export interface ServiceOffer {
+  name: string;
+  price: string;
+  priceNote?: string;
+  description: string;
+  features: string[];
+  /** Offre mise en avant (badge « Recommandé ») */
+  recommended?: boolean;
+}
+
 export interface ServicePage {
   slug: string;
   title: string;
@@ -24,6 +36,7 @@ export interface ServicePage {
   intro: string[];
   deliverables: string[];
   process: ServiceProcessStep[];
+  offers: ServiceOffer[];
   faq: ServiceFaq[];
   relatedProjectSlugs: string[];
   relatedCitySlugs: string[];
@@ -115,6 +128,53 @@ export const servicePages: ServicePage[] = [
           "Moi, de bout en bout : création des fiches, captures d'écran, conformité aux règles d'Apple et de Google, soumission et suivi jusqu'à l'approbation. Vous récupérez une application en ligne, pas un fichier à publier vous-même.",
       },
     ],
+    offers: [
+      {
+        name: "MVP Mobile",
+        price: "1 000 000 FCFA",
+        priceNote: "Idéal pour valider une idée",
+        description:
+          "L'application qui prouve votre concept : fonctionnalité cœur, interface soignée, prête à être testée par de vrais utilisateurs.",
+        features: [
+          "iOS + Android (Flutter)",
+          "Fonctionnalité principale complète",
+          "Authentification des utilisateurs",
+          "Backend et base de données",
+          "Publication sur les stores",
+        ],
+      },
+      {
+        name: "Business",
+        price: "1 800 000 FCFA",
+        priceNote: "Le choix de la plupart des entreprises",
+        description:
+          "L'application complète prête à générer du revenu : paiements locaux, mode hors-ligne et notifications pour engager vos utilisateurs.",
+        features: [
+          "Tout le MVP Mobile, plus :",
+          "Paiement Mobile Money / FedaPay",
+          "Mode hors-ligne avec synchronisation",
+          "Notifications push",
+          "Tableau de bord d'administration",
+          "Formation de vos équipes",
+        ],
+        recommended: true,
+      },
+      {
+        name: "Plateforme",
+        price: "3 000 000 FCFA et +",
+        priceNote: "Sur devis selon le périmètre",
+        description:
+          "L'application ambitieuse : plusieurs types d'utilisateurs, temps réel, intégrations poussées et architecture prête à scaler.",
+        features: [
+          "Tout Business, plus :",
+          "Multi-rôles (clients, vendeurs, admins…)",
+          "Fonctionnalités temps réel",
+          "Intégrations sur-mesure (IoT, SMS, cartographie…)",
+          "Monitoring et analytics avancés",
+          "Accompagnement post-lancement étendu",
+        ],
+      },
+    ],
     relatedProjectSlugs: ["afcom", "afreel", "smartvilla"],
     relatedCitySlugs: ["cotonou", "abomey-calavi", "parakou"],
   },
@@ -197,6 +257,53 @@ export const servicePages: ServicePage[] = [
         question: "Refaites-vous les sites existants ?",
         answer:
           "Oui. Si votre site actuel est lent, daté ou invisible sur Google, je réalise un audit puis une refonte qui conserve ce qui fonctionne et corrige ce qui pénalise. La refonte inclut la migration du contenu et les redirections pour ne pas perdre votre référencement existant.",
+      },
+    ],
+    offers: [
+      {
+        name: "Vitrine Essentielle",
+        price: "250 000 FCFA",
+        priceNote: "En ligne en 2 à 3 semaines",
+        description:
+          "Le site professionnel qui vous rend crédible et visible : l'essentiel, exécuté avec soin.",
+        features: [
+          "3 à 5 pages sur-mesure",
+          "Design responsive soigné",
+          "SEO technique de base",
+          "Formulaire de contact",
+          "Domaine + hébergement configurés",
+        ],
+      },
+      {
+        name: "Vitrine Croissance",
+        price: "450 000 FCFA",
+        priceNote: "Le meilleur rapport visibilité/prix",
+        description:
+          "Le site pensé pour capter des clients sur Google : plus de pages, un blog et un référencement travaillé en profondeur.",
+        features: [
+          "Tout l'Essentielle, plus :",
+          "6 à 10 pages optimisées",
+          "Blog avec CMS (contenu autonome)",
+          "SEO avancé + données structurées",
+          "Analytics et suivi des conversions",
+          "Optimisation vitesse poussée",
+        ],
+        recommended: true,
+      },
+      {
+        name: "Application Web",
+        price: "800 000 FCFA et +",
+        priceNote: "Sur devis selon la logique métier",
+        description:
+          "Au-delà du site : un véritable outil web qui automatise votre activité — espace client, gestion, réservations.",
+        features: [
+          "Analyse du besoin métier",
+          "Espace client / portail sécurisé",
+          "Logique métier sur-mesure",
+          "Backend robuste et scalable",
+          "Intégrations (paiement, SMS, outils existants)",
+          "Formation et documentation",
+        ],
       },
     ],
     relatedProjectSlugs: ["gain", "archiform", "weman-lms"],
@@ -283,6 +390,53 @@ export const servicePages: ServicePage[] = [
           "Oui, à 100 % : code source, base de données, accès aux services. Tout est documenté et transférable — vous n'êtes jamais prisonnier de votre prestataire, c'est un principe non négociable chez moi.",
       },
     ],
+    offers: [
+      {
+        name: "MVP",
+        price: "1 500 000 FCFA",
+        priceNote: "Lancé en 4 à 8 semaines",
+        description:
+          "Le produit minimal qui prouve la valeur : la fonctionnalité cœur, l'authentification et un premier plan payant.",
+        features: [
+          "Périmètre cadré sur l'essentiel",
+          "Authentification et comptes",
+          "Fonctionnalité cœur complète",
+          "Paiement (un plan d'abonnement)",
+          "Base technique prête à évoluer",
+        ],
+      },
+      {
+        name: "Startup",
+        price: "2 500 000 FCFA",
+        priceNote: "Pour lancer sérieusement",
+        description:
+          "Le SaaS complet prêt à accueillir ses clients : multi-tenant, plans d'abonnement, dashboard et onboarding.",
+        features: [
+          "Tout le MVP, plus :",
+          "Architecture multi-tenant",
+          "Plans et facturation récurrente",
+          "Dashboard et analytics",
+          "Onboarding guidé des utilisateurs",
+          "Monitoring en production",
+        ],
+        recommended: true,
+      },
+      {
+        name: "Scale",
+        price: "5 000 000 FCFA et +",
+        priceNote: "Sur devis selon l'ambition",
+        description:
+          "Le produit taillé pour la croissance : API publique, rôles avancés, haute disponibilité et accompagnement continu.",
+        features: [
+          "Tout Startup, plus :",
+          "API publique documentée",
+          "Rôles et permissions avancés",
+          "Optimisations de montée en charge",
+          "Intégrations entreprises",
+          "Accompagnement produit continu",
+        ],
+      },
+    ],
     relatedProjectSlugs: ["weman-lms", "fintech"],
     relatedCitySlugs: ["cotonou", "seme-podji", "abomey-calavi"],
   },
@@ -367,6 +521,53 @@ export const servicePages: ServicePage[] = [
           "Oui, c'est le but : ajouter des produits, suivre les commandes, lancer une promotion — tout se fait depuis un back-office simple, sur ordinateur ou téléphone. Formation incluse à la livraison, avec des guides pas-à-pas.",
       },
     ],
+    offers: [
+      {
+        name: "Boutique Essentielle",
+        price: "500 000 FCFA",
+        priceNote: "Pour démarrer la vente en ligne",
+        description:
+          "La boutique qui vous fait vendre en ligne rapidement, avec le paiement Mobile Money dès le premier jour.",
+        features: [
+          "Catalogue jusqu'à ~50 produits",
+          "Paiement FedaPay / Mobile Money",
+          "Gestion des commandes",
+          "Design mobile-first",
+          "Formation à la gestion",
+        ],
+      },
+      {
+        name: "Boutique Pro",
+        price: "900 000 FCFA",
+        priceNote: "Le choix des marchands sérieux",
+        description:
+          "La boutique complète qui optimise chaque vente : tous les moyens de paiement, livraison par zones et promotions.",
+        features: [
+          "Tout l'Essentielle, plus :",
+          "Catalogue étendu + variantes produits",
+          "MTN MoMo + Moov + carte bancaire",
+          "Livraison par zones + notifications client",
+          "Codes promo et remises",
+          "SEO produits (résultats enrichis Google)",
+        ],
+        recommended: true,
+      },
+      {
+        name: "Marketplace / Sur-mesure",
+        price: "1 500 000 FCFA et +",
+        priceNote: "Sur devis selon le modèle",
+        description:
+          "Au-delà de la boutique : multi-vendeurs, abonnements, application mobile — le commerce en ligne à votre façon.",
+        features: [
+          "Tout Pro, plus :",
+          "Multi-vendeurs avec commissions",
+          "Abonnements et achats récurrents",
+          "Application mobile compagnon",
+          "Intégrations logistiques avancées",
+          "Architecture prête à scaler",
+        ],
+      },
+    ],
     relatedProjectSlugs: ["afcom", "archiform"],
     relatedCitySlugs: ["cotonou", "porto-novo", "parakou"],
   },
@@ -446,6 +647,53 @@ export const servicePages: ServicePage[] = [
           "Systématiquement : documentation d'API, schéma de la base, guide de déploiement et décisions d'architecture. N'importe quel développeur compétent peut reprendre le projet — vous restez libre.",
       },
     ],
+    offers: [
+      {
+        name: "API Essentielle",
+        price: "600 000 FCFA",
+        priceNote: "Le socle propre et documenté",
+        description:
+          "L'API et la base de données de votre produit, construites proprement : auth, endpoints métier et documentation.",
+        features: [
+          "API REST structurée",
+          "Base de données modélisée (PostgreSQL)",
+          "Authentification sécurisée",
+          "Documentation d'API",
+          "Déploiement configuré",
+        ],
+      },
+      {
+        name: "API Business",
+        price: "1 000 000 FCFA",
+        priceNote: "Pour les produits en production",
+        description:
+          "Le backend complet d'un produit sérieux : intégrations locales, tâches de fond, tests et monitoring.",
+        features: [
+          "Tout l'Essentielle, plus :",
+          "Intégrations Mobile Money / FedaPay / SMS",
+          "Jobs asynchrones (emails, rappels, synchro)",
+          "Tests automatisés des chemins critiques",
+          "Monitoring, logs et alertes",
+          "Gestion fine des permissions",
+        ],
+        recommended: true,
+      },
+      {
+        name: "Architecture Complète",
+        price: "1 800 000 FCFA et +",
+        priceNote: "Sur devis — création ou reprise",
+        description:
+          "Pour les systèmes exigeants : forte charge, files de traitement, reprise et assainissement d'un existant.",
+        features: [
+          "Tout Business, plus :",
+          "Architecture haute charge (cache, queues)",
+          "Audit et reprise d'un backend existant",
+          "Migration de données organisée",
+          "Documentation d'architecture complète",
+          "Accompagnement de votre équipe",
+        ],
+      },
+    ],
     relatedProjectSlugs: ["weman-lms", "smartvilla", "iveges"],
     relatedCitySlugs: ["cotonou", "abomey-calavi", "seme-podji"],
   },
@@ -523,6 +771,52 @@ export const servicePages: ServicePage[] = [
         question: "L'audit m'engage-t-il à vous confier les corrections ?",
         answer:
           "Non : le rapport d'audit vous appartient et il est suffisamment détaillé pour être exécuté par n'importe quel développeur sérieux. Si vous me confiez la suite, le coût de l'audit est déduit du devis.",
+      },
+    ],
+    offers: [
+      {
+        name: "Audit Express",
+        price: "100 000 FCFA",
+        priceNote: "Rapport sous 5 jours",
+        description:
+          "Le diagnostic rapide qui identifie ce qui pénalise votre site : performance et référencement, en clair.",
+        features: [
+          "Audit performance (Core Web Vitals)",
+          "Audit SEO et indexation",
+          "Rapport clair et hiérarchisé",
+          "Recommandations prioritaires",
+        ],
+      },
+      {
+        name: "Audit Complet",
+        price: "200 000 FCFA",
+        priceNote: "Déduit si je réalise les corrections",
+        description:
+          "L'analyse en profondeur : code, sécurité et expérience utilisateur s'ajoutent au diagnostic, avec un plan chiffré.",
+        features: [
+          "Tout l'Express, plus :",
+          "Revue du code et de la maintenabilité",
+          "Audit sécurité",
+          "Analyse des parcours utilisateurs",
+          "Plan d'action chiffré poste par poste",
+          "Restitution en visio ou présentiel",
+        ],
+        recommended: true,
+      },
+      {
+        name: "Audit + Corrections",
+        price: "400 000 FCFA et +",
+        priceNote: "Sur devis selon les chantiers",
+        description:
+          "Le diagnostic et le remède : je corrige moi-même les points critiques identifiés, mesures avant/après à l'appui.",
+        features: [
+          "Tout le Complet, plus :",
+          "Correction des points critiques",
+          "Optimisation vitesse mise en œuvre",
+          "Mise à niveau SEO exécutée",
+          "Mesures avant/après documentées",
+          "Suivi sur les semaines suivantes",
+        ],
       },
     ],
     relatedProjectSlugs: ["gain", "archiform"],
