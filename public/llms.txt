@@ -1,0 +1,50 @@
+# Néhémie Gandonou — Développeur Web & Mobile au Bénin
+
+> Développeur web et mobile freelance basé à Cotonou, Bénin. Conception d'applications web fullstack (Next.js, React, TypeScript), d'applications mobiles (Flutter, iOS + Android), de plateformes SaaS et de boutiques e-commerce avec paiement Mobile Money (FedaPay, MTN MoMo, Moov Money). Intervient en présentiel à Cotonou et dans tout le Bénin, et à distance en Afrique de l'Ouest et à l'international. Devis gratuit sous 24h.
+
+Informations clés :
+- Nom : Néhémie Gandonou (Gajone Dev)
+- Localisation : Cotonou, Bénin (disponible dans tout le pays et en remote)
+- Contact : https://gajone.dev/contact — email : gajonedev@gmail.com
+- Langues : français (anglais possible pour les projets internationaux)
+- Spécialités : offline-first, intégration Mobile Money, SEO, IoT/systèmes embarqués
+- Stack : Flutter, Next.js, React, TypeScript, Node.js, PostgreSQL, Supabase
+
+## Services
+
+- [Création de sites vitrines](https://gajone.dev/services/creation-site-vitrine) : sites professionnels rapides et référencés, à partir de 250 000 FCFA
+- [Applications web & logiciels métier](https://gajone.dev/services/creation-application-web) : outils de gestion sur-mesure (facturation, stocks, réservations), à partir de 800 000 FCFA
+- [Applications mobiles](https://gajone.dev/services/creation-application-mobile) : apps iOS + Android en Flutter, à partir de 1 000 000 FCFA
+- [E-commerce](https://gajone.dev/services/creation-ecommerce) : boutiques en ligne avec paiement Mobile Money, à partir de 500 000 FCFA
+- [SaaS & dashboards](https://gajone.dev/services/creation-saas-dashboard) : du MVP au produit scalable, à partir de 1 500 000 FCFA
+- [Backend & API](https://gajone.dev/services/backend-api) : API REST, bases de données, intégrations, à partir de 600 000 FCFA
+- [Audit & optimisation](https://gajone.dev/services/audit-optimisation) : diagnostic performance/SEO/code, à partir de 100 000 FCFA
+- [Tarifs détaillés](https://gajone.dev/tarifs) : fourchettes de prix transparentes en FCFA
+
+## Zones d'intervention
+
+- [Développeur web au Bénin (vue d'ensemble)](https://gajone.dev/developpeur-web-benin)
+- [Cotonou](https://gajone.dev/developpeur-web-cotonou) : base principale, rencontres en présentiel
+- [Abomey-Calavi](https://gajone.dev/developpeur-web-abomey-calavi), [Porto-Novo](https://gajone.dev/developpeur-web-porto-novo), [Parakou](https://gajone.dev/developpeur-web-parakou), [Bohicon](https://gajone.dev/developpeur-web-bohicon), [Lokossa](https://gajone.dev/developpeur-web-lokossa) et une dizaine d'autres villes béninoises
+- Remote : Togo, Niger, Burkina Faso, Côte d'Ivoire et international
+
+## Expertises techniques
+
+- [Développeur Flutter au Bénin](https://gajone.dev/developpeur-flutter-benin) : apps cross-platform, offline-first, Mobile Money
+- [Développeur Next.js au Bénin](https://gajone.dev/developpeur-nextjs-benin) : sites ultra-rapides et SEO d'excellence
+- [Développeur React au Bénin](https://gajone.dev/developpeur-react-benin) : dashboards et applications métier, TypeScript
+
+## Réalisations
+
+- [Portfolio et études de cas](https://gajone.dev/projects) : Wéman LMS (e-learning avec paiement MoMo), AfCom (gestion offline-first pour commerçants), SmartVilla (domotique IoT temps réel), iVeges (irrigation autonome IoT), et autres projets détaillés
+
+## Ressources
+
+- [Blog](https://gajone.dev/blog) : guides pratiques sur les prix du web au Bénin, les paiements Mobile Money, le choix d'un prestataire
+- [Combien coûte un site web au Bénin en 2026](https://gajone.dev/blog/combien-coute-site-web-benin-2026)
+- [À propos](https://gajone.dev/about)
+
+## Optional
+
+- [Mentions légales](https://gajone.dev/mentions-legales)
+- [Politique de confidentialité](https://gajone.dev/politique-confidentialite)
