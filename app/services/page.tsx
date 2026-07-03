@@ -1,8 +1,9 @@
+import Link from "next/link";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 import SpotlightCard from "../components/ui/SpotlightCard";
 import TechBadge from "../components/ui/TechBadge";
-import { getIcon } from "@/lib/icons";
+import { getIcon, ArrowRight } from "@/lib/icons";
 import { servicesDetailed } from "@/data";
 
 const ACCENTS = ["#ff4d3d", "#3b82f6", "#f59e0b"];
@@ -40,6 +41,15 @@ export default async function ServicesPage() {
                       <TechBadge key={f}>{f}</TechBadge>
                     ))}
                   </div>
+                  {service.slug && (
+                    <Link
+                      href={`/services/${service.slug}`}
+                      className="inline-flex items-center gap-1.5 mt-5 font-medium text-primary text-sm hover:underline"
+                    >
+                      En savoir plus
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  )}
                 </div>
               </SpotlightCard>
             );

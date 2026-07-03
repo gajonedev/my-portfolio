@@ -1,6 +1,9 @@
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
 import { localCities, cityFullSlug } from "@/data/cities";
+import { projects } from "@/data/projects";
+import { servicePages } from "@/data/service-pages";
+import { expertises } from "@/data/expertises";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://gajone.dev";
@@ -19,6 +22,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  const caseStudyPages = projects
+    .filter((project) => project.caseStudy)
+    .map((project) => ({
+      url: `${baseUrl}/projects/${project.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }));
+
   return [
     {
       url: baseUrl,
@@ -32,12 +44,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    ...servicePages.map((service) => ({
+      url: `${baseUrl}/services/${service.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    })),
+    {
+      url: `${baseUrl}/tarifs`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
     {
       url: `${baseUrl}/projects`,
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    ...caseStudyPages,
     {
       url: `${baseUrl}/developpeur-web-benin`,
       lastModified: new Date(),
@@ -45,6 +70,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     ...cityPages,
+    ...expertises.map((expertise) => ({
+      url: `${baseUrl}/${expertise.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
     {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),

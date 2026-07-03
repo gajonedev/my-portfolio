@@ -4,7 +4,7 @@ import PageHeader from "../components/PageHeader";
 import SpotlightCard from "../components/ui/SpotlightCard";
 import TechBadge from "../components/ui/TechBadge";
 import ProjectStatus from "../components/ui/ProjectStatus";
-import { getIcon, ExternalLink } from "@/lib/icons";
+import { getIcon, ExternalLink, ArrowRight } from "@/lib/icons";
 import { projects } from "@/data";
 
 const ACCENTS = ["#ff4d3d", "#3b82f6", "#f59e0b"];
@@ -61,6 +61,15 @@ export default async function ProjectsPage() {
                       <TechBadge key={t}>{t}</TechBadge>
                     ))}
                   </div>
+                  {project.caseStudy && (
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="inline-flex items-center gap-1.5 mt-5 font-medium text-primary text-sm hover:underline"
+                    >
+                      Lire l&apos;étude de cas
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  )}
                 </div>
               </SpotlightCard>
             );
