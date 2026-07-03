@@ -257,11 +257,8 @@ export default async function CityPage({
             <div className="gap-4 grid md:grid-cols-2">
               {localServices.map((service) => {
                 const Icon = getIcon(service.iconName);
-                return (
-                  <div
-                    key={service.title}
-                    className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
-                  >
+                const card = (
+                  <>
                     <div className="flex justify-center items-center bg-primary/20 rounded-xl w-12 h-12 text-primary shrink-0">
                       <Icon className="w-6 h-6" />
                     </div>
@@ -273,6 +270,22 @@ export default async function CityPage({
                         {service.description}
                       </p>
                     </div>
+                  </>
+                );
+                return service.slug ? (
+                  <Link
+                    key={service.title}
+                    href={`/services/${service.slug}`}
+                    className="flex gap-4 bg-card hover:bg-card/80 p-5 border border-stroke hover:border-primary/40 rounded-2xl transition"
+                  >
+                    {card}
+                  </Link>
+                ) : (
+                  <div
+                    key={service.title}
+                    className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
+                  >
+                    {card}
                   </div>
                 );
               })}

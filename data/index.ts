@@ -23,6 +23,15 @@ export {
   type ServiceDetailed,
 } from "./services";
 
+// Pages services dédiées
+export {
+  servicePages,
+  getServicePageBySlug,
+  type ServicePage,
+  type ServiceFaq,
+  type ServiceProcessStep,
+} from "./service-pages";
+
 // Projets
 export {
   projects,

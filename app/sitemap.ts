@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
 import { localCities, cityFullSlug } from "@/data/cities";
 import { projects } from "@/data/projects";
+import { servicePages } from "@/data/service-pages";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://gajone.dev";
@@ -42,6 +43,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    ...servicePages.map((service) => ({
+      url: `${baseUrl}/services/${service.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    })),
     {
       url: `${baseUrl}/projects`,
       lastModified: new Date(),

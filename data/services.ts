@@ -4,6 +4,8 @@ export interface Service {
   title: string;
   iconName: string;
   description: string;
+  /** Slug de la page service dédiée (/services/[slug]) */
+  slug?: string;
 }
 
 export interface ServiceDetailed extends Service {
@@ -55,6 +57,7 @@ export const servicesPreview: Service[] = [
 export const servicesDetailed: ServiceDetailed[] = [
   {
     title: "Applications mobiles",
+    slug: "creation-application-mobile",
     iconName: "Smartphone",
     description:
       "Des apps mobiles pro, propres et fluides qui résolvent un vrai problème.",
@@ -69,6 +72,7 @@ export const servicesDetailed: ServiceDetailed[] = [
   },
   {
     title: "Applications & logiciels web",
+    slug: "creation-application-web",
     iconName: "Globe",
     description:
       "De vrais logiciels web complets qui résolvent des problèmes et facilitent le travail.",
@@ -78,6 +82,7 @@ export const servicesDetailed: ServiceDetailed[] = [
   },
   {
     title: "SaaS & dashboards",
+    slug: "creation-saas-dashboard",
     iconName: "LayoutDashboard",
     description:
       "Produits SaaS et tableaux de bord fluides, pensés pour monter en charge.",
@@ -87,6 +92,7 @@ export const servicesDetailed: ServiceDetailed[] = [
   },
   {
     title: "E-commerce & vente en ligne",
+    slug: "creation-ecommerce",
     iconName: "ShoppingCart",
     description:
       "Des boutiques qui vendent vraiment, sécurisées et maîtrisées de bout en bout.",
@@ -101,6 +107,7 @@ export const servicesDetailed: ServiceDetailed[] = [
   },
   {
     title: "Backend & API",
+    slug: "backend-api",
     iconName: "Code",
     description:
       "Le moteur robuste et sécurisé derrière vos apps mobiles et web.",
@@ -115,6 +122,7 @@ export const servicesDetailed: ServiceDetailed[] = [
   },
   {
     title: "Qualité & optimisation",
+    slug: "audit-optimisation",
     iconName: "Award",
     description:
       "Du soin, de la robustesse et des performances — expériences utilisateur optimales.",
@@ -133,24 +141,28 @@ export const servicesDetailed: ServiceDetailed[] = [
 export const localServices: Service[] = [
   {
     title: "Applications web & SaaS",
+    slug: "creation-application-web",
     iconName: "Globe",
     description:
       "Logiciels web complets et plateformes sur-mesure, du site professionnel au SaaS scalable, optimisés pour Google.",
   },
   {
     title: "Applications mobiles",
+    slug: "creation-application-mobile",
     iconName: "Smartphone",
     description:
       "Apps iOS et Android performantes et fluides (Flutter), pour startups et entreprises au Bénin.",
   },
   {
     title: "E-commerce & paiement mobile",
+    slug: "creation-ecommerce",
     iconName: "ShoppingCart",
     description:
       "Boutiques en ligne avec FedaPay, MTN MoMo et Moov Money intégrés, et livraison locale.",
   },
   {
     title: "Backend & API",
+    slug: "backend-api",
     iconName: "Code",
     description:
       "API, bases de données et automatisations métier : un backend solide, sécurisé et prêt à grandir.",
