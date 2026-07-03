@@ -1,7 +1,5 @@
 // Tarifs indicatifs — fourchettes par type de projet.
-// ⚠️ TODO(Néhémie) : les montants ci-dessous sont des fourchettes réalistes
-// pour le marché béninois, posées en placeholder. À valider/ajuster avec tes
-// vrais prix avant mise en production.
+// Grille validée par Néhémie (juillet 2026).
 
 export interface PricingTier {
   title: string;
@@ -22,8 +20,8 @@ export const pricingTiers: PricingTier[] = [
   {
     title: "Site vitrine professionnel",
     serviceSlug: "creation-site-vitrine",
-    priceFrom: "250 000 FCFA",
-    priceNote: "250 000 – 600 000 FCFA selon le nombre de pages et le contenu",
+    priceFrom: "170 000 FCFA",
+    priceNote: "170 000 – 450 000 FCFA selon le nombre de pages et le contenu",
     description:
       "Le site qui présente votre activité avec crédibilité et vous rend visible sur Google.",
     includes: [
@@ -40,7 +38,7 @@ export const pricingTiers: PricingTier[] = [
     serviceSlug: "creation-ecommerce",
     priceFrom: "500 000 FCFA",
     priceNote:
-      "500 000 – 1 500 000 FCFA selon le catalogue et les intégrations",
+      "500 000 – 1 200 000 FCFA selon le catalogue et les intégrations",
     description:
       "La boutique complète qui vend en ligne avec les moyens de paiement locaux.",
     includes: [
@@ -55,9 +53,9 @@ export const pricingTiers: PricingTier[] = [
   {
     title: "Application web / logiciel métier",
     serviceSlug: "creation-application-web",
-    priceFrom: "800 000 FCFA",
+    priceFrom: "650 000 FCFA",
     priceNote:
-      "800 000 – 2 500 000 FCFA selon la complexité de la logique métier",
+      "650 000 – 2 000 000 FCFA selon la complexité de la logique métier",
     description:
       "L'outil sur-mesure qui automatise votre gestion : facturation, stocks, clients, réservations.",
     includes: [
@@ -72,9 +70,9 @@ export const pricingTiers: PricingTier[] = [
   {
     title: "Application mobile",
     serviceSlug: "creation-application-mobile",
-    priceFrom: "1 000 000 FCFA",
+    priceFrom: "900 000 FCFA",
     priceNote:
-      "1 000 000 – 3 000 000 FCFA — iOS + Android inclus (Flutter)",
+      "900 000 – 2 500 000 FCFA — iOS + Android inclus (Flutter)",
     description:
       "Votre application sur l'App Store et Google Play, avec un seul développement pour les deux.",
     includes: [
@@ -89,9 +87,9 @@ export const pricingTiers: PricingTier[] = [
   {
     title: "SaaS / MVP startup",
     serviceSlug: "creation-saas-dashboard",
-    priceFrom: "1 500 000 FCFA",
+    priceFrom: "1 200 000 FCFA",
     priceNote:
-      "1 500 000 – 5 000 000 FCFA selon le périmètre du produit",
+      "1 200 000 – 4 000 000 FCFA selon le périmètre du produit",
     description:
       "Votre produit SaaS lancé sur des fondations saines : multi-tenant, abonnements, analytics.",
     includes: [
@@ -106,9 +104,9 @@ export const pricingTiers: PricingTier[] = [
   {
     title: "Audit & optimisation",
     serviceSlug: "audit-optimisation",
-    priceFrom: "100 000 FCFA",
+    priceFrom: "80 000 FCFA",
     priceNote:
-      "100 000 – 300 000 FCFA — déduit du devis si je réalise les corrections",
+      "80 000 – 250 000 FCFA — déduit du devis si je réalise les corrections",
     description:
       "Le diagnostic complet de votre site ou application existants, avec plan d'action chiffré.",
     includes: [
@@ -176,7 +174,7 @@ export const pricingFaq: PricingFaq[] = [
       "Oui, en option : un forfait de maintenance couvre les mises à jour techniques, les sauvegardes et les petites évolutions. Vous pouvez aussi choisir de gérer vous-même — le code vous appartient et tout est documenté pour ça.",
   },
   {
-    question: "Un site à 250 000 FCFA peut-il vraiment être de qualité ?",
+    question: "Un site à 170 000 FCFA peut-il vraiment être de qualité ?",
     answer:
       "Oui, si le périmètre est bien cadré : un site vitrine de quelques pages, bien conçu et bien référencé, n'a pas besoin d'un budget de plateforme. Ce qui coûte cher, c'est le sur-mesure fonctionnel — pas la qualité d'exécution, qui est la même sur tous mes projets.",
   },
