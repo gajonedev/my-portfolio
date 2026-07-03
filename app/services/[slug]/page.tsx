@@ -245,10 +245,10 @@ export default async function ServicePage({
               {service.offers.map((offer, index) => (
                 <div
                   key={offer.name}
-                  className={`relative flex flex-col p-6 border rounded-2xl ${
+                  className={`relative flex flex-col p-6 rounded-2xl ${
                     offer.recommended
-                      ? "bg-card border-primary/60 shadow-[0_0_30px_var(--primary-glow)]"
-                      : "bg-card/60 border-stroke"
+                      ? "animated-border md:scale-[1.03] shadow-[0_10px_50px_var(--primary-glow-strong)]"
+                      : "bg-card/60 border border-stroke"
                   }`}
                 >
                   {offer.recommended && (

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 import PriceTag from "../components/ui/PriceTag";
+import SpotlightCard from "../components/ui/SpotlightCard";
 import { CheckCircle, ArrowRight, ChevronRight } from "@/lib/icons";
 import {
   pricingTiers,
@@ -13,6 +14,9 @@ import {
 } from "@/data";
 
 const url = `${siteConfig.url}/tarifs`;
+
+const ACCENTS = ["#ff4d3d", "#3b82f6", "#f59e0b"];
+const CORNERS = ["tr", "tl", "br", "bl"] as const;
 
 export const metadata: Metadata = {
   title: "Tarifs — Prix d'un Site Web, d'une App Mobile ou d'un E-commerce au Bénin",
@@ -104,10 +108,12 @@ export default async function TarifsPage() {
           <section>
             <div className="gap-4 grid md:grid-cols-2 lg:grid-cols-3">
               {pricingTiers.map((tier, index) => (
-                <div
+                <SpotlightCard
                   key={tier.title}
-                  className="flex flex-col bg-card p-6 border border-stroke rounded-2xl"
+                  corner={CORNERS[index % CORNERS.length]}
+                  cornerColor={ACCENTS[index % ACCENTS.length]}
                 >
+                  <div className="flex flex-col p-6 h-full">
                   <h2 className="font-display font-semibold text-foreground text-lg">
                     {tier.title}
                   </h2>
@@ -153,7 +159,8 @@ export default async function TarifsPage() {
                       <ArrowRight className="w-4 h-4" />
                     </Link>
                   )}
-                </div>
+                  </div>
+                </SpotlightCard>
               ))}
             </div>
           </section>
