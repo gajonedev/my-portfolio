@@ -696,6 +696,9 @@ h6 {
   line-height: 1.85;
   color: var(--foreground-muted);
   max-width: 72ch;
+  /* Item de grid : sans min-width 0, le contenu large (pre, table) élargit
+     la colonne au lieu de scroller dans sa propre boîte */
+  min-width: 0;
 }
 
 .prose-blog > *:first-child {
