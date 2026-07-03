@@ -696,6 +696,9 @@ h6 {
   line-height: 1.85;
   color: var(--foreground-muted);
   max-width: 72ch;
+  /* Item de grid : sans min-width 0, le contenu large (pre, table) élargit
+     la colonne au lieu de scroller dans sa propre boîte */
+  min-width: 0;
 }
 
 .prose-blog > *:first-child {
@@ -846,6 +849,17 @@ h6 {
   margin: 1.5rem 0;
   border-collapse: collapse;
   font-size: 0.875rem;
+}
+
+/* Mobile : la table devient scrollable horizontalement au lieu de déborder
+   (les th en white-space nowrap la forcent plus large que l'écran) */
+@media (max-width: 767px) {
+  .prose-blog table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 .prose-blog thead {
