@@ -780,7 +780,7 @@ export const servicePages: ServicePage[] = [
     offers: [
       {
         name: "API Essentielle",
-        price: "500 000 FCFA",
+        price: "300 000 FCFA",
         priceNote: "Le socle propre et documenté",
         description:
           "L'API et la base de données de votre produit, construites proprement : auth, endpoints métier et documentation.",
@@ -794,7 +794,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         name: "API Business",
-        price: "850 000 FCFA",
+        price: "650 000 FCFA",
         priceNote: "Pour les produits en production",
         description:
           "Le backend complet d'un produit sérieux : intégrations locales, tâches de fond, tests et monitoring.",
@@ -810,7 +810,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         name: "Architecture Complète",
-        price: "1 500 000 FCFA et +",
+        price: "1 200 000 FCFA et +",
         priceNote: "Sur devis — création ou reprise",
         description:
           "Pour les systèmes exigeants : forte charge, files de traitement, reprise et assainissement d'un existant.",
