@@ -12,8 +12,7 @@ export interface ServiceProcessStep {
   description: string;
 }
 
-// ⚠️ TODO(Néhémie) : comme pour data/pricing.ts, les prix des offres sont des
-// fourchettes placeholder cohérentes avec la page /tarifs — à valider.
+// Les prix des offres suivent la grille validée de data/pricing.ts (juillet 2026).
 export interface ServiceOffer {
   name: string;
   price: string;
@@ -131,7 +130,7 @@ export const servicePages: ServicePage[] = [
     offers: [
       {
         name: "MVP Mobile",
-        price: "1 000 000 FCFA",
+        price: "850 000 FCFA",
         priceNote: "Idéal pour valider une idée",
         description:
           "L'application qui prouve votre concept : fonctionnalité cœur, interface soignée, prête à être testée par de vrais utilisateurs.",
@@ -145,7 +144,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         name: "Business",
-        price: "1 800 000 FCFA",
+        price: "1 500 000 FCFA",
         priceNote: "Le choix de la plupart des entreprises",
         description:
           "L'application complète prête à générer du revenu : paiements locaux, mode hors-ligne et notifications pour engager vos utilisateurs.",
@@ -161,7 +160,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         name: "Plateforme",
-        price: "3 000 000 FCFA et +",
+        price: "2 500 000 FCFA et +",
         priceNote: "Sur devis selon le périmètre",
         description:
           "L'application ambitieuse : plusieurs types d'utilisateurs, temps réel, intégrations poussées et architecture prête à scaler.",
@@ -186,7 +185,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Création de Site Web au Bénin — Site Vitrine Professionnel et Bien Référencé",
     metaDescription:
-      "Création de sites vitrines professionnels au Bénin : design soigné, référencement Google intégré, rapide sur mobile. À partir de 250 000 FCFA, devis sous 24h.",
+      "Création de sites vitrines professionnels au Bénin : design soigné, référencement Google intégré, rapide sur mobile. À partir de 150 000 FCFA, devis sous 24h.",
     keywords: [
       "création site web Bénin",
       "site vitrine Cotonou",
@@ -240,7 +239,7 @@ export const servicePages: ServicePage[] = [
     offers: [
       {
         name: "Vitrine Essentielle",
-        price: "250 000 FCFA",
+        price: "150 000 FCFA",
         priceNote: "En ligne en 2 à 3 semaines",
         description:
           "Le site professionnel qui vous rend crédible et visible : l'essentiel, exécuté avec soin.",
@@ -254,7 +253,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         name: "Vitrine Croissance",
-        price: "450 000 FCFA",
+        price: "300 000 FCFA",
         priceNote: "Le meilleur rapport visibilité/prix",
         description:
           "Le site pensé pour capter des clients sur Google : plus de pages, un blog et un référencement travaillé en profondeur.",
@@ -270,7 +269,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         name: "Vitrine Premium",
-        price: "600 000 FCFA et +",
+        price: "450 000 FCFA et +",
         priceNote: "Sur devis selon les besoins",
         description:
           "La présence en ligne complète : site bilingue, direction artistique poussée et stratégie SEO locale multi-villes.",
@@ -288,7 +287,7 @@ export const servicePages: ServicePage[] = [
       {
         question: "Combien coûte un site vitrine professionnel ?",
         answer:
-          "À partir de 250 000 FCFA pour un site soigné de 3 à 5 pages, et autour de 450 000 FCFA pour un site étoffé avec blog et SEO avancé. Le détail des formules est ci-dessus et sur ma page tarifs — le devis précis arrive sous 24h.",
+          "À partir de 150 000 FCFA pour un site soigné de 3 à 5 pages, et autour de 300 000 FCFA pour un site étoffé avec blog et SEO avancé. Le détail des formules est ci-dessus et sur ma page tarifs — le devis précis arrive sous 24h.",
       },
       {
         question: "Mon site sera-t-il visible sur Google ?",
@@ -371,7 +370,7 @@ export const servicePages: ServicePage[] = [
     offers: [
       {
         name: "Outil Essentiel",
-        price: "800 000 FCFA",
+        price: "700 000 FCFA",
         priceNote: "Un processus clé digitalisé",
         description:
           "L'outil ciblé qui règle votre problème le plus coûteux : facturation, stocks, réservations — un processus, bien fait.",
@@ -385,7 +384,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         name: "Business",
-        price: "1 500 000 FCFA",
+        price: "1 300 000 FCFA",
         priceNote: "Le choix des PME en croissance",
         description:
           "Le logiciel de gestion complet : plusieurs modules connectés, intégrations locales et tableaux de bord de pilotage.",
@@ -401,7 +400,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         name: "Plateforme",
-        price: "2 500 000 FCFA et +",
+        price: "2 000 000 FCFA et +",
         priceNote: "Sur devis selon le périmètre",
         description:
           "Le système complet à l'échelle de votre organisation : espaces clients externes, multi-sites, automatisations poussées.",
@@ -524,7 +523,7 @@ export const servicePages: ServicePage[] = [
     offers: [
       {
         name: "MVP",
-        price: "1 500 000 FCFA",
+        price: "1 200 000 FCFA",
         priceNote: "Lancé en 4 à 8 semaines",
         description:
           "Le produit minimal qui prouve la valeur : la fonctionnalité cœur, l'authentification et un premier plan payant.",
@@ -538,7 +537,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         name: "Startup",
-        price: "2 500 000 FCFA",
+        price: "2 000 000 FCFA",
         priceNote: "Pour lancer sérieusement",
         description:
           "Le SaaS complet prêt à accueillir ses clients : multi-tenant, plans d'abonnement, dashboard et onboarding.",
@@ -554,7 +553,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         name: "Scale",
-        price: "5 000 000 FCFA et +",
+        price: "4 000 000 FCFA et +",
         priceNote: "Sur devis selon l'ambition",
         description:
           "Le produit taillé pour la croissance : API publique, rôles avancés, haute disponibilité et accompagnement continu.",
@@ -655,7 +654,7 @@ export const servicePages: ServicePage[] = [
     offers: [
       {
         name: "Boutique Essentielle",
-        price: "500 000 FCFA",
+        price: "450 000 FCFA",
         priceNote: "Pour démarrer la vente en ligne",
         description:
           "La boutique qui vous fait vendre en ligne rapidement, avec le paiement Mobile Money dès le premier jour.",
@@ -669,7 +668,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         name: "Boutique Pro",
-        price: "900 000 FCFA",
+        price: "800 000 FCFA",
         priceNote: "Le choix des marchands sérieux",
         description:
           "La boutique complète qui optimise chaque vente : tous les moyens de paiement, livraison par zones et promotions.",
@@ -685,7 +684,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         name: "Marketplace / Sur-mesure",
-        price: "1 500 000 FCFA et +",
+        price: "1 200 000 FCFA et +",
         priceNote: "Sur devis selon le modèle",
         description:
           "Au-delà de la boutique : multi-vendeurs, abonnements, application mobile — le commerce en ligne à votre façon.",
@@ -781,7 +780,7 @@ export const servicePages: ServicePage[] = [
     offers: [
       {
         name: "API Essentielle",
-        price: "600 000 FCFA",
+        price: "500 000 FCFA",
         priceNote: "Le socle propre et documenté",
         description:
           "L'API et la base de données de votre produit, construites proprement : auth, endpoints métier et documentation.",
@@ -795,7 +794,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         name: "API Business",
-        price: "1 000 000 FCFA",
+        price: "850 000 FCFA",
         priceNote: "Pour les produits en production",
         description:
           "Le backend complet d'un produit sérieux : intégrations locales, tâches de fond, tests et monitoring.",
@@ -811,7 +810,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         name: "Architecture Complète",
-        price: "1 800 000 FCFA et +",
+        price: "1 500 000 FCFA et +",
         priceNote: "Sur devis — création ou reprise",
         description:
           "Pour les systèmes exigeants : forte charge, files de traitement, reprise et assainissement d'un existant.",
@@ -907,7 +906,7 @@ export const servicePages: ServicePage[] = [
     offers: [
       {
         name: "Audit Express",
-        price: "100 000 FCFA",
+        price: "80 000 FCFA",
         priceNote: "Rapport sous 5 jours",
         description:
           "Le diagnostic rapide qui identifie ce qui pénalise votre site : performance et référencement, en clair.",
@@ -920,7 +919,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         name: "Audit Complet",
-        price: "200 000 FCFA",
+        price: "160 000 FCFA",
         priceNote: "Déduit si je réalise les corrections",
         description:
           "L'analyse en profondeur : code, sécurité et expérience utilisateur s'ajoutent au diagnostic, avec un plan chiffré.",
@@ -936,7 +935,7 @@ export const servicePages: ServicePage[] = [
       },
       {
         name: "Audit + Corrections",
-        price: "400 000 FCFA et +",
+        price: "300 000 FCFA et +",
         priceNote: "Sur devis selon les chantiers",
         description:
           "Le diagnostic et le remède : je corrige moi-même les points critiques identifiés, mesures avant/après à l'appui.",

@@ -18,11 +18,11 @@ Voici les ordres de grandeur constatés sur le marché béninois pour un travail
 
 | Type de projet | Fourchette (FCFA) |
 | -------------- | ----------------- |
-| Site vitrine professionnel (3-8 pages) | 250 000 – 600 000 |
-| Boutique e-commerce avec Mobile Money | 500 000 – 1 500 000 |
-| Application web / logiciel métier | 800 000 – 2 500 000 |
-| Application mobile (iOS + Android) | 1 000 000 – 3 000 000 |
-| Plateforme SaaS / MVP startup | 1 500 000 – 5 000 000 |
+| Site vitrine professionnel (3-8 pages) | 150 000 – 450 000 |
+| Boutique e-commerce avec Mobile Money | 450 000 – 1 200 000 |
+| Application web / logiciel métier | 700 000 – 2 000 000 |
+| Application mobile (iOS + Android) | 850 000 – 2 500 000 |
+| Plateforme SaaS / MVP startup | 1 200 000 – 4 000 000 |
 
 Vous trouverez le détail de ce que chaque formule inclut sur ma [page tarifs](/tarifs).
 
@@ -48,14 +48,14 @@ C'est le facteur le moins visible et le plus important. Deux sites qui se ressem
 
 ## Les pièges du « pas cher »
 
-Le marché béninois regorge d'offres à 50 000 ou 100 000 FCFA. Voici ce qu'elles cachent presque toujours :
+Le marché béninois regorge d'offres à 30 000 ou 60 000 FCFA. Voici ce qu'elles cachent presque toujours :
 
 - **Un template acheté 20 $** et rempli à la va-vite : votre site ressemble à des milliers d'autres, et Google le sait.
 - **Aucun référencement** : le site existe, mais personne ne le trouve. Un site invisible sur Google est une carte de visite qu'on garde dans sa poche.
 - **Pas de propriété réelle** : hébergement et domaine au nom du prestataire. Le jour où vous voulez partir, vous perdez tout.
 - **Zéro maintenance possible** : code illisible, aucune documentation. Le prochain développeur préférera tout refaire.
 
-Un site à 100 000 FCFA qui n'apporte aucun client coûte infiniment plus cher qu'un site à 400 000 qui en apporte chaque mois. Le bon calcul n'est pas le prix, c'est le retour sur investissement.
+Un site à 60 000 FCFA qui n'apporte aucun client coûte infiniment plus cher qu'un site à 300 000 qui en apporte chaque mois. Le bon calcul n'est pas le prix, c'est le retour sur investissement.
 
 ## Et les coûts récurrents ?
 
