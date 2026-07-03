@@ -370,7 +370,7 @@ export const servicePages: ServicePage[] = [
     offers: [
       {
         name: "Outil Essentiel",
-        price: "700 000 FCFA",
+        price: "650 000 FCFA",
         priceNote: "Un processus clé digitalisé",
         description:
           "L'outil ciblé qui règle votre problème le plus coûteux : facturation, stocks, réservations — un processus, bien fait.",
@@ -654,7 +654,7 @@ export const servicePages: ServicePage[] = [
     offers: [
       {
         name: "Boutique Essentielle",
-        price: "450 000 FCFA",
+        price: "500 000 FCFA",
         priceNote: "Pour démarrer la vente en ligne",
         description:
           "La boutique qui vous fait vendre en ligne rapidement, avec le paiement Mobile Money dès le premier jour.",

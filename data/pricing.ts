@@ -36,9 +36,9 @@ export const pricingTiers: PricingTier[] = [
   {
     title: "Boutique e-commerce",
     serviceSlug: "creation-ecommerce",
-    priceFrom: "450 000 FCFA",
+    priceFrom: "500 000 FCFA",
     priceNote:
-      "450 000 – 1 200 000 FCFA selon le catalogue et les intégrations",
+      "500 000 – 1 200 000 FCFA selon le catalogue et les intégrations",
     description:
       "La boutique complète qui vend en ligne avec les moyens de paiement locaux.",
     includes: [
@@ -53,9 +53,9 @@ export const pricingTiers: PricingTier[] = [
   {
     title: "Application web / logiciel métier",
     serviceSlug: "creation-application-web",
-    priceFrom: "700 000 FCFA",
+    priceFrom: "650 000 FCFA",
     priceNote:
-      "700 000 – 2 000 000 FCFA selon la complexité de la logique métier",
+      "650 000 – 2 000 000 FCFA selon la complexité de la logique métier",
     description:
       "L'outil sur-mesure qui automatise votre gestion : facturation, stocks, clients, réservations.",
     includes: [

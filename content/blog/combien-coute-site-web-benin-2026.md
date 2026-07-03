@@ -19,8 +19,8 @@ Voici les ordres de grandeur constatés sur le marché béninois pour un travail
 | Type de projet | Fourchette (FCFA) |
 | -------------- | ----------------- |
 | Site vitrine professionnel (3-8 pages) | 170 000 – 450 000 |
-| Boutique e-commerce avec Mobile Money | 450 000 – 1 200 000 |
-| Application web / logiciel métier | 700 000 – 2 000 000 |
+| Boutique e-commerce avec Mobile Money | 500 000 – 1 200 000 |
+| Application web / logiciel métier | 650 000 – 2 000 000 |
 | Application mobile (iOS + Android) | 900 000 – 2 500 000 |
 | Plateforme SaaS / MVP startup | 1 200 000 – 4 000 000 |
 

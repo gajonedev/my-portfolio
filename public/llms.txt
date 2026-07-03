@@ -13,9 +13,9 @@ Informations clés :
 ## Services
 
 - [Création de sites vitrines](https://gajone.dev/services/creation-site-vitrine) : sites professionnels rapides et référencés, à partir de 170 000 FCFA
-- [Applications web & logiciels métier](https://gajone.dev/services/creation-application-web) : outils de gestion sur-mesure (facturation, stocks, réservations), à partir de 700 000 FCFA
+- [Applications web & logiciels métier](https://gajone.dev/services/creation-application-web) : outils de gestion sur-mesure (facturation, stocks, réservations), à partir de 650 000 FCFA
 - [Applications mobiles](https://gajone.dev/services/creation-application-mobile) : apps iOS + Android en Flutter, à partir de 900 000 FCFA
-- [E-commerce](https://gajone.dev/services/creation-ecommerce) : boutiques en ligne avec paiement Mobile Money, à partir de 450 000 FCFA
+- [E-commerce](https://gajone.dev/services/creation-ecommerce) : boutiques en ligne avec paiement Mobile Money, à partir de 500 000 FCFA
 - [SaaS & dashboards](https://gajone.dev/services/creation-saas-dashboard) : du MVP au produit scalable, à partir de 1 200 000 FCFA
 - [Backend & API](https://gajone.dev/services/backend-api) : API REST, bases de données, intégrations, à partir de 300 000 FCFA
 - [Audit & optimisation](https://gajone.dev/services/audit-optimisation) : diagnostic performance/SEO/code, à partir de 80 000 FCFA
