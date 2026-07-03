@@ -179,84 +179,62 @@ export const servicePages: ServicePage[] = [
     relatedCitySlugs: ["cotonou", "abomey-calavi", "parakou"],
   },
   {
-    slug: "creation-application-web",
-    title: "Création d'applications & logiciels web",
-    shortTitle: "Applications web",
+    slug: "creation-site-vitrine",
+    title: "Création de sites vitrines",
+    shortTitle: "Site vitrine",
     iconName: "Globe",
     metaTitle:
-      "Création de Site & Application Web au Bénin — Développeur Next.js",
+      "Création de Site Web au Bénin — Site Vitrine Professionnel et Bien Référencé",
     metaDescription:
-      "Développement de sites professionnels et applications web sur-mesure : outils métier, plateformes, espaces clients. Next.js, backend solide, SEO intégré. Devis sous 24h.",
+      "Création de sites vitrines professionnels au Bénin : design soigné, référencement Google intégré, rapide sur mobile. À partir de 250 000 FCFA, devis sous 24h.",
     keywords: [
       "création site web Bénin",
-      "création application web",
-      "développeur web Cotonou",
-      "site professionnel Bénin",
-      "logiciel web sur mesure",
-      "plateforme web Afrique",
+      "site vitrine Cotonou",
+      "création site internet Bénin",
+      "site professionnel entreprise",
+      "prix site vitrine Bénin",
+      "créer site web entreprise Cotonou",
     ],
     heroDescription:
-      "Du site professionnel qui convertit au logiciel métier complet qui automatise votre travail : des produits web solides, rapides et bien référencés.",
+      "Le site professionnel qui vous rend crédible, visible sur Google et joignable 24h/24 — conçu pour transformer les visites en demandes de devis.",
     intro: [
-      "Un site web n'est pas une dépense, c'est un commercial qui travaille 24h/24. Je conçois des sites professionnels et des applications web qui font le job : présenter votre activité de façon crédible, apparaître sur Google quand vos clients vous cherchent, et convertir les visites en demandes de devis.",
-      "Au-delà de la vitrine, je développe de véritables logiciels web : outils de gestion, plateformes de services, espaces clients, systèmes de réservation. Des produits complets, avec une logique métier robuste et une interface que vos équipes prennent en main sans formation lourde.",
-      "Je travaille avec Next.js et React — les technologies des produits web les plus exigeants — avec une attention particulière à la performance et au référencement : un site que je livre charge vite, s'affiche parfaitement sur mobile et est structuré pour ranker sur Google dès la mise en ligne.",
+      "Un site vitrine n'est pas une dépense, c'est un commercial qui travaille 24h/24 : il présente votre activité de façon crédible, répond aux questions de vos prospects et capte les demandes pendant que vous dormez. Encore faut-il qu'il soit trouvable — et c'est là que la plupart des sites échouent.",
+      "Chaque site que je livre est construit pour Google dès la première ligne : structure sémantique propre, vitesse de chargement optimale, balises et données structurées. Quand un client cherche votre métier dans votre ville, c'est vous qu'il doit trouver. Le site que vous lisez en ce moment applique exactement ces méthodes.",
+      "Et parce que vos visiteurs béninois consultent massivement depuis leur téléphone, souvent en 3G, je conçois mobile-first : des pages légères qui s'affichent instantanément, même en connexion limitée.",
     ],
     deliverables: [
-      "Site ou application web sur-mesure, responsive et rapide",
+      "Site sur-mesure, responsive et rapide (pas de template)",
       "Référencement (SEO) technique intégré dès la conception",
-      "Backend et base de données bien architecturés",
-      "Espace d'administration pour gérer vos contenus en autonomie",
-      "Hébergement configuré, nom de domaine et emails professionnels",
-      "Formation et documentation de prise en main",
+      "Textes structurés pour convertir et ranker",
+      "Formulaire de contact et liens WhatsApp",
+      "Nom de domaine, hébergement et emails professionnels configurés",
+      "Formation à la mise à jour du contenu",
     ],
     process: [
       {
         title: "Brief & stratégie",
         description:
-          "On clarifie l'objectif du site ou de l'outil : à qui il s'adresse, ce qu'il doit produire (contacts, ventes, gain de temps). Devis sous 24h.",
+          "On clarifie l'objectif du site : qui il doit toucher, ce qu'il doit produire (appels, devis, visites). Devis sous 24h.",
       },
       {
         title: "Maquette & contenu",
         description:
-          "Design des pages clés et structuration du contenu, pensés pour la conversion et le référencement.",
+          "Design des pages et structuration des textes, pensés pour la conversion et le référencement local.",
       },
       {
         title: "Développement",
         description:
-          "Intégration soignée, logique métier, tests — avec des mises en ligne intermédiaires pour valider au fur et à mesure.",
+          "Intégration soignée, optimisation des images et de la vitesse, tests sur mobile et petites connexions.",
       },
       {
-        title: "Mise en ligne & SEO",
+        title: "Mise en ligne & indexation",
         description:
-          "Déploiement, configuration du domaine, indexation Google, mesure de la performance.",
+          "Déploiement, configuration du domaine, soumission à Google et vérification de l'indexation.",
       },
       {
         title: "Accompagnement",
         description:
           "Corrections garanties, suivi des premières semaines et évolutions à la demande.",
-      },
-    ],
-    faq: [
-      {
-        question: "Combien coûte la création d'un site web professionnel ?",
-        answer:
-          "Un site vitrine soigné, une plateforme avec espace client et un logiciel métier complet correspondent à des budgets différents. Je détaille des fourchettes indicatives sur ma page tarifs — et dans tous les cas, vous recevez un devis précis et transparent sous 24h après notre premier échange.",
-      },
-      {
-        question: "Mon site sera-t-il visible sur Google ?",
-        answer:
-          "Oui : le référencement fait partie du travail, pas d'une option. Structure sémantique propre, vitesse de chargement optimale, balises et données structurées, sitemap — votre site est construit pour être indexé et bien positionné. Ce site même que vous lisez applique exactement ces méthodes.",
-      },
-      {
-        question: "Pourrai-je modifier le contenu moi-même ?",
-        answer:
-          "Oui : selon le projet, je mets en place un espace d'administration ou un CMS (Sanity, Payload) qui vous permet de modifier textes, images et actualités sans toucher au code. Je vous forme à son utilisation à la livraison.",
-      },
-      {
-        question: "Refaites-vous les sites existants ?",
-        answer:
-          "Oui. Si votre site actuel est lent, daté ou invisible sur Google, je réalise un audit puis une refonte qui conserve ce qui fonctionne et corrige ce qui pénalise. La refonte inclut la migration du contenu et les redirections pour ne pas perdre votre référencement existant.",
       },
     ],
     offers: [
@@ -291,23 +269,176 @@ export const servicePages: ServicePage[] = [
         recommended: true,
       },
       {
-        name: "Application Web",
-        price: "800 000 FCFA et +",
-        priceNote: "Sur devis selon la logique métier",
+        name: "Vitrine Premium",
+        price: "600 000 FCFA et +",
+        priceNote: "Sur devis selon les besoins",
         description:
-          "Au-delà du site : un véritable outil web qui automatise votre activité — espace client, gestion, réservations.",
+          "La présence en ligne complète : site bilingue, direction artistique poussée et stratégie SEO locale multi-villes.",
         features: [
-          "Analyse du besoin métier",
-          "Espace client / portail sécurisé",
-          "Logique métier sur-mesure",
-          "Backend robuste et scalable",
-          "Intégrations (paiement, SMS, outils existants)",
-          "Formation et documentation",
+          "Tout Croissance, plus :",
+          "Version bilingue français-anglais",
+          "Animations et direction artistique",
+          "Pages SEO locales par ville",
+          "Réservation ou prise de rendez-vous en ligne",
+          "Accompagnement SEO sur 3 mois",
         ],
       },
     ],
-    relatedProjectSlugs: ["gain", "archiform", "weman-lms"],
-    relatedCitySlugs: ["cotonou", "porto-novo", "bohicon"],
+    faq: [
+      {
+        question: "Combien coûte un site vitrine professionnel ?",
+        answer:
+          "À partir de 250 000 FCFA pour un site soigné de 3 à 5 pages, et autour de 450 000 FCFA pour un site étoffé avec blog et SEO avancé. Le détail des formules est ci-dessus et sur ma page tarifs — le devis précis arrive sous 24h.",
+      },
+      {
+        question: "Mon site sera-t-il visible sur Google ?",
+        answer:
+          "Oui : le référencement fait partie du travail, pas d'une option. Structure sémantique propre, vitesse de chargement optimale, balises et données structurées, sitemap — votre site est construit pour être indexé et bien positionné. Ce site même que vous lisez applique exactement ces méthodes.",
+      },
+      {
+        question: "Pourrai-je modifier le contenu moi-même ?",
+        answer:
+          "Oui : selon la formule, je mets en place un CMS (Sanity, Payload) qui vous permet de modifier textes, images et actualités sans toucher au code. Je vous forme à son utilisation à la livraison.",
+      },
+      {
+        question: "Refaites-vous les sites existants ?",
+        answer:
+          "Oui. Si votre site actuel est lent, daté ou invisible sur Google, je réalise un audit puis une refonte qui conserve ce qui fonctionne et corrige ce qui pénalise. La refonte inclut la migration du contenu et les redirections pour ne pas perdre votre référencement existant.",
+      },
+    ],
+    relatedProjectSlugs: ["gain", "archiform"],
+    relatedCitySlugs: ["cotonou", "ouidah", "porto-novo"],
+  },
+  {
+    slug: "creation-application-web",
+    title: "Applications web & logiciels métier",
+    shortTitle: "Applications web",
+    iconName: "Briefcase",
+    metaTitle:
+      "Application Web Sur-Mesure au Bénin — Logiciels Métier & Plateformes",
+    metaDescription:
+      "Développement d'applications web et logiciels métier sur-mesure : gestion, facturation, réservations, espaces clients. Backend solide, interfaces simples. Devis sous 24h.",
+    keywords: [
+      "application web sur mesure",
+      "logiciel métier Bénin",
+      "logiciel de gestion entreprise",
+      "digitalisation entreprise Bénin",
+      "espace client en ligne",
+      "plateforme web Afrique",
+    ],
+    heroDescription:
+      "Des logiciels web sur-mesure qui automatisent votre activité : gestion, facturation, réservations, espaces clients — pensés pour vos équipes, pas l'inverse.",
+    intro: [
+      "Cahiers, fichiers Excel dispersés, WhatsApp comme outil de gestion : la plupart des entreprises béninoises fonctionnent avec des bouts de ficelle qui coûtent des heures chaque semaine et font perdre de l'information. Un logiciel métier sur-mesure remplace tout cela par un outil unique, pensé pour votre façon réelle de travailler.",
+      "Contrairement à un logiciel générique auquel vous devez vous adapter, je construis l'outil autour de vos processus : vos rôles, vos règles, vos documents. Espaces clients, systèmes de réservation, gestion de stocks et facturation, suivi d'activité — des produits web complets, avec une logique métier robuste et une interface que vos équipes prennent en main sans formation lourde.",
+      "Sous le capot : Next.js, un backend solide et une architecture qui grandit avec vous. L'outil qui gère 10 utilisateurs aujourd'hui doit pouvoir en gérer 1 000 demain sans être reconstruit.",
+    ],
+    deliverables: [
+      "Analyse de vos processus métier avant toute ligne de code",
+      "Application web sur-mesure, simple à prendre en main",
+      "Backend et base de données bien architecturés",
+      "Gestion des rôles et permissions de vos équipes",
+      "Intégrations : paiement Mobile Money, SMS, outils existants",
+      "Formation complète et documentation",
+    ],
+    process: [
+      {
+        title: "Immersion métier",
+        description:
+          "Je comprends comment vous travaillez réellement — flux, documents, points de friction — avant de proposer quoi que ce soit. Devis sous 24h.",
+      },
+      {
+        title: "Spécifications & maquettes",
+        description:
+          "L'outil se dessine écran par écran avec vos équipes : vous validez le fonctionnement avant le développement.",
+      },
+      {
+        title: "Développement itératif",
+        description:
+          "Livraisons par étapes testables en conditions réelles : vos équipes utilisent et corrigent le tir au fur et à mesure.",
+      },
+      {
+        title: "Déploiement & formation",
+        description:
+          "Mise en production, reprise de vos données existantes et formation de chaque profil d'utilisateur.",
+      },
+      {
+        title: "Évolutions",
+        description:
+          "L'outil vit avec votre activité : j'accompagne les ajustements et nouvelles fonctionnalités dans la durée.",
+      },
+    ],
+    offers: [
+      {
+        name: "Outil Essentiel",
+        price: "800 000 FCFA",
+        priceNote: "Un processus clé digitalisé",
+        description:
+          "L'outil ciblé qui règle votre problème le plus coûteux : facturation, stocks, réservations — un processus, bien fait.",
+        features: [
+          "Analyse du processus concerné",
+          "Application web sur-mesure",
+          "Backend et base de données",
+          "Comptes utilisateurs et rôles simples",
+          "Formation à la prise en main",
+        ],
+      },
+      {
+        name: "Business",
+        price: "1 500 000 FCFA",
+        priceNote: "Le choix des PME en croissance",
+        description:
+          "Le logiciel de gestion complet : plusieurs modules connectés, intégrations locales et tableaux de bord de pilotage.",
+        features: [
+          "Tout l'Essentiel, plus :",
+          "Plusieurs modules métier connectés",
+          "Intégrations Mobile Money / SMS / email",
+          "Tableaux de bord et exports",
+          "Rôles et permissions avancés",
+          "Reprise de vos données existantes",
+        ],
+        recommended: true,
+      },
+      {
+        name: "Plateforme",
+        price: "2 500 000 FCFA et +",
+        priceNote: "Sur devis selon le périmètre",
+        description:
+          "Le système complet à l'échelle de votre organisation : espaces clients externes, multi-sites, automatisations poussées.",
+        features: [
+          "Tout Business, plus :",
+          "Espace client / portail externe",
+          "Multi-agences ou multi-sites",
+          "Automatisations et notifications avancées",
+          "API pour vos partenaires",
+          "Accompagnement continu",
+        ],
+      },
+    ],
+    faq: [
+      {
+        question: "Pourquoi un logiciel sur-mesure plutôt qu'Excel ou un logiciel générique ?",
+        answer:
+          "Excel casse dès que plusieurs personnes travaillent en même temps, et un logiciel générique vous impose sa logique — avec des fonctions inutiles et des manques critiques. Le sur-mesure épouse vos processus réels : vos équipes travaillent plus vite parce que l'outil pense comme elles, et vous ne payez que ce qui vous sert.",
+      },
+      {
+        question: "Mes équipes ne sont pas très à l'aise avec l'informatique, est-ce bloquant ?",
+        answer:
+          "Non, c'est même un critère de conception : interfaces en français clair, parcours simples, gros boutons pour les actions fréquentes. Je forme chaque profil d'utilisateur à la livraison, et les premiers retours du terrain servent à ajuster l'outil.",
+      },
+      {
+        question: "Pouvez-vous reprendre nos données existantes (Excel, ancien logiciel) ?",
+        answer:
+          "Oui : la reprise des données fait partie du déploiement. Vos fichiers Excel, votre ancien logiciel ou vos registres structurés sont importés et vérifiés — vous démarrez avec votre historique, pas de zéro.",
+      },
+      {
+        question: "L'outil pourra-t-il évoluer après la livraison ?",
+        answer:
+          "C'est prévu dès l'architecture : chaque module est conçu pour être étendu sans tout casser. Vous démarrez avec l'essentiel, puis l'outil suit la croissance de votre activité — nouveaux modules, nouveaux rôles, nouvelles intégrations.",
+      },
+    ],
+    relatedProjectSlugs: ["weman-lms", "archiform"],
+    relatedCitySlugs: ["cotonou", "bohicon", "parakou"],
   },
   {
     slug: "creation-saas-dashboard",

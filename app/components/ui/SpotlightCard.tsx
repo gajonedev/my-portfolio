@@ -15,6 +15,8 @@ interface SpotlightCardProps {
   cornerColor?: string;
   /** Lift on hover */
   hover?: boolean;
+  /** Cursor-following glow on hover. Set false to disable it. */
+  glow?: boolean;
 }
 
 export default function SpotlightCard({
@@ -23,6 +25,7 @@ export default function SpotlightCard({
   corner = "br",
   cornerColor,
   hover = true,
+  glow = true,
 }: SpotlightCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   // Cursor target + two eased layers tracked at different speeds.
@@ -98,7 +101,7 @@ export default function SpotlightCard({
   return (
     <m.div
       ref={ref}
-      onMouseMove={handleMove}
+      onMouseMove={glow ? handleMove : undefined}
       whileHover={hover ? { y: -6 } : undefined}
       transition={springSoft}
       className={`spotlight-card ${cornerClass} ${className}`}
@@ -108,7 +111,7 @@ export default function SpotlightCard({
           : undefined
       }
     >
-      <span className="spotlight-glow" aria-hidden="true" />
+      {glow && <span className="spotlight-glow" aria-hidden="true" />}
       <div className="spotlight-content">{children}</div>
     </m.div>
   );
