@@ -71,16 +71,6 @@ export const servicesDetailed: ServiceDetailed[] = [
     ],
   },
   {
-    title: "Sites vitrines",
-    slug: "creation-site-vitrine",
-    iconName: "Globe",
-    description:
-      "Le site professionnel qui vous rend crédible et visible sur Google, conçu pour convertir.",
-    details:
-      "Des sites vitrines sur-mesure, rapides et bien référencés : design soigné, SEO intégré dès la conception, mobile-first. Le commercial qui travaille pour vous 24h/24 — et que vos clients trouvent sur Google.",
-    features: ["Design sur-mesure", "SEO intégré", "Mobile-first", "CMS"],
-  },
-  {
     title: "Applications & logiciels web",
     slug: "creation-application-web",
     iconName: "Briefcase",
@@ -89,6 +79,16 @@ export const servicesDetailed: ServiceDetailed[] = [
     details:
       "Pas des vitrines : de véritables produits web complets (outils métier, plateformes, espaces clients) qui automatisent et fluidifient le travail. Frontend soigné, logique métier robuste et infrastructure background maîtrisée.",
     features: ["Outils métier", "Logique robuste", "Temps réel", "Scalable"],
+  },
+  {
+    title: "Sites vitrines",
+    slug: "creation-site-vitrine",
+    iconName: "Globe",
+    description:
+      "Le site professionnel qui vous rend crédible et visible sur Google, conçu pour convertir.",
+    details:
+      "Des sites vitrines sur-mesure, rapides et bien référencés : design soigné, SEO intégré dès la conception, mobile-first. Le commercial qui travaille pour vous 24h/24 — et que vos clients trouvent sur Google.",
+    features: ["Design sur-mesure", "SEO intégré", "Mobile-first", "CMS"],
   },
   {
     title: "SaaS & dashboards",
