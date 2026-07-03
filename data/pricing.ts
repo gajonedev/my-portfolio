@@ -20,8 +20,8 @@ export const pricingTiers: PricingTier[] = [
   {
     title: "Site vitrine professionnel",
     serviceSlug: "creation-site-vitrine",
-    priceFrom: "150 000 FCFA",
-    priceNote: "150 000 – 450 000 FCFA selon le nombre de pages et le contenu",
+    priceFrom: "170 000 FCFA",
+    priceNote: "170 000 – 450 000 FCFA selon le nombre de pages et le contenu",
     description:
       "Le site qui présente votre activité avec crédibilité et vous rend visible sur Google.",
     includes: [
@@ -70,9 +70,9 @@ export const pricingTiers: PricingTier[] = [
   {
     title: "Application mobile",
     serviceSlug: "creation-application-mobile",
-    priceFrom: "850 000 FCFA",
+    priceFrom: "900 000 FCFA",
     priceNote:
-      "850 000 – 2 500 000 FCFA — iOS + Android inclus (Flutter)",
+      "900 000 – 2 500 000 FCFA — iOS + Android inclus (Flutter)",
     description:
       "Votre application sur l'App Store et Google Play, avec un seul développement pour les deux.",
     includes: [
@@ -174,7 +174,7 @@ export const pricingFaq: PricingFaq[] = [
       "Oui, en option : un forfait de maintenance couvre les mises à jour techniques, les sauvegardes et les petites évolutions. Vous pouvez aussi choisir de gérer vous-même — le code vous appartient et tout est documenté pour ça.",
   },
   {
-    question: "Un site à 150 000 FCFA peut-il vraiment être de qualité ?",
+    question: "Un site à 170 000 FCFA peut-il vraiment être de qualité ?",
     answer:
       "Oui, si le périmètre est bien cadré : un site vitrine de quelques pages, bien conçu et bien référencé, n'a pas besoin d'un budget de plateforme. Ce qui coûte cher, c'est le sur-mesure fonctionnel — pas la qualité d'exécution, qui est la même sur tous mes projets.",
   },

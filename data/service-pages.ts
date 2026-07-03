@@ -130,7 +130,7 @@ export const servicePages: ServicePage[] = [
     offers: [
       {
         name: "MVP Mobile",
-        price: "850 000 FCFA",
+        price: "900 000 FCFA",
         priceNote: "Idéal pour valider une idée",
         description:
           "L'application qui prouve votre concept : fonctionnalité cœur, interface soignée, prête à être testée par de vrais utilisateurs.",
@@ -185,7 +185,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Création de Site Web au Bénin — Site Vitrine Professionnel et Bien Référencé",
     metaDescription:
-      "Création de sites vitrines professionnels au Bénin : design soigné, référencement Google intégré, rapide sur mobile. À partir de 150 000 FCFA, devis sous 24h.",
+      "Création de sites vitrines professionnels au Bénin : design soigné, référencement Google intégré, rapide sur mobile. À partir de 170 000 FCFA, devis sous 24h.",
     keywords: [
       "création site web Bénin",
       "site vitrine Cotonou",
@@ -239,7 +239,7 @@ export const servicePages: ServicePage[] = [
     offers: [
       {
         name: "Vitrine Essentielle",
-        price: "150 000 FCFA",
+        price: "170 000 FCFA",
         priceNote: "En ligne en 2 à 3 semaines",
         description:
           "Le site professionnel qui vous rend crédible et visible : l'essentiel, exécuté avec soin.",
@@ -287,7 +287,7 @@ export const servicePages: ServicePage[] = [
       {
         question: "Combien coûte un site vitrine professionnel ?",
         answer:
-          "À partir de 150 000 FCFA pour un site soigné de 3 à 5 pages, et autour de 300 000 FCFA pour un site étoffé avec blog et SEO avancé. Le détail des formules est ci-dessus et sur ma page tarifs — le devis précis arrive sous 24h.",
+          "À partir de 170 000 FCFA pour un site soigné de 3 à 5 pages, et autour de 300 000 FCFA pour un site étoffé avec blog et SEO avancé. Le détail des formules est ci-dessus et sur ma page tarifs — le devis précis arrive sous 24h.",
       },
       {
         question: "Mon site sera-t-il visible sur Google ?",
