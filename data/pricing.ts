@@ -21,7 +21,7 @@ export interface PricingFaq {
 export const pricingTiers: PricingTier[] = [
   {
     title: "Site vitrine professionnel",
-    serviceSlug: "creation-application-web",
+    serviceSlug: "creation-site-vitrine",
     priceFrom: "250 000 FCFA",
     priceNote: "250 000 – 600 000 FCFA selon le nombre de pages et le contenu",
     description:

@@ -71,7 +71,7 @@ Méfiez-vous des prestataires qui gardent ces accès pour vous facturer des « f
 
 Avant de contacter un prestataire, clarifiez trois choses : **l'objectif** du site (obtenir des demandes de devis ? vendre en ligne ? automatiser une gestion ?), **vos contenus disponibles**, et **votre budget indicatif**. Avec ces trois éléments, un professionnel sérieux peut vous chiffrer précisément — chez moi, c'est [sous 24h, gratuitement](/contact).
 
-Et si vous hésitez encore entre les types de projets, mes pages [création de site et d'application web](/services/creation-application-web) et [création de boutique e-commerce](/services/creation-ecommerce) détaillent ce que chaque option implique.
+Et si vous hésitez encore entre les types de projets, mes pages [création de site vitrine](/services/creation-site-vitrine), [application web et logiciel métier](/services/creation-application-web) et [création de boutique e-commerce](/services/creation-ecommerce) détaillent ce que chaque option implique.
 
 ---
 
