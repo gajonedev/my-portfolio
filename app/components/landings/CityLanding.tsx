@@ -1,8 +1,6 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
-import Container from "../components/Container";
-import PageHeader from "../components/PageHeader";
+import Container from "../Container";
+import PageHeader from "../PageHeader";
 import {
   getIcon,
   MapPin,
@@ -15,70 +13,12 @@ import {
   localAdvantages,
   siteConfig,
   contactInfo,
-  localCities,
   cityFullSlug,
-  getCityByFullSlug,
   getCityBySlug,
+  type LocalCity,
 } from "@/data";
 
-// Seules les villes du dataset existent : tout autre slug → 404
-export const dynamicParams = false;
-
-export function generateStaticParams() {
-  return localCities.map((city) => ({ ville: cityFullSlug(city) }));
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ ville: string }>;
-}): Promise<Metadata> {
-  const { ville } = await params;
-  const city = getCityByFullSlug(ville);
-  if (!city) return {};
-
-  const url = `${siteConfig.url}/${cityFullSlug(city)}`;
-  const title = `Développeur Web & Mobile à ${city.name} — Sites, Applications, E-commerce`;
-
-  return {
-    title,
-    description: city.metaDescription,
-    keywords: [
-      `développeur web ${city.name}`,
-      `développeur ${city.name}`,
-      `création site web ${city.name}`,
-      `application mobile ${city.name}`,
-      `développeur mobile ${city.name}`,
-      `freelance ${city.name}`,
-      `e-commerce ${city.name}`,
-      `développeur web ${city.department} Bénin`,
-    ],
-    alternates: { canonical: url },
-    openGraph: {
-      title: `Développeur Web & Mobile à ${city.name}`,
-      description: city.metaDescription,
-      url,
-      type: "website",
-      locale: "fr_BJ",
-    },
-    other: {
-      "geo.region": city.regionCode,
-      "geo.placename": city.name,
-      "geo.position": `${city.geo.latitude};${city.geo.longitude}`,
-      ICBM: `${city.geo.latitude}, ${city.geo.longitude}`,
-    },
-  };
-}
-
-export default async function CityPage({
-  params,
-}: {
-  params: Promise<{ ville: string }>;
-}) {
-  const { ville } = await params;
-  const city = getCityByFullSlug(ville);
-  if (!city) notFound();
-
+export default function CityLanding({ city }: { city: LocalCity }) {
   const url = `${siteConfig.url}/${cityFullSlug(city)}`;
   const nearbyCities = city.nearby
     .map((slug) => getCityBySlug(slug))
@@ -221,8 +161,8 @@ export default async function CityPage({
             </h2>
             <p className="mb-6 text-foreground-muted text-sm">
               Des solutions pensées pour les réalités économiques de{" "}
-              {city.name} et du département {city.department === "Littoral" ? "du" : "de"}{" "}
-              {city.department} :
+              {city.name} et du département{" "}
+              {city.department === "Littoral" ? "du" : "de"} {city.department} :
             </p>
             <div className="gap-4 grid md:grid-cols-2">
               {city.opportunities.map((opportunity) => {

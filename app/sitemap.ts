@@ -3,6 +3,7 @@ import { getAllPosts } from "@/lib/blog";
 import { localCities, cityFullSlug } from "@/data/cities";
 import { projects } from "@/data/projects";
 import { servicePages } from "@/data/service-pages";
+import { expertises } from "@/data/expertises";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://gajone.dev";
@@ -69,6 +70,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     ...cityPages,
+    ...expertises.map((expertise) => ({
+      url: `${baseUrl}/${expertise.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
     {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),

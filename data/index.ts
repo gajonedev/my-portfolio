@@ -73,6 +73,15 @@ export {
   type City,
 } from "./seo";
 
+// Pages expertise par technologie
+export {
+  expertises,
+  getExpertiseBySlug,
+  type Expertise,
+  type ExpertiseFaq,
+  type ExpertiseStrength,
+} from "./expertises";
+
 // Pages SEO locales par ville
 export {
   localCities,
