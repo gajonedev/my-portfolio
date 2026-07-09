@@ -33,7 +33,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
         name: `${siteConfig.name} — Développeur Web & Mobile à ${city.name}`,
         description: city.metaDescription,
         url,
-        image: `${siteConfig.url}/portrait.webp`,
+        image: `${siteConfig.url}/portrait.png`,
         telephone: contactInfo.phoneRaw,
         email: contactInfo.email,
         priceRange: "$$",
@@ -160,9 +160,9 @@ export default function CityLanding({ city }: { city: LocalCity }) {
               Le digital au service de {city.name}
             </h2>
             <p className="mb-6 text-foreground-muted text-sm">
-              Des solutions pensées pour les réalités économiques de{" "}
-              {city.name} et du département{" "}
-              {city.department === "Littoral" ? "du" : "de"} {city.department} :
+              Des solutions pensées pour les réalités économiques de {city.name}{" "}
+              et du département {city.department === "Littoral" ? "du" : "de"}{" "}
+              {city.department} :
             </p>
             <div className="gap-4 grid md:grid-cols-2">
               {city.opportunities.map((opportunity) => {
@@ -280,11 +280,11 @@ export default function CityLanding({ city }: { city: LocalCity }) {
               {city.faq.map((item) => (
                 <details
                   key={item.question}
-                  className="group bg-card border border-stroke rounded-2xl open:pb-5"
+                  className="group bg-card open:pb-5 border border-stroke rounded-2xl"
                 >
                   <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
                     {item.question}
-                    <ChevronRight className="w-5 h-5 text-foreground-muted transition-transform group-open:rotate-90 shrink-0" />
+                    <ChevronRight className="w-5 h-5 text-foreground-muted group-open:rotate-90 transition-transform shrink-0" />
                   </summary>
                   <p className="px-5 text-foreground-muted text-sm leading-relaxed">
                     {item.answer}

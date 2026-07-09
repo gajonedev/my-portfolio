@@ -98,7 +98,7 @@ export default function Hero() {
             {/* glass card kept as-is */}
             <div className="bg-background-soft/60 backdrop-blur-md p-3 border border-stroke rounded-[2rem] glassw">
               <Image
-                src="/portrait.webp"
+                src="/portrait.png"
                 alt="Portrait de Néhémie Gandonou, développeur web et mobile"
                 width={360}
                 height={440}

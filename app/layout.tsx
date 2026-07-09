@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
-import "./globals.css";
+import ".globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MotionProvider from "./components/MotionProvider";
@@ -97,7 +97,7 @@ const jsonLd = {
       "@id": `${baseUrl}/#person`,
       name: "Néhémie Gandonou",
       url: baseUrl,
-      image: `${baseUrl}/portrait.webp`,
+      image: `${baseUrl}/portrait.png`,
       sameAs: [
         "https://github.com/gajonedev",
         "https://linkedin.com/in/gajonedev",
@@ -129,7 +129,7 @@ const jsonLd = {
       "@type": "LocalBusiness",
       "@id": `${baseUrl}/#business`,
       name: "Néhémie Gandonou - Développeur Web",
-      image: `${baseUrl}/portrait.webp`,
+      image: `${baseUrl}/portrait.png`,
       url: baseUrl,
       telephone: "+2290146897322",
       email: "gajonedev@gmail.com",
