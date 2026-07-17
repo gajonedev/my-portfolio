@@ -1,11 +1,19 @@
 ---
 title: "FedaPay, KkiaPay ou PayDunya : quel agrégateur de paiement choisir au Bénin ?"
-date: "2026-07-03"
+date: "2026-07-18"
 readTime: "7 min"
 summary: "Comparatif des trois principaux agrégateurs de paiement pour encaisser Mobile Money et cartes bancaires au Bénin : couverture, intégration, reversements et cas d'usage."
 category: "E-commerce"
 author: "Néhémie Gandonou"
-tags: ["FedaPay", "KkiaPay", "PayDunya", "Paiement en ligne", "Mobile Money", "Bénin"]
+tags:
+  [
+    "FedaPay",
+    "KkiaPay",
+    "PayDunya",
+    "Paiement en ligne",
+    "Mobile Money",
+    "Bénin",
+  ]
 ---
 
 # FedaPay, KkiaPay ou PayDunya : quel agrégateur choisir au Bénin ?
@@ -53,13 +61,13 @@ Les grilles tarifaires évoluent régulièrement — je vous renvoie aux pages o
 
 ## Mon verdict par cas d'usage
 
-| Votre situation | Mon choix |
-| --------------- | --------- |
-| Boutique ou service 100 % Bénin | FedaPay ou KkiaPay |
-| Encaisser vite sur un site simple | KkiaPay |
-| Clients dans plusieurs pays UEMOA | PayDunya |
-| Besoin d'Orange Money / Wave | PayDunya |
-| SaaS avec abonnements récurrents | À valider selon l'API — parlons-en |
+| Votre situation                   | Mon choix                          |
+| --------------------------------- | ---------------------------------- |
+| Boutique ou service 100 % Bénin   | FedaPay ou KkiaPay                 |
+| Encaisser vite sur un site simple | KkiaPay                            |
+| Clients dans plusieurs pays UEMOA | PayDunya                           |
+| Besoin d'Orange Money / Wave      | PayDunya                           |
+| SaaS avec abonnements récurrents  | À valider selon l'API — parlons-en |
 
 ## Le vrai sujet : la qualité de l'intégration
 
@@ -71,4 +79,4 @@ Vous hésitez pour votre projet ? [Décrivez-le-moi](/contact) : je vous oriente
 
 ---
 
-*Néhémie Gandonou intègre les paiements Mobile Money et carte bancaire sur les sites et applications qu'il développe depuis Cotonou pour toute l'Afrique de l'Ouest.*
+_Néhémie Gandonou intègre les paiements Mobile Money et carte bancaire sur les sites et applications qu'il développe depuis Cotonou pour toute l'Afrique de l'Ouest._
