@@ -1,8 +1,27 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import { getAllPosts } from "@/lib/blog";
+import { siteConfig } from "@/data";
+
+const url = `${siteConfig.url}/blog`;
+
+export const metadata: Metadata = {
+  title: "Blog — Web, Mobile & Business Digital au Bénin",
+  description:
+    "Conseils concrets sur le web, le mobile, le paiement Mobile Money et le digital pour les entreprises au Bénin et en Afrique de l'Ouest.",
+  alternates: { canonical: url },
+  openGraph: {
+    title: "Blog — Conseils web, mobile et digital au Bénin",
+    description:
+      "Conseils concrets sur le web, le mobile, le paiement Mobile Money et le digital pour les entreprises au Bénin.",
+    url,
+    type: "website",
+    locale: "fr_BJ",
+  },
+};
 
 export default async function BlogPage() {
   const posts = getAllPosts();
