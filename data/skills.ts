@@ -73,7 +73,7 @@ export const processSteps = [
     title: "Développement",
     iconName: "Code",
     description:
-      "Code propre, backend solide, architecture scalable et soin du détail.",
+      "Un produit fiable et rapide, soigné dans le détail et pensé pour durer.",
   },
   {
     title: "Livraison & suivi",

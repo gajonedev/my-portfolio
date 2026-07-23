@@ -4,7 +4,7 @@ import PageHeader from "../components/PageHeader";
 import SpotlightCard from "../components/ui/SpotlightCard";
 import TechBadge from "../components/ui/TechBadge";
 import ProjectStatus from "../components/ui/ProjectStatus";
-import { getIcon, ExternalLink, ArrowRight } from "@/lib/icons";
+import { getIcon, ExternalLink, ArrowRight, TrendingUp } from "@/lib/icons";
 import { projects } from "@/data";
 
 const ACCENTS = ["#ff4d3d", "#3b82f6", "#f59e0b"];
@@ -15,7 +15,7 @@ export default async function ProjectsPage() {
     <>
       <PageHeader
         title="Projets sélectionnés"
-        description="Chaque réalisation est faite avec un design system, une architecture garantissant la performance et une expérience utilisateur premium."
+        description="Des produits qui règlent un vrai problème métier, que leurs utilisateurs gardent, et qui tiennent la charge dans la durée."
       />
       <main className="py-16">
         <Container className="gap-6 grid md:grid-cols-2">
@@ -56,6 +56,12 @@ export default async function ProjectsPage() {
                   <p className="mt-4 font-body text-foreground-muted text-sm">
                     {project.summary}
                   </p>
+                  {project.impact && (
+                    <p className="flex items-start gap-2 bg-primary/5 mt-4 px-3 py-2 border-primary/60 border-l-2 rounded-r-lg font-body text-foreground text-sm">
+                      <TrendingUp className="mt-0.5 w-4 h-4 text-primary shrink-0" />
+                      <span className="font-medium">{project.impact}</span>
+                    </p>
+                  )}
                   <div className="flex flex-wrap gap-2 mt-4">
                     {project.tech.map((t) => (
                       <TechBadge key={t}>{t}</TechBadge>

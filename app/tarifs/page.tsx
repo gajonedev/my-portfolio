@@ -4,6 +4,7 @@ import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 import PriceTag from "../components/ui/PriceTag";
 import SpotlightCard from "../components/ui/SpotlightCard";
+import WhatsAppCta from "../components/ui/WhatsAppCta";
 import { CheckCircle, ArrowRight, ChevronRight } from "@/lib/icons";
 import {
   pricingTiers,
@@ -86,7 +87,7 @@ export default async function TarifsPage() {
 
       <PageHeader
         title="Tarifs transparents"
-        description="Combien coûte un site web, une boutique en ligne ou une application mobile ? Voici des fourchettes honnêtes en FCFA — et un devis précis sous 24h."
+        description="Combien coûte un site web, une boutique en ligne ou une application mobile ? Voici des fourchettes honnêtes en FCFA, et un devis précis sous 24h."
       />
 
       <main className="py-16">
@@ -97,7 +98,7 @@ export default async function TarifsPage() {
               La plupart des prestataires cachent leurs prix. Je préfère la
               transparence : les fourchettes ci-dessous vous donnent un ordre de
               grandeur réaliste pour situer votre budget. Chaque projet étant
-              unique, le chiffrage précis se fait sur devis —{" "}
+              unique, le chiffrage précis se fait sur devis :{" "}
               <strong className="text-foreground">
                 gratuit, détaillé et envoyé sous 24h
               </strong>
@@ -234,16 +235,16 @@ export default async function TarifsPage() {
               Votre devis précis, sous 24h
             </h2>
             <p className="mt-3 text-foreground-muted">
-              Décrivez-moi votre projet en quelques lignes — je reviens vers
+              Décrivez-moi votre projet en quelques lignes, je reviens vers
               vous avec un chiffrage clair et sans engagement.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
-              <Link href="/contact" className="btn-primary">
-                Demander un devis gratuit
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link href="/projects" className="btn-secondary">
-                Voir mes réalisations
+              <WhatsAppCta
+                label="Demander mon devis sur WhatsApp"
+                message="Bonjour Néhémie, j'aimerais un devis pour mon projet."
+              />
+              <Link href="/contact" className="btn-secondary">
+                Ou via le formulaire
               </Link>
             </div>
           </section>

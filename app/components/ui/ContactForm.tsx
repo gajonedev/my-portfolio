@@ -151,7 +151,7 @@ export default function ContactForm({
         )}
       </div>
 
-      {/* Honeypot — hidden from humans, tempting for bots */}
+      {/* Honeypot, hidden from humans, tempting for bots */}
       <input
         ref={honeypot}
         type="text"

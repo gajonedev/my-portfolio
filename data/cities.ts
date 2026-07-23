@@ -106,7 +106,7 @@ export const localCities: LocalCity[] = [
       {
         question: "Quels délais pour livrer un projet ?",
         answer:
-          "Comptez 4 à 8 semaines selon le scope, avec des points d'étape réguliers. Un site vitrine peut aller plus vite ; une application métier ou un SaaS demande plus de profondeur. Le planning est posé noir sur blanc dès le devis.",
+          "Comptez 2 à 8 semaines selon le scope, avec des points d'étape réguliers. Un site vitrine peut aller plus vite ; une application métier ou un SaaS demande plus de profondeur. Le planning est posé noir sur blanc dès le devis.",
       },
     ],
     nearby: ["abomey-calavi", "porto-novo", "ouidah", "seme-podji"],
@@ -184,7 +184,7 @@ export const localCities: LocalCity[] = [
     metaDescription:
       "Développeur web & mobile à Porto-Novo : sites institutionnels, e-commerce et applications pour les entreprises de la capitale. Présentiel possible, devis sous 24h.",
     intro: [
-      "Capitale administrative du Bénin, Porto-Novo réunit institutions, administrations et un patrimoine culturel remarquable — du musée Honmè aux maisons afro-brésiliennes. Sa position sur le corridor Cotonou-Lagos en fait aussi une place forte du commerce avec le Nigeria.",
+      "Capitale administrative du Bénin, Porto-Novo réunit institutions, administrations et un patrimoine culturel remarquable, du musée Honmè aux maisons afro-brésiliennes. Sa position sur le corridor Cotonou-Lagos en fait aussi une place forte du commerce avec le Nigeria.",
       "J'accompagne les institutions, entreprises et commerçants de Porto-Novo dans leur transformation digitale : sites officiels, plateformes de services, boutiques en ligne. Depuis Cotonou, je suis à moins d'une heure de route de Ouando, Tokpota ou Houinmè pour un rendez-vous en présentiel.",
     ],
     opportunities: [
@@ -248,7 +248,7 @@ export const localCities: LocalCity[] = [
       "Développeur web & mobile pour Parakou et le nord Bénin : outils de gestion, e-commerce, plateformes agro. Collaboration à distance rodée, déplacements possibles.",
     intro: [
       "Carrefour commercial du septentrion, Parakou relie le sud du Bénin au Niger, au Nigeria et au Burkina Faso. Entre le marché Arzèkè, la filière coton, les transporteurs et l'Université de Parakou, la ville regorge d'activités qui gagnent énormément à se digitaliser.",
-      "Je travaille avec les entreprises et organisations de Parakou principalement à distance — appels réguliers, démos en ligne, livraisons progressives — avec des déplacements possibles pour les phases clés d'un projet. La distance n'est pas un frein : c'est la méthode qui compte, et la mienne est rodée.",
+      "Je travaille avec les entreprises et organisations de Parakou principalement à distance, appels réguliers, démos en ligne, livraisons progressives, avec des déplacements possibles pour les phases clés d'un projet. La distance n'est pas un frein : c'est la méthode qui compte, et la mienne est rodée.",
     ],
     opportunities: [
       {
@@ -342,7 +342,7 @@ export const localCities: LocalCity[] = [
     ],
     anchors: [
       "Grand marché de Djougou",
-      "Axe routier Parakou–Natitingou–Togo",
+      "Axe routier Parakou-Natitingou-Togo",
       "Filières karité et anacarde de la Donga",
     ],
     faq: [
@@ -352,7 +352,8 @@ export const localCities: LocalCity[] = [
           "Oui, et c'est souvent un tournant : une vitrine web sérieuse avec photos, volumes disponibles et certifications permet d'être contacté directement par des acheteurs de Cotonou ou de l'étranger, sans dépendre uniquement des intermédiaires de passage.",
       },
       {
-        question: "Nos équipes ne sont pas très à l'aise avec l'informatique, est-ce un problème ?",
+        question:
+          "Nos équipes ne sont pas très à l'aise avec l'informatique, est-ce un problème ?",
         answer:
           "Non. Je conçois des interfaces simples, en français clair, utilisables sur smartphone. Et je prévois systématiquement une formation à la prise en main, avec des guides pas-à-pas adaptés au niveau de vos équipes.",
       },
@@ -415,7 +416,8 @@ export const localCities: LocalCity[] = [
           "Oui, à condition qu'il soit dimensionné pour vous. Pas besoin d'un gros logiciel : un outil simple qui suit vos stocks, vos ventes et vos crédits clients vous fait déjà gagner des heures chaque semaine et évite les pertes. On commence petit, on fait évoluer ensuite.",
       },
       {
-        question: "Combien de temps pour mettre en place une boutique en ligne ?",
+        question:
+          "Combien de temps pour mettre en place une boutique en ligne ?",
         answer:
           "Comptez 3 à 6 semaines pour une boutique complète avec catalogue, paiement Mobile Money et espace de gestion des commandes. Le planning précis est fixé dès le devis, que vous recevez sous 24h.",
       },
@@ -438,7 +440,7 @@ export const localCities: LocalCity[] = [
       "Développeur web pour Abomey : sites pour hôtels, musées et artisans, billetterie et réservation en ligne. Valorisez la cité des palais royaux sur le web.",
     intro: [
       "Ancienne capitale du royaume du Danxomè, Abomey abrite les palais royaux classés au patrimoine mondial de l'UNESCO. Le tourisme culturel, l'artisanat d'art et l'hôtellerie y constituent un potentiel économique que le digital peut démultiplier.",
-      "Je conçois pour les acteurs d'Abomey des outils qui convertissent cette richesse en visibilité et en revenus : sites d'hôtels avec réservation en ligne, vitrines pour les artisans, billetteries pour les sites culturels et événements. Un visiteur qui prépare son voyage doit pouvoir vous trouver — et réserver — depuis son téléphone.",
+      "Je conçois pour les acteurs d'Abomey des outils qui convertissent cette richesse en visibilité et en revenus : sites d'hôtels avec réservation en ligne, vitrines pour les artisans, billetteries pour les sites culturels et événements. Un visiteur qui prépare son voyage doit pouvoir vous trouver, et réserver, depuis son téléphone.",
     ],
     opportunities: [
       {
@@ -478,12 +480,14 @@ export const localCities: LocalCity[] = [
           "Oui, plus que jamais : la majorité des visiteurs d'Abomey préparent leur séjour en ligne. Un site avec photos soignées, disponibilités et réservation directe vous évite de dépendre uniquement des plateformes internationales et de leurs commissions.",
       },
       {
-        question: "Pouvez-vous créer une boutique pour vendre notre artisanat à l'international ?",
+        question:
+          "Pouvez-vous créer une boutique pour vendre notre artisanat à l'international ?",
         answer:
           "Oui : boutique multilingue, paiement par carte bancaire et Mobile Money, et organisation de l'expédition. Je vous accompagne aussi sur les photos produits et la présentation, qui font toute la différence à l'international.",
       },
       {
-        question: "Proposez-vous la maintenance du site après la mise en ligne ?",
+        question:
+          "Proposez-vous la maintenance du site après la mise en ligne ?",
         answer:
           "Oui, je propose un accompagnement après livraison : mises à jour, sauvegardes, évolutions du contenu. Vous pouvez aussi être formé pour gérer vous-même les contenus courants, comme les tarifs ou les actualités.",
       },
@@ -536,7 +540,8 @@ export const localCities: LocalCity[] = [
     ],
     faq: [
       {
-        question: "Pourquoi une entreprise de Lokossa devrait-elle investir dans un site web ?",
+        question:
+          "Pourquoi une entreprise de Lokossa devrait-elle investir dans un site web ?",
         answer:
           "Parce que vos clients et partenaires vous cherchent déjà sur Google. Une entreprise du Mono avec un site professionnel bien référencé capte des demandes qui, sans cela, partent vers Cotonou. C'est un investissement qui travaille pour vous 24h/24.",
       },
@@ -563,7 +568,7 @@ export const localCities: LocalCity[] = [
     metaDescription:
       "Développeur web pour Ouidah : sites d'hôtels avec réservation en ligne, billetterie d'événements, vitrines pour les acteurs du tourisme et de la culture.",
     intro: [
-      "Entre la Route de l'Esclave, la Porte du Non-Retour, ses musées et les Vodun Days qui attirent chaque année des milliers de visiteurs, Ouidah est l'une des destinations culturelles majeures de l'Afrique de l'Ouest. Le tourisme y explose — et avec lui, le besoin d'une vraie présence en ligne.",
+      "Entre la Route de l'Esclave, la Porte du Non-Retour, ses musées et les Vodun Days qui attirent chaque année des milliers de visiteurs, Ouidah est l'une des destinations culturelles majeures de l'Afrique de l'Ouest. Le tourisme y explose, et avec lui, le besoin d'une vraie présence en ligne.",
       "Je développe pour les hôtels, restaurants, guides et acteurs culturels de Ouidah des sites et outils qui transforment cette affluence en réservations : les visiteurs préparent leur séjour sur Google des semaines à l'avance, et c'est là qu'il faut être visible.",
     ],
     opportunities: [
@@ -599,9 +604,10 @@ export const localCities: LocalCity[] = [
     ],
     faq: [
       {
-        question: "Comment capter les touristes qui viennent pour les Vodun Days ?",
+        question:
+          "Comment capter les touristes qui viennent pour les Vodun Days ?",
         answer:
-          "En étant visible en ligne bien avant l'événement : un site rapide et multilingue, une fiche Google Business soignée et la réservation en ligne. Les visiteurs réservent hébergement et activités des semaines à l'avance — si vous n'êtes pas trouvable à ce moment-là, la réservation part ailleurs.",
+          "En étant visible en ligne bien avant l'événement : un site rapide et multilingue, une fiche Google Business soignée et la réservation en ligne. Les visiteurs réservent hébergement et activités des semaines à l'avance, si vous n'êtes pas trouvable à ce moment-là, la réservation part ailleurs.",
       },
       {
         question: "Faut-il un site en anglais aussi ?",
@@ -662,12 +668,14 @@ export const localCities: LocalCity[] = [
     ],
     faq: [
       {
-        question: "Nos clients réservent surtout via des agences étrangères, un site changerait-il quelque chose ?",
+        question:
+          "Nos clients réservent surtout via des agences étrangères, un site changerait-il quelque chose ?",
         answer:
-          "Oui : un site professionnel avec réservation directe vous rend indépendant des commissions d'intermédiaires et vous met en contact direct avec les voyageurs. Beaucoup cherchent précisément des acteurs locaux à soutenir — encore faut-il qu'ils vous trouvent.",
+          "Oui : un site professionnel avec réservation directe vous rend indépendant des commissions d'intermédiaires et vous met en contact direct avec les voyageurs. Beaucoup cherchent précisément des acteurs locaux à soutenir, encore faut-il qu'ils vous trouvent.",
       },
       {
-        question: "La connexion internet est parfois limitée ici, est-ce gérable ?",
+        question:
+          "La connexion internet est parfois limitée ici, est-ce gérable ?",
         answer:
           "Tout à fait. Je conçois des sites très légers qui se chargent vite même en 3G, et des outils de gestion qui fonctionnent hors-ligne puis se synchronisent. La contrainte réseau fait partie du cahier des charges dès le départ.",
       },
@@ -690,7 +698,7 @@ export const localCities: LocalCity[] = [
       "Développeur web & mobile pour Kandi et l'Alibori : outils de gestion pour coopératives cotonnières, agro-business et commerces du nord Bénin.",
     intro: [
       "Chef-lieu de l'Alibori, Kandi est au cœur du premier bassin cotonnier du Bénin. Coopératives, égreneurs, distributeurs d'intrants et transporteurs y animent une économie agricole puissante mais encore largement gérée sur papier.",
-      "C'est précisément là que le digital apporte le plus : je développe pour les acteurs de l'Alibori des outils de gestion adaptés au terrain — suivi des producteurs, des intrants et des collectes, paiements Mobile Money — utilisables sur smartphone, même avec une connexion intermittente.",
+      "C'est précisément là que le digital apporte le plus : je développe pour les acteurs de l'Alibori des outils de gestion adaptés au terrain, suivi des producteurs, des intrants et des collectes, paiements Mobile Money, utilisables sur smartphone, même avec une connexion intermittente.",
     ],
     opportunities: [
       {
@@ -720,17 +728,19 @@ export const localCities: LocalCity[] = [
     ],
     anchors: [
       "Premier bassin cotonnier du Bénin",
-      "Axe routier Parakou–Malanville–Niger",
+      "Axe routier Parakou-Malanville-Niger",
       "Proximité du parc national du W",
     ],
     faq: [
       {
-        question: "Nos agents de terrain n'ont pas toujours de réseau, votre outil fonctionnera-t-il ?",
+        question:
+          "Nos agents de terrain n'ont pas toujours de réseau, votre outil fonctionnera-t-il ?",
         answer:
-          "Oui : je conçois des applications qui fonctionnent hors-ligne — l'agent saisit les données au village, et tout se synchronise dès qu'il retrouve du réseau. C'est une contrainte que j'intègre dès la conception pour les projets du nord.",
+          "Oui : je conçois des applications qui fonctionnent hors-ligne, l'agent saisit les données au village, et tout se synchronise dès qu'il retrouve du réseau. C'est une contrainte que j'intègre dès la conception pour les projets du nord.",
       },
       {
-        question: "Peut-on suivre plusieurs milliers de producteurs dans l'outil ?",
+        question:
+          "Peut-on suivre plusieurs milliers de producteurs dans l'outil ?",
         answer:
           "Oui, c'est une question d'architecture. Je construis des backends solides et scalables, capables de gérer des dizaines de milliers d'enregistrements avec des recherches rapides et des exports pour vos rapports de campagne.",
       },
@@ -784,23 +794,26 @@ export const localCities: LocalCity[] = [
     anchors: [
       "Marché international de Malanville",
       "Pont sur le fleuve Niger vers Gaya",
-      "Corridor commercial Cotonou–Niamey",
+      "Corridor commercial Cotonou-Niamey",
     ],
     faq: [
       {
-        question: "Un outil peut-il gérer des transactions en FCFA des deux côtés de la frontière ?",
+        question:
+          "Un outil peut-il gérer des transactions en FCFA des deux côtés de la frontière ?",
         answer:
           "Oui : le Bénin et le Niger partagent le FCFA (UEMOA), ce qui simplifie les choses. J'intègre les paiements Mobile Money et le suivi des règlements pour que chaque transaction laisse une trace claire, quel que soit le côté de la frontière.",
       },
       {
-        question: "Nos activités reposent beaucoup sur la confiance et l'oral, le digital peut-il s'y adapter ?",
+        question:
+          "Nos activités reposent beaucoup sur la confiance et l'oral, le digital peut-il s'y adapter ?",
         answer:
           "Le digital ne remplace pas la confiance, il la renforce : un registre clair des crédits accordés, des livraisons faites et des paiements reçus évite les litiges et protège les deux parties. L'outil s'adapte à vos pratiques, pas l'inverse.",
       },
       {
-        question: "Comment se passe la collaboration à une telle distance de Cotonou ?",
+        question:
+          "Comment se passe la collaboration à une telle distance de Cotonou ?",
         answer:
-          "Par téléphone, WhatsApp et démos en ligne, avec un développement par étapes que vous validez. C'est un mode de travail que je pratique avec des clients dans tout le pays — la distance ne change rien à la qualité du résultat.",
+          "Par téléphone, WhatsApp et démos en ligne, avec un développement par étapes que vous validez. C'est un mode de travail que je pratique avec des clients dans tout le pays, la distance ne change rien à la qualité du résultat.",
       },
     ],
     nearby: ["kandi"],
@@ -847,18 +860,18 @@ export const localCities: LocalCity[] = [
     anchors: [
       "Fête annuelle de l'igname (15 août)",
       "Bassin de production d'igname et d'anacarde",
-      "Axe routier Dassa-Zoumè–Djougou",
+      "Axe routier Dassa-Zoumè-Djougou",
     ],
     faq: [
       {
         question: "Comment vendre notre production au-delà de Savalou ?",
         answer:
-          "Avec une vitrine en ligne sérieuse : produits, volumes, prix indicatifs et contact direct. Les acheteurs de Cotonou, Parakou ou de l'étranger cherchent des fournisseurs fiables sur Google — être visible et bien présenté fait toute la différence.",
+          "Avec une vitrine en ligne sérieuse : produits, volumes, prix indicatifs et contact direct. Les acheteurs de Cotonou, Parakou ou de l'étranger cherchent des fournisseurs fiables sur Google, être visible et bien présenté fait toute la différence.",
       },
       {
         question: "Une coopérative peut-elle se payer un outil digital ?",
         answer:
-          "Oui : je dimensionne l'outil au besoin réel et le devis est transparent, sans surprise. Un outil de gestion simple coûte bien moins qu'on ne l'imagine — et se rentabilise vite en pertes évitées et en temps gagné.",
+          "Oui : je dimensionne l'outil au besoin réel et le devis est transparent, sans surprise. Un outil de gestion simple coûte bien moins qu'on ne l'imagine, et se rentabilise vite en pertes évitées et en temps gagné.",
       },
       {
         question: "Faites-vous le déplacement jusqu'à Savalou ?",
@@ -919,14 +932,15 @@ export const localCities: LocalCity[] = [
           "En étant réservable en ligne bien avant : les pèlerins et leurs paroisses organisent le déplacement des semaines à l'avance. Un site avec disponibilités, tarifs et réservation vous remplit avant même le début de l'événement.",
       },
       {
-        question: "Un simple restaurant a-t-il besoin d'une présence en ligne ?",
+        question:
+          "Un simple restaurant a-t-il besoin d'une présence en ligne ?",
         answer:
           "Au minimum une fiche Google Business bien remplie avec photos, horaires et localisation : c'est gratuit et c'est ce que consultent les voyageurs qui s'arrêtent à Dassa. Un site simple avec le menu renforce ensuite cette visibilité.",
       },
       {
         question: "Combien coûte un site de réservation pour une auberge ?",
         answer:
-          "Un site avec présentation, photos, calendrier de disponibilités et réservation en ligne reste un projet raisonnable — bien moins cher qu'une année de commissions versées à des intermédiaires. Devis précis et transparent sous 24h.",
+          "Un site avec présentation, photos, calendrier de disponibilités et réservation en ligne reste un projet raisonnable, bien moins cher qu'une année de commissions versées à des intermédiaires. Devis précis et transparent sous 24h.",
       },
     ],
     nearby: ["savalou", "bohicon"],
@@ -972,7 +986,7 @@ export const localCities: LocalCity[] = [
     ],
     anchors: [
       "Sèmè City, cité internationale de l'innovation",
-      "Corridor commercial Cotonou–Lagos",
+      "Corridor commercial Cotonou-Lagos",
       "Poste frontalier de Sèmè-Kraké",
     ],
     faq: [
@@ -984,10 +998,11 @@ export const localCities: LocalCity[] = [
       {
         question: "Peut-on se voir en présentiel à Sèmè-Podji ?",
         answer:
-          "Très facilement : je suis basé à Cotonou, la commune voisine. Rendez-vous de cadrage, sessions de travail, points d'étape — le présentiel est simple à organiser quand c'est utile au projet.",
+          "Très facilement : je suis basé à Cotonou, la commune voisine. Rendez-vous de cadrage, sessions de travail, points d'étape, le présentiel est simple à organiser quand c'est utile au projet.",
       },
       {
-        question: "Faites-vous des applications tournées vers le marché nigérian ?",
+        question:
+          "Faites-vous des applications tournées vers le marché nigérian ?",
         answer:
           "Oui : interfaces bilingues français-anglais, prise en compte des usages de paiement des deux pays et référencement pensé pour les deux marchés. Le corridor Cotonou-Lagos est une opportunité énorme pour qui s'outille correctement.",
       },
@@ -1035,12 +1050,13 @@ export const localCities: LocalCity[] = [
     ],
     anchors: [
       "Lac Ahémé et eaux thermales de Possotomè",
-      "Axe international Cotonou–Lomé",
+      "Axe international Cotonou-Lomé",
       "Basse vallée du Mono",
     ],
     faq: [
       {
-        question: "Le tourisme autour du lac Ahémé peut-il vraiment bénéficier du digital ?",
+        question:
+          "Le tourisme autour du lac Ahémé peut-il vraiment bénéficier du digital ?",
         answer:
           "Oui, énormément : les visiteurs qui cherchent une escapade nature autour de Cotonou ou depuis Lomé préparent tout en ligne. Un hébergement visible sur Google avec photos, avis et réservation capte cette clientèle avant tout le monde.",
       },

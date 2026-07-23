@@ -11,21 +11,23 @@ import {
 import ScrollReveal from "./components/ui/ScrollReveal";
 import GlowButton from "./components/ui/GlowButton";
 import OutlineButton from "./components/ui/OutlineButton";
+import WhatsAppIcon from "./components/ui/WhatsAppIcon";
 import TechBadge from "./components/ui/TechBadge";
 import ProjectStatus from "./components/ui/ProjectStatus";
 import TestimonialsCarousel from "./components/ui/TestimonialsCarousel";
 import ContactForm from "./components/ui/ContactForm";
 import DotPattern from "./components/ui/DotPattern";
-import { getIcon, ArrowRight, CheckCircle } from "@/lib/icons";
+import { getIcon, ArrowRight, CheckCircle, TrendingUp } from "@/lib/icons";
 import {
   servicesPreview,
   projectsPreview,
   testimonials,
   processSteps,
   skills,
-  stackAndTools,
   aboutHighlights,
+  aboutGuarantees,
   contactInfo,
+  whatsappUrl,
 } from "@/data";
 
 // Rotating accent palette for card corner glows (coral / blue / amber)
@@ -50,11 +52,11 @@ export default async function Home() {
               kicker="À propos"
               title={
                 <>
-                  Un partenaire produit obsédé par la{" "}
-                  <span className="text-primary">qualité</span>
+                  Plus qu&apos;un développeur, un partenaire pour votre{" "}
+                  <span className="text-primary">croissance</span>
                 </>
               }
-              subtitle="Je ne livre que de produits modernes et premium. Applis mobiles et logiciels web complets, soignés dans le détail, avec un backend solide et une architecture prête à grandir."
+              subtitle="Développeur indépendant, je m'implique dans votre projet comme si c'était le mien : je pars de votre objectif business, je livre un produit qui y répond vraiment, et je reste disponible après la mise en ligne."
             />
             <StaggerContainer className="gap-4 grid">
               {aboutHighlights.map((item) => (
@@ -73,16 +75,22 @@ export default async function Home() {
             <SpotlightCard corner="br" cornerColor="#ff4d3d" hover={false}>
               <div className="p-8">
                 <h3 className="font-display font-semibold text-foreground text-lg">
-                  Stack &amp; outils
+                  Travailler avec moi, concrètement
                 </h3>
                 <p className="mt-3 font-body text-foreground-muted text-sm leading-relaxed">
-                  {stackAndTools.main}
+                  Des engagements simples, les mêmes pour chaque projet.
                 </p>
-                <div className="flex flex-wrap gap-2 mt-6">
-                  {stackAndTools.tags.map((tag) => (
-                    <TechBadge key={tag}>{tag}</TechBadge>
+                <ul className="flex flex-col gap-3 mt-6">
+                  {aboutGuarantees.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 font-body text-foreground-muted text-sm"
+                    >
+                      <CheckCircle className="w-5 h-5 text-primary shrink-0" />
+                      <span>{item}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             </SpotlightCard>
           </ScrollReveal>
@@ -95,14 +103,14 @@ export default async function Home() {
         <Container className="relative gap-12 grid">
           <SectionHeading
             align="center"
-            kicker="Compétences"
+            kicker="Mes Compétences Techniques"
             title={
               <>
                 Du <span className="text-primary">mobile</span> au{" "}
                 <span className="text-primary">web</span>, une stack complète
               </>
             }
-            subtitle="Applications mobiles Flutter, plateformes web Next.js / Node.js et CMS headless — chaque couche maîtrisée pour des produits cohérents de bout en bout."
+            subtitle="Applications mobiles iOS et Android, plateformes web sur-mesure et CMS headless, chaque couche maîtrisée pour des produits cohérents de bout en bout."
             className="mx-auto"
           />
           <StaggerContainer className="gap-6 grid sm:grid-cols-2 lg:grid-cols-4">
@@ -135,7 +143,7 @@ export default async function Home() {
         <Container className="gap-12 grid">
           <div className="flex md:flex-row flex-col justify-between items-start md:items-end gap-6">
             <SectionHeading
-              kicker="Projets"
+              kicker="Mes Projets"
               title="Des réalisations à fort impact"
               subtitle="Des produits soignés, pensés pour résoudre un problème concret, rester fluides et tenir la charge."
             />
@@ -174,6 +182,12 @@ export default async function Home() {
                       <p className="font-body text-foreground-muted text-sm">
                         {project.description}
                       </p>
+                      {project.impact && (
+                        <p className="flex items-start gap-2 bg-primary/5 px-3 py-2 border-primary/60 border-l-2 rounded-r-lg font-body text-foreground text-sm">
+                          <TrendingUp className="mt-0.5 w-4 h-4 text-primary shrink-0" />
+                          <span className="font-medium">{project.impact}</span>
+                        </p>
+                      )}
                       <div className="mt-auto pt-1">
                         <ProjectStatus status={project.status} />
                       </div>
@@ -197,9 +211,9 @@ export default async function Home() {
         <Container className="relative gap-12 grid">
           <SectionHeading
             align="center"
-            kicker="Services"
+            kicker="Mes Services"
             title="Des produits complets, faits proprement"
-            subtitle="Applications mobiles et logiciels web complets, backend solide et exigence de qualité — pensés pour résoudre un vrai problème et durer dans le temps."
+            subtitle="De l'application mobile au site web, je livre des produits complets qui règlent le problème de votre activité, et qui durent dans le temps."
             className="mx-auto"
           />
           <StaggerContainer className="gap-6 grid md:grid-cols-2 lg:grid-cols-3">
@@ -211,6 +225,7 @@ export default async function Home() {
                     corner={cornerFor(i)}
                     cornerColor={accentFor(i)}
                     className="group h-full"
+                    glow={false}
                   >
                     <div className="p-6">
                       <div className="flex justify-center items-center bg-primary/15 mb-4 rounded-2xl w-12 h-12 text-primary group-hover:scale-110 transition-transform duration-300">
@@ -235,7 +250,7 @@ export default async function Home() {
       <SectionWrapper variant="light" className="py-24">
         <Container className="gap-12 grid">
           <SectionHeading
-            kicker="Process"
+            kicker="Mon Processus"
             title="Un processus pour livrer vite et bien"
             subtitle="De la stratégie aux optimisations, avec une communication claire et transparente."
           />
@@ -278,7 +293,7 @@ export default async function Home() {
         <Container className="gap-12 grid">
           <SectionHeading
             align="center"
-            kicker="Avis"
+            kicker="Les Avis"
             title="Ils ont confié leur produit digital"
             subtitle="Des collaborations bâties sur la confiance, la transparence et la qualité."
             className="mx-auto"
@@ -325,7 +340,7 @@ export default async function Home() {
                       <span className="text-primary">projet</span>
                     </>
                   }
-                  subtitle="Décrivez votre besoin, votre délai et vos objectifs — je reviens vers vous sous 24h."
+                  subtitle="Décrivez votre besoin, votre délai et vos objectifs. Je reviens vers vous sous 24h."
                 />
                 <div className="flex flex-col gap-3 font-body text-foreground-muted text-sm">
                   <a
@@ -340,13 +355,13 @@ export default async function Home() {
                   </span>
                 </div>
                 <div className="flex flex-wrap gap-4">
-                  <GlowButton href="/contact">Démarrer un projet</GlowButton>
-                  {/* <OutlineButton
-                    href="https://comeup.com/fr/@gajonedev"
-                    external
-                  >
-                    Profil Comeup
-                  </OutlineButton> */}
+                  <GlowButton href={whatsappUrl()} external>
+                    <WhatsAppIcon className="w-4 h-4" />
+                    Discuter sur WhatsApp
+                  </GlowButton>
+                  <OutlineButton href="/contact">
+                    Ou remplir le formulaire
+                  </OutlineButton>
                 </div>
               </div>
 

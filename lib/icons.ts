@@ -33,6 +33,7 @@ import {
   ExternalLink,
   Menu,
   X,
+  TrendingUp,
   GraduationCap,
   Home,
   CreditCard,
@@ -78,6 +79,7 @@ export const iconMap: Record<string, LucideIcon> = {
   Linkedin,
   Twitter,
   ExternalLink,
+  TrendingUp,
 };
 
 export function getIcon(name: string): LucideIcon {
@@ -117,4 +119,5 @@ export {
   ExternalLink,
   Menu,
   X,
+  TrendingUp,
 };

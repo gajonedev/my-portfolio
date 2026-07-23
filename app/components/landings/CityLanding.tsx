@@ -1,13 +1,8 @@
 import Link from "next/link";
 import Container from "../Container";
 import PageHeader from "../PageHeader";
-import {
-  getIcon,
-  MapPin,
-  CheckCircle,
-  ArrowRight,
-  ChevronRight,
-} from "@/lib/icons";
+import WhatsAppCta from "../ui/WhatsAppCta";
+import { getIcon, MapPin, CheckCircle, ChevronRight } from "@/lib/icons";
 import {
   localServices,
   localAdvantages,
@@ -30,7 +25,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
       {
         "@type": "ProfessionalService",
         "@id": `${url}#service`,
-        name: `${siteConfig.name} — Développeur Web & Mobile à ${city.name}`,
+        name: `${siteConfig.name}, Développeur Web & Mobile à ${city.name}`,
         description: city.metaDescription,
         url,
         image: `${siteConfig.url}/portrait.png`,
@@ -106,7 +101,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
 
       <PageHeader
         title={`Développeur Web & Mobile à ${city.name}`}
-        description={`${city.tagline} — applications web, apps mobiles, e-commerce et outils métier pour les entreprises et organisations de ${city.name}.`}
+        description={`${city.tagline}, applications web, apps mobiles, e-commerce et outils métier pour les entreprises et organisations de ${city.name}.`}
       />
 
       <main className="py-16">
@@ -274,7 +269,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
           {/* FAQ */}
           <section>
             <h2 className="mb-6 font-semibold text-foreground text-xl">
-              Questions fréquentes — {city.name}
+              Questions fréquentes, {city.name}
             </h2>
             <div className="flex flex-col gap-4">
               {city.faq.map((item) => (
@@ -294,7 +289,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
             </div>
           </section>
 
-          {/* Villes voisines — maillage interne */}
+          {/* Villes voisines, maillage interne */}
           {nearbyCities.length > 0 && (
             <section>
               <h2 className="mb-6 font-semibold text-foreground text-xl">
@@ -338,15 +333,15 @@ export default function CityLanding({ city }: { city: LocalCity }) {
               Un projet à {city.name} ?
             </h2>
             <p className="mt-3 text-foreground-muted">
-              Parlons-en. Prise de brief et devis clair sous 24h.
+              Parlons-en directement. Prise de brief et devis clair sous 24h.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
-              <Link href="/contact" className="btn-primary">
+              <WhatsAppCta
+                label="Discuter de mon projet"
+                message={`Bonjour Néhémie, j'ai un projet à ${city.name} et j'aimerais en discuter avec vous.`}
+              />
+              <Link href="/contact" className="btn-secondary">
                 Demander un devis
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link href="/projects" className="btn-secondary">
-                Voir mes réalisations
               </Link>
             </div>
           </section>

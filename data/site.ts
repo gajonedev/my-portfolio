@@ -15,11 +15,26 @@ export const contactInfo = {
   email: "gajonedev@gmail.com",
   phone: "+229 01 46 89 73 22",
   phoneRaw: "+2290146897322",
+  whatsapp: "2290146897322",
   location: "Cotonou, Bénin",
-  availability: "Remote / Worldwide",
+  availability: "À distance, partout",
   responseTime: "Prise de brief sous 24h.",
-  averageDelivery: "4 à 8 semaines selon le scope.",
+  averageDelivery: "2 à 8 semaines selon le scope.",
 } as const;
+
+// Lien WhatsApp pré-rempli — CTA à faible friction (convertit mieux qu'un formulaire ici)
+const DEFAULT_WHATSAPP_MESSAGE =
+  "Bonjour Néhémie, j'ai un projet de site ou d'application et j'aimerais en discuter avec vous.";
+
+export const whatsappUrl = (message: string = DEFAULT_WHATSAPP_MESSAGE) =>
+  `https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent(message)}`;
+
+// Arguments de confiance affichés sur la home (objection-killers, tous véridiques)
+export const homeTrust = [
+  "Devis gratuit sous 24h",
+  "Livré en 2 à 8 semaines",
+  "Le système vous appartient à 100 %",
+] as const;
 
 export const socialLinks = [
   {
@@ -53,21 +68,19 @@ export const aboutStats = [
   { label: "Années d'expérience", value: "4+" },
 ] as const;
 
-export const stackAndTools = {
-  main: "Flutter, Next.js, React, TypeScript, Node.js, Supabase, Sanity & Payload — et, à l'occasion, des systèmes embarqués ESP32 / Arduino.",
-  tags: [
-    "Mobile Flutter",
-    "Web Next.js",
-    "API REST",
-    "Design system",
-    "SEO",
-    "Performance",
-    "IoT / Embedded",
-  ],
-} as const;
-
+// Bénéfices client mis en avant dans la section À propos de la home
+// (orientés résultat, pas fonctionnalité technique)
 export const aboutHighlights = [
-  "Produits premium : propres, robustes et durables",
-  "Backend solide et architecture scalable",
-  "Expérience fluide, soignée jusque dans le détail",
+  "Un interlocuteur unique, du premier échange à la mise en ligne",
+  "Un produit fiable qui tient la charge, même quand l'activité décolle",
+  "Une expérience simple et rapide qui met vos clients en confiance",
+] as const;
+
+// Engagements concrets — remplacent l'ancienne carte « stack » (trop technique
+// pour la home ; la stack vit déjà dans la section Compétences). Tous véridiques.
+export const aboutGuarantees = [
+  "Devis clair et gratuit sous 24h",
+  "Livraison en 2 à 8 semaines",
+  "Le système vous appartient à 100 %",
+  "Un suivi après la mise en ligne",
 ] as const;

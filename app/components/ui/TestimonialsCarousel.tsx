@@ -126,7 +126,7 @@ export default function TestimonialsCarousel({
         </button>
       </m.div>
 
-      {/* dots — the button is a ≥24×24px tap target; the visible pill stays small */}
+      {/* dots, the button is a ≥24×24px tap target; the visible pill stays small */}
       <div className="mt-6 flex justify-center gap-1">
         {testimonials.map((t, i) => (
           <button

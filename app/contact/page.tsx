@@ -1,6 +1,7 @@
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 import ContactForm from "../components/ui/ContactForm";
+import WhatsAppCta from "../components/ui/WhatsAppCta";
 import { Mail, Phone, MapPin, Clock } from "@/lib/icons";
 import { contactInfo } from "@/data";
 
@@ -38,6 +39,12 @@ export default async function ContactPage() {
                   {contactInfo.location}
                 </div>
               </div>
+            </div>
+            <div className="flex flex-col gap-2">
+              <WhatsAppCta label="Discuter sur WhatsApp" className="w-full" />
+              <p className="text-foreground-subtle text-xs text-center">
+                Le canal le plus direct pour un échange rapide.
+              </p>
             </div>
             <div className="bg-background p-4 border border-stroke rounded-2xl">
               <div className="flex items-center gap-2 text-foreground">
