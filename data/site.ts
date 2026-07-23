@@ -43,19 +43,19 @@ export const homeProblems = [
     iconName: "Search",
     title: "On ne vous trouve pas",
     description:
-      "On vous recommande de bouche à oreille, mais dès qu'un prospect tape votre nom sur Google, il ne trouve rien de solide. Vos concurrents, si.",
+      "On vous recommande de bouche à oreille, mais dès qu'un prospect tape votre nom sur Google, il ne trouve rien de concret sur vous. Vos concurrents, si.",
   },
   {
     iconName: "Smartphone",
     title: "Votre site ne travaille pas pour vous",
     description:
-      "Il existe, mais il est lent, difficile à lire sur téléphone, et personne ne vous écrit à travers. Une vitrine, pas un commercial.",
+      "Votre site existe, mais il est lent, difficile à lire sur téléphone, et personne ne vous écrit à travers. Vous avez une vitrine passive au lieu d'un commercial.",
   },
   {
     iconName: "Clock",
     title: "Vous gérez tout à la main",
     description:
-      "Les demandes, les paiements, les relances passent par WhatsApp et vous coûtent des heures chaque semaine. Du temps que vous ne passez pas à faire votre métier.",
+      "Les demandes, les paiements, les relances passent par WhatsApp et vous coûtent des heures chaque semaine. Vous perdez du temps que vous ne passez pas à faire votre métier.",
   },
 ] as const;
 

@@ -19,7 +19,7 @@ export const servicesPreview: Service[] = [
     title: "Applications mobiles",
     iconName: "Smartphone",
     description:
-      "Des applications mobiles profesionnelles, propres et fluides qui vous résolvent le problème de votre activité et qui font le job : vendre, automatiser, fidéliser.",
+      "Des applications mobiles professionnelles, propres et fluides qui vous règlent le problème de votre activité et qui font le job : vendre, automatiser, fidéliser.",
   },
   {
     title: "Applications & logiciels web",

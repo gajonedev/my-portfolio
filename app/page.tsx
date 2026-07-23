@@ -51,8 +51,8 @@ export default async function Home() {
         <Container className="relative gap-12 grid">
           <SectionHeading
             align="center"
-            kicker="Le point de départ"
-            title="Le blocage avant la solution"
+            kicker="Le problème"
+            title="Ce qui bloque votre croissance"
             subtitle="La plupart de mes clients arrivent avec une de ces situations. Peut-être la vôtre."
             className="mx-auto"
           />
@@ -85,10 +85,10 @@ export default async function Home() {
           </StaggerContainer>
           <ScrollReveal>
             <p className="mx-auto max-w-2xl font-body text-foreground-muted text-base md:text-lg text-center leading-relaxed">
-              Je pars exactement de là.{" "}
+              Je pars précisément de là.{" "}
               <span className="font-medium text-foreground">
-                Je transforme une de ces situations en un système qui vous ramène
-                des clients pendant que vous travaillez.
+                Je transforme une de ces situations en un système qui vous
+                ramène des clients pendant que vous travaillez.
               </span>
             </p>
           </ScrollReveal>
@@ -100,10 +100,11 @@ export default async function Home() {
         <Container className="items-center gap-12 grid lg:grid-cols-[0.55fr_0.45fr]">
           <div className="flex flex-col gap-8">
             <SectionHeading
-              kicker="À propos"
+              kicker="À propos de moi"
               title={
                 <>
-                  Plus qu&apos;un développeur, un partenaire pour votre{" "}
+                  Bien plus qu&apos;un développeur, je suis un{" "}
+                  <span className="text-primary">partenaire</span> pour votre{" "}
                   <span className="text-primary">croissance</span>
                 </>
               }
