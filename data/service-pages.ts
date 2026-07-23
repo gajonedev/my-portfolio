@@ -74,7 +74,7 @@ export const servicePages: ServicePage[] = [
       "Application iOS + Android à partir d'un seul code Flutter",
       "Backend complet : API, base de données, authentification",
       "Mode hors-ligne avec synchronisation automatique",
-      "Paiements intégrés : Mobile Money, FedaPay, carte bancaire",
+      "Paiements intégrés : MTN MoMo, Moov Money, Celtiis Cash, carte bancaire",
       "Publication sur l'App Store et Google Play",
       "Formation à la prise en main et documentation",
     ],
@@ -150,7 +150,7 @@ export const servicePages: ServicePage[] = [
           "L'application complète prête à générer du revenu : paiements locaux, mode hors-ligne et notifications pour engager vos utilisateurs.",
         features: [
           "Tout le MVP Mobile, plus :",
-          "Paiement Mobile Money / FedaPay",
+          "Paiement MTN MoMo, Moov Money, Celtiis Cash et carte bancaire",
           "Mode hors-ligne avec synchronisation",
           "Notifications push",
           "Tableau de bord d'administration",
@@ -185,7 +185,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Création de Site E-commerce au Bénin, Boutique en Ligne avec Mobile Money",
     metaDescription:
-      "Création de boutiques en ligne qui vendent : paiement FedaPay, MTN MoMo, Moov Money et carte bancaire, gestion des stocks et livraison locale. Devis sous 24h.",
+      "Création de boutiques en ligne qui vendent : paiement MTN MoMo, Moov Money, Celtiis Cash et carte bancaire, gestion des stocks et livraison locale. Devis sous 24h.",
     keywords: [
       "création site e-commerce Bénin",
       "boutique en ligne Cotonou",
@@ -203,7 +203,7 @@ export const servicePages: ServicePage[] = [
     ],
     deliverables: [
       "Boutique en ligne complète, rapide et mobile-first",
-      "Paiements : FedaPay, MTN MoMo, Moov Money, carte bancaire",
+      "Paiements : MTN MoMo, Moov Money, Celtiis Cash, carte bancaire",
       "Back-office : stocks, commandes, clients, promotions",
       "Organisation de la livraison locale et notifications client",
       "SEO produits : données structurées, résultats enrichis Google",
@@ -240,7 +240,7 @@ export const servicePages: ServicePage[] = [
       {
         question: "Quels moyens de paiement puis-je proposer à mes clients ?",
         answer:
-          "Tous ceux qui comptent au Bénin et dans la sous-région : MTN Mobile Money, Moov Money, FedaPay, et la carte bancaire pour les clients internationaux. L'argent arrive directement sur vos comptes, je ne suis jamais intermédiaire dans vos flux financiers.",
+          "Tous ceux qui comptent au Bénin et dans la sous-région : MTN Mobile Money, Moov Money, Celtiis Cash, et la carte bancaire pour les clients internationaux. L'argent arrive directement sur vos comptes, je ne suis pas intermédiaire de vos flux financiers.",
       },
       {
         question:
@@ -268,7 +268,7 @@ export const servicePages: ServicePage[] = [
           "La boutique qui vous fait vendre en ligne rapidement, avec le paiement Mobile Money dès le premier jour.",
         features: [
           "Catalogue jusqu'à ~50 produits",
-          "Paiement FedaPay / Mobile Money",
+          "Paiement MTN MoMo, Moov Money, Celtiis Cash",
           "Gestion des commandes",
           "Design mobile-first",
           "Formation à la gestion",
@@ -647,7 +647,7 @@ export const servicePages: ServicePage[] = [
       {
         question: "Comment gérez-vous les paiements récurrents ?",
         answer:
-          "Avec Stripe pour les clients internationaux et FedaPay ou le Mobile Money pour l'Afrique de l'Ouest : abonnements, essais gratuits, factures automatiques et gestion des échecs de paiement. Le tout intégré proprement dans le produit.",
+          "Avec Stripe pour les clients internationaux et le Mobile Money pour l'Afrique de l'Ouest : abonnements, essais gratuits, factures automatiques et gestion des échecs de paiement. Le tout intégré proprement dans le produit.",
       },
       {
         question: "Le produit m'appartiendra-t-il entièrement ?",
@@ -726,7 +726,7 @@ export const servicePages: ServicePage[] = [
       "J'architecture et je construis le moteur invisible de vos produits : API propres, base de données bien modélisée, sécurité sérieuse, un socle qui tient la charge et qui dure.",
     intro: [
       "Le backend, c'est ce qu'on ne voit pas mais qui fait tout tenir : la vitesse de vos écrans, la sécurité de vos données, la fiabilité de vos paiements. Un backend bâclé se manifeste des mois plus tard, lenteurs, pertes de données, failles, quand il coûte le plus cher à corriger. Je le construis proprement dès le départ.",
-      "Concrètement : des API REST claires et documentées, une base de données modélisée pour vos besoins réels, une authentification sérieuse, des tâches de fond fiables (emails, rappels, synchronisations) et des intégrations tierces maîtrisées, Mobile Money, FedaPay, services de SMS, Google APIs.",
+      "Concrètement : des API REST claires et documentées, une base de données modélisée pour vos besoins réels, une authentification sérieuse, des tâches de fond fiables (emails, rappels, synchronisations) et des intégrations tierces maîtrisées, Mobile Money, services de SMS, Google APIs.",
       "J'interviens aussi en renfort : votre équipe a un frontend mais pas de backend solide, votre prestataire précédent a laissé une architecture fragile, votre API actuelle s'écroule sous la charge, je reprends, j'assainis, je documente.",
     ],
     deliverables: [
@@ -734,7 +734,7 @@ export const servicePages: ServicePage[] = [
       "Base de données modélisée et optimisée (PostgreSQL)",
       "Authentification et gestion fine des permissions",
       "Jobs asynchrones : emails, notifications, synchronisations",
-      "Intégrations : Mobile Money, FedaPay, SMS, services tiers",
+      "Intégrations : Mobile Money, SMS, services tiers",
       "Tests, monitoring et documentation technique complète",
     ],
     process: [
@@ -769,12 +769,12 @@ export const servicePages: ServicePage[] = [
         question:
           "Comment intégrez-vous les paiements Mobile Money côté serveur ?",
         answer:
-          "Via les API officielles (FedaPay, MTN, Moov) avec tout ce qu'un paiement sérieux exige : vérification des webhooks, idempotence, gestion des échecs et des remboursements, journalisation complète. Un paiement ne doit jamais être perdu ni compté deux fois.",
+          "Via les API officielles (FedaPay/KkiaPay) avec tout ce qu'un paiement sérieux exige : vérification des webhooks, idempotence, gestion des échecs et des remboursements, journalisation complète. Pas de paiement perdu ni compté deux fois.",
       },
       {
         question: "Le backend tiendra-t-il si mon activité grandit ?",
         answer:
-          "C'est le critère de conception : requêtes optimisées, cache, files d'attente pour les traitements lourds. Un backend que je livre passe de 100 à 100 000 utilisateurs en ajoutant des ressources, pas en réécrivant le code.",
+          "C'est le critère de conception : requêtes optimisées, cache, files d'attente pour les traitements lourds. Un backend que je livre passe de 100 à 100 000 utilisateurs en ajoutant des ressources et non en réécrivant le code.",
       },
       {
         question: "Livrez-vous la documentation technique ?",

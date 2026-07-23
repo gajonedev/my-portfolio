@@ -50,7 +50,7 @@ export const localCities: LocalCity[] = [
     regionCode: "BJ-LI",
     tagline: "Capitale économique du Bénin",
     metaDescription:
-      "Développeur web & mobile freelance basé à Cotonou. Applications web, apps mobiles Flutter, e-commerce avec FedaPay et Mobile Money. Rencontre en présentiel, devis sous 24h.",
+      "Développeur web & mobile freelance basé à Cotonou. Applications web, apps mobiles Flutter, e-commerce avec paiement par Mobile Money. Rencontre en présentiel, devis sous 24h.",
     intro: [
       "Je suis développeur web et mobile freelance basé à Cotonou, la capitale économique du Bénin. C'est ici que je vis et que je travaille au quotidien : nous pouvons nous rencontrer en présentiel pour discuter de votre projet, à Ganhi, Haie Vive, Cadjèhoun, Fidjrossè ou dans le quartier de votre choix.",
       "Entre le Port autonome, le marché Dantokpa, les sièges d'entreprises et un écosystème startup en pleine effervescence, Cotonou concentre l'essentiel de l'activité économique du pays. Les entreprises qui y digitalisent leurs services prennent une longueur d'avance : c'est exactement ce que je vous aide à faire, avec des applications web et mobiles solides, pensées pour le marché béninois.",
@@ -59,7 +59,7 @@ export const localCities: LocalCity[] = [
       {
         title: "E-commerce avec paiement local",
         description:
-          "Boutiques en ligne avec FedaPay, MTN MoMo et Moov Money intégrés, et gestion de la livraison dans les quartiers de Cotonou.",
+          "Boutiques en ligne avec MTN MoMo, Moov Money et Celtiis intégrés, et gestion de la livraison dans les quartiers de Cotonou.",
         iconName: "ShoppingCart",
       },
       {
@@ -101,7 +101,7 @@ export const localCities: LocalCity[] = [
       {
         question: "Intégrez-vous les moyens de paiement béninois ?",
         answer:
-          "Oui, c'est même une de mes spécialités : FedaPay, MTN Mobile Money, Moov Money et les cartes bancaires. Vos clients paient avec les moyens qu'ils utilisent réellement au quotidien, ce qui augmente directement vos conversions.",
+          "Oui, c'est même une de mes spécialités : MTN Mobile Money, Moov Money, Celtiis et les cartes bancaires. Vos clients paient avec les moyens qu'ils utilisent réellement au quotidien, ce qui augmente directement vos conversions.",
       },
       {
         question: "Quels délais pour livrer un projet ?",
@@ -296,7 +296,7 @@ export const localCities: LocalCity[] = [
       {
         question: "Mes clients pourront-ils payer par Mobile Money ?",
         answer:
-          "Oui, j'intègre MTN MoMo, Moov Money et FedaPay dans les boutiques et applications que je développe. C'est indispensable pour vendre efficacement au Bénin, et particulièrement dans le nord où le Mobile Money est le moyen de paiement dominant.",
+          "Oui, j'intègre MTN MoMo, Moov Money et Celtiis dans les boutiques et applications que je développe. C'est indispensable pour vendre efficacement au Bénin, et particulièrement dans le nord où le Mobile Money est le moyen de paiement dominant.",
       },
     ],
     nearby: ["djougou", "kandi", "natitingou"],

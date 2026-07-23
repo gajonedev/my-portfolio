@@ -99,7 +99,7 @@ export const expertises: Expertise[] = [
       {
         question: "Une app Flutter peut-elle intégrer MTN MoMo et Moov Money ?",
         answer:
-          "Oui : j'intègre les paiements Mobile Money via FedaPay ou les API opérateurs directement dans l'application, avec un backend qui sécurise chaque transaction (vérifications, idempotence, journalisation). C'est un besoin que je traite sur la quasi-totalité de mes projets.",
+          "Oui : j'intègre les paiements Mobile Money via FedaPay dans l'application, avec un backend qui sécurise chaque transaction (vérifications, idempotence, journalisation). C'est un besoin que je traite sur la quasi-totalité de mes projets.",
       },
       {
         question: "Qu'avez-vous déjà construit avec Flutter ?",
@@ -114,8 +114,7 @@ export const expertises: Expertise[] = [
     slug: "developpeur-nextjs-benin",
     techName: "Next.js",
     title: "Développeur Next.js au Bénin",
-    metaTitle:
-      "Développeur Next.js au Bénin, Sites Rapides et Bien Référencés",
+    metaTitle: "Développeur Next.js au Bénin, Sites Rapides et Bien Référencés",
     metaDescription:
       "Développeur Next.js au Bénin : sites et applications web ultra-rapides, SEO d'excellence, plateformes SaaS et e-commerce. Le framework des produits web exigeants.",
     keywords: [

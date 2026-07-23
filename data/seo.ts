@@ -42,7 +42,7 @@ export const cities: City[] = [
 export const localAdvantages = [
   "Développeur local, disponible en présentiel à Cotonou",
   "Connaissance du marché béninois et des moyens de paiement locaux",
-  "Intégration FedaPay, MTN MoMo, Moov Money",
+  "Intégration MTN MoMo, Moov Money, Celtiis Cash",
   "Support en français et accompagnement personnalisé",
   "Tarification transparente et devis clair sous 24h",
   "Délais respectés et communication transparente",

@@ -45,6 +45,7 @@ export default async function ProjectsPage() {
                 corner={CORNERS[i % CORNERS.length]}
                 cornerColor={ACCENTS[i % ACCENTS.length]}
                 className="group"
+                glow={false}
               >
                 <div className="p-6">
                   <div className="flex justify-between items-center gap-3">

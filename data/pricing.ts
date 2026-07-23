@@ -43,7 +43,7 @@ export const pricingTiers: PricingTier[] = [
       "La boutique complète qui vend en ligne avec les moyens de paiement locaux.",
     includes: [
       "Catalogue produits et panier",
-      "Paiement FedaPay, MTN MoMo, Moov Money, CB",
+      "Paiement MTN MoMo, Moov Money, Celtiis Cash, CB",
       "Back-office stocks & commandes",
       "Gestion des livraisons par zone",
       "SEO produits (résultats enrichis Google)",
@@ -71,15 +71,14 @@ export const pricingTiers: PricingTier[] = [
     title: "Application mobile",
     serviceSlug: "creation-application-mobile",
     priceFrom: "900 000 FCFA",
-    priceNote:
-      "900 000 à 2 500 000 FCFA, iOS + Android inclus (Flutter)",
+    priceNote: "900 000 à 2 500 000 FCFA, iOS + Android inclus (Flutter)",
     description:
       "Votre application sur l'App Store et Google Play, avec un seul développement pour les deux.",
     includes: [
       "iOS + Android en un seul code",
       "Backend complet inclus",
       "Mode hors-ligne si nécessaire",
-      "Paiement Mobile Money intégrable",
+      "Paiement MTN MoMo, Moov Money, Celtiis Cash intégrable",
       "Publication sur les deux stores",
     ],
     idealFor: "Startups, commerces, services de livraison, fintech",
@@ -88,8 +87,7 @@ export const pricingTiers: PricingTier[] = [
     title: "SaaS / MVP startup",
     serviceSlug: "creation-saas-dashboard",
     priceFrom: "1 200 000 FCFA",
-    priceNote:
-      "1 200 000 à 4 000 000 FCFA selon le périmètre du produit",
+    priceNote: "1 200 000 à 4 000 000 FCFA selon le périmètre du produit",
     description:
       "Votre produit SaaS lancé sur des fondations saines : multi-tenant, abonnements, analytics.",
     includes: [
@@ -116,7 +114,8 @@ export const pricingTiers: PricingTier[] = [
       "Rapport clair et hiérarchisé",
       "Plan d'action chiffré",
     ],
-    idealFor: "Toute entreprise dont le site est lent, invisible ou vieillissant",
+    idealFor:
+      "Toute entreprise dont le site est lent, invisible ou vieillissant",
   },
 ];
 
