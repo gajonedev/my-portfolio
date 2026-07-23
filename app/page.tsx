@@ -97,43 +97,48 @@ export default async function Home() {
         </Container>
       </SectionWrapper>
 
-      {/* ============ TECH STACK (dark) ============ */}
-      <SectionWrapper variant="dark" beam className="relative py-24">
+      {/* ============ SERVICES (dark) ============ */}
+      <SectionWrapper
+        variant="dark"
+        beam
+        id="services"
+        className="relative py-24"
+      >
         <DotPattern />
         <Container className="relative gap-12 grid">
           <SectionHeading
             align="center"
-            kicker="Mes Compétences Techniques"
-            title={
-              <>
-                Du <span className="text-primary">mobile</span> au{" "}
-                <span className="text-primary">web</span>, une stack complète
-              </>
-            }
-            subtitle="Applications mobiles iOS et Android, plateformes web sur-mesure et CMS headless, chaque couche maîtrisée pour des produits cohérents de bout en bout."
+            kicker="Mes Services"
+            title="Des produits complets, faits proprement"
+            subtitle="De l'application mobile au site web, je livre des produits complets qui règlent le problème de votre activité, et qui durent dans le temps."
             className="mx-auto"
           />
-          <StaggerContainer className="gap-6 grid sm:grid-cols-2 lg:grid-cols-4">
-            {skills.map((category, i) => (
-              <StaggerItem key={category.name}>
-                <SpotlightCard
-                  corner={cornerFor(i)}
-                  cornerColor={accentFor(i)}
-                  className="h-full"
-                >
-                  <div className="p-6">
-                    <h3 className="font-display font-semibold text-primary text-lg">
-                      {category.name}
-                    </h3>
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {category.items.map((item) => (
-                        <TechBadge key={item}>{item}</TechBadge>
-                      ))}
+          <StaggerContainer className="gap-6 grid md:grid-cols-2 lg:grid-cols-3">
+            {servicesPreview.map((service, i) => {
+              const Icon = getIcon(service.iconName);
+              return (
+                <StaggerItem key={service.title} className="h-full">
+                  <SpotlightCard
+                    corner={cornerFor(i)}
+                    cornerColor={accentFor(i)}
+                    className="group h-full"
+                    glow={false}
+                  >
+                    <div className="p-6">
+                      <div className="flex justify-center items-center bg-primary/15 mb-4 rounded-2xl w-12 h-12 text-primary group-hover:scale-110 transition-transform duration-300">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="font-display font-semibold text-foreground text-lg">
+                        {service.title}
+                      </h3>
+                      <p className="mt-3 font-body text-foreground-muted text-sm leading-relaxed">
+                        {service.description}
+                      </p>
                     </div>
-                  </div>
-                </SpotlightCard>
-              </StaggerItem>
-            ))}
+                  </SpotlightCard>
+                </StaggerItem>
+              );
+            })}
           </StaggerContainer>
         </Container>
       </SectionWrapper>
@@ -200,48 +205,43 @@ export default async function Home() {
         </Container>
       </SectionWrapper>
 
-      {/* ============ SERVICES (dark) ============ */}
-      <SectionWrapper
-        variant="dark"
-        beam
-        id="services"
-        className="relative py-24"
-      >
+      {/* ============ TECH STACK (dark) ============ */}
+      <SectionWrapper variant="dark" beam className="relative py-24">
         <DotPattern />
         <Container className="relative gap-12 grid">
           <SectionHeading
             align="center"
-            kicker="Mes Services"
-            title="Des produits complets, faits proprement"
-            subtitle="De l'application mobile au site web, je livre des produits complets qui règlent le problème de votre activité, et qui durent dans le temps."
+            kicker="Mes Compétences Techniques"
+            title={
+              <>
+                Du <span className="text-primary">mobile</span> au{" "}
+                <span className="text-primary">web</span>, une stack complète
+              </>
+            }
+            subtitle="Applications mobiles iOS et Android, plateformes web sur-mesure et CMS headless, chaque couche maîtrisée pour des produits cohérents de bout en bout."
             className="mx-auto"
           />
-          <StaggerContainer className="gap-6 grid md:grid-cols-2 lg:grid-cols-3">
-            {servicesPreview.map((service, i) => {
-              const Icon = getIcon(service.iconName);
-              return (
-                <StaggerItem key={service.title} className="h-full">
-                  <SpotlightCard
-                    corner={cornerFor(i)}
-                    cornerColor={accentFor(i)}
-                    className="group h-full"
-                    glow={false}
-                  >
-                    <div className="p-6">
-                      <div className="flex justify-center items-center bg-primary/15 mb-4 rounded-2xl w-12 h-12 text-primary group-hover:scale-110 transition-transform duration-300">
-                        <Icon className="w-6 h-6" />
-                      </div>
-                      <h3 className="font-display font-semibold text-foreground text-lg">
-                        {service.title}
-                      </h3>
-                      <p className="mt-3 font-body text-foreground-muted text-sm leading-relaxed">
-                        {service.description}
-                      </p>
+          <StaggerContainer className="gap-6 grid sm:grid-cols-2 lg:grid-cols-4">
+            {skills.map((category, i) => (
+              <StaggerItem key={category.name}>
+                <SpotlightCard
+                  corner={cornerFor(i)}
+                  cornerColor={accentFor(i)}
+                  className="h-full"
+                >
+                  <div className="p-6">
+                    <h3 className="font-display font-semibold text-primary text-lg">
+                      {category.name}
+                    </h3>
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {category.items.map((item) => (
+                        <TechBadge key={item}>{item}</TechBadge>
+                      ))}
                     </div>
-                  </SpotlightCard>
-                </StaggerItem>
-              );
-            })}
+                  </div>
+                </SpotlightCard>
+              </StaggerItem>
+            ))}
           </StaggerContainer>
         </Container>
       </SectionWrapper>
