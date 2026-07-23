@@ -62,6 +62,43 @@ export const geoData = {
   longitude: 2.4183,
 };
 
+// FAQ de la page hub /developpeur-web-benin.
+// Cible les requêtes réelles (prix, délais, Mobile Money, remote) et alimente
+// le schema FAQPage pour les featured snippets.
+export interface BeninFaqItem {
+  question: string;
+  answer: string;
+}
+
+export const beninFaq: BeninFaqItem[] = [
+  {
+    question: "Combien coûte un site web ou une application au Bénin ?",
+    answer:
+      "Tout dépend du périmètre. Un site vitrine démarre autour de 170 000 FCFA, une boutique en ligne ou une application mobile plus haut. Je publie des fourchettes transparentes sur ma page Tarifs, et je vous envoie un devis précis et gratuit sous 24h.",
+  },
+  {
+    question: "En combien de temps mon projet est-il livré ?",
+    answer:
+      "Selon le périmètre, je livre en 2 à 8 semaines. On cale le planning ensemble dès le cadrage, et je vous tiens au courant à chaque étape pour éviter les mauvaises surprises.",
+  },
+  {
+    question:
+      "Intégrez-vous le paiement Mobile Money (MTN MoMo, Moov, FedaPay, Kkiapay) ?",
+    answer:
+      "Oui. J'intègre les moyens de paiement locaux (MTN MoMo, Moov Money, FedaPay, Kkiapay) comme le paiement par carte, pour que vos clients règlent avec ce qu'ils utilisent déjà.",
+  },
+  {
+    question: "Travaillez-vous en dehors de Cotonou et à distance ?",
+    answer:
+      "Oui. J'accompagne des clients à Cotonou, Porto-Novo, Parakou, Lokossa et partout au Bénin, ainsi qu'au Togo, au Niger et à l'international, entièrement à distance.",
+  },
+  {
+    question: "Le site et le code m'appartiennent-ils ?",
+    answer:
+      "Oui, à 100 %. Le code, la base de données et les accès vous reviennent, documentés et transférables. Vous n'êtes jamais prisonnier de votre prestataire.",
+  },
+];
+
 export const seoKeywords = [
   "développeur web Cotonou",
   "développeur mobile Bénin",
