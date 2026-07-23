@@ -5,6 +5,7 @@ import Container from "../../components/Container";
 import PageHeader from "../../components/PageHeader";
 import TechBadge from "../../components/ui/TechBadge";
 import PriceTag from "../../components/ui/PriceTag";
+import WhatsAppCta from "../../components/ui/WhatsAppCta";
 import {
   getIcon,
   CheckCircle,
@@ -239,7 +240,7 @@ export default async function ServicePage({
               Trois formules, un même niveau d&apos;exigence
             </h2>
             <p className="mb-8 text-foreground-muted text-sm">
-              Des périmètres clairs pour situer votre budget — le devis précis
+              Des périmètres clairs pour situer votre budget, le devis précis
               arrive sous 24h, gratuitement.
             </p>
             <div className="items-stretch gap-6 grid md:grid-cols-3">
@@ -311,7 +312,7 @@ export default async function ServicePage({
               ))}
             </div>
             <p className="mt-4 text-foreground-muted text-sm">
-              Besoin d&apos;un périmètre différent ? Chaque projet est unique —{" "}
+              Besoin d&apos;un périmètre différent ? Chaque projet est unique :{" "}
               <Link href="/contact" className="text-primary hover:underline">
                 décrivez-moi le vôtre
               </Link>{" "}
@@ -411,10 +412,10 @@ export default async function ServicePage({
               Décrivez-moi votre projet : devis clair et détaillé sous 24h.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
-              <Link href="/contact" className="btn-primary">
-                Demander un devis
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              <WhatsAppCta
+                label="Discuter de mon projet"
+                message={`Bonjour Néhémie, je suis intéressé par votre service « ${service.shortTitle} » et j'aimerais en discuter.`}
+              />
               <Link href="/tarifs" className="btn-secondary">
                 Voir les tarifs
               </Link>

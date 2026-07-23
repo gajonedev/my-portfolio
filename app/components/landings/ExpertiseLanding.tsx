@@ -2,12 +2,8 @@ import Link from "next/link";
 import Container from "../Container";
 import PageHeader from "../PageHeader";
 import TechBadge from "../ui/TechBadge";
-import {
-  getIcon,
-  CheckCircle,
-  ArrowRight,
-  ChevronRight,
-} from "@/lib/icons";
+import WhatsAppCta from "../ui/WhatsAppCta";
+import { getIcon, CheckCircle, ChevronRight } from "@/lib/icons";
 import {
   getProjectBySlug,
   getServicePageBySlug,
@@ -249,10 +245,10 @@ export default function ExpertiseLanding({
               Parlons-en. Prise de brief et devis clair sous 24h.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
-              <Link href="/contact" className="btn-primary">
-                Demander un devis
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              <WhatsAppCta
+                label="Discuter de mon projet"
+                message={`Bonjour Néhémie, j'ai un projet ${expertise.techName} et j'aimerais en discuter avec vous.`}
+              />
               <Link href="/tarifs" className="btn-secondary">
                 Voir les tarifs
               </Link>

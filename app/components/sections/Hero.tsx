@@ -5,20 +5,24 @@ import AuroraBackground from "../ui/AuroraBackground";
 import DotPattern from "../ui/DotPattern";
 import GlowButton from "../ui/GlowButton";
 import OutlineButton from "../ui/OutlineButton";
+import WhatsAppIcon from "../ui/WhatsAppIcon";
 import HoverWord from "../ui/HoverWord";
-import { stats } from "@/data";
+import { CheckCircle } from "@/lib/icons";
+import { stats, whatsappUrl, homeTrust } from "@/data";
 
 // Title tokens — accent words ride the hover wave (HoverWord)
 const titleTokens: { text: string; accent?: boolean }[] = [
-  { text: "Développeur" },
-  { text: "Web", accent: true },
-  { text: "&" },
-  { text: "Mobile", accent: true },
-  { text: "—" },
-  { text: "de" },
-  { text: "l'idée" },
-  { text: "au" },
-  { text: "produit." },
+  { text: "Une" },
+  { text: "application" },
+  { text: "ou" },
+  { text: "un" },
+  { text: "site" },
+  { text: "qui" },
+  { text: "vous" },
+  { text: "fait" },
+  { text: "gagner", accent: true },
+  { text: "des" },
+  { text: "clients.", accent: true },
 ];
 
 // Word stagger matches the previous framer cadence (delayChildren 0.1, stagger 0.07)
@@ -35,7 +39,7 @@ export default function Hero() {
         <div className="flex flex-col gap-8">
           <span className="flex items-center gap-2 bg-primary/10 px-3 py-1 border border-primary/40 rounded-full w-fit font-body text-primary text-xs uppercase tracking-[0.25em] hero-anim-up">
             <span className="inline-block bg-success rounded-full w-2 h-2" />
-            Disponible pour freelance
+            Disponible pour vos projets
           </span>
 
           <h1 className="font-display font-bold text-foreground text-4xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight">
@@ -59,18 +63,36 @@ export default function Hero() {
             className="max-w-xl font-body text-foreground-muted text-base md:text-lg leading-relaxed hero-anim-up"
             style={{ animationDelay: "0.5s" }}
           >
-            Je suis Néhémie Gandonou, développeur web &amp; mobile basé à
-            Cotonou. Je conçois des applications mobiles et des plateformes web
-            rapides, élégantes et prêtes à convertir.
+            Je suis Néhémie Gandonou, développeur à Cotonou. Je conçois des
+            applications mobiles et des sites web qui donnent une image
+            professionnelle à votre activité et vous amènent plus de clients,
+            livrés en 2 à 8 semaines, prêts à l&apos;emploi.
           </p>
 
           <div
             className="flex flex-wrap gap-4 hero-anim-up"
             style={{ animationDelay: "0.7s" }}
           >
-            <GlowButton href="/projects">Voir mes projets</GlowButton>
-            <OutlineButton href="/contact">Me contacter</OutlineButton>
+            <GlowButton href={whatsappUrl()} external>
+              <WhatsAppIcon className="w-4 h-4" />
+              Parler de mon projet
+            </GlowButton>
+            <OutlineButton href="/projects">
+              Voir mes réalisations
+            </OutlineButton>
           </div>
+
+          <ul
+            className="flex flex-wrap gap-x-5 gap-y-2 font-body text-foreground-subtle text-sm hero-anim-up"
+            style={{ animationDelay: "0.8s" }}
+          >
+            {homeTrust.map((item) => (
+              <li key={item} className="flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-primary shrink-0" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
 
           <div
             className="gap-6 grid grid-cols-2 sm:grid-cols-4 hero-anim-up"

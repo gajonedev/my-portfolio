@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MotionProvider from "./components/MotionProvider";
+import FloatingWhatsApp from "./components/ui/FloatingWhatsApp";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { localCities } from "@/data/cities";
@@ -200,6 +201,7 @@ export default function RootLayout({
           <Header />
           <main className="pt-17 min-h-screen">{children}</main>
           <Footer />
+          <FloatingWhatsApp />
         </MotionProvider>
         <Analytics />
         <SpeedInsights />

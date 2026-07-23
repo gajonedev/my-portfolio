@@ -5,9 +5,9 @@ import Container from "../../components/Container";
 import PageHeader from "../../components/PageHeader";
 import TechBadge from "../../components/ui/TechBadge";
 import ProjectStatus from "../../components/ui/ProjectStatus";
+import WhatsAppCta from "../../components/ui/WhatsAppCta";
 import {
   CheckCircle,
-  ArrowRight,
   ChevronRight,
   ExternalLink,
   Lightbulb,
@@ -109,7 +109,7 @@ export default async function ProjectCaseStudyPage({
       />
 
       <PageHeader
-        title={`${project.name} — Étude de cas`}
+        title={`${project.name}, Étude de cas`}
         description={project.description}
       />
 
@@ -285,10 +285,10 @@ export default async function ProjectCaseStudyPage({
               Parlons-en. Prise de brief et devis clair sous 24h.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
-              <Link href="/contact" className="btn-primary">
-                Demander un devis
-                <ArrowRight className="w-4 h-4" />
-              </Link>
+              <WhatsAppCta
+                label="Discuter de mon projet"
+                message={`Bonjour Néhémie, j'ai vu l'étude de cas « ${project.name} » et j'ai un projet similaire à discuter.`}
+              />
               <Link href="/services" className="btn-secondary">
                 Voir les services
               </Link>

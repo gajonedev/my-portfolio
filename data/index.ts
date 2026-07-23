@@ -4,11 +4,13 @@
 export {
   siteConfig,
   contactInfo,
+  whatsappUrl,
+  homeTrust,
   socialLinks,
   stats,
   aboutStats,
-  stackAndTools,
   aboutHighlights,
+  aboutGuarantees,
 } from "./site";
 
 // Navigation

@@ -3,6 +3,7 @@ import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 import SpotlightCard from "../components/ui/SpotlightCard";
 import TechBadge from "../components/ui/TechBadge";
+import WhatsAppCta from "../components/ui/WhatsAppCta";
 import { getIcon, ArrowRight } from "@/lib/icons";
 import { servicesDetailed } from "@/data";
 
@@ -14,7 +15,7 @@ export default async function ServicesPage() {
     <>
       <PageHeader
         title="Services"
-        description="Des solutions complètes pour développer votre présence digitale et accélérer votre croissance."
+        description="Chacun de mes services règle un vrai problème de votre activité : vendre plus, gagner du temps, être trouvé sur Google. Vous obtenez d'abord un périmètre clair et un devis gratuit sous 24h."
       />
       <main className="py-16">
         <Container className="gap-6 grid md:grid-cols-2">
@@ -54,6 +55,26 @@ export default async function ServicesPage() {
               </SpotlightCard>
             );
           })}
+        </Container>
+
+        <Container className="mt-16">
+          <div className="flex flex-col items-center gap-6 bg-card px-6 py-12 border border-stroke rounded-3xl text-center">
+            <div className="flex flex-col gap-3">
+              <h2 className="font-display font-semibold text-foreground text-2xl">
+                Pas sûr du service qu&apos;il vous faut ?
+              </h2>
+              <p className="mx-auto max-w-xl font-body text-foreground-muted">
+                Décrivez-moi votre besoin en deux lignes : je vous oriente vers
+                la bonne solution et un devis clair, sous 24h.
+              </p>
+            </div>
+            <div className="flex flex-wrap justify-center gap-4">
+              <WhatsAppCta label="Discuter de mon projet" />
+              <Link href="/tarifs" className="btn-secondary">
+                Voir les tarifs
+              </Link>
+            </div>
+          </div>
         </Container>
       </main>
     </>

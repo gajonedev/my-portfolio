@@ -21,7 +21,7 @@ export const pricingTiers: PricingTier[] = [
     title: "Site vitrine professionnel",
     serviceSlug: "creation-site-vitrine",
     priceFrom: "170 000 FCFA",
-    priceNote: "170 000 – 450 000 FCFA selon le nombre de pages et le contenu",
+    priceNote: "170 000 à 450 000 FCFA selon le nombre de pages et le contenu",
     description:
       "Le site qui présente votre activité avec crédibilité et vous rend visible sur Google.",
     includes: [
@@ -38,7 +38,7 @@ export const pricingTiers: PricingTier[] = [
     serviceSlug: "creation-ecommerce",
     priceFrom: "500 000 FCFA",
     priceNote:
-      "500 000 – 1 200 000 FCFA selon le catalogue et les intégrations",
+      "500 000 à 1 200 000 FCFA selon le catalogue et les intégrations",
     description:
       "La boutique complète qui vend en ligne avec les moyens de paiement locaux.",
     includes: [
@@ -55,7 +55,7 @@ export const pricingTiers: PricingTier[] = [
     serviceSlug: "creation-application-web",
     priceFrom: "650 000 FCFA",
     priceNote:
-      "650 000 – 2 000 000 FCFA selon la complexité de la logique métier",
+      "650 000 à 2 000 000 FCFA selon la complexité de la logique métier",
     description:
       "L'outil sur-mesure qui automatise votre gestion : facturation, stocks, clients, réservations.",
     includes: [
@@ -72,7 +72,7 @@ export const pricingTiers: PricingTier[] = [
     serviceSlug: "creation-application-mobile",
     priceFrom: "900 000 FCFA",
     priceNote:
-      "900 000 – 2 500 000 FCFA — iOS + Android inclus (Flutter)",
+      "900 000 à 2 500 000 FCFA, iOS + Android inclus (Flutter)",
     description:
       "Votre application sur l'App Store et Google Play, avec un seul développement pour les deux.",
     includes: [
@@ -89,7 +89,7 @@ export const pricingTiers: PricingTier[] = [
     serviceSlug: "creation-saas-dashboard",
     priceFrom: "1 200 000 FCFA",
     priceNote:
-      "1 200 000 – 4 000 000 FCFA selon le périmètre du produit",
+      "1 200 000 à 4 000 000 FCFA selon le périmètre du produit",
     description:
       "Votre produit SaaS lancé sur des fondations saines : multi-tenant, abonnements, analytics.",
     includes: [
@@ -106,7 +106,7 @@ export const pricingTiers: PricingTier[] = [
     serviceSlug: "audit-optimisation",
     priceFrom: "80 000 FCFA",
     priceNote:
-      "80 000 – 250 000 FCFA — déduit du devis si je réalise les corrections",
+      "80 000 à 250 000 FCFA, déduit du devis si je réalise les corrections",
     description:
       "Le diagnostic complet de votre site ou application existants, avec plan d'action chiffré.",
     includes: [
@@ -121,7 +121,7 @@ export const pricingTiers: PricingTier[] = [
 ];
 
 export const alwaysIncluded = [
-  "Devis détaillé et transparent sous 24h — sans frais cachés",
+  "Devis détaillé et transparent sous 24h, sans frais cachés",
   "Code propre, documenté, qui vous appartient à 100 %",
   "Référencement (SEO) technique intégré dès la conception",
   "Site ou app rapide, testé sur mobile et petites connexions",
@@ -156,12 +156,12 @@ export const pricingFaq: PricingFaq[] = [
   {
     question: "Pourquoi afficher des fourchettes et pas des prix fixes ?",
     answer:
-      "Parce que deux projets « site web » peuvent varier du simple au quintuple selon le périmètre. Les fourchettes vous donnent un ordre de grandeur honnête pour situer votre budget ; le devis précis — gratuit et sans engagement — arrive sous 24h après notre premier échange.",
+      "Parce que deux projets « site web » peuvent varier du simple au quintuple selon le périmètre. Les fourchettes vous donnent un ordre de grandeur honnête pour situer votre budget ; le devis précis, gratuit et sans engagement, arrive sous 24h après notre premier échange.",
   },
   {
     question: "Comment se passe le paiement ?",
     answer:
-      "En plusieurs tranches liées à l'avancement : un acompte au démarrage, puis des paiements aux étapes clés validées ensemble, et le solde à la livraison. Virement, Mobile Money ou autre moyen convenu — tout est posé noir sur blanc dans le devis.",
+      "En plusieurs tranches liées à l'avancement : un acompte au démarrage, puis des paiements aux étapes clés validées ensemble, et le solde à la livraison. Virement, Mobile Money ou autre moyen convenu, tout est posé noir sur blanc dans le devis.",
   },
   {
     question: "Y a-t-il des coûts récurrents après la livraison ?",
@@ -171,11 +171,11 @@ export const pricingFaq: PricingFaq[] = [
   {
     question: "Proposez-vous la maintenance ?",
     answer:
-      "Oui, en option : un forfait de maintenance couvre les mises à jour techniques, les sauvegardes et les petites évolutions. Vous pouvez aussi choisir de gérer vous-même — le code vous appartient et tout est documenté pour ça.",
+      "Oui, en option : un forfait de maintenance couvre les mises à jour techniques, les sauvegardes et les petites évolutions. Vous pouvez aussi choisir de gérer vous-même, le code vous appartient et tout est documenté pour ça.",
   },
   {
     question: "Un site à 170 000 FCFA peut-il vraiment être de qualité ?",
     answer:
-      "Oui, si le périmètre est bien cadré : un site vitrine de quelques pages, bien conçu et bien référencé, n'a pas besoin d'un budget de plateforme. Ce qui coûte cher, c'est le sur-mesure fonctionnel — pas la qualité d'exécution, qui est la même sur tous mes projets.",
+      "Oui, si le périmètre est bien cadré : un site vitrine de quelques pages, bien conçu et bien référencé, n'a pas besoin d'un budget de plateforme. Ce qui coûte cher, c'est le sur-mesure fonctionnel, pas la qualité d'exécution, qui est la même sur tous mes projets.",
   },
 ];

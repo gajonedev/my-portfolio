@@ -1,5 +1,7 @@
+import Link from "next/link";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
+import WhatsAppCta from "../components/ui/WhatsAppCta";
 import { getIcon, Award, Users, Heart, Rocket } from "@/lib/icons";
 import { skills, values, aboutStats } from "@/data";
 
@@ -29,10 +31,10 @@ export default async function AboutPage() {
                 performance.
               </p>
               <p className="mt-4 text-foreground-muted text-sm leading-relaxed">
-                Du frontend soigné au backend solide (API, base de données,
-                tâches en arrière-plan), je gère toute la chaîne proprement,
-                avec une architecture scalable prête à grandir avec votre
-                activité.
+                Je gère tout de A à Z, l&apos;interface comme les coulisses, 
+                donc vous n&apos;avez qu&apos;un seul interlocuteur, et un
+                produit conçu pour grandir avec votre activité sans être
+                refait dans six mois.
               </p>
             </div>
             <div className="gap-4 grid">
@@ -113,6 +115,23 @@ export default async function AboutPage() {
                   </div>
                 );
               })}
+            </div>
+          </section>
+
+          {/* CTA */}
+          <section className="text-center">
+            <h2 className="font-semibold text-foreground text-2xl">
+              On travaille ensemble ?
+            </h2>
+            <p className="mt-3 text-foreground-muted">
+              Décrivez-moi votre projet, je reviens vers vous avec un plan
+              clair et un devis sous 24h.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 mt-6">
+              <WhatsAppCta label="Discuter de mon projet" />
+              <Link href="/projects" className="btn-secondary">
+                Voir mes réalisations
+              </Link>
             </div>
           </section>
         </Container>

@@ -19,7 +19,7 @@ export const servicesPreview: Service[] = [
     title: "Applications mobiles",
     iconName: "Smartphone",
     description:
-      "Des apps mobiles pro, propres et fluides qui résolvent un vrai problème — et qui font le job : vendre, automatiser, fidéliser.",
+      "Des apps mobiles pro, propres et fluides qui résolvent un vrai problème, et qui font le job : vendre, automatiser, fidéliser.",
   },
   {
     title: "Applications & logiciels web",
@@ -62,12 +62,12 @@ export const servicesDetailed: ServiceDetailed[] = [
     description:
       "Des apps mobiles pro, propres et fluides qui résolvent un vrai problème.",
     details:
-      "Applications mobiles Flutter performantes et soignées dans le moindre détail, adossées à un backend solide. Conçues pour résoudre un vrai problème, vendre ou automatiser — et publiées sur l'App Store et Google Play.",
+      "Des applications iOS et Android rapides et soignées, conçues pour résoudre un vrai problème : vendre, automatiser ou fidéliser. Publiées sur l'App Store et Google Play, prêtes à l'emploi.",
     features: [
-      "Flutter cross-platform",
-      "Backend solide",
-      "Mode hors-ligne",
-      "Publication stores",
+      "iOS + Android",
+      "Fonctionne hors-ligne",
+      "Publié sur les stores",
+      "Rapide et fiable",
     ],
   },
   {
@@ -77,8 +77,8 @@ export const servicesDetailed: ServiceDetailed[] = [
     description:
       "De vrais logiciels web complets qui résolvent des problèmes et facilitent le travail.",
     details:
-      "Pas des vitrines : de véritables produits web complets (outils métier, plateformes, espaces clients) qui automatisent et fluidifient le travail. Frontend soigné, logique métier robuste et infrastructure background maîtrisée.",
-    features: ["Outils métier", "Logique robuste", "Temps réel", "Scalable"],
+      "Pas des vitrines : de véritables outils métier, plateformes et espaces clients qui automatisent votre quotidien et font gagner du temps à vos équipes. Fiables, rapides et prêts à évoluer avec vous.",
+    features: ["Outils métier", "Gain de temps", "Temps réel", "Prêt à grandir"],
   },
   {
     title: "Sites vitrines",
@@ -87,8 +87,13 @@ export const servicesDetailed: ServiceDetailed[] = [
     description:
       "Le site professionnel qui vous rend crédible et visible sur Google, conçu pour convertir.",
     details:
-      "Des sites vitrines sur-mesure, rapides et bien référencés : design soigné, SEO intégré dès la conception, mobile-first. Le commercial qui travaille pour vous 24h/24 — et que vos clients trouvent sur Google.",
-    features: ["Design sur-mesure", "SEO intégré", "Mobile-first", "CMS"],
+      "Des sites vitrines sur-mesure, rapides et bien référencés, conçus pour convertir vos visiteurs en clients. Le commercial qui travaille pour vous 24h/24, et que vos clients trouvent sur Google.",
+    features: [
+      "Design sur-mesure",
+      "Visible sur Google",
+      "Mobile-first",
+      "Facile à mettre à jour",
+    ],
   },
   {
     title: "SaaS & dashboards",
@@ -97,8 +102,8 @@ export const servicesDetailed: ServiceDetailed[] = [
     description:
       "Produits SaaS et tableaux de bord fluides, pensés pour monter en charge.",
     details:
-      "Interfaces produit fluides et lisibles, architecture multi-tenant, design system complet et onboarding guidé — pensés dès le départ pour scaler proprement.",
-    features: ["Multi-tenant", "Auth & rôles", "API REST", "Monitoring"],
+      "Un produit SaaS clair et agréable à utiliser, avec comptes, rôles et espaces séparés pour chaque client. Pensé dès le départ pour accueillir vos premiers utilisateurs comme les milliers suivants.",
+    features: ["Multi-clients", "Comptes & rôles", "Prêt à grandir", "Suivi & stats"],
   },
   {
     title: "E-commerce & vente en ligne",
@@ -122,12 +127,12 @@ export const servicesDetailed: ServiceDetailed[] = [
     description:
       "Le moteur robuste et sécurisé derrière vos apps mobiles et web.",
     details:
-      "API REST propres, base de données bien modélisée, authentification, jobs en arrière-plan et infrastructure scalable. Le socle technique de vos produits, fait proprement et documenté.",
+      "Le moteur invisible derrière vos apps et sites : rapide, sécurisé et prêt à encaisser la montée en charge. Un socle propre et documenté, que vous gardez et pouvez faire évoluer sans dépendre de moi.",
     features: [
-      "API REST",
-      "Base de données",
-      "Auth & sécurité",
-      "Jobs background",
+      "Sécurisé",
+      "Fiable et scalable",
+      "Automatisations",
+      "Documenté",
     ],
   },
   {
@@ -135,14 +140,14 @@ export const servicesDetailed: ServiceDetailed[] = [
     slug: "audit-optimisation",
     iconName: "Award",
     description:
-      "Du soin, de la robustesse et des performances — expériences utilisateur optimales.",
+      "Votre produit est lent, bancal ou difficile à faire évoluer ? Je le remets d'aplomb.",
     details:
-      "Audit technique, refonte d'un produit existant, optimisation des performances et de la fluidité, montée en charge et mise en conformité accessibilité. L'exigence de qualité du premier au dernier commit.",
+      "Votre site ou votre app est lent, instable ou difficile à faire évoluer ? Audit, refonte et optimisation pour le rendre rapide, fiable et agréable, accessible à tous. La qualité du début à la fin.",
     features: [
-      "Audit technique",
-      "Performance",
-      "Scalabilité",
-      "Accessibilité",
+      "Audit complet",
+      "Plus rapide",
+      "Prêt à grandir",
+      "Accessible à tous",
     ],
   },
 ];
