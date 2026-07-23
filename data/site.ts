@@ -36,6 +36,29 @@ export const homeTrust = [
   "Le système vous appartient à 100 %",
 ] as const;
 
+// Section « Intérêt » (AIDA) : blocages concrets du visiteur, formulés de son
+// point de vue. Nommer la situation avant de proposer la solution.
+export const homeProblems = [
+  {
+    iconName: "Search",
+    title: "On ne vous trouve pas",
+    description:
+      "On vous recommande de bouche à oreille, mais dès qu'un prospect tape votre nom sur Google, il ne trouve rien de solide. Vos concurrents, si.",
+  },
+  {
+    iconName: "Smartphone",
+    title: "Votre site ne travaille pas pour vous",
+    description:
+      "Il existe, mais il est lent, difficile à lire sur téléphone, et personne ne vous écrit à travers. Une vitrine, pas un commercial.",
+  },
+  {
+    iconName: "Clock",
+    title: "Vous gérez tout à la main",
+    description:
+      "Les demandes, les paiements, les relances passent par WhatsApp et vous coûtent des heures chaque semaine. Du temps que vous ne passez pas à faire votre métier.",
+  },
+] as const;
+
 export const socialLinks = [
   {
     name: "GitHub",
