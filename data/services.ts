@@ -45,12 +45,6 @@ export const servicesPreview: Service[] = [
     description:
       "Le moteur de vos apps mobiles et web : API et infrastructure robustes, sécurisées et scalables, faites proprement.",
   },
-  {
-    title: "Qualité & scalabilité",
-    iconName: "Award",
-    description:
-      "Expérience moderne. Code propre, performances soignées et architecture prête à grandir avec vous.",
-  },
 ];
 
 // Services détaillés (page services)

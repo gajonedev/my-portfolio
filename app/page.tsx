@@ -106,13 +106,19 @@ export default async function Home() {
       >
         <DotPattern />
         <Container className="relative gap-12 grid">
-          <SectionHeading
-            align="center"
-            kicker="Mes Services"
-            title="Des produits complets, faits proprement"
-            subtitle="De l'application mobile au site web, je livre des produits complets qui règlent le problème de votre activité, et qui durent dans le temps."
-            className="mx-auto"
-          />
+          <div className="flex md:flex-row flex-col justify-between items-start md:items-end gap-6">
+            <SectionHeading
+              align="center"
+              kicker="Mes Services"
+              title="Des produits complets, faits proprement"
+              subtitle="De l'application mobile au site web, je livre des produits complets qui règlent le problème de votre activité, et qui durent dans le temps."
+              className="mx-auto"
+            />
+            <OutlineButton href="/services" className="shrink-0">
+              Plus de détails
+              <ArrowRight className="w-4 h-4" />
+            </OutlineButton>
+          </div>
           <StaggerContainer className="gap-6 grid md:grid-cols-2 lg:grid-cols-3">
             {servicesPreview.map((service, i) => {
               const Icon = getIcon(service.iconName);
