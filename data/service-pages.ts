@@ -178,6 +178,138 @@ export const servicePages: ServicePage[] = [
     relatedCitySlugs: ["cotonou", "abomey-calavi", "parakou"],
   },
   {
+    slug: "creation-ecommerce",
+    title: "Création de sites e-commerce",
+    shortTitle: "E-commerce",
+    iconName: "ShoppingCart",
+    metaTitle:
+      "Création de Site E-commerce au Bénin, Boutique en Ligne avec Mobile Money",
+    metaDescription:
+      "Création de boutiques en ligne qui vendent : paiement FedaPay, MTN MoMo, Moov Money et carte bancaire, gestion des stocks et livraison locale. Devis sous 24h.",
+    keywords: [
+      "création site e-commerce Bénin",
+      "boutique en ligne Cotonou",
+      "vendre en ligne Bénin",
+      "e-commerce Mobile Money",
+      "site de vente en ligne Afrique",
+      "boutique FedaPay",
+    ],
+    heroDescription:
+      "Je vous construis des boutiques en ligne qui vendent vraiment : parcours d'achat fluide, paiement Mobile Money et carte bancaire, et un back-office que vous maîtrisez.",
+    intro: [
+      "Vendre en ligne au Bénin a ses règles propres : vos clients paient par MTN MoMo, Moov Money ou FedaPay bien plus que par carte bancaire, commandent depuis leur téléphone, et veulent une livraison organisée localement. Je construis des boutiques qui respectent ces réalités, c'est ce qui fait la différence entre un site qui vend et un site qui décore.",
+      "Chaque boutique que je livre soigne le parcours d'achat : catalogue rapide à parcourir, fiches produits claires, panier sans friction, paiement en deux clics. Côté gestion, vous disposez d'un back-office complet : stocks, commandes, clients, promotions, tout est sous votre contrôle.",
+      "Et parce qu'une boutique sans visiteurs ne vend rien, le référencement est intégré dès la construction : vos produits sont structurés pour apparaître sur Google, y compris dans les résultats enrichis avec prix et disponibilité.",
+    ],
+    deliverables: [
+      "Boutique en ligne complète, rapide et mobile-first",
+      "Paiements : FedaPay, MTN MoMo, Moov Money, carte bancaire",
+      "Back-office : stocks, commandes, clients, promotions",
+      "Organisation de la livraison locale et notifications client",
+      "SEO produits : données structurées, résultats enrichis Google",
+      "Formation complète à la gestion de la boutique",
+    ],
+    process: [
+      {
+        title: "Analyse de l'offre",
+        description:
+          "Catalogue, cibles, zones de livraison, moyens de paiement : on pose le modèle de vente avant de construire.",
+      },
+      {
+        title: "Design du parcours d'achat",
+        description:
+          "Maquettes des pages clés, accueil, produit, panier, paiement, optimisées pour convertir sur mobile.",
+      },
+      {
+        title: "Développement & intégrations",
+        description:
+          "Construction de la boutique, intégration des paiements et de la logistique, remplissage du catalogue initial.",
+      },
+      {
+        title: "Tests de bout en bout",
+        description:
+          "Commandes tests réelles, paiements en conditions réelles, vérification des notifications et du back-office.",
+      },
+      {
+        title: "Lancement & suivi",
+        description:
+          "Mise en ligne, indexation Google, suivi des premières ventes et ajustements.",
+      },
+    ],
+    faq: [
+      {
+        question: "Quels moyens de paiement puis-je proposer à mes clients ?",
+        answer:
+          "Tous ceux qui comptent au Bénin et dans la sous-région : MTN Mobile Money, Moov Money, FedaPay, et la carte bancaire pour les clients internationaux. L'argent arrive directement sur vos comptes, je ne suis jamais intermédiaire dans vos flux financiers.",
+      },
+      {
+        question:
+          "Comment gérer la livraison à Cotonou et à l'intérieur du pays ?",
+        answer:
+          "La boutique peut calculer des frais par zone (Cotonou, grandes villes, intérieur), proposer le retrait en boutique et notifier le client à chaque étape. Je peux aussi intégrer les services de livraison locaux que vous utilisez déjà.",
+      },
+      {
+        question: "Combien coûte une boutique en ligne ?",
+        answer:
+          "Cela dépend de la taille du catalogue et des fonctionnalités (promotions, comptes clients, multi-devises…). Les fourchettes indicatives sont sur ma page tarifs ; le devis précis arrive sous 24h. À noter : une boutique bien faite se rembourse vite, c'est un canal de vente, pas une dépense.",
+      },
+      {
+        question: "Pourrai-je gérer la boutique moi-même au quotidien ?",
+        answer:
+          "Oui, c'est le but : ajouter des produits, suivre les commandes, lancer une promotion, tout se fait depuis un back-office simple, sur ordinateur ou téléphone. Formation incluse à la livraison, avec des guides pas-à-pas.",
+      },
+    ],
+    offers: [
+      {
+        name: "Boutique Essentielle",
+        price: "500 000 FCFA",
+        priceNote: "Pour démarrer la vente en ligne",
+        description:
+          "La boutique qui vous fait vendre en ligne rapidement, avec le paiement Mobile Money dès le premier jour.",
+        features: [
+          "Catalogue jusqu'à ~50 produits",
+          "Paiement FedaPay / Mobile Money",
+          "Gestion des commandes",
+          "Design mobile-first",
+          "Formation à la gestion",
+        ],
+      },
+      {
+        name: "Boutique Pro",
+        price: "800 000 FCFA",
+        priceNote: "Le choix des marchands sérieux",
+        description:
+          "La boutique complète qui optimise chaque vente : tous les moyens de paiement, livraison par zones et promotions.",
+        features: [
+          "Tout l'Essentielle, plus :",
+          "Catalogue étendu + variantes produits",
+          "MTN MoMo + Moov + carte bancaire",
+          "Livraison par zones + notifications client",
+          "Codes promo et remises",
+          "SEO produits (résultats enrichis Google)",
+        ],
+        recommended: true,
+      },
+      {
+        name: "Marketplace / Sur-mesure",
+        price: "1 200 000 FCFA et +",
+        priceNote: "Sur devis selon le modèle",
+        description:
+          "Au-delà de la boutique : multi-vendeurs, abonnements, application mobile, le commerce en ligne à votre façon.",
+        features: [
+          "Tout Pro, plus :",
+          "Multi-vendeurs avec commissions",
+          "Abonnements et achats récurrents",
+          "Application mobile compagnon",
+          "Intégrations logistiques avancées",
+          "Architecture prête à scaler",
+        ],
+      },
+    ],
+    relatedProjectSlugs: ["afcom", "archiform"],
+    relatedCitySlugs: ["cotonou", "porto-novo", "parakou"],
+  },
+  {
     slug: "creation-site-vitrine",
     title: "Création de sites vitrines",
     shortTitle: "Site vitrine",
@@ -572,138 +704,6 @@ export const servicePages: ServicePage[] = [
     ],
     relatedProjectSlugs: ["weman-lms", "fintech"],
     relatedCitySlugs: ["cotonou", "seme-podji", "abomey-calavi"],
-  },
-  {
-    slug: "creation-ecommerce",
-    title: "Création de sites e-commerce",
-    shortTitle: "E-commerce",
-    iconName: "ShoppingCart",
-    metaTitle:
-      "Création de Site E-commerce au Bénin, Boutique en Ligne avec Mobile Money",
-    metaDescription:
-      "Création de boutiques en ligne qui vendent : paiement FedaPay, MTN MoMo, Moov Money et carte bancaire, gestion des stocks et livraison locale. Devis sous 24h.",
-    keywords: [
-      "création site e-commerce Bénin",
-      "boutique en ligne Cotonou",
-      "vendre en ligne Bénin",
-      "e-commerce Mobile Money",
-      "site de vente en ligne Afrique",
-      "boutique FedaPay",
-    ],
-    heroDescription:
-      "Je vous construis des boutiques en ligne qui vendent vraiment : parcours d'achat fluide, paiement Mobile Money et carte bancaire, et un back-office que vous maîtrisez.",
-    intro: [
-      "Vendre en ligne au Bénin a ses règles propres : vos clients paient par MTN MoMo, Moov Money ou FedaPay bien plus que par carte bancaire, commandent depuis leur téléphone, et veulent une livraison organisée localement. Je construis des boutiques qui respectent ces réalités, c'est ce qui fait la différence entre un site qui vend et un site qui décore.",
-      "Chaque boutique que je livre soigne le parcours d'achat : catalogue rapide à parcourir, fiches produits claires, panier sans friction, paiement en deux clics. Côté gestion, vous disposez d'un back-office complet : stocks, commandes, clients, promotions, tout est sous votre contrôle.",
-      "Et parce qu'une boutique sans visiteurs ne vend rien, le référencement est intégré dès la construction : vos produits sont structurés pour apparaître sur Google, y compris dans les résultats enrichis avec prix et disponibilité.",
-    ],
-    deliverables: [
-      "Boutique en ligne complète, rapide et mobile-first",
-      "Paiements : FedaPay, MTN MoMo, Moov Money, carte bancaire",
-      "Back-office : stocks, commandes, clients, promotions",
-      "Organisation de la livraison locale et notifications client",
-      "SEO produits : données structurées, résultats enrichis Google",
-      "Formation complète à la gestion de la boutique",
-    ],
-    process: [
-      {
-        title: "Analyse de l'offre",
-        description:
-          "Catalogue, cibles, zones de livraison, moyens de paiement : on pose le modèle de vente avant de construire.",
-      },
-      {
-        title: "Design du parcours d'achat",
-        description:
-          "Maquettes des pages clés, accueil, produit, panier, paiement, optimisées pour convertir sur mobile.",
-      },
-      {
-        title: "Développement & intégrations",
-        description:
-          "Construction de la boutique, intégration des paiements et de la logistique, remplissage du catalogue initial.",
-      },
-      {
-        title: "Tests de bout en bout",
-        description:
-          "Commandes tests réelles, paiements en conditions réelles, vérification des notifications et du back-office.",
-      },
-      {
-        title: "Lancement & suivi",
-        description:
-          "Mise en ligne, indexation Google, suivi des premières ventes et ajustements.",
-      },
-    ],
-    faq: [
-      {
-        question: "Quels moyens de paiement puis-je proposer à mes clients ?",
-        answer:
-          "Tous ceux qui comptent au Bénin et dans la sous-région : MTN Mobile Money, Moov Money, FedaPay, et la carte bancaire pour les clients internationaux. L'argent arrive directement sur vos comptes, je ne suis jamais intermédiaire dans vos flux financiers.",
-      },
-      {
-        question:
-          "Comment gérer la livraison à Cotonou et à l'intérieur du pays ?",
-        answer:
-          "La boutique peut calculer des frais par zone (Cotonou, grandes villes, intérieur), proposer le retrait en boutique et notifier le client à chaque étape. Je peux aussi intégrer les services de livraison locaux que vous utilisez déjà.",
-      },
-      {
-        question: "Combien coûte une boutique en ligne ?",
-        answer:
-          "Cela dépend de la taille du catalogue et des fonctionnalités (promotions, comptes clients, multi-devises…). Les fourchettes indicatives sont sur ma page tarifs ; le devis précis arrive sous 24h. À noter : une boutique bien faite se rembourse vite, c'est un canal de vente, pas une dépense.",
-      },
-      {
-        question: "Pourrai-je gérer la boutique moi-même au quotidien ?",
-        answer:
-          "Oui, c'est le but : ajouter des produits, suivre les commandes, lancer une promotion, tout se fait depuis un back-office simple, sur ordinateur ou téléphone. Formation incluse à la livraison, avec des guides pas-à-pas.",
-      },
-    ],
-    offers: [
-      {
-        name: "Boutique Essentielle",
-        price: "500 000 FCFA",
-        priceNote: "Pour démarrer la vente en ligne",
-        description:
-          "La boutique qui vous fait vendre en ligne rapidement, avec le paiement Mobile Money dès le premier jour.",
-        features: [
-          "Catalogue jusqu'à ~50 produits",
-          "Paiement FedaPay / Mobile Money",
-          "Gestion des commandes",
-          "Design mobile-first",
-          "Formation à la gestion",
-        ],
-      },
-      {
-        name: "Boutique Pro",
-        price: "800 000 FCFA",
-        priceNote: "Le choix des marchands sérieux",
-        description:
-          "La boutique complète qui optimise chaque vente : tous les moyens de paiement, livraison par zones et promotions.",
-        features: [
-          "Tout l'Essentielle, plus :",
-          "Catalogue étendu + variantes produits",
-          "MTN MoMo + Moov + carte bancaire",
-          "Livraison par zones + notifications client",
-          "Codes promo et remises",
-          "SEO produits (résultats enrichis Google)",
-        ],
-        recommended: true,
-      },
-      {
-        name: "Marketplace / Sur-mesure",
-        price: "1 200 000 FCFA et +",
-        priceNote: "Sur devis selon le modèle",
-        description:
-          "Au-delà de la boutique : multi-vendeurs, abonnements, application mobile, le commerce en ligne à votre façon.",
-        features: [
-          "Tout Pro, plus :",
-          "Multi-vendeurs avec commissions",
-          "Abonnements et achats récurrents",
-          "Application mobile compagnon",
-          "Intégrations logistiques avancées",
-          "Architecture prête à scaler",
-        ],
-      },
-    ],
-    relatedProjectSlugs: ["afcom", "archiform"],
-    relatedCitySlugs: ["cotonou", "porto-novo", "parakou"],
   },
   {
     slug: "backend-api",

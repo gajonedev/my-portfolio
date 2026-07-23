@@ -16,12 +16,12 @@ const url = `${siteConfig.url}/services`;
 export const metadata: Metadata = {
   title: "Création de Sites Web & Apps Mobiles au Bénin",
   description:
-    "Sites web, applications mobiles, e-commerce et logiciels métier au Bénin. Un périmètre clair et un devis gratuit sous 24h. Parlons de votre projet.",
+    "Sites web, applications mobiles, e-commerce et logiciels métier au Bénin. Un périmètre précis et un devis gratuit sous 24h. Parlons de votre projet.",
   alternates: { canonical: url },
   openGraph: {
     title: "Services — Création de sites web et d'applications au Bénin",
     description:
-      "Sites web, apps mobiles, e-commerce et logiciels métier. Périmètre clair, devis gratuit sous 24h.",
+      "Sites web, apps mobiles, e-commerce et logiciels métier. Périmètre précis, devis gratuit sous 24h.",
     url,
     type: "website",
     locale: "fr_BJ",
@@ -33,7 +33,7 @@ export default async function ServicesPage() {
     <>
       <PageHeader
         title="Services"
-        description="Chacun de mes services règle un problème concret de votre activité : vendre plus, gagner du temps, être trouvé sur Google. Vous obtenez d'abord un périmètre clair et un devis gratuit sous 24h."
+        description="Chacun de mes services règle un problème concret de votre activité : vendre plus, gagner du temps, être trouvé sur Google. Vous obtenez d'abord un périmètre précis et un devis gratuit sous 24h."
       />
       <main className="py-16">
         <Container className="gap-6 grid md:grid-cols-2">
@@ -44,6 +44,7 @@ export default async function ServicesPage() {
                 key={service.title}
                 corner={CORNERS[i % CORNERS.length]}
                 cornerColor={ACCENTS[i % ACCENTS.length]}
+                glow={false}
               >
                 <div className="p-6">
                   <div className="flex justify-center items-center bg-primary/15 rounded-2xl w-12 h-12 text-primary">

@@ -111,9 +111,13 @@ export default async function DeveloppeurWebBeninPage() {
               Votre développeur web freelance au Bénin
             </h2>
             <p className="mt-4 text-foreground-muted leading-relaxed">
-              Je suis <strong>Néhémie Gandonou</strong>, développeur web et
-              mobile freelance basé à <strong>Cotonou, Bénin</strong>. Je conçois
-              des <strong>applications web fullstack</strong>, des{" "}
+              Je suis{" "}
+              <strong className="font-semibold text-primary underline">
+                <Link href="/">Néhémie Gandonou</Link>
+              </strong>
+              , développeur web et mobile freelance basé à{" "}
+              <strong>Cotonou, Bénin</strong>. Je conçois des{" "}
+              <strong>applications web fullstack</strong>, des{" "}
               <strong>applications mobiles</strong> et des plateformes SaaS /
               e-commerce, avec un backend solide et scalable, pour les
               entreprises, startups et entrepreneurs au Bénin et en Afrique de

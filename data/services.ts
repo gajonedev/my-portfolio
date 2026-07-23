@@ -65,6 +65,21 @@ export const servicesDetailed: ServiceDetailed[] = [
     ],
   },
   {
+    title: "E-commerce & vente en ligne",
+    slug: "creation-ecommerce",
+    iconName: "ShoppingCart",
+    description:
+      "Des boutiques qui vendent vraiment, sécurisées et maîtrisées de bout en bout.",
+    details:
+      "Un site e-commerce avec un parcours d'achat fluide, un catalogue performant, des paiements sécurisés et un back-office complet. Intégrations Stripe, PayPal ou solutions locales (mobile money).",
+    features: [
+      "Parcours optimisé",
+      "Paiements sécurisés",
+      "Gestion stocks",
+      "Back-office",
+    ],
+  },
+  {
     title: "Applications & logiciels web",
     slug: "creation-application-web",
     iconName: "Briefcase",
@@ -107,21 +122,6 @@ export const servicesDetailed: ServiceDetailed[] = [
       "Comptes & rôles",
       "Prêt à grandir",
       "Suivi & stats",
-    ],
-  },
-  {
-    title: "E-commerce & vente en ligne",
-    slug: "creation-ecommerce",
-    iconName: "ShoppingCart",
-    description:
-      "Des boutiques qui vendent vraiment, sécurisées et maîtrisées de bout en bout.",
-    details:
-      "Parcours d'achat fluide, catalogue performant, paiements sécurisés et back-office complet. Intégrations Stripe, PayPal ou solutions locales (mobile money, FedaPay).",
-    features: [
-      "Parcours optimisé",
-      "Paiements sécurisés",
-      "Gestion stocks",
-      "Back-office",
     ],
   },
   {
