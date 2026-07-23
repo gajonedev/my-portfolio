@@ -207,33 +207,6 @@ export default async function ServicePage({
             </div>
           </section>
 
-          {/* Processus */}
-          <section>
-            <h2 className="mb-6 font-semibold text-foreground text-2xl">
-              Comment ça se passe
-            </h2>
-            <div className="flex flex-col gap-4 max-w-3xl">
-              {service.process.map((step, index) => (
-                <div
-                  key={step.title}
-                  className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
-                >
-                  <div className="flex justify-center items-center bg-primary/15 rounded-xl w-10 h-10 font-display font-semibold text-primary shrink-0">
-                    {index + 1}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">
-                      {step.title}
-                    </h3>
-                    <p className="mt-1 text-foreground-muted text-sm leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
           {/* Offres */}
           <section>
             <h2 className="mb-2 font-semibold text-foreground text-2xl">
@@ -318,6 +291,33 @@ export default async function ServicePage({
               </Link>{" "}
               et je vous propose une formule adaptée.
             </p>
+          </section>
+
+          {/* Processus */}
+          <section>
+            <h2 className="mb-6 font-semibold text-foreground text-2xl">
+              Comment ça se passe
+            </h2>
+            <div className="flex flex-col gap-4 max-w-3xl">
+              {service.process.map((step, index) => (
+                <div
+                  key={step.title}
+                  className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
+                >
+                  <div className="flex justify-center items-center bg-primary/15 rounded-xl w-10 h-10 font-display font-semibold text-primary shrink-0">
+                    {index + 1}
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-foreground">
+                      {step.title}
+                    </h3>
+                    <p className="mt-1 text-foreground-muted text-sm leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </section>
 
           {/* Projets liés */}

@@ -15,7 +15,7 @@ export default async function ServicesPage() {
     <>
       <PageHeader
         title="Services"
-        description="Chacun de mes services règle un vrai problème de votre activité : vendre plus, gagner du temps, être trouvé sur Google. Vous obtenez d'abord un périmètre clair et un devis gratuit sous 24h."
+        description="Chacun de mes services règle un problème concret de votre activité : vendre plus, gagner du temps, être trouvé sur Google. Vous obtenez d'abord un périmètre clair et un devis gratuit sous 24h."
       />
       <main className="py-16">
         <Container className="gap-6 grid md:grid-cols-2">

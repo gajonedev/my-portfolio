@@ -64,9 +64,9 @@ export const servicePages: ServicePage[] = [
       "app mobile entreprise Bénin",
     ],
     heroDescription:
-      "Des applications iOS et Android professionnelles, fluides et robustes, conçues pour vendre, automatiser ou fidéliser, et publiées sur les stores.",
+      "Je vous livre des applications iOS et Android professionnelles, fluides et robustes, conçues pour vendre, automatiser ou fidéliser, et publiées sur les stores.",
     intro: [
-      "Votre application mobile doit résoudre un vrai problème : encaisser des ventes, suivre une activité, fidéliser vos clients. Je développe en Flutter des applications cross-platform, un seul code pour iOS et Android, ce qui divise les coûts et les délais par rapport à deux développements séparés, sans compromis sur la qualité.",
+      "Votre application mobile doit résoudre un problème spécifique : encaisser des ventes, suivre une activité, fidéliser vos clients. Je développe en Flutter des applications cross-platform, un seul code pour iOS et Android, ce qui divise les coûts et les délais par rapport à deux développements séparés, sans compromis sur la qualité.",
       "Chaque application repose sur un backend solide que je construis moi-même : vos données sont sécurisées, synchronisées et prêtes à monter en charge. Et parce que je connais le terrain, je conçois des apps qui fonctionnent dans les conditions réelles d'utilisation en Afrique de l'Ouest : mode hors-ligne quand le réseau est instable, paiement Mobile Money intégré, interfaces légères qui tournent bien sur les téléphones d'entrée de gamme.",
       "De la première maquette à la publication sur l'App Store et Google Play, vous avez un seul interlocuteur, un planning clair et des démos régulières pour suivre l'avancement.",
     ],
@@ -195,7 +195,7 @@ export const servicePages: ServicePage[] = [
       "créer site web entreprise Cotonou",
     ],
     heroDescription:
-      "Le site professionnel qui vous rend crédible, visible sur Google et joignable 24h/24, conçu pour transformer les visites en demandes de devis.",
+      "Je vous construis le site professionnel qui vous rend crédible, visible sur Google et joignable 24h/24, conçu pour transformer les visites en demandes de devis.",
     intro: [
       "Un site vitrine n'est pas une dépense, c'est un commercial qui travaille 24h/24 : il présente votre activité de façon crédible, répond aux questions de vos prospects et capte les demandes pendant que vous dormez. Encore faut-il qu'il soit trouvable, et c'est là que la plupart des sites échouent.",
       "Chaque site que je livre est construit pour Google dès la première ligne : structure sémantique propre, vitesse de chargement optimale, balises et données structurées. Quand un client cherche votre métier dans votre ville, c'est vous qu'il doit trouver. Le site que vous lisez en ce moment applique exactement ces méthodes.",
@@ -460,7 +460,7 @@ export const servicePages: ServicePage[] = [
       "tableau de bord analytics",
     ],
     heroDescription:
-      "Votre produit SaaS construit proprement dès le départ : architecture multi-tenant, abonnements, onboarding, pensé pour encaisser la croissance.",
+      "Je vous livre votre produit SaaS construit proprement dès le départ : architecture multi-tenant, abonnements, onboarding, pensé pour encaisser la croissance.",
     intro: [
       "Un SaaS mal architecturé se paie très cher au moment où il décolle : refonte forcée, dette technique, clients frustrés. Je construis des produits SaaS avec les fondations qu'il faut dès le premier jour, multi-tenant, gestion des rôles, facturation par abonnement, monitoring, pour que la croissance soit une bonne nouvelle, pas un problème.",
       "Pour les startups, je développe des MVP qui vont à l'essentiel : la fonctionnalité qui prouve la valeur, livrée en quelques semaines, sur une base saine qui pourra évoluer. Pas de sur-ingénierie, pas de raccourcis toxiques non plus.",
@@ -591,7 +591,7 @@ export const servicePages: ServicePage[] = [
       "boutique FedaPay",
     ],
     heroDescription:
-      "Des boutiques en ligne qui vendent vraiment : parcours d'achat fluide, paiement Mobile Money et carte bancaire, et un back-office que vous maîtrisez.",
+      "Je vous construis des boutiques en ligne qui vendent vraiment : parcours d'achat fluide, paiement Mobile Money et carte bancaire, et un back-office que vous maîtrisez.",
     intro: [
       "Vendre en ligne au Bénin a ses règles propres : vos clients paient par MTN MoMo, Moov Money ou FedaPay bien plus que par carte bancaire, commandent depuis leur téléphone, et veulent une livraison organisée localement. Je construis des boutiques qui respectent ces réalités, c'est ce qui fait la différence entre un site qui vend et un site qui décore.",
       "Chaque boutique que je livre soigne le parcours d'achat : catalogue rapide à parcourir, fiches produits claires, panier sans friction, paiement en deux clics. Côté gestion, vous disposez d'un back-office complet : stocks, commandes, clients, promotions, tout est sous votre contrôle.",
@@ -723,7 +723,7 @@ export const servicePages: ServicePage[] = [
       "backend Node.js",
     ],
     heroDescription:
-      "Le moteur invisible de vos produits : API propres, base de données bien modélisée, sécurité sérieuse, un socle qui tient la charge et qui dure.",
+      "J'architecture et je construis le moteur invisible de vos produits : API propres, base de données bien modélisée, sécurité sérieuse, un socle qui tient la charge et qui dure.",
     intro: [
       "Le backend, c'est ce qu'on ne voit pas mais qui fait tout tenir : la vitesse de vos écrans, la sécurité de vos données, la fiabilité de vos paiements. Un backend bâclé se manifeste des mois plus tard, lenteurs, pertes de données, failles, quand il coûte le plus cher à corriger. Je le construis proprement dès le départ.",
       "Concrètement : des API REST claires et documentées, une base de données modélisée pour vos besoins réels, une authentification sérieuse, des tâches de fond fiables (emails, rappels, synchronisations) et des intégrations tierces maîtrisées, Mobile Money, FedaPay, services de SMS, Google APIs.",
@@ -840,7 +840,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Audit Technique & Optimisation de Site Web, Performance et SEO | Bénin",
     metaDescription:
-      "Site lent, invisible sur Google ou vieillissant ? Audit technique complet, optimisation des performances, refonte et mise à niveau SEO. Diagnostic clair, plan d'action chiffré.",
+      "Site lent, invisible sur Google ou vieillissant ? Vous obtenez un audit technique complet, une optimisation des performances, une refonte et mise à niveau SEO. Le diagnostic est clair et le plan d'action est chiffré.",
     keywords: [
       "audit site web",
       "optimisation performance web",
@@ -850,7 +850,7 @@ export const servicePages: ServicePage[] = [
       "audit technique application",
     ],
     heroDescription:
-      "Votre site est lent, invisible sur Google ou difficile à maintenir ? Diagnostic précis, plan d'action chiffré, et exécution soignée.",
+      "Votre site est lent, invisible sur Google ou difficile à maintenir ? Je vous fais un diagnostic précis, un plan d'action chiffré, et une exécution soignée.",
     intro: [
       "Beaucoup d'entreprises ont déjà un site ou une application, mais qui dessert plus qu'il ne sert : pages qui mettent dix secondes à charger, positionnement Google inexistant, bugs récurrents, prestataire injoignable. Avant de tout refaire, il faut comprendre précisément ce qui pèche.",
       "Mon audit couvre les quatre dimensions qui comptent : la performance (Core Web Vitals, temps de chargement réels), le référencement (structure, balises, indexation), la qualité du code (maintenabilité, sécurité) et l'expérience utilisateur (parcours, mobile, accessibilité). Vous recevez un rapport clair, hiérarchisé, avec le coût et l'impact de chaque correction.",

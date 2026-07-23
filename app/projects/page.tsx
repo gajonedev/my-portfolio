@@ -15,7 +15,7 @@ export default async function ProjectsPage() {
     <>
       <PageHeader
         title="Projets sélectionnés"
-        description="Des produits qui règlent un vrai problème métier, que leurs utilisateurs gardent, et qui tiennent la charge dans la durée."
+        description="Des produits qui ont réglé un problème métier, que leurs utilisateurs gardent, et qui tiennent la charge dans la durée."
       />
       <main className="py-16">
         <Container className="gap-6 grid md:grid-cols-2">

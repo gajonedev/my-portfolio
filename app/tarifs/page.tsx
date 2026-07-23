@@ -87,7 +87,7 @@ export default async function TarifsPage() {
 
       <PageHeader
         title="Tarifs transparents"
-        description="Combien coûte un site web, une boutique en ligne ou une application mobile ? Voici des fourchettes honnêtes en FCFA, et un devis précis sous 24h."
+        description="Combien coûte un site web, une boutique en ligne ou une application mobile ? Voici des fourchettes en FCFA, et je vous fais un devis pour votre besoin sous 24h."
       />
 
       <main className="py-16">
@@ -95,8 +95,8 @@ export default async function TarifsPage() {
           {/* Intro */}
           <section className="max-w-3xl">
             <p className="text-foreground-muted leading-relaxed">
-              La plupart des prestataires cachent leurs prix. Je préfère la
-              transparence : les fourchettes ci-dessous vous donnent un ordre de
+              La plupart des prestataires cachent leurs prix. Les fourchettes
+              ci-dessous, en toute transparence, vous donnent un ordre de
               grandeur réaliste pour situer votre budget. Chaque projet étant
               unique, le chiffrage précis se fait sur devis :{" "}
               <strong className="text-foreground">
@@ -235,8 +235,8 @@ export default async function TarifsPage() {
               Votre devis précis, sous 24h
             </h2>
             <p className="mt-3 text-foreground-muted">
-              Décrivez-moi votre projet en quelques lignes, je reviens vers
-              vous avec un chiffrage clair et sans engagement.
+              Décrivez-moi votre projet en quelques lignes, je reviens vers vous
+              avec un chiffrage clair et sans engagement.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
               <WhatsAppCta

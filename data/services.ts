@@ -19,13 +19,13 @@ export const servicesPreview: Service[] = [
     title: "Applications mobiles",
     iconName: "Smartphone",
     description:
-      "Des apps mobiles pro, propres et fluides qui résolvent un vrai problème, et qui font le job : vendre, automatiser, fidéliser.",
+      "Des applications mobiles profesionnelles, propres et fluides qui vous résolvent le problème de votre activité et qui font le job : vendre, automatiser, fidéliser.",
   },
   {
     title: "Applications & logiciels web",
     iconName: "Globe",
     description:
-      "De vrais logiciels web complets, pas des vitrines : des outils qui résolvent des problèmes et facilitent le travail au quotidien.",
+      "De vrais logiciels web complets, bien plus que des vitrines : des outils qui résolvent des problèmes et facilitent le travail au quotidien.",
   },
   {
     title: "SaaS & dashboards",
@@ -60,9 +60,9 @@ export const servicesDetailed: ServiceDetailed[] = [
     slug: "creation-application-mobile",
     iconName: "Smartphone",
     description:
-      "Des apps mobiles pro, propres et fluides qui résolvent un vrai problème.",
+      "Des apps mobiles pro, propres et fluides qui résolvent un problème.",
     details:
-      "Des applications iOS et Android rapides et soignées, conçues pour résoudre un vrai problème : vendre, automatiser ou fidéliser. Publiées sur l'App Store et Google Play, prêtes à l'emploi.",
+      "Des applications iOS et Android rapides et soignées, conçues pour résoudre le problème de votre activité : vendre, automatiser ou fidéliser. Publiées sur l'App Store et Google Play, prêtes à l'emploi.",
     features: [
       "iOS + Android",
       "Fonctionne hors-ligne",
@@ -78,7 +78,12 @@ export const servicesDetailed: ServiceDetailed[] = [
       "De vrais logiciels web complets qui résolvent des problèmes et facilitent le travail.",
     details:
       "Pas des vitrines : de véritables outils métier, plateformes et espaces clients qui automatisent votre quotidien et font gagner du temps à vos équipes. Fiables, rapides et prêts à évoluer avec vous.",
-    features: ["Outils métier", "Gain de temps", "Temps réel", "Prêt à grandir"],
+    features: [
+      "Outils métier",
+      "Gain de temps",
+      "Temps réel",
+      "Prêt à grandir",
+    ],
   },
   {
     title: "Sites vitrines",
@@ -103,7 +108,12 @@ export const servicesDetailed: ServiceDetailed[] = [
       "Produits SaaS et tableaux de bord fluides, pensés pour monter en charge.",
     details:
       "Un produit SaaS clair et agréable à utiliser, avec comptes, rôles et espaces séparés pour chaque client. Pensé dès le départ pour accueillir vos premiers utilisateurs comme les milliers suivants.",
-    features: ["Multi-clients", "Comptes & rôles", "Prêt à grandir", "Suivi & stats"],
+    features: [
+      "Multi-clients",
+      "Comptes & rôles",
+      "Prêt à grandir",
+      "Suivi & stats",
+    ],
   },
   {
     title: "E-commerce & vente en ligne",
