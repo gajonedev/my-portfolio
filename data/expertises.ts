@@ -50,7 +50,7 @@ export const expertises: Expertise[] = [
       "développeur Dart",
     ],
     heroDescription:
-      "Des applications mobiles iOS et Android professionnelles à partir d'un seul code, plus vite, moins cher, sans compromis sur la qualité.",
+      "Je développe vos applications iOS et Android à partir d'un seul code : plus vite, moins cher, sans compromis sur la qualité.",
     intro: [
       "Flutter est ma technologie mobile de prédilection, et celle avec laquelle j'ai construit la majorité de mes projets : applications de gestion offline-first, domotique temps réel, facturation, fintech. Créé par Google, Flutter permet de développer les versions iOS et Android d'une application à partir d'un seul code, un avantage décisif en coût et en délais.",
       "Ma maîtrise de Flutter va au-delà des interfaces : gestion d'état propre, architecture testable, intégration native quand il le faut (Bluetooth, capteurs, arrière-plan), et une spécialité rare, les applications offline-first qui fonctionnent sans réseau et se synchronisent seules, indispensables sur le terrain africain.",
@@ -127,7 +127,7 @@ export const expertises: Expertise[] = [
       "application React server",
     ],
     heroDescription:
-      "Le framework web des produits exigeants : des sites ultra-rapides, parfaitement référencés sur Google, et des applications qui tiennent la charge.",
+      "Avec Next.js, je construis des sites ultra-rapides, parfaitement référencés sur Google, et des applications qui tiennent la charge.",
     intro: [
       "Next.js est le framework web que j'utilise pour la quasi-totalité de mes projets web, y compris le site que vous lisez en ce moment. Bâti sur React et adopté par Netflix, TikTok ou Notion, il combine ce qui est habituellement incompatible : la richesse d'une application et la vitesse d'un site statique.",
       "Pour vous, cela se traduit concrètement : des pages qui s'affichent instantanément même sur une connexion mobile béninoise, un référencement Google optimal grâce au rendu côté serveur, et une plateforme qui évolue sans être reconstruite, du site vitrine au SaaS complet.",
@@ -204,7 +204,7 @@ export const expertises: Expertise[] = [
       "freelance React",
     ],
     heroDescription:
-      "La bibliothèque qui fait tourner les interfaces du web moderne, entre mes mains, des applications lisibles, rapides et maintenables.",
+      "Avec React, je construis les interfaces du web moderne : des applications lisibles, rapides et maintenables.",
     intro: [
       "React est le socle de tout mon travail web : c'est la bibliothèque créée par Meta qui équipe Facebook, Airbnb ou Discord, et le standard de facto des interfaces web modernes. La maîtriser en profondeur, pas seulement l'utiliser, fait la différence entre une application fluide et maintenable et un chantier fragile.",
       "Mon quotidien avec React : TypeScript systématique pour attraper les erreurs avant la production, composants réutilisables organisés en design system, gestion d'état adaptée à la complexité réelle du projet, et une attention constante à la performance perçue, ce que l'utilisateur ressent, pas ce que la machine mesure.",

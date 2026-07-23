@@ -326,7 +326,7 @@ export const servicePages: ServicePage[] = [
       "plateforme web Afrique",
     ],
     heroDescription:
-      "Des logiciels web sur-mesure qui automatisent votre activité : gestion, facturation, réservations, espaces clients, pensés pour vos équipes, pas l'inverse.",
+      "Je vous construis des logiciels web sur-mesure qui automatisent votre activité : gestion, facturation, réservations, espaces clients, pensés pour vos équipes.",
     intro: [
       "Cahiers, fichiers Excel dispersés, WhatsApp comme outil de gestion : la plupart des entreprises béninoises fonctionnent avec des bouts de ficelle qui coûtent des heures chaque semaine et font perdre de l'information. Un logiciel métier sur-mesure remplace tout cela par un outil unique, pensé pour votre façon réelle de travailler.",
       "Contrairement à un logiciel générique auquel vous devez vous adapter, je construis l'outil autour de vos processus : vos rôles, vos règles, vos documents. Espaces clients, systèmes de réservation, gestion de stocks et facturation, suivi d'activité, des produits web complets, avec une logique métier robuste et une interface que vos équipes prennent en main sans formation lourde.",

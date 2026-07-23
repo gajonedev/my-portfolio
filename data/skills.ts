@@ -33,9 +33,9 @@ export const skills: SkillCategory[] = [
 export const values: Value[] = [
   {
     iconName: "Award",
-    title: "Qualité avant tout",
+    title: "Qualité primordiale",
     description:
-      "Produits modernes et premium : du soin, de la robustesse et du durable, dans chaque détail.",
+      "Un produit qui reste fiable et agréable à utiliser, longtemps après la livraison.",
   },
   {
     iconName: "Code",
@@ -73,7 +73,7 @@ export const processSteps = [
     title: "Développement",
     iconName: "Code",
     description:
-      "Un produit fiable et rapide, soigné dans le détail et pensé pour durer.",
+      "Un produit fiable et rapide, pensé pour durer et évoluer avec vous.",
   },
   {
     title: "Livraison & suivi",
