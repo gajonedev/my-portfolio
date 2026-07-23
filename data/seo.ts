@@ -44,7 +44,7 @@ export const localAdvantages = [
   "Connaissance du marché béninois et des moyens de paiement locaux",
   "Intégration MTN MoMo, Moov Money, Celtiis Cash",
   "Support en français et accompagnement personnalisé",
-  "Tarification transparente et devis clair sous 24h",
+  "Tarification transparente et devis détaillé sous 24h",
   "Délais respectés et communication transparente",
 ];
 

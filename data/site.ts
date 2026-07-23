@@ -102,7 +102,7 @@ export const aboutHighlights = [
 // Engagements concrets — remplacent l'ancienne carte « stack » (trop technique
 // pour la home ; la stack vit déjà dans la section Compétences). Tous véridiques.
 export const aboutGuarantees = [
-  "Devis clair et gratuit sous 24h",
+  "Devis détaillé et gratuit sous 24h",
   "Livraison en 2 à 8 semaines",
   "Le système vous appartient à 100 %",
   "Un suivi après la mise en ligne",

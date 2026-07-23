@@ -5,8 +5,13 @@ import PageHeader from "../components/PageHeader";
 import SpotlightCard from "../components/ui/SpotlightCard";
 import TechBadge from "../components/ui/TechBadge";
 import WhatsAppCta from "../components/ui/WhatsAppCta";
-import { getIcon, ArrowRight } from "@/lib/icons";
-import { servicesDetailed, siteConfig } from "@/data";
+import { getIcon, ArrowRight, CheckCircle, Quote } from "@/lib/icons";
+import {
+  servicesDetailed,
+  aboutGuarantees,
+  testimonials,
+  siteConfig,
+} from "@/data";
 
 const ACCENTS = ["#ff4d3d", "#3b82f6", "#f59e0b"];
 const CORNERS = ["tr", "tl", "br", "bl"] as const;
@@ -76,6 +81,48 @@ export default async function ServicesPage() {
           })}
         </Container>
 
+        {/* Rassurance — compris dans chaque projet */}
+        <Container className="mt-16">
+          <div className="bg-card px-6 py-8 border border-stroke rounded-3xl">
+            <h2 className="mb-6 font-display font-semibold text-foreground text-lg text-center">
+              Compris dans chaque projet
+            </h2>
+            <div className="gap-3 grid sm:grid-cols-2 mx-auto max-w-3xl">
+              {aboutGuarantees.map((item) => (
+                <div key={item} className="flex items-start gap-3">
+                  <CheckCircle className="mt-0.5 w-5 h-5 text-primary shrink-0" />
+                  <span className="font-body text-foreground-muted text-sm">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Container>
+
+        {/* Preuve client */}
+        <Container className="mt-12">
+          <SpotlightCard
+            corner="tr"
+            cornerColor="#ff4d3d"
+            hover={false}
+            glow={false}
+          >
+            <figure className="flex flex-col gap-4 p-8 md:p-10">
+              <Quote className="w-8 h-8 text-primary" />
+              <blockquote className="max-w-3xl font-body text-foreground text-lg leading-relaxed">
+                {testimonials[0].quote}
+              </blockquote>
+              <figcaption className="font-body text-foreground-muted text-sm">
+                <span className="font-medium text-foreground">
+                  {testimonials[0].name}
+                </span>{" "}
+                · {testimonials[0].role}
+              </figcaption>
+            </figure>
+          </SpotlightCard>
+        </Container>
+
         <Container className="mt-16">
           <div className="flex flex-col items-center gap-6 bg-card px-6 py-12 border border-stroke rounded-3xl text-center">
             <div className="flex flex-col gap-3">
@@ -84,7 +131,7 @@ export default async function ServicesPage() {
               </h2>
               <p className="mx-auto max-w-xl font-body text-foreground-muted">
                 Décrivez-moi votre besoin en deux lignes : je vous oriente vers
-                la bonne solution et un devis clair, sous 24h.
+                la bonne solution et un devis détaillé, sous 24h.
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-4">

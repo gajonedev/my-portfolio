@@ -310,7 +310,7 @@ export default async function Home() {
           <SectionHeading
             kicker="Mon Processus"
             title="Un processus pour livrer vite et bien"
-            subtitle="De la stratégie aux optimisations, avec une communication claire et transparente."
+            subtitle="De la stratégie aux optimisations, avec une communication transparente."
           />
           <StaggerContainer className="gap-6 grid md:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step, index) => {

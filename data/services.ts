@@ -54,9 +54,9 @@ export const servicesDetailed: ServiceDetailed[] = [
     slug: "creation-application-mobile",
     iconName: "Smartphone",
     description:
-      "Des apps mobiles pro, propres et fluides qui résolvent un problème.",
+      "Des apps mobiles pro, propres et fluides, pensées pour votre activité.",
     details:
-      "Des applications iOS et Android rapides et soignées, conçues pour résoudre le problème de votre activité : vendre, automatiser ou fidéliser. Publiées sur l'App Store et Google Play, prêtes à l'emploi.",
+      "Des applications iOS et Android rapides et soignées, conçues pour répondre à votre objectif : vendre, automatiser ou fidéliser. Publiées sur l'App Store et Google Play, prêtes à l'emploi.",
     features: [
       "iOS + Android",
       "Fonctionne hors-ligne",
@@ -84,7 +84,7 @@ export const servicesDetailed: ServiceDetailed[] = [
     slug: "creation-application-web",
     iconName: "Briefcase",
     description:
-      "De vrais logiciels web complets qui résolvent des problèmes et facilitent le travail.",
+      "De vrais logiciels web complets qui automatisent votre quotidien et facilitent le travail de vos équipes.",
     details:
       "Bien plus que des vitrines : de véritables outils métier, plateformes et espaces clients qui automatisent votre quotidien et font gagner du temps à vos équipes. Fiables, rapides et prêts à évoluer avec vous.",
     features: [

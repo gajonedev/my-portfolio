@@ -6,6 +6,8 @@ export interface PricingTier {
   serviceSlug?: string;
   priceFrom: string;
   priceNote: string;
+  /** Délai de livraison indicatif */
+  delay: string;
   description: string;
   includes: string[];
   idealFor: string;
@@ -22,6 +24,7 @@ export const pricingTiers: PricingTier[] = [
     serviceSlug: "creation-site-vitrine",
     priceFrom: "170 000 FCFA",
     priceNote: "170 000 à 450 000 FCFA selon le nombre de pages et le contenu",
+    delay: "1 à 2 semaines",
     description:
       "Le site qui présente votre activité avec crédibilité et vous rend visible sur Google.",
     includes: [
@@ -39,6 +42,7 @@ export const pricingTiers: PricingTier[] = [
     priceFrom: "500 000 FCFA",
     priceNote:
       "500 000 à 1 200 000 FCFA selon le catalogue et les intégrations",
+    delay: "3 à 5 semaines",
     description:
       "La boutique complète qui vend en ligne avec les moyens de paiement locaux.",
     includes: [
@@ -56,6 +60,7 @@ export const pricingTiers: PricingTier[] = [
     priceFrom: "650 000 FCFA",
     priceNote:
       "650 000 à 2 000 000 FCFA selon la complexité de la logique métier",
+    delay: "4 à 8 semaines",
     description:
       "L'outil sur-mesure qui automatise votre gestion : facturation, stocks, clients, réservations.",
     includes: [
@@ -72,6 +77,7 @@ export const pricingTiers: PricingTier[] = [
     serviceSlug: "creation-application-mobile",
     priceFrom: "900 000 FCFA",
     priceNote: "900 000 à 2 500 000 FCFA, iOS + Android inclus (Flutter)",
+    delay: "5 à 8 semaines",
     description:
       "Votre application sur l'App Store et Google Play, avec un seul développement pour les deux.",
     includes: [
@@ -88,6 +94,7 @@ export const pricingTiers: PricingTier[] = [
     serviceSlug: "creation-saas-dashboard",
     priceFrom: "1 200 000 FCFA",
     priceNote: "1 200 000 à 4 000 000 FCFA selon le périmètre du produit",
+    delay: "6 à 10 semaines",
     description:
       "Votre produit SaaS lancé sur des fondations saines : multi-tenant, abonnements, analytics.",
     includes: [
@@ -105,6 +112,7 @@ export const pricingTiers: PricingTier[] = [
     priceFrom: "80 000 FCFA",
     priceNote:
       "80 000 à 250 000 FCFA, déduit du devis si je réalise les corrections",
+    delay: "3 à 5 jours",
     description:
       "Le diagnostic complet de votre site ou application existants, avec plan d'action chiffré.",
     includes: [
@@ -165,7 +173,7 @@ export const pricingFaq: PricingFaq[] = [
   {
     question: "Y a-t-il des coûts récurrents après la livraison ?",
     answer:
-      "Uniquement les coûts d'infrastructure, qui vous sont facturés en direct et en toute transparence : hébergement (souvent quelques milliers de FCFA par mois), nom de domaine annuel, et les éventuels services tiers selon le projet. Aucun abonnement obligatoire chez moi.",
+      "Uniquement les coûts d'infrastructure, qui vous sont facturés en direct : hébergement (souvent quelques milliers de FCFA par mois), nom de domaine annuel, et les éventuels services tiers selon le projet. Aucun abonnement obligatoire chez moi.",
   },
   {
     question: "Proposez-vous la maintenance ?",

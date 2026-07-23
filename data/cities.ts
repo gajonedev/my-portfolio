@@ -96,7 +96,7 @@ export const localCities: LocalCity[] = [
       {
         question: "Combien coûte un site web professionnel à Cotonou ?",
         answer:
-          "Tout dépend du projet : un site vitrine soigné, une boutique en ligne avec paiement Mobile Money et une application métier complète n'ont pas le même périmètre. Je vous envoie un devis clair et détaillé sous 24h après notre premier échange, sans engagement.",
+          "Tout dépend du projet : un site vitrine soigné, une boutique en ligne avec paiement Mobile Money et une application métier complète n'ont pas le même périmètre. Je vous envoie un devis détaillé sous 24h après notre premier échange, sans engagement.",
       },
       {
         question: "Intégrez-vous les moyens de paiement béninois ?",
@@ -373,7 +373,7 @@ export const localCities: LocalCity[] = [
     regionCode: "BJ-ZO",
     tagline: "Carrefour routier et commercial du sud",
     metaDescription:
-      "Développeur web & mobile pour Bohicon : outils de gestion pour commerçants et transporteurs, e-commerce, sites professionnels. Devis clair sous 24h.",
+      "Développeur web & mobile pour Bohicon : outils de gestion pour commerçants et transporteurs, e-commerce, sites professionnels. Devis chiffré sous 24h.",
     intro: [
       "Tous les axes du sud Bénin passent par Bohicon : la route inter-états vers le nord, l'axe vers Abomey, le rail. Cette position de carrefour a fait de la ville un centre de commerce de gros, de transport et de distribution parmi les plus actifs du pays.",
       "J'aide les commerçants, transporteurs et entreprises de Bohicon à structurer leur activité avec des outils digitaux : gestion de stock et de facturation, suivi des expéditions, boutiques en ligne avec Mobile Money. Des solutions concrètes, dimensionnées pour votre activité réelle.",
