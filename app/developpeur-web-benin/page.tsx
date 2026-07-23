@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
+import WhatsAppCta from "../components/ui/WhatsAppCta";
 import Link from "next/link";
-import { getIcon, MapPin, CheckCircle, ArrowRight } from "@/lib/icons";
+import { getIcon, MapPin, CheckCircle, ChevronRight } from "@/lib/icons";
 import {
   localServices,
   localAdvantages,
   remoteCountries,
   seoKeywords,
+  beninFaq,
   siteConfig,
+  contactInfo,
   localCities,
   cityFullSlug,
 } from "@/data";
@@ -16,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: "Développeur Web & Mobile au Bénin — Cotonou, Porto-Novo, Lokossa",
   description:
-    "Recherchez un développeur web & mobile freelance au Bénin ? Applications web fullstack, apps mobiles, plateformes SaaS et e-commerce, backends solides — à Cotonou, Porto-Novo, Lokossa, Parakou. Devis sous 24h.",
+    "Développeur web et mobile freelance au Bénin : sites, apps mobiles, e-commerce et paiement Mobile Money. Devis gratuit sous 24h, à Cotonou, Porto-Novo et partout au Bénin.",
   keywords: seoKeywords.slice(0, 10),
   alternates: {
     canonical: `${siteConfig.url}/developpeur-web-benin`,
@@ -29,9 +32,72 @@ export const metadata: Metadata = {
   },
 };
 
+const pageUrl = `${siteConfig.url}/developpeur-web-benin`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": `${pageUrl}#service`,
+      name: `${siteConfig.name}, Développeur Web & Mobile au Bénin`,
+      description:
+        "Développeur web et mobile freelance au Bénin : sites web, applications mobiles, e-commerce et logiciels métier, avec paiement Mobile Money.",
+      url: pageUrl,
+      image: `${siteConfig.url}/portrait.png`,
+      telephone: contactInfo.phoneRaw,
+      email: contactInfo.email,
+      priceRange: "$$",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Cotonou",
+        addressRegion: "Littoral",
+        addressCountry: "BJ",
+      },
+      areaServed: { "@type": "Country", name: "Bénin" },
+      provider: { "@id": `${siteConfig.url}/#person` },
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Accueil",
+          item: siteConfig.url,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Développeur Web au Bénin",
+          item: pageUrl,
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      mainEntity: beninFaq.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    },
+  ],
+};
+
 export default async function DeveloppeurWebBeninPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <PageHeader
         title="Développeur Web & Mobile au Bénin"
         description="Votre partenaire digital à Cotonou pour des applications web fullstack, des apps mobiles et des plateformes e-commerce / SaaS performantes."
@@ -156,6 +222,29 @@ export default async function DeveloppeurWebBeninPage() {
             </div>
           </section>
 
+          {/* FAQ */}
+          <section>
+            <h2 className="mb-6 font-semibold text-foreground text-xl">
+              Questions fréquentes
+            </h2>
+            <div className="flex flex-col gap-4">
+              {beninFaq.map((item) => (
+                <details
+                  key={item.question}
+                  className="group bg-card open:pb-5 border border-stroke rounded-2xl"
+                >
+                  <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
+                    {item.question}
+                    <ChevronRight className="w-5 h-5 text-foreground-muted group-open:rotate-90 transition-transform shrink-0" />
+                  </summary>
+                  <p className="px-5 text-foreground-muted text-sm leading-relaxed">
+                    {item.answer}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </section>
+
           {/* CTA */}
           <section className="text-center">
             <h2 className="font-semibold text-foreground text-2xl">
@@ -165,12 +254,12 @@ export default async function DeveloppeurWebBeninPage() {
               Discutons de votre projet digital. Devis gratuit sous 24h.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
-              <Link href="/contact" className="btn-primary">
-                Demander un devis
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link href="/services" className="btn-secondary">
-                Voir tous les services
+              <WhatsAppCta
+                label="Discuter de mon projet"
+                message="Bonjour Néhémie, j'ai un projet web ou mobile au Bénin et j'aimerais en discuter avec vous."
+              />
+              <Link href="/tarifs" className="btn-secondary">
+                Voir les tarifs
               </Link>
             </div>
           </section>

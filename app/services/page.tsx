@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
@@ -5,10 +6,27 @@ import SpotlightCard from "../components/ui/SpotlightCard";
 import TechBadge from "../components/ui/TechBadge";
 import WhatsAppCta from "../components/ui/WhatsAppCta";
 import { getIcon, ArrowRight } from "@/lib/icons";
-import { servicesDetailed } from "@/data";
+import { servicesDetailed, siteConfig } from "@/data";
 
 const ACCENTS = ["#ff4d3d", "#3b82f6", "#f59e0b"];
 const CORNERS = ["tr", "tl", "br", "bl"] as const;
+
+const url = `${siteConfig.url}/services`;
+
+export const metadata: Metadata = {
+  title: "Création de Sites Web & Apps Mobiles au Bénin",
+  description:
+    "Sites web, applications mobiles, e-commerce et logiciels métier au Bénin. Un périmètre clair et un devis gratuit sous 24h. Parlons de votre projet.",
+  alternates: { canonical: url },
+  openGraph: {
+    title: "Services — Création de sites web et d'applications au Bénin",
+    description:
+      "Sites web, apps mobiles, e-commerce et logiciels métier. Périmètre clair, devis gratuit sous 24h.",
+    url,
+    type: "website",
+    locale: "fr_BJ",
+  },
+};
 
 export default async function ServicesPage() {
   return (

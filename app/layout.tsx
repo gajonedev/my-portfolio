@@ -26,7 +26,7 @@ const baseUrl = "https://gajone.dev";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Néhémie Gandonou — Développeur Web & Mobile à Cotonou, Bénin",
+    default: "Développeur Web & Mobile à Cotonou, Bénin — Néhémie Gandonou",
     template: "%s | Néhémie Gandonou",
   },
   description:
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     canonical: baseUrl,
   },
   openGraph: {
-    title: "Néhémie Gandonou — Développeur Web & Mobile à Cotonou, Bénin",
+    title: "Développeur Web & Mobile à Cotonou, Bénin — Néhémie Gandonou",
     description:
       "Développeur freelance au Bénin : applications web fullstack, apps mobiles, plateformes SaaS et e-commerce, backends solides. Basé à Cotonou, disponible partout.",
     type: "website",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Néhémie Gandonou — Développeur Web & Mobile à Cotonou, Bénin",
+    title: "Développeur Web & Mobile à Cotonou, Bénin — Néhémie Gandonou",
     description:
       "Développeur freelance au Bénin : applications web fullstack (Next.js, Node.js), apps mobiles (Flutter) et backends solides.",
     creator: "@gajonedev",

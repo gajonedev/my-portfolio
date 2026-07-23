@@ -1,9 +1,27 @@
+import type { Metadata } from "next";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 import ContactForm from "../components/ui/ContactForm";
 import WhatsAppCta from "../components/ui/WhatsAppCta";
 import { Mail, Phone, MapPin, Clock } from "@/lib/icons";
-import { contactInfo } from "@/data";
+import { contactInfo, siteConfig } from "@/data";
+
+const url = `${siteConfig.url}/contact`;
+
+export const metadata: Metadata = {
+  title: "Contact — Votre devis gratuit sous 24h",
+  description:
+    "Un projet de site ou d'application ? Décrivez-le en deux lignes : je reviens vers vous avec un devis clair sous 24h. Disponible aussi sur WhatsApp.",
+  alternates: { canonical: url },
+  openGraph: {
+    title: "Contactez un développeur web et mobile au Bénin",
+    description:
+      "Décrivez votre projet en deux lignes : devis clair sous 24h. Disponible aussi sur WhatsApp.",
+    url,
+    type: "website",
+    locale: "fr_BJ",
+  },
+};
 
 export default async function ContactPage() {
   return (

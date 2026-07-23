@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
@@ -5,10 +6,27 @@ import SpotlightCard from "../components/ui/SpotlightCard";
 import TechBadge from "../components/ui/TechBadge";
 import ProjectStatus from "../components/ui/ProjectStatus";
 import { getIcon, ExternalLink, ArrowRight, TrendingUp } from "@/lib/icons";
-import { projects } from "@/data";
+import { projects, siteConfig } from "@/data";
 
 const ACCENTS = ["#ff4d3d", "#3b82f6", "#f59e0b"];
 const CORNERS = ["tr", "tl", "br", "bl"] as const;
+
+const url = `${siteConfig.url}/projects`;
+
+export const metadata: Metadata = {
+  title: "Projets & Réalisations — Web, Mobile & E-commerce",
+  description:
+    "Mes réalisations : applications mobiles, plateformes web et e-commerce livrés pour des clients au Bénin et à l'international. Des résultats concrets à l'appui.",
+  alternates: { canonical: url },
+  openGraph: {
+    title: "Projets & Réalisations d'un développeur web et mobile au Bénin",
+    description:
+      "Applications mobiles, plateformes web et e-commerce livrés, avec des résultats concrets pour chaque client.",
+    url,
+    type: "website",
+    locale: "fr_BJ",
+  },
+};
 
 export default async function ProjectsPage() {
   return (

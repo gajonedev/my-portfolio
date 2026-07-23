@@ -13,11 +13,19 @@ import {
   pricingFaq,
   siteConfig,
 } from "@/data";
+import { getAllPosts } from "@/lib/blog";
 
 const url = `${siteConfig.url}/tarifs`;
 
 const ACCENTS = ["#ff4d3d", "#3b82f6", "#f59e0b"];
 const CORNERS = ["tr", "tl", "br", "bl"] as const;
+
+// Cluster « prix » : /tarifs (pilier) renvoie vers les articles coût + paiement
+const PRICING_CLUSTER_SLUGS = [
+  "combien-coute-site-web-benin-2026",
+  "combien-coute-application-mobile-benin-2026",
+  "fedapay-kkiapay-paydunya-comparatif",
+];
 
 export const metadata: Metadata = {
   title:
@@ -78,6 +86,10 @@ const jsonLd = {
 };
 
 export default async function TarifsPage() {
+  const relatedPosts = getAllPosts().filter((post) =>
+    PRICING_CLUSTER_SLUGS.includes(post.slug),
+  );
+
   return (
     <>
       <script
@@ -228,6 +240,42 @@ export default async function TarifsPage() {
               ))}
             </div>
           </section>
+
+          {/* Cluster prix — pour approfondir */}
+          {relatedPosts.length > 0 && (
+            <section>
+              <h2 className="mb-2 font-semibold text-foreground text-xl">
+                Pour approfondir avant de décider
+              </h2>
+              <p className="mb-6 text-foreground-muted text-sm">
+                Des repères détaillés sur les prix et les moyens de paiement au
+                Bénin.
+              </p>
+              <div className="gap-4 grid md:grid-cols-3">
+                {relatedPosts.map((post) => (
+                  <Link
+                    key={post.slug}
+                    href={`/blog/${post.slug}`}
+                    className="group flex flex-col bg-card p-5 border border-stroke hover:border-primary/40 rounded-2xl transition"
+                  >
+                    <span className="bg-primary/10 px-3 py-1 rounded-full w-fit font-semibold text-primary text-xs">
+                      {post.category}
+                    </span>
+                    <h3 className="mt-3 font-medium text-foreground group-hover:text-primary transition">
+                      {post.title}
+                    </h3>
+                    <p className="mt-2 text-foreground-muted text-sm">
+                      {post.summary}
+                    </p>
+                    <span className="flex items-center gap-1.5 mt-4 font-medium text-primary text-sm">
+                      Lire l&apos;article
+                      <ArrowRight className="w-4 h-4" />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* CTA */}
           <section className="text-center">

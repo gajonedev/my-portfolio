@@ -1,9 +1,27 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 import WhatsAppCta from "../components/ui/WhatsAppCta";
 import { getIcon, Award, Users, Heart, Rocket } from "@/lib/icons";
-import { skills, values, aboutStats } from "@/data";
+import { skills, values, aboutStats, siteConfig } from "@/data";
+
+const url = `${siteConfig.url}/about`;
+
+export const metadata: Metadata = {
+  title: "À propos — Développeur Web & Mobile à Cotonou",
+  description:
+    "Néhémie Gandonou, développeur web et mobile freelance à Cotonou. Un seul interlocuteur, un produit fiable livré en 2 à 8 semaines. Faisons connaissance.",
+  alternates: { canonical: url },
+  openGraph: {
+    title: "À propos de Néhémie Gandonou, développeur web et mobile",
+    description:
+      "Développeur freelance à Cotonou : un seul interlocuteur, un produit fiable livré en 2 à 8 semaines.",
+    url,
+    type: "profile",
+    locale: "fr_BJ",
+  },
+};
 
 export default async function AboutPage() {
   return (

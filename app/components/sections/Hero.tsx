@@ -9,6 +9,7 @@ import WhatsAppIcon from "../ui/WhatsAppIcon";
 import HoverWord from "../ui/HoverWord";
 import { CheckCircle } from "@/lib/icons";
 import { stats, whatsappUrl, homeTrust } from "@/data";
+import Link from "next/link";
 
 // Title tokens — accent words ride the hover wave (HoverWord)
 const titleTokens: { text: string; accent?: boolean }[] = [
@@ -37,10 +38,13 @@ export default function Hero() {
 
       <Container className="relative items-center gap-12 grid lg:grid-cols-[1.15fr_0.85fr] py-16 md:py-24">
         <div className="flex flex-col gap-8">
-          <span className="flex items-center gap-2 bg-primary/10 px-3 py-1 border border-primary/40 rounded-full w-fit font-body text-primary text-xs uppercase tracking-[0.25em] hero-anim-up">
-            <span className="inline-block bg-success rounded-full w-2 h-2" />
-            On démarre ?
-          </span>
+          <Link
+            href="/contact"
+            className="flex items-center gap-3 bg-primary/10 px-3 py-1 border border-primary/40 rounded-full w-fit font-body text-primary text-xs uppercase tracking-[0.25em] hero-anim-up"
+          >
+            <span className="inline-block bg-success rounded-full w-2 h-2 shrink-0" />
+            On démarre votre prochain projet ?
+          </Link>
 
           <h1 className="font-display font-bold text-foreground text-4xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight">
             {titleTokens.map((token, i) => (

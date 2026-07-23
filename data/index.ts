@@ -73,7 +73,9 @@ export {
   remoteCountries,
   geoData,
   seoKeywords,
+  beninFaq,
   type City,
+  type BeninFaqItem,
 } from "./seo";
 
 // Pages expertise par technologie
