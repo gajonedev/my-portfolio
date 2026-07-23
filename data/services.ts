@@ -77,7 +77,7 @@ export const servicesDetailed: ServiceDetailed[] = [
     description:
       "De vrais logiciels web complets qui résolvent des problèmes et facilitent le travail.",
     details:
-      "Pas des vitrines : de véritables outils métier, plateformes et espaces clients qui automatisent votre quotidien et font gagner du temps à vos équipes. Fiables, rapides et prêts à évoluer avec vous.",
+      "Bien plus que des vitrines : de véritables outils métier, plateformes et espaces clients qui automatisent votre quotidien et font gagner du temps à vos équipes. Fiables, rapides et prêts à évoluer avec vous.",
     features: [
       "Outils métier",
       "Gain de temps",
