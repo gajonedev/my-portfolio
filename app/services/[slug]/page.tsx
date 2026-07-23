@@ -409,7 +409,7 @@ export default async function ServicePage({
               Prêt à démarrer ?
             </h2>
             <p className="mt-3 text-foreground-muted">
-              Décrivez-moi votre projet : devis clair et détaillé sous 24h.
+              Décrivez-moi votre projet : devis détaillé et chiffré sous 24h.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
               <WhatsAppCta

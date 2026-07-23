@@ -242,7 +242,7 @@ export default function ExpertiseLanding({
               Un projet {expertise.techName} ?
             </h2>
             <p className="mt-3 text-foreground-muted">
-              Parlons-en. Prise de brief et devis clair sous 24h.
+              Parlons-en. Prise de brief et devis détaillé sous 24h.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
               <WhatsAppCta

@@ -333,7 +333,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
               Un projet à {city.name} ?
             </h2>
             <p className="mt-3 text-foreground-muted">
-              Parlons-en directement. Prise de brief et devis clair sous 24h.
+              Parlons-en directement. Prise de brief et devis chiffré sous 24h.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
               <WhatsAppCta

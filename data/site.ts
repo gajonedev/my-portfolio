@@ -36,6 +36,29 @@ export const homeTrust = [
   "Le système vous appartient à 100 %",
 ] as const;
 
+// Section « Intérêt » (AIDA) : blocages concrets du visiteur, formulés de son
+// point de vue. Nommer la situation avant de proposer la solution.
+export const homeProblems = [
+  {
+    iconName: "Search",
+    title: "On ne vous trouve pas",
+    description:
+      "On vous recommande de bouche à oreille, mais dès qu'un prospect tape votre nom sur Google, il ne trouve rien de concret sur vous. Vos concurrents, si.",
+  },
+  {
+    iconName: "Smartphone",
+    title: "Votre site ne travaille pas pour vous",
+    description:
+      "Votre site existe, mais il est lent, difficile à lire sur téléphone, et personne ne vous écrit à travers. Vous avez une vitrine passive au lieu d'un commercial.",
+  },
+  {
+    iconName: "Clock",
+    title: "Vous gérez tout à la main",
+    description:
+      "Les demandes, les paiements, les relances passent par WhatsApp et vous coûtent des heures chaque semaine. Vous perdez du temps que vous ne passez pas à faire votre métier.",
+  },
+] as const;
+
 export const socialLinks = [
   {
     name: "GitHub",
@@ -79,7 +102,7 @@ export const aboutHighlights = [
 // Engagements concrets — remplacent l'ancienne carte « stack » (trop technique
 // pour la home ; la stack vit déjà dans la section Compétences). Tous véridiques.
 export const aboutGuarantees = [
-  "Devis clair et gratuit sous 24h",
+  "Devis détaillé et gratuit sous 24h",
   "Livraison en 2 à 8 semaines",
   "Le système vous appartient à 100 %",
   "Un suivi après la mise en ligne",

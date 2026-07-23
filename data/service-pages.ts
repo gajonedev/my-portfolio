@@ -68,7 +68,7 @@ export const servicePages: ServicePage[] = [
     intro: [
       "Votre application mobile doit résoudre un problème spécifique : encaisser des ventes, suivre une activité, fidéliser vos clients. Je développe en Flutter des applications cross-platform, un seul code pour iOS et Android, ce qui divise les coûts et les délais par rapport à deux développements séparés, sans compromis sur la qualité.",
       "Chaque application repose sur un backend solide que je construis moi-même : vos données sont sécurisées, synchronisées et prêtes à monter en charge. Et parce que je connais le terrain, je conçois des apps qui fonctionnent dans les conditions réelles d'utilisation en Afrique de l'Ouest : mode hors-ligne quand le réseau est instable, paiement Mobile Money intégré, interfaces légères qui tournent bien sur les téléphones d'entrée de gamme.",
-      "De la première maquette à la publication sur l'App Store et Google Play, vous avez un seul interlocuteur, un planning clair et des démos régulières pour suivre l'avancement.",
+      "De la première maquette à la publication sur l'App Store et Google Play, vous avez un seul interlocuteur, un planning jalonné et des démos régulières pour suivre l'avancement.",
     ],
     deliverables: [
       "Application iOS + Android à partir d'un seul code Flutter",

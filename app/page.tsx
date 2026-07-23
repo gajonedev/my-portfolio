@@ -24,6 +24,7 @@ import {
   testimonials,
   processSteps,
   skills,
+  homeProblems,
   aboutHighlights,
   aboutGuarantees,
   contactInfo,
@@ -44,15 +45,66 @@ export default async function Home() {
         <Hero />
       </SectionWrapper>
 
+      {/* ============ PROBLÈME / INTÉRÊT (dark) ============ */}
+      <SectionWrapper variant="dark" beam className="relative py-24">
+        <DotPattern />
+        <Container className="relative gap-12 grid">
+          <SectionHeading
+            align="center"
+            kicker="Le problème"
+            title="Ce qui bloque votre croissance"
+            subtitle="La plupart de mes clients arrivent avec une de ces situations. Peut-être la vôtre."
+            className="mx-auto"
+          />
+          <StaggerContainer className="gap-6 grid md:grid-cols-2 lg:grid-cols-3">
+            {homeProblems.map((problem, i) => {
+              const Icon = getIcon(problem.iconName);
+              return (
+                <StaggerItem key={problem.title} className="h-full">
+                  <SpotlightCard
+                    corner={cornerFor(i)}
+                    cornerColor={accentFor(i)}
+                    className="group h-full"
+                    glow={false}
+                  >
+                    <div className="p-6">
+                      <div className="flex justify-center items-center bg-primary/15 mb-4 rounded-2xl w-12 h-12 text-primary group-hover:scale-110 transition-transform duration-300">
+                        <Icon className="w-6 h-6" />
+                      </div>
+                      <h3 className="font-display font-semibold text-foreground text-lg">
+                        {problem.title}
+                      </h3>
+                      <p className="mt-3 font-body text-foreground-muted text-sm leading-relaxed">
+                        {problem.description}
+                      </p>
+                    </div>
+                  </SpotlightCard>
+                </StaggerItem>
+              );
+            })}
+          </StaggerContainer>
+          <ScrollReveal>
+            <p className="mx-auto max-w-2xl font-body text-foreground-muted text-base md:text-lg text-center leading-relaxed">
+              Je pars précisément de là.{" "}
+              <span className="font-medium text-foreground">
+                Je transforme une de ces situations en un système qui vous
+                ramène des clients pendant que vous travaillez.
+              </span>
+            </p>
+          </ScrollReveal>
+        </Container>
+      </SectionWrapper>
+
       {/* ============ ABOUT (light) ============ */}
       <SectionWrapper variant="light" className="py-24">
         <Container className="items-center gap-12 grid lg:grid-cols-[0.55fr_0.45fr]">
           <div className="flex flex-col gap-8">
             <SectionHeading
-              kicker="À propos"
+              kicker="À propos de moi"
               title={
                 <>
-                  Plus qu&apos;un développeur, un partenaire pour votre{" "}
+                  Bien plus qu&apos;un développeur, je suis un{" "}
+                  <span className="text-primary">partenaire</span> pour votre{" "}
                   <span className="text-primary">croissance</span>
                 </>
               }
@@ -258,7 +310,7 @@ export default async function Home() {
           <SectionHeading
             kicker="Mon Processus"
             title="Un processus pour livrer vite et bien"
-            subtitle="De la stratégie aux optimisations, avec une communication claire et transparente."
+            subtitle="De la stratégie aux optimisations, avec une communication transparente."
           />
           <StaggerContainer className="gap-6 grid md:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step, index) => {

@@ -6,6 +6,7 @@ export {
   contactInfo,
   whatsappUrl,
   homeTrust,
+  homeProblems,
   socialLinks,
   stats,
   aboutStats,

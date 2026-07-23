@@ -5,12 +5,13 @@ import PageHeader from "../components/PageHeader";
 import PriceTag from "../components/ui/PriceTag";
 import SpotlightCard from "../components/ui/SpotlightCard";
 import WhatsAppCta from "../components/ui/WhatsAppCta";
-import { CheckCircle, ArrowRight, ChevronRight } from "@/lib/icons";
+import { CheckCircle, ArrowRight, ChevronRight, Quote, Clock } from "@/lib/icons";
 import {
   pricingTiers,
   alwaysIncluded,
   priceFactors,
   pricingFaq,
+  testimonials,
   siteConfig,
 } from "@/data";
 import { getAllPosts } from "@/lib/blog";
@@ -98,7 +99,7 @@ export default async function TarifsPage() {
       />
 
       <PageHeader
-        title="Tarifs transparents"
+        title="Tarifs & fourchettes de prix"
         description="Combien coûte un site web, une boutique en ligne ou une application mobile ? Voici des fourchettes en FCFA, et je vous fais un devis pour votre besoin sous 24h."
       />
 
@@ -107,10 +108,10 @@ export default async function TarifsPage() {
           {/* Intro */}
           <section className="max-w-3xl">
             <p className="text-foreground-muted leading-relaxed">
-              La plupart des prestataires cachent leurs prix. Les fourchettes
-              ci-dessous, en toute transparence, vous donnent un ordre de
-              grandeur réaliste pour situer votre budget. Chaque projet étant
-              unique, le chiffrage précis se fait sur devis :{" "}
+              Vous cherchez un ordre de grandeur avant de vous lancer ? Le voici.
+              Les fourchettes ci-dessous vous donnent un repère réaliste pour
+              situer votre budget. Chaque projet étant unique, le chiffrage
+              précis se fait sur devis :{" "}
               <strong className="text-foreground">
                 gratuit, détaillé et envoyé sous 24h
               </strong>
@@ -149,6 +150,15 @@ export default async function TarifsPage() {
                     </div>
                     <p className="mt-3 text-foreground-muted text-xs">
                       {tier.priceNote}
+                    </p>
+                    <p className="flex items-center gap-1.5 mt-2 text-foreground-muted text-xs">
+                      <Clock className="w-3.5 h-3.5 text-primary shrink-0" />
+                      <span>
+                        <span className="font-medium text-foreground">
+                          Délai indicatif :
+                        </span>{" "}
+                        {tier.delay}
+                      </span>
                     </p>
                     <ul className="flex flex-col gap-2 mt-5">
                       {tier.includes.map((item) => (
@@ -277,6 +287,29 @@ export default async function TarifsPage() {
             </section>
           )}
 
+          {/* Preuve avant le CTA */}
+          <section>
+            <SpotlightCard
+              corner="tr"
+              cornerColor="#ff4d3d"
+              hover={false}
+              glow={false}
+            >
+              <figure className="flex flex-col gap-4 p-8 md:p-10">
+                <Quote className="w-8 h-8 text-primary" />
+                <blockquote className="max-w-3xl font-body text-foreground text-lg leading-relaxed">
+                  {testimonials[0].quote}
+                </blockquote>
+                <figcaption className="font-body text-foreground-muted text-sm">
+                  <span className="font-medium text-foreground">
+                    {testimonials[0].name}
+                  </span>{" "}
+                  · {testimonials[0].role}
+                </figcaption>
+              </figure>
+            </SpotlightCard>
+          </section>
+
           {/* CTA */}
           <section className="text-center">
             <h2 className="font-semibold text-foreground text-2xl">
@@ -284,7 +317,7 @@ export default async function TarifsPage() {
             </h2>
             <p className="mt-3 text-foreground-muted">
               Décrivez-moi votre projet en quelques lignes, je reviens vers vous
-              avec un chiffrage clair et sans engagement.
+              avec un chiffrage détaillé et sans engagement.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
               <WhatsAppCta

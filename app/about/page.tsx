@@ -143,7 +143,7 @@ export default async function AboutPage() {
             </h2>
             <p className="mt-3 text-foreground-muted">
               Décrivez-moi votre projet, je reviens vers vous avec un plan
-              clair et un devis sous 24h.
+              d&apos;action et un devis sous 24h.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
               <WhatsAppCta label="Discuter de mon projet" />
