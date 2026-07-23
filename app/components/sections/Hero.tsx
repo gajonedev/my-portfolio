@@ -39,7 +39,7 @@ export default function Hero() {
         <div className="flex flex-col gap-8">
           <span className="flex items-center gap-2 bg-primary/10 px-3 py-1 border border-primary/40 rounded-full w-fit font-body text-primary text-xs uppercase tracking-[0.25em] hero-anim-up">
             <span className="inline-block bg-success rounded-full w-2 h-2" />
-            Disponible pour vos projets
+            On démarre ?
           </span>
 
           <h1 className="font-display font-bold text-foreground text-4xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight">

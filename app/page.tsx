@@ -56,7 +56,7 @@ export default async function Home() {
                   <span className="text-primary">croissance</span>
                 </>
               }
-              subtitle="Développeur indépendant, je m'implique dans votre projet comme si c'était le mien : je pars de votre objectif business, je livre un produit qui y répond vraiment, et je reste disponible après la mise en ligne."
+              subtitle="Développeur indépendant, je m'implique dans votre projet comme si c'était le mien : je pars de votre objectif business, je livre un produit qui y répond, et je reste disponible après la mise en ligne."
             />
             <StaggerContainer className="gap-4 grid">
               {aboutHighlights.map((item) => (

@@ -213,8 +213,8 @@ export default async function ServicePage({
               Trois formules, un même niveau d&apos;exigence
             </h2>
             <p className="mb-8 text-foreground-muted text-sm">
-              Des périmètres clairs pour situer votre budget, le devis précis
-              arrive sous 24h, gratuitement.
+              Voici des périmètres pour situer votre budget, et vous recevez un
+              devis précis sous 24h, gratuitement.
             </p>
             <div className="items-stretch gap-6 grid md:grid-cols-3">
               {service.offers.map((offer, index) => (
