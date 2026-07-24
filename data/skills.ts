@@ -52,7 +52,8 @@ export const values: Value[] = [
   {
     iconName: "Users",
     title: "Collaboration",
-    description: "Communication transparente et suivi régulier du projet.",
+    description:
+      "Des points d'étape réguliers et un seul interlocuteur, du début à la fin du projet.",
   },
 ];
 
@@ -61,24 +62,24 @@ export const processSteps = [
     title: "Cadrage",
     iconName: "Search",
     description:
-      "Comprendre le problème à résoudre, les utilisateurs et les objectifs business.",
+      "Je pars de votre problème, de vos utilisateurs et de votre objectif business, avant d'écrire la moindre ligne.",
   },
   {
     title: "Conception",
     iconName: "Lightbulb",
     description:
-      "UX claire et design system cohérent, pour un produit fluide et lisible.",
+      "Je dessine un parcours simple et lisible, adossé à un design system cohérent.",
   },
   {
     title: "Développement",
     iconName: "Code",
     description:
-      "Un produit fiable et rapide, pensé pour durer et évoluer avec vous.",
+      "Je construis un produit fiable et rapide, pensé pour durer et évoluer avec vous.",
   },
   {
     title: "Livraison & suivi",
     iconName: "Rocket",
     description:
-      "Optimisation, mise en production soignée et accompagnement dans la durée.",
+      "Je mets en ligne proprement, puis je reste disponible pour faire grandir votre produit.",
   },
 ];
