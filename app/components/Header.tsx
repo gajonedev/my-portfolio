@@ -68,7 +68,7 @@ export default function Header() {
               </span>
               <span className="flex flex-col leading-tight">
                 <span className="font-display font-semibold text-foreground text-sm">
-                  Gajone Dev
+                  Néhémie Gandonou
                 </span>
                 <span className="font-body text-foreground-muted text-xs">
                   {siteConfig.title}

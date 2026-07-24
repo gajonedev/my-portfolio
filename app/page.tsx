@@ -127,10 +127,10 @@ export default async function Home() {
             <SpotlightCard corner="br" cornerColor="#ff4d3d" hover={false}>
               <div className="p-8">
                 <h3 className="font-display font-semibold text-foreground text-lg">
-                  Travailler avec moi, concrètement
+                  Ce sur quoi vous pouvez compter avec moi
                 </h3>
                 <p className="mt-3 font-body text-foreground-muted text-sm leading-relaxed">
-                  Des engagements simples, les mêmes pour chaque projet.
+                  Les même engagements tenus pour chacun de mes projets
                 </p>
                 <ul className="flex flex-col gap-3 mt-6">
                   {aboutGuarantees.map((item) => (

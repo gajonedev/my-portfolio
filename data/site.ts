@@ -31,7 +31,7 @@ export const whatsappUrl = (message: string = DEFAULT_WHATSAPP_MESSAGE) =>
 
 // Arguments de confiance affichés sur la home (objection-killers, tous véridiques)
 export const homeTrust = [
-  "Devis gratuit sous 24h",
+  "Devis détaillé sous 24h",
   "Livré en 2 à 8 semaines",
   "Le système vous appartient à 100 %",
 ] as const;
@@ -43,7 +43,7 @@ export const homeProblems = [
     iconName: "Search",
     title: "On ne vous trouve pas",
     description:
-      "On vous recommande de bouche à oreille, mais dès qu'un prospect tape votre nom sur Google, il ne trouve rien de concret sur vous. Vos concurrents, si.",
+      "On vous recommande de bouche à oreille, mais dès qu'un prospect tape votre nom sur Google, il ne trouve rien de concret sur vous. Sur vos concurrents, si.",
   },
   {
     iconName: "Smartphone",
@@ -55,7 +55,7 @@ export const homeProblems = [
     iconName: "Clock",
     title: "Vous gérez tout à la main",
     description:
-      "Les demandes, les paiements, les relances passent par WhatsApp et vous coûtent des heures chaque semaine. Vous perdez du temps que vous ne passez pas à faire votre métier.",
+      "Les demandes, les paiements, les relances passent par WhatsApp et vous coûtent des heures chaque semaine. Vous perdez du temps, du temps que vous ne passez pas à faire votre métier.",
   },
 ] as const;
 
@@ -94,7 +94,7 @@ export const aboutStats = [
 // Bénéfices client mis en avant dans la section À propos de la home
 // (orientés résultat, pas fonctionnalité technique)
 export const aboutHighlights = [
-  "Un interlocuteur unique, du premier échange à la mise en ligne",
+  "Un seul interlocuteur, du premier échange à la mise en ligne",
   "Un produit fiable qui tient la charge, même quand l'activité décolle",
   "Une expérience simple et rapide qui met vos clients en confiance",
 ] as const;
