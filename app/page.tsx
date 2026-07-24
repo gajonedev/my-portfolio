@@ -11,6 +11,7 @@ import {
 import ScrollReveal from "./components/ui/ScrollReveal";
 import GlowButton from "./components/ui/GlowButton";
 import OutlineButton from "./components/ui/OutlineButton";
+import SectionCta from "./components/ui/SectionCta";
 import WhatsAppIcon from "./components/ui/WhatsAppIcon";
 import TechBadge from "./components/ui/TechBadge";
 import ProjectStatus from "./components/ui/ProjectStatus";
@@ -123,29 +124,35 @@ export default async function Home() {
             </StaggerContainer>
           </div>
 
-          <ScrollReveal direction="left">
-            <SpotlightCard corner="br" cornerColor="#ff4d3d" hover={false}>
-              <div className="p-8">
-                <h3 className="font-display font-semibold text-foreground text-lg">
-                  Ce sur quoi vous pouvez compter avec moi
-                </h3>
-                <p className="mt-3 font-body text-foreground-muted text-sm leading-relaxed">
-                  Les même engagements tenus pour chacun de mes projets
-                </p>
-                <ul className="flex flex-col gap-3 mt-6">
-                  {aboutGuarantees.map((item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-3 font-body text-foreground-muted text-sm"
-                    >
-                      <CheckCircle className="w-5 h-5 text-primary shrink-0" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </SpotlightCard>
-          </ScrollReveal>
+          <div className="flex flex-col gap-6">
+            <ScrollReveal direction="left">
+              <SpotlightCard corner="br" cornerColor="#ff4d3d" hover={false}>
+                <div className="p-8">
+                  <h3 className="font-display font-semibold text-foreground text-lg">
+                    Ce sur quoi vous pouvez compter avec moi
+                  </h3>
+                  <p className="mt-3 font-body text-foreground-muted text-sm leading-relaxed">
+                    Les mêmes engagements tenus pour chacun de mes projets.
+                  </p>
+                  <ul className="flex flex-col gap-3 mt-6">
+                    {aboutGuarantees.map((item) => (
+                      <li
+                        key={item}
+                        className="flex items-start gap-3 font-body text-foreground-muted text-sm"
+                      >
+                        <CheckCircle className="w-5 h-5 text-primary shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </SpotlightCard>
+            </ScrollReveal>
+            <p className="flex flex-wrap items-center self-start gap-x-0.5 gap-y-0.5 font-body text-foreground-muted text-sm">
+              <SectionCta>Lançons votre projet</SectionCta>
+              <span>si ces engagements vous parlent</span>
+            </p>
+          </div>
         </Container>
       </SectionWrapper>
 
@@ -158,19 +165,13 @@ export default async function Home() {
       >
         <DotPattern />
         <Container className="relative gap-12 grid">
-          <div className="flex md:flex-row flex-col justify-between items-start md:items-end gap-6">
-            <SectionHeading
-              align="center"
-              kicker="Mes Services"
-              title="Des produits complets, faits proprement"
-              subtitle="De l'application mobile au site web, je livre des produits complets qui règlent le problème de votre activité, et qui durent dans le temps."
-              className="mx-auto"
-            />
-            <OutlineButton href="/services" className="shrink-0">
-              Plus de détails
-              <ArrowRight className="w-4 h-4" />
-            </OutlineButton>
-          </div>
+          <SectionHeading
+            align="center"
+            kicker="Mes Services"
+            title="Des produits complets, faits proprement"
+            subtitle="De l'application mobile au site web, je livre des produits complets qui règlent le problème de votre activité, et qui durent dans le temps."
+            className="mx-auto"
+          />
           <StaggerContainer className="gap-6 grid md:grid-cols-2 lg:grid-cols-3">
             {servicesPreview.map((service, i) => {
               const Icon = getIcon(service.iconName);
@@ -198,6 +199,12 @@ export default async function Home() {
               );
             })}
           </StaggerContainer>
+          <div className="flex flex-col justify-center items-center gap-6">
+            <OutlineButton href="/services" className="shrink-0">
+              Tous les services
+              <ArrowRight className="w-4 h-4" />
+            </OutlineButton>
+          </div>
         </Container>
       </SectionWrapper>
 
@@ -343,6 +350,10 @@ export default async function Home() {
               );
             })}
           </StaggerContainer>
+          <p className="flex flex-wrap items-center gap-x-0.5 gap-y-0.5 font-body text-foreground-muted text-sm">
+            <SectionCta>Parlons de votre projet</SectionCta>
+            <span>si vous êtes prêt à démarrer</span>
+          </p>
         </Container>
       </SectionWrapper>
 
