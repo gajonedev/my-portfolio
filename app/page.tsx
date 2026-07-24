@@ -148,9 +148,9 @@ export default async function Home() {
                 </div>
               </SpotlightCard>
             </ScrollReveal>
-            <p className="flex flex-wrap items-center self-start gap-x-0.5 gap-y-0.5 font-body text-foreground-muted text-sm">
+            <p className="flex flex-wrap items-center self-start gap-1 font-body text-foreground-muted text-sm">
+              <span>Ces engagements vous parlent ?</span>
               <SectionCta>Lançons votre projet</SectionCta>
-              <span>si ces engagements vous parlent</span>
             </p>
           </div>
         </Container>
@@ -350,9 +350,9 @@ export default async function Home() {
               );
             })}
           </StaggerContainer>
-          <p className="flex flex-wrap items-center gap-x-0.5 gap-y-0.5 font-body text-foreground-muted text-sm">
+          <p className="flex flex-wrap items-center gap-1 font-body text-foreground-muted text-sm">
+            <span>Vous êtes prêt pour une collboration ?</span>
             <SectionCta>Parlons de votre projet</SectionCta>
-            <span>si vous êtes prêt à démarrer</span>
           </p>
         </Container>
       </SectionWrapper>
