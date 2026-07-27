@@ -1,6 +1,6 @@
 ---
 title: "Créer une boutique en ligne au Bénin : le guide complet 2026"
-date: "2026-07-03"
+date: "2026-07-27"
 readTime: "9 min"
 summary: "De l'idée aux premières ventes : les étapes concrètes pour lancer une boutique en ligne au Bénin — catalogue, Mobile Money, livraison, visibilité Google."
 category: "E-commerce"
