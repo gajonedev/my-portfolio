@@ -1,6 +1,6 @@
 ---
 title: "Comment apparaître sur Google au Bénin : le guide SEO local pour PME"
-date: "2026-07-03"
+date: "2026-08-16"
 readTime: "8 min"
 summary: "La méthode concrète pour qu'une entreprise béninoise apparaisse sur Google quand ses clients la cherchent : fiche Google Business, site optimisé, mots-clés locaux et avis."
 category: "SEO"

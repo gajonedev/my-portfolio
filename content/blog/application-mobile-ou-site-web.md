@@ -1,6 +1,6 @@
 ---
 title: "Application mobile ou site web : par quoi commencer ?"
-date: "2026-07-03"
+date: "2026-08-16"
 readTime: "6 min"
 summary: "App mobile ou site web pour lancer votre projet ? Les vrais critères de décision — audience, budget, usage — et le chemin le plus intelligent pour démarrer."
 category: "Business"
