@@ -126,10 +126,10 @@ export const expertises: Expertise[] = [
       "application React server",
     ],
     heroDescription:
-      "Avec Next.js, je construis des sites ultra-rapides, parfaitement référencés sur Google, et des applications qui tiennent la charge.",
+      "Avec Next.js, je construis des sites rapides, structurés pour le référencement et des applications capables d'évoluer avec leur usage.",
     intro: [
       "Next.js est le framework web que j'utilise pour la quasi-totalité de mes projets web, y compris le site que vous lisez en ce moment. Bâti sur React et adopté par Netflix, TikTok ou Notion, il combine ce qui est habituellement incompatible : la richesse d'une application et la vitesse d'un site statique.",
-      "Pour vous, cela se traduit concrètement : des pages qui s'affichent instantanément même sur une connexion mobile béninoise, un référencement Google optimal grâce au rendu côté serveur, et une plateforme qui évolue sans être reconstruite, du site vitrine au SaaS complet.",
+      "Concrètement, le rendu côté serveur accélère l'affichage du contenu et facilite son exploration par les moteurs de recherche. L'architecture doit ensuite être adaptée au projet, du site vitrine au logiciel en ligne.",
       "Je maîtrise l'écosystème Next.js dans sa profondeur : App Router, génération statique et rendu serveur, server actions, optimisation des Core Web Vitals, intégration de CMS (Sanity, Payload) et déploiement continu. C'est l'outil avec lequel je construis les plateformes les plus ambitieuses de mon portfolio.",
     ],
     strengths: [
@@ -257,7 +257,7 @@ export const expertises: Expertise[] = [
       {
         question: "Travaillez-vous avec TypeScript ?",
         answer:
-          "Systématiquement : tout mon code React est en TypeScript strict. C'est un des marqueurs les plus fiables de la qualité d'une base de code, et la garantie que le projet reste maintenable par n'importe quelle équipe après moi.",
+          "J'utilise TypeScript en mode strict sur mes projets React. Cela réduit certaines erreurs et facilite la compréhension du code, sans remplacer les tests, la documentation et une architecture claire.",
       },
     ],
     relatedProjectSlugs: ["weman-lms", "gain"],

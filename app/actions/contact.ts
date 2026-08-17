@@ -113,7 +113,7 @@ export async function sendContact(
       from,
       to,
       replyTo: email,
-      subject: `Nouveau message — ${projectType}`,
+      subject: `Nouveau message : ${projectType}`,
       text: [
         `Nom        : ${name}`,
         `Email      : ${email}`,

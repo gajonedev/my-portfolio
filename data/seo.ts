@@ -45,7 +45,7 @@ export const localAdvantages = [
   "Intégration MTN MoMo, Moov Money, Celtiis Cash",
   "Support en français et accompagnement personnalisé",
   "Tarification transparente et devis détaillé sous 24h",
-  "Délais respectés et communication transparente",
+  "Calendrier défini au devis et points d'étape réguliers",
 ];
 
 export const remoteCountries = [
@@ -79,7 +79,7 @@ export const beninFaq: BeninFaqItem[] = [
   {
     question: "En combien de temps mon projet est-il livré ?",
     answer:
-      "Selon le périmètre, je livre en 2 à 8 semaines. On cale le planning ensemble dès le cadrage, et je vous tiens au courant à chaque étape pour éviter les mauvaises surprises.",
+      "Le délai dépend du périmètre. Un site simple peut demander quelques jours, tandis qu'une application plus complète nécessite davantage de temps. Le calendrier et les points d'étape sont définis au devis.",
   },
   {
     question:
@@ -95,7 +95,7 @@ export const beninFaq: BeninFaqItem[] = [
   {
     question: "Le site et le code m'appartiennent-ils ?",
     answer:
-      "Oui, à 100 %. Le code, la base de données et les accès vous reviennent, documentés et transférables. Vous n'êtes jamais prisonnier de votre prestataire.",
+      "Le code développé spécifiquement pour votre projet, la base de données, le domaine et les comptes créés pour vous sont remis selon les conditions du devis. Les bibliothèques et services tiers conservent leurs propres licences.",
   },
 ];
 

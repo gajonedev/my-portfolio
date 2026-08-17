@@ -9,12 +9,12 @@ import { siteConfig } from "@/data";
 const url = `${siteConfig.url}/blog`;
 
 export const metadata: Metadata = {
-  title: "Blog — Web, Mobile & Business Digital au Bénin",
+  title: "Blog | Web, Mobile & activités en ligne au Bénin",
   description:
     "Conseils concrets sur le web, le mobile, le paiement Mobile Money et le digital pour les entreprises au Bénin et en Afrique de l'Ouest.",
   alternates: { canonical: url },
   openGraph: {
-    title: "Blog — Conseils web, mobile et digital au Bénin",
+    title: "Blog | Conseils web et mobile au Bénin",
     description:
       "Conseils concrets sur le web, le mobile, le paiement Mobile Money et le digital pour les entreprises au Bénin.",
     url,

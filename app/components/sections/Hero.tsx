@@ -69,8 +69,9 @@ export default function Hero() {
           >
             Je suis Néhémie Gandonou, développeur à Cotonou. Je conçois des
             applications mobiles et des sites web qui donnent une image
-            professionnelle à votre activité et vous amènent plus de clients,
-            livrés en 2 à 8 semaines et prêts à l&apos;emploi.
+            professionnelle à votre activité et facilitent la prise de contact.
+            Le périmètre et le calendrier sont définis avec vous avant le
+            démarrage.
           </p>
 
           <div

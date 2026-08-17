@@ -90,7 +90,11 @@ export default function ContactForm({
     >
       <div className="gap-4 grid md:grid-cols-2">
         <div className="flex flex-col gap-1">
+          <label htmlFor="contact-name" className="text-foreground-muted text-sm">
+            Nom complet
+          </label>
           <input
+            id="contact-name"
             type="text"
             placeholder="Nom complet"
             autoComplete="name"
@@ -105,7 +109,11 @@ export default function ContactForm({
           )}
         </div>
         <div className="flex flex-col gap-1">
+          <label htmlFor="contact-email" className="text-foreground-muted text-sm">
+            Adresse email
+          </label>
           <input
+            id="contact-email"
             type="email"
             placeholder="Email"
             autoComplete="email"
@@ -122,7 +130,11 @@ export default function ContactForm({
       </div>
 
       <div className="flex flex-col gap-1">
+        <label htmlFor="contact-project" className="text-foreground-muted text-sm">
+          Type de projet
+        </label>
         <input
+          id="contact-project"
           type="text"
           placeholder="Type de projet (app mobile, SaaS, e-commerce…)"
           className="input"
@@ -137,7 +149,11 @@ export default function ContactForm({
       </div>
 
       <div className="flex flex-col gap-1">
+        <label htmlFor="contact-message" className="text-foreground-muted text-sm">
+          Votre besoin
+        </label>
         <textarea
+          id="contact-message"
           placeholder="Expliquez votre besoin"
           rows={4}
           className="resize-none textarea"

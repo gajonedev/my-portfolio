@@ -33,7 +33,7 @@ export async function generateMetadata({
   if (city) {
     const url = `${siteConfig.url}/${cityFullSlug(city)}`;
     return {
-      title: `Développeur Web & Mobile à ${city.name} — Sites, Applications, E-commerce`,
+      title: `Développeur Web & Mobile à ${city.name} | Sites, Applications, E-commerce`,
       description: city.metaDescription,
       keywords: [
         `développeur web ${city.name}`,

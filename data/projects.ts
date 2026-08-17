@@ -121,7 +121,7 @@ export const projects: Project[] = [
       ],
       highlights: [
         "L'offline-first n'est pas une option ajoutée mais le cœur de l'architecture : le serveur est une copie du téléphone, pas l'inverse.",
-        "Testée en conditions réelles de coupures réseau prolongées : zéro perte de données.",
+        "Des essais avec des coupures réseau prolongées ont permis de vérifier l'enregistrement local et la reprise de la synchronisation.",
       ],
     },
   },
@@ -145,10 +145,10 @@ export const projects: Project[] = [
       context:
         "Un projet de domotique complet pour une villa : éclairage, portail motorisé, sécurité, suivi de la consommation d'énergie et d'eau. Le défi n'était pas seulement logiciel : il fallait faire dialoguer une application mobile avec de vrais systèmes embarqués, de façon fiable et instantanée.",
       problem:
-        "Contrôler et surveiller en temps réel tous les équipements de la villa depuis un téléphone, avec une latence imperceptible, une sécurité sérieuse et une tolérance aux coupures de courant et de réseau fréquentes localement.",
+        "Contrôler et surveiller les équipements de la villa depuis un téléphone, avec un retour rapide, une authentification adaptée et une reprise correcte après une coupure de courant ou de réseau.",
       solution: [
         "Réseau de contrôleurs ESP32 sous FreeRTOS pilotant chaque zone : éclairage, portail, capteurs de sécurité, compteurs d'énergie et d'eau.",
-        "Communication temps réel via MQTT : chaque action de l'app est répercutée en quelques dizaines de millisecondes, chaque événement capteur remonte instantanément.",
+        "Communication en temps réel via MQTT : les commandes et les événements des capteurs circulent sans interrogation répétée du serveur.",
         "Serveur Node.js central : authentification, historique des événements, règles d'automatisation (extinction programmée, alertes de consommation anormale).",
         "Application Flutter avec état temps réel : l'interface reflète l'état physique réel de la maison, pas un état supposé.",
         "Reprise automatique après coupure : les contrôleurs se resynchronisent seuls au retour du courant.",
@@ -159,8 +159,8 @@ export const projects: Project[] = [
         "Le système survit aux coupures de courant et de réseau sans intervention manuelle, critère décisif localement.",
       ],
       highlights: [
-        "FreeRTOS sur ESP32 garantit que les fonctions critiques (sécurité, portail) restent prioritaires quoi qu'il arrive.",
-        "L'architecture MQTT découple totalement l'app des équipements : ajouter un capteur ne demande aucune modification de l'application.",
+        "FreeRTOS sur ESP32 permet de donner la priorité aux fonctions sensibles, comme la sécurité et le portail.",
+        "L'architecture MQTT limite les dépendances directes entre l'application et les équipements, ce qui facilite l'ajout de nouveaux capteurs.",
       ],
     },
   },

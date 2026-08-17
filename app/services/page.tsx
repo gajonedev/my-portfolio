@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "Sites web, applications mobiles, e-commerce et logiciels métier au Bénin. Un périmètre précis et un devis gratuit sous 24h. Parlons de votre projet.",
   alternates: { canonical: url },
   openGraph: {
-    title: "Services — Création de sites web et d'applications au Bénin",
+    title: "Services | Création de sites web et d'applications au Bénin",
     description:
       "Sites web, apps mobiles, e-commerce et logiciels métier. Périmètre précis, devis gratuit sous 24h.",
     url,

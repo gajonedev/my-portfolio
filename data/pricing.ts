@@ -79,13 +79,13 @@ export const pricingTiers: PricingTier[] = [
     priceNote: "900 000 à 2 500 000 FCFA, iOS + Android inclus (Flutter)",
     delay: "5 à 8 semaines",
     description:
-      "Votre application sur l'App Store et Google Play, avec un seul développement pour les deux.",
+      "Une application iOS et Android issue d'une base de code partagée, avec accompagnement pour la publication.",
     includes: [
       "iOS + Android en un seul code",
       "Backend complet inclus",
       "Mode hors-ligne si nécessaire",
       "Paiement MTN MoMo, Moov Money, Celtiis Cash intégrable",
-      "Publication sur les deux stores",
+      "Préparation et accompagnement pour la soumission aux stores",
     ],
     idealFor: "Startups, commerces, services de livraison, fintech",
   },
@@ -98,13 +98,13 @@ export const pricingTiers: PricingTier[] = [
     description:
       "Votre produit SaaS lancé sur des fondations saines : multi-tenant, abonnements, analytics.",
     includes: [
-      "Architecture multi-tenant scalable",
+      "Architecture capable d'accueillir plusieurs organisations",
       "Authentification, rôles, abonnements",
       "Dashboard et analytics",
       "API documentée",
       "Monitoring en production",
     ],
-    idealFor: "Startups et entreprises qui lancent un produit digital",
+    idealFor: "Startups et entreprises qui lancent un produit en ligne",
   },
   {
     title: "Audit & optimisation",
@@ -129,11 +129,11 @@ export const pricingTiers: PricingTier[] = [
 
 export const alwaysIncluded = [
   "Devis détaillé et transparent sous 24h, sans frais cachés",
-  "Code propre, documenté, qui vous appartient à 100 %",
+  "Code spécifique documenté, comptes et accès remis à la livraison",
   "Référencement (SEO) technique intégré dès la conception",
   "Site ou app rapide, testé sur mobile et petites connexions",
   "Formation à la prise en main à la livraison",
-  "Garantie de correction des bugs après livraison",
+  "Période de correction après livraison précisée dans le devis",
 ];
 
 export const priceFactors = [

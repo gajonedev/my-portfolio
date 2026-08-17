@@ -16,34 +16,35 @@ export interface ServiceDetailed extends Service {
 // Services résumés (page d'accueil)
 export const servicesPreview: Service[] = [
   {
+    title: "Sites professionnels",
+    slug: "creation-site-vitrine",
+    iconName: "Globe",
+    description:
+      "Des sites rapides et clairs pour présenter votre activité, renforcer votre crédibilité et faciliter les demandes de contact.",
+  },
+  {
     title: "Applications mobiles",
     iconName: "Smartphone",
     description:
-      "Des applications mobiles professionnelles, propres et fluides qui vous règlent le problème de votre activité et qui font le job : vendre, automatiser, fidéliser.",
+      "Des applications mobiles conçues autour d'un usage concret : vendre, automatiser une tâche ou fidéliser vos utilisateurs.",
   },
   {
     title: "Applications & logiciels web",
     iconName: "Globe",
     description:
-      "De vrais logiciels web complets, bien plus que des vitrines : des outils qui résolvent des problèmes et facilitent le travail au quotidien.",
+      "Des outils métier accessibles dans le navigateur pour simplifier la gestion et le travail quotidien de vos équipes.",
   },
   {
     title: "SaaS & dashboards",
     iconName: "LayoutDashboard",
     description:
-      "Produits SaaS et tableaux de bord fluides, multi-tenant et pensés dès le départ pour monter en charge.",
+      "Des logiciels en ligne et tableaux de bord conçus pour accueillir progressivement davantage de clients et de données.",
   },
   {
     title: "E-commerce & vente en ligne",
     iconName: "ShoppingCart",
     description:
       "Des boutiques qui vendent vraiment : parcours d'achat fluide, paiements sécurisés et back-office maîtrisé.",
-  },
-  {
-    title: "Backend & API",
-    iconName: "Code",
-    description:
-      "Le moteur de vos apps mobiles et web : API et infrastructure robustes, sécurisées et scalables, faites proprement.",
   },
 ];
 

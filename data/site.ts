@@ -5,7 +5,7 @@ export const siteConfig = {
   shortName: "NG",
   title: "Développeur Web & Mobile",
   description:
-    "Développeur web & mobile freelance basé à Cotonou, Bénin. Je conçois des expériences digitales modernes, rapides et prêtes à convertir.",
+    "Développeur web et mobile indépendant basé à Cotonou. Je conçois des sites, des applications et des outils métier adaptés aux réalités de votre activité.",
   url: "https://gajone.dev",
   locale: "fr_BJ",
   language: "fr",
@@ -17,9 +17,9 @@ export const contactInfo = {
   phoneRaw: "+2290146897322",
   whatsapp: "2290146897322",
   location: "Cotonou, Bénin",
-  availability: "À distance, partout",
+  availability: "À Cotonou et à distance",
   responseTime: "Prise de brief sous 24h.",
-  averageDelivery: "2 à 8 semaines selon le scope.",
+  averageDelivery: "Délai indicatif : 2 à 8 semaines selon le périmètre.",
 } as const;
 
 // Lien WhatsApp pré-rempli — CTA à faible friction (convertit mieux qu'un formulaire ici)
@@ -32,8 +32,8 @@ export const whatsappUrl = (message: string = DEFAULT_WHATSAPP_MESSAGE) =>
 // Arguments de confiance affichés sur la home (objection-killers, tous véridiques)
 export const homeTrust = [
   "Devis détaillé sous 24h",
-  "Livré en 2 à 8 semaines",
-  "Le système vous appartient à 100 %",
+  "Délai défini avant le démarrage",
+  "Code et accès remis à la livraison",
 ] as const;
 
 // Section « Intérêt » (AIDA) : blocages concrets du visiteur, formulés de son
@@ -81,13 +81,13 @@ export const stats = [
   { label: "Projets livrés", value: "+15" },
   { label: "Clients", value: "+8" },
   { label: "Temps moyen", value: "4-8 sem" },
-  { label: "Satisfaction", value: "4.9/5" },
+  { label: "Expérience", value: "4+ ans" },
 ] as const;
 
 export const aboutStats = [
   { label: "Projets livrés", value: "+15" },
-  { label: "Clients internationaux", value: "+8" },
-  { label: "Satisfaction client", value: "4.9/5" },
+  { label: "Clients accompagnés", value: "+8" },
+  { label: "Spécialités", value: "Web, mobile, IoT" },
   { label: "Années d'expérience", value: "4+" },
 ] as const;
 
@@ -103,7 +103,7 @@ export const aboutHighlights = [
 // pour la home ; la stack vit déjà dans la section Compétences). Tous véridiques.
 export const aboutGuarantees = [
   "Devis détaillé et gratuit sous 24h",
-  "Livraison en 2 à 8 semaines",
-  "Le système vous appartient à 100 %",
+  "Périmètre et calendrier validés avant le démarrage",
+  "Code spécifique, comptes et accès remis à la livraison",
   "Un suivi après la mise en ligne",
 ] as const;

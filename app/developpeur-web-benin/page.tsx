@@ -17,7 +17,7 @@ import {
 } from "@/data";
 
 export const metadata: Metadata = {
-  title: "Développeur Web & Mobile au Bénin — Cotonou, Porto-Novo, Lokossa",
+  title: "Développeur Web & Mobile au Bénin | Cotonou, Porto-Novo, Lokossa",
   description:
     "Développeur web et mobile freelance au Bénin : sites, apps mobiles, e-commerce et paiement Mobile Money. Devis gratuit sous 24h, à Cotonou, Porto-Novo et partout au Bénin.",
   keywords: seoKeywords.slice(0, 10),

@@ -88,8 +88,8 @@ export default async function Home() {
             <p className="mx-auto max-w-2xl font-body text-foreground-muted text-base md:text-lg text-center leading-relaxed">
               Je pars précisément de là.{" "}
               <span className="font-medium text-foreground">
-                Je transforme une de ces situations en un système qui vous
-                ramène des clients pendant que vous travaillez.
+                Je transforme une de ces situations en une solution adaptée à
+                votre manière de travailler et à vos clients.
               </span>
             </p>
           </ScrollReveal>
@@ -168,8 +168,8 @@ export default async function Home() {
           <SectionHeading
             align="center"
             kicker="Mes Services"
-            title="Des produits complets, faits proprement"
-            subtitle="De l'application mobile au site web, je livre des produits complets qui règlent le problème de votre activité, et qui durent dans le temps."
+            title="Des solutions adaptées à votre activité"
+            subtitle="Du site professionnel à l'application mobile, chaque projet part d'un besoin précis, d'un budget et d'un usage réel."
             className="mx-auto"
           />
           <StaggerContainer className="gap-6 grid md:grid-cols-2 lg:grid-cols-3">
@@ -214,8 +214,8 @@ export default async function Home() {
           <div className="flex md:flex-row flex-col justify-between items-start md:items-end gap-6">
             <SectionHeading
               kicker="Mes Projets"
-              title="Des réalisations à fort impact"
-              subtitle="Des produits soignés, pensés pour résoudre un problème concret, rester fluides et tenir la charge."
+            title="Des réalisations conçues pour le terrain"
+            subtitle="Des produits web, mobiles et connectés présentés avec leur contexte, leurs choix de conception et leur état actuel."
             />
             <OutlineButton href="/projects" className="shrink-0">
               Tous les projets
@@ -363,8 +363,8 @@ export default async function Home() {
           <SectionHeading
             align="center"
             kicker="Quelques avis"
-            title="Ils ont confié leur produit digital"
-            subtitle="Des collaborations bâties sur la confiance, la transparence et la qualité."
+            title="Clients et collaborateurs parlent de mon travail"
+            subtitle="Des retours liés à des projets et à des collaborations concrètes."
             className="mx-auto"
           />
           <TestimonialsCarousel testimonials={testimonials} />

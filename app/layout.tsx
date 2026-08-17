@@ -26,11 +26,11 @@ const baseUrl = "https://gajone.dev";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Développeur Web & Mobile à Cotonou, Bénin — Néhémie Gandonou",
+    default: "Développeur Web & Mobile à Cotonou, Bénin | Néhémie Gandonou",
     template: "%s | Néhémie Gandonou",
   },
   description:
-    "Développeur web & mobile freelance basé à Cotonou, Bénin. Je conçois des applications web fullstack, des applications mobiles et des plateformes SaaS / e-commerce, avec un backend solide et scalable. Disponible à Cotonou, Porto-Novo, Lokossa, Parakou et partout au Bénin.",
+    "Développeur web et mobile indépendant basé à Cotonou. Je conçois des sites, des applications mobiles, des logiciels métier et des boutiques en ligne pour des clients au Bénin et à distance.",
   applicationName: "Néhémie Gandonou",
   authors: [{ name: "Néhémie Gandonou", url: baseUrl }],
   creator: "Néhémie Gandonou",
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
     canonical: baseUrl,
   },
   openGraph: {
-    title: "Développeur Web & Mobile à Cotonou, Bénin — Néhémie Gandonou",
+    title: "Développeur Web & Mobile à Cotonou, Bénin | Néhémie Gandonou",
     description:
-      "Développeur freelance au Bénin : applications web fullstack, apps mobiles, plateformes SaaS et e-commerce, backends solides. Basé à Cotonou, disponible partout.",
+      "Développeur indépendant au Bénin : sites, applications mobiles, logiciels métier et boutiques en ligne. Basé à Cotonou et disponible à distance.",
     type: "website",
     url: baseUrl,
     siteName: "Néhémie Gandonou",
@@ -65,9 +65,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Développeur Web & Mobile à Cotonou, Bénin — Néhémie Gandonou",
+    title: "Développeur Web & Mobile à Cotonou, Bénin | Néhémie Gandonou",
     description:
-      "Développeur freelance au Bénin : applications web fullstack (Next.js, Node.js), apps mobiles (Flutter) et backends solides.",
+      "Développeur indépendant au Bénin : applications web avec Next.js et Node.js, applications mobiles avec Flutter et outils métier sur mesure.",
     creator: "@gajonedev",
   },
   robots: {

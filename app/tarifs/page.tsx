@@ -30,7 +30,7 @@ const PRICING_CLUSTER_SLUGS = [
 
 export const metadata: Metadata = {
   title:
-    "Tarifs — Prix d'un Site Web, d'une App Mobile ou d'un E-commerce au Bénin",
+    "Tarifs | Prix d'un Site Web, d'une App Mobile ou d'un E-commerce au Bénin",
   description:
     "Combien coûte un site web, une boutique en ligne ou une application mobile au Bénin ? Fourchettes de prix transparentes en FCFA, ce qui est inclus, et devis précis sous 24h.",
   keywords: [
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: url },
   openGraph: {
-    title: "Tarifs — Création de sites et applications au Bénin",
+    title: "Tarifs | Création de sites et applications au Bénin",
     description:
       "Des fourchettes de prix transparentes en FCFA pour votre site web, boutique en ligne ou application mobile. Devis précis sous 24h.",
     url,

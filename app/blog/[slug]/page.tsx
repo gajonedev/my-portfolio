@@ -56,7 +56,20 @@ export default async function BlogPostPage({ params }: Props) {
   }
 
   const allPosts = getAllPosts();
-  const relatedPosts = allPosts.filter((p) => p.slug !== slug).slice(0, 2);
+  const relatedPosts = allPosts
+    .filter((candidate) => candidate.slug !== slug)
+    .map((candidate) => ({
+      ...candidate,
+      relevance:
+        (candidate.category === post.category ? 3 : 0) +
+        candidate.tags.filter((tag) => post.tags.includes(tag)).length,
+    }))
+    .sort(
+      (a, b) =>
+        b.relevance - a.relevance ||
+        new Date(b.date).getTime() - new Date(a.date).getTime(),
+    )
+    .slice(0, 2);
 
   const formattedDate = new Date(post.date).toLocaleDateString("fr-FR", {
     day: "numeric",

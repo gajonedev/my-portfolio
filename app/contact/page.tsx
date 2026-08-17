@@ -9,7 +9,7 @@ import { contactInfo, siteConfig } from "@/data";
 const url = `${siteConfig.url}/contact`;
 
 export const metadata: Metadata = {
-  title: "Contact — Votre devis gratuit sous 24h",
+  title: "Contact | Votre devis gratuit sous 24h",
   description:
     "Un projet de site ou d'application ? Décrivez-le en deux lignes : je reviens vers vous avec un devis détaillé sous 24h. Disponible aussi sur WhatsApp.",
   alternates: { canonical: url },

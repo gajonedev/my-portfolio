@@ -33,11 +33,11 @@ export async function generateMetadata({
 
   const url = `${siteConfig.url}/projects/${project.slug}`;
   return {
-    title: `${project.name} — Étude de cas ${project.sector.split("•")[0].trim()}`,
+    title: `${project.name} | Étude de cas ${project.sector.split("•")[0].trim()}`,
     description: project.description,
     alternates: { canonical: url },
     openGraph: {
-      title: `${project.name} — Étude de cas`,
+      title: `${project.name} | Étude de cas`,
       description: project.description,
       url,
       type: "article",
@@ -159,7 +159,8 @@ export default async function ProjectCaseStudyPage({
                 <TechBadge key={t}>{t}</TechBadge>
               ))}
             </div>
-            {project.status === "live" && (
+            {project.status === "live" &&
+              project.link !== "https://github.com/gajonedev" && (
               <Link
                 href={project.link}
                 target="_blank"
@@ -217,7 +218,9 @@ export default async function ProjectCaseStudyPage({
           {/* Résultats */}
           <section className="bg-card p-8 border border-stroke rounded-3xl">
             <h2 className="mb-6 font-semibold text-foreground text-xl">
-              Les résultats
+              {project.status === "live"
+                ? "Résultats et état actuel"
+                : "État actuel du projet"}
             </h2>
             <div className="flex flex-col gap-3">
               {caseStudy.results.map((result) => (

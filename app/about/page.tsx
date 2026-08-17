@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
@@ -9,7 +10,7 @@ import { skills, values, aboutStats, siteConfig } from "@/data";
 const url = `${siteConfig.url}/about`;
 
 export const metadata: Metadata = {
-  title: "À propos — Développeur Web & Mobile à Cotonou",
+  title: "À propos | Développeur Web & Mobile à Cotonou",
   description:
     "Néhémie Gandonou, développeur web et mobile freelance à Cotonou. Un seul interlocuteur, un produit fiable livré en 2 à 8 semaines. Faisons connaissance.",
   alternates: { canonical: url },
@@ -35,24 +36,29 @@ export default async function AboutPage() {
           {/* Introduction */}
           <section className="lg:items-center gap-8 grid lg:grid-cols-2">
             <div className="bg-card p-8 border border-stroke rounded-3xl">
-              <div className="flex justify-center items-center bg-primary rounded-2xl w-20 h-20 font-bold text-primary-foreground text-2xl">
-                NG
-              </div>
+              <Image
+                src="/portrait.png"
+                alt="Portrait de Néhémie Gandonou"
+                width={120}
+                height={146}
+                className="rounded-2xl object-cover"
+              />
               <h2 className="mt-6 font-semibold text-foreground text-2xl">
                 Néhémie Gandonou
               </h2>
               <p className="mt-2 text-primary">Développeur Web & Mobile</p>
               <p className="mt-4 text-foreground-muted text-sm leading-relaxed">
-                Je conçois des applications mobiles et des logiciels web
-                complets : des produits propres, fluides et pensés pour résoudre
-                un vrai problème. Mon obsession, c&apos;est la qualité et la
-                performance.
+                Je conçois des applications mobiles, des sites et des logiciels
+                web à partir d&apos;un besoin concret. J&apos;accorde une
+                attention particulière à la simplicité d&apos;usage, à la
+                fiabilité et aux conditions réelles dans lesquelles le produit
+                sera utilisé.
               </p>
               <p className="mt-4 text-foreground-muted text-sm leading-relaxed">
-                Je gère tout de A à Z, l&apos;interface comme les coulisses, 
-                donc vous n&apos;avez qu&apos;un seul interlocuteur, et un
-                produit conçu pour grandir avec votre activité sans être
-                refait dans six mois.
+                Je prends en charge l&apos;interface, le serveur et la mise en
+                ligne. Vous gardez ainsi un interlocuteur principal, tout en
+                sachant précisément ce qui est inclus et quels services tiers
+                interviennent dans le projet.
               </p>
             </div>
             <div className="gap-4 grid">

@@ -8,9 +8,8 @@ author: "Néhémie Gandonou"
 tags: ["Design System", "SaaS", "UI/UX", "Composants", "React"]
 ---
 
-# Créer un design system efficace pour un SaaS
 
-Un design system n'est pas un luxe réservé aux grandes entreprises. C'est un investissement stratégique qui, bien exécuté, **divise par deux le temps de développement de nouvelles fonctionnalités** et garantit une expérience utilisateur cohérente à travers tout votre produit. Voici ma méthode complète, testée sur plusieurs projets SaaS.
+Un design system n'est pas réservé aux grandes entreprises. Bien dimensionné, il réduit les décisions répétitives et rend l'interface plus cohérente au fil des évolutions. Voici la méthode que j'utilise sur des projets SaaS, à adapter à la taille de l'équipe et à la maturité du produit.
 
 ## Qu'est-ce qu'un design system et pourquoi en avoir un ?
 
@@ -26,7 +25,7 @@ Un design system est un **ensemble de composants réutilisables, de règles de d
 | Bénéfice                 | Impact                                                      |
 | ------------------------ | ----------------------------------------------------------- |
 | Cohérence visuelle       | Expérience utilisateur unifiée sur toutes les pages         |
-| Vitesse de développement | Réduction de 40 à 60 % du temps pour les nouvelles features |
+| Vitesse de développement | Moins de composants recréés et de décisions répétées |
 | Onboarding développeurs  | Nouveaux membres productifs en quelques jours               |
 | Maintenance              | Un seul endroit à modifier pour les changements globaux     |
 | Qualité                  | Moins de bugs visuels et d'incohérences                     |
@@ -107,7 +106,7 @@ Définissez une échelle typographique cohérente :
 --text-4xl: 2.25rem;   /* 36px - Display */
 ```
 
-**Règle d'or** : n'utilisez jamais plus de 2 familles de polices et limitez-vous à 3 ou 4 graisses (regular, medium, semibold, bold).
+**Repère utile** : une ou deux familles de polices et quelques graisses bien choisies suffisent dans la plupart des interfaces. Ajoutez-en seulement si le produit le justifie réellement.
 
 ### Les espacements
 
@@ -286,8 +285,8 @@ Utilisez le **versioning sémantique** (semver) pour vos composants. Un changeme
 
 ## Conclusion
 
-Construire un design system est un investissement qui se rembourse très rapidement. Sur un SaaS typique, j'ai observé des gains de **40 à 60 % sur le temps de développement des nouvelles pages** une fois le système en place.
+Construire un design system demande du temps au départ. Il devient rentable lorsque les mêmes composants et décisions reviennent souvent. Le meilleur indicateur n'est pas un pourcentage universel, mais le temps que votre équipe cesse de perdre à recréer ou corriger les mêmes éléments.
 
-La clé est de **commencer petit, itérer vite et documenter constamment**. Vous n'avez pas besoin d'un système parfait dès le premier jour — vous avez besoin d'un système qui évolue avec votre produit.
+La clé est de **commencer petit, d'itérer et de documenter régulièrement**. Vous n'avez pas besoin d'un système parfait dès le premier jour. Vous avez besoin d'un système qui évolue avec votre produit.
 
 Vous lancez un SaaS et souhaitez partir sur des bases solides ? [Parlons-en](/contact) et construisons ensemble un design system taillé pour votre produit.

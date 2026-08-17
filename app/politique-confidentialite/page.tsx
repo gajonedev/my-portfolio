@@ -15,10 +15,11 @@ export default async function PolitiqueConfidentialitePage() {
               Collecte des données
             </h2>
             <p className="mt-4 text-foreground-muted text-sm">
-              Les données personnelles collectées sur ce site sont uniquement
-              celles que vous nous fournissez volontairement via le formulaire
-              de contact : nom, adresse email, et message. Ces données sont
-              utilisées exclusivement pour répondre à vos demandes.
+              Le formulaire de contact recueille les informations que vous
+              fournissez volontairement : nom, adresse email, type de projet et
+              message. Des données techniques limitées peuvent aussi être
+              traitées pour sécuriser le formulaire et mesurer le bon
+              fonctionnement du site.
             </p>
 
             <h2 className="mt-8 font-semibold text-foreground text-xl">
@@ -31,6 +32,8 @@ export default async function PolitiqueConfidentialitePage() {
               <li>Répondre à vos demandes de contact</li>
               <li>Vous envoyer des devis ou propositions commerciales</li>
               <li>Assurer le suivi de nos échanges</li>
+              <li>Protéger le formulaire contre les envois automatisés</li>
+              <li>Mesurer de façon agrégée la fréquentation et les performances du site</li>
             </ul>
 
             <h2 className="mt-8 font-semibold text-foreground text-xl">
@@ -52,12 +55,26 @@ export default async function PolitiqueConfidentialitePage() {
             </p>
 
             <h2 className="mt-8 font-semibold text-foreground text-xl">
-              Cookies
+              Services techniques utilisés
             </h2>
             <p className="mt-4 text-foreground-muted text-sm">
-              Ce site utilise des cookies techniques nécessaires à son
-              fonctionnement. Aucun cookie publicitaire ou de tracking
-              n&apos;est utilisé.
+              Le site utilise Vercel pour l&apos;hébergement, la mesure d&apos;audience
+              et le suivi des performances, ainsi que Cloudflare Turnstile pour
+              protéger le formulaire contre les robots. Le service d&apos;envoi
+              d&apos;emails reçoit les informations nécessaires à la transmission
+              de votre demande. Aucun outil publicitaire n&apos;est utilisé.
+            </p>
+
+            <h2 className="mt-8 font-semibold text-foreground text-xl">
+              Destinataires et transferts
+            </h2>
+            <p className="mt-4 text-foreground-muted text-sm">
+              Les données sont accessibles uniquement à l&apos;éditeur du site et
+              aux prestataires techniques nécessaires à l&apos;hébergement, à la
+              sécurité et à l&apos;envoi du message. Certains de ces prestataires
+              peuvent traiter des données hors du Bénin ; leurs propres
+              garanties contractuelles et politiques de confidentialité
+              s&apos;appliquent alors.
             </p>
 
             <h2 className="mt-8 font-semibold text-foreground text-xl">

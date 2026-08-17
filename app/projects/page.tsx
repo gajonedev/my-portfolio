@@ -14,7 +14,7 @@ const CORNERS = ["tr", "tl", "br", "bl"] as const;
 const url = `${siteConfig.url}/projects`;
 
 export const metadata: Metadata = {
-  title: "Projets & Réalisations — Web, Mobile & E-commerce",
+  title: "Projets & Réalisations | Web, Mobile & E-commerce",
   description:
     "Mes réalisations : applications mobiles, plateformes web et e-commerce livrés pour des clients au Bénin et à l'international. Des résultats concrets à l'appui.",
   alternates: { canonical: url },
@@ -33,7 +33,7 @@ export default async function ProjectsPage() {
     <>
       <PageHeader
         title="Projets sélectionnés"
-        description="Des produits qui ont réglé un problème métier, que leurs utilisateurs gardent, et qui tiennent la charge dans la durée."
+        description="Des produits clients, des prototypes et des projets personnels, chacun présenté avec son état actuel et les choix qui ont guidé sa conception."
       />
       <main className="py-16">
         <Container className="gap-6 grid md:grid-cols-2">
@@ -55,14 +55,16 @@ export default async function ProjectsPage() {
                       </span>
                       <ProjectStatus status={project.status} />
                     </div>
-                    <Link
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`Voir ${project.name}`}
-                    >
-                      <ExternalLink className="w-4 h-4 text-foreground-muted group-hover:text-primary transition" />
-                    </Link>
+                    {project.link !== "https://github.com/gajonedev" && (
+                      <Link
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Voir ${project.name}`}
+                      >
+                        <ExternalLink className="w-4 h-4 text-foreground-muted group-hover:text-primary transition" />
+                      </Link>
+                    )}
                   </div>
                   <div className="flex items-center gap-3 mt-4">
                     <div className="flex justify-center items-center bg-primary/15 rounded-xl w-10 h-10 text-primary">

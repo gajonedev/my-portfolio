@@ -54,7 +54,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Création d'Application Mobile au Bénin, Développeur Flutter iOS & Android",
     metaDescription:
-      "Développement d'applications mobiles iOS et Android en Flutter : apps métier, e-commerce, offline-first. Publication sur les stores incluse. Devis sous 24h.",
+      "Développement d'applications mobiles iOS et Android avec Flutter : outils métier, e-commerce et fonctionnement hors ligne. Accompagnement pour la soumission sur les stores. Devis sous 24h.",
     keywords: [
       "création application mobile Bénin",
       "développement application mobile",
@@ -114,12 +114,12 @@ export const servicePages: ServicePage[] = [
       {
         question: "Pourquoi Flutter plutôt qu'un développement natif ?",
         answer:
-          "Flutter permet de créer les versions iOS et Android à partir d'un seul code, avec des performances proches du natif et une interface parfaitement fluide. Résultat : un budget réduit de 40 à 50 %, des délais raccourcis et une maintenance simplifiée. C'est la technologie utilisée par Google, BMW ou Alibaba.",
+          "Flutter permet de partager une grande partie du code entre iOS et Android tout en conservant la possibilité d'intégrer des fonctions propres à chaque plateforme. Cela réduit le travail de développement et de maintenance, selon les besoins natifs du projet.",
       },
       {
         question: "L'application fonctionnera-t-elle sans connexion internet ?",
         answer:
-          "Oui, si votre usage le nécessite : je conçois des applications offline-first qui stockent les données localement et se synchronisent dès que le réseau revient. C'est indispensable pour les apps utilisées sur le terrain en Afrique de l'Ouest, et c'est une de mes spécialités.",
+          "Oui, si l'usage le nécessite : je conçois des applications qui stockent les données localement et les synchronisent lorsque le réseau revient. Cette approche est particulièrement utile pour les outils utilisés sur le terrain.",
       },
       {
         question: "Qui s'occupe de la publication sur les stores ?",
@@ -329,9 +329,9 @@ export const servicePages: ServicePage[] = [
     heroDescription:
       "Je vous construis le site professionnel qui vous rend crédible, visible sur Google et joignable 24h/24, conçu pour transformer les visites en demandes de devis.",
     intro: [
-      "Un site vitrine n'est pas une dépense, c'est un commercial qui travaille 24h/24 : il présente votre activité de façon crédible, répond aux questions de vos prospects et capte les demandes pendant que vous dormez. Encore faut-il qu'il soit trouvable, et c'est là que la plupart des sites échouent.",
+      "Un site vitrine présente votre activité, répond aux premières questions des prospects et facilite les demandes de contact à toute heure. Pour être utile, il doit aussi être clair, rapide et visible sur les recherches qui comptent pour votre activité.",
       "Chaque site que je livre est construit pour Google dès la première ligne : structure sémantique propre, vitesse de chargement optimale, balises et données structurées. Quand un client cherche votre métier dans votre ville, c'est vous qu'il doit trouver. Le site que vous lisez en ce moment applique exactement ces méthodes.",
-      "Et parce que vos visiteurs béninois consultent massivement depuis leur téléphone, souvent en 3G, je conçois mobile-first : des pages légères qui s'affichent instantanément, même en connexion limitée.",
+      "Comme une grande partie des visites se fait sur téléphone, je conçois d'abord pour les petits écrans et les connexions limitées : pages légères, contenu lisible et interactions simples.",
     ],
     deliverables: [
       "Site sur-mesure, responsive et rapide (pas de template)",
@@ -599,7 +599,7 @@ export const servicePages: ServicePage[] = [
       "Côté interface, je soigne particulièrement les dashboards : données lisibles, visualisations utiles, temps de chargement courts. Un tableau de bord n'est bon que si on comprend la situation en trois secondes.",
     ],
     deliverables: [
-      "Architecture multi-tenant sécurisée et scalable",
+      "Architecture sécurisée pour plusieurs organisations",
       "Authentification, rôles et permissions",
       "Facturation par abonnement (Stripe, FedaPay)",
       "Dashboard avec visualisations et analytics",
@@ -652,7 +652,7 @@ export const servicePages: ServicePage[] = [
       {
         question: "Le produit m'appartiendra-t-il entièrement ?",
         answer:
-          "Oui, à 100 % : code source, base de données, accès aux services. Tout est documenté et transférable, vous n'êtes jamais prisonnier de votre prestataire, c'est un principe non négociable chez moi.",
+          "Le code développé spécifiquement pour le projet, la base de données et les accès aux comptes créés pour vous sont remis selon les conditions du devis. Les services et bibliothèques tiers restent soumis à leurs propres licences.",
       },
     ],
     offers: [
