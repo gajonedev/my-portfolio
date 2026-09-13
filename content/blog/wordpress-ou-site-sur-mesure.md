@@ -1,6 +1,6 @@
 ---
 title: "WordPress ou site sur-mesure : que choisir pour votre entreprise au Bénin ?"
-date: "2026-07-03"
+date: "2026-09-13"
 readTime: "7 min"
 summary: "WordPress fait tourner un tiers du web — est-ce pour autant le bon choix pour votre entreprise ? Comparatif honnête entre CMS classique et développement sur-mesure."
 category: "Business"

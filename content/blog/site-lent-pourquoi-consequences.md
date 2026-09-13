@@ -1,6 +1,6 @@
 ---
 title: "Votre site est lent ? Voici pourquoi — et ce que ça vous coûte vraiment"
-date: "2026-07-03"
+date: "2026-09-13"
 readTime: "6 min"
 summary: "Un site lent perd des clients avant même d'avoir affiché sa page d'accueil. Les causes réelles de la lenteur, comment la mesurer, et ce qu'il faut corriger en priorité."
 category: "Performance"
