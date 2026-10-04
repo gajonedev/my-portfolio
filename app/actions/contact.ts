@@ -1,5 +1,6 @@
 "use server";
 
+import { contactServices } from "@/lib/acquisition";
 import { headers } from "next/headers";
 import { Resend } from "resend";
 import { contactSchema, MIN_FILL_MS } from "@/lib/contact-schema";
@@ -12,6 +13,9 @@ interface ContactPayload {
   email?: unknown;
   projectType?: unknown;
   message?: unknown;
+  budget?: unknown;
+  deadline?: unknown;
+  source?: unknown;
   company?: unknown; // honeypot — must stay empty
   elapsedMs?: unknown; // time spent on the form
   token?: unknown; // Cloudflare Turnstile token
@@ -105,7 +109,27 @@ export async function sendContact(
     return { ok: false, error: "Service d'envoi indisponible pour le moment." };
   }
 
-  const { name, email, projectType, message } = parsed.data;
+  const { name, email, projectType, message, budget, deadline } = parsed.data;
+  const serviceLabel =
+    contactServices.find((service) => service.value === projectType)?.label ||
+    projectType;
+  const source =
+    typeof payload.source === "string" &&
+    payload.source.startsWith("/") &&
+    !payload.source.startsWith("//")
+      ? payload.source.split("?")[0].slice(0, 200)
+      : "/contact";
+  const budgetLabels: Record<string, string> = {
+    "moins-650k": "Moins de 650 000 FCFA",
+    "650k-1m": "650 000 à 1 000 000 FCFA",
+    "1m-2m": "1 à 2 millions FCFA",
+    "plus-2m": "Plus de 2 millions FCFA",
+  };
+  const deadlineLabels: Record<string, string> = {
+    "1-mois": "Dans le mois",
+    "1-3-mois": "Dans 1 à 3 mois",
+    "plus-3-mois": "Dans plus de 3 mois",
+  };
   const resend = new Resend(apiKey);
 
   try {
@@ -113,11 +137,14 @@ export async function sendContact(
       from,
       to,
       replyTo: email,
-      subject: `Nouveau message : ${projectType}`,
+      subject: `Nouveau message : ${serviceLabel}`,
       text: [
         `Nom        : ${name}`,
         `Email      : ${email}`,
-        `Projet     : ${projectType}`,
+        `Projet     : ${serviceLabel}`,
+        `Budget     : ${budgetLabels[budget || ""] || "À définir"}`,
+        `Échéance   : ${deadlineLabels[deadline || ""] || "À définir"}`,
+        `Origine    : ${source}`,
         "",
         message,
       ].join("\n"),

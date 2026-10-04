@@ -1,6 +1,6 @@
 "use client";
 
-import { LazyMotion } from "framer-motion";
+import { LazyMotion, MotionConfig } from "framer-motion";
 import type { ReactNode } from "react";
 
 // Load the animation feature bundle (domMax — includes drag + layout animations)
@@ -8,13 +8,14 @@ import type { ReactNode } from "react";
 // components (which are near-empty on their own), this keeps framer-motion out
 // of the critical JS path. `strict` forbids `motion.*` so nothing accidentally
 // re-bundles the full feature set.
-const loadFeatures = () =>
-  import("framer-motion").then((mod) => mod.domMax);
+const loadFeatures = () => import("framer-motion").then((mod) => mod.domMax);
 
 export default function MotionProvider({ children }: { children: ReactNode }) {
   return (
-    <LazyMotion features={loadFeatures} strict>
-      {children}
-    </LazyMotion>
+    <MotionConfig reducedMotion="user">
+      <LazyMotion features={loadFeatures} strict>
+        {children}
+      </LazyMotion>
+    </MotionConfig>
   );
 }

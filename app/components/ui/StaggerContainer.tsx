@@ -15,7 +15,7 @@ export function StaggerContainer({
 }: StaggerContainerProps) {
   return (
     <m.div
-      className={className}
+      className={`motion-reveal ${className || ""}`}
       variants={staggerContainer}
       initial="hidden"
       whileInView="visible"
@@ -33,7 +33,10 @@ interface StaggerItemProps {
 
 export function StaggerItem({ children, className }: StaggerItemProps) {
   return (
-    <m.div className={className} variants={staggerItem}>
+    <m.div
+      className={`motion-reveal ${className || ""}`}
+      variants={staggerItem}
+    >
       {children}
     </m.div>
   );

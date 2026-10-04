@@ -1,3 +1,4 @@
+import { serializeJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
 import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
@@ -7,7 +8,8 @@ import MotionProvider from "./components/MotionProvider";
 import FloatingWhatsApp from "./components/ui/FloatingWhatsApp";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { localCities } from "@/data/cities";
+import { localCities, siteConfig, contactInfo, socialLinks } from "@/data";
+import AcquisitionTracker from "./components/AcquisitionTracker";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -21,7 +23,7 @@ const plusJakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const baseUrl = "https://gajone.dev";
+const baseUrl = siteConfig.url;
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -30,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | Néhémie Gandonou",
   },
   description:
-    "Développeur web et mobile indépendant basé à Cotonou. Je conçois des sites, des applications mobiles, des logiciels métier et des boutiques en ligne pour des clients au Bénin et à distance.",
+    "Développeur web et mobile indépendant basé à Cotonou. Je conçois des plateformes web, des logiciels métier et des applications mobiles pour des entreprises et des porteurs de produit au Bénin et à distance.",
   applicationName: "Néhémie Gandonou",
   authors: [{ name: "Néhémie Gandonou", url: baseUrl }],
   creator: "Néhémie Gandonou",
@@ -57,7 +59,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Développeur Web & Mobile à Cotonou, Bénin | Néhémie Gandonou",
     description:
-      "Développeur indépendant au Bénin : sites, applications mobiles, logiciels métier et boutiques en ligne. Basé à Cotonou et disponible à distance.",
+      "Développeur indépendant au Bénin : plateformes web, logiciels métier et applications mobiles. Basé à Cotonou et disponible à distance.",
     type: "website",
     url: baseUrl,
     siteName: "Néhémie Gandonou",
@@ -99,11 +101,7 @@ const jsonLd = {
       name: "Néhémie Gandonou",
       url: baseUrl,
       image: `${baseUrl}/portrait.png`,
-      sameAs: [
-        "https://github.com/gajonedev",
-        "https://linkedin.com/in/gajonedev",
-        "https://twitter.com/gajonedev",
-      ],
+      sameAs: socialLinks.map((social) => social.href),
       jobTitle: "Développeur Web & Mobile",
       worksFor: {
         "@type": "Organization",
@@ -132,8 +130,8 @@ const jsonLd = {
       name: "Néhémie Gandonou - Développeur Web",
       image: `${baseUrl}/portrait.png`,
       url: baseUrl,
-      telephone: "+2290146897322",
-      email: "gajonedev@gmail.com",
+      telephone: contactInfo.phoneRaw,
+      email: contactInfo.email,
       address: {
         "@type": "PostalAddress",
         streetAddress: "Cotonou",
@@ -163,11 +161,7 @@ const jsonLd = {
         opens: "09:00",
         closes: "18:00",
       },
-      sameAs: [
-        "https://github.com/gajonedev",
-        "https://linkedin.com/in/gajonedev",
-        "https://twitter.com/gajonedev",
-      ],
+      sameAs: socialLinks.map((social) => social.href),
     },
     {
       "@type": "WebSite",
@@ -191,15 +185,21 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
         />
       </head>
       <body
         className={`${outfit.variable} ${plusJakarta.variable} antialiased bg-background text-foreground font-sans`}
       >
         <MotionProvider>
+          <a href="#main-content" className="skip-link">
+            Aller au contenu
+          </a>
+          <AcquisitionTracker />
           <Header />
-          <main className="pt-17 min-h-screen">{children}</main>
+          <main id="main-content" tabIndex={-1} className="pt-17 min-h-screen">
+            {children}
+          </main>
           <Footer />
           <FloatingWhatsApp />
         </MotionProvider>

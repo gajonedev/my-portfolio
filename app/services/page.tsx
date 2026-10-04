@@ -8,6 +8,7 @@ import WhatsAppCta from "../components/ui/WhatsAppCta";
 import { getIcon, ArrowRight, CheckCircle, Quote } from "@/lib/icons";
 import {
   servicesDetailed,
+  servicesPreview,
   aboutGuarantees,
   testimonials,
   siteConfig,
@@ -19,14 +20,14 @@ const CORNERS = ["tr", "tl", "br", "bl"] as const;
 const url = `${siteConfig.url}/services`;
 
 export const metadata: Metadata = {
-  title: "Création de Sites Web & Apps Mobiles au Bénin",
+  title: "Plateformes Web & Applications Mobiles au Bénin",
   description:
-    "Sites web, applications mobiles, e-commerce et logiciels métier au Bénin. Un périmètre précis et un devis gratuit sous 24h. Parlons de votre projet.",
+    "Plateformes web, logiciels métier et applications mobiles au Bénin. Un accompagnement du cadrage au lancement.",
   alternates: { canonical: url },
   openGraph: {
-    title: "Services | Création de sites web et d'applications au Bénin",
+    title: "Services | Plateformes web et applications mobiles",
     description:
-      "Sites web, apps mobiles, e-commerce et logiciels métier. Périmètre précis, devis gratuit sous 24h.",
+      "Logiciels métier, plateformes web et applications mobiles sur mesure.",
     url,
     type: "website",
     locale: "fr_BJ",
@@ -38,52 +39,91 @@ export default async function ServicesPage() {
     <>
       <PageHeader
         title="Services"
-        description="Chacun de mes services règle un problème concret de votre activité : vendre plus, gagner du temps, être trouvé sur Google. Vous obtenez d'abord un périmètre précis et un devis sous 24h."
+        description="Deux spécialités : les plateformes web et les applications mobiles complètes. Nous définissons ensemble vos utilisateurs, vos fonctionnalités et votre budget."
       />
-      <main className="py-16">
+      <div className="py-16">
         <Container className="gap-6 grid md:grid-cols-2">
-          {servicesDetailed.map((service, i) => {
-            const Icon = getIcon(service.iconName);
-            return (
-              <SpotlightCard
-                key={service.title}
-                corner={CORNERS[i % CORNERS.length]}
-                cornerColor={ACCENTS[i % ACCENTS.length]}
-                glow={false}
-              >
-                <div className="p-6">
-                  <div className="flex justify-center items-center bg-primary/15 rounded-2xl w-12 h-12 text-primary">
-                    <Icon className="w-6 h-6" />
+          {servicesPreview
+            .map((preview) =>
+              servicesDetailed.find(
+                (service) => service.slug === preview.slug,
+              )!,
+            )
+            .map((service, i) => {
+              const Icon = getIcon(service.iconName);
+              return (
+                <SpotlightCard
+                  key={service.title}
+                  corner={CORNERS[i % CORNERS.length]}
+                  cornerColor={ACCENTS[i % ACCENTS.length]}
+                  glow={false}
+                >
+                  <div className="p-6">
+                    <div className="flex justify-center items-center bg-primary/15 rounded-2xl w-12 h-12 text-primary">
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    <h3 className="mt-4 font-display font-semibold text-foreground text-lg">
+                      {service.title}
+                    </h3>
+                    <p className="mt-3 font-body text-foreground-muted text-sm">
+                      {service.details}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mt-4">
+                      {service.features.map((f) => (
+                        <TechBadge key={f}>{f}</TechBadge>
+                      ))}
+                    </div>
+                    {service.slug && (
+                      <Link
+                        href={`/services/${service.slug}`}
+                        className="inline-flex items-center gap-1.5 mt-5 font-medium text-primary text-sm hover:underline"
+                      >
+                        En savoir plus
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    )}
                   </div>
-                  <h3 className="mt-4 font-display font-semibold text-foreground text-lg">
-                    {service.title}
-                  </h3>
-                  <p className="mt-3 font-body text-foreground-muted text-sm">
-                    {service.details}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {service.features.map((f) => (
-                      <TechBadge key={f}>{f}</TechBadge>
-                    ))}
-                  </div>
-                  {service.slug && (
+                </SpotlightCard>
+              );
+            })}
+        </Container>
+
+        <Container className="mt-10">
+          <details className="rounded-2xl border border-stroke p-6">
+            <summary className="cursor-pointer font-semibold">
+              Prestations complémentaires : SaaS, e-commerce, sites et
+              optimisation
+            </summary>
+            <div className="mt-6 grid gap-5 md:grid-cols-2">
+              {servicesDetailed
+                .filter(
+                  (service) =>
+                    !servicesPreview.some((main) => main.slug === service.slug),
+                )
+                .map((service) => (
+                  <article
+                    key={service.slug}
+                    className="rounded-xl border border-stroke p-5"
+                  >
+                    <h2 className="font-semibold">{service.title}</h2>
+                    <p className="mt-2 text-sm text-foreground-muted">
+                      {service.description}
+                    </p>
                     <Link
                       href={`/services/${service.slug}`}
-                      className="inline-flex items-center gap-1.5 mt-5 font-medium text-primary text-sm hover:underline"
+                      className="mt-3 inline-block text-sm text-primary hover:underline"
                     >
-                      En savoir plus
-                      <ArrowRight className="w-4 h-4" />
+                      Détails du service →
                     </Link>
-                  )}
-                </div>
-              </SpotlightCard>
-            );
-          })}
+                  </article>
+                ))}
+            </div>
+          </details>
         </Container>
 
         {/* Rassurance — compris dans chaque projet */}
         <Container className="mt-16">
-          <div className="bg-card px-6 py-8 border border-stroke rounded-3xl">
+          <div className="bg-card card-glow px-6 py-8 border border-stroke rounded-3xl">
             <h2 className="mb-6 font-display font-semibold text-foreground text-lg text-center">
               Compris dans chaque projet
             </h2>
@@ -124,7 +164,7 @@ export default async function ServicesPage() {
         </Container>
 
         <Container className="mt-16">
-          <div className="flex flex-col items-center gap-6 bg-card px-6 py-12 border border-stroke rounded-3xl text-center">
+          <div className="flex flex-col items-center gap-6 bg-card card-glow px-6 py-12 border border-stroke rounded-3xl text-center">
             <div className="flex flex-col gap-3">
               <h2 className="font-display font-semibold text-foreground text-2xl">
                 Pas sûr du service qu&apos;il vous faut ?
@@ -142,7 +182,7 @@ export default async function ServicesPage() {
             </div>
           </div>
         </Container>
-      </main>
+      </div>
     </>
   );
 }

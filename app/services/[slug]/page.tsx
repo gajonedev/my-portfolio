@@ -1,3 +1,5 @@
+import { serializeJsonLd } from "@/lib/seo";
+import { contactHref } from "@/lib/acquisition";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -141,12 +143,12 @@ export default async function ServicePage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
       <PageHeader title={service.title} description={service.heroDescription} />
 
-      <main className="py-16">
+      <div className="py-16">
         <Container className="gap-14 grid">
           {/* Fil d'ariane */}
           <nav aria-label="Fil d'ariane" className="-mb-6">
@@ -193,7 +195,7 @@ export default async function ServicePage({
           </section>
 
           {/* Livrables */}
-          <section className="bg-card p-8 border border-stroke rounded-3xl">
+          <section className="bg-card card-glow p-8 border border-stroke rounded-3xl">
             <h2 className="mb-6 font-semibold text-foreground text-xl">
               Ce que vous recevez
             </h2>
@@ -267,7 +269,10 @@ export default async function ServicePage({
                     ))}
                   </ul>
                   <Link
-                    href="/contact"
+                    href={contactHref(
+                      service.slug,
+                      `/services/${service.slug}`,
+                    )}
                     className={`mt-auto pt-6 ${
                       offer.recommended ? "" : "opacity-90"
                     }`}
@@ -286,7 +291,10 @@ export default async function ServicePage({
             </div>
             <p className="mt-4 text-foreground-muted text-sm">
               Besoin d&apos;un périmètre différent ? Chaque projet est unique :{" "}
-              <Link href="/contact" className="text-primary hover:underline">
+              <Link
+                href={contactHref(service.slug, `/services/${service.slug}`)}
+                className="text-primary hover:underline"
+              >
                 décrivez-moi le vôtre
               </Link>{" "}
               et je vous propose une formule adaptée.
@@ -302,7 +310,7 @@ export default async function ServicePage({
               {service.process.map((step, index) => (
                 <div
                   key={step.title}
-                  className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
+                  className="flex gap-4 bg-card card-glow p-5 border border-stroke rounded-2xl"
                 >
                   <div className="flex justify-center items-center bg-primary/15 rounded-xl w-10 h-10 font-display font-semibold text-primary shrink-0">
                     {index + 1}
@@ -331,7 +339,7 @@ export default async function ServicePage({
                   <Link
                     key={project.slug}
                     href={`/projects/${project.slug}`}
-                    className="group bg-card/50 hover:bg-card p-5 border border-stroke hover:border-primary/40 rounded-xl transition"
+                    className="group bg-card/50 hover:bg-card card-glow p-5 border border-stroke hover:border-primary/40 rounded-xl transition"
                   >
                     <p className="font-medium text-foreground group-hover:text-primary transition">
                       {project.name}
@@ -359,7 +367,7 @@ export default async function ServicePage({
               {service.faq.map((item) => (
                 <details
                   key={item.question}
-                  className="group bg-card open:pb-5 border border-stroke rounded-2xl"
+                  className="group bg-card card-glow open:pb-5 border border-stroke rounded-2xl"
                 >
                   <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
                     {item.question}
@@ -391,7 +399,7 @@ export default async function ServicePage({
                   <Link
                     key={city.slug}
                     href={`/${cityFullSlug(city)}`}
-                    className="group flex items-center gap-3 bg-card/50 hover:bg-card p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
+                    className="group flex items-center gap-3 bg-card/50 hover:bg-card card-glow p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
                   >
                     <MapPin className="w-5 h-5 text-primary shrink-0" />
                     <p className="font-medium text-foreground group-hover:text-primary transition">
@@ -416,13 +424,19 @@ export default async function ServicePage({
                 label="Discuter de mon projet"
                 message={`Bonjour Néhémie, je suis intéressé par votre service « ${service.shortTitle} » et j'aimerais en discuter.`}
               />
+              <Link
+                href={contactHref(service.slug, `/services/${service.slug}`)}
+                className="btn-secondary"
+              >
+                Décrire mon projet
+              </Link>
               <Link href="/tarifs" className="btn-secondary">
                 Voir les tarifs
               </Link>
             </div>
           </section>
         </Container>
-      </main>
+      </div>
     </>
   );
 }

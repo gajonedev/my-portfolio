@@ -1,3 +1,6 @@
+import { serializeJsonLd } from "@/lib/seo";
+import ProjectGallery from "../../components/ui/ProjectGallery";
+import { contactHref } from "@/lib/acquisition";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -105,7 +108,7 @@ export default async function ProjectCaseStudyPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
       <PageHeader
@@ -113,7 +116,7 @@ export default async function ProjectCaseStudyPage({
         description={project.description}
       />
 
-      <main className="py-16">
+      <div className="py-16">
         <Container className="gap-14 grid">
           {/* Fil d'ariane */}
           <nav aria-label="Fil d'ariane" className="-mb-6">
@@ -144,7 +147,7 @@ export default async function ProjectCaseStudyPage({
           </nav>
 
           {/* Fiche projet */}
-          <section className="flex flex-wrap items-center gap-4 bg-card p-6 border border-stroke rounded-2xl">
+          <section className="flex flex-wrap items-center gap-4 bg-card card-glow p-6 border border-stroke rounded-2xl">
             <span className="bg-primary/10 px-4 py-1 rounded-full font-body text-primary text-xs">
               {project.sector}
             </span>
@@ -159,8 +162,7 @@ export default async function ProjectCaseStudyPage({
                 <TechBadge key={t}>{t}</TechBadge>
               ))}
             </div>
-            {project.status === "live" &&
-              project.link !== "https://github.com/gajonedev" && (
+            {project.status === "live" && project.link && (
               <Link
                 href={project.link}
                 target="_blank"
@@ -171,6 +173,15 @@ export default async function ProjectCaseStudyPage({
                 <ExternalLink className="w-3.5 h-3.5" />
               </Link>
             )}
+          </section>
+
+          <section className="grid gap-5">
+            <h2 className="text-2xl font-semibold">Le produit en images</h2>
+            <ProjectGallery images={project.images} name={project.name} />
+            <p className="text-sm leading-relaxed text-foreground-muted">
+              <span className="font-medium text-foreground">Mon rôle : </span>
+              {project.role}
+            </p>
           </section>
 
           {/* Contexte */}
@@ -202,7 +213,7 @@ export default async function ProjectCaseStudyPage({
               {caseStudy.solution.map((step, index) => (
                 <div
                   key={step.slice(0, 40)}
-                  className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
+                  className="flex gap-4 bg-card card-glow p-5 border border-stroke rounded-2xl"
                 >
                   <div className="flex justify-center items-center bg-primary/15 rounded-xl w-10 h-10 font-display font-semibold text-primary shrink-0">
                     {index + 1}
@@ -216,15 +227,23 @@ export default async function ProjectCaseStudyPage({
           </section>
 
           {/* Résultats */}
-          <section className="bg-card p-8 border border-stroke rounded-3xl">
+          <section className="bg-card card-glow p-8 border border-stroke rounded-3xl">
             <h2 className="mb-6 font-semibold text-foreground text-xl">
               {project.status === "live"
-                ? "Résultats et état actuel"
-                : "État actuel du projet"}
+                ? "Fonctionnalités réalisées"
+                : "Fonctionnalités du prototype"}
             </h2>
+            <p className="mb-5 text-sm text-foreground-muted">
+              {project.status === "live"
+                ? "Ce bilan décrit le périmètre réalisé. Aucun gain commercial chiffré n’est annoncé sans mesure."
+                : "Ce projet est présenté à son stade actuel. Ces fonctionnalités ne constituent pas des résultats d’exploitation chez un client."}
+            </p>
             <div className="flex flex-col gap-3">
               {caseStudy.results.map((result) => (
-                <div key={result.slice(0, 40)} className="flex items-start gap-3">
+                <div
+                  key={result.slice(0, 40)}
+                  className="flex items-start gap-3"
+                >
                   <CheckCircle className="mt-0.5 w-5 h-5 text-green-500 shrink-0" />
                   <p className="text-foreground-muted text-sm leading-relaxed">
                     {result}
@@ -266,7 +285,7 @@ export default async function ProjectCaseStudyPage({
                 <Link
                   key={other.slug}
                   href={`/projects/${other.slug}`}
-                  className="group bg-card/50 hover:bg-card p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
+                  className="group bg-card/50 hover:bg-card card-glow p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
                 >
                   <p className="font-medium text-foreground group-hover:text-primary transition">
                     {other.name}
@@ -292,13 +311,24 @@ export default async function ProjectCaseStudyPage({
                 label="Discuter de mon projet"
                 message={`Bonjour Néhémie, j'ai vu l'étude de cas « ${project.name} » et j'ai un projet similaire à discuter.`}
               />
+              <Link
+                href={contactHref(
+                  project.tech.includes("Flutter")
+                    ? "creation-application-mobile"
+                    : "creation-application-web",
+                  `/projects/${project.slug}`,
+                )}
+                className="btn-primary"
+              >
+                Décrire un projet similaire
+              </Link>
               <Link href="/services" className="btn-secondary">
                 Voir les services
               </Link>
             </div>
           </section>
         </Container>
-      </main>
+      </div>
     </>
   );
 }

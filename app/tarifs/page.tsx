@@ -1,3 +1,5 @@
+import { serializeJsonLd } from "@/lib/seo";
+import { contactHref } from "@/lib/acquisition";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "../components/Container";
@@ -5,7 +7,13 @@ import PageHeader from "../components/PageHeader";
 import PriceTag from "../components/ui/PriceTag";
 import SpotlightCard from "../components/ui/SpotlightCard";
 import WhatsAppCta from "../components/ui/WhatsAppCta";
-import { CheckCircle, ArrowRight, ChevronRight, Quote, Clock } from "@/lib/icons";
+import {
+  CheckCircle,
+  ArrowRight,
+  ChevronRight,
+  Quote,
+  Clock,
+} from "@/lib/icons";
 import {
   pricingTiers,
   alwaysIncluded,
@@ -95,25 +103,25 @@ export default async function TarifsPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
       <PageHeader
         title="Tarifs & fourchettes de prix"
-        description="Combien coûte un site web, une boutique en ligne ou une application mobile ? Voici des fourchettes en FCFA, et je vous fais un devis pour votre besoin sous 24h."
+        description="Plateformes web et applications mobiles : des fourchettes en FCFA pour situer votre budget, puis un devis gratuit après cadrage."
       />
 
-      <main className="py-16">
+      <div className="py-16">
         <Container className="gap-14 grid">
           {/* Intro */}
           <section className="max-w-3xl">
             <p className="text-foreground-muted leading-relaxed">
-              Vous cherchez un ordre de grandeur avant de vous lancer ? Le voici.
-              Les fourchettes ci-dessous vous donnent un repère réaliste pour
-              situer votre budget. Chaque projet étant unique, le chiffrage
+              Vous cherchez un ordre de grandeur avant de vous lancer ? Le
+              voici. Les fourchettes ci-dessous vous donnent un repère réaliste
+              pour situer votre budget. Chaque projet étant unique, le chiffrage
               précis se fait sur devis :{" "}
               <strong className="text-foreground">
-                gratuit, détaillé et envoyé sous 24h
+                gratuit et détaillé après le cadrage
               </strong>
               .
             </p>
@@ -122,77 +130,98 @@ export default async function TarifsPage() {
           {/* Grille tarifaire */}
           <section>
             <div className="gap-4 sm:gap-6 grid md:grid-cols-2 lg:grid-cols-3">
-              {pricingTiers.map((tier, index) => (
-                <SpotlightCard
-                  key={tier.title}
-                  corner={CORNERS[index % CORNERS.length]}
-                  cornerColor={ACCENTS[index % ACCENTS.length]}
-                  hover={false}
-                  glow={false}
-                >
-                  <div className="flex flex-col p-6 h-full">
-                    <h2 className="font-display font-semibold text-foreground text-lg">
-                      {tier.title}
-                    </h2>
-                    <p className="mt-2 text-foreground-muted text-sm">
-                      {tier.description}
-                    </p>
-                    <div className="mt-5">
-                      <span className="block mb-2 text-foreground-muted text-xs uppercase tracking-wider">
-                        À partir de
-                      </span>
-                      <PriceTag
-                        tilt={index % 2 === 0 ? "left" : "right"}
-                        className="text-xl"
-                      >
-                        {tier.priceFrom}
-                      </PriceTag>
-                    </div>
-                    <p className="mt-3 text-foreground-muted text-xs">
-                      {tier.priceNote}
-                    </p>
-                    <p className="flex items-center gap-1.5 mt-2 text-foreground-muted text-xs">
-                      <Clock className="w-3.5 h-3.5 text-primary shrink-0" />
-                      <span>
+              {[...pricingTiers]
+                .sort((a, b) => {
+                  const order = [
+                    "creation-application-web",
+                    "creation-application-mobile",
+                    "creation-saas-dashboard",
+                    "creation-ecommerce",
+                    "creation-site-vitrine",
+                    "audit-optimisation",
+                  ];
+                  return (
+                    order.indexOf(a.serviceSlug || "") -
+                    order.indexOf(b.serviceSlug || "")
+                  );
+                })
+                .map((tier, index) => (
+                  <SpotlightCard
+                    key={tier.title}
+                    corner={CORNERS[index % CORNERS.length]}
+                    cornerColor={ACCENTS[index % ACCENTS.length]}
+                    hover={false}
+                    glow={false}
+                  >
+                    <div className="flex flex-col p-6 h-full">
+                      <h2 className="font-display font-semibold text-foreground text-lg">
+                        {tier.title}
+                      </h2>
+                      <p className="mt-2 text-foreground-muted text-sm">
+                        {tier.description}
+                      </p>
+                      <div className="mt-5">
+                        <span className="block mb-2 text-foreground-muted text-xs uppercase tracking-wider">
+                          À partir de
+                        </span>
+                        <PriceTag
+                          tilt={index % 2 === 0 ? "left" : "right"}
+                          className="text-xl"
+                        >
+                          {tier.priceFrom}
+                        </PriceTag>
+                      </div>
+                      <p className="mt-3 text-foreground-muted text-xs">
+                        {tier.priceNote}
+                      </p>
+                      <p className="flex items-center gap-1.5 mt-2 text-foreground-muted text-xs">
+                        <Clock className="w-3.5 h-3.5 text-primary shrink-0" />
+                        <span>
+                          <span className="font-medium text-foreground">
+                            Délai indicatif :
+                          </span>{" "}
+                          {tier.delay}
+                        </span>
+                      </p>
+                      <ul className="flex flex-col gap-2 mt-5">
+                        {tier.includes.map((item) => (
+                          <li key={item} className="flex items-start gap-2.5">
+                            <CheckCircle className="mt-0.5 w-4 h-4 text-green-500 shrink-0" />
+                            <span className="text-foreground-muted text-sm">
+                              {item}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="mt-4 text-foreground-muted text-xs">
                         <span className="font-medium text-foreground">
-                          Délai indicatif :
+                          Idéal pour :
                         </span>{" "}
-                        {tier.delay}
-                      </span>
-                    </p>
-                    <ul className="flex flex-col gap-2 mt-5">
-                      {tier.includes.map((item) => (
-                        <li key={item} className="flex items-start gap-2.5">
-                          <CheckCircle className="mt-0.5 w-4 h-4 text-green-500 shrink-0" />
-                          <span className="text-foreground-muted text-sm">
-                            {item}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="mt-4 text-foreground-muted text-xs">
-                      <span className="font-medium text-foreground">
-                        Idéal pour :
-                      </span>{" "}
-                      {tier.idealFor}
-                    </p>
-                    {tier.serviceSlug && (
+                        {tier.idealFor}
+                      </p>
                       <Link
-                        href={`/services/${tier.serviceSlug}`}
-                        className="inline-flex items-center gap-1.5 mt-auto pt-5 font-medium text-primary text-sm hover:underline"
+                        href={contactHref(tier.serviceSlug, "/tarifs")}
+                        className="mt-5 w-fit btn-primary"
                       >
-                        Détails du service
-                        <ArrowRight className="w-4 h-4" />
+                        Discuter de ce projet
                       </Link>
-                    )}
-                  </div>
-                </SpotlightCard>
-              ))}
+                      {tier.serviceSlug && (
+                        <Link
+                          href={`/services/${tier.serviceSlug}`}
+                          className="inline-flex items-center gap-1.5 mt-auto pt-5 font-medium text-primary text-sm hover:underline"
+                        >
+                          Détails du service
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      )}
+                    </div>
+                  </SpotlightCard>
+                ))}
             </div>
           </section>
 
           {/* Toujours inclus */}
-          <section className="bg-card p-8 border border-stroke rounded-3xl">
+          <section className="bg-card card-glow p-8 border border-stroke rounded-3xl">
             <h2 className="mb-6 font-semibold text-foreground text-xl">
               Toujours inclus, quel que soit le projet
             </h2>
@@ -215,7 +244,7 @@ export default async function TarifsPage() {
               {priceFactors.map((factor) => (
                 <div
                   key={factor.title}
-                  className="bg-card p-5 border border-stroke rounded-2xl"
+                  className="bg-card card-glow p-5 border border-stroke rounded-2xl"
                 >
                   <h3 className="font-semibold text-foreground">
                     {factor.title}
@@ -237,7 +266,7 @@ export default async function TarifsPage() {
               {pricingFaq.map((item) => (
                 <details
                   key={item.question}
-                  className="group bg-card open:pb-5 border border-stroke rounded-2xl"
+                  className="group bg-card card-glow open:pb-5 border border-stroke rounded-2xl"
                 >
                   <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
                     {item.question}
@@ -266,7 +295,7 @@ export default async function TarifsPage() {
                   <Link
                     key={post.slug}
                     href={`/blog/${post.slug}`}
-                    className="group flex flex-col bg-card p-5 border border-stroke hover:border-primary/40 rounded-2xl transition"
+                    className="group flex flex-col bg-card card-glow p-5 border border-stroke hover:border-primary/40 rounded-2xl transition"
                   >
                     <span className="bg-primary/10 px-3 py-1 rounded-full w-fit font-semibold text-primary text-xs">
                       {post.category}
@@ -330,7 +359,7 @@ export default async function TarifsPage() {
             </div>
           </section>
         </Container>
-      </main>
+      </div>
     </>
   );
 }

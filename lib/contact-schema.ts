@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { contactServices } from "./acquisition";
 
 // Validated form fields (shared by the client form and the server action)
 export const contactSchema = z.object({
@@ -12,11 +13,12 @@ export const contactSchema = z.object({
     .trim()
     .email("Adresse email invalide.")
     .max(120, "Email trop long."),
-  projectType: z
-    .string()
-    .trim()
-    .min(2, "Précisez le type de projet.")
-    .max(80, "Type de projet trop long."),
+  projectType: z.enum(
+    contactServices.map((service) => service.value),
+    { error: "Choisissez un service." },
+  ),
+  budget: z.enum(["", "moins-650k", "650k-1m", "1m-2m", "plus-2m"]).optional(),
+  deadline: z.enum(["", "1-mois", "1-3-mois", "plus-3-mois"]).optional(),
   message: z
     .string()
     .trim()

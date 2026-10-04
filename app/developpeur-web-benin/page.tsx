@@ -1,3 +1,4 @@
+import { serializeJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
@@ -95,7 +96,7 @@ export default async function DeveloppeurWebBeninPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
       <PageHeader
@@ -103,7 +104,7 @@ export default async function DeveloppeurWebBeninPage() {
         description="Votre partenaire digital à Cotonou pour des applications web fullstack, des apps mobiles et des plateformes e-commerce / SaaS performantes."
       />
 
-      <main className="py-16">
+      <div className="py-16">
         <Container className="gap-16 grid">
           {/* Introduction SEO */}
           <section className="max-w-3xl">
@@ -159,14 +160,14 @@ export default async function DeveloppeurWebBeninPage() {
                   <Link
                     key={service.title}
                     href={`/services/${service.slug}`}
-                    className="flex gap-4 bg-card hover:bg-card/80 p-5 border border-stroke hover:border-primary/40 rounded-2xl transition"
+                    className="flex gap-4 bg-card card-glow hover:bg-card/80 p-5 border border-stroke hover:border-primary/40 rounded-2xl transition"
                   >
                     {card}
                   </Link>
                 ) : (
                   <div
                     key={service.title}
-                    className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
+                    className="flex gap-4 bg-card card-glow p-5 border border-stroke rounded-2xl"
                   >
                     {card}
                   </div>
@@ -185,7 +186,7 @@ export default async function DeveloppeurWebBeninPage() {
                 <Link
                   key={city.slug}
                   href={`/${cityFullSlug(city)}`}
-                  className="group flex items-center gap-3 bg-card/50 hover:bg-card p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
+                  className="group flex items-center gap-3 bg-card/50 hover:bg-card card-glow p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
                 >
                   <MapPin className="w-5 h-5 text-primary shrink-0" />
                   <div>
@@ -212,7 +213,7 @@ export default async function DeveloppeurWebBeninPage() {
           </section>
 
           {/* Avantages */}
-          <section className="bg-card p-8 border border-stroke rounded-3xl">
+          <section className="bg-card card-glow p-8 border border-stroke rounded-3xl">
             <h2 className="mb-6 font-semibold text-foreground text-xl">
               Pourquoi choisir un développeur local ?
             </h2>
@@ -235,7 +236,7 @@ export default async function DeveloppeurWebBeninPage() {
               {beninFaq.map((item) => (
                 <details
                   key={item.question}
-                  className="group bg-card open:pb-5 border border-stroke rounded-2xl"
+                  className="group bg-card card-glow open:pb-5 border border-stroke rounded-2xl"
                 >
                   <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
                     {item.question}
@@ -268,7 +269,7 @@ export default async function DeveloppeurWebBeninPage() {
             </div>
           </section>
         </Container>
-      </main>
+      </div>
     </>
   );
 }

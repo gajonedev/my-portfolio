@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -9,6 +9,7 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "framer-motion";
+import { contactHref, serviceFromPath } from "@/lib/acquisition";
 import Container from "./Container";
 import { Menu, X } from "@/lib/icons";
 import { navLinks, siteConfig } from "@/data";
@@ -21,6 +22,9 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
   const { scrollY } = useScroll();
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const contextualContact = contactHref(serviceFromPath(pathname), pathname);
 
   // Hide on scroll down, show on scroll up
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -29,20 +33,58 @@ export default function Header() {
     setScrolled(latest > 12);
   });
 
-  // Body scroll lock + escape handling for the mobile menu
+  // Move focus into the menu, trap Tab and restore focus when it closes.
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setIsOpen(false);
+    if (!isOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    const trigger = triggerRef.current;
+    const main = document.getElementById("main-content");
+    const header = trigger?.closest("header");
+    const footer = document.querySelector("footer");
+    const floating = document.querySelector("[data-floating-whatsapp]");
+    const background = [main, header, footer, floating].filter(
+      (element): element is HTMLElement => element instanceof HTMLElement,
+    );
+    const previousInert = background.map((element) => element.inert);
+    background.forEach((element) => {
+      element.inert = true;
+    });
+    document.body.style.overflow = "hidden";
+    dialogRef.current?.querySelector<HTMLButtonElement>("button")?.focus();
+    const handleKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setIsOpen(false);
+      }
+      if (event.key !== "Tab") return;
+      const focusable = Array.from(
+        dialogRef.current?.querySelectorAll<HTMLElement>(
+          'a[href], button:not([disabled]), [tabindex="0"]',
+        ) || [],
+      );
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
     };
-    document.addEventListener("keydown", handleEscape);
+    const onResize = () => {
+      if (window.matchMedia("(min-width: 1024px)").matches) setIsOpen(false);
+    };
+    document.addEventListener("keydown", handleKey);
+    window.addEventListener("resize", onResize);
     return () => {
-      document.body.style.overflow = "";
-      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = previousOverflow;
+      background.forEach((element, index) => {
+        element.inert = previousInert[index];
+      });
+      document.removeEventListener("keydown", handleKey);
+      window.removeEventListener("resize", onResize);
+      trigger?.focus();
     };
   }, [isOpen]);
 
@@ -76,13 +118,18 @@ export default function Header() {
               </span>
             </Link>
 
-            <nav className="hidden md:flex items-center gap-1">
+            <nav className="hidden lg:flex items-center gap-1">
               {menuLinks.map((link) => {
-                const active = pathname === link.href;
+                const active =
+                  pathname === link.href ||
+                  (link.href !== "/" && pathname.startsWith(`${link.href}/`));
                 return (
                   <Link
                     key={link.href}
-                    href={link.href}
+                    aria-current={active ? "page" : undefined}
+                    href={
+                      link.href === "/contact" ? contextualContact : link.href
+                    }
                     className={`relative rounded-full px-4 py-2 font-body text-sm transition-colors ${
                       active
                         ? "text-foreground"
@@ -108,15 +155,18 @@ export default function Header() {
 
             <div className="flex items-center gap-3">
               <Link
-                href="/contact"
-                className="md:inline-flex! hidden! btn-primary"
+                href={contextualContact}
+                className="lg:inline-flex! hidden! btn-primary"
               >
                 Démarrer un projet
               </Link>
               <button
+                ref={triggerRef}
                 type="button"
+                aria-expanded={isOpen}
+                aria-controls="mobile-navigation"
                 onClick={() => setIsOpen(true)}
-                className="md:hidden flex justify-center items-center bg-background-soft border border-stroke hover:border-primary rounded-full w-9 h-9 text-foreground-muted hover:text-foreground transition-colors"
+                className="lg:hidden flex justify-center items-center bg-background-soft border border-stroke hover:border-primary rounded-full w-9 h-9 text-foreground-muted hover:text-foreground transition-colors"
                 aria-label="Ouvrir le menu"
               >
                 <Menu className="w-4 h-4" />
@@ -129,7 +179,7 @@ export default function Header() {
       {/* Mobile menu */}
       <AnimatePresence>
         {isOpen && (
-          <div className="md:hidden z-[60] fixed inset-0 section-dark">
+          <div className="lg:hidden z-[60] fixed inset-0 section-dark">
             <m.div
               className="absolute inset-0 bg-black/60 backdrop-blur-sm"
               initial={{ opacity: 0 }}
@@ -145,6 +195,8 @@ export default function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              ref={dialogRef}
+              id="mobile-navigation"
               role="dialog"
               aria-modal="true"
               aria-label="Menu de navigation"
@@ -174,7 +226,10 @@ export default function Header() {
               >
                 <ul className="space-y-2">
                   {navLinks.map((link) => {
-                    const active = pathname === link.href;
+                    const active =
+                      pathname === link.href ||
+                      (link.href !== "/" &&
+                        pathname.startsWith(`${link.href}/`));
                     return (
                       <m.li
                         key={link.href}
@@ -184,7 +239,11 @@ export default function Header() {
                         }}
                       >
                         <Link
-                          href={link.href}
+                          href={
+                            link.href === "/contact"
+                              ? contextualContact
+                              : link.href
+                          }
                           onClick={() => setIsOpen(false)}
                           className={`block rounded-xl px-4 py-3 font-body text-base font-medium transition-colors ${
                             active
@@ -201,7 +260,7 @@ export default function Header() {
               </m.nav>
               <div className="p-4 border-stroke border-t">
                 <Link
-                  href="/contact"
+                  href={contextualContact}
                   onClick={() => setIsOpen(false)}
                   className="w-full btn-primary"
                 >

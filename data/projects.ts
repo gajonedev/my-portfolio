@@ -1,5 +1,5 @@
 // Projets réalisés — une seule source de vérité par projet.
-// La page d'accueil affiche les projets `featured` (description courte) ;
+// La page d’accueil affiche la sélection `projectsPreview` ;
 // la page Projets les affiche tous (summary détaillé + tech + lien) ;
 // chaque projet avec `caseStudy` a une page étude de cas /projects/[slug].
 export interface CaseStudy {
@@ -15,7 +15,16 @@ export interface CaseStudy {
   highlights?: string[];
 }
 
+export interface ProjectImage {
+  /** Chemin local dans public, par exemple /projects/afcom/ventes.webp. */
+  src?: string;
+  alt: string;
+  caption?: string;
+}
+
 export interface Project {
+  role: string;
+  images: ProjectImage[];
   slug: string;
   name: string;
   sector: string;
@@ -27,7 +36,7 @@ export interface Project {
   /** Résumé détaillé — page Projets */
   summary: string;
   tech: string[];
-  link: string;
+  link?: string;
   year?: string;
   status?: "live" | "preview" | "in-dev";
   /** Mis en avant sur la page d'accueil */
@@ -43,6 +52,11 @@ export function getProjectBySlug(slug: string): Project | undefined {
 export const projects: Project[] = [
   {
     slug: "weman-lms",
+    role: "Conception et développement de la plateforme web, du paiement et des traitements automatisés.",
+    images: [
+      { alt: "Vue d’ensemble du produit" },
+      { alt: "Parcours principal et fonctionnalités" },
+    ],
     name: "Wéman LMS",
     sector: "eLearning • Plateforme",
     iconName: "GraduationCap",
@@ -60,7 +74,6 @@ export const projects: Project[] = [
       "Mux",
       "PostgreSQL",
     ],
-    link: "https://github.com/gajonedev",
     year: "2026",
     status: "in-dev",
     featured: true,
@@ -89,17 +102,21 @@ export const projects: Project[] = [
   },
   {
     slug: "afcom",
+    role: "Conception et développement de l’application mobile, du stockage local et de la synchronisation.",
+    images: [
+      { alt: "Vue d’ensemble du produit" },
+      { alt: "Parcours principal et fonctionnalités" },
+    ],
     name: "AfCom",
     sector: "Mobile • Commerce",
     iconName: "Store",
     description:
       "App mobile offline-first pour les petits commerçants africains. Suivi des ventes, stocks et dépenses avec synchro automatique.",
     impact:
-      "Fonctionne sans internet, sur téléphone d'entrée de gamme : fini les pertes du cahier, la rentabilité devient visible.",
+      "Ventes et stocks enregistrés hors ligne, puis synchronisés au retour de la connexion.",
     summary:
       "Application mobile conçue pour les petits commerçants africains. Gestion complète des ventes, stocks et dépenses en mode offline-first avec synchronisation automatique dès la connexion retrouvée.",
     tech: ["Flutter", "Dart", "Supabase", "SQLite"],
-    link: "https://github.com/gajonedev",
     year: "2025",
     status: "preview",
     featured: true,
@@ -111,13 +128,13 @@ export const projects: Project[] = [
       solution: [
         "Architecture offline-first : toutes les opérations (ventes, entrées de stock, dépenses) s'enregistrent localement en SQLite et fonctionnent sans aucun réseau.",
         "Synchronisation automatique vers Supabase dès que la connexion revient, avec résolution des conflits, le commerçant n'a rien à faire.",
-        "Interface pensée pour la rapidité au comptoir : enregistrer une vente prend moins de cinq secondes.",
+        "Interface pensée pour limiter les étapes de saisie au comptoir.",
         "Tableaux de bord simples : bénéfice du jour, produits qui partent le plus, stocks à recommander, crédits clients en cours.",
       ],
       results: [
         "Une gestion complète qui fonctionne dans les conditions réelles du commerce de quartier : sans réseau, sur petit téléphone, à une main.",
-        "Fin des pertes d'information du cahier : chaque vente et chaque dépense laisse une trace datée et chiffrée.",
-        "Le commerçant voit enfin sa rentabilité réelle, produit par produit.",
+        "Chaque vente et chaque dépense enregistrée dispose d’une trace datée et chiffrée.",
+        "Des tableaux de bord présentent les ventes, les dépenses et les stocks enregistrés.",
       ],
       highlights: [
         "L'offline-first n'est pas une option ajoutée mais le cœur de l'architecture : le serveur est une copie du téléphone, pas l'inverse.",
@@ -127,6 +144,11 @@ export const projects: Project[] = [
   },
   {
     slug: "smartvilla",
+    role: "Développement de l’application mobile et des échanges avec les équipements connectés.",
+    images: [
+      { alt: "Vue d’ensemble du produit" },
+      { alt: "Parcours principal et fonctionnalités" },
+    ],
     name: "SmartVilla",
     sector: "IoT • Smart Home",
     iconName: "Home",
@@ -137,7 +159,6 @@ export const projects: Project[] = [
     summary:
       "Application connectée à une villa intelligente complète : contrôle de l'éclairage, gestion du portail motorisé, surveillance sécurité, monitoring énergétique et gestion de l'eau. Communication temps réel avec les systèmes embarqués.",
     tech: ["Flutter", "ESP32", "MQTT", "Node.js", "FreeRTOS"],
-    link: "https://github.com/gajonedev",
     year: "2025",
     status: "preview",
     featured: true,
@@ -155,7 +176,7 @@ export const projects: Project[] = [
       ],
       results: [
         "Toute la villa se pilote et se surveille depuis l'application, de l'éclairage au portail, avec un retour d'état fiable.",
-        "Le monitoring énergétique détaillé permet d'identifier les postes de consommation et de réduire la facture.",
+        "Le monitoring présente la consommation par équipement pour aider à identifier les postes à surveiller.",
         "Le système survit aux coupures de courant et de réseau sans intervention manuelle, critère décisif localement.",
       ],
       highlights: [
@@ -166,6 +187,11 @@ export const projects: Project[] = [
   },
   {
     slug: "archiform",
+    role: "Développement de la page de présentation, du paiement et de la livraison automatique des accès.",
+    images: [
+      { alt: "Vue d’ensemble du produit" },
+      { alt: "Parcours principal et fonctionnalités" },
+    ],
     name: "ArchiForm",
     sector: "Landing • Paiement",
     iconName: "CreditCard",
@@ -204,6 +230,11 @@ export const projects: Project[] = [
   },
   {
     slug: "afreel",
+    role: "Développement de l’application mobile et de ses fonctionnalités métier.",
+    images: [
+      { alt: "Vue d’ensemble du produit" },
+      { alt: "Parcours principal et fonctionnalités" },
+    ],
     name: "Afreel",
     sector: "Mobile • Facturation",
     iconName: "Receipt",
@@ -214,14 +245,13 @@ export const projects: Project[] = [
     summary:
       "Application mobile de facturation pensée pour les freelances africains. Création de devis et factures professionnels, suivi des paiements, gestion clients et export PDF.",
     tech: ["Flutter", "Dart", "SQLite"],
-    link: "https://github.com/gajonedev",
     year: "2025",
     status: "preview",
     caseStudy: {
       context:
         "Les freelances africains facturent souvent… sans facture : un message WhatsApp, un montant convenu à l'oral. Résultat : image peu professionnelle face aux clients sérieux, impayés difficiles à réclamer, aucune vision sur les revenus.",
       problem:
-        "Donner aux freelances un outil de facturation professionnel qui tient dans la poche : créer un devis ou une facture propre en deux minutes depuis son téléphone, suivre qui a payé et qui doit relancer.",
+        "Donner aux freelances un outil de facturation professionnel qui tient dans la poche : créer un devis ou une facture depuis son téléphone, suivre qui a payé et qui doit relancer.",
       solution: [
         "Création de devis et factures avec numérotation automatique, logo, conditions et mentions, un rendu professionnel qui inspire confiance.",
         "Export PDF instantané, partageable directement par WhatsApp ou email, là où se passent les échanges clients.",
@@ -229,14 +259,19 @@ export const projects: Project[] = [
         "Fiches clients avec historique complet, et fonctionnement 100 % local (SQLite) : les données restent sur le téléphone, aucune connexion requise.",
       ],
       results: [
-        "Un devis professionnel se crée en deux minutes au lieu d'un message informel, et le taux d'acceptation s'en ressent.",
+        "Création et export de devis professionnels depuis le téléphone.",
         "Les impayés deviennent visibles et actionnables : plus rien ne se perd dans les conversations.",
-        "Le freelance connaît enfin son chiffre d'affaires réel, mois par mois.",
+        "Un suivi mensuel présente les montants des factures enregistrées.",
       ],
     },
   },
   {
     slug: "fintech",
+    role: "Développement de l’application mobile et de son backend.",
+    images: [
+      { alt: "Vue d’ensemble du produit" },
+      { alt: "Parcours principal et fonctionnalités" },
+    ],
     name: "Fintech",
     sector: "Finance • Gestion",
     iconName: "Wallet",
@@ -247,7 +282,6 @@ export const projects: Project[] = [
     summary:
       "Application de gestion financière complète : suivi des revenus et dépenses, budgets, objectifs d'épargne, visualisation graphique et catégorisation automatique des transactions.",
     tech: ["Flutter", "Dart", "Node.js", "PostgreSQL"],
-    link: "https://github.com/gajonedev",
     year: "2025",
     status: "preview",
     caseStudy: {
@@ -264,23 +298,27 @@ export const projects: Project[] = [
       results: [
         "Une vision consolidée de toutes les finances personnelles, quel que soit le canal utilisé.",
         "Les graphiques par catégorie révèlent immédiatement les postes de dépenses invisibles au quotidien.",
-        "Les budgets avec alertes transforment les bonnes intentions en discipline effective.",
+        "Les budgets et alertes permettent de suivre les écarts par catégorie.",
       ],
     },
   },
   {
     slug: "iveges",
+    role: "Application mobile et architecture de communication avec les capteurs, en collaboration avec un co-développeur.",
+    images: [
+      { alt: "Vue d’ensemble du produit" },
+      { alt: "Parcours principal et fonctionnalités" },
+    ],
     name: "iVeges",
     sector: "IoT • Agriculture",
     iconName: "Sprout",
     description:
       "Monitoring IoT d'irrigation autonome par réseau de capteurs sans fil, logique floue et dashboard mobile temps réel.",
     impact:
-      "L'irrigation se déclenche seule au bon moment : de vraies économies d'eau, plus de va-et-vient aux champs.",
+      "Pilotage de l’irrigation à partir des capteurs, avec suivi depuis l’application mobile.",
     summary:
       "Système IoT de monitoring d'irrigation autonome basé sur un réseau de capteurs sans fil (WSN). Architecture maître ESP32 + esclaves Arduino Nano avec communication NRF24L01, logique floue de Mamdani pour la décision d'arrosage, et app mobile Flutter pour le suivi temps réel.",
     tech: ["Flutter", "ESP32", "Arduino", "NRF24L01", "C++"],
-    link: "https://github.com/gajonedev",
     year: "2026",
     status: "live",
     featured: true,
@@ -297,7 +335,7 @@ export const projects: Project[] = [
       ],
       results: [
         "L'irrigation se déclenche seule, au bon moment et à la bonne dose, sur la base de mesures réelles et non d'habitudes.",
-        "Économies d'eau significatives par rapport à l'arrosage systématique, l'eau n'est utilisée que quand le sol en a besoin.",
+        "L’arrosage est commandé à partir des mesures des capteurs. Les économies d’eau restent à mesurer sur le terrain.",
         "Le maraîcher supervise sa parcelle depuis son téléphone au lieu d'y passer matin et soir.",
       ],
       highlights: [
@@ -308,13 +346,15 @@ export const projects: Project[] = [
   },
   {
     slug: "gain",
+    role: "Développement du site bilingue, des formulaires et de l’intégration des contenus.",
+    images: [{ alt: "Page d’accueil et parcours de contact" }],
     name: "GAIN",
     sector: "Vitrine • Association",
     iconName: "Globe",
     description:
       "Site vitrine bilingue FR/EN pour un réseau international d'évangélisation, avec animations Framer Motion et formulaires.",
     impact:
-      "Site bilingue ultra-rapide sur mobile : les contacts et demandes de prière arrivent enfin structurés.",
+      "Site bilingue avec formulaires dédiés aux contacts et aux demandes de prière.",
     summary:
       "Site vitrine bilingue (FR/EN) pour le Gospel Activists International Network, un programme international d'évangélisation. Animations Framer Motion, formulaires de contact et de demande de prière, galerie photo et témoignages.",
     tech: ["Next.js 15", "Framer Motion", "Tailwind CSS", "next-intl"],
@@ -329,18 +369,18 @@ export const projects: Project[] = [
         "Créer un site vitrine bilingue qui présente le réseau avec impact, facilite la prise de contact et les demandes de prière, et reste rapide partout dans le monde, y compris sur les connexions mobiles africaines.",
       solution: [
         "Site Next.js 15 entièrement bilingue français/anglais avec next-intl : chaque page existe dans les deux langues, avec les bonnes balises hreflang pour le référencement international.",
-        "Direction artistique soignée avec animations Framer Motion : le site raconte la mission du réseau avec du mouvement, sans jamais sacrifier la performance.",
+        "Direction artistique soignée avec animations Framer Motion : le site raconte la mission du réseau avec du mouvement, en gardant les contenus au premier plan.",
         "Formulaires de contact et de demande de prière avec validation et notifications email.",
         "Galerie photo optimisée et section témoignages pour incarner l'impact du réseau.",
       ],
       results: [
         "Le réseau dispose d'une vitrine crédible et moderne, accessible dans les deux langues de son audience.",
-        "Le site charge vite sur mobile même en connexion limitée, critère essentiel pour son audience africaine.",
+        "Les pages et formulaires sont accessibles depuis mobile dans les deux langues.",
         "Les demandes de contact et de prière arrivent structurées, là où elles se perdaient auparavant dans les messageries.",
       ],
       highlights: [
         "L'internationalisation (next-intl) est native, pas plaquée : URLs localisées, SEO par langue, bascule instantanée.",
-        "Les animations Framer Motion sont calibrées pour ne jamais dégrader les Core Web Vitals : l'esthétique ne coûte rien en performance.",
+        "Les animations accompagnent les contenus ; leur coût doit être suivi sur les appareils et connexions de l’audience.",
       ],
     },
   },
@@ -348,4 +388,6 @@ export const projects: Project[] = [
 ];
 
 // Sous-ensemble mis en avant sur la page d'accueil
-export const projectsPreview = projects.filter((project) => project.featured);
+export const projectsPreview = ["weman-lms", "afcom", "archiform"]
+  .map((slug) => projects.find((project) => project.slug === slug))
+  .filter((project): project is Project => project !== undefined);

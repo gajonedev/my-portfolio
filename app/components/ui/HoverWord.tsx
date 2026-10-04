@@ -1,6 +1,6 @@
 "use client";
 
-import { m, useAnimationControls } from "framer-motion";
+import { m, useAnimationControls, useReducedMotion } from "framer-motion";
 
 interface HoverWordProps {
   text: string;
@@ -13,6 +13,7 @@ interface HoverWordProps {
  * a flat scale/translate: the characters ripple from left to right.
  */
 export default function HoverWord({ text, className = "" }: HoverWordProps) {
+  const reducedMotion = useReducedMotion();
   const controls = useAnimationControls();
   const chars = Array.from(text);
 
@@ -32,7 +33,7 @@ export default function HoverWord({ text, className = "" }: HoverWordProps) {
   return (
     <span
       className={`inline-flex text-primary ${className}`}
-      onMouseEnter={trigger}
+      onMouseEnter={reducedMotion ? undefined : trigger}
     >
       {chars.map((char, i) => (
         <m.span

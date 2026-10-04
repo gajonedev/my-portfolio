@@ -1,3 +1,4 @@
+import { siteConfig } from "@/data/site";
 import type { MetadataRoute } from "next";
 import { getAllPosts } from "@/lib/blog";
 import { localCities, cityFullSlug } from "@/data/cities";
@@ -6,18 +7,18 @@ import { servicePages } from "@/data/service-pages";
 import { expertises } from "@/data/expertises";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://gajone.dev";
+  const baseUrl = siteConfig.url;
 
   const blogPosts = getAllPosts().map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
+    lastModified: new Date(post.updated || post.date),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
   const cityPages = localCities.map((city) => ({
     url: `${baseUrl}/${cityFullSlug(city)}`,
-    lastModified: new Date(),
+    lastModified: new Date(siteConfig.updatedAt),
     changeFrequency: "monthly" as const,
     priority: 0.8,
   }));
@@ -26,7 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .filter((project) => project.caseStudy)
     .map((project) => ({
       url: `${baseUrl}/projects/${project.slug}`,
-      lastModified: new Date(),
+      lastModified: new Date(siteConfig.updatedAt),
       changeFrequency: "monthly" as const,
       priority: 0.7,
     }));
@@ -34,64 +35,64 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: new Date(siteConfig.updatedAt),
       changeFrequency: "monthly",
       priority: 1,
     },
     {
       url: `${baseUrl}/services`,
-      lastModified: new Date(),
+      lastModified: new Date(siteConfig.updatedAt),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     ...servicePages.map((service) => ({
       url: `${baseUrl}/services/${service.slug}`,
-      lastModified: new Date(),
+      lastModified: new Date(siteConfig.updatedAt),
       changeFrequency: "monthly" as const,
       priority: 0.9,
     })),
     {
       url: `${baseUrl}/tarifs`,
-      lastModified: new Date(),
+      lastModified: new Date(siteConfig.updatedAt),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     {
       url: `${baseUrl}/projects`,
-      lastModified: new Date(),
+      lastModified: new Date(siteConfig.updatedAt),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     ...caseStudyPages,
     {
       url: `${baseUrl}/developpeur-web-benin`,
-      lastModified: new Date(),
+      lastModified: new Date(siteConfig.updatedAt),
       changeFrequency: "monthly",
       priority: 0.9,
     },
     ...cityPages,
     ...expertises.map((expertise) => ({
       url: `${baseUrl}/${expertise.slug}`,
-      lastModified: new Date(),
+      lastModified: new Date(siteConfig.updatedAt),
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
     {
       url: `${baseUrl}/blog`,
-      lastModified: new Date(),
+      lastModified: new Date(siteConfig.updatedAt),
       changeFrequency: "weekly",
       priority: 0.7,
     },
     ...blogPosts,
     {
       url: `${baseUrl}/about`,
-      lastModified: new Date(),
+      lastModified: new Date(siteConfig.updatedAt),
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: new Date(),
+      lastModified: new Date(siteConfig.updatedAt),
       changeFrequency: "monthly",
       priority: 0.6,
     },

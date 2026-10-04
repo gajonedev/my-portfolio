@@ -1,8 +1,3 @@
-"use client";
-
-import { m } from "framer-motion";
-import { easeSmooth, viewportOnce } from "@/lib/animations";
-
 interface SectionHeadingProps {
   kicker?: string;
   title: React.ReactNode;
@@ -21,13 +16,7 @@ export default function SectionHeading({
   const alignClass =
     align === "center" ? "items-center text-center" : "items-start";
   return (
-    <m.div
-      initial={{ opacity: 0, y: 24, filter: "blur(8px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={viewportOnce}
-      transition={{ duration: 0.6, ease: easeSmooth }}
-      className={`flex flex-col gap-4 ${alignClass} ${className}`}
-    >
+    <div className={`flex flex-col gap-4 ${alignClass} ${className}`}>
       {kicker ? (
         <span className="flex items-center gap-2 font-body font-medium text-primary text-xs uppercase tracking-[0.3em]">
           <span className="inline-block bg-primary rounded-full w-1.5 h-1.5 glow-sm" />
@@ -42,6 +31,6 @@ export default function SectionHeading({
           {subtitle}
         </p>
       ) : null}
-    </m.div>
+    </div>
   );
 }

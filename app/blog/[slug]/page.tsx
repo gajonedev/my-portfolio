@@ -1,3 +1,4 @@
+import { serializeJsonLd } from "@/lib/seo";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -31,10 +32,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: post.summary,
     keywords: post.tags,
     authors: [{ name: post.author }],
+    alternates: { canonical: `${siteConfig.url}/blog/${slug}` },
     openGraph: {
       title: post.title,
       description: post.summary,
       type: "article",
+      url: `${siteConfig.url}/blog/${slug}`,
+      modifiedTime: post.updated || post.date,
       publishedTime: post.date,
       authors: [post.author],
       tags: post.tags,
@@ -88,7 +92,7 @@ export default async function BlogPostPage({ params }: Props) {
       url: siteConfig.url,
     },
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updated || post.date,
     publisher: {
       "@type": "Person",
       name: siteConfig.name,
@@ -105,7 +109,7 @@ export default async function BlogPostPage({ params }: Props) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
       {/* Hero / Header */}
@@ -158,7 +162,7 @@ export default async function BlogPostPage({ params }: Props) {
       </div>
 
       {/* Content */}
-      <main className="py-12 sm:py-16">
+      <div className="py-12 sm:py-16">
         <Container className="gap-12 grid lg:grid-cols-[1fr_280px]">
           {/* Article body */}
           <article
@@ -169,7 +173,7 @@ export default async function BlogPostPage({ params }: Props) {
           {/* Sidebar */}
           <aside className="hidden lg:flex flex-col gap-8">
             {/* Author card */}
-            <div className="top-24 sticky bg-card p-6 border border-stroke rounded-2xl">
+            <div className="top-24 sticky bg-card card-glow p-6 border border-stroke rounded-2xl">
               <div className="flex items-center gap-3">
                 <div className="flex justify-center items-center bg-primary/20 rounded-full w-12 h-12 font-bold text-primary text-sm">
                   NG
@@ -202,7 +206,7 @@ export default async function BlogPostPage({ params }: Props) {
 
             {/* Tags */}
             {post.tags.length > 0 && (
-              <div className="bg-card p-6 border border-stroke rounded-2xl">
+              <div className="bg-card card-glow p-6 border border-stroke rounded-2xl">
                 <div className="flex items-center gap-2 mb-4">
                   <Tag className="w-4 h-4 text-primary" />
                   <span className="font-semibold text-foreground text-sm">
@@ -223,7 +227,7 @@ export default async function BlogPostPage({ params }: Props) {
             )}
 
             {/* Share */}
-            <div className="bg-card p-6 border border-stroke rounded-2xl">
+            <div className="bg-card card-glow p-6 border border-stroke rounded-2xl">
               <span className="font-semibold text-foreground text-sm">
                 Partager
               </span>
@@ -248,7 +252,7 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
           </aside>
         </Container>
-      </main>
+      </div>
 
       {/* Tags mobile */}
       <div className="lg:hidden pb-8">
@@ -290,7 +294,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <Link
                     key={related.slug}
                     href={`/blog/${related.slug}`}
-                    className="group bg-card p-6 border border-stroke hover:border-primary/50 rounded-3xl transition"
+                    className="group bg-card card-glow p-6 border border-stroke hover:border-primary/50 rounded-3xl transition"
                   >
                     <div className="flex items-center gap-3 text-foreground-muted text-xs">
                       <span className="bg-primary/10 px-3 py-1 rounded-full text-primary">

@@ -1,3 +1,7 @@
+"use client";
+
+import { usePathname } from "next/navigation";
+import { whatsappMessage } from "@/lib/acquisition";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { whatsappUrl } from "@/data";
 
@@ -12,9 +16,10 @@ export default function WhatsAppCta({
   message?: string;
   className?: string;
 }) {
+  const pathname = usePathname();
   return (
     <a
-      href={whatsappUrl(message)}
+      href={whatsappUrl(message || whatsappMessage(pathname))}
       target="_blank"
       rel="noopener noreferrer"
       className={`inline-flex justify-center items-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] px-[1.6rem] py-[0.8rem] rounded-full font-semibold text-white text-sm transition-colors ${className}`}

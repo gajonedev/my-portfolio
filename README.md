@@ -42,20 +42,20 @@ légales, une page SEO dédiée et un formulaire de contact sécurisé.
   remappées par section via les classes `.section-dark` / `.section-light`
   (pas de toggle clair/sombre, le markup s'adapte tout seul).
 - **Animations signature**
-  - _Hero_ : reveal mot-à-mot piloté en **CSS** (joue dès la première frame, sans
-    attendre l'hydratation → LCP préservé), border-beam à double trace autour du portrait.
+  - _Hero_ : titre visible dès le premier rendu, border-beam à double trace autour du portrait.
   - _Spotlight cards_ : glow qui suit le curseur avec **parallax** (cœur rapide,
     halo lent) et corner-light alternée — implémenté en `requestAnimationFrame`
     pour éviter un bug de repaint Firefox.
   - _Aurora_ + dot pattern en fond de hero.
-  - _Carrousel de témoignages_ swipeable (drag/tactile), autoplay, pastilles.
+  - _Galeries de projets_ avec captures ou placeholders, navigation manuelle et balayage tactile.
+  - _Témoignages_ statiques : avis client en premier, collaborateurs dans un bloc dépliable.
 - **Formulaire de contact sécurisé** — `react-hook-form` + `zod`, envoi par e-mail
   via **Resend**, et anti-bot multi-couches : honeypot, time-trap, rate-limit par IP,
   et **Cloudflare Turnstile** (vérification serveur _fail-closed_).
 - **Blog en Markdown** — contenu dans `content/blog/`, parsé avec `gray-matter` + `remark`.
 - **SEO** — métadonnées par page, `sitemap.xml`, OpenGraph image, page d'atterrissage
   dédiée (`/developpeur-web-benin`).
-- **Analytics** — Vercel Analytics + Speed Insights.
+- **Analytics** — Vercel Analytics + Speed Insights ; événements `whatsapp_click`, `contact_click`, `contact_success` sans contenu personnel du formulaire.
 - **Accessibilité & confort** — respect de `prefers-reduced-motion`.
 
 ---
@@ -231,3 +231,33 @@ Développeur Web & Mobile · Cotonou, Bénin
 - ✉️ gajonedev@gmail.com
 
 <div align="center"><sub>Conçu et développé avec soin.</sub></div>
+
+
+## Captures des projets
+
+Les galeries sont configurées dans `data/projects.ts`, via le tableau `images` de chaque projet.
+Une entrée sans `src` affiche un placeholder ; ajoutez vos fichiers dans `public/projects/<slug>/`
+puis renseignez leur chemin public, un texte alternatif et une légende :
+
+```ts
+images: [
+  { src: "/projects/afcom/ventes.webp", alt: "Écran de saisie d’une vente dans AfCom", caption: "Saisie d’une vente hors ligne" },
+  { src: "/projects/afcom/stocks.webp", alt: "Écran des stocks dans AfCom", caption: "Suivi des stocks" },
+]
+```
+
+Une seule entrée affiche une image ; plusieurs entrées activent le carrousel manuel.
+Les galeries sont affichées sur l’accueil, la liste des projets et les études de cas.
+Privilégiez des captures compressées, sans données personnelles, avec un cadrage cohérent.
+
+## Parcours de contact
+
+Les CTA d’offre passent `service` et `source` dans l’URL `/contact`.
+Le visiteur peut toujours changer le service. La navigation générale utilise la dernière page
+consultée dans la session comme contexte lorsque l’URL ne précise pas d’offre.
+Les événements Analytics transmettent uniquement le type de service et le chemin d’origine,
+jamais le nom, l’email, le message, le budget ou l’échéance.
+Le budget et l’échéance sont facultatifs ; le mail reçu inclut leurs libellés et la page d’origine.
+
+Pour les dates SEO, renseignez `updated` dans le frontmatter d’un article modifié et actualisez
+`siteConfig.updatedAt` lors d’une modification des autres pages.

@@ -492,7 +492,7 @@ h6 {
   width: 75%;
   height: 75%;
   pointer-events: none;
-  opacity: 0.16;
+  opacity: 0.1;
   filter: blur(28px);
   background: radial-gradient(
     circle,
@@ -502,7 +502,7 @@ h6 {
   transition: opacity 0.4s ease;
 }
 .spotlight-card:hover::before {
-  opacity: 0.32;
+  opacity: 0.1;
 }
 .corner-tl::before {
   top: -22%;
@@ -899,4 +899,28 @@ h6 {
 .prose-blog input[type="checkbox"] {
   margin-right: 0.5rem;
   accent-color: var(--primary);
+}
+
+/* Keyboard navigation and anchored sections. */
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
+[id] { scroll-margin-top: 6rem; }
+.skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 100; transform: translateY(-200%); border-radius: .75rem; padding: .75rem 1rem; background: var(--primary); color: var(--primary-foreground); }
+.skip-link:focus { transform: translateY(0); }
+
+/* Keep the headline readable from the first paint. */
+.hero-word { opacity: 1; animation: none; }
+@media (hover: none) {
+  .aurora-blob { filter: blur(60px); animation: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim-up, .hero-anim-pop, .hero-word { opacity: 1; transform: none; filter: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
+}
+
+/* A quiet, permanent corner glow; it does not grow on hover. */
+.card-glow {
+  background-image: radial-gradient(ellipse at 100% 0%, color-mix(in srgb, var(--primary) 7%, transparent), transparent 60%);
 }

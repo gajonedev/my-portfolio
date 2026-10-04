@@ -27,7 +27,7 @@ export default function SectionCta({
     const target = document.getElementById(targetId);
     if (target) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: "smooth" });
+      target.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
     }
   };
 

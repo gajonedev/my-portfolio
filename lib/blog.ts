@@ -11,6 +11,7 @@ export interface BlogPost {
   slug: string;
   title: string;
   date: string;
+  updated?: string;
   readTime: string;
   summary: string;
   category: string;
@@ -23,6 +24,7 @@ export interface BlogPostMeta {
   slug: string;
   title: string;
   date: string;
+  updated?: string;
   readTime: string;
   summary: string;
   category: string;
@@ -45,6 +47,7 @@ export function getAllPosts(): BlogPostMeta[] {
         slug,
         title: data.title,
         date: data.date,
+        updated: data.updated,
         readTime: data.readTime,
         summary: data.summary,
         category: data.category,
@@ -74,6 +77,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
       slug,
       title: data.title,
       date: data.date,
+      updated: data.updated,
       readTime: data.readTime,
       summary: data.summary,
       category: data.category,

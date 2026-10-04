@@ -1,3 +1,4 @@
+import { validService, whatsappMessage } from "@/lib/acquisition";
 import type { Metadata } from "next";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
@@ -9,30 +10,49 @@ import { contactInfo, siteConfig } from "@/data";
 const url = `${siteConfig.url}/contact`;
 
 export const metadata: Metadata = {
-  title: "Contact | Votre devis gratuit sous 24h",
+  title: "Contact | Parlons de votre produit",
   description:
-    "Un projet de site ou d'application ? Décrivez-le en deux lignes : je reviens vers vous avec un devis détaillé sous 24h. Disponible aussi sur WhatsApp.",
+    "Un projet de plateforme web ou d’application mobile ? Premier retour sous 24h et devis gratuit après le cadrage. Disponible sur WhatsApp.",
   alternates: { canonical: url },
   openGraph: {
     title: "Contactez un développeur web et mobile au Bénin",
     description:
-      "Décrivez votre projet en deux lignes : devis détaillé sous 24h. Disponible aussi sur WhatsApp.",
+      "Plateforme web ou application mobile : premier échange sous 24h, devis gratuit après cadrage.",
     url,
     type: "website",
     locale: "fr_BJ",
   },
 };
 
-export default async function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ service?: string; source?: string }>;
+}) {
+  const query = await searchParams;
+  const selected = validService(
+    typeof query.service === "string" ? query.service : undefined,
+  );
+  const source =
+    typeof query.source === "string" &&
+    query.source.startsWith("/") &&
+    !query.source.startsWith("//")
+      ? query.source.split("?")[0].slice(0, 200)
+      : undefined;
   return (
     <>
       <PageHeader
         title="Contact"
-        description="Parlons de votre prochain site web ou application mobile."
+        description="Parlons de votre plateforme web, de votre logiciel métier ou de votre application mobile."
       />
-      <main className="py-16">
+      <div className="py-16">
         <Container className="gap-10 grid lg:grid-cols-[0.6fr_0.4fr]">
-          <div className="flex flex-col gap-6 bg-card p-6 border border-stroke rounded-3xl">
+          <ContactForm
+            initialService={selected}
+            initialSource={source}
+            className="bg-card card-glow p-6 border border-stroke rounded-3xl"
+          />
+          <div className="flex flex-col gap-6 bg-card card-glow p-6 border border-stroke rounded-3xl">
             <div>
               <p className="text-foreground-muted text-sm uppercase tracking-[0.25em]">
                 Coordonnées
@@ -59,7 +79,11 @@ export default async function ContactPage() {
               </div>
             </div>
             <div className="flex flex-col gap-2">
-              <WhatsAppCta label="Discuter sur WhatsApp" className="w-full" />
+              <WhatsAppCta
+                message={whatsappMessage(source || "/contact", selected)}
+                label="Discuter sur WhatsApp"
+                className="w-full"
+              />
               <p className="text-foreground-subtle text-xs text-center">
                 Le canal le plus direct pour un échange rapide.
               </p>
@@ -79,9 +103,8 @@ export default async function ContactPage() {
               <span>{contactInfo.availability}</span>
             </div>
           </div>
-          <ContactForm className="bg-card p-6 border border-stroke rounded-3xl" />
         </Container>
-      </main>
+      </div>
     </>
   );
 }

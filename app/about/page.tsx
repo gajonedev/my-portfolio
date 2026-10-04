@@ -12,12 +12,12 @@ const url = `${siteConfig.url}/about`;
 export const metadata: Metadata = {
   title: "À propos | Développeur Web & Mobile à Cotonou",
   description:
-    "Néhémie Gandonou, développeur web et mobile freelance à Cotonou. Un seul interlocuteur, un produit fiable livré en 2 à 8 semaines. Faisons connaissance.",
+    "Néhémie Gandonou, développeur web et mobile freelance à Cotonou. Plateformes web et applications mobiles, du cadrage au lancement. Faisons connaissance.",
   alternates: { canonical: url },
   openGraph: {
     title: "À propos de Néhémie Gandonou, développeur web et mobile",
     description:
-      "Développeur freelance à Cotonou : un seul interlocuteur, un produit fiable livré en 2 à 8 semaines.",
+      "Développeur freelance à Cotonou : plateformes web, logiciels métier et applications mobiles.",
     url,
     type: "profile",
     locale: "fr_BJ",
@@ -31,11 +31,11 @@ export default async function AboutPage() {
         title="À propos"
         description="Développeur web & mobile passionné, basé à Cotonou, Bénin."
       />
-      <main className="py-16">
+      <div className="py-16">
         <Container className="gap-16 grid">
           {/* Introduction */}
           <section className="lg:items-center gap-8 grid lg:grid-cols-2">
-            <div className="bg-card p-8 border border-stroke rounded-3xl">
+            <div className="bg-card card-glow p-8 border border-stroke rounded-3xl">
               <Image
                 src="/portrait.png"
                 alt="Portrait de Néhémie Gandonou"
@@ -48,7 +48,7 @@ export default async function AboutPage() {
               </h2>
               <p className="mt-2 text-primary">Développeur Web & Mobile</p>
               <p className="mt-4 text-foreground-muted text-sm leading-relaxed">
-                Je conçois des applications mobiles, des sites et des logiciels
+                Je conçois des applications mobiles, des plateformes et des logiciels
                 web à partir d&apos;un besoin concret. J&apos;accorde une
                 attention particulière à la simplicité d&apos;usage, à la
                 fiabilité et aux conditions réelles dans lesquelles le produit
@@ -98,7 +98,7 @@ export default async function AboutPage() {
               {skills.map((category) => (
                 <div
                   key={category.name}
-                  className="bg-card p-6 border border-stroke rounded-2xl"
+                  className="bg-card card-glow p-6 border border-stroke rounded-2xl"
                 >
                   <h3 className="font-semibold text-primary">
                     {category.name}
@@ -119,7 +119,7 @@ export default async function AboutPage() {
           </section>
 
           {/* Stats */}
-          <section className="bg-card p-8 border border-stroke rounded-3xl">
+          <section className="bg-card card-glow p-8 border border-stroke rounded-3xl">
             <div className="gap-8 grid md:grid-cols-4 text-center">
               {aboutStats.map((stat, index) => {
                 const icons = [Award, Users, Heart, Rocket];
@@ -159,7 +159,7 @@ export default async function AboutPage() {
             </div>
           </section>
         </Container>
-      </main>
+      </div>
     </>
   );
 }

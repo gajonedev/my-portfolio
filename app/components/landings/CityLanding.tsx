@@ -1,3 +1,4 @@
+import { serializeJsonLd } from "@/lib/seo";
 import Link from "next/link";
 import Container from "../Container";
 import PageHeader from "../PageHeader";
@@ -150,7 +151,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
       <PageHeader
@@ -213,7 +214,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                 </Link>
               </div>
             </div>
-            <div className="bg-card p-6 border border-stroke rounded-2xl">
+            <div className="bg-card card-glow p-6 border border-stroke rounded-2xl">
               <p className="font-semibold text-foreground">Dès le premier échange</p>
               <ul className="flex flex-col gap-3 mt-4">
                 {aboutGuarantees.slice(0, 3).map((item) => (
@@ -237,7 +238,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
             </p>
             <div className="gap-4 grid md:grid-cols-3 mt-6">
               {visitorProblems.map(({ icon: Icon, title, description }) => (
-                <div key={title} className="bg-card p-5 border border-stroke rounded-2xl">
+                <div key={title} className="bg-card card-glow p-5 border border-stroke rounded-2xl">
                   <Icon className="w-6 h-6 text-primary" />
                   <h3 className="mt-4 font-semibold text-foreground">{title}</h3>
                   <p className="mt-2 text-foreground-muted text-sm leading-relaxed">
@@ -279,7 +280,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                 return (
                   <div
                     key={opportunity.title}
-                    className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
+                    className="flex gap-4 bg-card card-glow p-5 border border-stroke rounded-2xl"
                   >
                     <div className="flex justify-center items-center bg-primary/20 rounded-xl w-12 h-12 text-primary shrink-0">
                       <Icon className="w-6 h-6" />
@@ -314,7 +315,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                   <Link
                     key={project.slug}
                     href={`/projects/${project.slug}`}
-                    className="group bg-card p-6 border border-stroke hover:border-primary/40 rounded-2xl transition"
+                    className="group bg-card card-glow p-6 border border-stroke hover:border-primary/40 rounded-2xl transition"
                   >
                     <div className="flex items-center gap-3">
                       <div className="flex justify-center items-center bg-primary/20 rounded-xl w-11 h-11 text-primary">
@@ -340,7 +341,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
           </section>
 
           {/* Présentation */}
-          <section className="gap-8 grid md:grid-cols-[160px_1fr] items-center bg-card p-7 border border-stroke rounded-3xl">
+          <section className="gap-8 grid md:grid-cols-[160px_1fr] items-center bg-card card-glow p-7 border border-stroke rounded-3xl">
             <Image
               src="/portrait.png"
               alt="Néhémie Gandonou, développeur web et mobile au Bénin"
@@ -425,14 +426,14 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                   <Link
                     key={service.title}
                     href={`/services/${service.slug}`}
-                    className="flex gap-4 bg-card hover:bg-card/80 p-5 border border-stroke hover:border-primary/40 rounded-2xl transition"
+                    className="flex gap-4 bg-card card-glow hover:bg-card/80 p-5 border border-stroke hover:border-primary/40 rounded-2xl transition"
                   >
                     {card}
                   </Link>
                 ) : (
                   <div
                     key={service.title}
-                    className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
+                    className="flex gap-4 bg-card card-glow p-5 border border-stroke rounded-2xl"
                   >
                     {card}
                   </div>
@@ -442,7 +443,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
           </section>
 
           {/* Ancrage local */}
-          <section className="bg-card p-8 border border-stroke rounded-3xl">
+          <section className="bg-card card-glow p-8 border border-stroke rounded-3xl">
             <h2 className="mb-6 font-semibold text-foreground text-xl">
               {city.name}, un territoire que je connais
             </h2>
@@ -489,7 +490,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
               {city.faq.map((item) => (
                 <details
                   key={item.question}
-                  className="group bg-card open:pb-5 border border-stroke rounded-2xl"
+                  className="group bg-card card-glow open:pb-5 border border-stroke rounded-2xl"
                 >
                   <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
                     {item.question}
@@ -514,7 +515,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                   <Link
                     key={nearby.slug}
                     href={`/${cityFullSlug(nearby)}`}
-                    className="group flex items-center gap-3 bg-card/50 hover:bg-card p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
+                    className="group flex items-center gap-3 bg-card/50 hover:bg-card card-glow p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
                   >
                     <MapPin className="w-5 h-5 text-primary shrink-0" />
                     <div>

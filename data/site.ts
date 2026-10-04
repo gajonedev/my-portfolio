@@ -3,10 +3,11 @@
 export const siteConfig = {
   name: "Néhémie Gandonou",
   shortName: "NG",
-  title: "Développeur Web & Mobile",
+  title: "Plateformes web & Apps mobiles",
   description:
-    "Développeur web et mobile indépendant basé à Cotonou. Je conçois des sites, des applications et des outils métier adaptés aux réalités de votre activité.",
+    "Développeur web et mobile indépendant basé à Cotonou. Je conçois des plateformes web, des logiciels métier et des applications mobiles adaptés aux réalités de votre activité.",
   url: "https://gajone.dev",
+  updatedAt: "2026-10-04",
   locale: "fr_BJ",
   language: "fr",
 } as const;
@@ -24,14 +25,14 @@ export const contactInfo = {
 
 // Lien WhatsApp pré-rempli — CTA à faible friction (convertit mieux qu'un formulaire ici)
 const DEFAULT_WHATSAPP_MESSAGE =
-  "Bonjour Néhémie, j'ai un projet de site ou d'application et j'aimerais en discuter avec vous.";
+  "Bonjour Néhémie, j'ai un projet de plateforme web ou d'application mobile et j'aimerais en discuter avec vous.";
 
 export const whatsappUrl = (message: string = DEFAULT_WHATSAPP_MESSAGE) =>
   `https://wa.me/${contactInfo.whatsapp}?text=${encodeURIComponent(message)}`;
 
 // Arguments de confiance affichés sur la home (objection-killers, tous véridiques)
 export const homeTrust = [
-  "Devis détaillé sous 24h",
+  "Premier retour sous 24h",
   "Délai défini avant le démarrage",
   "Code et accès remis à la livraison",
 ] as const;
@@ -102,7 +103,7 @@ export const aboutHighlights = [
 // Engagements concrets — remplacent l'ancienne carte « stack » (trop technique
 // pour la home ; la stack vit déjà dans la section Compétences). Tous véridiques.
 export const aboutGuarantees = [
-  "Devis détaillé et gratuit sous 24h",
+  "Devis détaillé et gratuit après le cadrage",
   "Périmètre et calendrier validés avant le démarrage",
   "Code spécifique, comptes et accès remis à la livraison",
   "Un suivi après la mise en ligne",

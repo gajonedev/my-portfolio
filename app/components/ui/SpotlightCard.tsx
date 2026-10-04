@@ -1,6 +1,6 @@
 "use client";
 
-import { m } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, type ReactNode } from "react";
 import { springSoft } from "@/lib/animations";
 
@@ -25,8 +25,9 @@ export default function SpotlightCard({
   corner = "br",
   cornerColor,
   hover = true,
-  glow = true,
+  glow = false,
 }: SpotlightCardProps) {
+  const reducedMotion = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
   // Cursor target + two eased layers tracked at different speeds.
   // The gap between them creates the parallax: the small core (fast) stays
@@ -101,8 +102,8 @@ export default function SpotlightCard({
   return (
     <m.div
       ref={ref}
-      onMouseMove={glow ? handleMove : undefined}
-      whileHover={hover ? { y: -6 } : undefined}
+      onMouseMove={glow && !reducedMotion ? handleMove : undefined}
+      whileHover={hover && !reducedMotion ? { y: -6 } : undefined}
       transition={springSoft}
       className={`spotlight-card ${cornerClass} ${className}`}
       style={

@@ -16,35 +16,18 @@ export interface ServiceDetailed extends Service {
 // Services résumés (page d'accueil)
 export const servicesPreview: Service[] = [
   {
-    title: "Sites professionnels",
-    slug: "creation-site-vitrine",
-    iconName: "Globe",
+    title: "Plateformes & logiciels web",
+    slug: "creation-application-web",
+    iconName: "LayoutDashboard",
     description:
-      "Des sites rapides et clairs pour présenter votre activité, renforcer votre crédibilité et faciliter les demandes de contact.",
+      "Gestion métier, espaces clients, plateformes SaaS : un logiciel accessible dans le navigateur, avec les parcours, les données et les accès adaptés à votre activité.",
   },
   {
     title: "Applications mobiles",
+    slug: "creation-application-mobile",
     iconName: "Smartphone",
     description:
-      "Des applications mobiles conçues autour d'un usage concret : vendre, automatiser une tâche ou fidéliser vos utilisateurs.",
-  },
-  {
-    title: "Applications & logiciels web",
-    iconName: "Globe",
-    description:
-      "Des outils métier accessibles dans le navigateur pour simplifier la gestion et le travail quotidien de vos équipes.",
-  },
-  {
-    title: "SaaS & dashboards",
-    iconName: "LayoutDashboard",
-    description:
-      "Des logiciels en ligne et tableaux de bord conçus pour accueillir progressivement davantage de clients et de données.",
-  },
-  {
-    title: "E-commerce & vente en ligne",
-    iconName: "ShoppingCart",
-    description:
-      "Des boutiques qui vendent vraiment : parcours d'achat fluide, paiements sécurisés et back-office maîtrisé.",
+      "Des applications iOS et Android complètes, reliées à votre système métier : comptes utilisateurs, paiements, synchronisation et mode hors ligne selon les usages.",
   },
 ];
 
@@ -55,9 +38,9 @@ export const servicesDetailed: ServiceDetailed[] = [
     slug: "creation-application-mobile",
     iconName: "Smartphone",
     description:
-      "Des apps mobiles pro, propres et fluides, pensées pour votre activité.",
+      "Des applications iOS et Android complètes, connectées à votre système métier.",
     details:
-      "Des applications iOS et Android rapides et soignées, conçues pour répondre à votre objectif : vendre, automatiser ou fidéliser. Publiées sur l'App Store et Google Play, prêtes à l'emploi.",
+      "Des applications iOS et Android avec les comptes, les données et les intégrations nécessaires à votre service. Mode hors ligne selon le besoin et accompagnement à la soumission sur les stores.",
     features: [
       "iOS + Android",
       "Fonctionne hors-ligne",
@@ -81,7 +64,7 @@ export const servicesDetailed: ServiceDetailed[] = [
     ],
   },
   {
-    title: "Applications & logiciels web",
+    title: "Plateformes & logiciels web",
     slug: "creation-application-web",
     iconName: "Briefcase",
     description:

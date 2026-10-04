@@ -26,7 +26,7 @@ export default function ScrollReveal({
 }: ScrollRevealProps) {
   return (
     <m.div
-      className={className}
+      className={`motion-reveal ${className || ""}`}
       initial={{ opacity: 0, ...directionMap[direction] }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={viewportOnce}

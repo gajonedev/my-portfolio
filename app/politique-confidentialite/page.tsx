@@ -1,5 +1,9 @@
+import type { Metadata } from "next";
+import { siteConfig } from "@/data/site";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
+
+export const metadata: Metadata = { title: "Politique de confidentialité", alternates: { canonical: `${siteConfig.url}/politique-confidentialite` } };
 
 export default async function PolitiqueConfidentialitePage() {
   return (
@@ -8,9 +12,9 @@ export default async function PolitiqueConfidentialitePage() {
         title="Politique de confidentialité"
         description="Comment nous protégeons vos données personnelles."
       />
-      <main className="py-16">
+      <div className="py-16">
         <Container className="prose-invert max-w-3xl prose">
-          <div className="bg-card p-8 border border-stroke rounded-3xl">
+          <div className="bg-card card-glow p-8 border border-stroke rounded-3xl">
             <h2 className="font-semibold text-foreground text-xl">
               Collecte des données
             </h2>
@@ -86,7 +90,7 @@ export default async function PolitiqueConfidentialitePage() {
             </p>
           </div>
         </Container>
-      </main>
+      </div>
     </>
   );
 }

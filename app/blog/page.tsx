@@ -32,7 +32,7 @@ export default async function BlogPage() {
         title="Insights & blog"
         description="Conseils, méthodes et stratégies pour accélérer vos projets digitaux."
       />
-      <main className="py-16">
+      <div className="py-16">
         <Container className="gap-6 grid md:grid-cols-2">
           {posts.map((post) => {
             const formattedDate = new Date(post.date).toLocaleDateString(
@@ -43,7 +43,7 @@ export default async function BlogPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group bg-card p-6 border border-stroke hover:border-primary/50 rounded-3xl transition"
+                className="group bg-card card-glow p-6 border border-stroke hover:border-primary/50 rounded-3xl transition"
               >
                 <article>
                   <div className="flex items-center gap-4 text-foreground-muted text-xs">
@@ -74,7 +74,7 @@ export default async function BlogPage() {
             );
           })}
         </Container>
-      </main>
+      </div>
     </>
   );
 }
