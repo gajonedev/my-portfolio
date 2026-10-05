@@ -1,4 +1,5 @@
 import { serializeJsonLd } from "@/lib/seo";
+import GlowButton from "@/app/components/ui/GlowButton";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -326,9 +327,7 @@ export default async function BlogPostPage({ params }: Props) {
             Dites-moi ce que vous aimeriez construire et les questions que vous
             vous posez. Nous regarderons ensemble par où commencer.
           </p>
-          <Link href="/contact" className="btn-primary">
-            Parler de mon projet
-          </Link>
+          <GlowButton href="/contact">Parler de mon projet</GlowButton>
         </Container>
       </section>
     </>

@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
-import SpotlightCard from "../components/ui/SpotlightCard";
-import TechBadge from "../components/ui/TechBadge";
-import ProjectGallery from "../components/ui/ProjectGallery";
-import ProjectStatus from "../components/ui/ProjectStatus";
-import { getIcon, ExternalLink, ArrowRight } from "@/lib/icons";
+import ProjectCard from "../components/ui/ProjectCard";
 import { projects, siteConfig } from "@/data";
 
 const ACCENTS = ["#ff4d3d", "#3b82f6", "#f59e0b"];
-const CORNERS = ["tr", "tl", "br", "bl"] as const;
 
 const url = `${siteConfig.url}/projects`;
 
@@ -38,76 +32,14 @@ export default async function ProjectsPage() {
       />
       <div className="py-16">
         <Container className="gap-6 grid md:grid-cols-2">
-          {projects.map((project, i) => {
-            const Icon = getIcon(project.iconName);
-            return (
-              <SpotlightCard
-                key={project.name}
-                corner={CORNERS[i % CORNERS.length]}
-                cornerColor={ACCENTS[i % ACCENTS.length]}
-                className="group"
-                glow={false}
-              >
-                <div className="p-6">
-                  <div className="mb-5">
-                    <ProjectGallery
-                      images={project.images}
-                      name={project.name}
-                    />
-                  </div>
-                  <div className="flex justify-between items-center gap-3">
-                    <div className="flex flex-wrap items-center gap-2">
-                      <span className="bg-primary/10 px-4 py-1 rounded-full font-body text-primary text-xs">
-                        {project.sector}
-                      </span>
-                      <ProjectStatus status={project.status} />
-                    </div>
-                    {project.link && (
-                      <Link
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`Voir ${project.name}`}
-                      >
-                        <ExternalLink className="w-4 h-4 text-foreground-muted group-hover:text-primary transition" />
-                      </Link>
-                    )}
-                  </div>
-                  <div className="flex items-center gap-3 mt-4">
-                    <div className="flex justify-center items-center bg-primary/15 rounded-xl w-10 h-10 text-primary">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <h3 className="font-display font-semibold text-foreground text-xl">
-                      {project.name}
-                    </h3>
-                  </div>
-                  <p className="mt-4 font-body text-foreground-muted text-sm">
-                    {project.summary}
-                  </p>
-                  <p className="mt-4 text-foreground-muted text-sm">
-                    <span className="font-medium text-foreground">
-                      Mon rôle :{" "}
-                    </span>
-                    {project.role}
-                  </p>
-                  {/* <div className="flex flex-wrap gap-2 mt-4">
-                    {project.tech.map((t) => (
-                      <TechBadge key={t}>{t}</TechBadge>
-                    ))}
-                  </div> */}
-                  {project.caseStudy && (
-                    <Link
-                      href={`/projects/${project.slug}`}
-                      className="inline-flex items-center gap-1.5 mt-5 font-medium text-primary text-sm hover:underline"
-                    >
-                      Lire l&apos;étude de cas
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  )}
-                </div>
-              </SpotlightCard>
-            );
-          })}
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={project.slug}
+              project={project}
+              accent={ACCENTS[index % ACCENTS.length]}
+              detailed
+            />
+          ))}
         </Container>
       </div>
     </>

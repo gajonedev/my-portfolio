@@ -176,10 +176,14 @@ export default async function ProjectCaseStudyPage({
             )}
           </section>
 
-          <section className="grid gap-5">
-            <h2 className="text-2xl font-semibold">Le produit en images</h2>
-            <ProjectGallery images={project.images} name={project.name} />
-            <p className="text-sm leading-relaxed text-foreground-muted">
+          <section className="gap-5 grid grid-cols-1 min-w-0">
+            {project.images.some((image) => image.src) && (
+              <>
+                <h2 className="font-semibold text-2xl">Le produit en images</h2>
+                <ProjectGallery images={project.images} name={project.name} />
+              </>
+            )}
+            <p className="text-foreground-muted text-sm leading-relaxed">
               <span className="font-medium text-foreground">Mon rôle : </span>
               {project.role}
             </p>
@@ -323,14 +327,17 @@ export default async function ProjectCaseStudyPage({
                     : "creation-application-web",
                   `/projects/${project.slug}`,
                 )}
-                className="btn-primary"
+                className="btn-secondary"
               >
                 Décrire un projet similaire
               </Link>
-              <Link href="/services" className="btn-secondary">
-                Voir les services
-              </Link>
             </div>
+            <Link
+              href="/services"
+              className="inline-block mt-5 text-primary text-sm hover:underline"
+            >
+              Voir tous mes services →
+            </Link>
           </section>
         </Container>
       </div>

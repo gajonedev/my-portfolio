@@ -11,6 +11,7 @@ import {
 } from "framer-motion";
 import { contactHref, serviceFromPath } from "@/lib/acquisition";
 import Container from "./Container";
+import GlowButton from "./ui/GlowButton";
 import { Menu, X } from "@/lib/icons";
 import { navLinks, siteConfig } from "@/data";
 
@@ -154,12 +155,12 @@ export default function Header() {
             </nav>
 
             <div className="flex items-center gap-3">
-              <Link
+              <GlowButton
                 href={contextualContact}
-                className="lg:inline-flex! hidden! btn-primary"
+                className="lg:inline-flex! hidden!"
               >
                 Démarrer un projet
-              </Link>
+              </GlowButton>
               <button
                 ref={triggerRef}
                 type="button"
@@ -259,13 +260,13 @@ export default function Header() {
                 </ul>
               </m.nav>
               <div className="p-4 border-stroke border-t">
-                <Link
+                <GlowButton
                   href={contextualContact}
                   onClick={() => setIsOpen(false)}
-                  className="w-full btn-primary"
+                  className="w-full"
                 >
                   Démarrer un projet
-                </Link>
+                </GlowButton>
               </div>
             </m.div>
           </div>

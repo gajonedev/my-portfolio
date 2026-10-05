@@ -3,7 +3,7 @@ import Container from "./components/Container";
 import Hero from "./components/sections/Hero";
 import SectionWrapper from "./components/layout/SectionWrapper";
 import SectionHeading from "./components/ui/SectionHeading";
-import ProjectGallery from "./components/ui/ProjectGallery";
+import ProjectCard from "./components/ui/ProjectCard";
 import SpotlightCard from "./components/ui/SpotlightCard";
 import Testimonials from "./components/ui/Testimonials";
 import WhatsAppCta from "./components/ui/WhatsAppCta";
@@ -41,43 +41,13 @@ export default function Home() {
               Tous les projets →
             </Link>
           </div>
-          <div className="gap-6 grid lg:grid-cols-3">
+          <div className="gap-6 grid md:grid-cols-2 lg:grid-cols-3">
             {projectsPreview.map((project, index) => (
-              <SpotlightCard
+              <ProjectCard
                 key={project.slug}
-                corner={CORNERS[index % CORNERS.length]}
-                cornerColor={ACCENTS[index % ACCENTS.length]}
-                hover={false}
-                glow={false}
-                className="h-full [&>.spotlight-content]:h-full"
-              >
-                <article className="flex flex-col gap-4 p-4 h-full">
-                  <ProjectGallery images={project.images} name={project.name} />
-                  <div className="flex justify-between items-center gap-2">
-                    <span className="text-foreground-muted text-xs">
-                      {project.sector}
-                    </span>
-                    {/* <ProjectStatus status={project.status} /> */}
-                  </div>
-                  <h3 className="font-semibold text-xl">
-                    <Link
-                      href={`/projects/${project.slug}`}
-                      className="hover:text-primary"
-                    >
-                      {project.name}
-                    </Link>
-                  </h3>
-                  <p className="text-foreground-muted text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="mt-auto font-medium text-primary text-sm hover:underline"
-                  >
-                    Découvrir le projet →
-                  </Link>
-                </article>
-              </SpotlightCard>
+                project={project}
+                accent={ACCENTS[index % ACCENTS.length]}
+              />
             ))}
           </div>
         </Container>
@@ -117,7 +87,7 @@ export default function Home() {
                   <div className="flex flex-wrap items-center gap-4 mt-auto">
                     <Link
                       href={contactHref(service.slug, "/")}
-                      className="btn-primary"
+                      className="btn-secondary"
                     >
                       Parler de ce projet
                     </Link>

@@ -201,7 +201,7 @@ export default async function TarifsPage() {
                       </p>
                       <Link
                         href={contactHref(tier.serviceSlug, "/tarifs")}
-                        className="mt-5 w-fit btn-primary"
+                        className="mt-5 w-fit btn-secondary"
                       >
                         Discuter de ce projet
                       </Link>
