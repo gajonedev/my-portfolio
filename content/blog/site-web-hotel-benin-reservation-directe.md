@@ -1,6 +1,6 @@
 ---
 title: "Site web pour hôtel au Bénin : pourquoi la réservation directe change tout"
-date: "2026-07-03"
+date: "2026-10-05"
 readTime: "7 min"
 summary: "Entre les commissions des plateformes et les visiteurs qui préparent tout en ligne, un hôtel béninois sans réservation directe laisse de l'argent sur la table. Voici comment faire."
 category: "Secteurs"

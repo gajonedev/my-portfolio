@@ -3,18 +3,16 @@ import { contactHref } from "@/lib/acquisition";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { createElement } from "react";
 import Container from "../../components/Container";
 import PageHeader from "../../components/PageHeader";
-import TechBadge from "../../components/ui/TechBadge";
-import PriceTag from "../../components/ui/PriceTag";
-import WhatsAppCta from "../../components/ui/WhatsAppCta";
-import {
-  getIcon,
-  CheckCircle,
-  ArrowRight,
-  ChevronRight,
-  MapPin,
-} from "@/lib/icons";
+import SectionWrapper from "../../components/layout/SectionWrapper";
+import SectionHeading from "../../components/ui/SectionHeading";
+import GlowButton from "../../components/ui/GlowButton";
+import ProjectCard from "../../components/ui/ProjectCard";
+import FaqList from "../../components/ui/FaqList";
+import FinalCta from "../../components/ui/FinalCta";
+import { getIcon, CheckCircle, MapPin } from "@/lib/icons";
 import {
   servicePages,
   getServicePageBySlug,
@@ -66,7 +64,6 @@ export default async function ServicePage({
   if (!service) notFound();
 
   const url = `${siteConfig.url}/services/${service.slug}`;
-  const Icon = getIcon(service.iconName);
 
   const relatedProjects = service.relatedProjectSlugs
     .map((projectSlug) => getProjectBySlug(projectSlug))
@@ -146,298 +143,232 @@ export default async function ServicePage({
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
-      <PageHeader title={service.title} description={service.heroDescription} />
+      <PageHeader
+        kicker={service.shortTitle}
+        title={service.title}
+        description={service.heroDescription}
+        breadcrumbs={[
+          { label: "Accueil", href: "/" },
+          { label: "Services", href: "/services" },
+          { label: service.shortTitle },
+        ]}
+      />
 
-      <div className="py-16">
-        <Container className="gap-14 grid">
-          {/* Fil d'ariane */}
-          <nav aria-label="Fil d'ariane" className="-mb-6">
-            <ol className="flex flex-wrap items-center gap-1.5 text-foreground-muted text-sm">
-              <li>
-                <Link href="/" className="hover:text-foreground transition">
-                  Accueil
-                </Link>
-              </li>
-              <li aria-hidden="true">
-                <ChevronRight className="w-4 h-4" />
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="hover:text-foreground transition"
-                >
-                  Services
-                </Link>
-              </li>
-              <li aria-hidden="true">
-                <ChevronRight className="w-4 h-4" />
-              </li>
-              <li aria-current="page" className="text-foreground">
-                {service.shortTitle}
-              </li>
-            </ol>
-          </nav>
-
-          {/* Introduction */}
-          <section className="max-w-3xl">
-            <div className="flex justify-center items-center bg-primary/15 mb-6 rounded-2xl w-14 h-14 text-primary">
-              {/* eslint-disable-next-line react-hooks/static-components */}
-              <Icon className="w-7 h-7" />
+      {/* Introduction + livrables */}
+      <SectionWrapper variant="light" className="py-16 md:py-24">
+        <Container className="items-start gap-10 grid lg:grid-cols-[1.25fr_1fr]">
+          <div className="flex flex-col gap-5">
+            <div className="flex justify-center items-center bg-primary/15 rounded-2xl w-14 h-14 text-primary">
+              {createElement(getIcon(service.iconName), {
+                className: "w-7 h-7",
+              })}
             </div>
             {service.intro.map((paragraph) => (
               <p
                 key={paragraph.slice(0, 40)}
-                className="mt-4 text-foreground-muted leading-relaxed"
+                className="text-foreground-muted leading-relaxed"
               >
                 {paragraph}
               </p>
             ))}
-          </section>
-
-          {/* Livrables */}
-          <section className="bg-card p-8 border border-stroke rounded-3xl">
-            <h2 className="mb-6 font-semibold text-foreground text-xl">
+          </div>
+          <aside className="lg:top-28 lg:sticky p-7 card">
+            <h2 className="mb-5 font-semibold text-foreground text-lg">
               Ce que vous recevez
             </h2>
-            <div className="gap-3 grid md:grid-cols-2">
+            <ul className="flex flex-col gap-3">
               {service.deliverables.map((deliverable) => (
-                <div key={deliverable} className="flex items-start gap-3">
-                  <CheckCircle className="mt-0.5 w-5 h-5 text-green-500 shrink-0" />
-                  <p className="text-foreground-muted text-sm">{deliverable}</p>
-                </div>
+                <li key={deliverable} className="flex items-start gap-3">
+                  <CheckCircle className="mt-0.5 w-5 h-5 text-primary shrink-0" />
+                  <span className="text-foreground-muted text-sm leading-relaxed">
+                    {deliverable}
+                  </span>
+                </li>
               ))}
-            </div>
-          </section>
+            </ul>
+          </aside>
+        </Container>
+      </SectionWrapper>
 
-          {/* Offres */}
-          <section>
-            <h2 className="mb-2 font-semibold text-foreground text-2xl">
-              Quelques repères pour votre budget
-            </h2>
-            <p className="mb-8 text-foreground-muted text-sm">
-              Ces exemples vous aident à situer votre budget. Je prépare ensuite
-              un devis gratuit selon les fonctionnalités dont vous avez besoin.
-            </p>
-            <div className="items-stretch gap-6 grid md:grid-cols-3">
-              {service.offers.map((offer, index) => (
-                <div
-                  key={offer.name}
-                  className={`relative flex flex-col p-6 rounded-2xl ${
-                    offer.recommended
-                      ? "animated-border md:scale-[1.03] shadow-[0_10px_50px_var(--primary-glow-strong)]"
-                      : "bg-card/60 border border-stroke"
-                  }`}
-                >
-                  {offer.recommended && (
-                    <PriceTag
-                      tilt="right"
-                      className="-top-4 right-5 absolute text-xs uppercase tracking-wider"
-                    >
-                      Recommandé
-                    </PriceTag>
-                  )}
-                  <h3 className="font-display font-semibold text-foreground text-lg">
-                    {offer.name}
-                  </h3>
-                  <p className="mt-2 text-foreground-muted text-sm">
-                    {offer.description}
-                  </p>
-                  <div className="mt-5">
-                    <span className="block mb-2 text-foreground-muted text-xs uppercase tracking-wider">
-                      À partir de
-                    </span>
-                    <PriceTag
-                      tilt={index % 2 === 0 ? "left" : "right"}
-                      className="text-lg"
-                    >
-                      {offer.price}
-                    </PriceTag>
-                    {offer.priceNote && (
-                      <p className="mt-2 text-foreground-muted text-xs">
-                        {offer.priceNote}
-                      </p>
-                    )}
-                  </div>
-                  <ul className="flex flex-col gap-2 mt-5">
-                    {offer.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2.5">
-                        <CheckCircle className="mt-0.5 w-4 h-4 text-green-500 shrink-0" />
-                        <span className="text-foreground-muted text-sm">
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link
-                    href={contactHref(
-                      service.slug,
-                      `/services/${service.slug}`,
-                    )}
-                    className={`mt-auto pt-6 ${
-                      offer.recommended ? "" : "opacity-90"
-                    }`}
-                  >
-                    <span
-                      className={`inline-flex justify-center items-center gap-2 w-full ${
-                        offer.recommended ? "btn-primary" : "btn-secondary"
-                      }`}
-                    >
-                      Demander un devis
-                      <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </Link>
-                </div>
-              ))}
-            </div>
-            <p className="mt-4 text-foreground-muted text-sm">
-              Vous avez besoin d’autres fonctionnalités ?{" "}
-              <Link
-                href={contactHref(service.slug, `/services/${service.slug}`)}
-                className="text-primary hover:underline"
+      {/* Offres */}
+      <SectionWrapper variant="dark" className="py-16 md:py-24">
+        <Container className="gap-10 grid">
+          <SectionHeading
+            kicker="Budget"
+            title="Quelques repères pour votre budget"
+            subtitle="Ces exemples vous aident à situer votre budget. Je prépare ensuite un devis gratuit selon les fonctionnalités dont vous avez besoin."
+          />
+          <div className="items-stretch gap-6 grid md:grid-cols-3">
+            {service.offers.map((offer) => (
+              <article
+                key={offer.name}
+                className={`relative flex flex-col p-7 rounded-3xl border ${
+                  offer.recommended
+                    ? "border-primary/60 bg-background-soft shadow-[0_20px_60px_var(--primary-glow)]"
+                    : "border-stroke bg-card"
+                }`}
               >
-                parlez-moi de votre projet
-              </Link>{" "}
-              et je vous propose une formule adaptée.
-            </p>
-          </section>
-
-          {/* Processus */}
-          <section>
-            <h2 className="mb-6 font-semibold text-foreground text-2xl">
-              Comment ça se passe
-            </h2>
-            <div className="flex flex-col gap-4 max-w-3xl">
-              {service.process.map((step, index) => (
-                <div
-                  key={step.title}
-                  className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
-                >
-                  <div className="flex justify-center items-center bg-primary/15 rounded-xl w-10 h-10 font-display font-semibold text-primary shrink-0">
-                    {index + 1}
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground">
-                      {step.title}
-                    </h3>
-                    <p className="mt-1 text-foreground-muted text-sm leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Projets liés */}
-          {relatedProjects.length > 0 && (
-            <section>
-              <h2 className="mb-6 font-semibold text-foreground text-xl">
-                Réalisations dans ce domaine
-              </h2>
-              <div className="gap-3 grid grid-cols-1 sm:grid-cols-3">
-                {relatedProjects.map((project) => (
-                  <Link
-                    key={project.slug}
-                    href={`/projects/${project.slug}`}
-                    className="group bg-card/50 hover:bg-card p-5 border border-stroke hover:border-primary/40 rounded-xl transition"
-                  >
-                    <p className="font-medium text-foreground group-hover:text-primary transition">
-                      {project.name}
-                    </p>
+                {offer.recommended && (
+                  <span className="-top-3 left-7 absolute bg-primary px-3 py-1 rounded-full font-semibold text-[0.7rem] text-primary-foreground uppercase tracking-wider">
+                    Recommandé
+                  </span>
+                )}
+                <h3 className="font-display font-semibold text-foreground text-lg">
+                  {offer.name}
+                </h3>
+                <p className="mt-2 text-foreground-muted text-sm leading-relaxed">
+                  {offer.description}
+                </p>
+                <div className="my-6 pt-6 border-stroke border-t">
+                  <span className="text-foreground-muted text-xs">
+                    À partir de
+                  </span>
+                  <p className="font-display font-bold text-foreground text-3xl tracking-tight">
+                    {offer.price}
+                  </p>
+                  {offer.priceNote && (
                     <p className="mt-1 text-foreground-muted text-xs">
-                      {project.sector}
+                      {offer.priceNote}
                     </p>
-                    <div className="flex flex-wrap gap-1.5 mt-3">
-                      {project.tech.slice(0, 3).map((t) => (
-                        <TechBadge key={t}>{t}</TechBadge>
-                      ))}
-                    </div>
+                  )}
+                </div>
+                <ul className="flex flex-col gap-2.5 mb-8">
+                  {offer.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2.5">
+                      <CheckCircle className="mt-0.5 w-4 h-4 text-primary shrink-0" />
+                      <span className="text-foreground-muted text-sm">
+                        {feature}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                {offer.recommended ? (
+                  <GlowButton
+                    href={contactHref(service.slug, `/services/${service.slug}`)}
+                    className="mt-auto w-full"
+                  >
+                    Demander un devis
+                  </GlowButton>
+                ) : (
+                  <Link
+                    href={contactHref(service.slug, `/services/${service.slug}`)}
+                    className="mt-auto w-full btn-secondary"
+                  >
+                    Demander un devis
+                  </Link>
+                )}
+              </article>
+            ))}
+          </div>
+          <p className="text-foreground-muted text-sm">
+            Vous avez besoin d’autres fonctionnalités ?{" "}
+            <Link
+              href={contactHref(service.slug, `/services/${service.slug}`)}
+              className="text-primary hover:underline"
+            >
+              Parlez-moi de votre projet
+            </Link>{" "}
+            et je vous propose une formule adaptée.
+          </p>
+        </Container>
+      </SectionWrapper>
+
+      {/* Processus : frise horizontale */}
+      <SectionWrapper variant="light" className="py-16 md:py-24">
+        <Container className="gap-12 grid">
+          <SectionHeading kicker="Étapes" title="Comment ça se passe" />
+          <ol className="relative gap-8 grid md:auto-cols-fr md:grid-flow-col">
+            <span
+              aria-hidden="true"
+              className="hidden md:block top-5 absolute inset-x-5 bg-linear-to-r from-primary/60 via-stroke to-stroke h-px"
+            />
+            {service.process.map((step, index) => (
+              <li key={step.title} className="relative flex md:flex-col gap-4">
+                <span className="flex justify-center items-center bg-background-soft shadow-[0_0_0_6px_var(--background)] border border-primary/50 rounded-full w-10 h-10 font-display font-semibold text-primary text-sm shrink-0">
+                  {index + 1}
+                </span>
+                <div>
+                  <h3 className="font-semibold text-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-foreground-muted text-sm leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </Container>
+      </SectionWrapper>
+
+      {/* Réalisations + villes */}
+      {(relatedProjects.length > 0 || relatedCities.length > 0) && (
+        <SectionWrapper variant="dark" className="py-16 md:py-24">
+          <Container className="gap-10 grid">
+            {relatedProjects.length > 0 && (
+              <>
+                <SectionHeading
+                  kicker="Réalisations"
+                  title="Des projets dans ce domaine"
+                />
+                <div className="gap-6 grid md:grid-cols-2 lg:grid-cols-3">
+                  {relatedProjects.map((project, index) => (
+                    <ProjectCard
+                      key={project.slug}
+                      project={project}
+                      accent={["#ff4d3d", "#3b82f6", "#f59e0b"][index % 3]}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+            {relatedCities.length > 0 && (
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="text-foreground-muted text-sm">
+                  Ce service près de chez vous :
+                </span>
+                {relatedCities.map((city) => (
+                  <Link
+                    key={city.slug}
+                    href={`/${cityFullSlug(city)}`}
+                    className="inline-flex items-center gap-2 px-4 py-2 text-foreground text-sm card-interactive"
+                  >
+                    <MapPin className="w-4 h-4 text-primary" />
+                    {city.name}
                   </Link>
                 ))}
               </div>
-            </section>
-          )}
+            )}
+          </Container>
+        </SectionWrapper>
+      )}
 
-          {/* FAQ */}
-          <section>
-            <h2 className="mb-6 font-semibold text-foreground text-xl">
-              Questions fréquentes
-            </h2>
-            <div className="flex flex-col gap-4">
-              {service.faq.map((item) => (
-                <details
-                  key={item.question}
-                  className="group bg-card open:pb-5 border border-stroke rounded-2xl"
-                >
-                  <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
-                    {item.question}
-                    <ChevronRight className="w-5 h-5 text-foreground-muted group-open:rotate-90 transition-transform shrink-0" />
-                  </summary>
-                  <p className="px-5 text-foreground-muted text-sm leading-relaxed">
-                    {item.answer}
-                  </p>
-                </details>
-              ))}
-            </div>
-            <p className="mt-4 text-foreground-muted text-sm">
+      {/* FAQ */}
+      <SectionWrapper variant="light" className="py-16 md:py-24">
+        <Container className="items-start gap-10 grid lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="flex flex-col gap-4 lg:top-28 lg:sticky">
+            <SectionHeading kicker="FAQ" title="Questions fréquentes" />
+            <p className="text-foreground-muted text-sm">
               Une question sur le budget ? Consultez les{" "}
               <Link href="/tarifs" className="text-primary hover:underline">
                 tarifs indicatifs
               </Link>
               .
             </p>
-          </section>
-
-          {/* Villes */}
-          {relatedCities.length > 0 && (
-            <section>
-              <h2 className="mb-6 font-semibold text-foreground text-xl">
-                Ce service, près de chez vous
-              </h2>
-              <div className="gap-3 grid grid-cols-1 sm:grid-cols-3">
-                {relatedCities.map((city) => (
-                  <Link
-                    key={city.slug}
-                    href={`/${cityFullSlug(city)}`}
-                    className="group flex items-center gap-3 bg-card/50 hover:bg-card p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
-                  >
-                    <MapPin className="w-5 h-5 text-primary shrink-0" />
-                    <p className="font-medium text-foreground group-hover:text-primary transition">
-                      Développeur web à {city.name}
-                    </p>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          )}
-
-          {/* CTA */}
-          <section className="text-center">
-            <h2 className="font-semibold text-foreground text-2xl">
-              Prêt à démarrer ?
-            </h2>
-            <p className="mt-3 text-foreground-muted">
-              Dites-moi ce que vous avez en tête. Je vous réponds sous 24h pour
-              en discuter.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mt-6">
-              <WhatsAppCta
-                label="Discuter de mon projet"
-                message={`Bonjour Néhémie, je suis intéressé par votre service « ${service.shortTitle} » et j'aimerais en discuter.`}
-              />
-              <Link
-                href={contactHref(service.slug, `/services/${service.slug}`)}
-                className="btn-secondary"
-              >
-                Décrire mon projet
-              </Link>
-              <Link href="/tarifs" className="btn-secondary">
-                Voir les tarifs
-              </Link>
-            </div>
-          </section>
+          </div>
+          <FaqList items={service.faq} />
         </Container>
-      </div>
+      </SectionWrapper>
+
+      <FinalCta
+        title="Prêt à démarrer ?"
+        text="Dites-moi ce que vous avez en tête. Je vous réponds sous 24h pour en discuter."
+        whatsappMessage={`Bonjour Néhémie, je suis intéressé par votre service « ${service.shortTitle} » et j'aimerais en discuter.`}
+        secondary={{
+          href: contactHref(service.slug, `/services/${service.slug}`),
+          label: "Décrire mon projet",
+        }}
+      />
     </>
   );
 }

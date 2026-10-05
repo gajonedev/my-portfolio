@@ -6,7 +6,8 @@ import SectionHeading from "./components/ui/SectionHeading";
 import ProjectCard from "./components/ui/ProjectCard";
 import SpotlightCard from "./components/ui/SpotlightCard";
 import Testimonials from "./components/ui/Testimonials";
-import WhatsAppCta from "./components/ui/WhatsAppCta";
+import FinalCta from "./components/ui/FinalCta";
+import { CheckCircle } from "@/lib/icons";
 import {
   projectsPreview,
   servicesPreview,
@@ -165,7 +166,10 @@ export default function Home() {
               </div>
               <ul className="gap-2 grid text-foreground-muted text-sm">
                 {aboutGuarantees.map((item) => (
-                  <li key={item}>✓ {item}</li>
+                  <li key={item} className="flex items-start gap-2.5">
+                    <CheckCircle className="mt-0.5 w-4 h-4 text-primary shrink-0" />
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -173,22 +177,13 @@ export default function Home() {
         </Container>
       </SectionWrapper>
 
-      <SectionWrapper variant="light" id="contact" className="py-16 md:py-20">
-        <Container className="flex flex-col items-center gap-6 text-center">
-          <SectionHeading
-            align="center"
-            kicker="Votre projet"
-            title="Parlez-moi de votre idée"
-            subtitle="Dites-moi ce que vous voulez faire et à qui l’application servira. Je vous réponds et nous préciserons ensemble le besoin avant le devis."
-          />
-          <div className="flex flex-wrap justify-center gap-4">
-            <WhatsAppCta label="Discuter sur WhatsApp" />
-            <Link href={contactHref(undefined, "/")} className="btn-secondary">
-              Décrire mon projet
-            </Link>
-          </div>
-        </Container>
-      </SectionWrapper>
+      <FinalCta
+        id="contact"
+        variant="light"
+        title="Parlez-moi de votre idée"
+        text="Dites-moi ce que vous voulez faire et à qui l’application servira. Je vous réponds et nous préciserons ensemble le besoin avant le devis."
+        secondary={{ href: contactHref(undefined, "/"), label: "Décrire mon projet" }}
+      />
     </>
   );
 }

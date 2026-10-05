@@ -1,16 +1,19 @@
+import { createElement } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
+import SectionWrapper from "../components/layout/SectionWrapper";
+import SectionHeading from "../components/ui/SectionHeading";
 import SpotlightCard from "../components/ui/SpotlightCard";
-import TechBadge from "../components/ui/TechBadge";
-import WhatsAppCta from "../components/ui/WhatsAppCta";
-import { getIcon, ArrowRight, CheckCircle, Quote } from "@/lib/icons";
+import TestimonialQuote from "../components/ui/TestimonialQuote";
+import FinalCta from "../components/ui/FinalCta";
+import { getIcon, ArrowRight, CheckCircle } from "@/lib/icons";
 import {
   servicesDetailed,
   servicesPreview,
   aboutGuarantees,
-  testimonials,
+  pricingTiers,
   siteConfig,
 } from "@/data";
 
@@ -35,154 +38,148 @@ export const metadata: Metadata = {
 };
 
 export default async function ServicesPage() {
+  const mainServices = servicesPreview.map(
+    (preview) =>
+      servicesDetailed.find((service) => service.slug === preview.slug)!,
+  );
+  const otherServices = servicesDetailed.filter(
+    (service) => !servicesPreview.some((main) => main.slug === service.slug),
+  );
+
   return (
     <>
       <PageHeader
+        kicker="Services"
         title="Ce que je peux réaliser pour vous"
         description="Je développe des plateformes web et des applications mobiles pour votre équipe ou vos clients. Nous choisissons ensemble les fonctionnalités dont vous avez besoin."
       />
-      <div className="py-16">
+
+      {/* Services principaux */}
+      <SectionWrapper variant="light" className="py-16 md:py-24">
         <Container className="gap-6 grid md:grid-cols-2">
-          {servicesPreview
-            .map((preview) =>
-              servicesDetailed.find(
-                (service) => service.slug === preview.slug,
-              )!,
-            )
-            .map((service, i) => {
-              const Icon = getIcon(service.iconName);
-              return (
-                <SpotlightCard
-                  key={service.title}
-                  corner={CORNERS[i % CORNERS.length]}
-                  cornerColor={ACCENTS[i % ACCENTS.length]}
-                  glow={false}
-                >
-                  <div className="p-6">
+          {mainServices.map((service, i) => {
+            const price = pricingTiers.find(
+              (tier) => tier.serviceSlug === service.slug,
+            )?.priceFrom;
+            return (
+              <SpotlightCard
+                key={service.slug}
+                corner={CORNERS[i % CORNERS.length]}
+                cornerColor={ACCENTS[i % ACCENTS.length]}
+                hover={false}
+                className="h-full [&>.spotlight-content]:h-full"
+              >
+                <article className="flex flex-col gap-5 p-7 md:p-9 h-full">
+                  <div className="flex justify-between items-start gap-4">
                     <div className="flex justify-center items-center bg-primary/15 rounded-2xl w-12 h-12 text-primary">
-                      <Icon className="w-6 h-6" />
+                      {createElement(getIcon(service.iconName), {
+                        className: "w-6 h-6",
+                      })}
                     </div>
-                    <h3 className="mt-4 font-display font-semibold text-foreground text-lg">
-                      {service.title}
-                    </h3>
-                    <p className="mt-3 font-body text-foreground-muted text-sm">
-                      {service.details}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mt-4">
-                      {service.features.map((f) => (
-                        <TechBadge key={f}>{f}</TechBadge>
-                      ))}
-                    </div>
-                    {service.slug && (
-                      <Link
-                        href={`/services/${service.slug}`}
-                        className="inline-flex items-center gap-1.5 mt-5 font-medium text-primary text-sm hover:underline"
-                      >
-                        En savoir plus
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
+                    {price && (
+                      <p className="text-right">
+                        <span className="block text-foreground-muted text-xs">
+                          À partir de
+                        </span>
+                        <span className="font-display font-bold text-foreground text-xl">
+                          {price}
+                        </span>
+                      </p>
                     )}
                   </div>
-                </SpotlightCard>
-              );
-            })}
-        </Container>
-
-        <Container className="mt-10">
-          <details className="rounded-2xl border border-stroke p-6">
-            <summary className="cursor-pointer font-semibold">
-              Prestations complémentaires : SaaS, e-commerce, sites et
-              optimisation
-            </summary>
-            <div className="mt-6 grid gap-5 md:grid-cols-2">
-              {servicesDetailed
-                .filter(
-                  (service) =>
-                    !servicesPreview.some((main) => main.slug === service.slug),
-                )
-                .map((service) => (
-                  <article
-                    key={service.slug}
-                    className="rounded-xl border border-stroke p-5"
+                  <h2 className="font-display font-semibold text-foreground text-2xl">
+                    {service.title}
+                  </h2>
+                  <p className="text-foreground-muted text-sm leading-relaxed">
+                    {service.details}
+                  </p>
+                  <ul className="gap-2.5 grid sm:grid-cols-2">
+                    {service.features.map((feature) => (
+                      <li
+                        key={feature}
+                        className="flex items-start gap-2 text-foreground-muted text-sm"
+                      >
+                        <CheckCircle className="mt-0.5 w-4 h-4 text-primary shrink-0" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href={`/services/${service.slug}`}
+                    className="mt-auto pt-2 w-fit btn-secondary"
                   >
-                    <h2 className="font-semibold">{service.title}</h2>
-                    <p className="mt-2 text-sm text-foreground-muted">
-                      {service.description}
-                    </p>
-                    <Link
-                      href={`/services/${service.slug}`}
-                      className="mt-3 inline-block text-sm text-primary hover:underline"
-                    >
-                      Détails du service →
-                    </Link>
-                  </article>
-                ))}
-            </div>
-          </details>
+                    Découvrir ce service
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </article>
+              </SpotlightCard>
+            );
+          })}
         </Container>
+      </SectionWrapper>
 
-        {/* Rassurance — compris dans chaque projet */}
-        <Container className="mt-16">
-          <div className="bg-card px-6 py-8 border border-stroke rounded-3xl">
-            <h2 className="mb-6 font-display font-semibold text-foreground text-lg text-center">
-              Compris dans chaque projet
-            </h2>
-            <div className="gap-3 grid sm:grid-cols-2 mx-auto max-w-3xl">
+      {/* Prestations complémentaires */}
+      <SectionWrapper variant="dark" className="py-16 md:py-24">
+        <Container className="gap-10 grid">
+          <SectionHeading
+            kicker="Aussi"
+            title="Prestations complémentaires"
+            subtitle="SaaS, e-commerce, sites vitrines et optimisation : les autres projets que je réalise."
+          />
+          <div className="gap-4 grid sm:grid-cols-2">
+            {otherServices.map((service) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="group flex gap-4 p-6 card-interactive"
+              >
+                <div className="flex justify-center items-center bg-primary/15 rounded-xl w-10 h-10 text-primary shrink-0">
+                  {createElement(getIcon(service.iconName), {
+                    className: "w-5 h-5",
+                  })}
+                </div>
+                <div>
+                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="mt-2 text-foreground-muted text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </Container>
+      </SectionWrapper>
+
+      {/* Engagements + preuve */}
+      <SectionWrapper variant="light" className="py-16 md:py-24">
+        <Container className="items-stretch gap-6 grid lg:grid-cols-2">
+          <div className="flex flex-col gap-6 p-8 md:p-10 card">
+            <SectionHeading
+              kicker="Inclus"
+              title="Compris dans chaque projet"
+            />
+            <ul className="flex flex-col gap-4">
               {aboutGuarantees.map((item) => (
-                <div key={item} className="flex items-start gap-3">
+                <li key={item} className="flex items-start gap-3">
                   <CheckCircle className="mt-0.5 w-5 h-5 text-primary shrink-0" />
-                  <span className="font-body text-foreground-muted text-sm">
+                  <span className="text-foreground-muted text-sm leading-relaxed">
                     {item}
                   </span>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
+          <TestimonialQuote name="Nassamou Rachad" accent="#3b82f6" />
         </Container>
+      </SectionWrapper>
 
-        {/* Preuve client */}
-        <Container className="mt-12">
-          <SpotlightCard
-            corner="tr"
-            cornerColor="#ff4d3d"
-            hover={false}
-            glow={false}
-          >
-            <figure className="flex flex-col gap-4 p-8 md:p-10">
-              <Quote className="w-8 h-8 text-primary" />
-              <blockquote className="max-w-3xl font-body text-foreground text-lg leading-relaxed">
-                {testimonials[0].quote}
-              </blockquote>
-              <figcaption className="font-body text-foreground-muted text-sm">
-                <span className="font-medium text-foreground">
-                  {testimonials[0].name}
-                </span>{" "}
-                · {testimonials[0].role}
-              </figcaption>
-            </figure>
-          </SpotlightCard>
-        </Container>
-
-        <Container className="mt-16">
-          <div className="flex flex-col items-center gap-6 bg-card px-6 py-12 border border-stroke rounded-3xl text-center">
-            <div className="flex flex-col gap-3">
-              <h2 className="font-display font-semibold text-foreground text-2xl">
-                Pas sûr du service qu&apos;il vous faut ?
-              </h2>
-              <p className="mx-auto max-w-xl font-body text-foreground-muted">
-                Dites-moi ce que vous voulez faire. Je vous réponds sous 24h
-                pour vous aider à choisir une solution adaptée.
-              </p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-4">
-              <WhatsAppCta label="Discuter de mon projet" />
-              <Link href="/tarifs" className="btn-secondary">
-                Voir les tarifs
-              </Link>
-            </div>
-          </div>
-        </Container>
-      </div>
+      <FinalCta
+        title="Pas sûr du service qu’il vous faut ?"
+        text="Dites-moi ce que vous voulez faire. Je vous réponds sous 24h pour vous aider à choisir une solution adaptée."
+        secondary={{ href: "/tarifs", label: "Voir les tarifs" }}
+      />
     </>
   );
 }

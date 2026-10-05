@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/data/site";
 import Container from "../components/Container";
+import SectionWrapper from "../components/layout/SectionWrapper";
 import PageHeader from "../components/PageHeader";
 
 export const metadata: Metadata = {
@@ -12,12 +13,13 @@ export default async function PolitiqueConfidentialitePage() {
   return (
     <>
       <PageHeader
+        kicker="Informations légales"
         title="Politique de confidentialité"
         description="Comment je traite les informations que vous me confiez."
       />
-      <div className="py-16">
-        <Container className="prose-invert max-w-3xl prose">
-          <div className="bg-card p-8 border border-stroke rounded-3xl">
+      <SectionWrapper variant="light" className="py-16 md:py-20">
+        <Container className="max-w-3xl">
+          <div className="p-8 card">
             <h2 className="font-semibold text-foreground text-xl">
               Collecte des données
             </h2>
@@ -97,7 +99,7 @@ export default async function PolitiqueConfidentialitePage() {
             </p>
           </div>
         </Container>
-      </div>
+      </SectionWrapper>
     </>
   );
 }

@@ -1,12 +1,14 @@
 import { serializeJsonLd } from "@/lib/seo";
-import GlowButton from "@/app/components/ui/GlowButton";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Container from "../../components/Container";
+import PageHeader from "../../components/PageHeader";
+import SectionWrapper from "../../components/layout/SectionWrapper";
+import FinalCta from "../../components/ui/FinalCta";
 import { getPostBySlug, getAllSlugs, getAllPosts } from "@/lib/blog";
-import { Calendar, Clock, ArrowLeft, Tag, ChevronRight } from "lucide-react";
-import { siteConfig, socialLinks } from "@/data";
+import { Calendar, Clock, ChevronRight } from "lucide-react";
+import { siteConfig } from "@/data";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -107,229 +109,134 @@ export default async function BlogPostPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
 
-      {/* Hero / Header */}
-      <div className="bg-card/50 py-10 border-stroke border-b">
-        <Container className="flex flex-col gap-6">
-          <Link
-            href="/blog"
-            className="flex items-center gap-2 w-fit text-foreground-muted hover:text-primary text-sm transition"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Retour au blog
-          </Link>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <span className="bg-primary/10 px-3 py-1 rounded-full font-semibold text-primary text-xs">
-              {post.category}
+      <PageHeader
+        kicker={post.category}
+        title={post.title}
+        description={post.summary}
+        breadcrumbs={[
+          { label: "Accueil", href: "/" },
+          { label: "Blog", href: "/blog" },
+          { label: post.category },
+        ]}
+      >
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-foreground-muted text-sm">
+          <span className="flex items-center gap-3">
+            <span className="flex justify-center items-center bg-primary rounded-full w-9 h-9 font-display font-bold text-primary-foreground text-xs">
+              {siteConfig.shortName}
             </span>
-            <div className="flex items-center gap-1 text-foreground-muted text-xs">
-              <Calendar className="w-3.5 h-3.5" />
-              {formattedDate}
-            </div>
-            <div className="flex items-center gap-1 text-foreground-muted text-xs">
-              <Clock className="w-3.5 h-3.5" />
-              {post.readTime} de lecture
-            </div>
-          </div>
+            <span className="font-medium text-foreground">{post.author}</span>
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Calendar className="w-4 h-4" aria-hidden="true" />
+            {formattedDate}
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Clock className="w-4 h-4" aria-hidden="true" />
+            {post.readTime} de lecture
+          </span>
+        </div>
+      </PageHeader>
 
-          <h1 className="max-w-4xl font-bold text-foreground text-3xl sm:text-4xl lg:text-5xl leading-tight">
-            {post.title}
-          </h1>
-
-          <p className="max-w-3xl text-foreground-muted text-base sm:text-lg leading-relaxed">
-            {post.summary}
-          </p>
-
-          <div className="flex items-center gap-3 pt-2">
-            <div className="flex justify-center items-center bg-primary/20 rounded-full w-10 h-10 font-bold text-primary text-sm">
-              NG
-            </div>
-            <div>
-              <p className="font-semibold text-foreground text-sm">
-                {post.author}
-              </p>
-              <p className="text-foreground-muted text-xs">
-                {siteConfig.title}
-              </p>
-            </div>
-          </div>
-        </Container>
-      </div>
-
-      {/* Content */}
-      <div className="py-12 sm:py-16">
-        <Container className="gap-12 grid lg:grid-cols-[1fr_280px]">
-          {/* Article body */}
+      <SectionWrapper variant="light" className="py-12 md:py-20">
+        <Container className="gap-12 grid lg:grid-cols-[minmax(0,1fr)_17rem]">
           <article
             className="prose-blog"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
-          {/* Sidebar */}
-          <aside className="hidden lg:flex flex-col gap-8">
-            {/* Author card */}
-            <div className="top-24 sticky bg-card p-6 border border-stroke rounded-2xl">
-              <div className="flex items-center gap-3">
-                <div className="flex justify-center items-center bg-primary/20 rounded-full w-12 h-12 font-bold text-primary text-sm">
-                  NG
-                </div>
-                <div>
-                  <p className="font-semibold text-foreground">{post.author}</p>
-                  <p className="text-foreground-muted text-xs">
-                    {siteConfig.title}
-                  </p>
-                </div>
-              </div>
-              <p className="mt-4 text-foreground-muted text-sm leading-relaxed">
+          <aside className="flex flex-col gap-4 lg:top-28 lg:sticky lg:self-start">
+            <div className="p-6 card">
+              <p className="font-semibold text-foreground">{post.author}</p>
+              <p className="text-foreground-muted text-xs">
+                {siteConfig.title}
+              </p>
+              <p className="mt-3 text-foreground-muted text-sm leading-relaxed">
                 {siteConfig.description}
               </p>
-              <div className="flex gap-2 mt-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex justify-center items-center bg-background border border-stroke hover:border-primary rounded-full w-8 h-8 text-foreground-muted hover:text-primary text-xs transition"
-                    aria-label={social.name}
+            </div>
+            {post.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2 p-6 card">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="bg-background-muted px-3 py-1 border border-stroke rounded-full text-foreground-muted text-xs"
                   >
-                    {social.name[0]}
-                  </a>
+                    #{tag}
+                  </span>
                 ))}
               </div>
-            </div>
-
-            {/* Tags */}
-            {post.tags.length > 0 && (
-              <div className="bg-card p-6 border border-stroke rounded-2xl">
-                <div className="flex items-center gap-2 mb-4">
-                  <Tag className="w-4 h-4 text-primary" />
-                  <span className="font-semibold text-foreground text-sm">
-                    Tags
-                  </span>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {post.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="bg-background px-3 py-1 border border-stroke rounded-full text-foreground-muted text-xs"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
             )}
-
-            {/* Share */}
-            <div className="bg-card p-6 border border-stroke rounded-2xl">
-              <span className="font-semibold text-foreground text-sm">
-                Partager
-              </span>
-              <div className="flex flex-col gap-2 mt-4">
-                <a
-                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`${siteConfig.url}/blog/${slug}`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-background px-4 py-2 border border-stroke hover:border-primary rounded-xl text-foreground-muted hover:text-foreground text-sm transition"
-                >
-                  Twitter / X
-                </a>
-                <a
-                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${siteConfig.url}/blog/${slug}`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 bg-background px-4 py-2 border border-stroke hover:border-primary rounded-xl text-foreground-muted hover:text-foreground text-sm transition"
-                >
-                  LinkedIn
-                </a>
-              </div>
+            <div className="flex items-center gap-2 p-4 text-sm card">
+              <span className="text-foreground-muted">Partager :</span>
+              <a
+                href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`${siteConfig.url}/blog/${slug}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-foreground hover:text-primary transition-colors"
+              >
+                X
+              </a>
+              <span className="text-foreground-subtle">·</span>
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`${siteConfig.url}/blog/${slug}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-foreground hover:text-primary transition-colors"
+              >
+                LinkedIn
+              </a>
             </div>
           </aside>
         </Container>
-      </div>
+      </SectionWrapper>
 
-      {/* Tags mobile */}
-      <div className="lg:hidden pb-8">
-        <Container>
-          {post.tags.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              <Tag className="w-4 h-4 text-primary" />
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="bg-background px-3 py-1 border border-stroke rounded-full text-foreground-muted text-xs"
+      {relatedPosts.length > 0 && (
+        <SectionWrapper variant="dark" className="py-16 md:py-20">
+          <Container className="flex flex-col gap-8">
+            <div className="flex flex-wrap justify-between items-end gap-4">
+              <h2 className="font-display font-semibold text-foreground text-2xl md:text-3xl">
+                Articles similaires
+              </h2>
+              <Link
+                href="/blog"
+                className="font-medium text-primary text-sm hover:underline"
+              >
+                Tous les articles →
+              </Link>
+            </div>
+            <div className="gap-6 grid md:grid-cols-2">
+              {relatedPosts.map((related) => (
+                <Link
+                  key={related.slug}
+                  href={`/blog/${related.slug}`}
+                  className="group flex flex-col gap-3 p-6 card-interactive"
                 >
-                  {tag}
-                </span>
+                  <span className="font-semibold text-foreground-muted text-xs uppercase tracking-wider">
+                    {related.category} · {related.readTime}
+                  </span>
+                  <h3 className="font-semibold text-foreground group-hover:text-primary text-lg transition-colors">
+                    {related.title}
+                  </h3>
+                  <p className="text-foreground-muted text-sm line-clamp-2">
+                    {related.summary}
+                  </p>
+                  <span className="flex items-center gap-1 mt-auto pt-2 font-semibold text-primary text-sm">
+                    Lire l’article
+                    <ChevronRight className="w-4 h-4" />
+                  </span>
+                </Link>
               ))}
             </div>
-          )}
-        </Container>
-      </div>
-
-      {/* Related posts */}
-      {relatedPosts.length > 0 && (
-        <section className="py-12 border-stroke border-t">
-          <Container className="flex flex-col gap-8">
-            <h2 className="font-semibold text-foreground text-2xl">
-              Articles similaires
-            </h2>
-            <div className="gap-6 grid md:grid-cols-2">
-              {relatedPosts.map((related) => {
-                const relatedDate = new Date(related.date).toLocaleDateString(
-                  "fr-FR",
-                  {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric",
-                  },
-                );
-                return (
-                  <Link
-                    key={related.slug}
-                    href={`/blog/${related.slug}`}
-                    className="group bg-card p-6 border border-stroke hover:border-primary/50 rounded-3xl transition"
-                  >
-                    <div className="flex items-center gap-3 text-foreground-muted text-xs">
-                      <span className="bg-primary/10 px-3 py-1 rounded-full text-primary">
-                        {related.category}
-                      </span>
-                      <span>{relatedDate}</span>
-                      <span>·</span>
-                      <span>{related.readTime}</span>
-                    </div>
-                    <h3 className="mt-3 font-semibold text-foreground group-hover:text-primary text-lg transition">
-                      {related.title}
-                    </h3>
-                    <p className="mt-2 text-foreground-muted text-sm line-clamp-2">
-                      {related.summary}
-                    </p>
-                    <span className="flex items-center gap-1 mt-4 font-semibold text-primary text-sm">
-                      Lire l&apos;article
-                      <ChevronRight className="w-4 h-4" />
-                    </span>
-                  </Link>
-                );
-              })}
-            </div>
           </Container>
-        </section>
+        </SectionWrapper>
       )}
 
-      {/* CTA */}
-      <section className="py-12 border-stroke border-t">
-        <Container className="flex flex-col items-center gap-6 text-center">
-          <h2 className="font-semibold text-foreground text-2xl">
-            Vous avez un projet en tête ?
-          </h2>
-          <p className="max-w-lg text-foreground-muted text-sm">
-            Dites-moi ce que vous aimeriez construire et les questions que vous
-            vous posez. Nous regarderons ensemble par où commencer.
-          </p>
-          <GlowButton href="/contact">Parler de mon projet</GlowButton>
-        </Container>
-      </section>
+      <FinalCta
+        variant={relatedPosts.length > 0 ? "light" : "dark"}
+        kicker="Votre projet"
+        title="Vous avez un projet en tête ?"
+        text="Dites-moi ce que vous aimeriez construire et les questions que vous vous posez. Nous regarderons ensemble par où commencer."
+      />
     </>
   );
 }

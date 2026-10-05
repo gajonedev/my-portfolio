@@ -1,6 +1,6 @@
 ---
 title: "Digitaliser son école au Bénin : inscriptions, notes et scolarité en ligne"
-date: "2026-07-03"
+date: "2026-10-05"
 readTime: "7 min"
 summary: "Inscriptions en ligne, portail parents, paiement de la scolarité par Mobile Money : ce que le digital change concrètement pour un établissement scolaire béninois."
 category: "Secteurs"

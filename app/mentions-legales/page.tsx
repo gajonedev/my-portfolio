@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { siteConfig } from "@/data/site";
 import Container from "../components/Container";
+import SectionWrapper from "../components/layout/SectionWrapper";
 import PageHeader from "../components/PageHeader";
 
 export const metadata: Metadata = { title: "Mentions légales", alternates: { canonical: `${siteConfig.url}/mentions-legales` } };
@@ -9,12 +10,13 @@ export default async function MentionsLegalesPage() {
   return (
     <>
       <PageHeader
+        kicker="Informations légales"
         title="Mentions légales"
         description="Informations légales concernant ce site."
       />
-      <div className="py-16">
-        <Container className="prose-invert max-w-3xl prose">
-          <div className="bg-card p-8 border border-stroke rounded-3xl">
+      <SectionWrapper variant="light" className="py-16 md:py-20">
+        <Container className="max-w-3xl">
+          <div className="p-8 card">
             <h2 className="font-semibold text-foreground text-xl">
               Éditeur du site
             </h2>
@@ -77,7 +79,7 @@ export default async function MentionsLegalesPage() {
             </p>
           </div>
         </Container>
-      </div>
+      </SectionWrapper>
     </>
   );
 }

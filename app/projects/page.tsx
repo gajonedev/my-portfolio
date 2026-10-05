@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 import ProjectCard from "../components/ui/ProjectCard";
+import SectionWrapper from "../components/layout/SectionWrapper";
+import FinalCta from "../components/ui/FinalCta";
 import { projects, siteConfig } from "@/data";
 
 const ACCENTS = ["#ff4d3d", "#3b82f6", "#f59e0b"];
@@ -27,10 +29,11 @@ export default async function ProjectsPage() {
   return (
     <>
       <PageHeader
+        kicker="Réalisations"
         title="Mes projets"
         description="Voici des projets que j’ai développés pour des clients ou pour explorer une idée. Je vous explique mon rôle, mes choix et où chacun en est."
       />
-      <div className="py-16">
+      <SectionWrapper variant="light" className="py-16 md:py-24">
         <Container className="gap-6 grid md:grid-cols-2">
           {projects.map((project, index) => (
             <ProjectCard
@@ -41,7 +44,11 @@ export default async function ProjectsPage() {
             />
           ))}
         </Container>
-      </div>
+      </SectionWrapper>
+      <FinalCta
+        title="Votre projet pourrait être le prochain"
+        text="Plateforme web, logiciel métier ou application mobile : parlez-moi de votre idée, je vous réponds sous 24h."
+      />
     </>
   );
 }

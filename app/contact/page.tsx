@@ -1,7 +1,9 @@
 import { validService, whatsappMessage } from "@/lib/acquisition";
 import type { Metadata } from "next";
 import Container from "../components/Container";
+import SectionWrapper from "../components/layout/SectionWrapper";
 import PageHeader from "../components/PageHeader";
+import BottomGlow from "../components/ui/BottomGlow";
 import ContactForm from "../components/ui/ContactForm";
 import WhatsAppCta from "../components/ui/WhatsAppCta";
 import { Mail, Phone, MapPin, Clock } from "@/lib/icons";
@@ -42,89 +44,75 @@ export default async function ContactPage({
   return (
     <>
       <PageHeader
+        kicker="Contact"
         title="Parlons de votre projet"
-        description="Parlons de votre plateforme web, de votre logiciel métier ou de votre application mobile."
+        description="Plateforme web, logiciel métier ou application mobile : décrivez-moi votre idée. Je vous réponds sous 24h pour préciser le besoin avant le devis."
       />
-      <div className="py-16">
-        <Container className="gap-10 grid lg:grid-cols-[0.6fr_0.4fr]">
-          <div className="relative bg-card border border-stroke rounded-3xl overflow-hidden">
-            {/* pronounced warm mesh glow rising from the bottom */}
-            <div
-              aria-hidden="true"
-              className="-bottom-28 absolute inset-x-0 blur-[90px] mx-auto rounded-full w-4/5 h-80 pointer-events-none"
-              style={{
-                background:
-                  "radial-gradient(circle, rgba(255,77,61,0.65), rgba(255,122,69,0.4) 38%, rgba(59,130,246,0.32) 62%, transparent 75%)",
-              }}
-            />
-            {/* second tighter core for a brighter, more manifest hotspot */}
-            <div
-              aria-hidden="true"
-              className="-bottom-10 absolute inset-x-0 blur-[70px] mx-auto rounded-full w-1/2 h-44 pointer-events-none"
-              style={{
-                background:
-                  "radial-gradient(circle, rgba(255,99,71,0.55), transparent 70%)",
-              }}
-            />
+      <SectionWrapper variant="dark" className="py-16 md:py-20">
+        <Container className="items-start gap-8 grid lg:grid-cols-[1.5fr_1fr]">
+          <div className="relative bg-card border border-stroke rounded-[2rem] overflow-hidden">
+            <BottomGlow />
             <ContactForm
               initialService={selected}
               initialSource={source}
-              className="relative p-6"
+              className="relative p-6 md:p-8"
             />
           </div>
-          <div className="flex flex-col gap-6 bg-card p-6 border border-stroke rounded-3xl">
-            <div>
-              <p className="text-foreground-muted text-sm uppercase tracking-[0.25em]">
-                Pour me joindre
+
+          <aside className="flex flex-col gap-4 lg:top-28 lg:sticky">
+            <div className="flex flex-col gap-4 p-6 card">
+              <h2 className="font-semibold text-foreground text-lg">
+                Vous préférez écrire directement ?
+              </h2>
+              <p className="text-foreground-muted text-sm leading-relaxed">
+                WhatsApp reste le canal le plus rapide pour un premier échange.
               </p>
-              <div className="flex flex-col gap-3 mt-4">
-                <a
-                  href={`mailto:${contactInfo.email}`}
-                  className="flex items-center gap-3 text-foreground hover:text-primary transition"
-                >
-                  <Mail className="w-5 h-5 text-primary" />
-                  {contactInfo.email}
-                </a>
-                <a
-                  href={`tel:${contactInfo.phoneRaw}`}
-                  className="flex items-center gap-3 text-foreground-muted hover:text-foreground transition"
-                >
-                  <Phone className="w-5 h-5 text-primary" />
-                  {contactInfo.phone}
-                </a>
-                <div className="flex items-center gap-3 text-foreground-muted">
-                  <MapPin className="w-5 h-5 text-primary" />
-                  {contactInfo.location}
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col gap-2">
               <WhatsAppCta
                 message={whatsappMessage(source || "/contact", selected)}
                 label="Discuter sur WhatsApp"
                 className="w-full"
               />
-              <p className="text-foreground-subtle text-xs text-center">
-                Le canal le plus direct pour un échange rapide.
-              </p>
             </div>
-            <div className="bg-background p-4 border border-stroke rounded-2xl">
-              <div className="flex items-center gap-2 text-foreground">
-                <Clock className="w-4 h-4 text-primary" />
-                <p className="font-medium">Planning</p>
-              </div>
-              <p className="mt-2 text-foreground-muted text-sm">
-                {contactInfo.responseTime}
-              </p>
-            </div>
-            <div className="flex flex-wrap gap-2 text-foreground-muted text-xs">
-              <span>{contactInfo.location}</span>
-              <span>•</span>
-              <span>{contactInfo.availability}</span>
-            </div>
-          </div>
+
+            <ul className="flex flex-col divide-y divide-stroke card">
+              <li>
+                <a
+                  href={`mailto:${contactInfo.email}`}
+                  className="group flex items-center gap-3 p-4 text-sm"
+                >
+                  <Mail className="w-5 h-5 text-primary shrink-0" />
+                  <span className="text-foreground group-hover:text-primary transition-colors">
+                    {contactInfo.email}
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`tel:${contactInfo.phoneRaw}`}
+                  className="group flex items-center gap-3 p-4 text-sm"
+                >
+                  <Phone className="w-5 h-5 text-primary shrink-0" />
+                  <span className="text-foreground group-hover:text-primary transition-colors">
+                    {contactInfo.phone}
+                  </span>
+                </a>
+              </li>
+              <li className="flex items-center gap-3 p-4 text-sm">
+                <MapPin className="w-5 h-5 text-primary shrink-0" />
+                <span className="text-foreground-muted">
+                  {contactInfo.location} · {contactInfo.availability}
+                </span>
+              </li>
+              <li className="flex items-center gap-3 p-4 text-sm">
+                <Clock className="w-5 h-5 text-primary shrink-0" />
+                <span className="text-foreground-muted">
+                  {contactInfo.responseTime}
+                </span>
+              </li>
+            </ul>
+          </aside>
         </Container>
-      </div>
+      </SectionWrapper>
     </>
   );
 }

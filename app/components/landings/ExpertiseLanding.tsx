@@ -1,10 +1,12 @@
 import { serializeJsonLd } from "@/lib/seo";
 import Link from "next/link";
 import Container from "../Container";
+import SectionWrapper from "../layout/SectionWrapper";
+import FaqList from "../ui/FaqList";
+import FinalCta from "../ui/FinalCta";
 import PageHeader from "../PageHeader";
 import TechBadge from "../ui/TechBadge";
-import WhatsAppCta from "../ui/WhatsAppCta";
-import { getIcon, CheckCircle, ChevronRight } from "@/lib/icons";
+import { getIcon, CheckCircle } from "@/lib/icons";
 import {
   getProjectBySlug,
   getServicePageBySlug,
@@ -89,29 +91,17 @@ export default function ExpertiseLanding({
       />
 
       <PageHeader
+        kicker="Expertise"
         title={expertise.title}
         description={expertise.heroDescription}
+        breadcrumbs={[
+          { label: "Accueil", href: "/" },
+          { label: expertise.title },
+        ]}
       />
 
-      <main className="py-16">
-        <Container className="gap-14 grid">
-          {/* Fil d'ariane */}
-          <nav aria-label="Fil d'ariane" className="-mb-6">
-            <ol className="flex flex-wrap items-center gap-1.5 text-foreground-muted text-sm">
-              <li>
-                <Link href="/" className="hover:text-foreground transition">
-                  Accueil
-                </Link>
-              </li>
-              <li aria-hidden="true">
-                <ChevronRight className="w-4 h-4" />
-              </li>
-              <li aria-current="page" className="text-foreground">
-                {expertise.title}
-              </li>
-            </ol>
-          </nav>
-
+      <SectionWrapper variant="light" className="py-16 md:py-24">
+        <Container className="gap-16 grid">
           {/* Introduction */}
           <section className="max-w-3xl">
             <h2 className="font-semibold text-foreground text-2xl">
@@ -138,7 +128,7 @@ export default function ExpertiseLanding({
                 return (
                   <div
                     key={strength.title}
-                    className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
+                    className="flex gap-4 p-5 card"
                   >
                     <div className="flex justify-center items-center bg-primary/20 rounded-xl w-12 h-12 text-primary shrink-0">
                       <Icon className="w-6 h-6" />
@@ -157,15 +147,20 @@ export default function ExpertiseLanding({
             </div>
           </section>
 
+        </Container>
+      </SectionWrapper>
+
+      <SectionWrapper variant="dark" className="py-16 md:py-24">
+        <Container className="gap-16 grid">
           {/* Cas d'usage */}
-          <section className="bg-card p-8 border border-stroke rounded-3xl">
+          <section className="p-8 card">
             <h2 className="mb-6 font-semibold text-foreground text-xl">
               Ce que je construis avec {expertise.techName}
             </h2>
             <div className="gap-3 grid md:grid-cols-2">
               {expertise.useCases.map((useCase) => (
                 <div key={useCase} className="flex items-start gap-3">
-                  <CheckCircle className="mt-0.5 w-5 h-5 text-green-500 shrink-0" />
+                  <CheckCircle className="mt-0.5 w-5 h-5 text-primary shrink-0" />
                   <p className="text-foreground-muted text-sm">{useCase}</p>
                 </div>
               ))}
@@ -183,7 +178,7 @@ export default function ExpertiseLanding({
                   <Link
                     key={project.slug}
                     href={`/projects/${project.slug}`}
-                    className="group bg-card/50 hover:bg-card p-5 border border-stroke hover:border-primary/40 rounded-xl transition"
+                    className="group p-5 card-interactive"
                   >
                     <p className="font-medium text-foreground group-hover:text-primary transition">
                       {project.name}
@@ -202,27 +197,17 @@ export default function ExpertiseLanding({
             </section>
           )}
 
+        </Container>
+      </SectionWrapper>
+
+      <SectionWrapper variant="light" className="py-16 md:py-24">
+        <Container className="gap-16 grid">
           {/* FAQ */}
           <section>
             <h2 className="mb-6 font-semibold text-foreground text-xl">
               Questions fréquentes
             </h2>
-            <div className="flex flex-col gap-4">
-              {expertise.faq.map((item) => (
-                <details
-                  key={item.question}
-                  className="group bg-card border border-stroke rounded-2xl open:pb-5"
-                >
-                  <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
-                    {item.question}
-                    <ChevronRight className="w-5 h-5 text-foreground-muted transition-transform group-open:rotate-90 shrink-0" />
-                  </summary>
-                  <p className="px-5 text-foreground-muted text-sm leading-relaxed">
-                    {item.answer}
-                  </p>
-                </details>
-              ))}
-            </div>
+            <FaqList items={expertise.faq} />
             {relatedService && (
               <p className="mt-4 text-foreground-muted text-sm">
                 En savoir plus sur le service associé :{" "}
@@ -237,27 +222,16 @@ export default function ExpertiseLanding({
             )}
           </section>
 
-          {/* CTA */}
-          <section className="text-center">
-            <h2 className="font-semibold text-foreground text-2xl">
-              Un projet {expertise.techName} ?
-            </h2>
-            <p className="mt-3 text-foreground-muted">
-              Parlez-moi de votre besoin. Je vous réponds sous 24h pour en
-              discuter.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mt-6">
-              <WhatsAppCta
-                label="Discuter de mon projet"
-                message={`Bonjour Néhémie, j'ai un projet ${expertise.techName} et j'aimerais en discuter avec vous.`}
-              />
-              <Link href="/tarifs" className="btn-secondary">
-                Voir les tarifs
-              </Link>
-            </div>
-          </section>
         </Container>
-      </main>
+      </SectionWrapper>
+
+      <FinalCta
+        title={`Un projet ${expertise.techName} ?`}
+        text="Parlez-moi de votre besoin. Je vous réponds sous 24h pour en discuter."
+        whatsappLabel="Discuter de mon projet"
+        whatsappMessage={`Bonjour Néhémie, j'ai un projet ${expertise.techName} et j'aimerais en discuter avec vous.`}
+        secondary={{ href: "/tarifs", label: "Voir les tarifs" }}
+      />
     </>
   );
 }
