@@ -1,6 +1,6 @@
 # Néhémie Gandonou — Développeur Web & Mobile au Bénin
 
-> Développeur web et mobile freelance basé à Cotonou, Bénin. Conception d'applications web fullstack (Next.js, React, TypeScript), d'applications mobiles (Flutter, iOS + Android), de plateformes SaaS et de boutiques e-commerce avec paiement Mobile Money (FedaPay, MTN MoMo, Moov Money). Intervient en présentiel à Cotonou et dans tout le Bénin, et à distance en Afrique de l'Ouest et à l'international. Devis gratuit sous 24h.
+> Développeur web et mobile freelance basé à Cotonou, Bénin. Conception d'applications web fullstack (Next.js, React, TypeScript), d'applications mobiles (Flutter, iOS + Android), de plateformes SaaS et de boutiques e-commerce avec paiement Mobile Money (FedaPay, MTN MoMo, Moov Money). Intervient en présentiel à Cotonou et dans tout le Bénin, et à distance en Afrique de l'Ouest et à l'international. Réponse sous 24h et devis gratuit après un échange.
 
 Informations clés :
 - Nom : Néhémie Gandonou (Gajone Dev)
@@ -16,7 +16,7 @@ Informations clés :
 - [Applications web & logiciels métier](https://gajone.dev/services/creation-application-web) : outils de gestion sur-mesure (facturation, stocks, réservations), à partir de 650 000 FCFA
 - [Applications mobiles](https://gajone.dev/services/creation-application-mobile) : apps iOS + Android en Flutter, à partir de 900 000 FCFA
 - [E-commerce](https://gajone.dev/services/creation-ecommerce) : boutiques en ligne avec paiement Mobile Money, à partir de 500 000 FCFA
-- [SaaS & dashboards](https://gajone.dev/services/creation-saas-dashboard) : du MVP au produit scalable, à partir de 1 200 000 FCFA
+- [SaaS & dashboards](https://gajone.dev/services/creation-saas-dashboard) : pour lancer puis faire évoluer votre logiciel, à partir de 1 200 000 FCFA
 - [Backend & API](https://gajone.dev/services/backend-api) : API REST, bases de données, intégrations, à partir de 300 000 FCFA
 - [Audit & optimisation](https://gajone.dev/services/audit-optimisation) : diagnostic performance/SEO/code, à partir de 80 000 FCFA
 - [Tarifs détaillés](https://gajone.dev/tarifs) : fourchettes de prix transparentes en FCFA

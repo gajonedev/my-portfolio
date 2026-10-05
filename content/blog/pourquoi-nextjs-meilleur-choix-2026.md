@@ -1,8 +1,9 @@
 ---
 title: "Next.js est-il un bon choix pour votre site en 2026 ?"
 date: "2026-01-20"
+updated: "2026-10-04"
 readTime: "9 min"
-summary: "Analyse des avantages de Next.js pour le SEO, la performance et l'expérience développeur."
+summary: "Je vous explique pourquoi j’utilise Next.js sur certains projets, et dans quels cas je choisirais une autre solution."
 category: "Tech"
 author: "Néhémie Gandonou"
 tags: ["Next.js", "React", "Performance", "SEO", "Framework"]
@@ -285,4 +286,4 @@ Next.js est un choix solide lorsqu'un projet combine contenu public, interactivi
 
 Mon conseil : choisissez la technologie après avoir clarifié le contenu, les interactions, les compétences de l'équipe et les contraintes d'hébergement. Next.js mérite alors d'être comparé à Astro, Nuxt ou à une solution plus simple, plutôt que sélectionné par défaut.
 
-Vous hésitez sur le choix technologique pour votre prochain projet ? [Contactez-moi](/contact) pour un conseil personnalisé et gratuit. Je vous aiderai à identifier la stack idéale pour vos besoins.
+Vous hésitez sur le choix technologique pour votre prochain projet ? [Contactez-moi](/contact) pour un conseil personnalisé et gratuit. Je vous expliquerai les options que je retiendrais pour votre projet et ce qu’elles impliquent à entretenir.

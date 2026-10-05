@@ -33,8 +33,8 @@ export default async function ProjectsPage() {
   return (
     <>
       <PageHeader
-        title="Projets sélectionnés"
-        description="Des produits clients, des prototypes et des projets personnels, chacun présenté avec son état actuel et les choix qui ont guidé sa conception."
+        title="Mes projets"
+        description="Voici des projets que j’ai développés pour des clients ou pour explorer une idée. Je vous explique mon rôle, mes choix et où chacun en est."
       />
       <div className="py-16">
         <Container className="gap-6 grid md:grid-cols-2">
@@ -84,17 +84,17 @@ export default async function ProjectsPage() {
                   <p className="mt-4 font-body text-foreground-muted text-sm">
                     {project.summary}
                   </p>
-                  <p className="mt-4 text-sm text-foreground-muted">
+                  <p className="mt-4 text-foreground-muted text-sm">
                     <span className="font-medium text-foreground">
                       Mon rôle :{" "}
                     </span>
                     {project.role}
                   </p>
-                  <div className="flex flex-wrap gap-2 mt-4">
+                  {/* <div className="flex flex-wrap gap-2 mt-4">
                     {project.tech.map((t) => (
                       <TechBadge key={t}>{t}</TechBadge>
                     ))}
-                  </div>
+                  </div> */}
                   {project.caseStudy && (
                     <Link
                       href={`/projects/${project.slug}`}

@@ -23,7 +23,7 @@ export default function Hero() {
           </p>
 
           <h1 className="font-display font-bold text-foreground text-4xl md:text-5xl lg:text-6xl leading-[1.08] tracking-tight">
-            Votre activité, une plateforme <HoverWord text="web" /> ou une
+            Je développe votre plateforme <HoverWord text="web" /> ou votre
             application <HoverWord text="mobile" /> sur mesure.
           </h1>
 
@@ -31,11 +31,10 @@ export default function Hero() {
             className="max-w-xl font-body text-foreground-muted text-base md:text-lg leading-relaxed hero-anim-up"
             style={{ animationDelay: "0.5s" }}
           >
-            Je suis Néhémie Gandonou, développeur à Cotonou. Je conçois des
-            applications mobiles et des sites web qui donnent une image
-            professionnelle à votre activité et facilitent la prise de contact.
-            Le périmètre et le calendrier sont définis avec vous avant le
-            démarrage.
+            Je suis Néhémie Gandonou, développeur de logiciels à Cotonou. Vous
+            voulez gérer votre activité, proposer un service en ligne ou créer
+            une application pour vos clients ? Je vous accompagne de la première
+            discussion jusqu’à la mise en ligne.
           </p>
 
           <div

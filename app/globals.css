@@ -901,26 +901,74 @@ h6 {
   accent-color: var(--primary);
 }
 
+/* CSS-only page entrance; navigation and footer stay sharp. */
+@keyframes page-unblur {
+  from {
+    filter: blur(10px);
+  }
+  to {
+    filter: blur(0);
+  }
+}
+
+.page-transition {
+  animation: page-unblur 300ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+  }
+}
+
 /* Keyboard navigation and anchored sections. */
-:focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
-[id] { scroll-margin-top: 6rem; }
-.skip-link { position: fixed; top: 1rem; left: 1rem; z-index: 100; transform: translateY(-200%); border-radius: .75rem; padding: .75rem 1rem; background: var(--primary); color: var(--primary-foreground); }
-.skip-link:focus { transform: translateY(0); }
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+[id] {
+  scroll-margin-top: 6rem;
+}
+.skip-link {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+.skip-link:focus {
+  transform: translateY(0);
+}
 
 /* Keep the headline readable from the first paint. */
-.hero-word { opacity: 1; animation: none; }
+.hero-word {
+  opacity: 1;
+  animation: none;
+}
 @media (hover: none) {
-  .aurora-blob { filter: blur(60px); animation: none !important; }
+  .aurora-blob {
+    filter: blur(60px);
+    animation: none !important;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-anim-up, .hero-anim-pop, .hero-word { opacity: 1; transform: none; filter: none; }
+  .hero-anim-up,
+  .hero-anim-pop,
+  .hero-word {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .motion-reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
-}
-
-/* A quiet, permanent corner glow; it does not grow on hover. */
-.card-glow {
-  background-image: radial-gradient(ellipse at 100% 0%, color-mix(in srgb, var(--primary) 7%, transparent), transparent 60%);
+  .motion-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
 }

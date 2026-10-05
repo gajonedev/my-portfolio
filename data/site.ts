@@ -5,7 +5,7 @@ export const siteConfig = {
   shortName: "NG",
   title: "Plateformes web & Apps mobiles",
   description:
-    "Développeur web et mobile indépendant basé à Cotonou. Je conçois des plateformes web, des logiciels métier et des applications mobiles adaptés aux réalités de votre activité.",
+    "Je suis Néhémie, développeur indépendant à Cotonou. Je vous accompagne pour créer votre plateforme web, votre logiciel métier ou votre application mobile.",
   url: "https://gajone.dev",
   updatedAt: "2026-10-04",
   locale: "fr_BJ",
@@ -19,8 +19,9 @@ export const contactInfo = {
   whatsapp: "2290146897322",
   location: "Cotonou, Bénin",
   availability: "À Cotonou et à distance",
-  responseTime: "Prise de brief sous 24h.",
-  averageDelivery: "Délai indicatif : 2 à 8 semaines selon le périmètre.",
+  responseTime: "Je vous réponds sous 24h pour discuter de votre idée.",
+  averageDelivery:
+    "Nous fixons les dates de livraison ensemble, selon les fonctionnalités à réaliser.",
 } as const;
 
 // Lien WhatsApp pré-rempli — CTA à faible friction (convertit mieux qu'un formulaire ici)
@@ -32,9 +33,9 @@ export const whatsappUrl = (message: string = DEFAULT_WHATSAPP_MESSAGE) =>
 
 // Arguments de confiance affichés sur la home (objection-killers, tous véridiques)
 export const homeTrust = [
-  "Premier retour sous 24h",
-  "Délai défini avant le démarrage",
-  "Code et accès remis à la livraison",
+  "Je vous réponds sous 24h",
+  "Nous fixons le calendrier ensemble",
+  "Vous récupérez le code et les accès",
 ] as const;
 
 // Section « Intérêt » (AIDA) : blocages concrets du visiteur, formulés de son
@@ -79,32 +80,56 @@ export const socialLinks = [
 ] as const;
 
 export const stats = [
-  { label: "Projets livrés", value: "+15" },
-  { label: "Clients", value: "+8" },
-  { label: "Temps moyen", value: "4-8 sem" },
-  { label: "Expérience", value: "4+ ans" },
+  {
+    label: "Projets livrés",
+    value: "+15",
+  },
+  {
+    label: "Clients",
+    value: "+8",
+  },
+  {
+    label: "Temps moyen",
+    value: "4-8 sem",
+  },
+  {
+    label: "Expérience",
+    value: "4+ ans",
+  },
 ] as const;
 
 export const aboutStats = [
-  { label: "Projets livrés", value: "+15" },
-  { label: "Clients accompagnés", value: "+8" },
-  { label: "Spécialités", value: "Web, mobile, IoT" },
-  { label: "Années d'expérience", value: "4+" },
+  {
+    label: "Projets livrés",
+    value: "+15",
+  },
+  {
+    label: "Clients accompagnés",
+    value: "+8",
+  },
+  {
+    label: "Spécialités",
+    value: "Web et mobile",
+  },
+  {
+    label: "Années d'expérience",
+    value: "4+",
+  },
 ] as const;
 
 // Bénéfices client mis en avant dans la section À propos de la home
 // (orientés résultat, pas fonctionnalité technique)
 export const aboutHighlights = [
-  "Un seul interlocuteur, du premier échange à la mise en ligne",
-  "Un produit fiable qui tient la charge, même quand l'activité décolle",
-  "Une expérience simple et rapide qui met vos clients en confiance",
+  "Vous échangez directement avec moi, du premier appel à la livraison",
+  "Je construis votre application autour du travail de vos équipes",
+  "Je vous aide à la prendre en main et à préparer les prochaines évolutions",
 ] as const;
 
 // Engagements concrets — remplacent l'ancienne carte « stack » (trop technique
 // pour la home ; la stack vit déjà dans la section Compétences). Tous véridiques.
 export const aboutGuarantees = [
-  "Devis détaillé et gratuit après le cadrage",
-  "Périmètre et calendrier validés avant le démarrage",
-  "Code spécifique, comptes et accès remis à la livraison",
-  "Un suivi après la mise en ligne",
+  "Je vous prépare un devis gratuit après notre échange",
+  "Nous décidons des fonctionnalités, du budget et des dates avant de commencer",
+  "Je vous remets le code prévu au devis et les accès à la livraison",
+  "Je vous accompagne pour prendre en main votre application",
 ] as const;

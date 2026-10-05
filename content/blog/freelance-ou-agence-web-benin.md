@@ -1,8 +1,9 @@
 ---
 title: "Freelance ou agence web au Bénin : que choisir pour votre projet ?"
 date: "2026-07-03"
+updated: "2026-10-04"
 readTime: "4 min"
-summary: "Développeur freelance ou agence web : avantages, inconvénients et critères concrets pour choisir le bon prestataire digital au Bénin."
+summary: "Je vous donne les critères que je regarderais pour choisir un freelance ou une agence selon votre projet."
 category: "Business"
 author: "Néhémie Gandonou"
 tags: ["Freelance", "Agence web", "Bénin", "Prestataire", "Conseil"]
@@ -54,8 +55,4 @@ Le meilleur antidote : vérifier les réalisations en ligne, exiger la propriét
 
 Pour un projet web ou mobile au Bénin, un bon freelance peut offrir un excellent rapport entre expertise, proximité et budget. Une agence reste plus adaptée lorsque le projet demande plusieurs métiers en parallèle, une forte capacité de production ou une continuité contractuelle renforcée.
 
-Si vous voulez vérifier que je passe mon propre test : mes [réalisations sont en ligne](/projects), mes [tarifs sont publics](/tarifs), et je réponds [sous 24h avec un devis détaillé](/contact).
-
----
-
-*Néhémie Gandonou est développeur web et mobile freelance basé à Cotonou, au service des entreprises de tout le Bénin.*
+Si vous voulez vérifier que je passe mon propre test : mes [réalisations sont en ligne](/projects), mes [tarifs sont publics](/tarifs), et vous pouvez [m’écrire pour en discuter](/contact). Je vous réponds sous 24h.

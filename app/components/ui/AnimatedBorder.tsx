@@ -15,7 +15,7 @@ export default function AnimatedBorder({
 }: AnimatedBorderProps) {
   return (
     <div className={`animated-border rounded-3xl p-[1px] ${className}`}>
-      <div className="rounded-[calc(1.5rem-1px)] bg-card card-glow h-full">{children}</div>
+      <div className="rounded-[calc(1.5rem-1px)] bg-card h-full">{children}</div>
     </div>
   );
 }

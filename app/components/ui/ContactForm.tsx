@@ -141,7 +141,8 @@ export default function ContactForm({
       <div>
         <h2 className="text-xl font-semibold">Décrivez votre projet</h2>
         <p className="mt-2 text-sm text-foreground-muted">
-          Premier retour sous 24h. Le devis suit le cadrage de votre besoin.
+          Expliquez-moi ce que vous voulez faire, avec vos mots. Je vous réponds
+          sous 24h pour en discuter avant de préparer le devis.
         </p>
       </div>
       <div className="grid gap-4 md:grid-cols-2">
@@ -298,7 +299,7 @@ export default function ContactForm({
         </p>
       )}
       <p className="text-xs leading-relaxed text-foreground-muted">
-        Ces informations servent à répondre à votre demande.{" "}
+        J’utilise ces informations pour vous répondre.{" "}
         <Link href="/politique-confidentialite" className="underline">
           Confidentialité
         </Link>

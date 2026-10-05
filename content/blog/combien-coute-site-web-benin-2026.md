@@ -1,8 +1,9 @@
 ---
 title: "Combien coûte un site web au Bénin en 2026 ?"
 date: "2026-07-03"
+updated: "2026-10-04"
 readTime: "5 min"
-summary: "Les vraies fourchettes de prix en FCFA pour un site vitrine, une boutique en ligne ou une application web au Bénin, et les pièges à éviter."
+summary: "Je vous explique mes repères de prix en FCFA pour un site vitrine, une boutique ou un logiciel web, et ce qui fait varier le devis."
 category: "Business"
 author: "Néhémie Gandonou"
 tags: ["Prix", "Site web", "Bénin", "Budget", "E-commerce"]
@@ -68,10 +69,6 @@ Méfiez-vous des prestataires qui gardent ces accès pour vous facturer des « f
 
 ## Comment obtenir un devis fiable
 
-Avant de contacter un prestataire, clarifiez trois choses : **l'objectif** du site, **les contenus disponibles** et **votre budget indicatif**. Avec ces éléments, le prestataire pourra préparer un chiffrage plus fiable. De mon côté, je peux généralement envoyer [un devis gratuit sous 24 heures](/contact) après le cadrage initial.
+Avant de contacter un prestataire, clarifiez trois choses : **l'objectif** du site, **les contenus disponibles** et **votre budget indicatif**. Avec ces éléments, le prestataire pourra préparer un chiffrage plus fiable. De mon côté, je vous réponds sous 24h pour préciser votre besoin avant de préparer [un devis gratuit](/contact).
 
 Et si vous hésitez encore entre les types de projets, mes pages [création de site vitrine](/services/creation-site-vitrine), [application web et logiciel métier](/services/creation-application-web) et [création de boutique e-commerce](/services/creation-ecommerce) détaillent ce que chaque option implique.
-
----
-
-*Néhémie Gandonou est développeur web et mobile freelance à Cotonou. Il accompagne les entreprises du Bénin, de [Cotonou](/developpeur-web-cotonou) à [Parakou](/developpeur-web-parakou), dans leurs projets digitaux.*

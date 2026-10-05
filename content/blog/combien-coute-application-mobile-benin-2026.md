@@ -1,8 +1,9 @@
 ---
 title: "Combien coûte une application mobile au Bénin en 2026 ?"
 date: "2026-07-03"
+updated: "2026-10-04"
 readTime: "6 min"
-summary: "Les vraies fourchettes de prix en FCFA pour développer une application mobile au Bénin, les coûts cachés que personne n'annonce, et comment réduire le budget sans sacrifier la qualité."
+summary: "Je détaille mes repères de prix en FCFA, les dépenses à prévoir et les choix qui font varier le budget d’une application mobile."
 category: "Business"
 author: "Néhémie Gandonou"
 tags: ["Prix", "Application mobile", "Flutter", "Bénin", "Budget"]
@@ -94,7 +95,3 @@ C'est exactement la logique de mes trois formules, MVP Mobile, Business, Platefo
 ## Obtenir un chiffrage précis
 
 Pour recevoir un devis fiable, préparez trois choses : **le problème que l'application doit résoudre**, **les personnes qui l'utiliseront** et **votre budget indicatif**. Je pourrai alors préparer [un devis détaillé](/contact) et vous signaler si une autre première étape me paraît plus adaptée.
-
----
-
-*Néhémie Gandonou est développeur web et mobile freelance basé à Cotonou. Il conçoit des applications Flutter pour les entreprises et startups du Bénin, de [Cotonou](/developpeur-web-cotonou) à [Parakou](/developpeur-web-parakou), et d'Afrique de l'Ouest.*

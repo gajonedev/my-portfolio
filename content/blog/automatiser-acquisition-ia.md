@@ -1,8 +1,9 @@
 ---
 title: "Automatiser votre acquisition avec l'IA"
 date: "2026-01-28"
+updated: "2026-10-04"
 readTime: "8 min"
-summary: "Des usages concrets de l'IA pour mieux répondre aux prospects, qualifier les demandes et alléger certaines tâches répétitives."
+summary: "Je présente quelques usages de l’IA pour répondre aux demandes et réduire les tâches répétitives, avec leurs limites."
 category: "IA"
 author: "Néhémie Gandonou"
 tags: ["IA", "Automatisation", "Chatbot", "Acquisition", "Marketing"]
@@ -200,4 +201,4 @@ L'IA n'est ni obligatoire ni pertinente partout. Elle devient intéressante lors
 
 Le plus raisonnable est de commencer par un cas d'usage simple, de mesurer son effet, puis de décider s'il mérite d'être étendu. Un chatbot peut être un bon point de départ, mais une meilleure FAQ ou un formulaire plus clair suffit parfois.
 
-Vous souhaitez intégrer l'IA dans votre processus d'acquisition ? [Discutons-en](/contact) et identifions ensemble les automatisations les plus impactantes pour votre business.
+Vous souhaitez intégrer l'IA dans votre processus d'acquisition ? [Discutons-en](/contact) et identifions ensemble les tâches que vous pourriez simplifier sans compliquer le parcours de vos clients.

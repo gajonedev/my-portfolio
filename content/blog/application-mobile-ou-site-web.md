@@ -1,8 +1,9 @@
 ---
 title: "Application mobile ou site web : par quoi commencer ?"
 date: "2026-08-16"
+updated: "2026-10-04"
 readTime: "4 min"
-summary: "App mobile ou site web pour lancer votre projet ? Les vrais critères de décision, audience, budget, usage, et le chemin le plus intelligent pour démarrer."
+summary: "Je vous aide à choisir par quoi commencer selon vos utilisateurs, votre budget et les fonctions dont vous avez besoin."
 category: "Business"
 author: "Néhémie Gandonou"
 tags: ["Application mobile", "Site web", "Stratégie", "Startup", "Bénin"]
@@ -23,7 +24,7 @@ Toute la décision découle de cette différence.
 - **Vos clients doivent vous trouver** : les pages d'un site peuvent apparaître directement dans Google. Pour capter une recherche comme « hôtel Ouidah » ou « boutique chaussures Cotonou », le web part généralement avec un avantage.
 - **L'usage est occasionnel** : personne n'installe une app pour consulter un menu ou demander un devis une fois par trimestre.
 - **Vous vendez en ligne** : une [boutique web](/services/creation-ecommerce) touche tout le monde, y compris ceux qui n'installeront jamais votre app. L'app e-commerce viendra récompenser vos clients fidèles, plus tard.
-- **Le budget est serré** : un [site professionnel démarre à 170 000 FCFA](/tarifs), une [application mobile à 900 000](/blog/combien-coute-application-mobile-benin-2026). Le web valide votre marché pour un cinquième du prix.
+- **Le budget est serré** : un [site professionnel démarre à 170 000 FCFA](/tarifs), une [application mobile à 900 000](/blog/combien-coute-application-mobile-benin-2026). Un site de présentation peut être une première étape moins coûteuse ; un logiciel web complet demande un autre budget.
 
 ## Choisissez l'application mobile d'abord si…
 
@@ -36,13 +37,13 @@ Toute la décision découle de cette différence.
 
 Le piège n'est pas seulement de choisir le mauvais canal. C'est aussi de vouloir financer les deux dès le lancement, avant de savoir ce que les utilisateurs attendent réellement.
 
-Le chemin intelligent, que je recommande le plus souvent :
+Voici les étapes que je vous propose pour éviter de tout financer dès le départ :
 
 1. **Lancez sur un seul canal**, celui que les critères ci-dessus désignent
 2. **Mesurez** ce que les utilisateurs font réellement
 3. **Étendez** avec le second canal quand la demande le justifie, en réutilisant le [backend](/services/backend-api) déjà construit, qui sert les deux sans être refait
 
-C'est exactement pour ça que je construis les backends séparés de l'interface : le moteur qui alimente votre site web aujourd'hui alimentera votre app Flutter demain, sans rien jeter.
+C'est exactement pour ça que je construis les backends séparés de l'interface : le moteur qui alimente votre site web aujourd'hui alimentera votre app Flutter demain, en réutilisant le serveur si les besoins restent compatibles.
 
 ## Et la PWA, l'entre-deux ?
 
@@ -60,7 +61,3 @@ Une Progressive Web App est un site web qui peut s'installer comme une applicati
 | Tester une idée à petit budget | Site web ou PWA |
 
 Vous hésitez encore ? C'est normal : chaque projet a ses nuances. [Décrivez-moi le vôtre](/contact) et je vous aiderai à choisir une première étape proportionnée à votre besoin et à votre budget.
-
----
-
-*Néhémie Gandonou développe des sites web (Next.js) et des applications mobiles (Flutter) depuis Cotonou, et son premier conseil est toujours gratuit.*

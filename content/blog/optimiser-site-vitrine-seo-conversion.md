@@ -1,8 +1,9 @@
 ---
 title: "Optimiser un site vitrine pour le SEO et la conversion"
 date: "2026-02-09"
+updated: "2026-10-04"
 readTime: "7 min"
-summary: "Les étapes clés pour obtenir un score Core Web Vitals élevé et un parcours utilisateur fluide."
+summary: "Les points que je vérifie pour rendre votre site plus facile à trouver, plus rapide et plus clair pour vos visiteurs."
 category: "Performance"
 author: "Néhémie Gandonou"
 tags: ["SEO", "Performance", "Core Web Vitals", "Conversion", "Site vitrine"]
@@ -180,4 +181,4 @@ Voici votre checklist actionnable pour optimiser votre site vitrine :
 
 L'optimisation d'un site vitrine est un processus continu. Ces principes donnent une base solide, mais les progrès dépendent du marché, de l'offre et du point de départ. Mesurez quelques indicateurs avant les changements, puis comparez-les après chaque amélioration.
 
-Si vous souhaitez un audit complet de votre site vitrine ou un accompagnement personnalisé, n'hésitez pas à [me contacter](/contact). Je vous aiderai à transformer votre présence en ligne en un véritable levier de croissance.
+Si vous ne savez pas quoi corriger en premier, [envoyez-moi l’adresse de votre site](/contact). Je vous aiderai à distinguer les problèmes techniques des points à clarifier dans votre offre.

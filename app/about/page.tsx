@@ -29,13 +29,13 @@ export default async function AboutPage() {
     <>
       <PageHeader
         title="À propos"
-        description="Développeur web & mobile passionné, basé à Cotonou, Bénin."
+        description="Je suis Néhémie Gandonou, développeur web et mobile à Cotonou. Voici comment je travaille."
       />
       <div className="py-16">
         <Container className="gap-16 grid">
           {/* Introduction */}
           <section className="lg:items-center gap-8 grid lg:grid-cols-2">
-            <div className="bg-card card-glow p-8 border border-stroke rounded-3xl">
+            <div className="bg-card p-8 border border-stroke rounded-3xl">
               <Image
                 src="/portrait.png"
                 alt="Portrait de Néhémie Gandonou"
@@ -48,17 +48,18 @@ export default async function AboutPage() {
               </h2>
               <p className="mt-2 text-primary">Développeur Web & Mobile</p>
               <p className="mt-4 text-foreground-muted text-sm leading-relaxed">
-                Je conçois des applications mobiles, des plateformes et des logiciels
-                web à partir d&apos;un besoin concret. J&apos;accorde une
-                attention particulière à la simplicité d&apos;usage, à la
-                fiabilité et aux conditions réelles dans lesquelles le produit
-                sera utilisé.
+                Ce qui m’intéresse dans un projet, c’est ce que votre
+                application va permettre de faire : gérer des inscriptions,
+                suivre une activité, recevoir des commandes ou rendre un service
+                plus accessible. Je pars de ces usages pour concevoir les écrans
+                et développer les fonctionnalités.
               </p>
               <p className="mt-4 text-foreground-muted text-sm leading-relaxed">
-                Je prends en charge l&apos;interface, le serveur et la mise en
-                ligne. Vous gardez ainsi un interlocuteur principal, tout en
-                sachant précisément ce qui est inclus et quels services tiers
-                interviennent dans le projet.
+                Je développe aussi bien les écrans que le serveur qui les fait
+                fonctionner. Vous échangez directement avec moi, y compris pour
+                comprendre un choix technique ou préparer la mise en ligne. Si
+                votre besoin dépasse ce que je peux prendre en charge, je vous
+                le dis.
               </p>
             </div>
             <div className="gap-4 grid">
@@ -98,7 +99,7 @@ export default async function AboutPage() {
               {skills.map((category) => (
                 <div
                   key={category.name}
-                  className="bg-card card-glow p-6 border border-stroke rounded-2xl"
+                  className="bg-card p-6 border border-stroke rounded-2xl"
                 >
                   <h3 className="font-semibold text-primary">
                     {category.name}
@@ -119,7 +120,7 @@ export default async function AboutPage() {
           </section>
 
           {/* Stats */}
-          <section className="bg-card card-glow p-8 border border-stroke rounded-3xl">
+          <section className="bg-card p-8 border border-stroke rounded-3xl">
             <div className="gap-8 grid md:grid-cols-4 text-center">
               {aboutStats.map((stat, index) => {
                 const icons = [Award, Users, Heart, Rocket];
@@ -148,8 +149,8 @@ export default async function AboutPage() {
               On travaille ensemble ?
             </h2>
             <p className="mt-3 text-foreground-muted">
-              Décrivez-moi votre projet, je reviens vers vous avec un plan
-              d&apos;action et un devis sous 24h.
+              Racontez-moi ce que vous avez en tête. Je vous réponds sous 24h
+              pour en discuter et préparer la suite avec vous.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
               <WhatsAppCta label="Discuter de mon projet" />

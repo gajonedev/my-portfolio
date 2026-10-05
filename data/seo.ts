@@ -40,12 +40,12 @@ export const cities: City[] = [
 ];
 
 export const localAdvantages = [
-  "Développeur local, disponible en présentiel à Cotonou",
-  "Connaissance du marché béninois et des moyens de paiement locaux",
-  "Intégration MTN MoMo, Moov Money, Celtiis Cash",
-  "Support en français et accompagnement personnalisé",
-  "Tarification transparente et devis détaillé sous 24h",
-  "Calendrier défini au devis et points d'étape réguliers",
+  "Je suis basé à Cotonou et nous pouvons convenir d’une rencontre",
+  "Je prévois les connexions et les téléphones utilisés par vos équipes",
+  "Je peux intégrer les moyens de paiement disponibles pour votre compte",
+  "Vous échangez directement avec moi en français",
+  "Je vous détaille les fonctionnalités et les frais dans le devis",
+  "Nous fixons les dates et les étapes de validation ensemble",
 ];
 
 export const remoteCountries = [
@@ -74,28 +74,28 @@ export const beninFaq: BeninFaqItem[] = [
   {
     question: "Combien coûte un site web ou une application au Bénin ?",
     answer:
-      "Tout dépend du périmètre. Un site vitrine démarre autour de 170 000 FCFA, une boutique en ligne ou une application mobile plus haut. Je publie des fourchettes transparentes sur ma page Tarifs, et je vous envoie un devis précis et gratuit sous 24h.",
+      "Un logiciel web démarre à 650 000 FCFA et une application mobile à 900 000 FCFA. Pour un site de présentation, mes tarifs commencent à 170 000 FCFA. Consultez la page Tarifs pour les fourchettes ; je vous prépare un devis après avoir discuté de votre besoin.",
   },
   {
     question: "En combien de temps mon projet est-il livré ?",
     answer:
-      "Le délai dépend du périmètre. Un site simple peut demander quelques jours, tandis qu'une application plus complète nécessite davantage de temps. Le calendrier et les points d'étape sont définis au devis.",
+      "Nous fixons le calendrier selon les fonctions à développer, les données à reprendre et les contenus disponibles. Je vous explique les étapes et les éléments dont j’ai besoin avant de commencer.",
   },
   {
     question:
       "Intégrez-vous le paiement Mobile Money (MTN MoMo, Moov, FedaPay, Kkiapay) ?",
     answer:
-      "Oui. J'intègre les moyens de paiement locaux (MTN MoMo, Moov Money, FedaPay, Kkiapay) comme le paiement par carte, pour que vos clients règlent avec ce qu'ils utilisent déjà.",
+      "Oui. Je regarde avec vous les moyens utilisés par vos clients et les services disponibles pour votre compte. Nous retenons un prestataire, puis je connecte le paiement et sa confirmation à votre application.",
   },
   {
     question: "Travaillez-vous en dehors de Cotonou et à distance ?",
     answer:
-      "Oui. J'accompagne des clients à Cotonou, Porto-Novo, Parakou, Lokossa et partout au Bénin, ainsi qu'au Togo, au Niger et à l'international, entièrement à distance.",
+      "Oui. Je travaille depuis Cotonou et je peux vous accompagner à distance au Bénin et à l’international. Nous convenons des échanges, des démonstrations et des éventuelles rencontres.",
   },
   {
     question: "Le site et le code m'appartiennent-ils ?",
     answer:
-      "Le code développé spécifiquement pour votre projet, la base de données, le domaine et les comptes créés pour vous sont remis selon les conditions du devis. Les bibliothèques et services tiers conservent leurs propres licences.",
+      "Je vous remets le code développé pour vous, les données et les accès prévus au devis. Les outils externes conservent leurs licences et leurs conditions ; je vous indique ceux utilisés par votre application.",
   },
 ];
 

@@ -52,20 +52,58 @@ export function getProjectBySlug(slug: string): Project | undefined {
 export const projects: Project[] = [
   {
     slug: "weman-lms",
-    role: "Conception et développement de la plateforme web, du paiement et des traitements automatisés.",
+    role: "Je conçois et développe la plateforme web, les paiements et les traitements automatiques.",
     images: [
-      { alt: "Vue d’ensemble du produit" },
-      { alt: "Parcours principal et fonctionnalités" },
+      {
+        alt: "Vue d’ensemble du produit",
+        src: "/projects/weman/1.png",
+      },
+      {
+        src: "/projects/weman/2.png",
+        alt: "Parcours principal et fonctionnalités",
+      },
+      {
+        src: "/projects/weman/3.png",
+        alt: "Parcours d’achat et de suivi",
+      },
+      {
+        src: "/projects/weman/4.png",
+        alt: "Tableaux de bord pour les formateurs",
+      },
+      {
+        src: "/projects/weman/5.png",
+        alt: "Tableaux de bord pour les formateurs",
+      },
+      {
+        src: "/projects/weman/6.png",
+        alt: "Tableaux de bord pour les formateurs",
+      },
+      {
+        src: "/projects/weman/7.png",
+        alt: "Tableaux de bord pour les formateurs",
+      },
+      {
+        src: "/projects/weman/8.png",
+        alt: "Tableaux de bord pour les formateurs",
+      },
+      {
+        src: "/projects/weman/9.png",
+        alt: "Tableaux de bord pour les formateurs",
+      },
+      {
+        src: "/projects/weman/10.png",
+        alt: "Tableaux de bord pour les formateurs",
+      },
     ],
     name: "Wéman LMS",
     sector: "eLearning • Plateforme",
     iconName: "GraduationCap",
     description:
-      "Plateforme e-learning complète adaptée au Bénin : multi-auteurs, paiement MoMo, certificats auto-générés et suivi de progression.",
+      "Je développe une plateforme où les formateurs peuvent publier leurs cours et les apprenants payer par Mobile Money, suivre leur progression et obtenir un certificat.",
     impact:
-      "Paiement Mobile Money et certificats générés tout seuls : le formateur vend ses cours sans toucher à la technique.",
+      "Le parcours d’achat, l’accès aux vidéos et le suivi de progression sont réunis dans la plateforme.",
     summary:
-      "Plateforme e-learning complète pensée pour les réalités béninoises. Espace étudiant et auteur, vidéos hébergées, suivi de progression, analytics, génération automatique de certificats PDF, paiement Mobile Money et emails transactionnels.",
+      "Je développe une plateforme où les formateurs peuvent publier leurs cours et les apprenants payer par Mobile Money, suivre leur progression et obtenir un certificat. Avec Wéman, je travaille sur une plateforme de cours en ligne adaptée aux usages du Bénin : paiement Mobile Money, consultation sur téléphone et connexions parfois limitées.",
     tech: [
       "Next.js",
       "Drizzle ORM",
@@ -79,128 +117,139 @@ export const projects: Project[] = [
     featured: true,
     caseStudy: {
       context:
-        "Le e-learning explose en Afrique de l'Ouest, mais les plateformes internationales (Udemy, Teachable) sont mal adaptées au terrain : paiement par carte bancaire uniquement, tarification en dollars, aucune prise en compte des débits internet locaux. Wéman est une plateforme e-learning pensée dès le départ pour le marché béninois.",
+        "Avec Wéman, je travaille sur une plateforme de cours en ligne adaptée aux usages du Bénin : paiement Mobile Money, consultation sur téléphone et connexions parfois limitées.",
       problem:
-        "Permettre à des formateurs locaux de vendre leurs cours en ligne à un public qui paie par Mobile Money, suit les cours sur mobile avec une connexion parfois instable, et attend un certificat vérifiable en fin de parcours, le tout sans compétence technique côté formateur.",
+        "Je voulais réunir la publication des cours, l’achat, le suivi et les certificats dans un même parcours, sans demander aux formateurs de gérer eux-mêmes les opérations techniques.",
       solution: [
-        "Architecture multi-auteurs : chaque formateur dispose de son espace pour créer ses cours, chapitres et quiz, suivre ses ventes et ses apprenants.",
-        "Streaming vidéo via Mux avec adaptation automatique de la qualité au débit disponible, indispensable pour les connexions mobiles locales.",
-        "Paiement Mobile Money intégré de bout en bout : l'apprenant paie avec MTN MoMo ou Moov, l'accès au cours est débloqué instantanément.",
-        "Génération automatique de certificats PDF nominatifs et vérifiables à la complétion d'un cours, via des jobs asynchrones Inngest.",
-        "Suivi de progression détaillé et analytics pour les formateurs : taux de complétion, chapitres qui bloquent, revenus.",
+        "J’ai prévu un espace par formateur pour publier des cours, organiser les chapitres et suivre les apprenants.",
+        "J’utilise Mux pour la vidéo afin d’adapter la qualité de lecture au débit disponible.",
+        "J’ai relié le paiement Mobile Money à l’ouverture de l’accès au cours.",
+        "J’ai mis en place la génération des certificats PDF après la validation du parcours.",
+        "Les formateurs disposent de tableaux de bord pour consulter les ventes et la progression.",
       ],
       results: [
-        "Une plateforme complète opérationnelle : parcours d'achat, lecture vidéo, progression, certification et paiement local fonctionnent de bout en bout.",
-        "Les formateurs publient un cours complet sans aucune intervention technique.",
-        "Infrastructure dimensionnée pour héberger plusieurs écoles et formateurs indépendants sur la même base (multi-tenant).",
+        "Le parcours d’achat, l’accès aux vidéos et le suivi de progression sont réunis dans la plateforme.",
+        "Les formateurs disposent d’un espace pour préparer et publier leurs cours.",
+        "Le projet est encore en développement ; les fonctions sont présentées à ce stade.",
       ],
       highlights: [
-        "Les jobs asynchrones (Inngest) découplent les traitements lourds (encodage, certificats, emails) du parcours utilisateur : l'interface reste instantanée.",
-        "Le choix de Drizzle ORM + PostgreSQL donne un schéma typé de bout en bout : les erreurs de données sont attrapées à la compilation, pas en production.",
+        "J’ai séparé les tâches comme la génération des certificats et les emails du parcours de lecture.",
+        "Je m’appuie sur Drizzle et PostgreSQL pour organiser les données et faire évoluer le schéma.",
       ],
     },
   },
   {
     slug: "afcom",
-    role: "Conception et développement de l’application mobile, du stockage local et de la synchronisation.",
+    role: "Je conçois l’application mobile, son stockage sur le téléphone et sa synchronisation.",
     images: [
-      { alt: "Vue d’ensemble du produit" },
-      { alt: "Parcours principal et fonctionnalités" },
+      {
+        alt: "Vue d’ensemble du produit",
+      },
+      {
+        alt: "Parcours principal et fonctionnalités",
+      },
     ],
     name: "AfCom",
     sector: "Mobile • Commerce",
     iconName: "Store",
     description:
-      "App mobile offline-first pour les petits commerçants africains. Suivi des ventes, stocks et dépenses avec synchro automatique.",
+      "Avec AfCom, je travaille sur une application qui permet aux commerçants de suivre leurs ventes, leurs stocks et leurs dépenses, même sans connexion.",
     impact:
-      "Ventes et stocks enregistrés hors ligne, puis synchronisés au retour de la connexion.",
+      "Le prototype permet de saisir des ventes et des dépenses sans réseau.",
     summary:
-      "Application mobile conçue pour les petits commerçants africains. Gestion complète des ventes, stocks et dépenses en mode offline-first avec synchronisation automatique dès la connexion retrouvée.",
+      "Avec AfCom, je travaille sur une application qui permet aux commerçants de suivre leurs ventes, leurs stocks et leurs dépenses, même sans connexion. AfCom part d’un besoin simple : garder une trace des ventes et des stocks sans dépendre d’un cahier ni d’une connexion permanente.",
     tech: ["Flutter", "Dart", "Supabase", "SQLite"],
     year: "2025",
     status: "preview",
     featured: true,
     caseStudy: {
       context:
-        "Des millions de petits commerçants africains gèrent encore ventes, stocks et crédits clients sur des cahiers : pertes d'information, erreurs de calcul, aucune visibilité sur la rentabilité réelle. Les solutions de caisse existantes supposent une connexion internet permanente, irréaliste sur le terrain.",
+        "AfCom part d’un besoin simple : garder une trace des ventes et des stocks sans dépendre d’un cahier ni d’une connexion permanente.",
       problem:
-        "Concevoir un outil de gestion complet qui fonctionne d'abord sans internet, sur des téléphones d'entrée de gamme, et qui reste assez simple pour remplacer le cahier sans formation longue.",
+        "Je voulais permettre à un commerçant d’enregistrer son activité sur son téléphone, puis de retrouver les informations utiles pour suivre ses stocks et ses dépenses.",
       solution: [
-        "Architecture offline-first : toutes les opérations (ventes, entrées de stock, dépenses) s'enregistrent localement en SQLite et fonctionnent sans aucun réseau.",
-        "Synchronisation automatique vers Supabase dès que la connexion revient, avec résolution des conflits, le commerçant n'a rien à faire.",
-        "Interface pensée pour limiter les étapes de saisie au comptoir.",
-        "Tableaux de bord simples : bénéfice du jour, produits qui partent le plus, stocks à recommander, crédits clients en cours.",
+        "J’enregistre les ventes, les stocks et les dépenses dans une base SQLite sur le téléphone.",
+        "Je synchronise les données vers Supabase lorsque la connexion revient.",
+        "J’ai limité les étapes de saisie pour faciliter l’enregistrement d’une vente au comptoir.",
+        "J’ai préparé des tableaux de bord pour retrouver les ventes, les dépenses et les produits à réapprovisionner.",
       ],
       results: [
-        "Une gestion complète qui fonctionne dans les conditions réelles du commerce de quartier : sans réseau, sur petit téléphone, à une main.",
-        "Chaque vente et chaque dépense enregistrée dispose d’une trace datée et chiffrée.",
-        "Des tableaux de bord présentent les ventes, les dépenses et les stocks enregistrés.",
+        "Le prototype permet de saisir des ventes et des dépenses sans réseau.",
+        "Les opérations sont datées et conservées sur le téléphone.",
+        "Les tableaux de bord s’appuient sur les données enregistrées pour présenter l’activité.",
       ],
       highlights: [
-        "L'offline-first n'est pas une option ajoutée mais le cœur de l'architecture : le serveur est une copie du téléphone, pas l'inverse.",
-        "Des essais avec des coupures réseau prolongées ont permis de vérifier l'enregistrement local et la reprise de la synchronisation.",
+        "J’ai construit l’application autour du stockage local : les opérations courantes ne passent pas d’abord par le serveur.",
+        "J’ai vérifié l’enregistrement et la reprise de synchronisation après des coupures réseau.",
       ],
     },
   },
   {
     slug: "smartvilla",
-    role: "Développement de l’application mobile et des échanges avec les équipements connectés.",
+    role: "Je développe l’application mobile et ses échanges avec les équipements de la villa.",
     images: [
-      { alt: "Vue d’ensemble du produit" },
-      { alt: "Parcours principal et fonctionnalités" },
+      {
+        alt: "Vue d’ensemble du produit",
+      },
+      {
+        alt: "Parcours principal et fonctionnalités",
+      },
     ],
     name: "SmartVilla",
     sector: "IoT • Smart Home",
     iconName: "Home",
     description:
-      "Application de contrôle d'une villa intelligente complète : éclairage, sécurité, portail, gestion d'énergie et monitoring.",
+      "J’ai développé une application pour commander l’éclairage et le portail d’une villa, recevoir l’état des équipements et consulter les mesures des capteurs.",
     impact:
-      "Toute la villa pilotée depuis le téléphone : le système tient même après une coupure de courant ou de réseau.",
+      "Le prototype réunit le pilotage de l’éclairage, du portail et la consultation des capteurs.",
     summary:
-      "Application connectée à une villa intelligente complète : contrôle de l'éclairage, gestion du portail motorisé, surveillance sécurité, monitoring énergétique et gestion de l'eau. Communication temps réel avec les systèmes embarqués.",
+      "J’ai développé une application pour commander l’éclairage et le portail d’une villa, recevoir l’état des équipements et consulter les mesures des capteurs. SmartVilla relie une application mobile à des équipements de domotique : éclairage, portail, sécurité et compteurs. Il fallait que les commandes et les informations circulent entre le téléphone et les contrôleurs.",
     tech: ["Flutter", "ESP32", "MQTT", "Node.js", "FreeRTOS"],
     year: "2025",
     status: "preview",
     featured: true,
     caseStudy: {
       context:
-        "Un projet de domotique complet pour une villa : éclairage, portail motorisé, sécurité, suivi de la consommation d'énergie et d'eau. Le défi n'était pas seulement logiciel : il fallait faire dialoguer une application mobile avec de vrais systèmes embarqués, de façon fiable et instantanée.",
+        "SmartVilla relie une application mobile à des équipements de domotique : éclairage, portail, sécurité et compteurs. Il fallait que les commandes et les informations circulent entre le téléphone et les contrôleurs.",
       problem:
-        "Contrôler et surveiller les équipements de la villa depuis un téléphone, avec un retour rapide, une authentification adaptée et une reprise correcte après une coupure de courant ou de réseau.",
+        "Mon travail consistait à donner accès à ces équipements depuis le téléphone, avec un retour de leur état et une reprise des échanges après une coupure.",
       solution: [
-        "Réseau de contrôleurs ESP32 sous FreeRTOS pilotant chaque zone : éclairage, portail, capteurs de sécurité, compteurs d'énergie et d'eau.",
-        "Communication en temps réel via MQTT : les commandes et les événements des capteurs circulent sans interrogation répétée du serveur.",
-        "Serveur Node.js central : authentification, historique des événements, règles d'automatisation (extinction programmée, alertes de consommation anormale).",
-        "Application Flutter avec état temps réel : l'interface reflète l'état physique réel de la maison, pas un état supposé.",
-        "Reprise automatique après coupure : les contrôleurs se resynchronisent seuls au retour du courant.",
+        "L’application échange avec les contrôleurs ESP32 qui pilotent les différentes zones.",
+        "J’utilise MQTT pour transmettre les commandes et recevoir les événements des équipements.",
+        "Le serveur Node.js gère les accès et conserve l’historique des événements.",
+        "J’affiche dans l’application Flutter l’état reçu des équipements après les commandes.",
+        "J’ai prévu la resynchronisation des contrôleurs après le retour du courant.",
       ],
       results: [
-        "Toute la villa se pilote et se surveille depuis l'application, de l'éclairage au portail, avec un retour d'état fiable.",
-        "Le monitoring présente la consommation par équipement pour aider à identifier les postes à surveiller.",
-        "Le système survit aux coupures de courant et de réseau sans intervention manuelle, critère décisif localement.",
+        "Le prototype réunit le pilotage de l’éclairage, du portail et la consultation des capteurs.",
+        "Les mesures de consommation peuvent être consultées depuis l’application.",
+        "Les échanges reprennent après une coupure sans ressaisie manuelle des états.",
       ],
       highlights: [
-        "FreeRTOS sur ESP32 permet de donner la priorité aux fonctions sensibles, comme la sécurité et le portail.",
-        "L'architecture MQTT limite les dépendances directes entre l'application et les équipements, ce qui facilite l'ajout de nouveaux capteurs.",
+        "Les tâches des contrôleurs sont organisées avec FreeRTOS pour traiter les fonctions selon leur priorité.",
+        "MQTT me permet de faire évoluer les équipements sans relier directement chaque capteur à l’application.",
       ],
     },
   },
   {
     slug: "archiform",
-    role: "Développement de la page de présentation, du paiement et de la livraison automatique des accès.",
+    role: "J’ai développé la page de formation, le paiement et l’envoi automatique des accès.",
     images: [
-      { alt: "Vue d’ensemble du produit" },
-      { alt: "Parcours principal et fonctionnalités" },
+      {
+        alt: "Vue d’ensemble du produit",
+      },
+      {
+        alt: "Parcours principal et fonctionnalités",
+      },
     ],
     name: "ArchiForm",
     sector: "Landing • Paiement",
     iconName: "CreditCard",
     description:
-      "Page de présentation et tunnel de paiement pour une formation, avec ajout auto au Drive et envoi de mails de confirmation.",
-    impact:
-      "Inscription, paiement et accès livrés automatiquement 24h/24 : plus une seule relance manuelle à gérer.",
+      "J’ai créé une page d’inscription à une formation : après le paiement, l’apprenant reçoit un email et l’accès aux ressources dans Google Drive.",
+    impact: "La page de formation et le parcours de paiement sont en ligne.",
     summary:
-      "Page de présentation d'une formation avec tunnel de paiement intégré. Après paiement, ajout automatique de l'apprenant au dossier Google Drive et envoi de mail de confirmation avec accès aux ressources.",
+      "J’ai créé une page d’inscription à une formation : après le paiement, l’apprenant reçoit un email et l’accès aux ressources dans Google Drive. Pour cette formation, il fallait présenter le programme et permettre l’inscription sans envoyer manuellement les ressources à chaque nouvel apprenant.",
     tech: ["Next.js", "Node.js", "Google Drive API", "Resend"],
     link: "https://ambc.vercel.app",
     year: "2025",
@@ -208,155 +257,165 @@ export const projects: Project[] = [
     featured: true,
     caseStudy: {
       context:
-        "Un formateur vendait sa formation manuellement : messages WhatsApp, confirmation de paiement à la main, envoi des accès un par un. Chaque inscription lui coûtait du temps, et les inscriptions nocturnes attendaient le lendemain, avec des abandons à la clé.",
+        "Pour cette formation, il fallait présenter le programme et permettre l’inscription sans envoyer manuellement les ressources à chaque nouvel apprenant.",
       problem:
-        "Automatiser entièrement le parcours d'inscription : présentation convaincante, paiement en ligne, et livraison instantanée des accès aux ressources de formation, sans aucune intervention manuelle, à toute heure.",
+        "Je devais relier l’inscription, le paiement et l’accès à Google Drive pour que le formateur puisse suivre les inscriptions sans traiter chaque envoi lui-même.",
       solution: [
-        "Landing page de présentation optimisée pour la conversion : proposition de valeur claire, programme détaillé, témoignages et appel à l'action visible.",
-        "Tunnel de paiement intégré directement dans la page, pas de redirection déroutante.",
-        "Automatisation post-paiement : ajout automatique de l'apprenant au dossier Google Drive de la formation via l'API Google, avec les bonnes permissions.",
-        "Email de confirmation instantané (Resend) avec les accès et les premières instructions.",
+        "J’ai développé la page qui présente le programme et permet de s’inscrire.",
+        "J’ai intégré le paiement et sa confirmation côté serveur.",
+        "Après confirmation, j’ajoute l’apprenant au dossier Google Drive prévu pour la formation.",
+        "J’envoie un email avec la confirmation et les informations d’accès.",
       ],
       results: [
-        "Le parcours complet, découverte, paiement, accès, se fait sans aucune intervention du formateur, 24h/24.",
-        "L'accès instantané après paiement a supprimé les demandes de suivi (« j'ai payé, où sont mes accès ? ») qui pollluaient le WhatsApp du formateur.",
-        "Le formateur se concentre sur son contenu, plus sur l'administratif.",
-      ],
-      highlights: [
-        "L'intégration Google Drive API évite de reconstruire un espace membre : les ressources restent là où le formateur les gère déjà.",
-        "Un projet volontairement minimal : quelques jours de développement pour un gain de temps quotidien, le meilleur ROI vient souvent des petits outils bien ciblés.",
+        "La page de formation et le parcours de paiement sont en ligne.",
+        "Les accès aux ressources sont envoyés après la confirmation du paiement.",
+        "Le client confirme qu’il n’a plus à intervenir pour donner les accès à chaque inscrit.",
       ],
     },
   },
   {
     slug: "afreel",
-    role: "Développement de l’application mobile et de ses fonctionnalités métier.",
+    role: "Je développe l’application mobile et les fonctions de devis et de facturation.",
     images: [
-      { alt: "Vue d’ensemble du produit" },
-      { alt: "Parcours principal et fonctionnalités" },
+      {
+        alt: "Vue d’ensemble du produit",
+      },
+      {
+        alt: "Parcours principal et fonctionnalités",
+      },
     ],
     name: "Afreel",
     sector: "Mobile • Facturation",
     iconName: "Receipt",
     description:
-      "App mobile de facturation pour freelances africains : devis, factures, suivi des paiements et export PDF.",
+      "J’ai conçu Afreel pour préparer des devis et des factures depuis un téléphone, les partager en PDF et suivre les paiements.",
     impact:
-      "Un devis pro en 2 minutes au lieu d'un message WhatsApp : image sérieuse et impayés enfin visibles.",
+      "Le prototype permet de préparer et d’exporter les documents depuis le téléphone.",
     summary:
-      "Application mobile de facturation pensée pour les freelances africains. Création de devis et factures professionnels, suivi des paiements, gestion clients et export PDF.",
+      "J’ai conçu Afreel pour préparer des devis et des factures depuis un téléphone, les partager en PDF et suivre les paiements. Avec Afreel, je voulais rassembler les devis, les factures et le suivi des clients dans une application utilisable depuis le téléphone.",
     tech: ["Flutter", "Dart", "SQLite"],
     year: "2025",
     status: "preview",
     caseStudy: {
       context:
-        "Les freelances africains facturent souvent… sans facture : un message WhatsApp, un montant convenu à l'oral. Résultat : image peu professionnelle face aux clients sérieux, impayés difficiles à réclamer, aucune vision sur les revenus.",
+        "Avec Afreel, je voulais rassembler les devis, les factures et le suivi des clients dans une application utilisable depuis le téléphone.",
       problem:
-        "Donner aux freelances un outil de facturation professionnel qui tient dans la poche : créer un devis ou une facture depuis son téléphone, suivre qui a payé et qui doit relancer.",
+        "L’objectif était de préparer un document, de l’envoyer et de retrouver son statut sans chercher dans plusieurs conversations ou fichiers.",
       solution: [
-        "Création de devis et factures avec numérotation automatique, logo, conditions et mentions, un rendu professionnel qui inspire confiance.",
-        "Export PDF instantané, partageable directement par WhatsApp ou email, là où se passent les échanges clients.",
-        "Suivi des statuts : brouillon, envoyée, payée, en retard, avec la liste des relances à faire.",
-        "Fiches clients avec historique complet, et fonctionnement 100 % local (SQLite) : les données restent sur le téléphone, aucune connexion requise.",
+        "J’ai prévu la création de devis et de factures avec numérotation et informations du prestataire.",
+        "Je génère les documents en PDF pour les partager par email ou WhatsApp.",
+        "J’ai ajouté les statuts de suivi : brouillon, envoyé, payé et en retard.",
+        "Je conserve les fiches clients et les documents en SQLite pour permettre leur consultation hors ligne.",
       ],
       results: [
-        "Création et export de devis professionnels depuis le téléphone.",
-        "Les impayés deviennent visibles et actionnables : plus rien ne se perd dans les conversations.",
-        "Un suivi mensuel présente les montants des factures enregistrées.",
+        "Le prototype permet de préparer et d’exporter les documents depuis le téléphone.",
+        "Les factures et leurs statuts sont regroupés dans la même application.",
+        "Le suivi mensuel présente les montants des factures enregistrées.",
       ],
     },
   },
   {
     slug: "fintech",
-    role: "Développement de l’application mobile et de son backend.",
+    role: "Je développe l’application mobile et le serveur qui gère ses données.",
     images: [
-      { alt: "Vue d’ensemble du produit" },
-      { alt: "Parcours principal et fonctionnalités" },
+      {
+        alt: "Vue d’ensemble du produit",
+      },
+      {
+        alt: "Parcours principal et fonctionnalités",
+      },
     ],
     name: "Fintech",
     sector: "Finance • Gestion",
     iconName: "Wallet",
     description:
-      "App de gestion financière : suivi des revenus et dépenses, budgets, objectifs d'épargne et catégorisation automatique.",
+      "Je travaille sur une application pour réunir revenus, dépenses, budgets et objectifs d’épargne, quel que soit le compte utilisé.",
     impact:
-      "Mobile Money, espèces et banque réunis au même endroit : enfin une vision claire de son argent.",
+      "Le prototype regroupe les opérations enregistrées sur plusieurs comptes.",
     summary:
-      "Application de gestion financière complète : suivi des revenus et dépenses, budgets, objectifs d'épargne, visualisation graphique et catégorisation automatique des transactions.",
+      "Je travaille sur une application pour réunir revenus, dépenses, budgets et objectifs d’épargne, quel que soit le compte utilisé. Les dépenses peuvent passer par les espèces, le Mobile Money ou la banque. Je voulais permettre de les suivre dans une même application sans perdre la distinction entre les comptes.",
     tech: ["Flutter", "Dart", "Node.js", "PostgreSQL"],
     year: "2025",
     status: "preview",
     caseStudy: {
       context:
-        "Entre Mobile Money, espèces et compte bancaire, l'argent circule par plusieurs canaux et la vision d'ensemble se perd : on sait ce qu'on gagne, rarement où ça part. Les apps de budget internationales ignorent ces usages multi-canaux typiques d'Afrique de l'Ouest.",
+        "Les dépenses peuvent passer par les espèces, le Mobile Money ou la banque. Je voulais permettre de les suivre dans une même application sans perdre la distinction entre les comptes.",
       problem:
-        "Construire une application de gestion financière personnelle qui agrège tous les flux, catégorise automatiquement les transactions et aide réellement à tenir un budget et des objectifs d'épargne.",
+        "Le projet devait réunir les opérations, les classer et permettre à l’utilisateur de comparer ses dépenses au budget qu’il s’est fixé.",
       solution: [
-        "Saisie rapide multi-comptes : Mobile Money, espèces, banque, chaque transaction rejoint la vue d'ensemble.",
-        "Catégorisation automatique des transactions récurrentes : l'app apprend des habitudes et pré-remplit.",
-        "Budgets par catégorie avec alertes de dépassement avant la fin du mois, pas après.",
-        "Objectifs d'épargne visuels et backend Node.js/PostgreSQL pour la synchronisation multi-appareils et la sauvegarde.",
+        "J’ai prévu une saisie des opérations par compte : espèces, banque ou Mobile Money.",
+        "Je classe les transactions récurrentes pour faciliter les prochaines saisies.",
+        "J’ai ajouté des budgets par catégorie et des alertes de dépassement.",
+        "Le serveur Node.js et PostgreSQL permet de sauvegarder les données et de les synchroniser entre appareils.",
       ],
       results: [
-        "Une vision consolidée de toutes les finances personnelles, quel que soit le canal utilisé.",
-        "Les graphiques par catégorie révèlent immédiatement les postes de dépenses invisibles au quotidien.",
-        "Les budgets et alertes permettent de suivre les écarts par catégorie.",
+        "Le prototype regroupe les opérations enregistrées sur plusieurs comptes.",
+        "Les graphiques présentent les dépenses par catégorie.",
+        "Les budgets permettent de comparer les montants prévus aux dépenses saisies.",
       ],
     },
   },
   {
     slug: "iveges",
-    role: "Application mobile et architecture de communication avec les capteurs, en collaboration avec un co-développeur.",
+    role: "J’ai développé l’application mobile et l’architecture de communication avec les capteurs, avec un co-développeur.",
     images: [
-      { alt: "Vue d’ensemble du produit" },
-      { alt: "Parcours principal et fonctionnalités" },
+      {
+        alt: "Vue d’ensemble du produit",
+      },
+      {
+        alt: "Parcours principal et fonctionnalités",
+      },
     ],
     name: "iVeges",
     sector: "IoT • Agriculture",
     iconName: "Sprout",
     description:
-      "Monitoring IoT d'irrigation autonome par réseau de capteurs sans fil, logique floue et dashboard mobile temps réel.",
-    impact:
-      "Pilotage de l’irrigation à partir des capteurs, avec suivi depuis l’application mobile.",
+      "Sur iVeges, j’ai relié une application mobile à un système d’irrigation : elle permet de consulter les capteurs, les arrosages et les alertes.",
+    impact: "Le système commande l’arrosage à partir des données des capteurs.",
     summary:
-      "Système IoT de monitoring d'irrigation autonome basé sur un réseau de capteurs sans fil (WSN). Architecture maître ESP32 + esclaves Arduino Nano avec communication NRF24L01, logique floue de Mamdani pour la décision d'arrosage, et app mobile Flutter pour le suivi temps réel.",
+      "Sur iVeges, j’ai relié une application mobile à un système d’irrigation : elle permet de consulter les capteurs, les arrosages et les alertes. iVeges est un projet d’irrigation pilotée par des capteurs. J’y ai travaillé sur l’application mobile et les échanges avec le système embarqué.",
     tech: ["Flutter", "ESP32", "Arduino", "NRF24L01", "C++"],
     year: "2026",
     status: "live",
     featured: true,
     caseStudy: {
       context:
-        "L'irrigation représente l'un des premiers postes de travail et de coût du maraîchage. Arroser trop, c'est gaspiller l'eau et l'énergie ; pas assez, c'est perdre la récolte. La décision repose traditionnellement sur l'observation humaine, imprécise et chronophage.",
+        "iVeges est un projet d’irrigation pilotée par des capteurs. J’y ai travaillé sur l’application mobile et les échanges avec le système embarqué.",
       problem:
-        "Automatiser la décision d'arrosage à partir de mesures réelles du terrain (humidité du sol, température, hygrométrie), sur une parcelle sans électricité ni WiFi, avec un budget matériel accessible à une exploitation locale.",
+        "Il fallait remonter les mesures du terrain, suivre les décisions d’arrosage et donner accès à ces informations depuis un téléphone, sans réseau WiFi sur la parcelle.",
       solution: [
-        "Réseau de capteurs sans fil (WSN) : des nœuds Arduino Nano mesurent l'humidité du sol et les conditions ambiantes en plusieurs points de la parcelle.",
-        "Communication radio NRF24L01 entre les nœuds et un contrôleur maître ESP32, aucune infrastructure réseau nécessaire sur la parcelle.",
-        "Décision d'arrosage par logique floue de Mamdani : le système raisonne comme un agronome (« sol plutôt sec ET forte chaleur → arrosage long ») au lieu de seuils rigides.",
-        "Application mobile Flutter de monitoring : état des capteurs, historique des arrosages, consommation d'eau, alertes en temps réel.",
+        "Les capteurs mesurent l’humidité du sol et les conditions ambiantes à plusieurs endroits.",
+        "Les nœuds Arduino communiquent par radio NRF24L01 avec le contrôleur ESP32.",
+        "Le système utilise une logique floue de Mamdani pour décider de l’arrosage à partir des mesures.",
+        "J’ai développé l’application Flutter pour consulter les mesures, les arrosages et les alertes.",
       ],
       results: [
-        "L'irrigation se déclenche seule, au bon moment et à la bonne dose, sur la base de mesures réelles et non d'habitudes.",
-        "L’arrosage est commandé à partir des mesures des capteurs. Les économies d’eau restent à mesurer sur le terrain.",
-        "Le maraîcher supervise sa parcelle depuis son téléphone au lieu d'y passer matin et soir.",
+        "Le système commande l’arrosage à partir des données des capteurs.",
+        "L’application présente les mesures et l’historique des arrosages.",
+        "Le suivi peut se faire depuis le téléphone ; les économies d’eau restent à mesurer sur le terrain.",
       ],
       highlights: [
-        "La logique floue de Mamdani surclasse les seuils fixes : elle gère les situations intermédiaires (sol moyennement humide, chaleur modérée) sans effet tout-ou-rien.",
-        "Un projet qui couvre toute la chaîne : électronique embarquée, protocole radio, algorithme de décision et application mobile, la polyvalence hardware/software au service d'un problème concret.",
+        "La logique floue permet de prendre en compte plusieurs conditions au lieu d’un seul seuil d’humidité.",
+        "Ce projet m’a demandé de faire dialoguer l’application mobile, le protocole radio et les équipements embarqués.",
       ],
     },
   },
   {
     slug: "gain",
-    role: "Développement du site bilingue, des formulaires et de l’intégration des contenus.",
-    images: [{ alt: "Page d’accueil et parcours de contact" }],
+    role: "J’ai développé le site bilingue, les formulaires et l’intégration des contenus.",
+    images: [
+      {
+        alt: "Page d’accueil et parcours de contact",
+      },
+    ],
     name: "GAIN",
     sector: "Vitrine • Association",
     iconName: "Globe",
     description:
-      "Site vitrine bilingue FR/EN pour un réseau international d'évangélisation, avec animations Framer Motion et formulaires.",
-    impact:
-      "Site bilingue avec formulaires dédiés aux contacts et aux demandes de prière.",
+      "J’ai réalisé le site français-anglais de GAIN pour présenter le réseau et recueillir les contacts et les demandes de prière.",
+    impact: "Le site est en ligne en français et en anglais.",
     summary:
-      "Site vitrine bilingue (FR/EN) pour le Gospel Activists International Network, un programme international d'évangélisation. Animations Framer Motion, formulaires de contact et de demande de prière, galerie photo et témoignages.",
+      "J’ai réalisé le site français-anglais de GAIN pour présenter le réseau et recueillir les contacts et les demandes de prière. Le Gospel Activists International Network souhaitait présenter son programme à un public francophone et anglophone. Le site devait aussi faciliter les échanges avec ses visiteurs.",
     tech: ["Next.js 15", "Framer Motion", "Tailwind CSS", "next-intl"],
     link: "https://gain-network.vercel.app",
     year: "2026",
@@ -364,27 +423,25 @@ export const projects: Project[] = [
     featured: true,
     caseStudy: {
       context:
-        "Le Gospel Activists International Network (GAIN), programme international d'évangélisation, avait besoin d'une présence web à la hauteur de son envergure : une audience répartie sur plusieurs continents, francophone et anglophone, consultant majoritairement depuis mobile.",
+        "Le Gospel Activists International Network souhaitait présenter son programme à un public francophone et anglophone. Le site devait aussi faciliter les échanges avec ses visiteurs.",
       problem:
-        "Créer un site vitrine bilingue qui présente le réseau avec impact, facilite la prise de contact et les demandes de prière, et reste rapide partout dans le monde, y compris sur les connexions mobiles africaines.",
+        "Il fallait organiser les informations dans les deux langues et proposer des formulaires distincts pour les contacts et les demandes de prière.",
       solution: [
-        "Site Next.js 15 entièrement bilingue français/anglais avec next-intl : chaque page existe dans les deux langues, avec les bonnes balises hreflang pour le référencement international.",
-        "Direction artistique soignée avec animations Framer Motion : le site raconte la mission du réseau avec du mouvement, en gardant les contenus au premier plan.",
-        "Formulaires de contact et de demande de prière avec validation et notifications email.",
-        "Galerie photo optimisée et section témoignages pour incarner l'impact du réseau.",
+        "J’ai développé les versions française et anglaise avec Next.js et next-intl.",
+        "J’ai intégré les contenus et les animations pour présenter les différentes parties du programme.",
+        "J’ai mis en place les formulaires avec validation et notifications par email.",
+        "J’ai ajouté la galerie et les témoignages prévus pour présenter le réseau.",
       ],
       results: [
-        "Le réseau dispose d'une vitrine crédible et moderne, accessible dans les deux langues de son audience.",
-        "Les pages et formulaires sont accessibles depuis mobile dans les deux langues.",
-        "Les demandes de contact et de prière arrivent structurées, là où elles se perdaient auparavant dans les messageries.",
+        "Le site est en ligne en français et en anglais.",
+        "Les pages et les formulaires sont accessibles sur téléphone.",
+        "Les demandes de contact et de prière sont transmises avec les informations du formulaire.",
       ],
       highlights: [
-        "L'internationalisation (next-intl) est native, pas plaquée : URLs localisées, SEO par langue, bascule instantanée.",
-        "Les animations accompagnent les contenus ; leur coût doit être suivi sur les appareils et connexions de l’audience.",
+        "J’ai organisé les adresses et les contenus par langue pour que chaque version puisse être partagée et référencée.",
       ],
     },
   },
-  // TODO: Ajouter AEMEEC quand les détails du projet seront confirmés
 ];
 
 // Sous-ensemble mis en avant sur la page d'accueil

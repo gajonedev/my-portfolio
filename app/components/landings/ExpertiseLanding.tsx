@@ -115,7 +115,7 @@ export default function ExpertiseLanding({
           {/* Introduction */}
           <section className="max-w-3xl">
             <h2 className="font-semibold text-foreground text-2xl">
-              Pourquoi {expertise.techName}, et pourquoi moi
+              Comment j’utilise {expertise.techName} pour votre projet
             </h2>
             {expertise.intro.map((paragraph) => (
               <p
@@ -138,7 +138,7 @@ export default function ExpertiseLanding({
                 return (
                   <div
                     key={strength.title}
-                    className="flex gap-4 bg-card card-glow p-5 border border-stroke rounded-2xl"
+                    className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
                   >
                     <div className="flex justify-center items-center bg-primary/20 rounded-xl w-12 h-12 text-primary shrink-0">
                       <Icon className="w-6 h-6" />
@@ -158,7 +158,7 @@ export default function ExpertiseLanding({
           </section>
 
           {/* Cas d'usage */}
-          <section className="bg-card card-glow p-8 border border-stroke rounded-3xl">
+          <section className="bg-card p-8 border border-stroke rounded-3xl">
             <h2 className="mb-6 font-semibold text-foreground text-xl">
               Ce que je construis avec {expertise.techName}
             </h2>
@@ -183,7 +183,7 @@ export default function ExpertiseLanding({
                   <Link
                     key={project.slug}
                     href={`/projects/${project.slug}`}
-                    className="group bg-card/50 hover:bg-card card-glow p-5 border border-stroke hover:border-primary/40 rounded-xl transition"
+                    className="group bg-card/50 hover:bg-card p-5 border border-stroke hover:border-primary/40 rounded-xl transition"
                   >
                     <p className="font-medium text-foreground group-hover:text-primary transition">
                       {project.name}
@@ -211,7 +211,7 @@ export default function ExpertiseLanding({
               {expertise.faq.map((item) => (
                 <details
                   key={item.question}
-                  className="group bg-card card-glow border border-stroke rounded-2xl open:pb-5"
+                  className="group bg-card border border-stroke rounded-2xl open:pb-5"
                 >
                   <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
                     {item.question}
@@ -243,7 +243,8 @@ export default function ExpertiseLanding({
               Un projet {expertise.techName} ?
             </h2>
             <p className="mt-3 text-foreground-muted">
-              Parlons-en. Prise de brief et devis détaillé sous 24h.
+              Parlez-moi de votre besoin. Je vous réponds sous 24h pour en
+              discuter.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
               <WhatsAppCta

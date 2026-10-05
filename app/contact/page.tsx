@@ -12,12 +12,12 @@ const url = `${siteConfig.url}/contact`;
 export const metadata: Metadata = {
   title: "Contact | Parlons de votre produit",
   description:
-    "Un projet de plateforme web ou d’application mobile ? Premier retour sous 24h et devis gratuit après le cadrage. Disponible sur WhatsApp.",
+    "Un projet de plateforme web ou d’application mobile ? Je vous réponds sous 24h pour en discuter, puis je prépare un devis gratuit. Disponible sur WhatsApp.",
   alternates: { canonical: url },
   openGraph: {
     title: "Contactez un développeur web et mobile au Bénin",
     description:
-      "Plateforme web ou application mobile : premier échange sous 24h, devis gratuit après cadrage.",
+      "Plateforme web ou application mobile : je vous réponds sous 24h pour préciser votre besoin avant le devis.",
     url,
     type: "website",
     locale: "fr_BJ",
@@ -42,20 +42,40 @@ export default async function ContactPage({
   return (
     <>
       <PageHeader
-        title="Contact"
+        title="Parlons de votre projet"
         description="Parlons de votre plateforme web, de votre logiciel métier ou de votre application mobile."
       />
       <div className="py-16">
         <Container className="gap-10 grid lg:grid-cols-[0.6fr_0.4fr]">
-          <ContactForm
-            initialService={selected}
-            initialSource={source}
-            className="bg-card card-glow p-6 border border-stroke rounded-3xl"
-          />
-          <div className="flex flex-col gap-6 bg-card card-glow p-6 border border-stroke rounded-3xl">
+          <div className="relative bg-card border border-stroke rounded-3xl overflow-hidden">
+            {/* pronounced warm mesh glow rising from the bottom */}
+            <div
+              aria-hidden="true"
+              className="-bottom-28 absolute inset-x-0 blur-[90px] mx-auto rounded-full w-4/5 h-80 pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(255,77,61,0.65), rgba(255,122,69,0.4) 38%, rgba(59,130,246,0.32) 62%, transparent 75%)",
+              }}
+            />
+            {/* second tighter core for a brighter, more manifest hotspot */}
+            <div
+              aria-hidden="true"
+              className="-bottom-10 absolute inset-x-0 blur-[70px] mx-auto rounded-full w-1/2 h-44 pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(255,99,71,0.55), transparent 70%)",
+              }}
+            />
+            <ContactForm
+              initialService={selected}
+              initialSource={source}
+              className="relative p-6"
+            />
+          </div>
+          <div className="flex flex-col gap-6 bg-card p-6 border border-stroke rounded-3xl">
             <div>
               <p className="text-foreground-muted text-sm uppercase tracking-[0.25em]">
-                Coordonnées
+                Pour me joindre
               </p>
               <div className="flex flex-col gap-3 mt-4">
                 <a

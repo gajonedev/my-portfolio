@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SpotlightCard from "./SpotlightCard";
 import { testimonials } from "@/data/testimonials";
 
 export default function Testimonials() {
@@ -7,39 +8,57 @@ export default function Testimonials() {
     (item) => item.kind === "collaborator",
   );
   const cards = (items: typeof testimonials) =>
-    items.map((item) => (
-      <figure
-        key={item.name}
-        className="rounded-2xl border border-stroke bg-background-soft card-glow p-6"
-      >
-        <blockquote className="text-foreground leading-relaxed">
-          « {item.quote} »
-        </blockquote>
-        <figcaption className="mt-5 text-sm text-foreground-muted">
-          <span className="font-semibold text-foreground">{item.name}</span>
-          <span className="mt-1 block">{item.role}</span>
-          {item.projectSlug && (
-            <Link
-              href={`/projects/${item.projectSlug}`}
-              className="mt-2 inline-block text-primary hover:underline"
-            >
-              Voir le projet associé →
-            </Link>
-          )}
-        </figcaption>
-      </figure>
-    ));
-  return (
-    <div className="grid gap-6">
-      <div className="grid gap-4">{cards(clients)}</div>
-      <details className="rounded-2xl border border-stroke p-5">
-        <summary className="cursor-pointer font-medium">
-          Les retours de mes collaborateurs ({collaborators.length})
-        </summary>
-        <div className="mt-5 grid gap-4 md:grid-cols-2">
-          {cards(collaborators)}
+    items.map((item) => {
+      const content = (
+        <figure className="p-6">
+          <blockquote className="text-foreground leading-relaxed">
+            « {item.quote} »
+          </blockquote>
+          <figcaption className="mt-5 text-foreground-muted text-sm">
+            <span className="font-semibold text-foreground">{item.name}</span>
+            <span className="block mt-1">{item.role}</span>
+            {item.projectSlug && (
+              <Link
+                href={`/projects/${item.projectSlug}`}
+                className="inline-block mt-2 text-primary hover:underline"
+              >
+                Découvrir ce projet →
+              </Link>
+            )}
+          </figcaption>
+        </figure>
+      );
+      return item.kind === "collaborator" ? (
+        <div
+          key={item.name}
+          className="rounded-3xl border border-stroke bg-background-soft"
+        >
+          {content}
         </div>
-      </details>
+      ) : (
+        <SpotlightCard key={item.name} corner="none" hover={false} glow={false}>
+          {content}
+        </SpotlightCard>
+      );
+    });
+  return (
+    <div className="gap-6 grid">
+      <div className="gap-4 grid">{cards(clients)}</div>
+      <SpotlightCard
+        corner="bl"
+        cornerColor="#3b82f6"
+        hover={false}
+        glow={false}
+      >
+        <details className="p-5">
+          <summary className="font-medium cursor-pointer">
+            Mes collaborateurs en parlent aussi ({collaborators.length})
+          </summary>
+          <div className="gap-4 grid md:grid-cols-2 mt-5">
+            {cards(collaborators)}
+          </div>
+        </details>
+      </SpotlightCard>
     </div>
   );
 }

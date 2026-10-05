@@ -1,8 +1,9 @@
 ---
 title: "Comment apparaître sur Google au Bénin : le guide SEO local pour PME"
 date: "2026-08-16"
+updated: "2026-10-04"
 readTime: "5 min"
-summary: "La méthode concrète pour qu'une entreprise béninoise apparaisse sur Google quand ses clients la cherchent : fiche Google Business, site optimisé, mots-clés locaux et avis."
+summary: "Voici les points que je travaille pour aider vos clients à trouver votre entreprise sur Google au Bénin."
 category: "SEO"
 author: "Néhémie Gandonou"
 tags: ["SEO", "Google", "Référencement local", "Bénin", "PME", "Visibilité"]
@@ -66,8 +67,4 @@ Chaque question posée par un client peut devenir une recherche Google : « Comb
 
 Si vous avez déjà un site, commencez par savoir où vous en êtes. Mon [audit à partir de 80 000 FCFA](/services/audit-optimisation) examine notamment la vitesse, le référencement et les principaux blocages, puis propose un plan d'action chiffré. Si vous partez de zéro, un [site vitrine bien construit](/services/creation-site-vitrine) peut intégrer ces bases dès le départ.
 
-[Parlons de votre visibilité](/contact), premier échange gratuit, devis sous 24h.
-
----
-
-*Néhémie Gandonou est développeur web freelance à Cotonou, spécialisé dans les sites rapides et bien référencés. Ce site applique chaque conseil de ce guide.*
+[Parlons de votre visibilité](/contact), premier échange gratuit, je vous réponds sous 24h pour en discuter.

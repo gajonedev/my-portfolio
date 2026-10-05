@@ -1,8 +1,9 @@
 ---
 title: "FedaPay, MTN MoMo, Moov Money : accepter les paiements sur votre site au Bénin"
 date: "2026-07-03"
+updated: "2026-10-04"
 readTime: "4 min"
-summary: "Comment intégrer les paiements Mobile Money et carte bancaire sur un site ou une application au Bénin : solutions, coûts et bonnes pratiques."
+summary: "Je vous explique comment préparer le paiement Mobile Money ou par carte sur votre site, du choix du prestataire au suivi des commandes."
 category: "E-commerce"
 author: "Néhémie Gandonou"
 tags: ["Mobile Money", "FedaPay", "Paiement en ligne", "E-commerce", "Bénin"]
@@ -59,8 +60,4 @@ Au-delà de la technique, le Mobile Money bien intégré change vos conversions 
 
 Si vous avez déjà un site, l'intégration du paiement peut souvent s'ajouter à l'existant : c'est un chantier ciblé, pas nécessairement une refonte. Si vous partez de zéro, autant concevoir la boutique autour du parcours de paiement dès le départ. C'est l'objet de mon service [création de site e-commerce](/services/creation-ecommerce), dont les fourchettes de budget figurent sur la [page tarifs](/tarifs).
 
-Dans les deux cas, [parlons de votre projet](/contact) : je vous dirai précisément ce que votre cas demande, devis sous 24h.
-
----
-
-*Néhémie Gandonou intègre les paiements Mobile Money et carte bancaire sur les sites et applications qu'il développe pour ses clients au Bénin et en Afrique de l'Ouest.*
+Dans les deux cas, [parlons de votre projet](/contact) : je vous réponds sous 24h pour discuter des paiements dont vous avez besoin.

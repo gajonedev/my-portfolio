@@ -1,62 +1,61 @@
 ---
 title: "Votre site est lent ? Voici pourquoi et ce que ça vous coûte vraiment"
 date: "2026-09-13"
-readTime: "6 min"
-summary: "Un site lent perd des clients avant même d'avoir affiché sa page d'accueil. Les causes réelles de la lenteur, comment la mesurer, et ce qu'il faut corriger en priorité."
+updated: "2026-10-04"
+readTime: "4 min"
+summary: "Je vous montre comment repérer ce qui ralentit votre site et décider quelles corrections faire en premier."
 category: "Performance"
 author: "Néhémie Gandonou"
 tags: ["Performance", "Vitesse", "Audit", "Core Web Vitals", "Conversion"]
 ---
 
-# Votre site est lent ? Voici pourquoi et ce que ça vous coûte vraiment
+Quand vous me demandez pourquoi votre site est lent, je commence par l’ouvrir sur un téléphone en données mobiles. C’est souvent plus révélateur que de le regarder sur un ordinateur connecté au Wi-Fi. Si l’affichage tarde ou que les boutons bougent pendant le chargement, vos visiteurs peuvent avoir du mal à consulter votre offre ou à vous contacter.
 
-Ouvrez votre site depuis un téléphone, en données mobiles, pas en WiFi au bureau. Comptez les secondes. Au-delà de trois, vous perdez déjà des visiteurs ; au-delà de cinq, la majorité est partie avant d'avoir vu quoi que ce soit. Et le pire : **vous ne le voyez pas**, parce que ces visiteurs ne laissent aucune trace. Juste des clients qui ne vous ont jamais appelé.
+Voici comment je cherche la cause avant de vous proposer une correction.
 
-## Ce que la lenteur vous coûte, concrètement
+## Ce que je regarde d’abord
 
-- **Des clients** : chaque seconde de chargement supplémentaire fait chuter la conversion de façon mesurable. Sur mobile béninois en 3G, l'effet est encore plus brutal qu'ailleurs.
-- **Votre référencement** : la vitesse est un critère de classement Google officiel (les fameux Core Web Vitals). À contenu égal, le site rapide passe devant. J'en parle en détail dans [mon guide SEO local](/blog/apparaitre-sur-google-benin-seo-local).
-- **Votre crédibilité** : un site qui rame renvoie l'image d'une entreprise qui rame. Injuste, mais c'est ainsi que le visiteur juge, en trois secondes.
+- **L’accès à votre offre** : combien de temps faut-il pour lire ce que vous proposez et trouver comment vous joindre ?
+- **Le parcours sur mobile** : les images, menus et formulaires restent-ils utilisables pendant le chargement ?
+- **Les mesures** : je compare les données de performance avec le ressenti sur un vrai appareil. Un score seul ne raconte pas toute l’expérience.
 
-## Les vraies causes (dans l'ordre de fréquence)
+La vitesse fait partie des points que je vérifie dans un [audit de votre site](/services/audit-optimisation), avec le contenu et les bases du [référencement local](/blog/apparaitre-sur-google-benin-seo-local).
 
-### 1. Les images non optimisées
+## Les causes que je vérifie
 
-La cause n°1, de très loin. Une photo sortie du téléphone pèse 4 à 8 Mo ; il en faut 20 fois moins à l'écran. Dix photos non compressées = un site inutilisable en 3G. Le remède : compression, formats modernes (WebP/AVIF), chargement différé des images hors écran.
+### 1. Les images trop lourdes
 
-### 2. Le thème ou le constructeur de site surchargé
+Une photo prévue pour l’impression ou conservée à sa taille d’origine peut peser bien plus que nécessaire sur une page. Je vérifie ses dimensions, sa compression et son chargement. Les images hors écran n’ont généralement pas besoin d’arriver en même temps que le contenu visible.
 
-Les thèmes « tout-en-un » et les constructeurs visuels chargent des centaines de kilooctets de code pour des fonctions que votre site n'utilise pas. C'est le prix caché du « pas cher et rapide à faire ». Le visiteur le paie à chaque chargement. J'ai comparé les approches dans [WordPress ou sur-mesure](/blog/wordpress-ou-site-sur-mesure).
+### 2. Le thème et les composants inutilisés
 
-### 3. L'hébergement au rabais
+Certains thèmes et constructeurs ajoutent du code pour des fonctions dont vous ne vous servez pas. Je regarde ce qui est réellement chargé avant de décider s’il faut alléger l’existant. Utiliser WordPress ne suffit pas à expliquer une lenteur : sa configuration compte aussi. J’en parle dans mon [comparatif WordPress et sur mesure](/blog/wordpress-ou-site-sur-mesure).
 
-Un hébergement mutualisé surchargé ajoute une à deux secondes avant même que votre page commence à s'afficher. Pour quelques milliers de FCFA de plus par mois, un hébergement sérieux change tout.
+### 3. Le serveur et l’hébergement
 
-### 4. Les scripts tiers empilés
+Si le serveur tarde à répondre, optimiser les images ne réglera pas tout. Je vérifie le temps de réponse, le cache et les limites de l’hébergement avant de vous conseiller de changer de formule.
 
-Chat, analytics, pixels publicitaires, polices externes… chaque script tiers est un boulet attaché à votre page. La plupart des sites en traînent qu'ils n'utilisent même plus.
+### 4. Les services ajoutés au fil du temps
 
-## Comment mesurer gratuitement, en 2 minutes
+Un chat, des outils de mesure ou des scripts publicitaires peuvent alourdir une page. Je fais l’inventaire avec vous : lesquels vous servent encore, et lesquels pouvons-nous retirer ?
 
-Rendez-vous sur **PageSpeed Insights** ([pagespeed.web.dev](https://pagespeed.web.dev)), entrez votre URL, puis regardez le score **mobile**. Ne vous fiez pas au score desktop, car vos clients sont sur téléphone. En dessous de 50 : votre site vous coûte des clients chaque jour. Entre 50 et 80 : il y a du travail rentable. Au-dessus de 90 : vous faites partie des rares. Bravo.
+## Faire un premier diagnostic vous-même
 
-Faites le même test sur le site de votre principal concurrent. Si vous êtes plus lent que lui, vous savez où part la différence.
+Ouvrez [PageSpeed Insights](https://pagespeed.web.dev), saisissez l’adresse de votre site et consultez le résultat sur mobile. Regardez les problèmes signalés et les éventuelles données d’utilisateurs réels, puis essayez le même parcours sur votre téléphone.
+
+Je vous conseille de refaire la mesure dans des conditions similaires après une correction. L’objectif est de rendre la page plus agréable à utiliser, pas seulement de gagner des points.
 
 ## Réparer ou refaire ?
 
 C'est la vraie question, et elle mérite un diagnostic honnête plutôt qu'un réflexe :
 
-- **Réparer** : quand la base est saine, l'optimisation ciblée (images, cache, scripts, hébergement) récupère souvent 50 à 80 % du temps de chargement. Quelques jours de travail, résultat mesurable immédiatement.
-- **Refaire** : quand le socle lui-même est le problème, avec un thème obèse, du code spaghetti ou une technologie abandonnée, chaque franc investi en rustines est perdu. Mieux vaut une [refonte propre](/services/creation-site-vitrine) qui préserve votre contenu et votre référencement.
+- **Réparer** : quand la base est saine, je peux cibler les images, le cache, les scripts ou le serveur. Je mesure ensuite le résultat pour vérifier l’effet de ces corrections.
+- **Refaire** : quand les limites de l’existant empêchent les changements dont vous avez besoin. Je compare alors le coût des corrections avec celui d’une [refonte](/services/creation-site-vitrine), en prévoyant la reprise du contenu et des anciennes adresses.
 
 C'est exactement l'objet de mon [audit technique](/services/audit-optimisation) : pour 80 000 FCFA (déduits si je réalise les corrections), vous recevez un diagnostic complet sur la performance, le SEO et le code, avec un plan d'action chiffré poste par poste et une mesure avant/après pour constater le gain. Vous décidez ensuite en connaissance de cause, avec moi ou avec un autre prestataire : le rapport vous appartient.
 
 ## Le mot de la fin
 
-La vitesse n'est pas un luxe technique, c'est du chiffre d'affaires : les visiteurs qui restent, Google qui vous classe mieux, l'image d'une entreprise sérieuse. Et contrairement à la publicité, c'est un investissement qui ne s'arrête pas quand on cesse de payer.
+Mon conseil : cherchez d’abord ce qui empêche vos visiteurs de lire votre offre ou de vous contacter. Je préfère corriger un problème identifié et mesurer le résultat plutôt que vous promettre une hausse de ventes à partir d’un score.
 
 [Envoyez-moi votre URL](/contact). Je vous donne un premier avis rapide et honnête, gratuitement, avant même de parler d'audit.
-
----
-
-*Néhémie Gandonou conçoit et optimise des sites rapides depuis Cotonou. Testez ce site sur PageSpeed Insights : il applique ce qu'il prêche.*

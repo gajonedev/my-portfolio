@@ -154,7 +154,9 @@ export default function Footer() {
               {link.label}
             </Link>
           ))}
-          <span className="text-foreground-subtle">Built with Next.js</span>
+          <span className="text-foreground-subtle">
+            Conçu par Néhémie Gandonou
+          </span>
         </div>
       </Container>
     </footer>

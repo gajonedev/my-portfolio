@@ -1,3 +1,4 @@
+import SpotlightCard from "../../components/ui/SpotlightCard";
 import { serializeJsonLd } from "@/lib/seo";
 import ProjectGallery from "../../components/ui/ProjectGallery";
 import { contactHref } from "@/lib/acquisition";
@@ -147,7 +148,7 @@ export default async function ProjectCaseStudyPage({
           </nav>
 
           {/* Fiche projet */}
-          <section className="flex flex-wrap items-center gap-4 bg-card card-glow p-6 border border-stroke rounded-2xl">
+          <section className="flex flex-wrap items-center gap-4 bg-card p-6 border border-stroke rounded-2xl">
             <span className="bg-primary/10 px-4 py-1 rounded-full font-body text-primary text-xs">
               {project.sector}
             </span>
@@ -187,7 +188,7 @@ export default async function ProjectCaseStudyPage({
           {/* Contexte */}
           <section className="max-w-3xl">
             <h2 className="font-semibold text-foreground text-2xl">
-              Le contexte
+              Le point de départ
             </h2>
             <p className="mt-4 text-foreground-muted leading-relaxed">
               {caseStudy.context}
@@ -197,7 +198,7 @@ export default async function ProjectCaseStudyPage({
           {/* Problème */}
           <section className="max-w-3xl">
             <h2 className="font-semibold text-foreground text-2xl">
-              Le problème à résoudre
+              Le besoin à résoudre
             </h2>
             <p className="mt-4 text-foreground-muted leading-relaxed">
               {caseStudy.problem}
@@ -207,13 +208,13 @@ export default async function ProjectCaseStudyPage({
           {/* Solution */}
           <section>
             <h2 className="mb-6 font-semibold text-foreground text-2xl">
-              La solution mise en place
+              Ce que j’ai développé
             </h2>
             <div className="flex flex-col gap-4 max-w-3xl">
               {caseStudy.solution.map((step, index) => (
                 <div
                   key={step.slice(0, 40)}
-                  className="flex gap-4 bg-card card-glow p-5 border border-stroke rounded-2xl"
+                  className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
                 >
                   <div className="flex justify-center items-center bg-primary/15 rounded-xl w-10 h-10 font-display font-semibold text-primary shrink-0">
                     {index + 1}
@@ -227,37 +228,40 @@ export default async function ProjectCaseStudyPage({
           </section>
 
           {/* Résultats */}
-          <section className="bg-card card-glow p-8 border border-stroke rounded-3xl">
-            <h2 className="mb-6 font-semibold text-foreground text-xl">
-              {project.status === "live"
-                ? "Fonctionnalités réalisées"
-                : "Fonctionnalités du prototype"}
-            </h2>
-            <p className="mb-5 text-sm text-foreground-muted">
-              {project.status === "live"
-                ? "Ce bilan décrit le périmètre réalisé. Aucun gain commercial chiffré n’est annoncé sans mesure."
-                : "Ce projet est présenté à son stade actuel. Ces fonctionnalités ne constituent pas des résultats d’exploitation chez un client."}
-            </p>
-            <div className="flex flex-col gap-3">
-              {caseStudy.results.map((result) => (
-                <div
-                  key={result.slice(0, 40)}
-                  className="flex items-start gap-3"
-                >
-                  <CheckCircle className="mt-0.5 w-5 h-5 text-green-500 shrink-0" />
-                  <p className="text-foreground-muted text-sm leading-relaxed">
-                    {result}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
+          <SpotlightCard
+            corner="tr"
+            cornerColor="#3b82f6"
+            hover={false}
+            glow={false}
+          >
+            <section className="p-8">
+              <h2 className="mb-6 font-semibold text-foreground text-xl">
+                {project.status === "live"
+                  ? "Fonctionnalités réalisées"
+                  : "Fonctionnalités du prototype"}
+              </h2>
+
+              <div className="flex flex-col gap-3">
+                {caseStudy.results.map((result) => (
+                  <div
+                    key={result.slice(0, 40)}
+                    className="flex items-start gap-3"
+                  >
+                    <CheckCircle className="mt-0.5 w-5 h-5 text-green-500 shrink-0" />
+                    <p className="text-foreground-muted text-sm leading-relaxed">
+                      {result}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </SpotlightCard>
 
           {/* Points techniques marquants */}
           {caseStudy.highlights && caseStudy.highlights.length > 0 && (
             <section className="max-w-3xl">
               <h2 className="mb-6 font-semibold text-foreground text-xl">
-                Ce qui a fait la différence
+                Les choix que j’ai faits
               </h2>
               <div className="flex flex-col gap-3">
                 {caseStudy.highlights.map((highlight) => (
@@ -275,17 +279,17 @@ export default async function ProjectCaseStudyPage({
             </section>
           )}
 
-          {/* Autres études de cas */}
+          {/* D’autres projets sur lesquels j’ai travaillé */}
           <section>
             <h2 className="mb-6 font-semibold text-foreground text-xl">
-              Autres études de cas
+              D’autres projets sur lesquels j’ai travaillé
             </h2>
             <div className="gap-3 grid grid-cols-1 sm:grid-cols-3">
               {otherProjects.map((other) => (
                 <Link
                   key={other.slug}
                   href={`/projects/${other.slug}`}
-                  className="group bg-card/50 hover:bg-card card-glow p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
+                  className="group bg-card/50 hover:bg-card p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
                 >
                   <p className="font-medium text-foreground group-hover:text-primary transition">
                     {other.name}
@@ -304,7 +308,8 @@ export default async function ProjectCaseStudyPage({
               Un projet similaire en tête ?
             </h2>
             <p className="mt-3 text-foreground-muted">
-              Parlons-en. Prise de brief et devis détaillé sous 24h.
+              Parlez-moi de votre idée. Je vous réponds sous 24h pour regarder
+              ce que nous pouvons construire.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
               <WhatsAppCta

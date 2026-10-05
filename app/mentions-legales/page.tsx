@@ -14,7 +14,7 @@ export default async function MentionsLegalesPage() {
       />
       <div className="py-16">
         <Container className="prose-invert max-w-3xl prose">
-          <div className="bg-card card-glow p-8 border border-stroke rounded-3xl">
+          <div className="bg-card p-8 border border-stroke rounded-3xl">
             <h2 className="font-semibold text-foreground text-xl">
               Éditeur du site
             </h2>

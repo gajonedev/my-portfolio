@@ -4,13 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Container from "../../components/Container";
 import { getPostBySlug, getAllSlugs, getAllPosts } from "@/lib/blog";
-import {
-  Calendar,
-  Clock,
-  ArrowLeft,
-  Tag,
-  ChevronRight,
-} from "lucide-react";
+import { Calendar, Clock, ArrowLeft, Tag, ChevronRight } from "lucide-react";
 import { siteConfig, socialLinks } from "@/data";
 
 interface Props {
@@ -173,7 +167,7 @@ export default async function BlogPostPage({ params }: Props) {
           {/* Sidebar */}
           <aside className="hidden lg:flex flex-col gap-8">
             {/* Author card */}
-            <div className="top-24 sticky bg-card card-glow p-6 border border-stroke rounded-2xl">
+            <div className="top-24 sticky bg-card p-6 border border-stroke rounded-2xl">
               <div className="flex items-center gap-3">
                 <div className="flex justify-center items-center bg-primary/20 rounded-full w-12 h-12 font-bold text-primary text-sm">
                   NG
@@ -206,7 +200,7 @@ export default async function BlogPostPage({ params }: Props) {
 
             {/* Tags */}
             {post.tags.length > 0 && (
-              <div className="bg-card card-glow p-6 border border-stroke rounded-2xl">
+              <div className="bg-card p-6 border border-stroke rounded-2xl">
                 <div className="flex items-center gap-2 mb-4">
                   <Tag className="w-4 h-4 text-primary" />
                   <span className="font-semibold text-foreground text-sm">
@@ -227,7 +221,7 @@ export default async function BlogPostPage({ params }: Props) {
             )}
 
             {/* Share */}
-            <div className="bg-card card-glow p-6 border border-stroke rounded-2xl">
+            <div className="bg-card p-6 border border-stroke rounded-2xl">
               <span className="font-semibold text-foreground text-sm">
                 Partager
               </span>
@@ -294,7 +288,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <Link
                     key={related.slug}
                     href={`/blog/${related.slug}`}
-                    className="group bg-card card-glow p-6 border border-stroke hover:border-primary/50 rounded-3xl transition"
+                    className="group bg-card p-6 border border-stroke hover:border-primary/50 rounded-3xl transition"
                   >
                     <div className="flex items-center gap-3 text-foreground-muted text-xs">
                       <span className="bg-primary/10 px-3 py-1 rounded-full text-primary">
@@ -329,11 +323,11 @@ export default async function BlogPostPage({ params }: Props) {
             Vous avez un projet en tête ?
           </h2>
           <p className="max-w-lg text-foreground-muted text-sm">
-            Discutons de votre prochain site web, SaaS ou application mobile. Je
-            vous accompagne de la conception au déploiement.
+            Dites-moi ce que vous aimeriez construire et les questions que vous
+            vous posez. Nous regarderons ensemble par où commencer.
           </p>
           <Link href="/contact" className="btn-primary">
-            Démarrer un projet
+            Parler de mon projet
           </Link>
         </Container>
       </section>

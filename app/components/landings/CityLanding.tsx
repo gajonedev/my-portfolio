@@ -47,21 +47,21 @@ const proofSlugsByCity: Record<string, string[]> = {
 const visitorProblems = [
   {
     icon: Search,
-    title: "Vos clients ne vous trouvent pas",
+    title: "Vous voulez être plus facile à trouver ?",
     description:
-      "On vous recommande, mais votre activité reste difficile à vérifier sur Google. Des demandes partent chez des concurrents plus visibles.",
+      "Je peux vous aider à présenter votre activité, vos services et les moyens de vous joindre sur le web.",
   },
   {
     icon: Clock,
-    title: "Les tâches manuelles vous ralentissent",
+    title: "Vous répétez les mêmes tâches chaque jour ?",
     description:
-      "Commandes, inscriptions, stocks ou relances passent encore par le cahier et WhatsApp. Vous perdez du temps et des informations.",
+      "Si vos commandes, vos inscriptions ou vos stocks deviennent difficiles à suivre, je peux développer un outil pour les regrouper.",
   },
   {
     icon: Smartphone,
-    title: "Votre outil n'est pas adapté au terrain",
+    title: "Vous avez besoin d’un outil utilisable sur le terrain ?",
     description:
-      "Il est compliqué sur téléphone, dépend trop du réseau ou n'accepte pas les moyens de paiement utilisés par vos clients.",
+      "Nous pouvons prévoir une utilisation sur téléphone, des fonctions hors ligne ou les moyens de paiement adaptés à vos clients.",
   },
 ];
 
@@ -70,11 +70,9 @@ export default function CityLanding({ city }: { city: LocalCity }) {
   const nearbyCities = city.nearby
     .map((slug) => getCityBySlug(slug))
     .filter((c) => c !== undefined);
-  const proofProjects = (proofSlugsByCity[city.slug] ?? [
-    "archiform",
-    "afcom",
-    "weman-lms",
-  ])
+  const proofProjects = (
+    proofSlugsByCity[city.slug] ?? ["archiform", "afcom", "weman-lms"]
+  )
     .slice(0, 2)
     .map((slug) => projects.find((project) => project.slug === slug))
     .filter((project) => project !== undefined);
@@ -156,7 +154,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
 
       <PageHeader
         title={`Développeur Web & Mobile à ${city.name}`}
-        description={`Je crée des sites et des applications qui vous aident à vendre, gagner du temps et mieux gérer votre activité à ${city.name}.`}
+        description={`Je développe votre plateforme web ou votre application mobile pour votre activité à ${city.name}.`}
       />
 
       <main className="py-16">
@@ -193,16 +191,15 @@ export default function CityLanding({ city }: { city: LocalCity }) {
           <section className="gap-8 grid lg:grid-cols-[1.4fr_0.8fr] items-start">
             <div>
               <p className="font-semibold text-primary text-sm">
-                Un projet utile, pensé pour vos clients et votre quotidien
+                Votre projet, depuis la première idée
               </p>
               <h2 className="mt-3 max-w-3xl font-semibold text-foreground text-2xl sm:text-3xl leading-tight">
-                Passez d&apos;une activité gérée à la main à un outil qui travaille
-                vraiment pour vous
+                Construisons l’outil dont votre activité a besoin
               </h2>
               <p className="mt-4 max-w-2xl text-foreground-muted leading-relaxed">
-                Site professionnel, boutique en ligne ou logiciel métier : je
-                pars de votre problème, de vos utilisateurs et de votre budget.
-                Vous savez ce qui sera livré, quand, et combien cela coûtera.
+                Plateforme web ou application mobile : dites-moi ce que vos
+                utilisateurs doivent pouvoir faire. Je vous propose les
+                fonctionnalités à développer, un budget et un calendrier.
               </p>
               <div className="flex flex-wrap gap-4 mt-6">
                 <WhatsAppCta
@@ -214,8 +211,10 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                 </Link>
               </div>
             </div>
-            <div className="bg-card card-glow p-6 border border-stroke rounded-2xl">
-              <p className="font-semibold text-foreground">Dès le premier échange</p>
+            <div className="bg-card p-6 border border-stroke rounded-2xl">
+              <p className="font-semibold text-foreground">
+                Dès le premier échange
+              </p>
               <ul className="flex flex-col gap-3 mt-4">
                 {aboutGuarantees.slice(0, 3).map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm">
@@ -233,14 +232,19 @@ export default function CityLanding({ city }: { city: LocalCity }) {
               Est-ce que vous vous reconnaissez ?
             </h2>
             <p className="mt-2 text-foreground-muted">
-              Le bon projet commence par un problème précis, pas par une liste
-              de technologies.
+              Avant de parler de technologie, j’aimerais comprendre ce que vous
+              souhaitez simplifier pour votre équipe ou vos clients.
             </p>
             <div className="gap-4 grid md:grid-cols-3 mt-6">
               {visitorProblems.map(({ icon: Icon, title, description }) => (
-                <div key={title} className="bg-card card-glow p-5 border border-stroke rounded-2xl">
+                <div
+                  key={title}
+                  className="bg-card p-5 border border-stroke rounded-2xl"
+                >
                   <Icon className="w-6 h-6 text-primary" />
-                  <h3 className="mt-4 font-semibold text-foreground">{title}</h3>
+                  <h3 className="mt-4 font-semibold text-foreground">
+                    {title}
+                  </h3>
                   <p className="mt-2 text-foreground-muted text-sm leading-relaxed">
                     {description}
                   </p>
@@ -252,7 +256,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
           {/* Introduction */}
           <section className="max-w-3xl">
             <h2 className="font-semibold text-foreground text-2xl">
-              Votre partenaire digital à {city.name}
+              Je vous accompagne à {city.name}
             </h2>
             {city.intro.map((paragraph) => (
               <p
@@ -270,9 +274,8 @@ export default function CityLanding({ city }: { city: LocalCity }) {
               Ce que je peux mettre en place à {city.name}
             </h2>
             <p className="mb-6 text-foreground-muted text-sm">
-              Des solutions pensées pour les réalités économiques de {city.name}{" "}
-              et du département {city.department === "Littoral" ? "du" : "de"}{" "}
-              {city.department} :
+              Voici quelques usages que nous pouvons envisager pour votre
+              activité à {city.name} :
             </p>
             <div className="gap-4 grid md:grid-cols-2">
               {city.opportunities.map((opportunity) => {
@@ -280,7 +283,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                 return (
                   <div
                     key={opportunity.title}
-                    className="flex gap-4 bg-card card-glow p-5 border border-stroke rounded-2xl"
+                    className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
                   >
                     <div className="flex justify-center items-center bg-primary/20 rounded-xl w-12 h-12 text-primary shrink-0">
                       <Icon className="w-6 h-6" />
@@ -305,8 +308,8 @@ export default function CityLanding({ city }: { city: LocalCity }) {
               Des projets qui répondent à des problèmes concrets
             </h2>
             <p className="mt-2 text-foreground-muted">
-              Voici comment j&apos;aborde des besoins proches de ceux rencontrés par
-              les entreprises et organisations de {city.name}.
+              Voici comment j&apos;aborde des besoins proches de ceux rencontrés
+              par les entreprises et organisations de {city.name}.
             </p>
             <div className="gap-4 grid md:grid-cols-2 mt-6">
               {proofProjects.map((project) => {
@@ -315,7 +318,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                   <Link
                     key={project.slug}
                     href={`/projects/${project.slug}`}
-                    className="group bg-card card-glow p-6 border border-stroke hover:border-primary/40 rounded-2xl transition"
+                    className="group bg-card p-6 border border-stroke hover:border-primary/40 rounded-2xl transition"
                   >
                     <div className="flex items-center gap-3">
                       <div className="flex justify-center items-center bg-primary/20 rounded-xl w-11 h-11 text-primary">
@@ -325,7 +328,9 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                         <h3 className="font-semibold text-foreground group-hover:text-primary transition">
                           {project.name}
                         </h3>
-                        <p className="text-foreground-muted text-xs">{project.sector}</p>
+                        <p className="text-foreground-muted text-xs">
+                          {project.sector}
+                        </p>
                       </div>
                     </div>
                     <p className="mt-4 text-foreground-muted text-sm leading-relaxed">
@@ -341,7 +346,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
           </section>
 
           {/* Présentation */}
-          <section className="gap-8 grid md:grid-cols-[160px_1fr] items-center bg-card card-glow p-7 border border-stroke rounded-3xl">
+          <section className="gap-8 grid md:grid-cols-[160px_1fr] items-center bg-card p-7 border border-stroke rounded-3xl">
             <Image
               src="/portrait.png"
               alt="Néhémie Gandonou, développeur web et mobile au Bénin"
@@ -350,7 +355,9 @@ export default function CityLanding({ city }: { city: LocalCity }) {
               className="rounded-2xl w-32 md:w-40 h-32 md:h-40 object-cover"
             />
             <div>
-              <p className="font-medium text-primary text-sm">Votre interlocuteur</p>
+              <p className="font-medium text-primary text-sm">
+                Votre interlocuteur
+              </p>
               <h2 className="mt-2 font-semibold text-foreground text-2xl">
                 Je suis Néhémie Gandonou
               </h2>
@@ -358,10 +365,13 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                 Développeur web et mobile béninois, je vous accompagne moi-même
                 du premier échange à la mise en ligne. J&apos;ai plus de 4 ans
                 d&apos;expérience et plus de 15 projets livrés. Mon rôle est de
-                comprendre votre activité, puis de construire l&apos;outil dont vous
-                avez réellement besoin.
+                comprendre votre activité, puis de construire l&apos;outil dont
+                vous avez réellement besoin.
               </p>
-              <Link href="/about" className="inline-flex mt-4 font-medium text-primary text-sm hover:underline">
+              <Link
+                href="/about"
+                className="inline-flex mt-4 font-medium text-primary text-sm hover:underline"
+              >
                 En savoir plus sur mon parcours
               </Link>
             </div>
@@ -374,23 +384,51 @@ export default function CityLanding({ city }: { city: LocalCity }) {
             </h2>
             <div className="gap-4 grid sm:grid-cols-2 lg:grid-cols-4 mt-6">
               {[
-                ["1", "On échange", "Vous m'expliquez votre activité, le problème et le résultat attendu."],
-                ["2", "Je chiffre", "Vous recevez un périmètre, un prix et un calendrier clairs."],
-                ["3", "Vous suivez", "Je vous montre les avancées. Vous validez chaque étape importante."],
-                ["4", "Je vous accompagne", "Je mets l'outil en ligne, vous forme et reste disponible après la livraison."],
+                [
+                  "1",
+                  "On échange",
+                  "Vous m'expliquez votre activité, le problème et le résultat attendu.",
+                ],
+                [
+                  "2",
+                  "Je prépare le devis",
+                  "Je détaille les fonctions prévues, le prix et le calendrier.",
+                ],
+                [
+                  "3",
+                  "Vous suivez",
+                  "Je vous montre les avancées. Vous validez chaque étape importante.",
+                ],
+                [
+                  "4",
+                  "Je vous accompagne",
+                  "Je mets l'outil en ligne, vous forme et reste disponible après la livraison.",
+                ],
               ].map(([number, title, description]) => (
-                <div key={number} className="p-5 border border-stroke rounded-2xl">
-                  <span className="font-bold text-primary text-sm">Étape {number}</span>
-                  <h3 className="mt-2 font-semibold text-foreground">{title}</h3>
-                  <p className="mt-2 text-foreground-muted text-sm leading-relaxed">{description}</p>
+                <div
+                  key={number}
+                  className="p-5 border border-stroke rounded-2xl"
+                >
+                  <span className="font-bold text-primary text-sm">
+                    Étape {number}
+                  </span>
+                  <h3 className="mt-2 font-semibold text-foreground">
+                    {title}
+                  </h3>
+                  <p className="mt-2 text-foreground-muted text-sm leading-relaxed">
+                    {description}
+                  </p>
                 </div>
               ))}
             </div>
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 bg-primary/10 mt-6 p-6 border border-primary/20 rounded-2xl">
               <div>
-                <p className="font-semibold text-foreground">Un budget annoncé avant de commencer</p>
+                <p className="font-semibold text-foreground">
+                  Un budget annoncé avant de commencer
+                </p>
                 <p className="mt-1 text-foreground-muted text-sm">
-                  Site vitrine à partir de 170 000 FCFA. Les applications sont chiffrées selon le besoin.
+                  Site vitrine à partir de 170 000 FCFA. Les applications sont
+                  chiffrées selon le besoin.
                 </p>
               </div>
               <Link href="/tarifs" className="btn-secondary shrink-0">
@@ -426,14 +464,14 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                   <Link
                     key={service.title}
                     href={`/services/${service.slug}`}
-                    className="flex gap-4 bg-card card-glow hover:bg-card/80 p-5 border border-stroke hover:border-primary/40 rounded-2xl transition"
+                    className="flex gap-4 bg-card hover:bg-card/80 p-5 border border-stroke hover:border-primary/40 rounded-2xl transition"
                   >
                     {card}
                   </Link>
                 ) : (
                   <div
                     key={service.title}
-                    className="flex gap-4 bg-card card-glow p-5 border border-stroke rounded-2xl"
+                    className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
                   >
                     {card}
                   </div>
@@ -443,9 +481,9 @@ export default function CityLanding({ city }: { city: LocalCity }) {
           </section>
 
           {/* Ancrage local */}
-          <section className="bg-card card-glow p-8 border border-stroke rounded-3xl">
+          <section className="bg-card p-8 border border-stroke rounded-3xl">
             <h2 className="mb-6 font-semibold text-foreground text-xl">
-              {city.name}, un territoire que je connais
+              Votre activité à {city.name}
             </h2>
             <div className="gap-8 grid md:grid-cols-2">
               <div>
@@ -490,7 +528,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
               {city.faq.map((item) => (
                 <details
                   key={item.question}
-                  className="group bg-card card-glow open:pb-5 border border-stroke rounded-2xl"
+                  className="group bg-card open:pb-5 border border-stroke rounded-2xl"
                 >
                   <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
                     {item.question}
@@ -515,7 +553,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                   <Link
                     key={nearby.slug}
                     href={`/${cityFullSlug(nearby)}`}
-                    className="group flex items-center gap-3 bg-card/50 hover:bg-card card-glow p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
+                    className="group flex items-center gap-3 bg-card/50 hover:bg-card p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
                   >
                     <MapPin className="w-5 h-5 text-primary shrink-0" />
                     <div>
@@ -548,7 +586,8 @@ export default function CityLanding({ city }: { city: LocalCity }) {
               Un projet à {city.name} ?
             </h2>
             <p className="mt-3 text-foreground-muted">
-              Parlons-en directement. Prise de brief et devis chiffré sous 24h.
+              Parlez-moi de votre projet. Je vous réponds sous 24h pour en
+              discuter.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
               <WhatsAppCta

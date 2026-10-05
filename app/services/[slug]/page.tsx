@@ -195,7 +195,7 @@ export default async function ServicePage({
           </section>
 
           {/* Livrables */}
-          <section className="bg-card card-glow p-8 border border-stroke rounded-3xl">
+          <section className="bg-card p-8 border border-stroke rounded-3xl">
             <h2 className="mb-6 font-semibold text-foreground text-xl">
               Ce que vous recevez
             </h2>
@@ -212,11 +212,11 @@ export default async function ServicePage({
           {/* Offres */}
           <section>
             <h2 className="mb-2 font-semibold text-foreground text-2xl">
-              Trois formules, un même niveau d&apos;exigence
+              Quelques repères pour votre budget
             </h2>
             <p className="mb-8 text-foreground-muted text-sm">
-              Voici des périmètres pour situer votre budget, et vous recevez un
-              devis précis sous 24h, gratuitement.
+              Ces exemples vous aident à situer votre budget. Je prépare ensuite
+              un devis gratuit selon les fonctionnalités dont vous avez besoin.
             </p>
             <div className="items-stretch gap-6 grid md:grid-cols-3">
               {service.offers.map((offer, index) => (
@@ -290,12 +290,12 @@ export default async function ServicePage({
               ))}
             </div>
             <p className="mt-4 text-foreground-muted text-sm">
-              Besoin d&apos;un périmètre différent ? Chaque projet est unique :{" "}
+              Vous avez besoin d’autres fonctionnalités ?{" "}
               <Link
                 href={contactHref(service.slug, `/services/${service.slug}`)}
                 className="text-primary hover:underline"
               >
-                décrivez-moi le vôtre
+                parlez-moi de votre projet
               </Link>{" "}
               et je vous propose une formule adaptée.
             </p>
@@ -310,7 +310,7 @@ export default async function ServicePage({
               {service.process.map((step, index) => (
                 <div
                   key={step.title}
-                  className="flex gap-4 bg-card card-glow p-5 border border-stroke rounded-2xl"
+                  className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
                 >
                   <div className="flex justify-center items-center bg-primary/15 rounded-xl w-10 h-10 font-display font-semibold text-primary shrink-0">
                     {index + 1}
@@ -339,7 +339,7 @@ export default async function ServicePage({
                   <Link
                     key={project.slug}
                     href={`/projects/${project.slug}`}
-                    className="group bg-card/50 hover:bg-card card-glow p-5 border border-stroke hover:border-primary/40 rounded-xl transition"
+                    className="group bg-card/50 hover:bg-card p-5 border border-stroke hover:border-primary/40 rounded-xl transition"
                   >
                     <p className="font-medium text-foreground group-hover:text-primary transition">
                       {project.name}
@@ -367,7 +367,7 @@ export default async function ServicePage({
               {service.faq.map((item) => (
                 <details
                   key={item.question}
-                  className="group bg-card card-glow open:pb-5 border border-stroke rounded-2xl"
+                  className="group bg-card open:pb-5 border border-stroke rounded-2xl"
                 >
                   <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
                     {item.question}
@@ -399,7 +399,7 @@ export default async function ServicePage({
                   <Link
                     key={city.slug}
                     href={`/${cityFullSlug(city)}`}
-                    className="group flex items-center gap-3 bg-card/50 hover:bg-card card-glow p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
+                    className="group flex items-center gap-3 bg-card/50 hover:bg-card p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
                   >
                     <MapPin className="w-5 h-5 text-primary shrink-0" />
                     <p className="font-medium text-foreground group-hover:text-primary transition">
@@ -417,7 +417,8 @@ export default async function ServicePage({
               Prêt à démarrer ?
             </h2>
             <p className="mt-3 text-foreground-muted">
-              Décrivez-moi votre projet : devis détaillé et chiffré sous 24h.
+              Dites-moi ce que vous avez en tête. Je vous réponds sous 24h pour
+              en discuter.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
               <WhatsAppCta

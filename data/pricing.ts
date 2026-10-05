@@ -26,7 +26,7 @@ export const pricingTiers: PricingTier[] = [
     priceNote: "170 000 à 450 000 FCFA selon le nombre de pages et le contenu",
     delay: "1 à 2 semaines",
     description:
-      "Le site qui présente votre activité avec crédibilité et vous rend visible sur Google.",
+      "Je réalise les pages qui présentent votre activité et permettent à vos visiteurs de vous contacter.",
     includes: [
       "Design sur-mesure, responsive",
       "3 à 8 pages optimisées SEO",
@@ -44,7 +44,7 @@ export const pricingTiers: PricingTier[] = [
       "500 000 à 1 200 000 FCFA selon le catalogue et les intégrations",
     delay: "3 à 5 semaines",
     description:
-      "La boutique complète qui vend en ligne avec les moyens de paiement locaux.",
+      "Je mets en place votre catalogue, les commandes et les paiements pour que vous puissiez gérer votre boutique en ligne.",
     includes: [
       "Catalogue produits et panier",
       "Paiement MTN MoMo, Moov Money, Celtiis Cash, CB",
@@ -62,7 +62,7 @@ export const pricingTiers: PricingTier[] = [
       "650 000 à 2 000 000 FCFA selon la complexité de la logique métier",
     delay: "4 à 8 semaines",
     description:
-      "L'outil sur-mesure qui automatise votre gestion : facturation, stocks, clients, réservations.",
+      "Je développe le logiciel dont votre équipe a besoin pour suivre ses clients, ses stocks, ses factures ou ses réservations.",
     includes: [
       "Analyse du besoin métier",
       "Interface adaptée à vos équipes",
@@ -79,7 +79,7 @@ export const pricingTiers: PricingTier[] = [
     priceNote: "900 000 à 2 500 000 FCFA, iOS + Android inclus (Flutter)",
     delay: "5 à 8 semaines",
     description:
-      "Une application iOS et Android issue d'une base de code partagée, avec accompagnement pour la publication.",
+      "Je développe votre application pour iOS et Android et je vous accompagne pour la proposer sur les stores.",
     includes: [
       "iOS + Android en un seul code",
       "Backend complet inclus",
@@ -96,7 +96,7 @@ export const pricingTiers: PricingTier[] = [
     priceNote: "1 200 000 à 4 000 000 FCFA selon le périmètre du produit",
     delay: "6 à 10 semaines",
     description:
-      "Votre produit SaaS lancé sur des fondations saines : multi-tenant, abonnements, analytics.",
+      "Je vous aide à lancer votre service en ligne : comptes clients, abonnements et tableau de bord.",
     includes: [
       "Architecture capable d'accueillir plusieurs organisations",
       "Authentification, rôles, abonnements",
@@ -114,7 +114,7 @@ export const pricingTiers: PricingTier[] = [
       "80 000 à 250 000 FCFA, déduit du devis si je réalise les corrections",
     delay: "3 à 5 jours",
     description:
-      "Le diagnostic complet de votre site ou application existants, avec plan d'action chiffré.",
+      "J’examine votre site ou votre application et je vous remets un rapport avec les corrections à prévoir et leur coût.",
     includes: [
       "Audit performance (Core Web Vitals)",
       "Audit SEO et indexation",
@@ -128,34 +128,34 @@ export const pricingTiers: PricingTier[] = [
 ];
 
 export const alwaysIncluded = [
-  "Devis détaillé et transparent sous 24h, sans frais cachés",
-  "Code spécifique documenté, comptes et accès remis à la livraison",
-  "Référencement (SEO) technique intégré dès la conception",
-  "Site ou app rapide, testé sur mobile et petites connexions",
-  "Formation à la prise en main à la livraison",
-  "Période de correction après livraison précisée dans le devis",
+  "Je vous explique ce que le devis comprend avant de commencer",
+  "Je vous remets le code prévu au devis, sa documentation et vos accès",
+  "Je prépare les pages publiques pour leur référencement",
+  "Je vérifie l’application sur téléphone et avec une connexion limitée",
+  "Je vous montre comment utiliser ce qui a été livré",
+  "Nous précisons dans le devis le suivi et la période de correction",
 ];
 
 export const priceFactors = [
   {
-    title: "Le périmètre fonctionnel",
+    title: "Ce que vous souhaitez réaliser",
     description:
-      "Plus il y a d'écrans, de rôles utilisateurs et de règles métier, plus le développement demande de temps. Un bon cadrage initial évite de payer pour du superflu.",
+      "Le budget dépend des écrans, des utilisateurs et des tâches à gérer. Je vous aide à distinguer ce qui est nécessaire au lancement de ce qui peut attendre.",
   },
   {
-    title: "Les intégrations",
+    title: "Les outils à connecter",
     description:
-      "Paiement Mobile Money, SMS, cartographie, outils existants : chaque intégration tierce ajoute du travail de connexion et de test.",
+      "Paiements, SMS, cartographie ou logiciel existant : chaque connexion demande du travail et des vérifications. Je les détaille dans le devis.",
   },
   {
-    title: "Le contenu",
+    title: "Les textes et les images",
     description:
-      "Textes, photos et fiches produits fournis prêts à l'emploi ou à produire ensemble : cela joue sur le budget et le délai.",
+      "Si vos contenus sont prêts, je peux les intégrer directement. Si vous avez besoin d’aide pour les préparer, nous en tenons compte dans le budget et le calendrier.",
   },
   {
-    title: "L'urgence",
+    title: "Votre date de lancement",
     description:
-      "Un délai confortable permet d'optimiser les coûts. Un lancement express reste possible, mais se planifie différemment.",
+      "Dites-moi quand vous souhaitez lancer. Je vous indique ce qui est réalisable dans ce délai et les éventuels ajustements à prévoir.",
   },
 ];
 
@@ -163,26 +163,26 @@ export const pricingFaq: PricingFaq[] = [
   {
     question: "Pourquoi afficher des fourchettes et pas des prix fixes ?",
     answer:
-      "Parce que deux projets « site web » peuvent varier du simple au quintuple selon le périmètre. Les fourchettes vous donnent un ordre de grandeur honnête pour situer votre budget ; le devis précis, gratuit et sans engagement, arrive sous 24h après notre premier échange.",
+      "Parce qu’une application avec quelques écrans et une plateforme pour plusieurs équipes ne demandent pas le même travail. Ces fourchettes vous donnent un premier repère. Après avoir discuté de votre besoin, je vous prépare un devis gratuit avec le détail de ce que je vais réaliser.",
   },
   {
     question: "Comment se passe le paiement ?",
     answer:
-      "En plusieurs tranches liées à l'avancement : un acompte au démarrage, puis des paiements aux étapes clés validées ensemble, et le solde à la livraison. Virement, Mobile Money ou autre moyen convenu, tout est posé noir sur blanc dans le devis.",
+      "Nous convenons de plusieurs paiements : un acompte pour démarrer, puis des versements aux étapes prévues et le solde à la livraison. Les montants, les dates et le moyen de paiement figurent dans le devis.",
   },
   {
     question: "Y a-t-il des coûts récurrents après la livraison ?",
     answer:
-      "Uniquement les coûts d'infrastructure, qui vous sont facturés en direct : hébergement (souvent quelques milliers de FCFA par mois), nom de domaine annuel, et les éventuels services tiers selon le projet. Aucun abonnement obligatoire chez moi.",
+      "Oui, il faut prévoir le domaine, l’hébergement et les services externes utilisés par votre application. Je vous indique ces frais avant de commencer. Vous réglez ces services directement ; la maintenance éventuelle fait l’objet d’un accord séparé.",
   },
   {
     question: "Proposez-vous la maintenance ?",
     answer:
-      "Oui, en option : un forfait de maintenance couvre les mises à jour techniques, les sauvegardes et les petites évolutions. Vous pouvez aussi choisir de gérer vous-même, le code vous appartient et tout est documenté pour ça.",
+      "Oui. Nous pouvons prévoir un suivi pour les mises à jour, les sauvegardes et les évolutions. Vous pouvez aussi confier cette partie à quelqu’un d’autre : je vous remets les accès et la documentation prévus au devis.",
   },
   {
     question: "Un site à 170 000 FCFA peut-il vraiment être de qualité ?",
     answer:
-      "Oui, si le périmètre est bien cadré : un site vitrine de quelques pages, bien conçu et bien référencé, n'a pas besoin d'un budget de plateforme. Ce qui coûte cher, c'est le sur-mesure fonctionnel, pas la qualité d'exécution, qui est la même sur tous mes projets.",
+      "Oui, pour un site de présentation avec peu de pages et des contenus prêts. Une plateforme avec comptes utilisateurs, paiements ou gestion métier demande davantage de travail. Je vous explique ce qui est inclus pour que vous puissiez comparer les offres.",
   },
 ];

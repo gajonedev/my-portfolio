@@ -1,67 +1,57 @@
 ---
 title: "WordPress ou site sur-mesure : que choisir pour votre entreprise au Bénin ?"
 date: "2026-09-13"
-readTime: "7 min"
-summary: "WordPress fait tourner un tiers du web. Est-ce pour autant le bon choix pour votre entreprise ? Comparatif honnête entre CMS classique et développement sur-mesure."
+updated: "2026-10-04"
+readTime: "4 min"
+summary: "Je compare WordPress et le développement sur mesure selon votre contenu, vos fonctionnalités et la maintenance à prévoir."
 category: "Business"
 author: "Néhémie Gandonou"
 tags: ["WordPress", "Sur-mesure", "Next.js", "Site web", "Bénin"]
 ---
 
-# WordPress ou site sur-mesure : que choisir pour votre entreprise au Bénin ?
+Vous hésitez entre WordPress et un site développé sur mesure ? Je développe surtout sur mesure, mais je ne vous conseillerais pas cette approche simplement parce que c’est mon outil de travail. Le choix dépend de ce que vous voulez publier, des fonctions attendues et de la personne qui entretiendra le site.
 
-Quand une entreprise béninoise demande des devis pour son site, elle reçoit presque toujours deux familles de propositions : du WordPress (souvent moins cher) et du sur-mesure. Les deux camps prêchent pour leur paroisse. Je développe en sur-mesure, donc vous connaissez la mienne. Mais je vais faire l'exercice honnêtement, parce que WordPress a de vrais cas d'usage.
+## Ce que je regarderais avec vous
 
-## Ce que WordPress fait bien
+WordPress peut convenir si vous avez surtout besoin de publier des pages et des articles, avec une administration que plusieurs personnes peuvent utiliser. Un thème existant peut aussi réduire le travail initial si son fonctionnement vous convient.
 
-Soyons justes :
+Le sur-mesure devient intéressant lorsque vos besoins sortent de ces fonctions courantes : droits d’accès particuliers, calculs selon vos règles, espace client ou échanges avec un autre logiciel. Je peux alors construire autour de votre fonctionnement plutôt que chercher à l’adapter à plusieurs extensions.
 
-- **Le blog et le site éditorial** : c'est son ADN. Pour publier beaucoup de contenu avec plusieurs rédacteurs, l'interface d'administration de WordPress reste une référence.
-- **Le budget minimal absolu** : avec un thème acheté et quelques plugins, un site existe en quelques jours. Quand le budget est réellement le seul critère, c'est un point d'entrée.
-- **L'écosystème** : des milliers de plugins couvrent presque tous les besoins courants, du moins sur le papier.
+## Ce qu’il faut prévoir dans les deux cas
 
-## Ce qu'on ne vous dit pas au moment de signer
+### La performance
 
-### La performance se dégrade, plugin après plugin
+Un site WordPress peut être rapide ; un site sur mesure peut être lent. Je vérifie surtout le poids des images, le code chargé, l’hébergement et le parcours sur mobile. Ajouter des extensions sans vérifier leur effet peut compliquer l’ensemble, mais changer de technologie ne corrige pas automatiquement ces problèmes.
 
-Un WordPress frais est correct. Puis on ajoute le constructeur de pages, la galerie, le formulaire, le cache censé compenser les trois premiers… Chaque plugin charge son code sur chaque page. Résultat typique après un an : un site à 4-6 secondes de chargement sur mobile. [On a vu ce que ça coûte](/blog/site-lent-pourquoi-consequences).
+### La sécurité et la maintenance
 
-### La sécurité est un travail permanent
+Pour WordPress, il faut prévoir les mises à jour du cœur, du thème et des extensions. Pour un développement sur mesure, les bibliothèques, le serveur et les fonctions sensibles ont aussi besoin d’attention. Je vous conseille de demander qui s’en charge, ce que cela comprend et à quel coût avant de signer.
 
-WordPress propulse un tiers du web : c'est la cible n°1 mondiale des attaques automatisées. Sans mises à jour rigoureuses du cœur, du thème et de chaque plugin, le piratage n'est pas un risque, c'est une échéance. Or qui fait ces mises à jour quand le prestataire a été payé une fois et a disparu ?
+### Le coût après le lancement
 
-### La maintenance a un coût caché
+Je compare avec vous le devis initial, les éventuelles licences, l’hébergement et les évolutions prévues. Un prix de départ seul ne permet pas de décider quelle solution sera la plus adaptée à votre activité.
 
-Le devis WordPress est moins cher *à la signature*. Ajoutez les licences annuelles des plugins premium, l'hébergement adapté et surtout les heures de maintenance. Le total sur trois ans rejoint souvent le sur-mesure, sans en avoir les qualités.
+## Ce que je peux faire sur mesure
 
-### Le vrai sur-mesure y est difficile
+J’utilise notamment [Next.js](/blog/pourquoi-nextjs-meilleur-choix-2026) pour développer des sites et des plateformes web. Selon votre projet, je peux prévoir :
 
-Tant que votre besoin rentre dans les cases des plugins, tout va bien. Le jour où vous voulez *votre* logique, par exemple un devis calculé selon vos règles, un espace client particulier ou une intégration Mobile Money spécifique, on entre dans le bricolage de plugins tordus dans tous les sens.
+- **Vos fonctions métier** : les règles, les écrans et les droits d’accès dont votre équipe a besoin.
+- **Le paiement en ligne** : une intégration adaptée à vos clients, avec le suivi des confirmations et des échecs.
+- **Les bases du référencement** : des pages structurées, des titres et des contenus compréhensibles.
+- **Une administration du contenu** : si vous voulez modifier les textes et les images vous-même, nous le prévoyons dans le devis.
 
-## Ce que le sur-mesure change
-
-Mes sites sont développés avec [Next.js](/blog/pourquoi-nextjs-meilleur-choix-2026), la technologie de Netflix ou TikTok :
-
-- **Rapides par construction** : pas de couches de plugins, uniquement le code dont votre site a besoin. Les pages se chargent en moins d'une seconde, même en 3G.
-- **Sécurité structurelle** : pas de base de données exposée, pas d'admin à attaquer, pas de plugin à trous. La surface d'attaque est une fraction de celle d'un CMS.
-- **SEO d'excellence** : la structure, la vitesse et le balisage sont conçus pour Google dès la première ligne, sans dépendre d'un plugin ajouté après coup.
-- **Vos règles, exactement** : la [logique métier que vous voulez](/services/creation-application-web), l'intégration FedaPay/MoMo faite proprement, l'évolution sans plafond de verre.
-- **Et vous restez autonome** : j'intègre un CMS headless (Sanity, Payload) pour que vous modifiiez textes, images et articles vous-même. Vous gardez le confort d'édition de WordPress, sans ses fardeaux.
+Je vous explique aussi les limites de la solution retenue et ce qu’il faudra entretenir. Le sur-mesure n’est pas une promesse d’évolution illimitée sans travail supplémentaire.
 
 ## Alors, lequel choisir ?
 
-| Votre situation | Mon conseil honnête |
+| Votre situation | Ce que je comparerais |
 | --------------- | ------------------- |
 | Blog personnel, projet associatif à budget mini | WordPress se défend |
-| Site d'entreprise qui doit ranker et convertir | Sur-mesure |
-| Boutique en ligne avec Mobile Money | Sur-mesure ([voir pourquoi](/services/creation-ecommerce)) |
-| Besoin d'une logique métier spécifique | Sur-mesure, sans hésiter |
-| Beaucoup de contenu, plusieurs rédacteurs | Sur-mesure + CMS headless |
+| Site de présentation d’entreprise | Les deux, selon le contenu et les fonctions |
+| Boutique avec Mobile Money | Compatibilité du paiement et suivi des commandes |
+| Besoin d’une logique métier spécifique | Sur-mesure à étudier |
+| Beaucoup de contenu, plusieurs rédacteurs | WordPress ou une administration de contenu adaptée |
 
-Et si vous avez **déjà** un WordPress qui vous frustre, parce qu'il est lent, piraté ou impossible à faire évoluer, pas de panique ni de précipitation : mon [audit](/services/audit-optimisation) établit ce qui peut être sauvé, et une éventuelle refonte migre votre contenu et préserve votre référencement acquis.
+Si vous avez déjà un WordPress qui ne vous convient plus, je commencerais par comprendre pourquoi. Mon [audit](/services/audit-optimisation) peut vous aider à décider s’il faut le corriger ou le remplacer. En cas de refonte, nous prévoyons la reprise du contenu et les redirections des anciennes pages.
 
-Un [site vitrine sur-mesure démarre à 170 000 FCFA](/tarifs). L'écart avec un devis WordPress est souvent moins important qu'on ne l'imagine, pour un résultat qui n'a rien à voir. [Parlons de votre projet](/contact) : devis détaillé sous 24h.
-
----
-
-*Néhémie Gandonou développe des sites sur-mesure rapides et bien référencés depuis Cotonou. Il recommande encore WordPress quand c'est honnêtement le bon choix.*
+Un [site vitrine sur mesure démarre à 170 000 FCFA](/tarifs) dans mes offres. [Parlez-moi de votre projet](/contact) : je vous réponds sous 24h pour voir quelle approche correspond à votre besoin.

@@ -1,8 +1,9 @@
 ---
 title: "Créer une boutique en ligne au Bénin : le guide complet 2026"
 date: "2026-07-27"
+updated: "2026-10-04"
 readTime: "5 min"
-summary: "De l'idée aux premières ventes : les étapes concrètes pour lancer une boutique en ligne au Bénin, catalogue, Mobile Money, livraison, visibilité Google."
+summary: "Catalogue, paiement, livraison : je vous aide à préparer les décisions à prendre avant de lancer votre boutique."
 category: "E-commerce"
 author: "Néhémie Gandonou"
 tags: ["E-commerce", "Boutique en ligne", "Bénin", "Mobile Money", "Vente en ligne"]
@@ -29,7 +30,7 @@ Trois approches selon votre budget et vos ambitions :
 
 1. **Les réseaux sociaux seuls** (WhatsApp/Instagram) : gratuit, mais aucune visibilité Google, pas de paiement intégré, et tout repose sur vous manuellement. Bien pour tester une idée, pas pour construire.
 2. **Les plateformes clé en main** internationales : rapides, mais mensualités en devises, paiement local souvent absent, et vous ne possédez rien.
-3. **Une boutique sur-mesure** : catalogue illimité, paiement Mobile Money natif, back-office complet, référencement Google intégré, et elle vous appartient à 100 %. C'est ce que je construis [à partir de 500 000 FCFA](/services/creation-ecommerce), détails sur ma [page tarifs](/tarifs).
+3. **Une boutique sur-mesure** : catalogue et gestion des commandes adaptés à votre activité, paiement Mobile Money et bases du référencement prévues dès la conception. C'est ce que je construis [à partir de 500 000 FCFA](/services/creation-ecommerce), détails sur ma [page tarifs](/tarifs).
 
 Mon conseil : commencez par WhatsApp si vous testez encore votre offre. Envisagez un site lorsque les commandes deviennent régulières et que la gestion manuelle commence à vous ralentir.
 
@@ -70,8 +71,4 @@ Formalisez l'activité (IFU, registre de commerce selon votre statut), indispens
 
 Une boutique comprenant un catalogue, le Mobile Money, la livraison par zones, un espace de gestion et les bases du référencement demande généralement **3 à 6 semaines** de travail et démarre à **500 000 FCFA** dans mes offres. Le détail figure sur [la page du service](/services/creation-ecommerce) et sur [la page des tarifs](/tarifs).
 
-Vous avez un projet de vente en ligne ? [Décrivez-le-moi](/contact), devis gratuit et détaillé sous 24h, avec un avis honnête sur votre modèle de livraison.
-
----
-
-*Néhémie Gandonou conçoit des boutiques en ligne avec paiement Mobile Money pour les commerçants et marques du Bénin, de [Cotonou](/developpeur-web-cotonou) au nord du pays.*
+Vous avez un projet de vente en ligne ? [Décrivez-le-moi](/contact), je vous répondrai sous 24h pour discuter du catalogue, du paiement et de la livraison.

@@ -50,34 +50,34 @@ export const localCities: LocalCity[] = [
     regionCode: "BJ-LI",
     tagline: "Capitale économique du Bénin",
     metaDescription:
-      "Développeur web & mobile freelance basé à Cotonou. Applications web, apps mobiles Flutter, e-commerce avec paiement par Mobile Money. Rencontre en présentiel, devis sous 24h.",
+      "Je développe votre plateforme web ou votre application mobile à Cotonou. Parlons de vos utilisateurs, de vos fonctions et de votre budget.",
     intro: [
-      "Je suis développeur web et mobile freelance basé à Cotonou, la capitale économique du Bénin. C'est ici que je vis et que je travaille au quotidien : nous pouvons nous rencontrer en présentiel pour discuter de votre projet, à Ganhi, Haie Vive, Cadjèhoun, Fidjrossè ou dans le quartier de votre choix.",
-      "Entre le Port autonome, le marché Dantokpa, les sièges d'entreprises et un écosystème startup en pleine effervescence, Cotonou concentre l'essentiel de l'activité économique du pays. Les entreprises qui y digitalisent leurs services prennent une longueur d'avance : c'est exactement ce que je vous aide à faire, avec des applications web et mobiles solides, pensées pour le marché béninois.",
+      "Je suis installé à Cotonou. Si vous avez besoin d’un logiciel de gestion ou d’une application mobile, nous pouvons nous rencontrer pour parler de votre activité et regarder vos outils actuels.",
+      "Vous souhaitez vendre en ligne, suivre vos commandes ou lancer un service ? Je vous aide à choisir les fonctions à développer et les moyens de paiement adaptés à vos clients.",
     ],
     opportunities: [
       {
         title: "E-commerce avec paiement local",
         description:
-          "Boutiques en ligne avec MTN MoMo, Moov Money et Celtiis intégrés, et gestion de la livraison dans les quartiers de Cotonou.",
+          "Je prépare votre catalogue, vos commandes et les paiements retenus pour la boutique.",
         iconName: "ShoppingCart",
       },
       {
         title: "Digitalisation des PME",
         description:
-          "Facturation, gestion de stock, suivi client : des outils web sur-mesure pour les commerces et entreprises de la ville.",
+          "Je réunis vos factures, vos stocks et vos dossiers clients dans un logiciel que votre équipe peut consulter.",
         iconName: "LayoutDashboard",
       },
       {
         title: "Applications mobiles grand public",
         description:
-          "Apps Flutter iOS et Android pour toucher une population jeune et ultra-connectée au mobile.",
+          "Je développe votre application pour iOS et Android à partir des usages que vous me présentez.",
         iconName: "Smartphone",
       },
       {
         title: "Plateformes SaaS & fintech",
         description:
-          "Des produits web scalables pour les startups de l'écosystème cotonois, du MVP à la mise en production.",
+          "Je vous accompagne pour lancer une première version de votre service et préparer ses évolutions.",
         iconName: "Rocket",
       },
     ],
@@ -91,62 +91,65 @@ export const localCities: LocalCity[] = [
       {
         question: "Peut-on se rencontrer en présentiel à Cotonou ?",
         answer:
-          "Oui, je suis basé à Cotonou. Nous pouvons organiser un rendez-vous physique pour cadrer votre projet, faire le point en cours de développement ou vous former à l'utilisation de votre outil. C'est l'un des avantages de travailler avec un développeur local.",
+          "Je suis basé à Cotonou. Nous pouvons commencer par un appel et convenir d’une rencontre à Cotonou si elle est utile au projet. Je vous précise les modalités avant de la prévoir.",
       },
       {
         question: "Combien coûte un site web professionnel à Cotonou ?",
         answer:
-          "Tout dépend du projet : un site vitrine soigné, une boutique en ligne avec paiement Mobile Money et une application métier complète n'ont pas le même périmètre. Je vous envoie un devis détaillé sous 24h après notre premier échange, sans engagement.",
+          "Dans mes offres, un site vitrine démarre à 170 000 FCFA et un logiciel web à 650 000 FCFA. Dites-moi ce que votre site doit permettre de faire : je vous prépare un devis selon les pages et les fonctionnalités prévues.",
       },
       {
         question: "Intégrez-vous les moyens de paiement béninois ?",
         answer:
-          "Oui, c'est même une de mes spécialités : MTN Mobile Money, Moov Money, Celtiis et les cartes bancaires. Vos clients paient avec les moyens qu'ils utilisent réellement au quotidien, ce qui augmente directement vos conversions.",
+          "Oui. Je regarde avec vous les moyens de paiement utilisés par vos clients et les services disponibles pour votre compte. Nous choisissons le prestataire, puis je connecte les paiements et leurs confirmations à votre site ou à votre application.",
       },
       {
         question: "Quels délais pour livrer un projet ?",
         answer:
-          "Comptez 2 à 8 semaines selon le scope, avec des points d'étape réguliers. Un site vitrine peut aller plus vite ; une application métier ou un SaaS demande plus de profondeur. Le planning est posé noir sur blanc dès le devis.",
+          "Le délai dépend des écrans, des connexions et des données à reprendre. Je vous propose un calendrier après notre échange et nous fixons les étapes avant de commencer. Les fourchettes de ma page Tarifs vous donnent un premier repère.",
       },
     ],
     nearby: ["abomey-calavi", "porto-novo", "ouidah", "seme-podji"],
-    geo: { latitude: 6.3654, longitude: 2.4183 },
+    geo: {
+      latitude: 6.3654,
+      longitude: 2.4183,
+    },
   },
   {
     slug: "abomey-calavi",
     name: "Abomey-Calavi",
     department: "Atlantique",
     regionCode: "BJ-AQ",
-    tagline: "Ville universitaire et commune la plus peuplée du Bénin",
+    tagline: "Écoles, commerces et immobilier",
     metaDescription:
-      "Développeur web & mobile à Abomey-Calavi : sites, applications et e-commerce pour les entreprises, écoles et commerces de Calavi, Godomey et Akassato. Basé à Cotonou, à 20 minutes.",
+      "Je développe votre plateforme web ou votre application mobile à Abomey-Calavi. Parlons de vos utilisateurs, de vos fonctions et de votre budget.",
     intro: [
-      "Abomey-Calavi est devenue la commune la plus peuplée du Bénin, portée par l'Université d'Abomey-Calavi (UAC) et une croissance urbaine spectaculaire de Godomey à Akassato en passant par Tankpè. Cette dynamique crée une demande énorme en services digitaux : immobilier, éducation, commerce de proximité.",
-      "Basé à Cotonou, à une vingtaine de minutes, j'accompagne les entrepreneurs, écoles et commerces de Calavi dans leurs projets web et mobiles. Déplacement en présentiel possible sans difficulté, du centre de Calavi à Zinvié.",
+      "Vous gérez une école, un commerce ou une activité immobilière à Abomey-Calavi ? Je peux vous aider à réunir vos inscriptions, vos annonces ou vos commandes dans une plateforme web.",
+      "Je suis basé à Cotonou. Nous pouvons organiser un premier échange à distance ou convenir d’une rencontre pour regarder votre besoin ensemble.",
     ],
     opportunities: [
       {
         title: "Plateformes immobilières",
         description:
-          "Annonces, visites et gestion locative en ligne pour un marché immobilier parmi les plus actifs du pays.",
+          "Je développe votre catalogue d’annonces et les fonctions nécessaires pour suivre les demandes.",
         iconName: "Home",
       },
       {
         title: "Solutions pour écoles et universités",
         description:
-          "Sites d'établissements, inscriptions en ligne, portails de notes et plateformes e-learning pour la ville de l'UAC.",
+          "Je peux relier les inscriptions, les notes et les paiements dans un portail pour votre établissement.",
         iconName: "GraduationCap",
       },
       {
         title: "E-commerce de proximité",
         description:
-          "Boutiques en ligne avec paiement Mobile Money et livraison dans les quartiers de Calavi et Godomey.",
+          "Je prépare la boutique, les moyens de paiement et les zones de livraison que vous souhaitez proposer.",
         iconName: "ShoppingCart",
       },
       {
         title: "Apps pour les services du quotidien",
         description:
-          "Transport, livraison, petites annonces : des applications mobiles pensées pour une population jeune et étudiante.",
+          "Je vous aide à construire une application de réservation, de livraison ou d’annonces selon votre service.",
         iconName: "Smartphone",
       },
     ],
@@ -159,21 +162,24 @@ export const localCities: LocalCity[] = [
       {
         question: "Intervenez-vous physiquement à Abomey-Calavi ?",
         answer:
-          "Oui. Je suis basé à Cotonou, juste à côté : je me déplace régulièrement à Calavi, Godomey ou Akassato pour rencontrer des clients, cadrer un projet ou assurer un suivi en présentiel.",
+          "Je suis basé à Cotonou. Nous pouvons commencer par un appel et convenir d’une rencontre à Abomey-Calavi si elle est utile au projet. Je vous précise les modalités avant de la prévoir.",
       },
       {
         question: "Pouvez-vous créer une plateforme pour mon école privée ?",
         answer:
-          "Absolument. Site vitrine de l'établissement, préinscriptions en ligne, portail parents-élèves, gestion des notes et des paiements de scolarité par Mobile Money : je conçois des outils adaptés aux établissements de Calavi, du primaire au supérieur.",
+          "Je peux créer un portail pour les inscriptions, les notes, les paiements et les échanges avec les parents. Nous choisissons les fonctions selon votre établissement et la façon dont votre équipe travaille.",
       },
       {
         question: "Quel budget prévoir pour un site d'annonces immobilières ?",
         answer:
-          "Une plateforme d'annonces avec recherche, photos, contact des propriétaires et espace d'administration démarre généralement autour de quelques centaines de milliers de FCFA et évolue selon les fonctionnalités (paiement en ligne, abonnements, application mobile). Devis précis sous 24h.",
+          "Un logiciel web démarre à 650 000 FCFA dans mes offres. Pour votre plateforme immobilière, je regarde avec vous les annonces, les recherches, les comptes utilisateurs et les fonctions de gestion avant de chiffrer le projet.",
       },
     ],
     nearby: ["cotonou", "ouidah", "porto-novo"],
-    geo: { latitude: 6.4487, longitude: 2.3556 },
+    geo: {
+      latitude: 6.4487,
+      longitude: 2.3556,
+    },
   },
   {
     slug: "porto-novo",
@@ -182,34 +188,34 @@ export const localCities: LocalCity[] = [
     regionCode: "BJ-OU",
     tagline: "Capitale administrative du Bénin",
     metaDescription:
-      "Développeur web & mobile à Porto-Novo : sites institutionnels, e-commerce et applications pour les entreprises de la capitale. Présentiel possible, devis sous 24h.",
+      "Je développe votre plateforme web ou votre application mobile à Porto-Novo. Parlons de vos utilisateurs, de vos fonctions et de votre budget.",
     intro: [
-      "Capitale administrative du Bénin, Porto-Novo réunit institutions, administrations et un patrimoine culturel remarquable, du musée Honmè aux maisons afro-brésiliennes. Sa position sur le corridor Cotonou-Lagos en fait aussi une place forte du commerce avec le Nigeria.",
-      "J'accompagne les institutions, entreprises et commerçants de Porto-Novo dans leur transformation digitale : sites officiels, plateformes de services, boutiques en ligne. Depuis Cotonou, je suis à moins d'une heure de route de Ouando, Tokpota ou Houinmè pour un rendez-vous en présentiel.",
+      "Vous avez un projet web ou mobile à Porto-Novo ? Je peux développer votre espace de gestion, vos démarches en ligne ou votre catalogue, selon ce que vous souhaitez proposer à vos utilisateurs.",
+      "Si votre activité s’adresse aussi à des anglophones, nous pouvons prévoir une version française et anglaise. Nous décidons des contenus et des fonctions utiles avant de développer.",
     ],
     opportunities: [
       {
         title: "Sites institutionnels",
         description:
-          "Sites web modernes et accessibles pour les administrations, mairies, ONG et organisations basées dans la capitale.",
+          "Je prépare vos pages d’information, vos documents et les formulaires utiles à vos usagers.",
         iconName: "Briefcase",
       },
       {
         title: "Valorisation du patrimoine",
         description:
-          "Sites et billetteries en ligne pour les musées, sites culturels et événements de la ville aux trois noms.",
+          "Je peux réunir les informations de visite, les réservations et la billetterie dans un site.",
         iconName: "Palette",
       },
       {
         title: "Commerce transfrontalier",
         description:
-          "Catalogues en ligne et outils de gestion pour les commerçants qui travaillent avec le Nigeria voisin.",
+          "Je développe votre catalogue et vos outils de suivi, avec les langues utiles à vos partenaires.",
         iconName: "Store",
       },
       {
         title: "Applications de services",
         description:
-          "Prise de rendez-vous, démarches en ligne, portails citoyens : le digital au service des habitants.",
+          "Je vous aide à mettre en ligne les rendez-vous, les demandes et le suivi des dossiers.",
         iconName: "Globe",
       },
     ],
@@ -222,21 +228,24 @@ export const localCities: LocalCity[] = [
       {
         question: "Faites-vous des sites multilingues français-anglais ?",
         answer:
-          "Oui. Pour les acteurs de Porto-Novo qui travaillent avec le Nigeria ou des partenaires internationaux, je conçois des sites bilingues français-anglais avec un référencement optimisé dans les deux langues.",
+          "Oui. Je peux prévoir des versions française et anglaise. Nous préparons les contenus dans les deux langues et je mets en place les pages et la navigation correspondantes.",
       },
       {
         question: "Travaillez-vous avec les administrations et ONG ?",
         answer:
-          "Oui, je réalise des sites institutionnels : présentation claire, publication d'actualités et de documents, formulaires de contact ou de démarches, accessibilité et sécurité. Je peux aussi former vos équipes à la mise à jour du contenu.",
+          "Je peux développer vos pages d’information, vos documents et vos formulaires. Nous regardons ensemble les accès, les données à protéger et la manière dont votre équipe publiera les contenus.",
       },
       {
         question: "Peut-on se voir à Porto-Novo pour discuter du projet ?",
         answer:
-          "Bien sûr. Je suis basé à Cotonou et me déplace facilement à Porto-Novo pour une première rencontre, une réunion de cadrage ou une restitution. Le reste du suivi peut se faire à distance, à votre convenance.",
+          "Je suis basé à Cotonou. Nous pouvons commencer par un appel et convenir d’une rencontre à Porto-Novo si elle est utile au projet. Je vous précise les modalités avant de la prévoir.",
       },
     ],
     nearby: ["cotonou", "seme-podji", "abomey-calavi"],
-    geo: { latitude: 6.4969, longitude: 2.6289 },
+    geo: {
+      latitude: 6.4969,
+      longitude: 2.6289,
+    },
   },
   {
     slug: "parakou",
@@ -245,34 +254,34 @@ export const localCities: LocalCity[] = [
     regionCode: "BJ-BO",
     tagline: "Capitale économique du nord Bénin",
     metaDescription:
-      "Développeur web & mobile pour Parakou et le nord Bénin : outils de gestion, e-commerce, plateformes agro. Collaboration à distance rodée, déplacements possibles.",
+      "Je développe votre plateforme web ou votre application mobile à Parakou. Parlons de vos utilisateurs, de vos fonctions et de votre budget.",
     intro: [
-      "Carrefour commercial du septentrion, Parakou relie le sud du Bénin au Niger, au Nigeria et au Burkina Faso. Entre le marché Arzèkè, la filière coton, les transporteurs et l'Université de Parakou, la ville regorge d'activités qui gagnent énormément à se digitaliser.",
-      "Je travaille avec les entreprises et organisations de Parakou principalement à distance, appels réguliers, démos en ligne, livraisons progressives, avec des déplacements possibles pour les phases clés d'un projet. La distance n'est pas un frein : c'est la méthode qui compte, et la mienne est rodée.",
+      "Votre équipe à Parakou a besoin de suivre des stocks, des expéditions ou des collectes ? Je développe des outils web et mobiles pour regrouper ces informations et faciliter leur consultation.",
+      "Je travaille depuis Cotonou. Nous pouvons avancer à distance avec des échanges et des démonstrations aux étapes convenues. Si une rencontre sur place est nécessaire, nous l’organisons ensemble.",
     ],
     opportunities: [
       {
         title: "Gestion pour commerçants et grossistes",
         description:
-          "Stocks, facturation, suivi des ventes : des outils simples et robustes pour les acteurs du marché Arzèkè et au-delà.",
+          "Je vous aide à retrouver les ventes, les stocks et les factures au même endroit.",
         iconName: "Receipt",
       },
       {
         title: "Plateformes agro et coton",
         description:
-          "Suivi des coopératives, traçabilité des récoltes, mise en relation producteurs-acheteurs pour la filière agricole du Borgou.",
+          "Je développe les fiches des membres, le suivi des collectes et les exports nécessaires à vos rapports.",
         iconName: "Sprout",
       },
       {
         title: "Transport et logistique",
         description:
-          "Réservation, suivi de flotte et gestion des expéditions pour les transporteurs du carrefour nord.",
+          "Je peux relier les réservations, les véhicules et les expéditions dans votre outil de gestion.",
         iconName: "Truck",
       },
       {
         title: "E-commerce pour le nord",
         description:
-          "Boutiques en ligne avec Mobile Money pour vendre à Parakou et livrer dans tout le septentrion.",
+          "Je prépare votre boutique avec les options de paiement et de livraison convenues.",
         iconName: "ShoppingCart",
       },
     ],
@@ -286,21 +295,24 @@ export const localCities: LocalCity[] = [
       {
         question: "Comment se passe un projet à distance depuis Parakou ?",
         answer:
-          "Très simplement : un premier appel pour cadrer le besoin, un devis sous 24h, puis des livraisons progressives avec des démos en visio à chaque étape. Vous voyez le projet avancer concrètement, semaine après semaine. Je peux aussi me déplacer à Parakou pour le lancement ou la formation de vos équipes.",
+          "Nous commençons par un appel pour parler de votre besoin. Je vous prépare ensuite un devis, puis nous avançons par étapes avec des versions que vous pouvez essayer. Nous convenons des échanges et des éventuelles rencontres avant de commencer.",
       },
       {
         question: "Pouvez-vous digitaliser la gestion de ma coopérative ?",
         answer:
-          "Oui. Membres, cotisations, collectes, pesées, paiements : je conçois des outils adaptés aux réalités du terrain, utilisables sur mobile même avec une connexion limitée, avec des exports simples pour vos rapports.",
+          "Je peux réunir le suivi des membres, des cotisations, des collectes et des paiements dans un même outil. Vous me montrez vos fiches actuelles pour que je prépare les écrans et les rapports utiles.",
       },
       {
         question: "Mes clients pourront-ils payer par Mobile Money ?",
         answer:
-          "Oui, j'intègre MTN MoMo, Moov Money et Celtiis dans les boutiques et applications que je développe. C'est indispensable pour vendre efficacement au Bénin, et particulièrement dans le nord où le Mobile Money est le moyen de paiement dominant.",
+          "Oui. Je peux intégrer un prestataire de paiement Mobile Money et le suivi des confirmations. Nous vérifions d’abord les moyens disponibles pour vos clients et les conditions d’ouverture de votre compte.",
       },
     ],
     nearby: ["djougou", "kandi", "natitingou"],
-    geo: { latitude: 9.3372, longitude: 2.6303 },
+    geo: {
+      latitude: 9.3372,
+      longitude: 2.6303,
+    },
   },
   {
     slug: "djougou",
@@ -309,34 +321,34 @@ export const localCities: LocalCity[] = [
     regionCode: "BJ-DO",
     tagline: "Carrefour commercial du nord-ouest",
     metaDescription:
-      "Développeur web & mobile pour Djougou : plateformes pour coopératives karité et anacarde, commerce, artisanat. Applications adaptées aux réalités du terrain.",
+      "Je développe votre plateforme web ou votre application mobile à Djougou. Parlons de vos utilisateurs, de vos fonctions et de votre budget.",
     intro: [
-      "Ville commerçante par excellence, Djougou occupe une position stratégique entre Parakou, Natitingou et le Togo voisin. Son économie vit du négoce, de l'artisanat et des filières agricoles à forte valeur : karité, anacarde, céréales.",
-      "Pour les entrepreneurs et coopératives de la Donga, je développe des outils digitaux concrets : catalogues en ligne pour toucher des acheteurs au-delà de la région, gestion des collectes et des membres, présence web professionnelle. Le tout pensé pour fonctionner sur mobile, avec une collaboration à distance simple et efficace.",
+      "Vous souhaitez mieux suivre les commandes de votre commerce ou les collectes de votre coopérative à Djougou ? Je peux vous aider à remplacer les informations dispersées par un outil que votre équipe utilise au quotidien.",
+      "Nous regardons aussi les téléphones et la connexion disponibles. Si vos agents doivent saisir des informations sans réseau, je peux prévoir leur stockage sur le téléphone et leur synchronisation.",
     ],
     opportunities: [
       {
         title: "Filières karité et anacarde",
         description:
-          "Gestion des coopératives, traçabilité des collectes et vitrines en ligne pour vendre aux acheteurs nationaux et internationaux.",
+          "Je réunis le suivi des membres, des collectes et des produits disponibles dans une plateforme.",
         iconName: "Sprout",
       },
       {
         title: "Commerce et négoce",
         description:
-          "Outils de gestion de stock et de facturation pour les commerçants du grand marché de Djougou.",
+          "Je développe un outil pour enregistrer les ventes, préparer les factures et retrouver les stocks.",
         iconName: "Store",
       },
       {
         title: "Artisanat en ligne",
         description:
-          "Catalogues et boutiques web pour donner aux artisans de la Donga une visibilité qui dépasse la région.",
+          "Je vous aide à présenter vos créations et à recevoir les commandes depuis un catalogue en ligne.",
         iconName: "Palette",
       },
       {
         title: "Présence web professionnelle",
         description:
-          "Sites vitrines rapides et bien référencés pour les entreprises, écoles et organisations locales.",
+          "Je prépare les pages qui expliquent votre activité et donnent accès à vos contacts.",
         iconName: "Globe",
       },
     ],
@@ -349,22 +361,25 @@ export const localCities: LocalCity[] = [
       {
         question: "Une coopérative peut-elle vraiment vendre en ligne ?",
         answer:
-          "Oui, et c'est souvent un tournant : une vitrine web sérieuse avec photos, volumes disponibles et certifications permet d'être contacté directement par des acheteurs de Cotonou ou de l'étranger, sans dépendre uniquement des intermédiaires de passage.",
+          "Je peux présenter vos produits, les volumes disponibles et vos contacts dans un catalogue. Vos acheteurs peuvent alors vous adresser des demandes. La vente dépend aussi de vos prix, de la livraison et de votre prospection.",
       },
       {
         question:
           "Nos équipes ne sont pas très à l'aise avec l'informatique, est-ce un problème ?",
         answer:
-          "Non. Je conçois des interfaces simples, en français clair, utilisables sur smartphone. Et je prévois systématiquement une formation à la prise en main, avec des guides pas-à-pas adaptés au niveau de vos équipes.",
+          "Vous me montrez comment vos équipes travaillent. Je leur propose des écrans à essayer, puis je les ajuste à leurs retours. Je vous accompagne aussi pour la prise en main.",
       },
       {
         question: "Comment travaille-t-on ensemble depuis Djougou ?",
         answer:
-          "À distance pour l'essentiel : échanges par téléphone et WhatsApp, démos en ligne, livraisons par étapes. Un déplacement sur place est possible pour les moments clés, comme le lancement ou la formation.",
+          "Nous commençons par un appel pour parler de votre besoin. Je vous prépare ensuite un devis, puis nous avançons par étapes avec des versions que vous pouvez essayer. Nous convenons des échanges et des éventuelles rencontres avant de commencer.",
       },
     ],
     nearby: ["parakou", "natitingou"],
-    geo: { latitude: 9.7085, longitude: 1.666 },
+    geo: {
+      latitude: 9.7085,
+      longitude: 1.666,
+    },
   },
   {
     slug: "bohicon",
@@ -373,34 +388,34 @@ export const localCities: LocalCity[] = [
     regionCode: "BJ-ZO",
     tagline: "Carrefour routier et commercial du sud",
     metaDescription:
-      "Développeur web & mobile pour Bohicon : outils de gestion pour commerçants et transporteurs, e-commerce, sites professionnels. Devis chiffré sous 24h.",
+      "Je développe votre plateforme web ou votre application mobile à Bohicon. Parlons de vos utilisateurs, de vos fonctions et de votre budget.",
     intro: [
-      "Tous les axes du sud Bénin passent par Bohicon : la route inter-états vers le nord, l'axe vers Abomey, le rail. Cette position de carrefour a fait de la ville un centre de commerce de gros, de transport et de distribution parmi les plus actifs du pays.",
-      "J'aide les commerçants, transporteurs et entreprises de Bohicon à structurer leur activité avec des outils digitaux : gestion de stock et de facturation, suivi des expéditions, boutiques en ligne avec Mobile Money. Des solutions concrètes, dimensionnées pour votre activité réelle.",
+      "À Bohicon, vous pouvez me confier un logiciel pour suivre vos stocks, vos factures ou vos livraisons. Je commence par regarder avec vous les tâches qui prennent du temps et les informations difficiles à retrouver.",
+      "Nous choisissons les premières fonctions, puis je vous montre les écrans avant de les développer. Vous pouvez essayer l’outil au fil du projet et me faire vos retours.",
     ],
     opportunities: [
       {
         title: "Commerce de gros et distribution",
         description:
-          "Gestion des stocks, commandes et livraisons pour les grossistes et distributeurs du carrefour de Bohicon.",
+          "Je construis votre outil pour suivre les stocks, les commandes et les livraisons.",
         iconName: "Store",
       },
       {
         title: "Transport et logistique",
         description:
-          "Suivi des véhicules, réservations et gestion des courses pour les acteurs du transport routier.",
+          "Je peux réunir les véhicules, les réservations et les courses dans un espace de gestion.",
         iconName: "Truck",
       },
       {
         title: "Boutiques en ligne",
         description:
-          "Vendre au-delà de Bohicon avec une boutique web, le paiement Mobile Money et une logistique de livraison simple.",
+          "Je prépare votre catalogue, les paiements et les informations de livraison.",
         iconName: "ShoppingCart",
       },
       {
         title: "Facturation et comptabilité simplifiées",
         description:
-          "Des outils légers pour suivre ventes, dépenses et marges sans tableur ni cahier.",
+          "Je vous aide à retrouver vos ventes, vos dépenses et vos factures dans le même outil.",
         iconName: "Receipt",
       },
     ],
@@ -413,22 +428,25 @@ export const localCities: LocalCity[] = [
       {
         question: "Mon commerce est petit, un outil digital vaut-il le coup ?",
         answer:
-          "Oui, à condition qu'il soit dimensionné pour vous. Pas besoin d'un gros logiciel : un outil simple qui suit vos stocks, vos ventes et vos crédits clients vous fait déjà gagner des heures chaque semaine et évite les pertes. On commence petit, on fait évoluer ensuite.",
+          "Cela dépend de ce qui vous prend du temps aujourd’hui. Nous pouvons commencer par un outil limité aux stocks, aux ventes ou aux crédits. Je vous aide à comparer ce travail avec un logiciel déjà disponible.",
       },
       {
         question:
           "Combien de temps pour mettre en place une boutique en ligne ?",
         answer:
-          "Comptez 3 à 6 semaines pour une boutique complète avec catalogue, paiement Mobile Money et espace de gestion des commandes. Le planning précis est fixé dès le devis, que vous recevez sous 24h.",
+          "Le délai dépend des écrans, des connexions et des données à reprendre. Je vous propose un calendrier après notre échange et nous fixons les étapes avant de commencer. Les fourchettes de ma page Tarifs vous donnent un premier repère.",
       },
       {
         question: "Peut-on se rencontrer avant de démarrer ?",
         answer:
-          "Oui. Bohicon est à environ deux heures de Cotonou : un déplacement pour la réunion de cadrage ou le lancement du projet est tout à fait envisageable. Le suivi courant se fait ensuite à distance, par téléphone et démos en ligne.",
+          "Nous commençons par un appel pour parler de votre besoin. Je vous prépare ensuite un devis, puis nous avançons par étapes avec des versions que vous pouvez essayer. Nous convenons des échanges et des éventuelles rencontres avant de commencer.",
       },
     ],
     nearby: ["abomey", "dassa-zoume", "cotonou"],
-    geo: { latitude: 7.1782, longitude: 2.0667 },
+    geo: {
+      latitude: 7.1782,
+      longitude: 2.0667,
+    },
   },
   {
     slug: "abomey",
@@ -437,34 +455,34 @@ export const localCities: LocalCity[] = [
     regionCode: "BJ-ZO",
     tagline: "Cité historique des rois du Danxomè",
     metaDescription:
-      "Développeur web pour Abomey : sites pour hôtels, musées et artisans, billetterie et réservation en ligne. Valorisez la cité des palais royaux sur le web.",
+      "Je développe votre plateforme web ou votre application mobile à Abomey. Parlons de vos utilisateurs, de vos fonctions et de votre budget.",
     intro: [
-      "Ancienne capitale du royaume du Danxomè, Abomey abrite les palais royaux classés au patrimoine mondial de l'UNESCO. Le tourisme culturel, l'artisanat d'art et l'hôtellerie y constituent un potentiel économique que le digital peut démultiplier.",
-      "Je conçois pour les acteurs d'Abomey des outils qui convertissent cette richesse en visibilité et en revenus : sites d'hôtels avec réservation en ligne, vitrines pour les artisans, billetteries pour les sites culturels et événements. Un visiteur qui prépare son voyage doit pouvoir vous trouver, et réserver, depuis son téléphone.",
+      "Vous souhaitez présenter votre hôtel, proposer des réservations ou vendre vos créations depuis Abomey ? Je vous aide à préparer le site et les outils nécessaires pour recevoir ces demandes.",
+      "Nous regardons d’abord comment vous gérez les disponibilités, les commandes et les paiements. Le site doit correspondre à votre organisation, y compris lorsque vous traitez une demande par téléphone.",
     ],
     opportunities: [
       {
         title: "Hôtellerie et réservation",
         description:
-          "Sites d'hôtels et maisons d'hôtes avec réservation et paiement en ligne, pour capter les visiteurs avant leur arrivée.",
+          "Je prépare vos chambres, les demandes de réservation et les moyens de paiement convenus.",
         iconName: "Home",
       },
       {
         title: "Musées et sites culturels",
         description:
-          "Présentation, horaires, billetterie en ligne et visites guidées réservables pour les lieux de mémoire de la cité royale.",
+          "Je peux publier les informations de visite et mettre en place une réservation ou une billetterie.",
         iconName: "Palette",
       },
       {
         title: "Artisanat d'art",
         description:
-          "Boutiques en ligne pour les tisserands, sculpteurs et forgerons d'Abomey, avec expédition nationale et internationale.",
+          "Je développe votre catalogue de créations et le suivi des commandes.",
         iconName: "Store",
       },
       {
         title: "Événements et festivals",
         description:
-          "Sites événementiels, billetterie et communication digitale pour les manifestations culturelles.",
+          "Je vous aide à présenter l’événement, recevoir les inscriptions et vendre les billets.",
         iconName: "Users",
       },
     ],
@@ -477,23 +495,26 @@ export const localCities: LocalCity[] = [
       {
         question: "Un petit hôtel a-t-il besoin d'un site avec réservation ?",
         answer:
-          "Oui, plus que jamais : la majorité des visiteurs d'Abomey préparent leur séjour en ligne. Un site avec photos soignées, disponibilités et réservation directe vous évite de dépendre uniquement des plateformes internationales et de leurs commissions.",
+          "Un site peut permettre à vos visiteurs de consulter les chambres et de vous adresser une réservation. Nous regardons d’abord comment vous gérez les disponibilités et si vous avez besoin d’un paiement en ligne.",
       },
       {
         question:
           "Pouvez-vous créer une boutique pour vendre notre artisanat à l'international ?",
         answer:
-          "Oui : boutique multilingue, paiement par carte bancaire et Mobile Money, et organisation de l'expédition. Je vous accompagne aussi sur les photos produits et la présentation, qui font toute la différence à l'international.",
+          "Je peux créer votre catalogue et connecter les paiements disponibles. Nous préparons aussi les informations sur les frais, les délais et les destinations de livraison.",
       },
       {
         question:
           "Proposez-vous la maintenance du site après la mise en ligne ?",
         answer:
-          "Oui, je propose un accompagnement après livraison : mises à jour, sauvegardes, évolutions du contenu. Vous pouvez aussi être formé pour gérer vous-même les contenus courants, comme les tarifs ou les actualités.",
+          "Oui. Nous pouvons prévoir les mises à jour, les sauvegardes et les évolutions dans un accord de suivi. Je peux aussi vous montrer comment gérer les contenus courants vous-même.",
       },
     ],
     nearby: ["bohicon", "dassa-zoume"],
-    geo: { latitude: 7.1826, longitude: 1.9912 },
+    geo: {
+      latitude: 7.1826,
+      longitude: 1.9912,
+    },
   },
   {
     slug: "lokossa",
@@ -502,34 +523,34 @@ export const localCities: LocalCity[] = [
     regionCode: "BJ-MO",
     tagline: "Chef-lieu du département du Mono",
     metaDescription:
-      "Développeur web & mobile pour Lokossa et le Mono : sites professionnels, outils de gestion, plateformes pour institutions et coopératives. Devis sous 24h.",
+      "Je développe votre plateforme web ou votre application mobile à Lokossa. Parlons de vos utilisateurs, de vos fonctions et de votre budget.",
     intro: [
-      "Chef-lieu du Mono, Lokossa est le centre administratif et éducatif du sud-ouest béninois, avec ses institutions, ses établissements d'enseignement supérieur et un tissu de PME et de coopératives agricoles tourné vers la vallée du Mono et le Togo voisin.",
-      "J'accompagne les organisations et entrepreneurs de Lokossa dans leurs projets digitaux : sites institutionnels, outils de gestion, plateformes éducatives. La collaboration se fait à distance avec des points réguliers, et je me déplace dans le Mono pour les étapes importantes d'un projet.",
+      "Vous dirigez une organisation, une école ou une entreprise à Lokossa ? Je peux développer votre portail, vos formulaires et les fonctions de gestion dont votre équipe a besoin.",
+      "Je vous accompagne depuis Cotonou, avec des échanges à distance. Nous définissons les étapes de validation et, si besoin, les rencontres pour la prise en main.",
     ],
     opportunities: [
       {
         title: "Institutions et administrations",
         description:
-          "Sites web clairs et bien structurés pour les services publics, ONG et organisations du département.",
+          "Je prépare les pages, les documents et les formulaires utiles à vos usagers.",
         iconName: "Briefcase",
       },
       {
         title: "Éducation et formation",
         description:
-          "Plateformes pour les établissements d'enseignement de Lokossa : inscriptions, résultats, communication avec les parents.",
+          "Je peux relier les inscriptions, les résultats et les échanges avec les familles dans un portail.",
         iconName: "GraduationCap",
       },
       {
         title: "Coopératives agricoles",
         description:
-          "Gestion des membres et des collectes pour les filières de la vallée du Mono : riz, maraîchage, palmier à huile.",
+          "Je développe le suivi des membres, des collectes et des paiements convenus.",
         iconName: "Sprout",
       },
       {
         title: "PME et commerces",
         description:
-          "Présence web professionnelle et outils de facturation pour les entreprises locales.",
+          "Je vous aide à présenter votre entreprise et à suivre ses clients et ses factures.",
         iconName: "Store",
       },
     ],
@@ -543,21 +564,24 @@ export const localCities: LocalCity[] = [
         question:
           "Pourquoi une entreprise de Lokossa devrait-elle investir dans un site web ?",
         answer:
-          "Parce que vos clients et partenaires vous cherchent déjà sur Google. Une entreprise du Mono avec un site professionnel bien référencé capte des demandes qui, sans cela, partent vers Cotonou. C'est un investissement qui travaille pour vous 24h/24.",
+          "Un site peut aider vos clients à comprendre votre activité et à vous contacter. Nous regardons d’abord ce qu’ils cherchent et ce que vous souhaitez leur proposer, avant de décider du travail à réaliser.",
       },
       {
         question: "Travaillez-vous avec les mairies et services publics ?",
         answer:
-          "Oui. Je réalise des sites institutionnels avec publication d'actualités, documents téléchargeables, formulaires de contact et démarches en ligne, dans le respect des standards d'accessibilité et de sécurité.",
+          "Je peux développer les pages, les documents et les formulaires de votre organisation. Nous précisons les accès et les besoins de sécurité avec votre équipe.",
       },
       {
         question: "Le suivi à distance fonctionne-t-il vraiment ?",
         answer:
-          "Oui : devis sous 24h, démos en ligne à chaque étape, échanges par téléphone et WhatsApp. Vous validez chaque avancée avant de passer à la suivante. Et pour le lancement ou une formation, je me déplace à Lokossa.",
+          "Nous commençons par un appel pour parler de votre besoin. Je vous prépare ensuite un devis, puis nous avançons par étapes avec des versions que vous pouvez essayer. Nous convenons des échanges et des éventuelles rencontres avant de commencer.",
       },
     ],
     nearby: ["come", "ouidah", "bohicon"],
-    geo: { latitude: 6.6389, longitude: 1.7167 },
+    geo: {
+      latitude: 6.6389,
+      longitude: 1.7167,
+    },
   },
   {
     slug: "ouidah",
@@ -566,34 +590,34 @@ export const localCities: LocalCity[] = [
     regionCode: "BJ-AQ",
     tagline: "Ville d'histoire, de mémoire et de tourisme",
     metaDescription:
-      "Développeur web pour Ouidah : sites d'hôtels avec réservation en ligne, billetterie d'événements, vitrines pour les acteurs du tourisme et de la culture.",
+      "Je développe votre plateforme web ou votre application mobile à Ouidah. Parlons de vos utilisateurs, de vos fonctions et de votre budget.",
     intro: [
-      "Entre la Route de l'Esclave, la Porte du Non-Retour, ses musées et les Vodun Days qui attirent chaque année des milliers de visiteurs, Ouidah est l'une des destinations culturelles majeures de l'Afrique de l'Ouest. Le tourisme y explose, et avec lui, le besoin d'une vraie présence en ligne.",
-      "Je développe pour les hôtels, restaurants, guides et acteurs culturels de Ouidah des sites et outils qui transforment cette affluence en réservations : les visiteurs préparent leur séjour sur Google des semaines à l'avance, et c'est là qu'il faut être visible.",
+      "Vous accueillez des visiteurs à Ouidah ? Je peux préparer votre site et vos réservations pour que vos clients trouvent vos informations et vous contactent avant leur arrivée.",
+      "Nous choisissons les langues, les moyens de paiement et les informations à publier selon votre public. Vous gardez un espace pour suivre les demandes et modifier les contenus prévus.",
     ],
     opportunities: [
       {
         title: "Hôtels et maisons d'hôtes",
         description:
-          "Sites avec réservation et paiement en ligne pour capter les visiteurs des Vodun Days et de la haute saison touristique.",
+          "Je prépare vos hébergements et un parcours pour recevoir les demandes de réservation.",
         iconName: "Home",
       },
       {
         title: "Billetterie d'événements",
         description:
-          "Vente de billets en ligne pour les festivals, concerts et manifestations culturelles de la ville.",
+          "Je développe la vente de billets et les informations pratiques de votre événement.",
         iconName: "Users",
       },
       {
         title: "Guides et expériences touristiques",
         description:
-          "Réservation de visites guidées et d'expériences, avec présentation multilingue pour les visiteurs internationaux.",
+          "Je peux présenter vos visites dans les langues utiles à votre public et recueillir les réservations.",
         iconName: "Globe",
       },
       {
         title: "Restaurants et plages",
         description:
-          "Menus en ligne, réservation de tables et visibilité Google Maps pour les établissements de la côte.",
+          "Je vous aide à publier vos menus, vos horaires et vos contacts, avec les réservations prévues.",
         iconName: "Store",
       },
     ],
@@ -607,21 +631,24 @@ export const localCities: LocalCity[] = [
         question:
           "Comment capter les touristes qui viennent pour les Vodun Days ?",
         answer:
-          "En étant visible en ligne bien avant l'événement : un site rapide et multilingue, une fiche Google Business soignée et la réservation en ligne. Les visiteurs réservent hébergement et activités des semaines à l'avance, si vous n'êtes pas trouvable à ce moment-là, la réservation part ailleurs.",
+          "Je peux vous aider à publier vos hébergements, vos activités et les informations pratiques avant l’événement. Nous regardons les contenus à préparer et le moyen de recevoir les réservations.",
       },
       {
         question: "Faut-il un site en anglais aussi ?",
         answer:
-          "Fortement recommandé pour Ouidah : une grande partie des visiteurs vient du Nigeria, des États-Unis, du Brésil et des Caraïbes. Je conçois des sites bilingues français-anglais, avec un référencement travaillé dans les deux langues.",
+          "Si votre public comprend des anglophones, une version anglaise peut être utile. Je peux la prévoir avec vous, en précisant qui prépare et valide les traductions.",
       },
       {
         question: "Peut-on accepter les paiements des clients étrangers ?",
         answer:
-          "Oui : j'intègre le paiement par carte bancaire internationale en plus du Mobile Money local. Vos clients paient leur réservation depuis l'étranger, vous recevez les fonds au Bénin.",
+          "Oui. Je regarde avec vous les moyens de paiement utilisés par vos clients et les services disponibles pour votre compte. Nous choisissons le prestataire, puis je connecte les paiements et leurs confirmations à votre site ou à votre application.",
       },
     ],
     nearby: ["cotonou", "abomey-calavi", "come"],
-    geo: { latitude: 6.3667, longitude: 2.085 },
+    geo: {
+      latitude: 6.3667,
+      longitude: 2.085,
+    },
   },
   {
     slug: "natitingou",
@@ -630,34 +657,34 @@ export const localCities: LocalCity[] = [
     regionCode: "BJ-AK",
     tagline: "Porte d'entrée de la Pendjari et du pays Somba",
     metaDescription:
-      "Développeur web pour Natitingou : sites et réservation en ligne pour lodges, guides et acteurs de l'écotourisme de l'Atacora et de la Pendjari.",
+      "Je développe votre plateforme web ou votre application mobile à Natitingou. Parlons de vos utilisateurs, de vos fonctions et de votre budget.",
     intro: [
-      "Nichée au pied de la chaîne de l'Atacora, Natitingou est la porte d'entrée du parc national de la Pendjari et du pays Somba, célèbre pour ses tata somba, ces châteaux de terre uniques au monde. L'écotourisme y est un moteur économique de premier plan.",
-      "Pour les lodges, guides, agences et artisans de l'Atacora, je crée des sites et outils de réservation qui touchent les voyageurs là où ils préparent leur aventure : en ligne, souvent depuis l'étranger, plusieurs mois avant le départ.",
+      "Vous proposez des hébergements, des visites ou des produits depuis Natitingou ? Je peux développer votre catalogue ou votre outil de réservation pour recevoir les demandes en ligne.",
+      "Je tiens compte de votre connexion et de celle de vos clients. Si une partie du travail doit se faire sans réseau, nous le précisons avant de choisir comment construire l’application.",
     ],
     opportunities: [
       {
         title: "Lodges et écolodges",
         description:
-          "Sites avec disponibilités et réservation en ligne pour les hébergements de Natitingou et des environs de la Pendjari.",
+          "Je prépare les pages des hébergements et le suivi des demandes de séjour.",
         iconName: "Home",
       },
       {
         title: "Guides et safaris",
         description:
-          "Présentation des circuits, tarifs et réservation pour les guides et agences qui font découvrir la Pendjari et le pays Somba.",
+          "Je vous aide à présenter les circuits que vous proposez et à recevoir les réservations.",
         iconName: "Globe",
       },
       {
         title: "Artisanat de l'Atacora",
         description:
-          "Vitrines en ligne pour les artisans locaux, avec vente et expédition vers Cotonou et l'international.",
+          "Je développe votre catalogue pour présenter vos créations et traiter les demandes d’achat.",
         iconName: "Palette",
       },
       {
         title: "Filières agricoles de montagne",
         description:
-          "Outils de gestion pour les coopératives de l'Atacora : fonio, miel, karité, moringa.",
+          "Je peux réunir les membres, les collectes et les stocks de votre coopérative dans un logiciel.",
         iconName: "Sprout",
       },
     ],
@@ -671,22 +698,25 @@ export const localCities: LocalCity[] = [
         question:
           "Nos clients réservent surtout via des agences étrangères, un site changerait-il quelque chose ?",
         answer:
-          "Oui : un site professionnel avec réservation directe vous rend indépendant des commissions d'intermédiaires et vous met en contact direct avec les voyageurs. Beaucoup cherchent précisément des acteurs locaux à soutenir, encore faut-il qu'ils vous trouvent.",
+          "Un site vous donne un moyen de recevoir des demandes directement. Nous pouvons présenter vos offres et prévoir les réservations, tout en gardant les canaux de vente qui vous apportent déjà des clients.",
       },
       {
         question:
           "La connexion internet est parfois limitée ici, est-ce gérable ?",
         answer:
-          "Tout à fait. Je conçois des sites très légers qui se chargent vite même en 3G, et des outils de gestion qui fonctionnent hors-ligne puis se synchronisent. La contrainte réseau fait partie du cahier des charges dès le départ.",
+          "Nous pouvons prévoir un fonctionnement hors ligne pour les tâches qui le nécessitent. Les données sont alors conservées sur le téléphone, puis synchronisées au retour de la connexion. Je vous explique quelles fonctions nécessitent malgré tout le réseau.",
       },
       {
         question: "Comment collabore-t-on depuis Natitingou ?",
         answer:
-          "À distance, avec des échanges par téléphone et WhatsApp et des validations par étapes. Le processus est simple et éprouvé : brief, devis sous 24h, maquette, développement, mise en ligne, formation.",
+          "Nous commençons par un appel pour parler de votre besoin. Je vous prépare ensuite un devis, puis nous avançons par étapes avec des versions que vous pouvez essayer. Nous convenons des échanges et des éventuelles rencontres avant de commencer.",
       },
     ],
     nearby: ["djougou", "parakou"],
-    geo: { latitude: 10.3042, longitude: 1.3796 },
+    geo: {
+      latitude: 10.3042,
+      longitude: 1.3796,
+    },
   },
   {
     slug: "kandi",
@@ -695,34 +725,34 @@ export const localCities: LocalCity[] = [
     regionCode: "BJ-AL",
     tagline: "Cœur du bassin cotonnier de l'Alibori",
     metaDescription:
-      "Développeur web & mobile pour Kandi et l'Alibori : outils de gestion pour coopératives cotonnières, agro-business et commerces du nord Bénin.",
+      "Je développe votre plateforme web ou votre application mobile à Kandi. Parlons de vos utilisateurs, de vos fonctions et de votre budget.",
     intro: [
-      "Chef-lieu de l'Alibori, Kandi est au cœur du premier bassin cotonnier du Bénin. Coopératives, égreneurs, distributeurs d'intrants et transporteurs y animent une économie agricole puissante mais encore largement gérée sur papier.",
-      "C'est précisément là que le digital apporte le plus : je développe pour les acteurs de l'Alibori des outils de gestion adaptés au terrain, suivi des producteurs, des intrants et des collectes, paiements Mobile Money, utilisables sur smartphone, même avec une connexion intermittente.",
+      "Votre coopérative ou votre entreprise à Kandi doit suivre des producteurs, des intrants ou des livraisons ? Je peux réunir ces informations dans un logiciel web et une application pour vos agents.",
+      "Vous me montrez les fiches et les rapports utilisés aujourd’hui. Nous décidons de ce qui doit être saisi sur le terrain, de ce qui doit rester disponible hors ligne et des informations à partager avec le bureau.",
     ],
     opportunities: [
       {
         title: "Coopératives cotonnières",
         description:
-          "Suivi des producteurs, des surfaces, des intrants distribués et des livraisons de coton-graine, avec des rapports clairs.",
+          "Je développe les fiches producteurs, le suivi des intrants et les rapports de livraison.",
         iconName: "Sprout",
       },
       {
         title: "Distribution d'intrants",
         description:
-          "Gestion des stocks, des crédits de campagne et des remboursements pour les distributeurs de l'Alibori.",
+          "Je vous aide à suivre les stocks, les crédits accordés et leurs remboursements.",
         iconName: "Truck",
       },
       {
         title: "Paiements Mobile Money",
         description:
-          "Intégration de MTN MoMo et Moov Money pour payer producteurs et fournisseurs de façon traçable.",
+          "Je peux connecter les paiements disponibles pour conserver les confirmations dans votre outil.",
         iconName: "Wallet",
       },
       {
         title: "Commerces du nord",
         description:
-          "Outils de facturation et de suivi des ventes pour les commerçants de Kandi et des communes voisines.",
+          "Je construis un espace pour enregistrer les ventes et préparer les factures.",
         iconName: "Store",
       },
     ],
@@ -736,22 +766,25 @@ export const localCities: LocalCity[] = [
         question:
           "Nos agents de terrain n'ont pas toujours de réseau, votre outil fonctionnera-t-il ?",
         answer:
-          "Oui : je conçois des applications qui fonctionnent hors-ligne, l'agent saisit les données au village, et tout se synchronise dès qu'il retrouve du réseau. C'est une contrainte que j'intègre dès la conception pour les projets du nord.",
+          "Nous pouvons prévoir un fonctionnement hors ligne pour les tâches qui le nécessitent. Les données sont alors conservées sur le téléphone, puis synchronisées au retour de la connexion. Je vous explique quelles fonctions nécessitent malgré tout le réseau.",
       },
       {
         question:
           "Peut-on suivre plusieurs milliers de producteurs dans l'outil ?",
         answer:
-          "Oui, c'est une question d'architecture. Je construis des backends solides et scalables, capables de gérer des dizaines de milliers d'enregistrements avec des recherches rapides et des exports pour vos rapports de campagne.",
+          "Oui, nous pouvons organiser les données pour suivre plusieurs producteurs. Je vous demande les volumes attendus, les recherches et les rapports nécessaires pour dimensionner l’outil.",
       },
       {
         question: "Quel est le processus pour démarrer depuis Kandi ?",
         answer:
-          "Un appel pour comprendre votre organisation, un devis détaillé sous 24h, puis un développement par étapes avec des démos en ligne. Un déplacement à Kandi est possible pour le déploiement et la formation des équipes.",
+          "Nous commençons par un appel pour parler de votre besoin. Je vous prépare ensuite un devis, puis nous avançons par étapes avec des versions que vous pouvez essayer. Nous convenons des échanges et des éventuelles rencontres avant de commencer.",
       },
     ],
     nearby: ["malanville", "parakou"],
-    geo: { latitude: 11.1342, longitude: 2.9386 },
+    geo: {
+      latitude: 11.1342,
+      longitude: 2.9386,
+    },
   },
   {
     slug: "malanville",
@@ -760,34 +793,34 @@ export const localCities: LocalCity[] = [
     regionCode: "BJ-AL",
     tagline: "Porte du Bénin sur le Niger",
     metaDescription:
-      "Développeur web & mobile pour Malanville : outils pour le commerce transfrontalier, la logistique et les échanges avec le Niger. Solutions adaptées au terrain.",
+      "Je développe votre plateforme web ou votre application mobile à Malanville. Parlons de vos utilisateurs, de vos fonctions et de votre budget.",
     intro: [
-      "Posée sur le fleuve Niger, face à Gaya, Malanville est la grande porte commerciale entre le Bénin et le Niger. Son marché international, l'un des plus importants de la sous-région, brasse céréales, bétail, tissus et marchandises de toute nature.",
-      "Pour les commerçants, transitaires et transporteurs de ce carrefour transfrontalier, je développe des outils qui sécurisent et accélèrent les échanges : suivi des marchandises, gestion des crédits clients, paiements Mobile Money traçables des deux côtés de la frontière.",
+      "Vous gérez des marchandises, des livraisons ou des crédits clients à Malanville ? Je peux vous aider à garder une trace de ces opérations dans un outil de gestion.",
+      "Nous partons de vos pratiques : qui enregistre une commande, qui confirme le paiement et qui suit la livraison. Si votre activité implique plusieurs pays, nous vérifions aussi les moyens de paiement disponibles.",
     ],
     opportunities: [
       {
         title: "Commerce transfrontalier",
         description:
-          "Gestion des commandes, des stocks et des crédits pour les commerçants qui travaillent entre le Bénin et le Niger.",
+          "Je développe votre suivi des commandes, des stocks et des crédits clients.",
         iconName: "Store",
       },
       {
         title: "Transit et logistique",
         description:
-          "Suivi des chargements et des passages pour les transitaires et transporteurs du corridor Cotonou-Niamey.",
+          "Je peux réunir les chargements et les étapes d’expédition dans votre outil.",
         iconName: "Truck",
       },
       {
         title: "Paiements traçables",
         description:
-          "Mobile Money intégré pour remplacer les transactions en espèces par des paiements suivis et sécurisés.",
+          "Je relie les confirmations de paiement aux opérations enregistrées, selon les prestataires disponibles.",
         iconName: "Wallet",
       },
       {
         title: "Filières agricoles du fleuve",
         description:
-          "Outils pour les coopératives rizicoles et maraîchères de la vallée du Niger.",
+          "Je vous aide à suivre les membres, les collectes et les ventes de votre coopérative.",
         iconName: "Sprout",
       },
     ],
@@ -801,23 +834,26 @@ export const localCities: LocalCity[] = [
         question:
           "Un outil peut-il gérer des transactions en FCFA des deux côtés de la frontière ?",
         answer:
-          "Oui : le Bénin et le Niger partagent le FCFA (UEMOA), ce qui simplifie les choses. J'intègre les paiements Mobile Money et le suivi des règlements pour que chaque transaction laisse une trace claire, quel que soit le côté de la frontière.",
+          "Je peux prévoir le suivi de vos ventes et de vos règlements en FCFA. Pour encaisser en ligne de part et d’autre de la frontière, nous vérifions les pays et les moyens couverts par le prestataire de paiement avant de choisir l’intégration.",
       },
       {
         question:
           "Nos activités reposent beaucoup sur la confiance et l'oral, le digital peut-il s'y adapter ?",
         answer:
-          "Le digital ne remplace pas la confiance, il la renforce : un registre clair des crédits accordés, des livraisons faites et des paiements reçus évite les litiges et protège les deux parties. L'outil s'adapte à vos pratiques, pas l'inverse.",
+          "Nous pouvons conserver vos habitudes de travail tout en enregistrant les crédits, les livraisons et les paiements. Je vous montre des écrans que votre équipe peut essayer avant de décider des ajustements.",
       },
       {
         question:
           "Comment se passe la collaboration à une telle distance de Cotonou ?",
         answer:
-          "Par téléphone, WhatsApp et démos en ligne, avec un développement par étapes que vous validez. C'est un mode de travail que je pratique avec des clients dans tout le pays, la distance ne change rien à la qualité du résultat.",
+          "Nous commençons par un appel pour parler de votre besoin. Je vous prépare ensuite un devis, puis nous avançons par étapes avec des versions que vous pouvez essayer. Nous convenons des échanges et des éventuelles rencontres avant de commencer.",
       },
     ],
     nearby: ["kandi"],
-    geo: { latitude: 11.8686, longitude: 3.3833 },
+    geo: {
+      latitude: 11.8686,
+      longitude: 3.3833,
+    },
   },
   {
     slug: "savalou",
@@ -826,34 +862,34 @@ export const localCities: LocalCity[] = [
     regionCode: "BJ-CO",
     tagline: "Capitale de l'igname et porte des Collines",
     metaDescription:
-      "Développeur web pour Savalou : valorisation des filières agricoles, outils pour coopératives, sites pour entreprises des Collines. Devis sous 24h.",
+      "Je développe votre plateforme web ou votre application mobile à Savalou. Parlons de vos utilisateurs, de vos fonctions et de votre budget.",
     intro: [
-      "Célèbre pour sa fête de l'igname qui rassemble chaque 15 août des visiteurs de tout le pays, Savalou est un centre agricole majeur des Collines : igname, manioc, anacarde et produits vivriers y font vivre une économie rurale dense.",
-      "J'aide les coopératives, transformateurs et entrepreneurs de Savalou à valoriser cette production : outils de gestion des collectes, vitrines en ligne pour toucher les acheteurs des grandes villes, présence digitale pour les événements et acteurs locaux.",
+      "Vous souhaitez suivre les collectes de votre coopérative ou présenter vos produits depuis Savalou ? Je peux développer votre outil de gestion ou votre catalogue en ligne.",
+      "Nous décidons ensemble des informations à enregistrer et de celles à partager avec les acheteurs. Je prépare ensuite des écrans que votre équipe peut essayer avant le lancement.",
     ],
     opportunities: [
       {
         title: "Filières igname et anacarde",
         description:
-          "Gestion des coopératives et mise en relation directe avec les acheteurs de Cotonou et de la sous-région.",
+          "Je prépare le suivi des membres, des produits collectés et des demandes des acheteurs.",
         iconName: "Sprout",
       },
       {
         title: "Transformation agroalimentaire",
         description:
-          "Catalogues et boutiques en ligne pour les transformateurs : gari, tapioca, cossettes, noix de cajou.",
+          "Je développe votre catalogue et les fonctions de commande pour les produits que vous vendez.",
         iconName: "Store",
       },
       {
         title: "Événements et tourisme",
         description:
-          "Sites et communication digitale pour la fête de l'igname et les manifestations culturelles des Collines.",
+          "Je vous aide à présenter l’événement et à gérer les inscriptions ou les réservations.",
         iconName: "Users",
       },
       {
         title: "PME locales",
         description:
-          "Sites professionnels et outils de facturation pour les entreprises et prestataires de Savalou.",
+          "Je peux relier votre présentation en ligne à un outil de suivi des clients et des factures.",
         iconName: "Briefcase",
       },
     ],
@@ -866,21 +902,24 @@ export const localCities: LocalCity[] = [
       {
         question: "Comment vendre notre production au-delà de Savalou ?",
         answer:
-          "Avec une vitrine en ligne sérieuse : produits, volumes, prix indicatifs et contact direct. Les acheteurs de Cotonou, Parakou ou de l'étranger cherchent des fournisseurs fiables sur Google, être visible et bien présenté fait toute la différence.",
+          "Je peux vous aider à présenter vos produits, les volumes disponibles et vos contacts dans un catalogue. Nous prévoyons les informations que les acheteurs doivent avoir avant de vous écrire.",
       },
       {
         question: "Une coopérative peut-elle se payer un outil digital ?",
         answer:
-          "Oui : je dimensionne l'outil au besoin réel et le devis est transparent, sans surprise. Un outil de gestion simple coûte bien moins qu'on ne l'imagine, et se rentabilise vite en pertes évitées et en temps gagné.",
+          "Je vous propose d’abord de regarder les fonctions dont vous avez besoin. Mes tarifs vous donnent un repère : un logiciel web démarre à 650 000 FCFA et une application mobile à 900 000 FCFA. Je vous prépare ensuite un devis détaillé ; nous pouvons aussi prévoir une première version plus limitée.",
       },
       {
         question: "Faites-vous le déplacement jusqu'à Savalou ?",
         answer:
-          "Oui, pour les étapes clés : cadrage initial si nécessaire, déploiement et formation des équipes. Le suivi courant se fait à distance par téléphone et démos en ligne, ce qui maintient les coûts raisonnables.",
+          "Je suis basé à Cotonou. Nous pouvons commencer par un appel et convenir d’une rencontre à Savalou si elle est utile au projet. Je vous précise les modalités avant de la prévoir.",
       },
     ],
     nearby: ["dassa-zoume", "bohicon"],
-    geo: { latitude: 7.9281, longitude: 1.9756 },
+    geo: {
+      latitude: 7.9281,
+      longitude: 1.9756,
+    },
   },
   {
     slug: "dassa-zoume",
@@ -889,34 +928,34 @@ export const localCities: LocalCity[] = [
     regionCode: "BJ-CO",
     tagline: "Cité des 41 collines et carrefour du centre",
     metaDescription:
-      "Développeur web pour Dassa-Zoumè : sites pour hébergements et restaurants, outils pour le tourisme religieux et les entreprises des Collines.",
+      "Je développe votre plateforme web ou votre application mobile à Dassa-Zoumè. Parlons de vos utilisateurs, de vos fonctions et de votre budget.",
     intro: [
-      "Cité des 41 collines, Dassa-Zoumè est à la fois un carrefour routier entre le sud et le nord du pays et un haut lieu de pèlerinage : la grotte mariale de Notre-Dame d'Arigbo attire chaque année des dizaines de milliers de pèlerins, avec un pic autour du 15 août.",
-      "Ces flux réguliers de voyageurs et de pèlerins représentent une vraie opportunité pour les hôtels, restaurants et commerces de la ville. Je les aide à capter cette clientèle avec des sites visibles sur Google, la réservation en ligne et des outils de gestion simples.",
+      "Vous gérez un hébergement, une association ou un commerce à Dassa-Zoumè ? Je peux vous aider à recevoir les réservations, publier vos informations ou suivre vos demandes dans une plateforme web.",
+      "Je vous accompagne à distance depuis Cotonou. Nous préparons les contenus et les fonctions qui seront utiles à vos visiteurs comme à votre équipe.",
     ],
     opportunities: [
       {
         title: "Hébergement des pèlerins",
         description:
-          "Sites avec réservation en ligne pour les hôtels et auberges, essentiels pendant les grands pèlerinages.",
+          "Je prépare vos pages d’hébergement et un suivi des demandes de réservation.",
         iconName: "Home",
       },
       {
         title: "Restauration et commerces",
         description:
-          "Visibilité Google Maps, menus en ligne et communication digitale pour les établissements de la ville.",
+          "Je vous aide à publier les informations dont vos clients ont besoin pour vous trouver et vous joindre.",
         iconName: "Store",
       },
       {
         title: "Paroisses et organisations",
         description:
-          "Sites d'information, programmes d'événements et outils de communication pour les organisations religieuses et associatives.",
+          "Je crée votre espace pour publier les programmes et recevoir les inscriptions ou les demandes.",
         iconName: "Users",
       },
       {
         title: "Tourisme des collines",
         description:
-          "Mise en valeur des circuits de randonnée et des sites naturels pour les guides et acteurs touristiques locaux.",
+          "Je peux présenter vos circuits et recueillir les réservations de vos visiteurs.",
         iconName: "Globe",
       },
     ],
@@ -929,22 +968,25 @@ export const localCities: LocalCity[] = [
       {
         question: "Comment profiter du pic de fréquentation du pèlerinage ?",
         answer:
-          "En étant réservable en ligne bien avant : les pèlerins et leurs paroisses organisent le déplacement des semaines à l'avance. Un site avec disponibilités, tarifs et réservation vous remplit avant même le début de l'événement.",
+          "Je peux mettre en place les demandes de réservation et les confirmations. Nous précisons les périodes, les capacités d’accueil et les informations à demander aux visiteurs.",
       },
       {
         question:
           "Un simple restaurant a-t-il besoin d'une présence en ligne ?",
         answer:
-          "Au minimum une fiche Google Business bien remplie avec photos, horaires et localisation : c'est gratuit et c'est ce que consultent les voyageurs qui s'arrêtent à Dassa. Un site simple avec le menu renforce ensuite cette visibilité.",
+          "Je peux vous aider à publier votre menu, vos horaires, votre localisation et un contact. Nous regardons d’abord les informations que vos clients cherchent et les moyens de les rendre accessibles.",
       },
       {
         question: "Combien coûte un site de réservation pour une auberge ?",
         answer:
-          "Un site avec présentation, photos, calendrier de disponibilités et réservation en ligne reste un projet raisonnable, bien moins cher qu'une année de commissions versées à des intermédiaires. Devis précis et transparent sous 24h.",
+          "Un site de présentation démarre à 170 000 FCFA dans mes offres. Si vous souhaitez gérer les disponibilités, les réservations ou les paiements en ligne, je chiffre ces fonctions après avoir regardé avec vous comment votre auberge travaille.",
       },
     ],
     nearby: ["savalou", "bohicon"],
-    geo: { latitude: 7.75, longitude: 2.1833 },
+    geo: {
+      latitude: 7.75,
+      longitude: 2.1833,
+    },
   },
   {
     slug: "seme-podji",
@@ -953,34 +995,34 @@ export const localCities: LocalCity[] = [
     regionCode: "BJ-OU",
     tagline: "Corridor Cotonou-Lagos et cité de l'innovation",
     metaDescription:
-      "Développeur web & mobile à Sèmè-Podji : applications pour startups, logistique du corridor Lagos, e-commerce. À quelques minutes de Cotonou.",
+      "Je développe votre plateforme web ou votre application mobile à Sèmè-Podji. Parlons de vos utilisateurs, de vos fonctions et de votre budget.",
     intro: [
-      "Entre Cotonou et la frontière nigériane, Sèmè-Podji est une commune en pleine mutation : Sèmè City, la cité internationale de l'innovation et du savoir, y forme la nouvelle génération tech du Bénin, tandis que le corridor vers Lagos draine un trafic commercial intense.",
-      "Basé à Cotonou, à quelques minutes, j'accompagne les startups, entreprises et acteurs logistiques de Sèmè-Podji : développement de MVP, applications métier, outils pour le commerce transfrontalier. Rencontre en présentiel facile, réactivité maximale.",
+      "Vous lancez un service ou gérez une activité à Sèmè-Podji ? Je développe des plateformes web et des applications mobiles, avec les comptes, les données et les paiements dont votre projet a besoin.",
+      "Pour une première version, je vous aide à choisir les fonctions nécessaires au lancement. Si vous avez déjà un outil, nous regardons plutôt ce qu’il faut connecter ou améliorer.",
     ],
     opportunities: [
       {
         title: "Startups et MVP",
         description:
-          "Développement rapide de produits web et mobiles pour les porteurs de projets de l'écosystème Sèmè City.",
+          "Je vous aide à choisir et développer les fonctions de votre première version web ou mobile.",
         iconName: "Rocket",
       },
       {
         title: "Logistique du corridor Lagos",
         description:
-          "Suivi des marchandises et gestion des opérations pour les transitaires et transporteurs de l'axe Cotonou-Lagos.",
+          "Je construis votre suivi des marchandises et des opérations de transport.",
         iconName: "Truck",
       },
       {
         title: "Commerce avec le Nigeria",
         description:
-          "Catalogues bilingues et outils de gestion pour les entreprises qui commercent avec le marché nigérian.",
+          "Je prépare un catalogue bilingue et les fonctions de suivi utiles à votre activité.",
         iconName: "Store",
       },
       {
         title: "Applications web sur-mesure",
         description:
-          "Outils métier robustes pour les industries et entreprises installées dans la zone.",
+          "Je développe le logiciel qui réunit les tâches et les données de votre équipe.",
         iconName: "LayoutDashboard",
       },
     ],
@@ -993,22 +1035,25 @@ export const localCities: LocalCity[] = [
       {
         question: "Accompagnez-vous les startups en phase de démarrage ?",
         answer:
-          "Oui, c'est un exercice que j'affectionne : transformer une idée en MVP fonctionnel en quelques semaines, avec une architecture propre qui pourra grandir. Je peux aussi conseiller sur les choix techniques avant même la première ligne de code.",
+          "Je vous aide à choisir les fonctions nécessaires pour faire essayer votre idée. Je développe cette première version, puis nous regardons les retours avant d’ajouter la suite.",
       },
       {
         question: "Peut-on se voir en présentiel à Sèmè-Podji ?",
         answer:
-          "Très facilement : je suis basé à Cotonou, la commune voisine. Rendez-vous de cadrage, sessions de travail, points d'étape, le présentiel est simple à organiser quand c'est utile au projet.",
+          "Je suis basé à Cotonou. Nous pouvons commencer par un appel et convenir d’une rencontre à Sèmè-Podji si elle est utile au projet. Je vous précise les modalités avant de la prévoir.",
       },
       {
         question:
           "Faites-vous des applications tournées vers le marché nigérian ?",
         answer:
-          "Oui : interfaces bilingues français-anglais, prise en compte des usages de paiement des deux pays et référencement pensé pour les deux marchés. Le corridor Cotonou-Lagos est une opportunité énorme pour qui s'outille correctement.",
+          "Je peux prévoir une interface française et anglaise. Pour les paiements et les autres services, nous vérifions ce qui est disponible dans les pays concernés avant de développer.",
       },
     ],
     nearby: ["porto-novo", "cotonou"],
-    geo: { latitude: 6.3667, longitude: 2.7 },
+    geo: {
+      latitude: 6.3667,
+      longitude: 2.7,
+    },
   },
   {
     slug: "come",
@@ -1017,34 +1062,34 @@ export const localCities: LocalCity[] = [
     regionCode: "BJ-MO",
     tagline: "Carrefour du Mono, entre lac Ahémé et route de Lomé",
     metaDescription:
-      "Développeur web pour Comè et la région du lac Ahémé : sites pour le tourisme lacustre, outils pour commerçants et acteurs de l'axe Cotonou-Lomé.",
+      "Je développe votre plateforme web ou votre application mobile à Comè. Parlons de vos utilisateurs, de vos fonctions et de votre budget.",
     intro: [
-      "Posée sur l'axe Cotonou-Lomé, à deux pas du lac Ahémé et des eaux thermales de Possotomè, Comè vit du commerce, de la pêche et d'un tourisme de nature en plein développement autour du lac et de la basse vallée du Mono.",
-      "J'aide les entrepreneurs de Comè et des rives du lac Ahémé à exister en ligne : sites pour les hébergements et sites touristiques, vitrines pour les commerces de l'axe international, outils de gestion simples pour les activités locales.",
+      "Vous avez besoin de suivre vos commandes, de présenter votre activité ou de recevoir des réservations à Comè ? Je peux vous accompagner pour créer le site ou le logiciel adapté.",
+      "Je commence par votre organisation et les usages de vos clients. Nous prévoyons ensuite les contenus, les moyens de paiement et les conditions de prise en main.",
     ],
     opportunities: [
       {
         title: "Tourisme du lac Ahémé",
         description:
-          "Sites et réservation en ligne pour les hébergements, restaurants et activités autour du lac et de Possotomè.",
+          "Je vous aide à préparer les informations et les réservations de vos hébergements.",
         iconName: "Home",
       },
       {
         title: "Commerces de l'axe Cotonou-Lomé",
         description:
-          "Visibilité en ligne et outils de gestion pour les commerces qui vivent du trafic de la route internationale.",
+          "Je développe le suivi de vos ventes, de vos stocks et de vos factures.",
         iconName: "Store",
       },
       {
         title: "Pêche et produits du lac",
         description:
-          "Valorisation et vente des produits de la pêche et de la pisciculture auprès des acheteurs de Cotonou.",
+          "Je peux réunir vos produits et vos demandes d’achat dans un catalogue en ligne.",
         iconName: "Sprout",
       },
       {
         title: "Présence web locale",
         description:
-          "Sites vitrines rapides et bien référencés pour les entreprises, écoles et organisations de Comè.",
+          "Je prépare les pages et les outils nécessaires aux échanges avec vos clients.",
         iconName: "Globe",
       },
     ],
@@ -1058,21 +1103,24 @@ export const localCities: LocalCity[] = [
         question:
           "Le tourisme autour du lac Ahémé peut-il vraiment bénéficier du digital ?",
         answer:
-          "Oui, énormément : les visiteurs qui cherchent une escapade nature autour de Cotonou ou depuis Lomé préparent tout en ligne. Un hébergement visible sur Google avec photos, avis et réservation capte cette clientèle avant tout le monde.",
+          "Je peux préparer votre présentation, vos produits ou vos hébergements et les moyens de recevoir les demandes. Nous choisissons les pages et les fonctions selon votre activité.",
       },
       {
         question: "Je suis sur la route internationale, comment me démarquer ?",
         answer:
-          "Une fiche Google Business optimisée et un site simple font qu'un voyageur qui cherche « restaurant Comè » ou « hôtel Comè » vous trouve en premier. C'est un avantage décisif sur un axe aussi fréquenté que Cotonou-Lomé.",
+          "Je peux vous aider à présenter votre établissement, vos horaires, vos menus et vos contacts. Nous travaillons les pages et les informations locales pour faciliter les recherches, sans promettre une position précise sur Google.",
       },
       {
         question: "Travaillez-vous avec de petites structures ?",
         answer:
-          "Oui : chaque projet est dimensionné au besoin et au budget réels. Un site vitrine efficace et bien référencé est un investissement accessible, et c'est souvent le meilleur premier pas avant des outils plus ambitieux.",
+          "Oui. Nous regardons votre besoin et votre budget pour choisir un premier projet réalisable. Je vous dirai aussi si un outil existant ou quelques pages suffisent pour commencer.",
       },
     ],
     nearby: ["lokossa", "ouidah"],
-    geo: { latitude: 6.4, longitude: 1.8833 },
+    geo: {
+      latitude: 6.4,
+      longitude: 1.8833,
+    },
   },
 ];
 

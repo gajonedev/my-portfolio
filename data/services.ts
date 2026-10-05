@@ -20,14 +20,14 @@ export const servicesPreview: Service[] = [
     slug: "creation-application-web",
     iconName: "LayoutDashboard",
     description:
-      "Gestion métier, espaces clients, plateformes SaaS : un logiciel accessible dans le navigateur, avec les parcours, les données et les accès adaptés à votre activité.",
+      "Vous gérez encore vos clients, vos stocks ou vos réservations dans plusieurs fichiers ? Je réunis ces tâches dans un logiciel web adapté à votre équipe.",
   },
   {
     title: "Applications mobiles",
     slug: "creation-application-mobile",
     iconName: "Smartphone",
     description:
-      "Des applications iOS et Android complètes, reliées à votre système métier : comptes utilisateurs, paiements, synchronisation et mode hors ligne selon les usages.",
+      "Vous voulez proposer un service sur téléphone ? Je développe votre application pour iOS et Android, avec les comptes, les paiements et le mode hors ligne dont vos utilisateurs ont besoin.",
   },
 ];
 
@@ -38,14 +38,14 @@ export const servicesDetailed: ServiceDetailed[] = [
     slug: "creation-application-mobile",
     iconName: "Smartphone",
     description:
-      "Des applications iOS et Android complètes, connectées à votre système métier.",
+      "Vous voulez proposer un service sur téléphone ? Je développe votre application pour iOS et Android, avec les comptes, les paiements et le mode hors ligne dont vos utilisateurs ont besoin.",
     details:
-      "Des applications iOS et Android avec les comptes, les données et les intégrations nécessaires à votre service. Mode hors ligne selon le besoin et accompagnement à la soumission sur les stores.",
+      "Je développe votre application pour iOS et Android et je prends aussi en charge le serveur qui gère ses données. Paiements, notifications, fonctionnement hors ligne : nous choisissons ce qui est utile à votre service. Je vous accompagne ensuite pour la publication sur les stores.",
     features: [
-      "iOS + Android",
-      "Fonctionne hors-ligne",
-      "Publié sur les stores",
-      "Rapide et fiable",
+      "iOS et Android",
+      "Mode hors ligne selon le besoin",
+      "Aide à la publication",
+      "Serveur et données de l’application",
     ],
   },
   {
@@ -53,9 +53,9 @@ export const servicesDetailed: ServiceDetailed[] = [
     slug: "creation-ecommerce",
     iconName: "ShoppingCart",
     description:
-      "Des boutiques qui vendent vraiment, sécurisées et maîtrisées de bout en bout.",
+      "Je crée votre boutique en ligne pour que vos clients puissent consulter vos produits, commander et payer avec leurs moyens de paiement habituels.",
     details:
-      "Un site e-commerce avec un parcours d'achat fluide, un catalogue performant, des paiements sécurisés et un back-office complet. Intégrations Stripe, PayPal ou solutions locales (mobile money).",
+      "Je vous aide à passer de commandes dispersées dans les messages à une boutique que vous pouvez gérer au même endroit : produits, paiements, stocks et livraisons. Nous choisissons les moyens de paiement selon vos clients.",
     features: [
       "Parcours optimisé",
       "Paiements sécurisés",
@@ -68,9 +68,9 @@ export const servicesDetailed: ServiceDetailed[] = [
     slug: "creation-application-web",
     iconName: "Briefcase",
     description:
-      "De vrais logiciels web complets qui automatisent votre quotidien et facilitent le travail de vos équipes.",
+      "Vous gérez encore vos clients, vos stocks ou vos réservations dans plusieurs fichiers ? Je réunis ces tâches dans un logiciel web adapté à votre équipe.",
     details:
-      "Bien plus que des vitrines : de véritables outils métier, plateformes et espaces clients qui automatisent votre quotidien et font gagner du temps à vos équipes. Fiables, rapides et prêts à évoluer avec vous.",
+      "Je développe votre logiciel de gestion, votre espace client ou votre plateforme en ligne. Nous partons de votre façon de travailler pour décider des écrans, des droits d’accès et des tâches à automatiser.",
     features: [
       "Outils métier",
       "Gain de temps",
@@ -83,9 +83,9 @@ export const servicesDetailed: ServiceDetailed[] = [
     slug: "creation-site-vitrine",
     iconName: "Globe",
     description:
-      "Le site professionnel qui vous rend crédible et visible sur Google, conçu pour convertir.",
+      "Je crée un site qui présente votre activité et donne à vos visiteurs les informations nécessaires pour vous contacter.",
     details:
-      "Des sites vitrines sur-mesure, rapides et bien référencés, conçus pour convertir vos visiteurs en clients. Le commercial qui travaille pour vous 24h/24, et que vos clients trouvent sur Google.",
+      "Vous avez besoin d’un site pour présenter votre entreprise ? Je m’occupe des pages, de leur affichage sur téléphone et des bases du référencement. Nous choisissons ensemble ce que vos visiteurs doivent savoir et comment ils peuvent vous joindre.",
     features: [
       "Design sur-mesure",
       "Visible sur Google",
@@ -98,9 +98,9 @@ export const servicesDetailed: ServiceDetailed[] = [
     slug: "creation-saas-dashboard",
     iconName: "LayoutDashboard",
     description:
-      "Produits SaaS et tableaux de bord fluides, pensés pour monter en charge.",
+      "Vous lancez un service en ligne ? Je vous aide à construire sa première version, puis à la faire évoluer avec les retours de vos utilisateurs.",
     details:
-      "Un produit SaaS clair et agréable à utiliser, avec comptes, rôles et espaces séparés pour chaque client. Pensé dès le départ pour accueillir vos premiers utilisateurs comme les milliers suivants.",
+      "Je développe votre logiciel par abonnement ou votre tableau de bord. Comptes clients, droits d’accès, facturation et suivi de l’activité : nous définissons ce qui doit être prêt au lancement et ce qui peut attendre.",
     features: [
       "Multi-clients",
       "Comptes & rôles",
@@ -113,12 +113,12 @@ export const servicesDetailed: ServiceDetailed[] = [
     slug: "backend-api",
     iconName: "Code",
     description:
-      "Le moteur robuste et sécurisé derrière vos apps mobiles et web.",
+      "Je construis la partie serveur de votre application : les données, les comptes utilisateurs, les paiements et les connexions à vos autres outils.",
     details:
-      "Le moteur invisible derrière vos apps et sites : rapide, sécurisé et prêt à encaisser la montée en charge. Un socle propre et documenté, que vous gardez et pouvez faire évoluer sans dépendre de moi.",
+      "Votre équipe a déjà une interface ? Je peux développer le serveur et les API qui lui manquent, ou reprendre ceux qui posent problème. Je documente mon travail pour que votre équipe puisse ensuite le maintenir.",
     features: [
       "Sécurisé",
-      "Fiable et scalable",
+      "Conçu pour les évolutions prévues",
       "Automatisations",
       "Documenté",
     ],
@@ -128,9 +128,9 @@ export const servicesDetailed: ServiceDetailed[] = [
     slug: "audit-optimisation",
     iconName: "Award",
     description:
-      "Votre produit est lent, bancal ou difficile à faire évoluer ? Je le remets d'aplomb.",
+      "Votre site ou votre application vous pose problème ? Je regarde ce qui bloque et je vous propose les corrections à faire en premier.",
     details:
-      "Votre site ou votre app est lent, instable ou difficile à faire évoluer ? Audit, refonte et optimisation pour le rendre rapide, fiable et agréable, accessible à tous. La qualité du début à la fin.",
+      "Lenteurs, bugs ou difficultés à modifier votre application : je commence par comprendre ce qui se passe. Je vous explique ensuite ce qui peut être corrigé, ce qui mérite d’être repris et le budget à prévoir.",
     features: [
       "Audit complet",
       "Plus rapide",
@@ -147,27 +147,27 @@ export const localServices: Service[] = [
     slug: "creation-site-vitrine",
     iconName: "Globe",
     description:
-      "Sites vitrines rapides et bien référencés sur Google, pour être trouvé par vos clients locaux.",
+      "Je crée un site qui présente votre activité et donne à vos visiteurs les informations nécessaires pour vous contacter.",
   },
   {
     title: "Applications mobiles",
     slug: "creation-application-mobile",
     iconName: "Smartphone",
     description:
-      "Apps iOS et Android performantes et fluides (Flutter), pour startups et entreprises au Bénin.",
+      "Vous voulez proposer un service sur téléphone ? Je développe votre application pour iOS et Android, avec les comptes, les paiements et le mode hors ligne dont vos utilisateurs ont besoin.",
   },
   {
     title: "E-commerce & paiement mobile",
     slug: "creation-ecommerce",
     iconName: "ShoppingCart",
     description:
-      "Boutiques en ligne avec FedaPay, MTN MoMo et Moov Money intégrés, et livraison locale.",
+      "Je crée votre boutique en ligne pour que vos clients puissent consulter vos produits, commander et payer avec leurs moyens de paiement habituels.",
   },
   {
     title: "Logiciels métier & gestion",
     slug: "creation-application-web",
     iconName: "Briefcase",
     description:
-      "Facturation, stocks, réservations, espaces clients : des outils sur-mesure qui automatisent votre activité.",
+      "Vous gérez encore vos clients, vos stocks ou vos réservations dans plusieurs fichiers ? Je réunis ces tâches dans un logiciel web adapté à votre équipe.",
   },
 ];

@@ -20,7 +20,7 @@ import {
 export const metadata: Metadata = {
   title: "Développeur Web & Mobile au Bénin | Cotonou, Porto-Novo, Lokossa",
   description:
-    "Développeur web et mobile freelance au Bénin : sites, apps mobiles, e-commerce et paiement Mobile Money. Devis gratuit sous 24h, à Cotonou, Porto-Novo et partout au Bénin.",
+    "Développeur web et mobile freelance au Bénin : sites, apps mobiles, e-commerce et paiement Mobile Money. Réponse sous 24h et devis gratuit après un échange, à Cotonou, Porto-Novo et partout au Bénin.",
   keywords: seoKeywords.slice(0, 10),
   alternates: {
     canonical: `${siteConfig.url}/developpeur-web-benin`,
@@ -101,7 +101,7 @@ export default async function DeveloppeurWebBeninPage() {
 
       <PageHeader
         title="Développeur Web & Mobile au Bénin"
-        description="Votre partenaire digital à Cotonou pour des applications web fullstack, des apps mobiles et des plateformes e-commerce / SaaS performantes."
+        description="Je développe votre plateforme web ou votre application mobile depuis Cotonou, avec des échanges sur place ou à distance."
       />
 
       <div className="py-16">
@@ -118,25 +118,24 @@ export default async function DeveloppeurWebBeninPage() {
               </strong>
               , développeur web et mobile freelance basé à{" "}
               <strong>Cotonou, Bénin</strong>. Je conçois des{" "}
-              <strong>applications web fullstack</strong>, des{" "}
-              <strong>applications mobiles</strong> et des plateformes SaaS /
-              e-commerce, avec un backend solide et scalable, pour les
-              entreprises, startups et entrepreneurs au Bénin et en Afrique de
-              l&apos;Ouest.
+              <strong>plateformes web et logiciels métier</strong> ainsi que des{" "}
+              <strong>applications mobiles</strong>. Mon travail consiste à
+              traduire votre besoin en écrans et en fonctionnalités que votre
+              équipe ou vos clients pourront utiliser.
             </p>
             <p className="mt-4 text-foreground-muted leading-relaxed">
               Que vous soyez à <strong>Cotonou</strong>,{" "}
               <strong>Porto-Novo</strong>, <strong>Lokossa</strong>,{" "}
               <strong>Parakou</strong> ou ailleurs au Bénin, je peux vous
-              accompagner dans votre projet digital avec un suivi personnalisé
-              et des solutions adaptées au marché local.
+              accompagner sur place ou à distance. Nous choisissons ensemble
+              comment échanger et suivre l’avancement du projet.
             </p>
           </section>
 
           {/* Services */}
           <section>
             <h2 className="mb-6 font-semibold text-foreground text-xl">
-              Services disponibles au Bénin
+              Ce que je peux réaliser pour vous
             </h2>
             <div className="gap-4 grid md:grid-cols-2">
               {localServices.map((service) => {
@@ -160,14 +159,14 @@ export default async function DeveloppeurWebBeninPage() {
                   <Link
                     key={service.title}
                     href={`/services/${service.slug}`}
-                    className="flex gap-4 bg-card card-glow hover:bg-card/80 p-5 border border-stroke hover:border-primary/40 rounded-2xl transition"
+                    className="flex gap-4 bg-card hover:bg-card/80 p-5 border border-stroke hover:border-primary/40 rounded-2xl transition"
                   >
                     {card}
                   </Link>
                 ) : (
                   <div
                     key={service.title}
-                    className="flex gap-4 bg-card card-glow p-5 border border-stroke rounded-2xl"
+                    className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
                   >
                     {card}
                   </div>
@@ -186,7 +185,7 @@ export default async function DeveloppeurWebBeninPage() {
                 <Link
                   key={city.slug}
                   href={`/${cityFullSlug(city)}`}
-                  className="group flex items-center gap-3 bg-card/50 hover:bg-card card-glow p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
+                  className="group flex items-center gap-3 bg-card/50 hover:bg-card p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
                 >
                   <MapPin className="w-5 h-5 text-primary shrink-0" />
                   <div>
@@ -213,9 +212,9 @@ export default async function DeveloppeurWebBeninPage() {
           </section>
 
           {/* Avantages */}
-          <section className="bg-card card-glow p-8 border border-stroke rounded-3xl">
+          <section className="bg-card p-8 border border-stroke rounded-3xl">
             <h2 className="mb-6 font-semibold text-foreground text-xl">
-              Pourquoi choisir un développeur local ?
+              Ce que cela change de travailler avec moi
             </h2>
             <div className="gap-3 grid md:grid-cols-2">
               {localAdvantages.map((advantage) => (
@@ -236,7 +235,7 @@ export default async function DeveloppeurWebBeninPage() {
               {beninFaq.map((item) => (
                 <details
                   key={item.question}
-                  className="group bg-card card-glow open:pb-5 border border-stroke rounded-2xl"
+                  className="group bg-card open:pb-5 border border-stroke rounded-2xl"
                 >
                   <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
                     {item.question}
@@ -256,7 +255,8 @@ export default async function DeveloppeurWebBeninPage() {
               Prêt à lancer votre projet ?
             </h2>
             <p className="mt-3 text-foreground-muted">
-              Discutons de votre projet digital. Devis gratuit sous 24h.
+              Parlez-moi de votre projet. Je vous réponds sous 24h pour en
+              discuter.
             </p>
             <div className="flex flex-wrap justify-center gap-4 mt-6">
               <WhatsAppCta

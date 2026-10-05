@@ -3,18 +3,21 @@ import { siteConfig } from "@/data/site";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 
-export const metadata: Metadata = { title: "Politique de confidentialité", alternates: { canonical: `${siteConfig.url}/politique-confidentialite` } };
+export const metadata: Metadata = {
+  title: "Politique de confidentialité",
+  alternates: { canonical: `${siteConfig.url}/politique-confidentialite` },
+};
 
 export default async function PolitiqueConfidentialitePage() {
   return (
     <>
       <PageHeader
         title="Politique de confidentialité"
-        description="Comment nous protégeons vos données personnelles."
+        description="Comment je traite les informations que vous me confiez."
       />
       <div className="py-16">
         <Container className="prose-invert max-w-3xl prose">
-          <div className="bg-card card-glow p-8 border border-stroke rounded-3xl">
+          <div className="bg-card p-8 border border-stroke rounded-3xl">
             <h2 className="font-semibold text-foreground text-xl">
               Collecte des données
             </h2>
@@ -30,14 +33,17 @@ export default async function PolitiqueConfidentialitePage() {
               Utilisation des données
             </h2>
             <p className="mt-4 text-foreground-muted text-sm">
-              Vos données personnelles sont utilisées pour :
+              J’utilise vos données personnelles pour :
             </p>
             <ul className="mt-2 pl-5 text-foreground-muted text-sm list-disc">
               <li>Répondre à vos demandes de contact</li>
               <li>Vous envoyer des devis ou propositions commerciales</li>
               <li>Assurer le suivi de nos échanges</li>
               <li>Protéger le formulaire contre les envois automatisés</li>
-              <li>Mesurer de façon agrégée la fréquentation et les performances du site</li>
+              <li>
+                Mesurer de façon agrégée la fréquentation et les performances du
+                site
+              </li>
             </ul>
 
             <h2 className="mt-8 font-semibold text-foreground text-xl">
@@ -55,29 +61,30 @@ export default async function PolitiqueConfidentialitePage() {
             <p className="mt-4 text-foreground-muted text-sm">
               Conformément au RGPD, vous disposez d&apos;un droit d&apos;accès,
               de rectification, de suppression et de portabilité de vos données.
-              Pour exercer ces droits, contactez-nous à gajonedev@gmail.com.
+              Pour exercer ces droits, contactez-moi à gajonedev@gmail.com.
             </p>
 
             <h2 className="mt-8 font-semibold text-foreground text-xl">
               Services techniques utilisés
             </h2>
             <p className="mt-4 text-foreground-muted text-sm">
-              Le site utilise Vercel pour l&apos;hébergement, la mesure d&apos;audience
-              et le suivi des performances, ainsi que Cloudflare Turnstile pour
-              protéger le formulaire contre les robots. Le service d&apos;envoi
-              d&apos;emails reçoit les informations nécessaires à la transmission
-              de votre demande. Aucun outil publicitaire n&apos;est utilisé.
+              Le site utilise Vercel pour l&apos;hébergement, la mesure
+              d&apos;audience et le suivi des performances, ainsi que Cloudflare
+              Turnstile pour protéger le formulaire contre les robots. Le
+              service d&apos;envoi d&apos;emails reçoit les informations
+              nécessaires à la transmission de votre demande. Aucun outil
+              publicitaire n&apos;est utilisé.
             </p>
 
             <h2 className="mt-8 font-semibold text-foreground text-xl">
               Destinataires et transferts
             </h2>
             <p className="mt-4 text-foreground-muted text-sm">
-              Les données sont accessibles uniquement à l&apos;éditeur du site et
-              aux prestataires techniques nécessaires à l&apos;hébergement, à la
-              sécurité et à l&apos;envoi du message. Certains de ces prestataires
-              peuvent traiter des données hors du Bénin ; leurs propres
-              garanties contractuelles et politiques de confidentialité
+              Les données sont accessibles uniquement à l&apos;éditeur du site
+              et aux prestataires techniques nécessaires à l&apos;hébergement, à
+              la sécurité et à l&apos;envoi du message. Certains de ces
+              prestataires peuvent traiter des données hors du Bénin ; leurs
+              propres garanties contractuelles et politiques de confidentialité
               s&apos;appliquent alors.
             </p>
 
@@ -86,7 +93,7 @@ export default async function PolitiqueConfidentialitePage() {
             </h2>
             <p className="mt-4 text-foreground-muted text-sm">
               Pour toute question concernant cette politique de confidentialité,
-              vous pouvez nous contacter à l&apos;adresse : gajonedev@gmail.com
+              vous pouvez me contacter à l&apos;adresse : gajonedev@gmail.com
             </p>
           </div>
         </Container>

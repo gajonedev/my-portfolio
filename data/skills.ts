@@ -33,53 +33,53 @@ export const skills: SkillCategory[] = [
 export const values: Value[] = [
   {
     iconName: "Award",
-    title: "Qualité primordiale",
+    title: "Soigner les détails",
     description:
-      "Un produit qui reste fiable et agréable à utiliser, longtemps après la livraison.",
+      "Je vérifie les écrans, les formulaires et les cas d’erreur : ce sont aussi eux qui rendent une application agréable à utiliser.",
   },
   {
     iconName: "Code",
-    title: "Code propre & scalable",
+    title: "Préparer la suite",
     description:
-      "Architecture claire, maintenable et prête à monter en charge, backend compris.",
+      "J’organise le code et sa documentation pour que votre application puisse évoluer, avec moi ou avec un autre développeur.",
   },
   {
     iconName: "Rocket",
-    title: "Performance & fluidité",
+    title: "Penser aux conditions d’usage",
     description:
-      "Des apps mobiles et web rapides, fluides et agréables à utiliser.",
+      "Je tiens compte des téléphones, des connexions et des habitudes des personnes qui utiliseront votre application.",
   },
   {
     iconName: "Users",
-    title: "Collaboration",
+    title: "Travailler avec vous",
     description:
-      "Des points d'étape réguliers et un seul interlocuteur, du début à la fin du projet.",
+      "Vous voyez le travail avancer. Nous faisons le point aux étapes convenues et vous me dites ce qu’il faut ajuster.",
   },
 ];
 
 export const processSteps = [
   {
-    title: "Cadrage",
+    title: "Nous parlons de votre besoin",
     iconName: "Search",
     description:
-      "Je pars de votre problème, de vos utilisateurs et de votre objectif business, avant d'écrire la moindre ligne.",
+      "Vous m’expliquez votre activité, vos utilisateurs et ce qui vous manque aujourd’hui. Je vous aide à choisir les premières fonctionnalités.",
   },
   {
-    title: "Conception",
+    title: "Je prépare les écrans",
     iconName: "Lightbulb",
     description:
-      "Je dessine un parcours simple et lisible, adossé à un design system cohérent.",
+      "Je vous montre comment l’application va fonctionner. Nous ajustons les parcours avant de passer au développement.",
   },
   {
-    title: "Développement",
+    title: "Je développe votre application",
     iconName: "Code",
     description:
-      "Je construis un produit fiable et rapide, pensé pour durer et évoluer avec vous.",
+      "Vous pouvez essayer les fonctionnalités au fil de l’avancement. Vos retours me permettent de corriger ce qui doit l’être.",
   },
   {
-    title: "Livraison & suivi",
+    title: "Je vous accompagne au lancement",
     iconName: "Rocket",
     description:
-      "Je mets en ligne proprement, puis je reste disponible pour faire grandir votre produit.",
+      "Je m’occupe de la mise en ligne et je vous explique comment utiliser l’outil. Nous convenons aussi du suivi après la livraison.",
   },
 ];

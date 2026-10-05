@@ -40,7 +40,7 @@ export const expertises: Expertise[] = [
     metaTitle:
       "Développeur Flutter au Bénin, Applications Mobiles iOS & Android",
     metaDescription:
-      "Développeur Flutter expérimenté au Bénin : applications iOS et Android à partir d'un seul code, offline-first, Mobile Money intégré. Portfolio et devis sous 24h.",
+      "Je développe votre application iOS et Android avec Flutter. Si votre équipe travaille sans connexion, nous pouvons aussi prévoir un mode hors ligne.",
     keywords: [
       "développeur Flutter Bénin",
       "développeur Flutter Cotonou",
@@ -50,35 +50,35 @@ export const expertises: Expertise[] = [
       "développeur Dart",
     ],
     heroDescription:
-      "Je développe vos applications iOS et Android à partir d'un seul code : plus vite, moins cher, sans compromis sur la qualité.",
+      "Je développe votre application iOS et Android avec Flutter. Si votre équipe travaille sans connexion, nous pouvons aussi prévoir un mode hors ligne.",
     intro: [
-      "Flutter est ma technologie mobile de prédilection, et celle avec laquelle j'ai construit la majorité de mes projets : applications de gestion offline-first, domotique temps réel, facturation, fintech. Créé par Google, Flutter permet de développer les versions iOS et Android d'une application à partir d'un seul code, un avantage décisif en coût et en délais.",
-      "Ma maîtrise de Flutter va au-delà des interfaces : gestion d'état propre, architecture testable, intégration native quand il le faut (Bluetooth, capteurs, arrière-plan), et une spécialité rare, les applications offline-first qui fonctionnent sans réseau et se synchronisent seules, indispensables sur le terrain africain.",
-      "Chaque application Flutter que je livre s'appuie sur un backend que je construis moi-même : vous avez un seul interlocuteur pour l'app et son moteur, et une cohérence technique de bout en bout.",
+      "J’utilise Flutter pour mes applications mobiles, notamment AfCom, Afreel et les projets connectés SmartVilla et iVeges. Cela me permet de partager une grande partie du travail entre les versions iOS et Android.",
+      "Pour votre projet, je regarde les fonctions nécessaires, les téléphones utilisés et les conditions de connexion. Je peux prévoir le stockage local, la synchronisation, les notifications ou les échanges avec des équipements.",
+      "Je développe aussi le serveur et les connexions de l’application. Vous pouvez donc discuter avec moi des écrans comme des comptes, des données et des paiements.",
     ],
     strengths: [
       {
-        title: "Un code, deux plateformes",
+        title: "iOS et Android",
         description:
-          "iOS et Android à partir du même code : 40 à 50 % d'économie par rapport à deux développements natifs, et des évolutions deux fois plus rapides.",
+          "Je partage le code entre les deux plateformes et je traite leurs besoins spécifiques lorsque c’est nécessaire.",
         iconName: "Smartphone",
       },
       {
-        title: "Offline-first",
+        title: "Travailler sans connexion",
         description:
-          "Des apps qui fonctionnent sans connexion et se synchronisent au retour du réseau, conçues pour les réalités du terrain.",
+          "Si vos utilisateurs sont sur le terrain, je peux conserver leurs saisies sur le téléphone et les synchroniser au retour du réseau.",
         iconName: "RefreshCw",
       },
       {
-        title: "Performances natives",
+        title: "Des écrans adaptés aux usages",
         description:
-          "Flutter compile en code natif : animations à 60 fps, démarrage rapide, fluidité même sur les téléphones d'entrée de gamme.",
+          "Je vérifie les parcours et l’affichage sur les appareils prévus pour votre application.",
         iconName: "Rocket",
       },
       {
-        title: "Au-delà du mobile",
+        title: "Relier vos équipements",
         description:
-          "Intégrations poussées : Mobile Money, Bluetooth, IoT (MQTT), notifications, j'ai déjà connecté Flutter à des systèmes embarqués complets.",
+          "Je peux connecter votre application aux paiements, aux notifications ou à des équipements, selon le projet.",
         iconName: "Code",
       },
     ],
@@ -94,17 +94,17 @@ export const expertises: Expertise[] = [
       {
         question: "Flutter est-il un bon choix pour une application au Bénin ?",
         answer:
-          "C'est même le meilleur rapport qualité/coût dans la plupart des cas : un seul développement pour toucher les utilisateurs Android (majoritaires ici) et iOS, d'excellentes performances sur les téléphones d'entrée de gamme, et la possibilité de gérer le mode hors-ligne proprement.",
+          "Flutter peut convenir si vous souhaitez proposer votre application sur iOS et Android avec une base de code partagée. Je regarde aussi vos besoins spécifiques et les appareils concernés avant de vous le proposer.",
       },
       {
         question: "Une app Flutter peut-elle intégrer MTN MoMo et Moov Money ?",
         answer:
-          "Oui : j'intègre les paiements Mobile Money via FedaPay dans l'application, avec un backend qui sécurise chaque transaction (vérifications, idempotence, journalisation). C'est un besoin que je traite sur la quasi-totalité de mes projets.",
+          "Oui, selon le prestataire retenu et les moyens disponibles pour votre compte. Je connecte le paiement dans l’application et je vérifie sa confirmation sur le serveur.",
       },
       {
         question: "Qu'avez-vous déjà construit avec Flutter ?",
         answer:
-          "Entre autres : AfCom, une app de gestion offline-first pour petits commerçants ; Afreel, une app de facturation pour freelances ; SmartVilla, le contrôle temps réel d'une villa domotisée ; et iVeges, le monitoring d'un système d'irrigation IoT. Les études de cas détaillées sont sur ce site.",
+          "J’ai travaillé sur AfCom pour le suivi des ventes hors ligne, Afreel pour la facturation, SmartVilla pour la domotique et iVeges pour l’irrigation. Vous pouvez consulter leurs pages pour voir mon rôle et l’état de chaque projet.",
       },
     ],
     relatedProjectSlugs: ["afcom", "smartvilla", "afreel", "iveges"],
@@ -116,7 +116,7 @@ export const expertises: Expertise[] = [
     title: "Développeur Next.js au Bénin",
     metaTitle: "Développeur Next.js au Bénin, Sites Rapides et Bien Référencés",
     metaDescription:
-      "Développeur Next.js au Bénin : sites et applications web ultra-rapides, SEO d'excellence, plateformes SaaS et e-commerce. Le framework des produits web exigeants.",
+      "Je développe vos plateformes web avec Next.js : pages publiques, espaces clients et fonctions de gestion dans le même projet.",
     keywords: [
       "développeur Next.js Bénin",
       "développeur Next.js Afrique",
@@ -126,35 +126,35 @@ export const expertises: Expertise[] = [
       "application React server",
     ],
     heroDescription:
-      "Avec Next.js, je construis des sites rapides, structurés pour le référencement et des applications capables d'évoluer avec leur usage.",
+      "Je développe vos plateformes web avec Next.js : pages publiques, espaces clients et fonctions de gestion dans le même projet.",
     intro: [
-      "Next.js est le framework web que j'utilise pour la quasi-totalité de mes projets web, y compris le site que vous lisez en ce moment. Bâti sur React et adopté par Netflix, TikTok ou Notion, il combine ce qui est habituellement incompatible : la richesse d'une application et la vitesse d'un site statique.",
-      "Concrètement, le rendu côté serveur accélère l'affichage du contenu et facilite son exploration par les moteurs de recherche. L'architecture doit ensuite être adaptée au projet, du site vitrine au logiciel en ligne.",
-      "Je maîtrise l'écosystème Next.js dans sa profondeur : App Router, génération statique et rendu serveur, server actions, optimisation des Core Web Vitals, intégration de CMS (Sanity, Payload) et déploiement continu. C'est l'outil avec lequel je construis les plateformes les plus ambitieuses de mon portfolio.",
+      "J’utilise Next.js pour des projets comme Wéman, ArchiForm et ce portfolio. Il me permet de construire les pages publiques et les fonctions d’une application web avec React.",
+      "Je choisis le mode d’affichage selon les pages : un contenu de présentation n’a pas les mêmes besoins qu’un espace client connecté. Je tiens aussi compte du référencement, des données et de l’hébergement.",
+      "Si vous devez modifier vos contenus vous-même, je peux prévoir un espace d’administration ou connecter un outil de publication. Nous le décidons ensemble avant le développement.",
     ],
     strengths: [
       {
-        title: "SEO d'excellence",
+        title: "Préparer le référencement",
         description:
-          "Rendu serveur et génération statique : Google lit des pages complètes et rapides. Le référencement est structurel, pas rattrapé après coup.",
+          "Je mets en place les pages publiques, les titres et les informations que les moteurs de recherche doivent pouvoir lire.",
         iconName: "Search",
       },
       {
-        title: "Vitesse réelle",
+        title: "Soigner le chargement",
         description:
-          "Des pages qui chargent en moins d'une seconde, même en 3G. La vitesse est un critère de classement Google et de conversion.",
+          "Je limite les images et les scripts inutiles, puis je vérifie les temps d’affichage pour les pages importantes.",
         iconName: "Rocket",
       },
       {
-        title: "Du vitrine au SaaS",
+        title: "Construire votre plateforme",
         description:
-          "La même base technique porte un site de présentation, une boutique ou une plateforme complète : votre investissement grandit sans refonte.",
+          "Je peux réunir vos pages publiques, vos comptes utilisateurs et vos fonctions métier dans le même projet.",
         iconName: "LayoutDashboard",
       },
       {
-        title: "Écosystème moderne",
+        title: "Connecter vos outils",
         description:
-          "TypeScript, CMS headless, paiements, analytics : Next.js s'intègre proprement avec les meilleurs outils du web actuel.",
+          "Je relie les paiements, la publication des contenus et les services dont votre plateforme a besoin.",
         iconName: "Code",
       },
     ],
@@ -170,17 +170,17 @@ export const expertises: Expertise[] = [
       {
         question: "Pourquoi Next.js plutôt que WordPress ?",
         answer:
-          "WordPress convient pour un blog simple, mais montre vite ses limites : lenteur, failles de sécurité, plugins qui se contredisent. Next.js produit des sites plusieurs fois plus rapides, sans surface d'attaque inutile, avec une liberté totale de design et de fonctionnalités. Pour un site d'entreprise qui doit ranker et convertir, ce n'est pas le même niveau.",
+          "Je vous propose Next.js lorsque votre projet demande des fonctions sur mesure ou une plateforme web. Un CMS comme WordPress peut convenir à un site essentiellement éditorial. Nous regardons les contenus, les fonctions et la maintenance avant de choisir.",
       },
       {
         question: "Next.js est-il adapté aux connexions internet locales ?",
         answer:
-          "Particulièrement : la génération statique et l'optimisation automatique des images font que les pages restent légères et rapides même en 3G. Ce site même en est la démonstration, testez sa vitesse depuis n'importe quelle ville du Bénin.",
+          "Je peux limiter le poids des pages, optimiser les images et éviter les scripts inutiles. Je vérifie ensuite les performances avec les appareils et les conditions de connexion prévus ; le framework seul ne garantit pas la vitesse.",
       },
       {
         question: "Pourrai-je gérer mon contenu sans développeur ?",
         answer:
-          "Oui : j'intègre un CMS headless (Sanity ou Payload) qui vous donne une interface simple pour modifier textes, images et articles. Le site reste ultra-rapide, et vous êtes autonome au quotidien.",
+          "Oui, si nous prévoyons un espace de gestion. Je peux connecter un CMS pour que vous modifiiez les textes, les images et les articles. Je vous montre comment l’utiliser à la livraison.",
       },
     ],
     relatedProjectSlugs: ["weman-lms", "gain", "archiform"],
@@ -193,7 +193,7 @@ export const expertises: Expertise[] = [
     metaTitle:
       "Développeur React au Bénin, Interfaces Web Modernes et Dashboards",
     metaDescription:
-      "Développeur React au Bénin : interfaces web modernes, dashboards, applications métier. TypeScript, design systems et code maintenable. Devis sous 24h.",
+      "Avec React, je développe les écrans de votre logiciel web : formulaires, tableaux de bord et espaces de travail pour votre équipe.",
     keywords: [
       "développeur React Bénin",
       "développeur React Cotonou",
@@ -203,35 +203,35 @@ export const expertises: Expertise[] = [
       "freelance React",
     ],
     heroDescription:
-      "Avec React, je construis les interfaces du web moderne : des applications lisibles, rapides et maintenables.",
+      "Avec React, je développe les écrans de votre logiciel web : formulaires, tableaux de bord et espaces de travail pour votre équipe.",
     intro: [
-      "React est le socle de tout mon travail web : c'est la bibliothèque créée par Meta qui équipe Facebook, Airbnb ou Discord, et le standard de facto des interfaces web modernes. La maîtriser en profondeur, pas seulement l'utiliser, fait la différence entre une application fluide et maintenable et un chantier fragile.",
-      "Mon quotidien avec React : TypeScript systématique pour attraper les erreurs avant la production, composants réutilisables organisés en design system, gestion d'état adaptée à la complexité réelle du projet, et une attention constante à la performance perçue, ce que l'utilisateur ressent, pas ce que la machine mesure.",
-      "C'est l'outil idéal pour les dashboards et applications métier : données en temps réel, tableaux et graphiques réactifs, formulaires complexes qui restent agréables. Si votre équipe a déjà du React, je m'intègre aussi en renfort sur un code existant.",
+      "React est la base des interfaces web que je développe. Je l’utilise pour organiser les écrans, les formulaires et les éléments qui reviennent dans votre application.",
+      "Je travaille avec TypeScript et des composants réutilisables pour faciliter la compréhension et les évolutions du code. Je choisis ensuite la gestion des données selon les besoins de votre projet.",
+      "Si votre équipe travaille déjà avec React, je peux intervenir sur l’application existante. Nous regardons ce qu’il faut ajouter, corriger ou reprendre avant de définir mon intervention.",
     ],
     strengths: [
       {
-        title: "Interfaces réactives",
+        title: "Mettre les données à jour",
         description:
-          "Données en temps réel, interactions instantanées, mises à jour sans rechargement : l'expérience d'une application native, dans le navigateur.",
+          "Je prépare les écrans pour afficher les changements sans obliger vos utilisateurs à recharger toute la page.",
         iconName: "LayoutDashboard",
       },
       {
-        title: "TypeScript systématique",
+        title: "Faciliter la maintenance",
         description:
-          "Un typage strict de bout en bout : les erreurs sont attrapées à l'écriture du code, pas signalées par vos utilisateurs.",
+          "J’utilise TypeScript pour repérer certaines erreurs à l’écriture et rendre les échanges de données plus explicites.",
         iconName: "Code",
       },
       {
-        title: "Design systems",
+        title: "Garder des écrans cohérents",
         description:
-          "Des composants cohérents et réutilisables : chaque nouvelle fonctionnalité coûte moins cher que la précédente.",
+          "Je réutilise les boutons, les champs et les tableaux pour que votre équipe retrouve les mêmes repères dans l’application.",
         iconName: "Palette",
       },
       {
-        title: "Renfort d'équipe",
+        title: "Travailler avec votre équipe",
         description:
-          "Code existant à reprendre, équipe à renforcer, revue d'architecture : j'interviens aussi sur du React déjà en place.",
+          "Je peux reprendre une partie du code, développer des fonctions ou accompagner votre équipe sur une application existante.",
         iconName: "Users",
       },
     ],
@@ -247,17 +247,17 @@ export const expertises: Expertise[] = [
       {
         question: "React ou Next.js : que choisir pour mon projet ?",
         answer:
-          "Next.js est un framework construit sur React : la question n'est pas l'un contre l'autre. Pour un site public qui doit être référencé sur Google, Next.js s'impose. Pour un outil interne ou un dashboard derrière une connexion, du React seul peut suffire. Je vous oriente selon votre cas, les deux font partie de mon quotidien.",
+          "Next.js utilise React. Je peux choisir Next.js pour un projet avec des pages publiques et du traitement serveur, ou une application React séparée pour un outil interne. Je vous explique le choix en fonction de vos usages et de l’organisation existante.",
       },
       {
         question: "Pouvez-vous reprendre une application React mal codée ?",
         answer:
-          "Oui, c'est une demande fréquente : audit du code existant, identification des points fragiles (état incohérent, composants monolithiques, absence de types), puis assainissement progressif sans arrêter le produit. Vous gardez votre acquis, vous perdez la dette.",
+          "Oui. Je commence par examiner le code et les problèmes que vous rencontrez. Je vous propose ensuite une reprise par étapes, avec les vérifications et les éventuelles migrations à prévoir.",
       },
       {
         question: "Travaillez-vous avec TypeScript ?",
         answer:
-          "J'utilise TypeScript en mode strict sur mes projets React. Cela réduit certaines erreurs et facilite la compréhension du code, sans remplacer les tests, la documentation et une architecture claire.",
+          "Oui, j’utilise TypeScript sur mes projets React. Il aide à repérer certaines erreurs et à comprendre les données utilisées. Je le complète avec les tests et la documentation adaptés au projet.",
       },
     ],
     relatedProjectSlugs: ["weman-lms", "gain"],

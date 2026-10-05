@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-// Page content stays visible immediately, including with JavaScript disabled.
+// Next.js remounts the template on navigation, restarting the CSS animation.
 export default function Template({ children }: { children: ReactNode }) {
-  return <>{children}</>;
+  return <div className="page-transition">{children}</div>;
 }

@@ -31,12 +31,12 @@ export default function ProjectGallery({
     <section
       aria-label={`Captures de ${name}`}
       aria-roledescription={images.length > 1 ? "carrousel" : undefined}
-      className="overflow-hidden rounded-2xl border border-stroke bg-background-soft"
+      className="bg-background-soft border border-stroke rounded-2xl overflow-hidden"
     >
       <div
         id={id}
         ref={slides}
-        className="flex snap-x snap-mandatory overflow-x-auto"
+        className="flex overflow-x-auto snap-mandatory snap-x"
         onScroll={(event) => {
           const el = event.currentTarget;
           setActive(Math.round(el.scrollLeft / el.clientWidth));
@@ -45,23 +45,23 @@ export default function ProjectGallery({
         {images.map((item, index) => (
           <figure
             key={`${item.alt}-${index}`}
-            className="min-w-0 w-full shrink-0 snap-center"
+            className="w-full min-w-0 snap-center shrink-0"
             role="group"
             aria-label={`${index + 1} sur ${images.length}`}
           >
-            <div className="relative aspect-[16/10] bg-background-muted">
+            <div className="relative bg-background-muted aspect-[16/10]">
               {item.src ? (
                 <Image
                   src={item.src}
                   alt={item.alt}
                   fill
                   sizes="(max-width: 768px) 100vw, 800px"
-                  className="object-contain p-3"
+                  className="object-bottom object-cover"
                 />
               ) : (
-                <div className="flex h-full flex-col items-center justify-center gap-3 p-6 text-center text-foreground-muted">
+                <div className="flex flex-col justify-center items-center gap-3 p-6 h-full text-foreground-muted text-center">
                   <ImageIcon
-                    className="h-9 w-9 text-primary"
+                    className="w-9 h-9 text-primary"
                     aria-hidden="true"
                   />
                   <p className="font-display font-medium text-foreground">
@@ -72,27 +72,27 @@ export default function ProjectGallery({
                 </div>
               )}
             </div>
-            <figcaption className="border-t border-stroke px-4 py-3 text-sm text-foreground-muted">
+            {/* <figcaption className="px-4 py-3 border-stroke border-t text-foreground-muted text-sm">
               {item.caption || item.alt}
-            </figcaption>
+            </figcaption> */}
           </figure>
         ))}
       </div>
       {images.length > 1 && (
-        <div className="flex items-center justify-between gap-3 border-t border-stroke p-3">
+        <div className="flex justify-between items-center gap-3 p-3 border-stroke border-t">
           <button
             type="button"
             onClick={() => go(active - 1)}
             aria-label="Capture précédente"
             aria-controls={id}
-            className="rounded-full border border-stroke p-3"
+            className="p-3 border border-stroke rounded-full"
           >
-            <ChevronLeft className="h-4 w-4" />
+            <ChevronLeft className="w-4 h-4" />
           </button>
           <p
             aria-live="polite"
             aria-atomic="true"
-            className="text-sm text-foreground-muted"
+            className="text-foreground-muted text-sm"
           >
             {active + 1} / {images.length}
           </p>
@@ -101,9 +101,9 @@ export default function ProjectGallery({
             onClick={() => go(active + 1)}
             aria-label="Capture suivante"
             aria-controls={id}
-            className="rounded-full border border-stroke p-3"
+            className="p-3 border border-stroke rounded-full"
           >
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="w-4 h-4" />
           </button>
         </div>
       )}

@@ -54,7 +54,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Création d'Application Mobile au Bénin, Développeur Flutter iOS & Android",
     metaDescription:
-      "Développement d'applications mobiles iOS et Android avec Flutter : outils métier, e-commerce et fonctionnement hors ligne. Accompagnement pour la soumission sur les stores. Devis sous 24h.",
+      "Je développe votre application pour iOS et Android. Nous choisissons les fonctionnalités utiles à vos utilisateurs, puis je vous accompagne jusqu’à sa soumission sur les stores.",
     keywords: [
       "création application mobile Bénin",
       "développement application mobile",
@@ -64,11 +64,11 @@ export const servicePages: ServicePage[] = [
       "app mobile entreprise Bénin",
     ],
     heroDescription:
-      "Je vous livre des applications iOS et Android professionnelles, fluides et robustes, conçues pour vendre, automatiser ou fidéliser, et publiées sur les stores.",
+      "Je développe votre application pour iOS et Android. Nous choisissons les fonctionnalités utiles à vos utilisateurs, puis je vous accompagne jusqu’à sa soumission sur les stores.",
     intro: [
-      "Votre application mobile doit résoudre un problème spécifique : encaisser des ventes, suivre une activité, fidéliser vos clients. Je développe en Flutter des applications cross-platform, un seul code pour iOS et Android, ce qui divise les coûts et les délais par rapport à deux développements séparés, sans compromis sur la qualité.",
-      "Chaque application repose sur un backend solide que je construis moi-même : vos données sont sécurisées, synchronisées et prêtes à monter en charge. Et parce que je connais le terrain, je conçois des apps qui fonctionnent dans les conditions réelles d'utilisation en Afrique de l'Ouest : mode hors-ligne quand le réseau est instable, paiement Mobile Money intégré, interfaces légères qui tournent bien sur les téléphones d'entrée de gamme.",
-      "De la première maquette à la publication sur l'App Store et Google Play, vous avez un seul interlocuteur, un planning jalonné et des démos régulières pour suivre l'avancement.",
+      "Vous avez une idée de service sur téléphone, ou un outil à mettre entre les mains de votre équipe ? Je commence par comprendre qui va l’utiliser et dans quelles situations. Nous décidons ensuite des écrans et des fonctionnalités à réaliser.",
+      "Je travaille avec Flutter pour partager le code entre iOS et Android. Je développe aussi le serveur, les comptes utilisateurs et les connexions nécessaires à votre application : vous échangez avec moi sur l’ensemble du projet.",
+      "Si votre application doit fonctionner sans réseau, accepter des paiements Mobile Money ou communiquer avec des équipements, nous le prévoyons dès le début. Ces besoins influencent le budget et la façon dont je la construis.",
     ],
     deliverables: [
       "Application iOS + Android à partir d'un seul code Flutter",
@@ -82,49 +82,49 @@ export const servicePages: ServicePage[] = [
       {
         title: "Cadrage du besoin",
         description:
-          "On définit ensemble le problème à résoudre, les utilisateurs cibles et les fonctionnalités essentielles. Devis détaillé sous 24h.",
+          "Nous discutons de votre idée, de vos utilisateurs et de votre budget. Je vous propose une première version réalisable.",
       },
       {
         title: "Maquettes & validation",
         description:
-          "Vous visualisez l'application écran par écran avant la première ligne de code. On ajuste jusqu'à validation.",
+          "Je prépare les écrans et vous montre les parcours. Vos retours nous permettent d’ajuster avant de développer.",
       },
       {
         title: "Développement itératif",
         description:
-          "L'app se construit par étapes, avec des versions testables régulières sur votre propre téléphone.",
+          "Je développe l’application et son serveur. Vous essayez les fonctionnalités au fil des étapes convenues.",
       },
       {
         title: "Tests & publication",
         description:
-          "Tests sur appareils réels, corrections, puis soumission et publication sur les deux stores.",
+          "Je vérifie les parcours importants, les paiements et le comportement de l’application lorsque la connexion est limitée.",
       },
       {
         title: "Suivi post-lancement",
         description:
-          "Corrections garanties après livraison, et accompagnement pour les évolutions futures.",
+          "Je prépare la soumission aux stores avec vous. La validation finale revient à Apple et Google ; je vous accompagne dans les ajustements demandés.",
       },
     ],
     faq: [
       {
         question: "Combien coûte le développement d'une application mobile ?",
         answer:
-          "Cela dépend du périmètre : une app simple à quelques écrans, une app métier avec backend et une marketplace complète sont des projets très différents. Grâce à Flutter, vous obtenez iOS et Android pour le prix d'un seul développement. Consultez ma page tarifs pour des fourchettes indicatives, et recevez un devis précis sous 24h.",
+          "Mes applications mobiles démarrent à 900 000 FCFA. Le budget dépend des écrans, des comptes utilisateurs et des fonctions à développer. Vous trouverez mes fourchettes sur la page Tarifs ; après notre échange, je vous prépare un devis adapté à votre projet.",
       },
       {
         question: "Pourquoi Flutter plutôt qu'un développement natif ?",
         answer:
-          "Flutter permet de partager une grande partie du code entre iOS et Android tout en conservant la possibilité d'intégrer des fonctions propres à chaque plateforme. Cela réduit le travail de développement et de maintenance, selon les besoins natifs du projet.",
+          "Flutter me permet de partager une grande partie du code entre iOS et Android. Cela évite de développer deux applications séparées. Si votre projet demande des fonctions très spécifiques à un téléphone, je les examine avec vous avant de retenir cette approche.",
       },
       {
         question: "L'application fonctionnera-t-elle sans connexion internet ?",
         answer:
-          "Oui, si l'usage le nécessite : je conçois des applications qui stockent les données localement et les synchronisent lorsque le réseau revient. Cette approche est particulièrement utile pour les outils utilisés sur le terrain.",
+          "Oui, nous pouvons le prévoir. Je garde alors les données sur le téléphone et j’organise leur synchronisation au retour du réseau. Nous décidons aussi de ce qui reste disponible hors ligne et de ce qui nécessite une connexion.",
       },
       {
         question: "Qui s'occupe de la publication sur les stores ?",
         answer:
-          "Moi, de bout en bout : création des fiches, captures d'écran, conformité aux règles d'Apple et de Google, soumission et suivi jusqu'à l'approbation. Vous récupérez une application en ligne, pas un fichier à publier vous-même.",
+          "Je vous accompagne pour préparer les fiches, les captures et la soumission sur vos comptes développeur. Je suis les retours d’Apple et de Google avec vous. Leurs équipes décident de l’approbation et peuvent demander des modifications.",
       },
     ],
     offers: [
@@ -133,7 +133,7 @@ export const servicePages: ServicePage[] = [
         price: "900 000 FCFA",
         priceNote: "Idéal pour valider une idée",
         description:
-          "L'application qui prouve votre concept : fonctionnalité cœur, interface soignée, prête à être testée par de vrais utilisateurs.",
+          "Je réalise une première version pour que vous puissiez faire essayer votre idée : les fonctions principales, les comptes et les écrans nécessaires.",
         features: [
           "iOS + Android (Flutter)",
           "Fonctionnalité principale complète",
@@ -147,7 +147,7 @@ export const servicePages: ServicePage[] = [
         price: "1 500 000 FCFA",
         priceNote: "Le choix de la plupart des entreprises",
         description:
-          "L'application complète prête à générer du revenu : paiements locaux, mode hors-ligne et notifications pour engager vos utilisateurs.",
+          "Je développe une application avec les paiements, les notifications et le fonctionnement hors ligne prévus dans votre projet.",
         features: [
           "Tout le MVP Mobile, plus :",
           "Paiement MTN MoMo, Moov Money, Celtiis Cash et carte bancaire",
@@ -163,7 +163,7 @@ export const servicePages: ServicePage[] = [
         price: "2 500 000 FCFA et +",
         priceNote: "Sur devis selon le périmètre",
         description:
-          "L'application ambitieuse : plusieurs types d'utilisateurs, temps réel, intégrations poussées et architecture prête à scaler.",
+          "Je construis votre application pour plusieurs profils d’utilisateurs, avec les échanges de données et les connexions nécessaires à votre service.",
         features: [
           "Tout Business, plus :",
           "Multi-rôles (clients, vendeurs, admins…)",
@@ -185,7 +185,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Création de Site E-commerce au Bénin, Boutique en Ligne avec Mobile Money",
     metaDescription:
-      "Création de boutiques en ligne qui vendent : paiement MTN MoMo, Moov Money, Celtiis Cash et carte bancaire, gestion des stocks et livraison locale. Devis sous 24h.",
+      "Je crée votre boutique en ligne pour que vos clients puissent choisir leurs produits, commander et payer. Vous gardez la main sur votre catalogue et vos commandes.",
     keywords: [
       "création site e-commerce Bénin",
       "boutique en ligne Cotonou",
@@ -195,11 +195,11 @@ export const servicePages: ServicePage[] = [
       "boutique FedaPay",
     ],
     heroDescription:
-      "Je vous construis des boutiques en ligne qui vendent vraiment : parcours d'achat fluide, paiement Mobile Money et carte bancaire, et un back-office que vous maîtrisez.",
+      "Je crée votre boutique en ligne pour que vos clients puissent choisir leurs produits, commander et payer. Vous gardez la main sur votre catalogue et vos commandes.",
     intro: [
-      "Vendre en ligne au Bénin a ses règles propres : vos clients paient par MTN MoMo, Moov Money ou FedaPay bien plus que par carte bancaire, commandent depuis leur téléphone, et veulent une livraison organisée localement. Je construis des boutiques qui respectent ces réalités, c'est ce qui fait la différence entre un site qui vend et un site qui décore.",
-      "Chaque boutique que je livre soigne le parcours d'achat : catalogue rapide à parcourir, fiches produits claires, panier sans friction, paiement en deux clics. Côté gestion, vous disposez d'un back-office complet : stocks, commandes, clients, promotions, tout est sous votre contrôle.",
-      "Et parce qu'une boutique sans visiteurs ne vend rien, le référencement est intégré dès la construction : vos produits sont structurés pour apparaître sur Google, y compris dans les résultats enrichis avec prix et disponibilité.",
+      "Vous vendez déjà par téléphone ou sur WhatsApp ? Quand les commandes se multiplient, retrouver un paiement, vérifier un stock ou suivre une livraison peut devenir compliqué. Je vous aide à réunir ces tâches dans votre boutique.",
+      "Nous préparons le catalogue, les moyens de paiement et les options de livraison avant le développement. Je tiens compte de la façon dont vos clients achètent et de la manière dont vous traitez les commandes.",
+      "À la livraison, je vous montre comment ajouter vos produits, modifier vos prix et suivre les commandes. Vos comptes de paiement restent les vôtres : je m’occupe de leur connexion à la boutique.",
     ],
     deliverables: [
       "Boutique en ligne complète, rapide et mobile-first",
@@ -213,50 +213,50 @@ export const servicePages: ServicePage[] = [
       {
         title: "Analyse de l'offre",
         description:
-          "Catalogue, cibles, zones de livraison, moyens de paiement : on pose le modèle de vente avant de construire.",
+          "Nous passons en revue vos produits, vos clients et votre organisation pour les commandes et les livraisons.",
       },
       {
         title: "Design du parcours d'achat",
         description:
-          "Maquettes des pages clés, accueil, produit, panier, paiement, optimisées pour convertir sur mobile.",
+          "Je prépare les pages produits et le parcours de commande. Nous les ajustons ensemble.",
       },
       {
         title: "Développement & intégrations",
         description:
-          "Construction de la boutique, intégration des paiements et de la logistique, remplissage du catalogue initial.",
+          "Je développe le catalogue, le panier et l’espace qui vous permet de gérer la boutique.",
       },
       {
         title: "Tests de bout en bout",
         description:
-          "Commandes tests réelles, paiements en conditions réelles, vérification des notifications et du back-office.",
+          "Je connecte les paiements et les options de livraison convenus, puis je vérifie les commandes de test.",
       },
       {
         title: "Lancement & suivi",
         description:
-          "Mise en ligne, indexation Google, suivi des premières ventes et ajustements.",
+          "Je mets la boutique en ligne et je vous montre comment la gérer au quotidien.",
       },
     ],
     faq: [
       {
         question: "Quels moyens de paiement puis-je proposer à mes clients ?",
         answer:
-          "Tous ceux qui comptent au Bénin et dans la sous-région : MTN Mobile Money, Moov Money, Celtiis Cash, et la carte bancaire pour les clients internationaux. L'argent arrive directement sur vos comptes, je ne suis pas intermédiaire de vos flux financiers.",
+          "Je peux intégrer le Mobile Money et le paiement par carte selon les services disponibles pour votre compte. Nous vérifions les moyens acceptés, les frais et les reversements avant de choisir le prestataire. Les fonds sont versés sur vos comptes.",
       },
       {
         question:
           "Comment gérer la livraison à Cotonou et à l'intérieur du pays ?",
         answer:
-          "La boutique peut calculer des frais par zone (Cotonou, grandes villes, intérieur), proposer le retrait en boutique et notifier le client à chaque étape. Je peux aussi intégrer les services de livraison locaux que vous utilisez déjà.",
+          "Nous pouvons définir des frais par zone, prévoir un retrait en boutique et informer vos clients de l’avancement de leur commande. Si vous travaillez déjà avec un livreur, je regarde avec vous comment l’intégrer.",
       },
       {
         question: "Combien coûte une boutique en ligne ?",
         answer:
-          "Cela dépend de la taille du catalogue et des fonctionnalités (promotions, comptes clients, multi-devises…). Les fourchettes indicatives sont sur ma page tarifs ; le devis précis arrive sous 24h. À noter : une boutique bien faite se rembourse vite, c'est un canal de vente, pas une dépense.",
+          "Mes boutiques démarrent à 500 000 FCFA. Le nombre de produits, les règles de livraison et les fonctions de gestion font varier le budget. Je vous prépare un devis après avoir regardé votre organisation avec vous.",
       },
       {
         question: "Pourrai-je gérer la boutique moi-même au quotidien ?",
         answer:
-          "Oui, c'est le but : ajouter des produits, suivre les commandes, lancer une promotion, tout se fait depuis un back-office simple, sur ordinateur ou téléphone. Formation incluse à la livraison, avec des guides pas-à-pas.",
+          "Oui. Je vous donne un espace pour ajouter des produits, modifier les prix et suivre les commandes. Je vous montre comment l’utiliser à la livraison et je vous remets les guides prévus dans le projet.",
       },
     ],
     offers: [
@@ -265,7 +265,7 @@ export const servicePages: ServicePage[] = [
         price: "500 000 FCFA",
         priceNote: "Pour démarrer la vente en ligne",
         description:
-          "La boutique qui vous fait vendre en ligne rapidement, avec le paiement Mobile Money dès le premier jour.",
+          "Je mets en place votre catalogue, les commandes et un premier moyen de paiement pour démarrer la vente en ligne.",
         features: [
           "Catalogue jusqu'à ~50 produits",
           "Paiement MTN MoMo, Moov Money, Celtiis Cash",
@@ -279,7 +279,7 @@ export const servicePages: ServicePage[] = [
         price: "800 000 FCFA",
         priceNote: "Le choix des marchands sérieux",
         description:
-          "La boutique complète qui optimise chaque vente : tous les moyens de paiement, livraison par zones et promotions.",
+          "J’ajoute les moyens de paiement, les livraisons par zone et les promotions dont votre boutique a besoin.",
         features: [
           "Tout l'Essentielle, plus :",
           "Catalogue étendu + variantes produits",
@@ -295,14 +295,14 @@ export const servicePages: ServicePage[] = [
         price: "1 200 000 FCFA et +",
         priceNote: "Sur devis selon le modèle",
         description:
-          "Au-delà de la boutique : multi-vendeurs, abonnements, application mobile, le commerce en ligne à votre façon.",
+          "Vous avez plusieurs vendeurs ou des règles de vente particulières ? Nous définissons ensemble la plateforme à construire.",
         features: [
           "Tout Pro, plus :",
           "Multi-vendeurs avec commissions",
           "Abonnements et achats récurrents",
           "Application mobile compagnon",
           "Intégrations logistiques avancées",
-          "Architecture prête à scaler",
+          "Organisation du code pour les évolutions",
         ],
       },
     ],
@@ -317,7 +317,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Création de Site Web au Bénin, Site Vitrine Professionnel et Bien Référencé",
     metaDescription:
-      "Création de sites vitrines professionnels au Bénin : design soigné, référencement Google intégré, rapide sur mobile. À partir de 170 000 FCFA, devis sous 24h.",
+      "Je crée votre site pour présenter votre activité, répondre aux questions de vos visiteurs et leur donner envie de vous contacter.",
     keywords: [
       "création site web Bénin",
       "site vitrine Cotonou",
@@ -327,11 +327,11 @@ export const servicePages: ServicePage[] = [
       "créer site web entreprise Cotonou",
     ],
     heroDescription:
-      "Je vous construis le site professionnel qui vous rend crédible, visible sur Google et joignable 24h/24, conçu pour transformer les visites en demandes de devis.",
+      "Je crée votre site pour présenter votre activité, répondre aux questions de vos visiteurs et leur donner envie de vous contacter.",
     intro: [
-      "Un site vitrine présente votre activité, répond aux premières questions des prospects et facilite les demandes de contact à toute heure. Pour être utile, il doit aussi être clair, rapide et visible sur les recherches qui comptent pour votre activité.",
-      "Chaque site que je livre est construit pour Google dès la première ligne : structure sémantique propre, vitesse de chargement optimale, balises et données structurées. Quand un client cherche votre métier dans votre ville, c'est vous qu'il doit trouver. Le site que vous lisez en ce moment applique exactement ces méthodes.",
-      "Comme une grande partie des visites se fait sur téléphone, je conçois d'abord pour les petits écrans et les connexions limitées : pages légères, contenu lisible et interactions simples.",
+      "Quand quelqu’un cherche votre entreprise, il doit pouvoir comprendre ce que vous proposez et comment vous joindre. Je vous aide à rassembler ces informations dans un site clair, utilisable sur téléphone.",
+      "Nous choisissons les pages, les textes et les images qui expliquent le mieux votre activité. Je prends ensuite en charge leur présentation et les bases techniques du référencement.",
+      "Si vous souhaitez publier des actualités ou modifier les contenus vous-même, nous prévoyons un espace de gestion. Je vous explique son fonctionnement à la livraison.",
     ],
     deliverables: [
       "Site sur-mesure, responsive et rapide (pas de template)",
@@ -345,27 +345,27 @@ export const servicePages: ServicePage[] = [
       {
         title: "Brief & stratégie",
         description:
-          "On clarifie l'objectif du site : qui il doit toucher, ce qu'il doit produire (appels, devis, visites). Devis sous 24h.",
+          "Nous décidons des pages et des informations dont vos visiteurs ont besoin.",
       },
       {
         title: "Maquette & contenu",
         description:
-          "Design des pages et structuration des textes, pensés pour la conversion et le référencement local.",
+          "Je prépare la présentation du site et nous ajustons les textes et les images.",
       },
       {
         title: "Développement",
         description:
-          "Intégration soignée, optimisation des images et de la vitesse, tests sur mobile et petites connexions.",
+          "Je développe les pages et les formulaires, avec un affichage adapté au téléphone.",
       },
       {
         title: "Mise en ligne & indexation",
         description:
-          "Déploiement, configuration du domaine, soumission à Google et vérification de l'indexation.",
+          "Je vérifie les liens, les formulaires et les éléments nécessaires à l’exploration par les moteurs de recherche.",
       },
       {
         title: "Accompagnement",
         description:
-          "Corrections garanties, suivi des premières semaines et évolutions à la demande.",
+          "Je mets le site en ligne et je vous montre comment modifier les contenus prévus dans la formule.",
       },
     ],
     offers: [
@@ -374,7 +374,7 @@ export const servicePages: ServicePage[] = [
         price: "170 000 FCFA",
         priceNote: "En ligne en 2 à 3 semaines",
         description:
-          "Le site professionnel qui vous rend crédible et visible : l'essentiel, exécuté avec soin.",
+          "Je réalise les pages essentielles pour présenter votre activité et permettre la prise de contact.",
         features: [
           "3 à 5 pages sur-mesure",
           "Design responsive soigné",
@@ -388,7 +388,7 @@ export const servicePages: ServicePage[] = [
         price: "300 000 FCFA",
         priceNote: "Le meilleur rapport visibilité/prix",
         description:
-          "Le site pensé pour capter des clients sur Google : plus de pages, un blog et un référencement travaillé en profondeur.",
+          "Je prépare un site avec davantage de pages et un blog pour vous permettre de développer vos contenus.",
         features: [
           "Tout l'Essentielle, plus :",
           "6 à 10 pages optimisées",
@@ -404,7 +404,7 @@ export const servicePages: ServicePage[] = [
         price: "450 000 FCFA et +",
         priceNote: "Sur devis selon les besoins",
         description:
-          "La présence en ligne complète : site bilingue, direction artistique poussée et stratégie SEO locale multi-villes.",
+          "Je réalise un site bilingue avec une présentation et des pages adaptées aux publics que vous souhaitez toucher.",
         features: [
           "Tout Croissance, plus :",
           "Version bilingue français-anglais",
@@ -419,22 +419,22 @@ export const servicePages: ServicePage[] = [
       {
         question: "Combien coûte un site vitrine professionnel ?",
         answer:
-          "À partir de 170 000 FCFA pour un site soigné de 3 à 5 pages, et autour de 300 000 FCFA pour un site étoffé avec blog et SEO avancé. Le détail des formules est ci-dessus et sur ma page tarifs, le devis précis arrive sous 24h.",
+          "Mes sites de présentation démarrent à 170 000 FCFA. Le prix varie avec le nombre de pages, les contenus à préparer et l’espace de gestion souhaité. Nous en discutons avant que je vous prépare le devis.",
       },
       {
         question: "Mon site sera-t-il visible sur Google ?",
         answer:
-          "Oui : le référencement fait partie du travail, pas d'une option. Structure sémantique propre, vitesse de chargement optimale, balises et données structurées, sitemap, votre site est construit pour être indexé et bien positionné. Ce site même que vous lisez applique exactement ces méthodes.",
+          "Je prépare votre site pour que Google puisse explorer et comprendre ses pages : titres, contenu, liens, sitemap et vitesse d’affichage. La position dans les résultats dépend aussi de votre contenu et de la concurrence ; je ne vous promets pas une place précise.",
       },
       {
         question: "Pourrai-je modifier le contenu moi-même ?",
         answer:
-          "Oui : selon la formule, je mets en place un CMS (Sanity, Payload) qui vous permet de modifier textes, images et actualités sans toucher au code. Je vous forme à son utilisation à la livraison.",
+          "Oui, si nous prévoyons un espace de gestion. Vous pourrez alors modifier les textes, les images et les actualités concernés sans intervenir dans le code. Je vous montre comment faire.",
       },
       {
         question: "Refaites-vous les sites existants ?",
         answer:
-          "Oui. Si votre site actuel est lent, daté ou invisible sur Google, je réalise un audit puis une refonte qui conserve ce qui fonctionne et corrige ce qui pénalise. La refonte inclut la migration du contenu et les redirections pour ne pas perdre votre référencement existant.",
+          "Oui. Je commence par regarder ce qui fonctionne sur votre site et ce qui vous gêne. Nous décidons ensuite des changements, de la reprise des contenus et des redirections nécessaires.",
       },
     ],
     relatedProjectSlugs: ["gain", "archiform"],
@@ -448,7 +448,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Application Web Sur-Mesure au Bénin, Logiciels Métier & Plateformes",
     metaDescription:
-      "Développement d'applications web et logiciels métier sur-mesure : gestion, facturation, réservations, espaces clients. Backend solide, interfaces simples. Devis sous 24h.",
+      "Je développe votre logiciel web pour que vos équipes puissent travailler au même endroit : clients, stocks, factures, réservations ou dossiers à suivre.",
     keywords: [
       "application web sur mesure",
       "logiciel métier Bénin",
@@ -458,11 +458,11 @@ export const servicePages: ServicePage[] = [
       "plateforme web Afrique",
     ],
     heroDescription:
-      "Je vous construis des logiciels web sur-mesure qui automatisent votre activité : gestion, facturation, réservations, espaces clients, pensés pour vos équipes.",
+      "Je développe votre logiciel web pour que vos équipes puissent travailler au même endroit : clients, stocks, factures, réservations ou dossiers à suivre.",
     intro: [
-      "Cahiers, fichiers Excel dispersés, WhatsApp comme outil de gestion : la plupart des entreprises béninoises fonctionnent avec des bouts de ficelle qui coûtent des heures chaque semaine et font perdre de l'information. Un logiciel métier sur-mesure remplace tout cela par un outil unique, pensé pour votre façon réelle de travailler.",
-      "Contrairement à un logiciel générique auquel vous devez vous adapter, je construis l'outil autour de vos processus : vos rôles, vos règles, vos documents. Espaces clients, systèmes de réservation, gestion de stocks et facturation, suivi d'activité, des produits web complets, avec une logique métier robuste et une interface que vos équipes prennent en main sans formation lourde.",
-      "Sous le capot : Next.js, un backend solide et une architecture qui grandit avec vous. L'outil qui gère 10 utilisateurs aujourd'hui doit pouvoir en gérer 1 000 demain sans être reconstruit.",
+      "Vous passez d’un fichier à l’autre pour retrouver une commande, préparer une facture ou suivre un dossier ? Je peux réunir ces tâches dans un logiciel que votre équipe utilise depuis son navigateur.",
+      "Avant de développer, vous me montrez comment vous travaillez. Nous décidons de ce que chaque personne doit voir, des informations à conserver et des étapes à simplifier. Je vous présente ensuite les premiers écrans.",
+      "Je m’occupe de l’interface, des données et du serveur. Si vous avez déjà des fichiers ou un ancien logiciel, nous examinons leur reprise pour conserver l’historique utile.",
     ],
     deliverables: [
       "Analyse de vos processus métier avant toute ligne de code",
@@ -476,27 +476,27 @@ export const servicePages: ServicePage[] = [
       {
         title: "Immersion métier",
         description:
-          "Je comprends comment vous travaillez réellement, flux, documents, points de friction, avant de proposer quoi que ce soit. Devis sous 24h.",
+          "Vous me présentez vos tâches et vos outils actuels. Je vous aide à choisir ce que le logiciel doit gérer en premier.",
       },
       {
         title: "Spécifications & maquettes",
         description:
-          "L'outil se dessine écran par écran avec vos équipes : vous validez le fonctionnement avant le développement.",
+          "Je prépare les écrans et les droits d’accès. Vos équipes peuvent me dire si les parcours correspondent à leur travail.",
       },
       {
         title: "Développement itératif",
         description:
-          "Livraisons par étapes testables en conditions réelles : vos équipes utilisent et corrigent le tir au fur et à mesure.",
+          "Je développe les fonctions par étapes pour que vous puissiez les essayer et me faire vos retours.",
       },
       {
         title: "Déploiement & formation",
         description:
-          "Mise en production, reprise de vos données existantes et formation de chaque profil d'utilisateur.",
+          "Nous vérifions les données à reprendre et les cas importants avant d’ouvrir l’outil à votre équipe.",
       },
       {
         title: "Évolutions",
         description:
-          "L'outil vit avec votre activité : j'accompagne les ajustements et nouvelles fonctionnalités dans la durée.",
+          "Je mets le logiciel en ligne, je vous montre comment l’utiliser et nous organisons son suivi.",
       },
     ],
     offers: [
@@ -505,7 +505,7 @@ export const servicePages: ServicePage[] = [
         price: "650 000 FCFA",
         priceNote: "Un processus clé digitalisé",
         description:
-          "L'outil ciblé qui règle votre problème le plus coûteux : facturation, stocks, réservations, un processus, bien fait.",
+          "Je développe un premier outil pour une tâche précise : suivre vos stocks, préparer vos factures ou gérer vos réservations.",
         features: [
           "Analyse du processus concerné",
           "Application web sur-mesure",
@@ -519,7 +519,7 @@ export const servicePages: ServicePage[] = [
         price: "1 300 000 FCFA",
         priceNote: "Le choix des PME en croissance",
         description:
-          "Le logiciel de gestion complet : plusieurs modules connectés, intégrations locales et tableaux de bord de pilotage.",
+          "Je relie plusieurs tâches de votre activité dans le même logiciel, avec les tableaux de bord et les intégrations prévus.",
         features: [
           "Tout l'Essentiel, plus :",
           "Plusieurs modules métier connectés",
@@ -535,7 +535,7 @@ export const servicePages: ServicePage[] = [
         price: "2 000 000 FCFA et +",
         priceNote: "Sur devis selon le périmètre",
         description:
-          "Le système complet à l'échelle de votre organisation : espaces clients externes, multi-sites, automatisations poussées.",
+          "Je construis votre plateforme pour plusieurs équipes ou sites, avec des espaces clients et les automatisations nécessaires.",
         features: [
           "Tout Business, plus :",
           "Espace client / portail externe",
@@ -551,24 +551,24 @@ export const servicePages: ServicePage[] = [
         question:
           "Pourquoi un logiciel sur-mesure plutôt qu'Excel ou un logiciel générique ?",
         answer:
-          "Excel casse dès que plusieurs personnes travaillent en même temps, et un logiciel générique vous impose sa logique, avec des fonctions inutiles et des manques critiques. Le sur-mesure épouse vos processus réels : vos équipes travaillent plus vite parce que l'outil pense comme elles, et vous ne payez que ce qui vous sert.",
+          "Le sur-mesure devient utile lorsque vos outils actuels vous obligent à ressaisir des données, à contourner leurs limites ou à multiplier les fichiers. Si un logiciel existant répond déjà à votre besoin, je vous le dirai. Nous regardons d’abord ce qui vous manque.",
       },
       {
         question:
           "Mes équipes ne sont pas très à l'aise avec l'informatique, est-ce bloquant ?",
         answer:
-          "Non, c'est même un critère de conception : interfaces en français clair, parcours simples, gros boutons pour les actions fréquentes. Je forme chaque profil d'utilisateur à la livraison, et les premiers retours du terrain servent à ajuster l'outil.",
+          "Non. Vous me montrez comment vos équipes travaillent et je prépare des écrans qu’elles peuvent essayer. Leurs retours servent à simplifier les parcours. Je prévois aussi la prise en main à la livraison.",
       },
       {
         question:
           "Pouvez-vous reprendre nos données existantes (Excel, ancien logiciel) ?",
         answer:
-          "Oui : la reprise des données fait partie du déploiement. Vos fichiers Excel, votre ancien logiciel ou vos registres structurés sont importés et vérifiés, vous démarrez avec votre historique, pas de zéro.",
+          "Je peux prévoir la reprise de vos données. Nous regardons leur format, leur qualité et ce qu’il faut conserver. Je précise dans le devis les imports et les vérifications nécessaires.",
       },
       {
         question: "L'outil pourra-t-il évoluer après la livraison ?",
         answer:
-          "C'est prévu dès l'architecture : chaque module est conçu pour être étendu sans tout casser. Vous démarrez avec l'essentiel, puis l'outil suit la croissance de votre activité, nouveaux modules, nouveaux rôles, nouvelles intégrations.",
+          "Oui. Nous pouvons ajouter de nouveaux modules, des accès ou des connexions après la livraison. Je vous aide à préparer ces évolutions ; leur budget dépendra du travail à réaliser.",
       },
     ],
     relatedProjectSlugs: ["weman-lms", "archiform"],
@@ -582,7 +582,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Développement SaaS & Dashboard, Du MVP au Produit Scalable | Bénin",
     metaDescription:
-      "Développement de produits SaaS et tableaux de bord : architecture multi-tenant, authentification, abonnements, analytics. Du MVP au produit qui scale. Devis sous 24h.",
+      "Vous souhaitez lancer un logiciel en ligne ? Je vous aide à construire une première version que vos clients pourront utiliser, puis à la faire évoluer.",
     keywords: [
       "développement SaaS Afrique",
       "création MVP startup",
@@ -592,11 +592,11 @@ export const servicePages: ServicePage[] = [
       "tableau de bord analytics",
     ],
     heroDescription:
-      "Je vous livre votre produit SaaS construit proprement dès le départ : architecture multi-tenant, abonnements, onboarding, pensé pour encaisser la croissance.",
+      "Vous souhaitez lancer un logiciel en ligne ? Je vous aide à construire une première version que vos clients pourront utiliser, puis à la faire évoluer.",
     intro: [
-      "Un SaaS mal architecturé se paie très cher au moment où il décolle : refonte forcée, dette technique, clients frustrés. Je construis des produits SaaS avec les fondations qu'il faut dès le premier jour, multi-tenant, gestion des rôles, facturation par abonnement, monitoring, pour que la croissance soit une bonne nouvelle, pas un problème.",
-      "Pour les startups, je développe des MVP qui vont à l'essentiel : la fonctionnalité qui prouve la valeur, livrée en quelques semaines, sur une base saine qui pourra évoluer. Pas de sur-ingénierie, pas de raccourcis toxiques non plus.",
-      "Côté interface, je soigne particulièrement les dashboards : données lisibles, visualisations utiles, temps de chargement courts. Un tableau de bord n'est bon que si on comprend la situation en trois secondes.",
+      "Vous avez une idée de logiciel par abonnement ? Nous commençons par le service qu’il doit rendre et les personnes qui l’utiliseront. Je vous aide à choisir ce qui est nécessaire pour le lancer.",
+      "Je développe les comptes, les accès, les abonnements et les fonctions principales. Si plusieurs entreprises utilisent le même logiciel, je prévois la séparation de leurs données.",
+      "Vos premiers utilisateurs vous donneront des retours que nous ne pouvons pas deviner à l’avance. Nous gardons donc une liste d’évolutions et décidons des prochaines étapes à partir de leurs usages.",
     ],
     deliverables: [
       "Architecture sécurisée pour plusieurs organisations",
@@ -610,60 +610,60 @@ export const servicePages: ServicePage[] = [
       {
         title: "Vision produit",
         description:
-          "On identifie la proposition de valeur et le périmètre minimal qui la démontre. C'est la clé d'un MVP réussi.",
+          "Nous précisons à qui s’adresse votre logiciel et ce que sa première version doit permettre de faire.",
       },
       {
         title: "Architecture",
         description:
-          "Choix techniques posés noir sur blanc : base de données, tenancy, auth, hébergement. Le socle qui évite la refonte à 1 000 utilisateurs.",
+          "Je prépare les écrans, les données et les règles d’accès, puis je vous explique les choix techniques.",
       },
       {
         title: "Sprints de développement",
         description:
-          "Livraisons toutes les 1 à 2 semaines sur un environnement de démo. Vous testez, on ajuste.",
+          "Je développe par étapes et je vous donne accès aux versions de démonstration pour recueillir vos retours.",
       },
       {
         title: "Lancement",
         description:
-          "Mise en production, onboarding des premiers utilisateurs, monitoring actif.",
+          "Je prépare la mise en ligne, les paiements et le suivi des erreurs avec vous.",
       },
       {
         title: "Itérations",
         description:
-          "Le SaaS vit : j'accompagne les évolutions au rythme de vos retours utilisateurs.",
+          "Nous examinons les retours des utilisateurs pour choisir les prochaines améliorations.",
       },
     ],
     faq: [
       {
         question: "Combien de temps pour développer un MVP ?",
         answer:
-          "Généralement 2 à 8 semaines pour un MVP fonctionnel avec authentification, cœur métier et paiement. L'essentiel est de bien découper : on lance vite avec le périmètre qui prouve la valeur, puis on itère sur du concret.",
+          "Ma fourchette pour un SaaS est de 6 à 10 semaines, selon les fonctions à réaliser. Une première version limitée peut demander moins de temps. Nous fixons le calendrier après avoir décidé de ce qui doit être prêt au lancement.",
       },
       {
         question: "Pouvez-vous reprendre un SaaS existant ?",
         answer:
-          "Oui. J'audite le code et l'architecture existants, j'identifie ce qui bloque (performance, bugs, scalabilité) et je propose un plan de reprise progressif, sans tout jeter, sauf si c'est réellement la meilleure option.",
+          "Oui. Je regarde le code, les données et les problèmes que vous rencontrez. Je vous propose ensuite les corrections et les évolutions à réaliser, avec les éventuelles étapes de migration.",
       },
       {
         question: "Comment gérez-vous les paiements récurrents ?",
         answer:
-          "Avec Stripe pour les clients internationaux et le Mobile Money pour l'Afrique de l'Ouest : abonnements, essais gratuits, factures automatiques et gestion des échecs de paiement. Le tout intégré proprement dans le produit.",
+          "Je regarde avec vous ce que permet le prestataire de paiement retenu : abonnements, renouvellements, factures et gestion des échecs. Le fonctionnement peut différer entre le paiement par carte et le Mobile Money. Nous le précisons avant de développer.",
       },
       {
         question: "Le produit m'appartiendra-t-il entièrement ?",
         answer:
-          "Le code développé spécifiquement pour le projet, la base de données et les accès aux comptes créés pour vous sont remis selon les conditions du devis. Les services et bibliothèques tiers restent soumis à leurs propres licences.",
+          "Je vous remets le code développé pour votre projet, les données et les accès prévus dans le devis. Les outils et services externes gardent leurs licences et leurs conditions ; je vous indique ceux que votre logiciel utilise.",
       },
     ],
     offers: [
       {
         name: "MVP",
         price: "1 200 000 FCFA",
-        priceNote: "Lancé en 4 à 8 semaines",
+        priceNote: "Calendrier fixé après notre échange",
         description:
-          "Le produit minimal qui prouve la valeur : la fonctionnalité cœur, l'authentification et un premier plan payant.",
+          "Je réalise les fonctions principales pour que vous puissiez proposer votre service à de premiers utilisateurs.",
         features: [
-          "Périmètre cadré sur l'essentiel",
+          "Fonctions choisies pour le lancement",
           "Authentification et comptes",
           "Fonctionnalité cœur complète",
           "Paiement (un plan d'abonnement)",
@@ -673,15 +673,15 @@ export const servicePages: ServicePage[] = [
       {
         name: "Startup",
         price: "2 000 000 FCFA",
-        priceNote: "Pour lancer sérieusement",
+        priceNote: "Pour préparer le lancement",
         description:
-          "Le SaaS complet prêt à accueillir ses clients : multi-tenant, plans d'abonnement, dashboard et onboarding.",
+          "Je prépare votre logiciel pour plusieurs clients, avec les abonnements, les tableaux de bord et les étapes de prise en main convenus.",
         features: [
           "Tout le MVP, plus :",
-          "Architecture multi-tenant",
+          "Espaces séparés pour vos clients",
           "Plans et facturation récurrente",
-          "Dashboard et analytics",
-          "Onboarding guidé des utilisateurs",
+          "Tableau de bord et suivi de l’activité",
+          "Prise en main guidée pour vos utilisateurs",
           "Monitoring en production",
         ],
         recommended: true,
@@ -689,9 +689,9 @@ export const servicePages: ServicePage[] = [
       {
         name: "Scale",
         price: "4 000 000 FCFA et +",
-        priceNote: "Sur devis selon l'ambition",
+        priceNote: "Selon les fonctions à réaliser",
         description:
-          "Le produit taillé pour la croissance : API publique, rôles avancés, haute disponibilité et accompagnement continu.",
+          "Je vous accompagne pour ajouter les accès, les API et les capacités nécessaires à une utilisation plus importante.",
         features: [
           "Tout Startup, plus :",
           "API publique documentée",
@@ -713,7 +713,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Développement Backend & API, Architecture Robuste et Scalable | Bénin",
     metaDescription:
-      "Conception de backends solides : API REST, bases de données, authentification, jobs asynchrones, intégrations Mobile Money. Le socle technique de vos produits.",
+      "Je développe le serveur et les API de votre application : comptes, données, paiements et échanges avec vos autres outils.",
     keywords: [
       "développement backend",
       "création API REST",
@@ -723,11 +723,11 @@ export const servicePages: ServicePage[] = [
       "backend Node.js",
     ],
     heroDescription:
-      "J'architecture et je construis le moteur invisible de vos produits : API propres, base de données bien modélisée, sécurité sérieuse, un socle qui tient la charge et qui dure.",
+      "Je développe le serveur et les API de votre application : comptes, données, paiements et échanges avec vos autres outils.",
     intro: [
-      "Le backend, c'est ce qu'on ne voit pas mais qui fait tout tenir : la vitesse de vos écrans, la sécurité de vos données, la fiabilité de vos paiements. Un backend bâclé se manifeste des mois plus tard, lenteurs, pertes de données, failles, quand il coûte le plus cher à corriger. Je le construis proprement dès le départ.",
-      "Concrètement : des API REST claires et documentées, une base de données modélisée pour vos besoins réels, une authentification sérieuse, des tâches de fond fiables (emails, rappels, synchronisations) et des intégrations tierces maîtrisées, Mobile Money, services de SMS, Google APIs.",
-      "J'interviens aussi en renfort : votre équipe a un frontend mais pas de backend solide, votre prestataire précédent a laissé une architecture fragile, votre API actuelle s'écroule sous la charge, je reprends, j'assainis, je documente.",
+      "Votre application a besoin de conserver des données, de reconnaître ses utilisateurs et de traiter leurs demandes. Je construis cette partie serveur pour qu’elle corresponde à vos fonctions métier.",
+      "Nous précisons les informations à stocker, les droits d’accès et les services à connecter. Je développe ensuite les API utilisées par votre interface, avec les vérifications et la documentation nécessaires.",
+      "Je peux aussi intervenir sur un serveur existant. Vous me montrez les problèmes rencontrés ; j’examine le code et je vous propose les changements à réaliser avec votre équipe.",
     ],
     deliverables: [
       "API REST structurée, versionnée et documentée",
@@ -741,54 +741,54 @@ export const servicePages: ServicePage[] = [
       {
         title: "Audit du besoin",
         description:
-          "Analyse des flux de données, des volumes attendus et des intégrations nécessaires. Sur un existant : audit du code en place.",
+          "Nous passons en revue les données, les accès et les échanges nécessaires à votre application.",
       },
       {
         title: "Modélisation",
         description:
-          "Schéma de base de données et contrat d'API posés et validés avant le développement, c'est là que tout se joue.",
+          "Je prépare la structure des données et les réponses attendues de l’API avec votre équipe.",
       },
       {
         title: "Développement & tests",
         description:
-          "Implémentation avec tests automatisés sur les chemins critiques, notamment les paiements.",
+          "Je développe les traitements et je vérifie les parcours sensibles, notamment les comptes et les paiements.",
       },
       {
         title: "Mise en production",
         description:
-          "Déploiement, monitoring, alertes et documentation, livré prêt à être exploité et repris par n'importe quel développeur.",
+          "Je mets le serveur en ligne et je vous remets la documentation pour son utilisation et sa maintenance.",
       },
     ],
     faq: [
       {
         question: "Mon application existante peut-elle garder son frontend ?",
         answer:
-          "Oui : le backend est indépendant. Je peux construire ou reconstruire le moteur derrière votre app mobile ou web existante sans toucher à l'interface, avec une migration des données organisée et sans interruption de service.",
+          "Oui, si votre interface peut communiquer avec les nouvelles API. Je vérifie les échanges existants et je prépare la transition avec votre équipe. Nous décidons aussi de la manière de reprendre les données et des éventuelles interruptions à prévoir.",
       },
       {
         question:
           "Comment intégrez-vous les paiements Mobile Money côté serveur ?",
         answer:
-          "Via les API officielles (FedaPay/KkiaPay) avec tout ce qu'un paiement sérieux exige : vérification des webhooks, idempotence, gestion des échecs et des remboursements, journalisation complète. Pas de paiement perdu ni compté deux fois.",
+          "Je connecte les API du prestataire retenu et je vérifie les confirmations reçues côté serveur. Je prévois le traitement des erreurs et des notifications répétées pour éviter de comptabiliser plusieurs fois le même paiement.",
       },
       {
         question: "Le backend tiendra-t-il si mon activité grandit ?",
         answer:
-          "C'est le critère de conception : requêtes optimisées, cache, files d'attente pour les traitements lourds. Un backend que je livre passe de 100 à 100 000 utilisateurs en ajoutant des ressources et non en réécrivant le code.",
+          "Je tiens compte des volumes attendus pour choisir la structure des données et les traitements. Si l’usage augmente, nous suivons les performances et ajustons les ressources ou le code selon les mesures.",
       },
       {
         question: "Livrez-vous la documentation technique ?",
         answer:
-          "Systématiquement : documentation d'API, schéma de la base, guide de déploiement et décisions d'architecture. N'importe quel développeur compétent peut reprendre le projet, vous restez libre.",
+          "Oui. Je vous remets la documentation des API, les informations sur les données et les étapes de mise en ligne prévues dans le projet. Votre équipe peut ainsi comprendre et reprendre mon travail.",
       },
     ],
     offers: [
       {
         name: "API Essentielle",
         price: "300 000 FCFA",
-        priceNote: "Le socle propre et documenté",
+        priceNote: "Les premières fonctions de votre serveur",
         description:
-          "L'API et la base de données de votre produit, construites proprement : auth, endpoints métier et documentation.",
+          "Je développe les API, les comptes et les données nécessaires aux premières fonctions de votre application.",
         features: [
           "API REST structurée",
           "Base de données modélisée (PostgreSQL)",
@@ -800,9 +800,9 @@ export const servicePages: ServicePage[] = [
       {
         name: "API Business",
         price: "650 000 FCFA",
-        priceNote: "Pour les produits en production",
+        priceNote: "Avec les intégrations prévues",
         description:
-          "Le backend complet d'un produit sérieux : intégrations locales, tâches de fond, tests et monitoring.",
+          "Je prends en charge les paiements, les tâches automatiques et le suivi des erreurs prévus pour votre serveur.",
         features: [
           "Tout l'Essentielle, plus :",
           "Intégrations Mobile Money / FedaPay / SMS",
@@ -818,7 +818,7 @@ export const servicePages: ServicePage[] = [
         price: "1 200 000 FCFA et +",
         priceNote: "Sur devis, création ou reprise",
         description:
-          "Pour les systèmes exigeants : forte charge, files de traitement, reprise et assainissement d'un existant.",
+          "Nous préparons un serveur pour des besoins plus importants, ou la reprise d’un système existant avec votre équipe.",
         features: [
           "Tout Business, plus :",
           "Architecture haute charge (cache, queues)",
@@ -840,7 +840,7 @@ export const servicePages: ServicePage[] = [
     metaTitle:
       "Audit Technique & Optimisation de Site Web, Performance et SEO | Bénin",
     metaDescription:
-      "Site lent, invisible sur Google ou vieillissant ? Vous obtenez un audit technique complet, une optimisation des performances, une refonte et mise à niveau SEO. Le diagnostic est clair et le plan d'action est chiffré.",
+      "Votre site ou votre application est lent, instable ou difficile à modifier ? Je regarde ce qui bloque et je vous explique comment le corriger.",
     keywords: [
       "audit site web",
       "optimisation performance web",
@@ -850,11 +850,11 @@ export const servicePages: ServicePage[] = [
       "audit technique application",
     ],
     heroDescription:
-      "Votre site est lent, invisible sur Google ou difficile à maintenir ? Je vous fais un diagnostic précis, un plan d'action chiffré, et une exécution soignée.",
+      "Votre site ou votre application est lent, instable ou difficile à modifier ? Je regarde ce qui bloque et je vous explique comment le corriger.",
     intro: [
-      "Beaucoup d'entreprises ont déjà un site ou une application, mais qui dessert plus qu'il ne sert : pages qui mettent dix secondes à charger, positionnement Google inexistant, bugs récurrents, prestataire injoignable. Avant de tout refaire, il faut comprendre précisément ce qui pèche.",
-      "Mon audit couvre les quatre dimensions qui comptent : la performance (Core Web Vitals, temps de chargement réels), le référencement (structure, balises, indexation), la qualité du code (maintenabilité, sécurité) et l'expérience utilisateur (parcours, mobile, accessibilité). Vous recevez un rapport clair, hiérarchisé, avec le coût et l'impact de chaque correction.",
-      "Ensuite, deux options : je corrige les points critiques sur l'existant, ou, quand c'est plus rentable, je mène une refonte qui préserve votre acquis (contenu, référencement, données) tout en repartant sur des bases saines.",
+      "Vous avez déjà un site ou une application, mais il ne fonctionne pas comme vous l’attendez ? Avant de vous proposer de tout refaire, je prends le temps de comprendre les problèmes.",
+      "Je vérifie les temps de chargement, les pages publiques, le code et les parcours des utilisateurs. Vous recevez un rapport qui indique ce que j’ai trouvé, les corrections proposées et leur coût.",
+      "Vous pouvez me confier ces corrections ou transmettre le rapport à votre équipe. Si une refonte paraît plus adaptée, je vous explique pourquoi et comment reprendre vos contenus et vos données.",
     ],
     deliverables: [
       "Rapport d'audit clair et hiérarchisé (performance, SEO, code, UX)",
@@ -868,22 +868,22 @@ export const servicePages: ServicePage[] = [
       {
         title: "Audit complet",
         description:
-          "Analyse technique outillée + revue manuelle du code, du SEO et des parcours. Sans rien casser de l'existant.",
+          "Vous me décrivez les problèmes rencontrés. J’examine ensuite le site, ses parcours et le code auquel vous me donnez accès.",
       },
       {
         title: "Restitution",
         description:
-          "Rapport en langage clair : ce qui va, ce qui pénalise, ce que ça coûte de corriger et ce que ça rapporte.",
+          "Je vous présente les résultats et les corrections proposées, en expliquant ce qui est urgent et ce qui peut attendre.",
       },
       {
         title: "Corrections priorisées",
         description:
-          "Exécution en commençant par le ratio impact/effort le plus fort, les gains se voient dès les premières semaines.",
+          "Si vous me confiez la suite, je réalise les corrections dans l’ordre convenu avec vous.",
       },
       {
         title: "Mesure & suivi",
         description:
-          "Comparaison avant/après sur les métriques réelles : vitesse, positions Google, conversions.",
+          "Je compare les mesures avant et après les changements et je vous explique ce qui a progressé.",
       },
     ],
     faq: [
@@ -891,23 +891,23 @@ export const servicePages: ServicePage[] = [
         question:
           "Mon site est lent, pouvez-vous le diagnostiquer sans le refaire ?",
         answer:
-          "Oui, c'est exactement le rôle de l'audit : identifier précisément ce qui ralentit (images, scripts, hébergement, code) et corriger de façon ciblée. Dans la majorité des cas, on gagne 50 à 80 % de temps de chargement sans refonte complète.",
+          "Oui. Je regarde les images, les scripts, le serveur et les pages concernées pour comprendre la lenteur. Certaines corrections suffisent sans refonte ; je vous indique celles qui s’appliquent à votre site.",
       },
       {
         question: "Une refonte va-t-elle me faire perdre mon référencement ?",
         answer:
-          "Pas si elle est bien menée : inventaire des pages qui rankent, redirections 301 systématiques, conservation des contenus qui performent. Une refonte propre améliore le référencement, c'est une refonte bâclée qui le détruit.",
+          "Je prépare la reprise des contenus, des adresses et des redirections pour limiter les pertes. Je vérifie ensuite l’indexation. Une refonte reste un changement à suivre : je ne vous garantis pas des positions identiques sur Google.",
       },
       {
         question:
           "Pouvez-vous auditer une application développée par quelqu'un d'autre ?",
         answer:
-          "Oui, c'est fréquent : prestataire disparu, code hérité, doutes sur la qualité. J'audite le code, la sécurité et l'architecture, puis je vous dis honnêtement s'il faut consolider ou reconstruire, avec les chiffres pour décider.",
+          "Oui. Je peux examiner une application existante si vous disposez des accès et du code nécessaires. Je vous explique ce qui mérite d’être conservé, corrigé ou repris.",
       },
       {
         question: "L'audit m'engage-t-il à vous confier les corrections ?",
         answer:
-          "Non : le rapport d'audit vous appartient et il est suffisamment détaillé pour être exécuté par n'importe quel développeur sérieux. Si vous me confiez la suite, le coût de l'audit est déduit du devis.",
+          "Non. Je vous remets le rapport pour que vous puissiez décider de la suite, avec moi ou avec un autre développeur. Si vous me confiez les corrections, le coût de l’audit est déduit selon les conditions du devis.",
       },
     ],
     offers: [
@@ -916,7 +916,7 @@ export const servicePages: ServicePage[] = [
         price: "80 000 FCFA",
         priceNote: "Rapport sous 5 jours",
         description:
-          "Le diagnostic rapide qui identifie ce qui pénalise votre site : performance et référencement, en clair.",
+          "Je vérifie la vitesse et le référencement de votre site et je vous remets les corrections à faire en premier.",
         features: [
           "Audit performance (Core Web Vitals)",
           "Audit SEO et indexation",
@@ -929,7 +929,7 @@ export const servicePages: ServicePage[] = [
         price: "160 000 FCFA",
         priceNote: "Déduit si je réalise les corrections",
         description:
-          "L'analyse en profondeur : code, sécurité et expérience utilisateur s'ajoutent au diagnostic, avec un plan chiffré.",
+          "J’examine aussi le code, la sécurité et les parcours de vos utilisateurs, puis je vous présente un plan de corrections chiffré.",
         features: [
           "Tout l'Express, plus :",
           "Revue du code et de la maintenabilité",
@@ -945,7 +945,7 @@ export const servicePages: ServicePage[] = [
         price: "300 000 FCFA et +",
         priceNote: "Sur devis selon les chantiers",
         description:
-          "Le diagnostic et le remède : je corrige moi-même les points critiques identifiés, mesures avant/après à l'appui.",
+          "Après l’audit, je réalise les corrections convenues et je vous montre les mesures avant et après.",
         features: [
           "Tout le Complet, plus :",
           "Correction des points critiques",

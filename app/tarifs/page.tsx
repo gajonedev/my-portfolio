@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   title:
     "Tarifs | Prix d'un Site Web, d'une App Mobile ou d'un E-commerce au Bénin",
   description:
-    "Combien coûte un site web, une boutique en ligne ou une application mobile au Bénin ? Fourchettes de prix transparentes en FCFA, ce qui est inclus, et devis précis sous 24h.",
+    "Combien coûte un site web, une boutique en ligne ou une application mobile au Bénin ? Fourchettes de prix transparentes en FCFA, ce qui est inclus, et devis gratuit selon votre besoin.",
   keywords: [
     "prix site web Bénin",
     "coût application mobile Bénin",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tarifs | Création de sites et applications au Bénin",
     description:
-      "Des fourchettes de prix transparentes en FCFA pour votre site web, boutique en ligne ou application mobile. Devis précis sous 24h.",
+      "Des fourchettes de prix transparentes en FCFA pour votre site web, boutique en ligne ou application mobile. Réponse sous 24h, puis devis adapté à votre besoin.",
     url,
   },
 };
@@ -107,8 +107,8 @@ export default async function TarifsPage() {
       />
 
       <PageHeader
-        title="Tarifs & fourchettes de prix"
-        description="Plateformes web et applications mobiles : des fourchettes en FCFA pour situer votre budget, puis un devis gratuit après cadrage."
+        title="Quel budget prévoir ?"
+        description="Voici mes prix de départ en FCFA. Pour votre plateforme web ou votre application mobile, je vous prépare un devis selon les fonctionnalités choisies."
       />
 
       <div className="py-16">
@@ -121,7 +121,7 @@ export default async function TarifsPage() {
               pour situer votre budget. Chaque projet étant unique, le chiffrage
               précis se fait sur devis :{" "}
               <strong className="text-foreground">
-                gratuit et détaillé après le cadrage
+                gratuit une fois votre besoin précisé
               </strong>
               .
             </p>
@@ -221,7 +221,7 @@ export default async function TarifsPage() {
           </section>
 
           {/* Toujours inclus */}
-          <section className="bg-card card-glow p-8 border border-stroke rounded-3xl">
+          <section className="bg-card p-8 border border-stroke rounded-3xl">
             <h2 className="mb-6 font-semibold text-foreground text-xl">
               Toujours inclus, quel que soit le projet
             </h2>
@@ -244,7 +244,7 @@ export default async function TarifsPage() {
               {priceFactors.map((factor) => (
                 <div
                   key={factor.title}
-                  className="bg-card card-glow p-5 border border-stroke rounded-2xl"
+                  className="bg-card p-5 border border-stroke rounded-2xl"
                 >
                   <h3 className="font-semibold text-foreground">
                     {factor.title}
@@ -266,7 +266,7 @@ export default async function TarifsPage() {
               {pricingFaq.map((item) => (
                 <details
                   key={item.question}
-                  className="group bg-card card-glow open:pb-5 border border-stroke rounded-2xl"
+                  className="group bg-card open:pb-5 border border-stroke rounded-2xl"
                 >
                   <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
                     {item.question}
@@ -295,7 +295,7 @@ export default async function TarifsPage() {
                   <Link
                     key={post.slug}
                     href={`/blog/${post.slug}`}
-                    className="group flex flex-col bg-card card-glow p-5 border border-stroke hover:border-primary/40 rounded-2xl transition"
+                    className="group flex flex-col bg-card p-5 border border-stroke hover:border-primary/40 rounded-2xl transition"
                   >
                     <span className="bg-primary/10 px-3 py-1 rounded-full w-fit font-semibold text-primary text-xs">
                       {post.category}
@@ -342,7 +342,7 @@ export default async function TarifsPage() {
           {/* CTA */}
           <section className="text-center">
             <h2 className="font-semibold text-foreground text-2xl">
-              Votre devis précis, sous 24h
+              Parlons de votre budget
             </h2>
             <p className="mt-3 text-foreground-muted">
               Décrivez-moi votre projet en quelques lignes, je reviens vers vous

@@ -1,8 +1,9 @@
 ---
 title: "Créer un design system efficace pour un SaaS"
 date: "2026-02-02"
+updated: "2026-10-04"
 readTime: "8 min"
-summary: "Méthode pour construire des composants réutilisables et assurer une cohérence visuelle à grande échelle."
+summary: "Voici comment je prépare des composants réutilisables pour garder une interface cohérente quand un logiciel évolue."
 category: "Design"
 author: "Néhémie Gandonou"
 tags: ["Design System", "SaaS", "UI/UX", "Composants", "React"]

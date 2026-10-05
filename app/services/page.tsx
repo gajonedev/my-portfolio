@@ -38,8 +38,8 @@ export default async function ServicesPage() {
   return (
     <>
       <PageHeader
-        title="Services"
-        description="Deux spécialités : les plateformes web et les applications mobiles complètes. Nous définissons ensemble vos utilisateurs, vos fonctionnalités et votre budget."
+        title="Ce que je peux réaliser pour vous"
+        description="Je développe des plateformes web et des applications mobiles pour votre équipe ou vos clients. Nous choisissons ensemble les fonctionnalités dont vous avez besoin."
       />
       <div className="py-16">
         <Container className="gap-6 grid md:grid-cols-2">
@@ -123,7 +123,7 @@ export default async function ServicesPage() {
 
         {/* Rassurance — compris dans chaque projet */}
         <Container className="mt-16">
-          <div className="bg-card card-glow px-6 py-8 border border-stroke rounded-3xl">
+          <div className="bg-card px-6 py-8 border border-stroke rounded-3xl">
             <h2 className="mb-6 font-display font-semibold text-foreground text-lg text-center">
               Compris dans chaque projet
             </h2>
@@ -164,14 +164,14 @@ export default async function ServicesPage() {
         </Container>
 
         <Container className="mt-16">
-          <div className="flex flex-col items-center gap-6 bg-card card-glow px-6 py-12 border border-stroke rounded-3xl text-center">
+          <div className="flex flex-col items-center gap-6 bg-card px-6 py-12 border border-stroke rounded-3xl text-center">
             <div className="flex flex-col gap-3">
               <h2 className="font-display font-semibold text-foreground text-2xl">
                 Pas sûr du service qu&apos;il vous faut ?
               </h2>
               <p className="mx-auto max-w-xl font-body text-foreground-muted">
-                Décrivez-moi votre besoin en deux lignes : je vous oriente vers
-                la bonne solution et un devis détaillé, sous 24h.
+                Dites-moi ce que vous voulez faire. Je vous réponds sous 24h
+                pour vous aider à choisir une solution adaptée.
               </p>
             </div>
             <div className="flex flex-wrap justify-center gap-4">
