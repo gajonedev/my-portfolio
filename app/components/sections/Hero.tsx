@@ -29,7 +29,7 @@ export default function Hero() {
 
           <p
             className="max-w-xl font-body text-foreground-muted text-base md:text-lg leading-relaxed hero-anim-up"
-            style={{ animationDelay: "0.05s" }}
+            style={{ animationDelay: "0.2s" }}
           >
             Je suis Néhémie Gandonou, développeur de logiciels à Cotonou. Vous
             voulez gérer votre activité, proposer un service en ligne ou créer
@@ -39,7 +39,7 @@ export default function Hero() {
 
           <div
             className="flex flex-wrap gap-4 hero-anim-up"
-            style={{ animationDelay: "0.1s" }}
+            style={{ animationDelay: "0.35s" }}
           >
             <GlowButton href={whatsappUrl()} external>
               <WhatsAppIcon className="w-4 h-4" />
@@ -52,7 +52,7 @@ export default function Hero() {
 
           <ul
             className="flex flex-wrap gap-x-5 gap-y-2 font-body text-foreground-subtle text-sm hero-anim-up"
-            style={{ animationDelay: "0.15s" }}
+            style={{ animationDelay: "0.45s" }}
           >
             {homeTrust.map((item) => (
               <li key={item} className="flex items-center gap-2">
