@@ -362,7 +362,7 @@ export default async function ServicePage({
 
       <FinalCta
         title="Prêt à démarrer ?"
-        text="Dites-moi ce que vous avez en tête. Je vous réponds sous 24h pour en discuter."
+        text="Parlez-moi des fonctionnalités dont vous avez besoin. Je vous prépare un devis gratuit."
         whatsappMessage={`Bonjour Néhémie, je suis intéressé par votre service « ${service.shortTitle} » et j'aimerais en discuter.`}
         secondary={{
           href: contactHref(service.slug, `/services/${service.slug}`),

@@ -227,7 +227,7 @@ export default function ExpertiseLanding({
 
       <FinalCta
         title={`Un projet ${expertise.techName} ?`}
-        text="Parlez-moi de votre besoin. Je vous réponds sous 24h pour en discuter."
+        text="Expliquez-moi ce que votre application doit faire, ou ce qui bloque aujourd’hui."
         whatsappLabel="Discuter de mon projet"
         whatsappMessage={`Bonjour Néhémie, j'ai un projet ${expertise.techName} et j'aimerais en discuter avec vous.`}
         secondary={{ href: "/tarifs", label: "Voir les tarifs" }}

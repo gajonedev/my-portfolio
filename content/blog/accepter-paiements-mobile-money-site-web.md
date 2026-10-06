@@ -59,4 +59,4 @@ Avec le Mobile Money intégré, vos clients règlent à distance depuis leur com
 
 Si vous avez déjà un site, l'intégration du paiement peut souvent s'ajouter à l'existant : c'est un chantier ciblé, pas nécessairement une refonte. Si vous partez de zéro, autant concevoir la boutique autour du parcours de paiement dès le départ. C'est l'objet de mon service [création de site e-commerce](/services/creation-ecommerce), dont les fourchettes de budget figurent sur la [page tarifs](/tarifs).
 
-Dans les deux cas, [parlons de votre projet](/contact) : je vous réponds sous 24h pour discuter des paiements dont vous avez besoin.
+[Montrez-moi comment vous recevez vos commandes aujourd’hui](/contact). Nous préparerons un parcours de paiement adapté à votre boutique et à vos clients.

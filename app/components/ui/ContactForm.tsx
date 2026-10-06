@@ -142,8 +142,8 @@ export default function ContactForm({
       <div>
         <h2 className="font-semibold text-xl">Décrivez votre projet</h2>
         <p className="mt-2 text-foreground-muted text-sm">
-          Expliquez-moi ce que vous voulez faire, avec vos mots. Je vous réponds
-          sous 24h pour en discuter avant de préparer le devis.
+          Expliquez-moi votre projet avec vos mots. Pas besoin d’avoir déjà
+          toutes les réponses.
         </p>
       </div>
       <div className="gap-4 grid md:grid-cols-2">

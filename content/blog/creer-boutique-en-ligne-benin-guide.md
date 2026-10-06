@@ -70,4 +70,4 @@ Avant le lancement, renseignez-vous auprès de l’APIEx ou d’un comptable sur
 
 Une boutique comprenant un catalogue, le Mobile Money, la livraison par zones, un espace de gestion et les bases du référencement demande généralement **3 à 6 semaines** de travail et démarre à **500 000 FCFA** dans mes offres. Le détail figure sur [la page du service](/services/creation-ecommerce) et sur [la page des tarifs](/tarifs).
 
-Vous avez un projet de vente en ligne ? [Décrivez-le-moi](/contact), je vous répondrai sous 24h pour discuter du catalogue, du paiement et de la livraison.
+Vous avez un projet de vente en ligne ? [Parlez-moi de vos produits et de votre façon de livrer](/contact). Nous choisirons les fonctions utiles au lancement de votre boutique.

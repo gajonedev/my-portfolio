@@ -207,7 +207,7 @@ export default async function AboutPage() {
 
       <FinalCta
         title="On travaille ensemble ?"
-        text="Racontez-moi ce que vous avez en tête. Je vous réponds sous 24h pour en discuter et préparer la suite avec vous."
+        text="Racontez-moi votre projet. Voyons comment je peux vous accompagner."
         secondary={{ href: "/projects", label: "Voir mes réalisations" }}
       />
     </>

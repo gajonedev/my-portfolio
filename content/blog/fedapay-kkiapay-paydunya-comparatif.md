@@ -76,4 +76,4 @@ Quel que soit l'agrégateur, je vérifie le code qui relie le paiement à vos co
 
 Un bon agrégateur ne compense pas une intégration fragile. À l'inverse, une solution correctement choisie et soigneusement intégrée peut répondre durablement au besoin, même si elle n'est pas la plus connue.
 
-Vous hésitez pour votre projet ? [Décrivez-le-moi](/contact) : je vous réponds sous 24h pour comparer les options selon vos pays, vos volumes et votre modèle.
+Vous hésitez pour votre projet ? [Dites-moi où se trouvent vos clients et comment ils paient](/contact). Je vous aide à comparer les prestataires pour votre activité.

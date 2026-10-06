@@ -41,7 +41,7 @@ export default async function BlogPage() {
       </SectionWrapper>
       <FinalCta
         title="Une question sur votre projet ?"
-        text="Les articles donnent des repères ; pour votre cas précis, écrivez-moi. Je vous réponds sous 24h."
+        text="Vous voulez appliquer ces conseils à votre projet ? Parlons de votre situation."
       />
     </>
   );

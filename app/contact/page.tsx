@@ -14,7 +14,7 @@ const url = `${siteConfig.url}/contact`;
 export const metadata: Metadata = {
   title: "Contact | Parlons de votre produit",
   description:
-    "Un projet de plateforme web ou d’application mobile ? Je vous réponds sous 24h pour en discuter, puis je prépare un devis gratuit. Disponible sur WhatsApp.",
+    "Un projet de plateforme web ou d’application mobile ? Parlons de votre idée avant de préparer un devis gratuit. Disponible sur WhatsApp.",
   alternates: { canonical: url },
   openGraph: {
     title: "Contactez un développeur web et mobile au Bénin",
@@ -46,7 +46,7 @@ export default async function ContactPage({
       <PageHeader
         kicker="Contact"
         title="Parlons de votre projet"
-        description="Racontez-moi ce que vous voulez créer ou simplifier dans votre activité. Je vous réponds sous 24h pour en discuter et vous proposer la suite."
+        description="Racontez-moi ce que vous voulez créer ou simplifier dans votre activité. Nous regarderons ensemble par où commencer."
       />
       <SectionWrapper variant="dark" className="py-16 md:py-20">
         <Container className="items-start gap-8 grid lg:grid-cols-[1.5fr_1fr]">

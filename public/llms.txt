@@ -1,6 +1,6 @@
 # Néhémie Gandonou — Développeur Web & Mobile au Bénin
 
-> Développeur web et mobile freelance basé à Cotonou, Bénin. Conception d'applications web fullstack (Next.js, React, TypeScript), d'applications mobiles (Flutter, iOS + Android), de plateformes SaaS et de boutiques e-commerce avec paiement Mobile Money (FedaPay, MTN MoMo, Moov Money). Intervient en présentiel à Cotonou et dans tout le Bénin, et à distance en Afrique de l'Ouest et à l'international. Réponse sous 24h et devis gratuit après un échange.
+> Développeur web et mobile freelance basé à Cotonou, Bénin. Conception d'applications web fullstack (Next.js, React, TypeScript), d'applications mobiles (Flutter, iOS + Android), de plateformes SaaS et de boutiques e-commerce avec paiement Mobile Money (FedaPay, MTN MoMo, Moov Money). Intervient en présentiel à Cotonou et dans tout le Bénin, et à distance en Afrique de l'Ouest et à l'international. Devis gratuit après un échange sur le projet.
 
 Informations clés :
 - Nom : Néhémie Gandonou (Gajone Dev)

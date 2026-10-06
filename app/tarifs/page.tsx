@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tarifs | Création de sites et applications au Bénin",
     description:
-      "Des fourchettes de prix transparentes en FCFA pour votre site web, boutique en ligne ou application mobile. Réponse sous 24h, puis devis adapté à votre besoin.",
+      "Des fourchettes de prix transparentes en FCFA pour votre site web, boutique en ligne ou application mobile. Devis gratuit selon les fonctionnalités dont vous avez besoin.",
     url,
   },
 };
@@ -279,7 +279,7 @@ export default async function TarifsPage() {
 
       <FinalCta
         title="Parlons de votre budget"
-        text="Décrivez-moi votre projet en quelques lignes, je reviens vers vous avec un chiffrage détaillé et sans engagement."
+        text="Parlez-moi des fonctionnalités dont vous avez besoin. Je vous prépare un devis gratuit."
         whatsappLabel="Demander mon devis"
         whatsappMessage="Bonjour Néhémie, j'aimerais un devis pour mon projet."
         secondary={{ href: "/contact", label: "Passer par le formulaire" }}

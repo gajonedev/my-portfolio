@@ -177,7 +177,7 @@ export default async function ServicesPage() {
 
       <FinalCta
         title="Pas sûr du service qu’il vous faut ?"
-        text="Dites-moi ce que vous voulez faire. Je vous réponds sous 24h pour vous aider à choisir une solution adaptée."
+        text="Expliquez-moi ce que vous voulez faire. Je vous aide à choisir par où commencer."
         secondary={{ href: "/tarifs", label: "Voir les tarifs" }}
       />
     </>

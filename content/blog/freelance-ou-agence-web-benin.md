@@ -54,4 +54,4 @@ Je vous conseille de vérifier les réalisations, les droits transmis et ce que 
 
 Pour un projet web ou mobile au Bénin, un bon freelance peut offrir un excellent rapport entre expertise, proximité et budget. Une agence reste plus adaptée lorsque le projet demande plusieurs métiers en parallèle, une forte capacité de production ou une continuité contractuelle renforcée.
 
-Si vous voulez vérifier que je passe mon propre test : mes [réalisations sont en ligne](/projects), mes [tarifs sont publics](/tarifs), et vous pouvez [m’écrire pour en discuter](/contact). Je vous réponds sous 24h.
+Si vous voulez vérifier que je passe mon propre test : mes [réalisations sont en ligne](/projects), mes [tarifs sont publics](/tarifs), et vous pouvez [m’écrire pour me présenter votre projet](/contact). Nous verrons si mon accompagnement correspond à ce que vous cherchez.

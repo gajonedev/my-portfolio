@@ -571,7 +571,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
 
       <FinalCta
         title={`Un projet à ${city.name} ?`}
-        text="Parlez-moi de votre projet. Je vous réponds sous 24h pour en discuter."
+        text="Décrivez-moi votre activité et ce que vous souhaitez simplifier."
         whatsappLabel="Discuter de mon projet"
         whatsappMessage={`Bonjour Néhémie, j'ai un projet à ${city.name} et j'aimerais en discuter avec vous.`}
         secondary={{ href: "/contact", label: "Demander un devis" }}

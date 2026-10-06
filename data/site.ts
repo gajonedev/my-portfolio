@@ -33,7 +33,7 @@ export const whatsappUrl = (message: string = DEFAULT_WHATSAPP_MESSAGE) =>
 
 // Arguments de confiance affichés sur la home (objection-killers, tous véridiques)
 export const homeTrust = [
-  "Je vous réponds sous 24h",
+  "Vous échangez directement avec moi",
   "Nous fixons le calendrier ensemble",
   "Vous récupérez le code et les accès",
 ] as const;

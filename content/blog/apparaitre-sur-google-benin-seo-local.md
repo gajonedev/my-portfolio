@@ -66,4 +66,4 @@ Chaque question posée par un client peut devenir une recherche Google : « Comb
 
 Si vous avez déjà un site, commencez par savoir où vous en êtes. Mon [audit à partir de 80 000 FCFA](/services/audit-optimisation) examine notamment la vitesse, le référencement et les principaux blocages, puis propose un plan d'action chiffré. Si vous partez de zéro, j’intègre ces bases dès la conception de votre [site vitrine](/services/creation-site-vitrine).
 
-[Parlons de votre visibilité](/contact), premier échange gratuit, je vous réponds sous 24h pour en discuter.
+[Envoyez-moi l’adresse de votre site](/contact) et dites-moi quels clients vous souhaitez toucher. Nous regarderons les pages à travailler en priorité.

@@ -68,6 +68,6 @@ Demandez à quoi correspondent les frais annuels : domaine, hébergement ou trav
 
 ## Comment obtenir un devis fiable
 
-Avant de contacter un prestataire, clarifiez trois choses : **l'objectif** du site, **les contenus disponibles** et **votre budget indicatif**. Avec ces éléments, le prestataire pourra préparer un chiffrage plus fiable. De mon côté, je vous réponds sous 24h pour préciser votre besoin avant de préparer [un devis gratuit](/contact).
+Avant de contacter un prestataire, clarifiez trois choses : **l'objectif** du site, **les contenus disponibles** et **votre budget indicatif**. Avec ces éléments, le prestataire pourra préparer un chiffrage plus fiable. [Présentez-moi ces éléments](/contact) et je vous prépare un devis gratuit avec le détail des pages et des fonctions à développer.
 
 Et si vous hésitez encore entre les types de projets, mes pages [création de site vitrine](/services/creation-site-vitrine), [application web et logiciel métier](/services/creation-application-web) et [création de boutique e-commerce](/services/creation-ecommerce) détaillent ce que chaque option implique.

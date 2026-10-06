@@ -47,7 +47,7 @@ export default async function ProjectsPage() {
       </SectionWrapper>
       <FinalCta
         title="Votre projet pourrait être le prochain"
-        text="Plateforme web, logiciel métier ou application mobile : parlez-moi de votre idée, je vous réponds sous 24h."
+        text="Vous cherchez à créer un outil pour votre activité ? Présentez-moi votre idée."
       />
     </>
   );

@@ -22,7 +22,7 @@ import {
 export const metadata: Metadata = {
   title: "Développeur Web & Mobile au Bénin | Cotonou, Porto-Novo, Lokossa",
   description:
-    "Développeur web et mobile freelance au Bénin : sites, apps mobiles, e-commerce et paiement Mobile Money. Réponse sous 24h et devis gratuit après un échange, à Cotonou, Porto-Novo et partout au Bénin.",
+    "Développeur web et mobile freelance au Bénin : sites, apps mobiles, e-commerce et paiement Mobile Money. Devis gratuit après un échange sur votre projet, à Cotonou, Porto-Novo et partout au Bénin.",
   keywords: seoKeywords.slice(0, 10),
   alternates: {
     canonical: `${siteConfig.url}/developpeur-web-benin`,
@@ -261,7 +261,7 @@ export default async function DeveloppeurWebBeninPage() {
 
       <FinalCta
         title="Prêt à lancer votre projet ?"
-        text="Parlez-moi de votre projet. Je vous réponds sous 24h pour en discuter."
+        text="Décrivez-moi votre activité et ce que vous souhaitez simplifier."
         whatsappLabel="Discuter de mon projet"
         whatsappMessage="Bonjour Néhémie, j'ai un projet web ou mobile au Bénin et j'aimerais en discuter avec vous."
         secondary={{ href: "/tarifs", label: "Voir les tarifs" }}

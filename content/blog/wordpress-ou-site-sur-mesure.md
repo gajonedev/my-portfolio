@@ -54,4 +54,4 @@ Je vous explique aussi les limites de la solution retenue et ce qu’il faudra e
 
 Si vous avez déjà un WordPress qui ne vous convient plus, je commence par comprendre pourquoi. Mon [audit](/services/audit-optimisation) identifie les blocages et vous donne les éléments pour choisir entre corrections et refonte. En cas de refonte, nous prévoyons la reprise du contenu et les redirections des anciennes pages.
 
-Un [site vitrine sur mesure démarre à 170 000 FCFA](/tarifs) dans mes offres. [Parlez-moi de votre projet](/contact) : je vous réponds sous 24h pour voir quelle approche correspond à votre besoin.
+Un [site vitrine sur mesure démarre à 170 000 FCFA](/tarifs) dans mes offres. [Parlez-moi de vos contenus et des fonctions attendues](/contact). Nous choisirons une approche adaptée à votre projet et à son entretien.

@@ -308,7 +308,7 @@ export default async function ProjectCaseStudyPage({
 
       <FinalCta
         title="Un projet similaire en tête ?"
-        text="Parlez-moi de votre idée. Je vous réponds sous 24h pour regarder ce que nous pouvons construire."
+        text="Vous avez un besoin similaire ? Parlons de ce que vous souhaitez construire."
         whatsappLabel="Discuter de mon projet"
         whatsappMessage={`Bonjour Néhémie, j'ai vu l'étude de cas « ${project.name} » et j'ai un projet similaire à discuter.`}
         secondary={{
