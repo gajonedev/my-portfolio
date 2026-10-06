@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contactez un développeur web et mobile au Bénin",
     description:
-      "Plateforme web ou application mobile : je vous réponds sous 24h pour préciser votre besoin avant le devis.",
+      "Parlez-moi de votre plateforme web ou de votre application mobile. Je vous réponds dans les meilleurs délais pour en discuter.",
     url,
     type: "website",
     locale: "fr_BJ",
@@ -46,7 +46,7 @@ export default async function ContactPage({
       <PageHeader
         kicker="Contact"
         title="Parlons de votre projet"
-        description="Plateforme web, logiciel métier ou application mobile : décrivez-moi votre idée. Je vous réponds sous 24h pour préciser le besoin avant le devis."
+        description="Racontez-moi ce que vous voulez créer ou simplifier dans votre activité. Je vous réponds sous 24h pour en discuter et vous proposer la suite."
       />
       <SectionWrapper variant="dark" className="py-16 md:py-20">
         <Container className="items-start gap-8 grid lg:grid-cols-[1.5fr_1fr]">
@@ -59,7 +59,7 @@ export default async function ContactPage({
             />
           </div>
 
-          <aside className="flex flex-col gap-4 lg:top-28 lg:sticky">
+          <aside className="lg:top-28 lg:sticky flex flex-col gap-4">
             <div className="flex flex-col gap-4 p-6 card">
               <h2 className="font-semibold text-foreground text-lg">
                 Vous préférez écrire directement ?

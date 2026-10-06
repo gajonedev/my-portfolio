@@ -181,7 +181,7 @@ export default function Home() {
         id="contact"
         variant="light"
         title="Parlez-moi de votre idée"
-        text="Dites-moi ce que vous voulez faire et à qui l’application servira. Je vous réponds et nous préciserons ensemble le besoin avant le devis."
+        text="Dites-moi ce que vous voulez faire et à qui l’application servira. Nous en discuterons avant que je vous prépare un devis."
         secondary={{
           href: contactHref(undefined, "/"),
           label: "Décrire mon projet",

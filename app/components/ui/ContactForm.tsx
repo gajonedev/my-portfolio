@@ -110,17 +110,18 @@ export default function ContactForm({
         role="status"
         className={`flex flex-col items-center justify-center gap-3 rounded-2xl border border-stroke bg-background-soft p-10 text-center ${className}`}
       >
-        <CheckCircle className="h-10 w-10 text-success" aria-hidden="true" />
-        <h2 className="text-lg font-semibold">Message envoyé !</h2>
-        <p className="text-sm text-foreground-muted">
-          Merci, je reviens vers vous sous 24h pour préciser votre besoin.
+        <CheckCircle className="w-10 h-10 text-success" aria-hidden="true" />
+        <h2 className="font-semibold text-lg">Message envoyé !</h2>
+        <p className="text-foreground-muted text-sm">
+          Merci pour votre message. Je vous réponds dans les meilleurs délais
+          pour parler de votre projet.
         </p>
       </div>
     );
 
   const error = (field: keyof ContactInput) =>
     errors[field] && (
-      <span id={`${id}-${field}-error`} className="text-xs text-primary">
+      <span id={`${id}-${field}-error`} className="text-primary text-xs">
         {errors[field]?.message}
       </span>
     );
@@ -139,17 +140,17 @@ export default function ContactForm({
       noValidate
     >
       <div>
-        <h2 className="text-xl font-semibold">Décrivez votre projet</h2>
-        <p className="mt-2 text-sm text-foreground-muted">
+        <h2 className="font-semibold text-xl">Décrivez votre projet</h2>
+        <p className="mt-2 text-foreground-muted text-sm">
           Expliquez-moi ce que vous voulez faire, avec vos mots. Je vous réponds
           sous 24h pour en discuter avant de préparer le devis.
         </p>
       </div>
-      <div className="grid gap-4 md:grid-cols-2">
-        <div className="grid gap-1">
+      <div className="gap-4 grid md:grid-cols-2">
+        <div className="gap-1 grid">
           <label
             htmlFor={`${id}-name`}
-            className="text-sm text-foreground-muted"
+            className="text-foreground-muted text-sm"
           >
             Nom complet
           </label>
@@ -162,10 +163,10 @@ export default function ContactForm({
           />
           {error("name")}
         </div>
-        <div className="grid gap-1">
+        <div className="gap-1 grid">
           <label
             htmlFor={`${id}-email`}
-            className="text-sm text-foreground-muted"
+            className="text-foreground-muted text-sm"
           >
             Adresse email
           </label>
@@ -180,10 +181,10 @@ export default function ContactForm({
           {error("email")}
         </div>
       </div>
-      <div className="grid gap-1">
+      <div className="gap-1 grid">
         <label
           htmlFor={`${id}-projectType`}
-          className="text-sm text-foreground-muted"
+          className="text-foreground-muted text-sm"
         >
           Service souhaité
         </label>
@@ -202,10 +203,10 @@ export default function ContactForm({
         </select>
         {error("projectType")}
       </div>
-      <div className="grid gap-1">
+      <div className="gap-1 grid">
         <label
           htmlFor={`${id}-message`}
-          className="text-sm text-foreground-muted"
+          className="text-foreground-muted text-sm"
         >
           Votre besoin
         </label>
@@ -219,11 +220,11 @@ export default function ContactForm({
         />
         {error("message")}
       </div>
-      <div className="grid gap-4 md:grid-cols-2">
-        <div className="grid gap-1">
+      <div className="gap-4 grid md:grid-cols-2">
+        <div className="gap-1 grid">
           <label
             htmlFor={`${id}-budget`}
-            className="text-sm text-foreground-muted"
+            className="text-foreground-muted text-sm"
           >
             Budget indicatif (facultatif)
           </label>
@@ -241,10 +242,10 @@ export default function ContactForm({
           </select>
           {error("budget")}
         </div>
-        <div className="grid gap-1">
+        <div className="gap-1 grid">
           <label
             htmlFor={`${id}-deadline`}
-            className="text-sm text-foreground-muted"
+            className="text-foreground-muted text-sm"
           >
             Échéance (facultative)
           </label>
@@ -269,7 +270,7 @@ export default function ContactForm({
         tabIndex={-1}
         autoComplete="off"
         aria-hidden="true"
-        className="absolute left-[-9999px] h-0 w-0 opacity-0"
+        className="left-[-9999px] absolute opacity-0 w-0 h-0"
       />
       {SITE_KEY ? (
         <div className="overflow-x-auto">
@@ -288,17 +289,17 @@ export default function ContactForm({
           />
         </div>
       ) : (
-        <p className="text-sm text-foreground-muted" role="status">
+        <p className="text-foreground-muted text-sm" role="status">
           Le formulaire est momentanément indisponible. Contactez-moi
           directement sur WhatsApp.
         </p>
       )}
       {serverError && (
-        <p className="text-sm text-error" role="alert">
+        <p className="text-error text-sm" role="alert">
           {serverError}
         </p>
       )}
-      <p className="text-xs leading-relaxed text-foreground-muted">
+      <p className="text-foreground-muted text-xs leading-relaxed">
         J’utilise ces informations pour vous répondre.{" "}
         <Link href="/politique-confidentialite" className="underline">
           Confidentialité
@@ -311,7 +312,7 @@ export default function ContactForm({
       >
         {isSubmitting ? (
           <>
-            <Loader className="h-4 w-4 animate-spin" />
+            <Loader className="w-4 h-4 animate-spin" />
             Envoi…
           </>
         ) : (

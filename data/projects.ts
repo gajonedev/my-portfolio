@@ -130,7 +130,7 @@ export const projects: Project[] = [
       results: [
         "Le parcours d’achat, l’accès aux vidéos et le suivi de progression sont réunis dans la plateforme.",
         "Les formateurs disposent d’un espace pour préparer et publier leurs cours.",
-        "Le projet est encore en développement ; les fonctions sont présentées à ce stade.",
+        "Je poursuis le développement de Wéman ; la plateforme n’est pas encore lancée.",
       ],
       highlights: [
         "J’ai séparé les tâches comme la génération des certificats et les emails du parcours de lecture.",

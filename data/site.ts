@@ -129,7 +129,7 @@ export const aboutHighlights = [
 // pour la home ; la stack vit déjà dans la section Compétences). Tous véridiques.
 export const aboutGuarantees = [
   "Je vous prépare un devis gratuit après notre échange",
-  "Nous décidons des fonctionnalités, du budget et des dates avant de commencer",
-  "Je vous remets le code prévu au devis et les accès à la livraison",
+  "Avant de commencer, vous savez ce que je développe, combien cela coûte et quand je le livre",
+  "Vous savez dès le devis quel code et quels accès vous récupérez à la livraison",
   "Je vous accompagne pour prendre en main votre application",
 ] as const;

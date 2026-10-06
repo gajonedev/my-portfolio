@@ -129,11 +129,11 @@ export const pricingTiers: PricingTier[] = [
 
 export const alwaysIncluded = [
   "Je vous explique ce que le devis comprend avant de commencer",
-  "Je vous remets le code prévu au devis, sa documentation et vos accès",
+  "Vous récupérez les accès, la documentation et le code indiqué dans le devis pour garder la main sur votre projet",
   "Je prépare les pages publiques pour leur référencement",
   "Je vérifie l’application sur téléphone et avec une connexion limitée",
   "Je vous montre comment utiliser ce qui a été livré",
-  "Nous précisons dans le devis le suivi et la période de correction",
+  "Vous savez avant de commencer combien de temps je reste disponible pour les corrections après la livraison",
 ];
 
 export const priceFactors = [

@@ -129,8 +129,8 @@ export const expertises: Expertise[] = [
       "Je développe vos plateformes web avec Next.js : pages publiques, espaces clients et fonctions de gestion dans le même projet.",
     intro: [
       "J’utilise Next.js pour des projets comme Wéman, ArchiForm et ce portfolio. Il me permet de construire les pages publiques et les fonctions d’une application web avec React.",
-      "Je choisis le mode d’affichage selon les pages : un contenu de présentation n’a pas les mêmes besoins qu’un espace client connecté. Je tiens aussi compte du référencement, des données et de l’hébergement.",
-      "Si vous devez modifier vos contenus vous-même, je peux prévoir un espace d’administration ou connecter un outil de publication. Nous le décidons ensemble avant le développement.",
+      "Vos pages de présentation doivent être faciles à consulter et à trouver. Votre espace client doit afficher les bonnes informations après connexion. Je choisis comment construire chaque partie en fonction de ces usages et de l’endroit où votre application sera hébergée.",
+      "Vous voulez modifier vos textes, vos photos ou vos articles vous-même ? Je prévois un espace de publication ou je connecte l’outil que vous utilisez déjà. Vous n’avez pas à intervenir dans le code pour ces mises à jour.",
     ],
     strengths: [
       {

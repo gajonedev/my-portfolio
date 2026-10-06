@@ -92,7 +92,7 @@ export const servicePages: ServicePage[] = [
       {
         title: "Développement itératif",
         description:
-          "Je développe l’application et son serveur. Vous essayez les fonctionnalités au fil des étapes convenues.",
+          "Je développe l’application et son serveur. Je vous montre les nouvelles fonctions au fur et à mesure pour que vous les essayiez et me disiez ce qui doit changer.",
       },
       {
         title: "Tests & publication",
@@ -563,7 +563,7 @@ export const servicePages: ServicePage[] = [
         question:
           "Pouvez-vous reprendre nos données existantes (Excel, ancien logiciel) ?",
         answer:
-          "Je peux prévoir la reprise de vos données. Nous regardons leur format, leur qualité et ce qu’il faut conserver. Je précise dans le devis les imports et les vérifications nécessaires.",
+          "Montrez-moi vos fichiers ou votre outil actuel. Je regarde les données à reprendre, les doublons et les informations manquantes, puis je vous explique comment les importer et ce que ce travail coûte.",
       },
       {
         question: "L'outil pourra-t-il évoluer après la livraison ?",
@@ -610,7 +610,7 @@ export const servicePages: ServicePage[] = [
       {
         title: "Vision produit",
         description:
-          "Nous précisons à qui s’adresse votre logiciel et ce que sa première version doit permettre de faire.",
+          "Qui va utiliser votre logiciel, et pour faire quoi ? Nous choisissons les premières fonctions autour de ces usages, pour que vous puissiez faire essayer une version utile sans tout développer d’un coup.",
       },
       {
         title: "Architecture",
@@ -647,7 +647,7 @@ export const servicePages: ServicePage[] = [
       {
         question: "Comment gérez-vous les paiements récurrents ?",
         answer:
-          "Je regarde avec vous ce que permet le prestataire de paiement retenu : abonnements, renouvellements, factures et gestion des échecs. Le fonctionnement peut différer entre le paiement par carte et le Mobile Money. Nous le précisons avant de développer.",
+          "Vos clients paient chaque mois ou renouvellent eux-mêmes leur abonnement ? Je vérifie que le prestataire gère le fonctionnement souhaité, puis je prévois les factures et les paiements qui échouent. La carte et le Mobile Money ne proposent pas toujours les mêmes possibilités : je vous explique les options avant de choisir.",
       },
       {
         question: "Le produit m'appartiendra-t-il entièrement ?",
@@ -726,7 +726,7 @@ export const servicePages: ServicePage[] = [
       "Je développe le serveur et les API de votre application : comptes, données, paiements et échanges avec vos autres outils.",
     intro: [
       "Votre application a besoin de conserver des données, de reconnaître ses utilisateurs et de traiter leurs demandes. Je construis cette partie serveur pour qu’elle corresponde à vos fonctions métier.",
-      "Nous précisons les informations à stocker, les droits d’accès et les services à connecter. Je développe ensuite les API utilisées par votre interface, avec les vérifications et la documentation nécessaires.",
+      "Qui utilise votre application ? Quelles informations doit-elle conserver et qui a le droit de les modifier ? Je pars de ces questions pour développer les échanges entre vos écrans et le serveur. Je documente aussi les API pour faciliter la suite du projet.",
       "Je peux aussi intervenir sur un serveur existant. Vous me montrez les problèmes rencontrés ; j’examine le code et je vous propose les changements à réaliser avec votre équipe.",
     ],
     deliverables: [
@@ -896,7 +896,7 @@ export const servicePages: ServicePage[] = [
       {
         question: "Une refonte va-t-elle me faire perdre mon référencement ?",
         answer:
-          "Je prépare la reprise des contenus, des adresses et des redirections pour limiter les pertes. Je vérifie ensuite l’indexation. Une refonte reste un changement à suivre : je ne vous garantis pas des positions identiques sur Google.",
+          "Je conserve les contenus utiles et je redirige les anciennes adresses vers les bonnes pages pour limiter les pertes. Après la mise en ligne, je vérifie que Google retrouve les pages et je surveille les changements d’indexation. Les positions peuvent évoluer : ce suivi permet de repérer les problèmes à corriger.",
       },
       {
         question:

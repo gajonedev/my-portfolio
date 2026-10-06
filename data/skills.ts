@@ -53,7 +53,7 @@ export const values: Value[] = [
     iconName: "Users",
     title: "Travailler avec vous",
     description:
-      "Vous voyez le travail avancer. Nous faisons le point aux étapes convenues et vous me dites ce qu’il faut ajuster.",
+      "Je vous montre les nouvelles fonctions au fil du développement. Vous les essayez et vous me dites ce qui vous convient ou ce qui doit changer.",
   },
 ];
 

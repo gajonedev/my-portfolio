@@ -113,7 +113,7 @@ export default async function TarifsPage() {
       <PageHeader
         kicker="Tarifs"
         title="Quel budget prévoir ?"
-        description="Voici mes prix de départ en FCFA. Ils vous donnent un repère réaliste ; le chiffrage précis se fait sur devis, gratuit une fois votre besoin précisé."
+        description="Voici mes prix de départ en FCFA pour vous aider à préparer votre budget. Parlez-moi de ce que vous voulez construire : je vous prépare ensuite un devis."
       />
 
       {/* Grille tarifaire */}
@@ -211,7 +211,7 @@ export default async function TarifsPage() {
             <dl className="flex flex-col divide-y divide-stroke card">
               {priceFactors.map((factor, index) => (
                 <div key={factor.title} className="flex gap-4 p-6">
-                  <span className="font-display font-semibold text-primary text-sm tabular-nums">
+                  <span className="font-display font-semibold tabular-nums text-primary text-sm">
                     0{index + 1}
                   </span>
                   <div>
@@ -233,7 +233,7 @@ export default async function TarifsPage() {
       <SectionWrapper variant="light" className="py-16 md:py-24">
         <Container className="gap-16 grid">
           <div className="items-start gap-10 grid lg:grid-cols-[0.8fr_1.2fr]">
-            <div className="flex flex-col gap-6 lg:top-28 lg:sticky">
+            <div className="lg:top-28 lg:sticky flex flex-col gap-6">
               <SectionHeading
                 kicker="FAQ"
                 title="Questions fréquentes sur les prix"

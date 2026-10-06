@@ -91,7 +91,7 @@ export const localCities: LocalCity[] = [
       {
         question: "Peut-on se rencontrer en présentiel à Cotonou ?",
         answer:
-          "Je suis basé à Cotonou. Nous pouvons commencer par un appel et convenir d’une rencontre à Cotonou si elle est utile au projet. Je vous précise les modalités avant de la prévoir.",
+          "Je suis basé à Cotonou. Commençons par un appel pour parler de votre idée. Si vous préférez un rendez-vous à Cotonou, je vous indique mes disponibilités et les conditions du déplacement.",
       },
       {
         question: "Combien coûte un site web professionnel à Cotonou ?",
@@ -162,7 +162,7 @@ export const localCities: LocalCity[] = [
       {
         question: "Intervenez-vous physiquement à Abomey-Calavi ?",
         answer:
-          "Je suis basé à Cotonou. Nous pouvons commencer par un appel et convenir d’une rencontre à Abomey-Calavi si elle est utile au projet. Je vous précise les modalités avant de la prévoir.",
+          "Je suis basé à Cotonou. Commençons par un appel pour parler de votre idée. Si vous préférez un rendez-vous à Abomey-Calavi, je vous indique mes disponibilités et les conditions du déplacement.",
       },
       {
         question: "Pouvez-vous créer une plateforme pour mon école privée ?",
@@ -238,7 +238,7 @@ export const localCities: LocalCity[] = [
       {
         question: "Peut-on se voir à Porto-Novo pour discuter du projet ?",
         answer:
-          "Je suis basé à Cotonou. Nous pouvons commencer par un appel et convenir d’une rencontre à Porto-Novo si elle est utile au projet. Je vous précise les modalités avant de la prévoir.",
+          "Je suis basé à Cotonou. Commençons par un appel pour parler de votre idée. Si vous préférez un rendez-vous à Porto-Novo, je vous indique mes disponibilités et les conditions du déplacement.",
       },
     ],
     nearby: ["cotonou", "seme-podji", "abomey-calavi"],
@@ -257,7 +257,7 @@ export const localCities: LocalCity[] = [
       "Je développe votre plateforme web ou votre application mobile à Parakou. Parlons de vos utilisateurs, de vos fonctions et de votre budget.",
     intro: [
       "Votre équipe à Parakou a besoin de suivre des stocks, des expéditions ou des collectes ? Je développe des outils web et mobiles pour regrouper ces informations et faciliter leur consultation.",
-      "Je travaille depuis Cotonou. Nous pouvons avancer à distance avec des échanges et des démonstrations aux étapes convenues. Si une rencontre sur place est nécessaire, nous l’organisons ensemble.",
+      "Je travaille depuis Cotonou et je vous montre l’application à distance au fil du développement. Vous essayez les fonctions et nous échangeons sur vos retours. Si le projet demande une rencontre sur place, nous regardons comment l’organiser.",
     ],
     opportunities: [
       {
@@ -912,7 +912,7 @@ export const localCities: LocalCity[] = [
       {
         question: "Faites-vous le déplacement jusqu'à Savalou ?",
         answer:
-          "Je suis basé à Cotonou. Nous pouvons commencer par un appel et convenir d’une rencontre à Savalou si elle est utile au projet. Je vous précise les modalités avant de la prévoir.",
+          "Je suis basé à Cotonou. Commençons par un appel pour parler de votre idée. Si vous préférez un rendez-vous à Savalou, je vous indique mes disponibilités et les conditions du déplacement.",
       },
     ],
     nearby: ["dassa-zoume", "bohicon"],
@@ -1040,7 +1040,7 @@ export const localCities: LocalCity[] = [
       {
         question: "Peut-on se voir en présentiel à Sèmè-Podji ?",
         answer:
-          "Je suis basé à Cotonou. Nous pouvons commencer par un appel et convenir d’une rencontre à Sèmè-Podji si elle est utile au projet. Je vous précise les modalités avant de la prévoir.",
+          "Je suis basé à Cotonou. Commençons par un appel pour parler de votre idée. Si vous préférez un rendez-vous à Sèmè-Podji, je vous indique mes disponibilités et les conditions du déplacement.",
       },
       {
         question:
