@@ -34,8 +34,8 @@ export const whatsappUrl = (message: string = DEFAULT_WHATSAPP_MESSAGE) =>
 // Arguments de confiance affichés sur la home (objection-killers, tous véridiques)
 export const homeTrust = [
   "Vous échangez directement avec moi",
-  "Nous fixons le calendrier ensemble",
-  "Vous récupérez le code et les accès",
+  "Vous savez ce qui sera livré et quand",
+  "Vous gardez la main sur votre projet",
 ] as const;
 
 // Section « Intérêt » (AIDA) : blocages concrets du visiteur, formulés de son

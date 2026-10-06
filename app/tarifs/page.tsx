@@ -162,6 +162,11 @@ export default async function TarifsPage() {
                       </li>
                     ))}
                   </ul>
+                  {tier.optionsNote && (
+                    <p className="mb-6 text-foreground-muted text-sm leading-relaxed">
+                      {tier.optionsNote}
+                    </p>
+                  )}
                   <div className="flex flex-wrap items-center gap-x-5 gap-y-3 mt-auto">
                     <Link
                       href={contactHref(tier.serviceSlug, "/tarifs")}

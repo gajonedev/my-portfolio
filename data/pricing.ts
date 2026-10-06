@@ -10,6 +10,7 @@ export interface PricingTier {
   delay: string;
   description: string;
   includes: string[];
+  optionsNote?: string;
   idealFor: string;
 }
 
@@ -84,9 +85,10 @@ export const pricingTiers: PricingTier[] = [
       "iOS + Android en un seul code",
       "Backend complet inclus",
       "Mode hors-ligne si nécessaire",
-      "Paiement MTN MoMo, Moov Money, Celtiis Cash intégrable",
       "Préparation et accompagnement pour la soumission aux stores",
     ],
+    optionsNote:
+      "Paiement Mobile Money : à prévoir dans le devis selon votre besoin.",
     idealFor: "Startups, commerces, services de livraison, fintech",
   },
   {

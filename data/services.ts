@@ -42,10 +42,10 @@ export const servicesDetailed: ServiceDetailed[] = [
     details:
       "Je développe votre application pour iOS et Android et je prends aussi en charge le serveur qui gère ses données. Paiements, notifications, fonctionnement hors ligne : nous choisissons ce qui est utile à votre service. Je vous accompagne ensuite pour la publication sur les stores.",
     features: [
-      "iOS et Android",
-      "Mode hors ligne selon le besoin",
-      "Aide à la publication",
-      "Serveur et données de l’application",
+      "Application iOS et Android",
+      "Serveur et gestion des données",
+      "Fonctions hors ligne si nécessaires",
+      "Accompagnement à la publication",
     ],
   },
   {
@@ -57,10 +57,10 @@ export const servicesDetailed: ServiceDetailed[] = [
     details:
       "Je vous aide à passer de commandes dispersées dans les messages à une boutique que vous pouvez gérer au même endroit : produits, paiements, stocks et livraisons. Nous choisissons les moyens de paiement selon vos clients.",
     features: [
-      "Parcours optimisé",
-      "Paiements sécurisés",
-      "Gestion stocks",
-      "Back-office",
+      "Catalogue et commande",
+      "Paiement en ligne",
+      "Suivi des stocks",
+      "Gestion des commandes et livraisons",
     ],
   },
   {
@@ -72,10 +72,10 @@ export const servicesDetailed: ServiceDetailed[] = [
     details:
       "Je développe votre logiciel de gestion, votre espace client ou votre plateforme en ligne. Nous partons de votre façon de travailler pour décider des écrans, des droits d’accès et des tâches à automatiser.",
     features: [
-      "Outils métier",
-      "Gain de temps",
-      "Temps réel",
-      "Prêt à grandir",
+      "Vos données au même endroit",
+      "Des tâches répétitives automatisées",
+      "Un suivi de votre activité",
+      "Des fonctionnalités ajoutées au fil des besoins",
     ],
   },
   {
@@ -132,10 +132,10 @@ export const servicesDetailed: ServiceDetailed[] = [
     details:
       "Lenteurs, bugs ou difficultés à modifier votre application : je commence par comprendre ce qui se passe. Je vous explique ensuite ce qui peut être corrigé, ce qui mérite d’être repris et le budget à prévoir.",
     features: [
-      "Audit complet",
-      "Plus rapide",
-      "Prêt à grandir",
-      "Accessible à tous",
+      "Les problèmes identifiés",
+      "Les corrections classées par priorité",
+      "Un budget pour les réaliser",
+      "Un rapport que vous gardez",
     ],
   },
 ];
