@@ -151,7 +151,8 @@ export default function Testimonials() {
 
       {pages > 1 && (
         <div className="flex justify-between items-center gap-4">
-          <div className="flex items-center gap-2">
+          {/* 24px hit area per dot (WCAG 2.5.8), the visible dot sits inside */}
+          <div className="flex items-center">
             {Array.from({ length: pages }, (_, index) => (
               <button
                 key={index}
@@ -159,12 +160,17 @@ export default function Testimonials() {
                 onClick={() => scrollTo(index)}
                 aria-label={`Aller au témoignage ${index + 1}`}
                 aria-current={index === active ? "true" : undefined}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  index === active
-                    ? "w-8 bg-primary"
-                    : "w-2 bg-stroke-hover hover:bg-foreground-muted"
-                }`}
-              />
+                className="group flex justify-center items-center px-1 min-w-6 h-6"
+              >
+                <span
+                  aria-hidden="true"
+                  className={`block h-2 rounded-full transition-all duration-300 ${
+                    index === active
+                      ? "w-8 bg-primary"
+                      : "w-2 bg-stroke-hover group-hover:bg-foreground-muted"
+                  }`}
+                />
+              </button>
             ))}
           </div>
           <div className="flex gap-2">
