@@ -117,7 +117,7 @@ export default function Home() {
           <SectionHeading
             kicker="Ils en parlent"
             title="Ils ont travaillé avec moi"
-            subtitle="Voici ce qu’un client et mes collaborateurs disent de notre travail ensemble."
+            subtitle="Voici ce que mes client et mes collaborateurs disent de notre travail ensemble."
           />
           <Testimonials />
         </Container>
@@ -182,7 +182,10 @@ export default function Home() {
         variant="light"
         title="Parlez-moi de votre idée"
         text="Dites-moi ce que vous voulez faire et à qui l’application servira. Je vous réponds et nous préciserons ensemble le besoin avant le devis."
-        secondary={{ href: contactHref(undefined, "/"), label: "Décrire mon projet" }}
+        secondary={{
+          href: contactHref(undefined, "/"),
+          label: "Décrire mon projet",
+        }}
       />
     </>
   );

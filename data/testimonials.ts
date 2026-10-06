@@ -15,14 +15,14 @@ export const testimonials: Testimonial[] = [
     projectSlug: "archiform",
     role: "Client, ArchiForm",
     quote:
-      "Néhémie a parfaitement compris le besoin : une page claire pour présenter la formation, un paiement simple, et tout le reste automatisé derrière. Depuis le lancement, chaque inscrit reçoit ses accès sans que j'aie à intervenir.",
+      "J'ai voulu une page simple et efficace pour présenter la formation, permettre aux apprenants de payer sans difficultés, et leur fournir un accès immédiat après le paiement et j'ai reçu un site qui fonctionne parfaitement, avec un design clair et une navigation fluide. Je vous recommande vivement Néhémie pour vos projets web et mobile.",
   },
   {
     name: "Raphaël Houngbedji",
     kind: "collaborator",
     role: "Graphiste, Collaborateur",
     quote:
-      "Travailler avec Néhémie, c'est livrer un design et voir le résultat fidèle au pixel près. Il comprend les intentions derrière les maquettes et sait les traduire en interfaces qui fonctionnent vraiment.",
+      "Travailler avec Néhémie, c'est livrer un design et voir le résultat conforme. Il comprend les maquettes et sait comment les traduire en interfaces qui fonctionnent efficacement.",
   },
   {
     name: "ChristDay Kouadio",
@@ -38,5 +38,13 @@ export const testimonials: Testimonial[] = [
     role: "Co-développeur, iVeges",
     quote:
       "Sur le projet iVeges, Néhémie a géré toute la partie application mobile et l'architecture de communication avec les capteurs. Sa capacité à connecter le hardware au software, c'est ce qui a rendu le système complet.",
+  },
+  {
+    name: "Osée Amoussou",
+    kind: "client",
+    projectSlug: "agrifresh",
+    role: "Promoteur AgriFresh",
+    quote:
+      "Je vous remercie Mr Néhémie pour le travail fait, la présentation de l'application et tout. Je ne peux que dire qu'on a bien fait de vous choisir.  ",
   },
 ];

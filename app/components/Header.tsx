@@ -106,7 +106,7 @@ export default function Header() {
         >
           <Container className="flex justify-between items-center py-4">
             <Link href="/" className="group flex items-center gap-3">
-              <span className="flex justify-center items-center bg-primary rounded-xl w-9 h-9 font-display font-bold text-primary-foreground text-sm glow-sm">
+              <span className="flex justify-center items-center bg-primary/80 rounded-xl w-9 h-9 font-display font-bold text-primary-foreground text-sm glow-sm">
                 {siteConfig.shortName}
               </span>
               <span className="flex flex-col leading-tight">
