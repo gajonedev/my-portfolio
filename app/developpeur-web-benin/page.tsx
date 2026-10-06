@@ -1,10 +1,12 @@
 import { serializeJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
 import Container from "../components/Container";
+import SectionWrapper from "../components/layout/SectionWrapper";
+import FaqList from "../components/ui/FaqList";
+import FinalCta from "../components/ui/FinalCta";
 import PageHeader from "../components/PageHeader";
-import WhatsAppCta from "../components/ui/WhatsAppCta";
 import Link from "next/link";
-import { getIcon, MapPin, CheckCircle, ChevronRight } from "@/lib/icons";
+import { getIcon, MapPin, CheckCircle } from "@/lib/icons";
 import {
   localServices,
   localAdvantages,
@@ -100,11 +102,16 @@ export default async function DeveloppeurWebBeninPage() {
       />
 
       <PageHeader
+        kicker="Bénin"
         title="Développeur Web & Mobile au Bénin"
         description="Je développe votre plateforme web ou votre application mobile depuis Cotonou, avec des échanges sur place ou à distance."
+        breadcrumbs={[
+          { label: "Accueil", href: "/" },
+          { label: "Développeur Web au Bénin" },
+        ]}
       />
 
-      <div className="py-16">
+      <SectionWrapper variant="light" className="py-16 md:py-24">
         <Container className="gap-16 grid">
           {/* Introduction SEO */}
           <section className="max-w-3xl">
@@ -159,14 +166,14 @@ export default async function DeveloppeurWebBeninPage() {
                   <Link
                     key={service.title}
                     href={`/services/${service.slug}`}
-                    className="flex gap-4 bg-card hover:bg-card/80 p-5 border border-stroke hover:border-primary/40 rounded-2xl transition"
+                    className="flex gap-4 p-5 card-interactive"
                   >
                     {card}
                   </Link>
                 ) : (
                   <div
                     key={service.title}
-                    className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
+                    className="flex gap-4 p-5 card"
                   >
                     {card}
                   </div>
@@ -175,6 +182,11 @@ export default async function DeveloppeurWebBeninPage() {
             </div>
           </section>
 
+        </Container>
+      </SectionWrapper>
+
+      <SectionWrapper variant="dark" className="py-16 md:py-24">
+        <Container className="gap-16 grid">
           {/* Villes couvertes */}
           <section>
             <h2 className="mb-6 font-semibold text-foreground text-xl">
@@ -185,7 +197,7 @@ export default async function DeveloppeurWebBeninPage() {
                 <Link
                   key={city.slug}
                   href={`/${cityFullSlug(city)}`}
-                  className="group flex items-center gap-3 bg-card/50 hover:bg-card p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
+                  className="group flex items-center gap-3 p-4 card-interactive"
                 >
                   <MapPin className="w-5 h-5 text-primary shrink-0" />
                   <div>
@@ -211,65 +223,49 @@ export default async function DeveloppeurWebBeninPage() {
             </p>
           </section>
 
+        </Container>
+      </SectionWrapper>
+
+      <SectionWrapper variant="light" className="py-16 md:py-24">
+        <Container className="gap-16 grid">
           {/* Avantages */}
-          <section className="bg-card p-8 border border-stroke rounded-3xl">
+          <section className="p-8 card">
             <h2 className="mb-6 font-semibold text-foreground text-xl">
               Ce que cela change de travailler avec moi
             </h2>
             <div className="gap-3 grid md:grid-cols-2">
               {localAdvantages.map((advantage) => (
                 <div key={advantage} className="flex items-start gap-3">
-                  <CheckCircle className="mt-0.5 w-5 h-5 text-green-500 shrink-0" />
+                  <CheckCircle className="mt-0.5 w-5 h-5 text-primary shrink-0" />
                   <p className="text-foreground-muted text-sm">{advantage}</p>
                 </div>
               ))}
             </div>
           </section>
 
+        </Container>
+      </SectionWrapper>
+
+      <SectionWrapper variant="dark" className="py-16 md:py-24">
+        <Container className="gap-16 grid">
           {/* FAQ */}
           <section>
             <h2 className="mb-6 font-semibold text-foreground text-xl">
               Questions fréquentes
             </h2>
-            <div className="flex flex-col gap-4">
-              {beninFaq.map((item) => (
-                <details
-                  key={item.question}
-                  className="group bg-card open:pb-5 border border-stroke rounded-2xl"
-                >
-                  <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
-                    {item.question}
-                    <ChevronRight className="w-5 h-5 text-foreground-muted group-open:rotate-90 transition-transform shrink-0" />
-                  </summary>
-                  <p className="px-5 text-foreground-muted text-sm leading-relaxed">
-                    {item.answer}
-                  </p>
-                </details>
-              ))}
-            </div>
+            <FaqList items={beninFaq} />
           </section>
 
-          {/* CTA */}
-          <section className="text-center">
-            <h2 className="font-semibold text-foreground text-2xl">
-              Prêt à lancer votre projet ?
-            </h2>
-            <p className="mt-3 text-foreground-muted">
-              Parlez-moi de votre projet. Je vous réponds sous 24h pour en
-              discuter.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mt-6">
-              <WhatsAppCta
-                label="Discuter de mon projet"
-                message="Bonjour Néhémie, j'ai un projet web ou mobile au Bénin et j'aimerais en discuter avec vous."
-              />
-              <Link href="/tarifs" className="btn-secondary">
-                Voir les tarifs
-              </Link>
-            </div>
-          </section>
         </Container>
-      </div>
+      </SectionWrapper>
+
+      <FinalCta
+        title="Prêt à lancer votre projet ?"
+        text="Parlez-moi de votre projet. Je vous réponds sous 24h pour en discuter."
+        whatsappLabel="Discuter de mon projet"
+        whatsappMessage="Bonjour Néhémie, j'ai un projet web ou mobile au Bénin et j'aimerais en discuter avec vous."
+        secondary={{ href: "/tarifs", label: "Voir les tarifs" }}
+      />
     </>
   );
 }

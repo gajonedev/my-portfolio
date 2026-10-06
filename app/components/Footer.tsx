@@ -31,7 +31,7 @@ export default function Footer() {
     <footer className="section-dark relative bg-background py-14 text-foreground border-stroke border-t">
       <div
         aria-hidden="true"
-        className="absolute inset-x-0 top-0 mx-auto h-px w-1/3 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50 blur-[1px]"
+        className="absolute inset-x-0 top-0 mx-auto h-px w-1/3 bg-linear-to-r from-transparent via-primary to-transparent opacity-50 blur-[1px]"
       />
       <Container className="gap-10 grid md:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col gap-4">
@@ -40,7 +40,7 @@ export default function Footer() {
               {siteConfig.shortName}
             </div>
             <span className="font-display font-semibold text-foreground text-lg">
-              Gajone Dev
+              {siteConfig.name}
             </span>
           </Link>
           <p className="max-w-md text-foreground-muted text-sm">
@@ -58,18 +58,6 @@ export default function Footer() {
                 />
               );
             })}
-            <SocialButton
-              href={`mailto:${contactInfo.email}`}
-              label="Email"
-              icon={<Mail className="h-4 w-4" />}
-              external={false}
-            />
-            <SocialButton
-              href={`tel:${contactInfo.phoneRaw}`}
-              label="Téléphone"
-              icon={<Phone className="h-4 w-4" />}
-              external={false}
-            />
           </div>
         </div>
 
@@ -154,9 +142,6 @@ export default function Footer() {
               {link.label}
             </Link>
           ))}
-          <span className="text-foreground-subtle">
-            Conçu par Néhémie Gandonou
-          </span>
         </div>
       </Container>
     </footer>

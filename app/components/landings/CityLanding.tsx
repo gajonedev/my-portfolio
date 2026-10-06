@@ -1,6 +1,9 @@
 import { serializeJsonLd } from "@/lib/seo";
 import Link from "next/link";
 import Container from "../Container";
+import SectionWrapper from "../layout/SectionWrapper";
+import FaqList from "../ui/FaqList";
+import FinalCta from "../ui/FinalCta";
 import PageHeader from "../PageHeader";
 import WhatsAppCta from "../ui/WhatsAppCta";
 import Image from "next/image";
@@ -153,40 +156,18 @@ export default function CityLanding({ city }: { city: LocalCity }) {
       />
 
       <PageHeader
+        kicker={`${city.name}, ${city.department}`}
         title={`Développeur Web & Mobile à ${city.name}`}
         description={`Je développe votre plateforme web ou votre application mobile pour votre activité à ${city.name}.`}
+        breadcrumbs={[
+          { label: "Accueil", href: "/" },
+          { label: "Développeur Web au Bénin", href: "/developpeur-web-benin" },
+          { label: city.name },
+        ]}
       />
 
-      <main className="py-16">
+      <SectionWrapper variant="light" className="py-16 md:py-24">
         <Container className="gap-16 grid">
-          {/* Fil d'ariane */}
-          <nav aria-label="Fil d'ariane" className="-mb-8">
-            <ol className="flex flex-wrap items-center gap-1.5 text-foreground-muted text-sm">
-              <li>
-                <Link href="/" className="hover:text-foreground transition">
-                  Accueil
-                </Link>
-              </li>
-              <li aria-hidden="true">
-                <ChevronRight className="w-4 h-4" />
-              </li>
-              <li>
-                <Link
-                  href="/developpeur-web-benin"
-                  className="hover:text-foreground transition"
-                >
-                  Développeur Web au Bénin
-                </Link>
-              </li>
-              <li aria-hidden="true">
-                <ChevronRight className="w-4 h-4" />
-              </li>
-              <li aria-current="page" className="text-foreground">
-                {city.name}
-              </li>
-            </ol>
-          </nav>
-
           {/* Promesse et premier passage à l'action */}
           <section className="gap-8 grid lg:grid-cols-[1.4fr_0.8fr] items-start">
             <div>
@@ -211,14 +192,14 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                 </Link>
               </div>
             </div>
-            <div className="bg-card p-6 border border-stroke rounded-2xl">
+            <div className="p-6 card">
               <p className="font-semibold text-foreground">
                 Dès le premier échange
               </p>
               <ul className="flex flex-col gap-3 mt-4">
                 {aboutGuarantees.slice(0, 3).map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm">
-                    <CheckCircle className="mt-0.5 w-4 h-4 text-green-500 shrink-0" />
+                    <CheckCircle className="mt-0.5 w-4 h-4 text-primary shrink-0" />
                     <span className="text-foreground-muted">{item}</span>
                   </li>
                 ))}
@@ -239,7 +220,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
               {visitorProblems.map(({ icon: Icon, title, description }) => (
                 <div
                   key={title}
-                  className="bg-card p-5 border border-stroke rounded-2xl"
+                  className="p-5 card"
                 >
                   <Icon className="w-6 h-6 text-primary" />
                   <h3 className="mt-4 font-semibold text-foreground">
@@ -253,6 +234,11 @@ export default function CityLanding({ city }: { city: LocalCity }) {
             </div>
           </section>
 
+        </Container>
+      </SectionWrapper>
+
+      <SectionWrapper variant="dark" className="py-16 md:py-24">
+        <Container className="gap-16 grid">
           {/* Introduction */}
           <section className="max-w-3xl">
             <h2 className="font-semibold text-foreground text-2xl">
@@ -283,7 +269,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                 return (
                   <div
                     key={opportunity.title}
-                    className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
+                    className="flex gap-4 p-5 card"
                   >
                     <div className="flex justify-center items-center bg-primary/20 rounded-xl w-12 h-12 text-primary shrink-0">
                       <Icon className="w-6 h-6" />
@@ -318,7 +304,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                   <Link
                     key={project.slug}
                     href={`/projects/${project.slug}`}
-                    className="group bg-card p-6 border border-stroke hover:border-primary/40 rounded-2xl transition"
+                    className="group p-6 card-interactive"
                   >
                     <div className="flex items-center gap-3">
                       <div className="flex justify-center items-center bg-primary/20 rounded-xl w-11 h-11 text-primary">
@@ -345,8 +331,13 @@ export default function CityLanding({ city }: { city: LocalCity }) {
             </div>
           </section>
 
+        </Container>
+      </SectionWrapper>
+
+      <SectionWrapper variant="light" className="py-16 md:py-24">
+        <Container className="gap-16 grid">
           {/* Présentation */}
-          <section className="gap-8 grid md:grid-cols-[160px_1fr] items-center bg-card p-7 border border-stroke rounded-3xl">
+          <section className="gap-8 grid md:grid-cols-[160px_1fr] items-center p-7 card">
             <Image
               src="/portrait.png"
               alt="Néhémie Gandonou, développeur web et mobile au Bénin"
@@ -437,6 +428,11 @@ export default function CityLanding({ city }: { city: LocalCity }) {
             </div>
           </section>
 
+        </Container>
+      </SectionWrapper>
+
+      <SectionWrapper variant="dark" className="py-16 md:py-24">
+        <Container className="gap-16 grid">
           {/* Services */}
           <section>
             <h2 className="mb-6 font-semibold text-foreground text-xl">
@@ -464,14 +460,14 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                   <Link
                     key={service.title}
                     href={`/services/${service.slug}`}
-                    className="flex gap-4 bg-card hover:bg-card/80 p-5 border border-stroke hover:border-primary/40 rounded-2xl transition"
+                    className="flex gap-4 p-5 card-interactive"
                   >
                     {card}
                   </Link>
                 ) : (
                   <div
                     key={service.title}
-                    className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
+                    className="flex gap-4 p-5 card"
                   >
                     {card}
                   </div>
@@ -481,7 +477,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
           </section>
 
           {/* Ancrage local */}
-          <section className="bg-card p-8 border border-stroke rounded-3xl">
+          <section className="p-8 card">
             <h2 className="mb-6 font-semibold text-foreground text-xl">
               Votre activité à {city.name}
             </h2>
@@ -508,7 +504,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                 <ul className="flex flex-col gap-2.5">
                   {localAdvantages.slice(0, 4).map((advantage) => (
                     <li key={advantage} className="flex items-start gap-3">
-                      <CheckCircle className="mt-0.5 w-4 h-4 text-green-500 shrink-0" />
+                      <CheckCircle className="mt-0.5 w-4 h-4 text-primary shrink-0" />
                       <span className="text-foreground-muted text-sm">
                         {advantage}
                       </span>
@@ -519,27 +515,17 @@ export default function CityLanding({ city }: { city: LocalCity }) {
             </div>
           </section>
 
+        </Container>
+      </SectionWrapper>
+
+      <SectionWrapper variant="light" className="py-16 md:py-24">
+        <Container className="gap-16 grid">
           {/* FAQ */}
           <section>
             <h2 className="mb-6 font-semibold text-foreground text-xl">
               Questions fréquentes, {city.name}
             </h2>
-            <div className="flex flex-col gap-4">
-              {city.faq.map((item) => (
-                <details
-                  key={item.question}
-                  className="group bg-card open:pb-5 border border-stroke rounded-2xl"
-                >
-                  <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
-                    {item.question}
-                    <ChevronRight className="w-5 h-5 text-foreground-muted group-open:rotate-90 transition-transform shrink-0" />
-                  </summary>
-                  <p className="px-5 text-foreground-muted text-sm leading-relaxed">
-                    {item.answer}
-                  </p>
-                </details>
-              ))}
-            </div>
+            <FaqList items={city.faq} />
           </section>
 
           {/* Villes voisines, maillage interne */}
@@ -553,7 +539,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                   <Link
                     key={nearby.slug}
                     href={`/${cityFullSlug(nearby)}`}
-                    className="group flex items-center gap-3 bg-card/50 hover:bg-card p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
+                    className="group flex items-center gap-3 p-4 card-interactive"
                   >
                     <MapPin className="w-5 h-5 text-primary shrink-0" />
                     <div>
@@ -580,27 +566,16 @@ export default function CityLanding({ city }: { city: LocalCity }) {
             </section>
           )}
 
-          {/* CTA */}
-          <section className="text-center">
-            <h2 className="font-semibold text-foreground text-2xl">
-              Un projet à {city.name} ?
-            </h2>
-            <p className="mt-3 text-foreground-muted">
-              Parlez-moi de votre projet. Je vous réponds sous 24h pour en
-              discuter.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mt-6">
-              <WhatsAppCta
-                label="Discuter de mon projet"
-                message={`Bonjour Néhémie, j'ai un projet à ${city.name} et j'aimerais en discuter avec vous.`}
-              />
-              <Link href="/contact" className="btn-secondary">
-                Demander un devis
-              </Link>
-            </div>
-          </section>
         </Container>
-      </main>
+      </SectionWrapper>
+
+      <FinalCta
+        title={`Un projet à ${city.name} ?`}
+        text="Parlez-moi de votre projet. Je vous réponds sous 24h pour en discuter."
+        whatsappLabel="Discuter de mon projet"
+        whatsappMessage={`Bonjour Néhémie, j'ai un projet à ${city.name} et j'aimerais en discuter avec vous.`}
+        secondary={{ href: "/contact", label: "Demander un devis" }}
+      />
     </>
   );
 }

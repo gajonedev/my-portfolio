@@ -4,22 +4,18 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
-import PriceTag from "../components/ui/PriceTag";
+import SectionWrapper from "../components/layout/SectionWrapper";
+import SectionHeading from "../components/ui/SectionHeading";
 import SpotlightCard from "../components/ui/SpotlightCard";
-import WhatsAppCta from "../components/ui/WhatsAppCta";
-import {
-  CheckCircle,
-  ArrowRight,
-  ChevronRight,
-  Quote,
-  Clock,
-} from "@/lib/icons";
+import TestimonialQuote from "../components/ui/TestimonialQuote";
+import FaqList from "../components/ui/FaqList";
+import FinalCta from "../components/ui/FinalCta";
+import { CheckCircle, Clock } from "@/lib/icons";
 import {
   pricingTiers,
   alwaysIncluded,
   priceFactors,
   pricingFaq,
-  testimonials,
   siteConfig,
 } from "@/data";
 import { getAllPosts } from "@/lib/blog";
@@ -28,6 +24,14 @@ const url = `${siteConfig.url}/tarifs`;
 
 const ACCENTS = ["#ff4d3d", "#3b82f6", "#f59e0b"];
 const CORNERS = ["tr", "tl", "br", "bl"] as const;
+const TIER_ORDER = [
+  "creation-application-web",
+  "creation-application-mobile",
+  "creation-saas-dashboard",
+  "creation-ecommerce",
+  "creation-site-vitrine",
+  "audit-optimisation",
+];
 
 // Cluster « prix » : /tarifs (pilier) renvoie vers les articles coût + paiement
 const PRICING_CLUSTER_SLUGS = [
@@ -107,259 +111,179 @@ export default async function TarifsPage() {
       />
 
       <PageHeader
+        kicker="Tarifs"
         title="Quel budget prévoir ?"
-        description="Voici mes prix de départ en FCFA. Pour votre plateforme web ou votre application mobile, je vous prépare un devis selon les fonctionnalités choisies."
+        description="Voici mes prix de départ en FCFA. Ils vous donnent un repère réaliste ; le chiffrage précis se fait sur devis, gratuit une fois votre besoin précisé."
       />
 
-      <div className="py-16">
-        <Container className="gap-14 grid">
-          {/* Intro */}
-          <section className="max-w-3xl">
-            <p className="text-foreground-muted leading-relaxed">
-              Vous cherchez un ordre de grandeur avant de vous lancer ? Le
-              voici. Les fourchettes ci-dessous vous donnent un repère réaliste
-              pour situer votre budget. Chaque projet étant unique, le chiffrage
-              précis se fait sur devis :{" "}
-              <strong className="text-foreground">
-                gratuit une fois votre besoin précisé
-              </strong>
-              .
-            </p>
-          </section>
-
-          {/* Grille tarifaire */}
-          <section>
-            <div className="gap-4 sm:gap-6 grid md:grid-cols-2 lg:grid-cols-3">
-              {[...pricingTiers]
-                .sort((a, b) => {
-                  const order = [
-                    "creation-application-web",
-                    "creation-application-mobile",
-                    "creation-saas-dashboard",
-                    "creation-ecommerce",
-                    "creation-site-vitrine",
-                    "audit-optimisation",
-                  ];
-                  return (
-                    order.indexOf(a.serviceSlug || "") -
-                    order.indexOf(b.serviceSlug || "")
-                  );
-                })
-                .map((tier, index) => (
-                  <SpotlightCard
-                    key={tier.title}
-                    corner={CORNERS[index % CORNERS.length]}
-                    cornerColor={ACCENTS[index % ACCENTS.length]}
-                    hover={false}
-                    glow={false}
-                  >
-                    <div className="flex flex-col p-6 h-full">
-                      <h2 className="font-display font-semibold text-foreground text-lg">
-                        {tier.title}
-                      </h2>
-                      <p className="mt-2 text-foreground-muted text-sm">
-                        {tier.description}
-                      </p>
-                      <div className="mt-5">
-                        <span className="block mb-2 text-foreground-muted text-xs uppercase tracking-wider">
-                          À partir de
-                        </span>
-                        <PriceTag
-                          tilt={index % 2 === 0 ? "left" : "right"}
-                          className="text-xl"
-                        >
-                          {tier.priceFrom}
-                        </PriceTag>
-                      </div>
-                      <p className="mt-3 text-foreground-muted text-xs">
-                        {tier.priceNote}
-                      </p>
-                      <p className="flex items-center gap-1.5 mt-2 text-foreground-muted text-xs">
-                        <Clock className="w-3.5 h-3.5 text-primary shrink-0" />
-                        <span>
-                          <span className="font-medium text-foreground">
-                            Délai indicatif :
-                          </span>{" "}
-                          {tier.delay}
-                        </span>
-                      </p>
-                      <ul className="flex flex-col gap-2 mt-5">
-                        {tier.includes.map((item) => (
-                          <li key={item} className="flex items-start gap-2.5">
-                            <CheckCircle className="mt-0.5 w-4 h-4 text-green-500 shrink-0" />
-                            <span className="text-foreground-muted text-sm">
-                              {item}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                      <p className="mt-4 text-foreground-muted text-xs">
-                        <span className="font-medium text-foreground">
-                          Idéal pour :
-                        </span>{" "}
-                        {tier.idealFor}
-                      </p>
-                      <Link
-                        href={contactHref(tier.serviceSlug, "/tarifs")}
-                        className="mt-5 w-fit btn-primary"
-                      >
-                        Discuter de ce projet
-                      </Link>
-                      {tier.serviceSlug && (
-                        <Link
-                          href={`/services/${tier.serviceSlug}`}
-                          className="inline-flex items-center gap-1.5 mt-auto pt-5 font-medium text-primary text-sm hover:underline"
-                        >
-                          Détails du service
-                          <ArrowRight className="w-4 h-4" />
-                        </Link>
-                      )}
-                    </div>
-                  </SpotlightCard>
-                ))}
-            </div>
-          </section>
-
-          {/* Toujours inclus */}
-          <section className="bg-card p-8 border border-stroke rounded-3xl">
-            <h2 className="mb-6 font-semibold text-foreground text-xl">
-              Toujours inclus, quel que soit le projet
-            </h2>
-            <div className="gap-3 grid md:grid-cols-2">
-              {alwaysIncluded.map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <CheckCircle className="mt-0.5 w-5 h-5 text-green-500 shrink-0" />
-                  <p className="text-foreground-muted text-sm">{item}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Facteurs de prix */}
-          <section>
-            <h2 className="mb-6 font-semibold text-foreground text-2xl">
-              Ce qui fait varier le prix
-            </h2>
-            <div className="gap-4 grid md:grid-cols-2">
-              {priceFactors.map((factor) => (
-                <div
-                  key={factor.title}
-                  className="bg-card p-5 border border-stroke rounded-2xl"
-                >
-                  <h3 className="font-semibold text-foreground">
-                    {factor.title}
-                  </h3>
+      {/* Grille tarifaire */}
+      <SectionWrapper variant="light" className="py-16 md:py-24">
+        <Container className="gap-6 grid md:grid-cols-2 lg:grid-cols-3">
+          {[...pricingTiers]
+            .sort(
+              (a, b) =>
+                TIER_ORDER.indexOf(a.serviceSlug || "") -
+                TIER_ORDER.indexOf(b.serviceSlug || ""),
+            )
+            .map((tier, index) => (
+              <SpotlightCard
+                key={tier.title}
+                corner={CORNERS[index % CORNERS.length]}
+                cornerColor={ACCENTS[index % ACCENTS.length]}
+                hover={false}
+                className="h-full [&>.spotlight-content]:h-full"
+              >
+                <article className="flex flex-col p-7 h-full">
+                  <h2 className="font-display font-semibold text-foreground text-lg">
+                    {tier.title}
+                  </h2>
                   <p className="mt-2 text-foreground-muted text-sm leading-relaxed">
-                    {factor.description}
+                    {tier.description}
                   </p>
+                  <div className="my-6 py-5 border-stroke border-y">
+                    <span className="text-foreground-muted text-xs">
+                      À partir de
+                    </span>
+                    <p className="font-display font-bold text-foreground text-3xl tracking-tight">
+                      {tier.priceFrom}
+                    </p>
+                    <p className="flex items-center gap-1.5 mt-2 text-foreground-muted text-xs">
+                      <Clock className="w-3.5 h-3.5 text-primary shrink-0" />
+                      {tier.delay}
+                    </p>
+                  </div>
+                  <ul className="flex flex-col gap-2.5 mb-8">
+                    {tier.includes.slice(0, 4).map((item) => (
+                      <li key={item} className="flex items-start gap-2.5">
+                        <CheckCircle className="mt-0.5 w-4 h-4 text-primary shrink-0" />
+                        <span className="text-foreground-muted text-sm">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex flex-wrap items-center gap-x-5 gap-y-3 mt-auto">
+                    <Link
+                      href={contactHref(tier.serviceSlug, "/tarifs")}
+                      className="btn-secondary"
+                    >
+                      Discuter de ce projet
+                    </Link>
+                    {tier.serviceSlug && (
+                      <Link
+                        href={`/services/${tier.serviceSlug}`}
+                        className="font-medium text-primary text-sm hover:underline"
+                      >
+                        Détails →
+                      </Link>
+                    )}
+                  </div>
+                </article>
+              </SpotlightCard>
+            ))}
+        </Container>
+      </SectionWrapper>
+
+      {/* Inclus + facteurs de prix */}
+      <SectionWrapper variant="dark" className="py-16 md:py-24">
+        <Container className="items-start gap-10 grid lg:grid-cols-2">
+          <div className="flex flex-col gap-8">
+            <SectionHeading
+              kicker="Inclus"
+              title="Toujours inclus, quel que soit le projet"
+            />
+            <ul className="flex flex-col gap-4 p-7 card">
+              {alwaysIncluded.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle className="mt-0.5 w-5 h-5 text-primary shrink-0" />
+                  <span className="text-foreground-muted text-sm leading-relaxed">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="flex flex-col gap-8">
+            <SectionHeading
+              kicker="Variables"
+              title="Ce qui fait varier le prix"
+            />
+            <dl className="flex flex-col divide-y divide-stroke card">
+              {priceFactors.map((factor, index) => (
+                <div key={factor.title} className="flex gap-4 p-6">
+                  <span className="font-display font-semibold text-primary text-sm tabular-nums">
+                    0{index + 1}
+                  </span>
+                  <div>
+                    <dt className="font-semibold text-foreground">
+                      {factor.title}
+                    </dt>
+                    <dd className="mt-1.5 text-foreground-muted text-sm leading-relaxed">
+                      {factor.description}
+                    </dd>
+                  </div>
                 </div>
               ))}
-            </div>
-          </section>
+            </dl>
+          </div>
+        </Container>
+      </SectionWrapper>
 
-          {/* FAQ */}
-          <section>
-            <h2 className="mb-6 font-semibold text-foreground text-xl">
-              Questions fréquentes sur les prix
-            </h2>
-            <div className="flex flex-col gap-4">
-              {pricingFaq.map((item) => (
-                <details
-                  key={item.question}
-                  className="group bg-card open:pb-5 border border-stroke rounded-2xl"
-                >
-                  <summary className="flex justify-between items-center gap-4 p-5 font-medium text-foreground cursor-pointer list-none">
-                    {item.question}
-                    <ChevronRight className="w-5 h-5 text-foreground-muted group-open:rotate-90 transition-transform shrink-0" />
-                  </summary>
-                  <p className="px-5 text-foreground-muted text-sm leading-relaxed">
-                    {item.answer}
-                  </p>
-                </details>
-              ))}
+      {/* FAQ + avis client */}
+      <SectionWrapper variant="light" className="py-16 md:py-24">
+        <Container className="gap-16 grid">
+          <div className="items-start gap-10 grid lg:grid-cols-[0.8fr_1.2fr]">
+            <div className="flex flex-col gap-6 lg:top-28 lg:sticky">
+              <SectionHeading
+                kicker="FAQ"
+                title="Questions fréquentes sur les prix"
+              />
+              <TestimonialQuote name="Rodolphe Gandonou" />
             </div>
-          </section>
+            <FaqList items={pricingFaq} />
+          </div>
 
-          {/* Cluster prix — pour approfondir */}
           {relatedPosts.length > 0 && (
-            <section>
-              <h2 className="mb-2 font-semibold text-foreground text-xl">
-                Pour approfondir avant de décider
-              </h2>
-              <p className="mb-6 text-foreground-muted text-sm">
-                Des repères détaillés sur les prix et les moyens de paiement au
-                Bénin.
-              </p>
+            <div className="flex flex-col gap-8">
+              <SectionHeading
+                kicker="Pour approfondir"
+                title="Des repères avant de décider"
+                subtitle="Les prix et les moyens de paiement au Bénin, en détail."
+              />
               <div className="gap-4 grid md:grid-cols-3">
                 {relatedPosts.map((post) => (
                   <Link
                     key={post.slug}
                     href={`/blog/${post.slug}`}
-                    className="group flex flex-col bg-card p-5 border border-stroke hover:border-primary/40 rounded-2xl transition"
+                    className="group flex flex-col p-6 card-interactive"
                   >
-                    <span className="bg-primary/10 px-3 py-1 rounded-full w-fit font-semibold text-primary text-xs">
+                    <span className="font-semibold text-primary text-xs uppercase tracking-wider">
                       {post.category}
                     </span>
-                    <h3 className="mt-3 font-medium text-foreground group-hover:text-primary transition">
+                    <h3 className="mt-3 font-semibold text-foreground group-hover:text-primary transition-colors">
                       {post.title}
                     </h3>
-                    <p className="mt-2 text-foreground-muted text-sm">
+                    <p className="mt-2 text-foreground-muted text-sm leading-relaxed">
                       {post.summary}
                     </p>
-                    <span className="flex items-center gap-1.5 mt-4 font-medium text-primary text-sm">
-                      Lire l&apos;article
-                      <ArrowRight className="w-4 h-4" />
+                    <span className="mt-auto pt-4 font-medium text-primary text-sm">
+                      Lire l’article →
                     </span>
                   </Link>
                 ))}
               </div>
-            </section>
-          )}
-
-          {/* Preuve avant le CTA */}
-          <section>
-            <SpotlightCard
-              corner="tr"
-              cornerColor="#ff4d3d"
-              hover={false}
-              glow={false}
-            >
-              <figure className="flex flex-col gap-4 p-8 md:p-10">
-                <Quote className="w-8 h-8 text-primary" />
-                <blockquote className="max-w-3xl font-body text-foreground text-lg leading-relaxed">
-                  {testimonials[0].quote}
-                </blockquote>
-                <figcaption className="font-body text-foreground-muted text-sm">
-                  <span className="font-medium text-foreground">
-                    {testimonials[0].name}
-                  </span>{" "}
-                  · {testimonials[0].role}
-                </figcaption>
-              </figure>
-            </SpotlightCard>
-          </section>
-
-          {/* CTA */}
-          <section className="text-center">
-            <h2 className="font-semibold text-foreground text-2xl">
-              Parlons de votre budget
-            </h2>
-            <p className="mt-3 text-foreground-muted">
-              Décrivez-moi votre projet en quelques lignes, je reviens vers vous
-              avec un chiffrage détaillé et sans engagement.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mt-6">
-              <WhatsAppCta
-                label="Demander mon devis sur WhatsApp"
-                message="Bonjour Néhémie, j'aimerais un devis pour mon projet."
-              />
-              <Link href="/contact" className="btn-secondary">
-                Ou via le formulaire
-              </Link>
             </div>
-          </section>
+          )}
         </Container>
-      </div>
+      </SectionWrapper>
+
+      <FinalCta
+        title="Parlons de votre budget"
+        text="Décrivez-moi votre projet en quelques lignes, je reviens vers vous avec un chiffrage détaillé et sans engagement."
+        whatsappLabel="Demander mon devis"
+        whatsappMessage="Bonjour Néhémie, j'aimerais un devis pour mon projet."
+        secondary={{ href: "/contact", label: "Passer par le formulaire" }}
+      />
     </>
   );
 }

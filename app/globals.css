@@ -131,6 +131,35 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
+/* ---- Card system : two variants only ----
+   .card             static surface (lists, FAQ, facts)
+   .card-interactive whole-card link (hover : coral edge + 2px lift)
+   Feature cards with a corner light use <SpotlightCard>. */
+@utility card {
+  border: 1px solid var(--stroke);
+  border-radius: 1.25rem;
+  background-color: var(--card);
+}
+@utility card-interactive {
+  border: 1px solid var(--stroke);
+  border-radius: 1.25rem;
+  background-color: var(--card);
+  transition:
+    border-color 0.25s ease,
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.25s ease;
+  &:hover {
+    border-color: color-mix(in srgb, var(--primary) 45%, transparent);
+    transform: translateY(-2px);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.14);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
 /* ============================================================
    BASE
    ============================================================ */
@@ -320,45 +349,8 @@ h6 {
   background-size: 22px 22px;
 }
 
-/* Border-beam : two glowing traces (blue + coral) circulate around a card's
-   border at irregular speed — Huly-style. Wrap the card in .beam-frame. */
-@property --beam-angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-/* Irregular cadence: bursts of speed punctuated by near-stops. Angle is
-   strictly increasing so the loop stays seamless; the per-segment deltas
-   create the fast / slow / almost-frozen / dash rhythm. */
-@keyframes beam-rotate {
-  0% {
-    --beam-angle: 0deg;
-  }
-  11% {
-    --beam-angle: 95deg;
-  }
-  23% {
-    --beam-angle: 118deg;
-  }
-  33% {
-    --beam-angle: 205deg;
-  }
-  46% {
-    --beam-angle: 225deg;
-  }
-  56% {
-    --beam-angle: 300deg;
-  }
-  70% {
-    --beam-angle: 320deg;
-  }
-  82% {
-    --beam-angle: 345deg;
-  }
-  100% {
-    --beam-angle: 360deg;
-  }
-}
+/* Border-beam : two static glowing traces (blue top-left, coral bottom-right)
+   around a card's border. Pure CSS, no animation. Wrap the card in .beam-frame. */
 .beam-frame {
   position: relative;
   border-radius: 2rem;
@@ -376,7 +368,7 @@ h6 {
   border-radius: inherit;
   padding: 2px;
   background: conic-gradient(
-    from var(--beam-angle),
+    from 273deg,
     transparent 0deg,
     #60a5fa 12deg,
     #3b82f6 45deg,
@@ -394,7 +386,6 @@ h6 {
     linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
-  animation: beam-rotate 6s linear infinite;
   pointer-events: none;
 }
 .beam-frame::before {
@@ -406,13 +397,6 @@ h6 {
   filter: blur(8px);
   opacity: 0.9;
 }
-@media (prefers-reduced-motion: reduce) {
-  .beam-frame::before,
-  .beam-frame::after {
-    animation: none;
-  }
-}
-
 /* Reduce heavy blur/glow on touch devices for perf */
 @media (hover: none) {
   .glass {
@@ -555,105 +539,240 @@ h6 {
    BUTTONS & INPUTS (token-driven, used across pages)
    ============================================================ */
 
-.btn-primary {
-  position: relative;
+/* One primary action per screen; everything else is .btn-secondary or a
+   text link. */
+.btn-primary,
+.btn-secondary,
+.btn-whatsapp {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  overflow: hidden;
+  border: 1px solid transparent;
   border-radius: 9999px;
-  background-color: var(--primary);
-  padding: 0.8rem 1.6rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--primary-foreground);
-  box-shadow:
-    0 4px 20px var(--primary-glow-strong),
-    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
-  transition:
-    box-shadow 0.3s ease,
-    transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-/* keep label above the FX layers */
-.btn-primary > * {
-  position: relative;
-  z-index: 2;
-}
-/* cursor-tracked soft light */
-.btn-primary .btn-shine {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  background: radial-gradient(
-    130px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(255, 255, 255, 0.4),
-    transparent 60%
-  );
-}
-.btn-primary:hover .btn-shine {
-  opacity: 1;
-}
-/* one-shot diagonal sheen sweep on hover */
-.btn-primary::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -160%;
-  z-index: 1;
-  width: 55%;
-  height: 100%;
-  transform: skewX(-20deg);
-  background: linear-gradient(
-    100deg,
-    transparent,
-    rgba(255, 255, 255, 0.45),
-    transparent
-  );
-}
-.btn-primary:hover::after {
-  animation: btn-sheen 1.3s ease forwards;
-}
-@keyframes btn-sheen {
-  to {
-    left: 160%;
-  }
-}
-.btn-primary:hover {
-  box-shadow:
-    0 10px 34px var(--primary-glow-strong),
-    0 0 48px var(--primary-glow);
-}
-@media (prefers-reduced-motion: reduce) {
-  .btn-primary:hover::after {
-    animation: none;
-  }
-}
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  border-radius: 9999px;
-  border: 1px solid var(--stroke-hover);
-  background-color: transparent;
   padding: 0.75rem 1.5rem;
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--foreground);
+  line-height: 1.25rem;
+  white-space: nowrap;
   transition:
-    border-color 0.2s ease,
     background-color 0.2s ease,
-    color 0.2s ease;
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.3s ease,
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-secondary:hover,
+.btn-whatsapp:hover {
+  transform: translateY(-1px);
+}
+.btn-secondary:active,
+.btn-whatsapp:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ---- Primary : signature button ----
+   Idle   : a white light trace orbits the border (CSS only, every .btn-primary)
+   Hover  : glow ring, magnetic pull, inner spotlight, letters roll, icon tilts
+   Press  : ripple burst from the pointer
+   --tx/--ty/--mx/--my are set by GlowButton; plain links fall back gracefully. */
+@property --btn-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+@keyframes btn-orbit {
+  to {
+    --btn-angle: 360deg;
+  }
+}
+.btn-primary {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-width: 1.5px;
+  color: var(--primary-foreground);
+  background:
+    linear-gradient(180deg, var(--primary-strong), var(--primary))
+      padding-box,
+    conic-gradient(
+        from var(--btn-angle),
+        transparent 0deg 240deg,
+        rgba(255, 255, 255, 0.2) 285deg,
+        #ffffff 335deg,
+        rgba(255, 255, 255, 0.2) 352deg,
+        transparent 360deg
+      )
+      border-box,
+    linear-gradient(var(--primary), var(--primary)) border-box;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.28) inset,
+    0 6px 22px var(--primary-glow-strong);
+  transform: translate(var(--tx, 0px), var(--ty, 0px));
+  animation: btn-orbit 3.6s linear infinite;
+}
+.btn-primary .btn-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-primary .btn-label > svg {
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.btn-spot {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    110px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(255, 255, 255, 0.42),
+    transparent 65%
+  );
+  transition: opacity 0.3s ease;
+}
+.btn-ripple {
+  position: absolute;
+  z-index: -1;
+  width: 12px;
+  height: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.55);
+  pointer-events: none;
+  animation: btn-ripple 0.65s ease-out forwards;
+}
+@keyframes btn-ripple {
+  to {
+    transform: scale(32);
+    opacity: 0;
+  }
+}
+
+/* Letter roll : each glyph carries its own copy one line below (text-shadow)
+   and slides up with a small stagger. */
+.btn-roll {
+  display: inline-flex;
+  white-space: pre;
+}
+.btn-roll-char {
+  display: inline-block;
+  height: 1.25rem;
+  overflow: hidden;
+  line-height: 1.25rem;
+}
+.btn-roll-char > span {
+  display: block;
+  text-shadow: 0 1.25rem currentColor;
+  transition: transform 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+  transition-delay: calc(var(--i) * 16ms);
+}
+
+@media (hover: hover) {
+  .btn-primary:hover {
+    transform: translate(var(--tx, 0px), calc(var(--ty, 0px) - 2px));
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.28) inset,
+      0 0 0 4px var(--primary-glow),
+      0 14px 40px var(--primary-glow-strong);
+  }
+  .btn-primary:hover .btn-spot {
+    opacity: 1;
+  }
+  .btn-primary:hover .btn-roll-char > span {
+    transform: translateY(-1.25rem);
+  }
+  .btn-primary:hover .btn-label > svg {
+    transform: rotate(-12deg) scale(1.18);
+  }
+}
+.btn-primary:active {
+  transform: translate(var(--tx, 0px), var(--ty, 0px)) scale(0.97);
+}
+.btn-primary:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  animation: none;
+  transform: none;
+  box-shadow: none;
+}
+.btn-primary:disabled .btn-spot {
+  opacity: 0;
+}
+.btn-primary:disabled .btn-roll-char > span,
+.btn-primary:disabled .btn-label > svg {
+  transform: none;
+}
+
+.btn-secondary {
+  border-color: var(--stroke-hover);
+  background-color: var(--background-soft);
+  color: var(--foreground);
 }
 .btn-secondary:hover {
   border-color: var(--primary);
   color: var(--primary);
-  background-color: var(--primary-glow);
+}
+
+.btn-whatsapp {
+  background-color: #25d366;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.18);
+}
+.btn-whatsapp:hover {
+  background-color: #20bd5a;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.28);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary,
+  .btn-secondary,
+  .btn-whatsapp {
+    animation: none;
+    transform: none !important;
+  }
+  .btn-roll-char > span,
+  .btn-primary .btn-label > svg {
+    transform: none !important;
+  }
+}
+
+/* ---- Project cover placeholder (no screenshot yet) ---- */
+.project-cover-fallback {
+  background:
+    radial-gradient(
+      circle at 20% 15%,
+      color-mix(in srgb, var(--cover, var(--primary)) 28%, transparent),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 85% 90%,
+      color-mix(in srgb, var(--cover, var(--primary)) 16%, transparent),
+      transparent 50%
+    ),
+    radial-gradient(var(--dot-color) 1px, transparent 1px) 0 0 / 18px 18px,
+    var(--background-muted);
+}
+
+/* Gallery stage cross-fade when switching screenshot */
+@keyframes gallery-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.gallery-fade {
+  animation: gallery-in 0.25s ease-out;
+}
+
+/* Lightbox (<dialog>) backdrop */
+.gallery-lightbox::backdrop {
+  background: rgba(5, 5, 7, 0.92);
+  backdrop-filter: blur(6px);
 }
 
 .input,

@@ -3,10 +3,11 @@ import Container from "./components/Container";
 import Hero from "./components/sections/Hero";
 import SectionWrapper from "./components/layout/SectionWrapper";
 import SectionHeading from "./components/ui/SectionHeading";
-import ProjectGallery from "./components/ui/ProjectGallery";
+import ProjectCard from "./components/ui/ProjectCard";
 import SpotlightCard from "./components/ui/SpotlightCard";
 import Testimonials from "./components/ui/Testimonials";
-import WhatsAppCta from "./components/ui/WhatsAppCta";
+import FinalCta from "./components/ui/FinalCta";
+import { CheckCircle } from "@/lib/icons";
 import {
   projectsPreview,
   servicesPreview,
@@ -41,43 +42,13 @@ export default function Home() {
               Tous les projets →
             </Link>
           </div>
-          <div className="gap-6 grid lg:grid-cols-3">
+          <div className="gap-6 grid md:grid-cols-2 lg:grid-cols-3">
             {projectsPreview.map((project, index) => (
-              <SpotlightCard
+              <ProjectCard
                 key={project.slug}
-                corner={CORNERS[index % CORNERS.length]}
-                cornerColor={ACCENTS[index % ACCENTS.length]}
-                hover={false}
-                glow={false}
-                className="h-full [&>.spotlight-content]:h-full"
-              >
-                <article className="flex flex-col gap-4 p-4 h-full">
-                  <ProjectGallery images={project.images} name={project.name} />
-                  <div className="flex justify-between items-center gap-2">
-                    <span className="text-foreground-muted text-xs">
-                      {project.sector}
-                    </span>
-                    {/* <ProjectStatus status={project.status} /> */}
-                  </div>
-                  <h3 className="font-semibold text-xl">
-                    <Link
-                      href={`/projects/${project.slug}`}
-                      className="hover:text-primary"
-                    >
-                      {project.name}
-                    </Link>
-                  </h3>
-                  <p className="text-foreground-muted text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="mt-auto font-medium text-primary text-sm hover:underline"
-                  >
-                    Découvrir le projet →
-                  </Link>
-                </article>
-              </SpotlightCard>
+                project={project}
+                accent={ACCENTS[index % ACCENTS.length]}
+              />
             ))}
           </div>
         </Container>
@@ -117,7 +88,7 @@ export default function Home() {
                   <div className="flex flex-wrap items-center gap-4 mt-auto">
                     <Link
                       href={contactHref(service.slug, "/")}
-                      className="btn-primary"
+                      className="btn-secondary"
                     >
                       Parler de ce projet
                     </Link>
@@ -195,7 +166,10 @@ export default function Home() {
               </div>
               <ul className="gap-2 grid text-foreground-muted text-sm">
                 {aboutGuarantees.map((item) => (
-                  <li key={item}>✓ {item}</li>
+                  <li key={item} className="flex items-start gap-2.5">
+                    <CheckCircle className="mt-0.5 w-4 h-4 text-primary shrink-0" />
+                    {item}
+                  </li>
                 ))}
               </ul>
             </div>
@@ -203,22 +177,13 @@ export default function Home() {
         </Container>
       </SectionWrapper>
 
-      <SectionWrapper variant="light" id="contact" className="py-16 md:py-20">
-        <Container className="flex flex-col items-center gap-6 text-center">
-          <SectionHeading
-            align="center"
-            kicker="Votre projet"
-            title="Parlez-moi de votre idée"
-            subtitle="Dites-moi ce que vous voulez faire et à qui l’application servira. Je vous réponds et nous préciserons ensemble le besoin avant le devis."
-          />
-          <div className="flex flex-wrap justify-center gap-4">
-            <WhatsAppCta label="Discuter sur WhatsApp" />
-            <Link href={contactHref(undefined, "/")} className="btn-secondary">
-              Décrire mon projet
-            </Link>
-          </div>
-        </Container>
-      </SectionWrapper>
+      <FinalCta
+        id="contact"
+        variant="light"
+        title="Parlez-moi de votre idée"
+        text="Dites-moi ce que vous voulez faire et à qui l’application servira. Je vous réponds et nous préciserons ensemble le besoin avant le devis."
+        secondary={{ href: contactHref(undefined, "/"), label: "Décrire mon projet" }}
+      />
     </>
   );
 }

@@ -9,10 +9,12 @@ import Container from "../../components/Container";
 import PageHeader from "../../components/PageHeader";
 import TechBadge from "../../components/ui/TechBadge";
 import ProjectStatus from "../../components/ui/ProjectStatus";
-import WhatsAppCta from "../../components/ui/WhatsAppCta";
+import SectionWrapper from "../../components/layout/SectionWrapper";
+import SectionHeading from "../../components/ui/SectionHeading";
+import ProjectCard from "../../components/ui/ProjectCard";
+import FinalCta from "../../components/ui/FinalCta";
 import {
   CheckCircle,
-  ChevronRight,
   ExternalLink,
   Lightbulb,
 } from "@/lib/icons";
@@ -101,6 +103,7 @@ export default async function ProjectCaseStudyPage({
     ],
   };
 
+  const hasShots = project.images.some((image) => image.src);
   const otherProjects = projects
     .filter((p) => p.slug !== project.slug && p.caseStudy)
     .slice(0, 3);
@@ -113,227 +116,215 @@ export default async function ProjectCaseStudyPage({
       />
 
       <PageHeader
-        title={`${project.name}, Étude de cas`}
+        kicker="Étude de cas"
+        title={project.name}
         description={project.description}
-      />
-
-      <div className="py-16">
-        <Container className="gap-14 grid">
-          {/* Fil d'ariane */}
-          <nav aria-label="Fil d'ariane" className="-mb-6">
-            <ol className="flex flex-wrap items-center gap-1.5 text-foreground-muted text-sm">
-              <li>
-                <Link href="/" className="hover:text-foreground transition">
-                  Accueil
-                </Link>
-              </li>
-              <li aria-hidden="true">
-                <ChevronRight className="w-4 h-4" />
-              </li>
-              <li>
-                <Link
-                  href="/projects"
-                  className="hover:text-foreground transition"
-                >
-                  Projets
-                </Link>
-              </li>
-              <li aria-hidden="true">
-                <ChevronRight className="w-4 h-4" />
-              </li>
-              <li aria-current="page" className="text-foreground">
-                {project.name}
-              </li>
-            </ol>
-          </nav>
-
-          {/* Fiche projet */}
-          <section className="flex flex-wrap items-center gap-4 bg-card p-6 border border-stroke rounded-2xl">
-            <span className="bg-primary/10 px-4 py-1 rounded-full font-body text-primary text-xs">
-              {project.sector}
-            </span>
-            <ProjectStatus status={project.status} />
-            {project.year && (
-              <span className="text-foreground-muted text-sm">
-                {project.year}
-              </span>
-            )}
-            <div className="flex flex-wrap gap-2">
-              {project.tech.map((t) => (
-                <TechBadge key={t}>{t}</TechBadge>
-              ))}
-            </div>
-            {project.status === "live" && project.link && (
-              <Link
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-1.5 ml-auto text-primary text-sm hover:underline"
-              >
-                Voir le projet
-                <ExternalLink className="w-3.5 h-3.5" />
-              </Link>
-            )}
-          </section>
-
-          <section className="grid gap-5">
-            <h2 className="text-2xl font-semibold">Le produit en images</h2>
-            <ProjectGallery images={project.images} name={project.name} />
-            <p className="text-sm leading-relaxed text-foreground-muted">
-              <span className="font-medium text-foreground">Mon rôle : </span>
-              {project.role}
-            </p>
-          </section>
-
-          {/* Contexte */}
-          <section className="max-w-3xl">
-            <h2 className="font-semibold text-foreground text-2xl">
-              Le point de départ
-            </h2>
-            <p className="mt-4 text-foreground-muted leading-relaxed">
-              {caseStudy.context}
-            </p>
-          </section>
-
-          {/* Problème */}
-          <section className="max-w-3xl">
-            <h2 className="font-semibold text-foreground text-2xl">
-              Le besoin à résoudre
-            </h2>
-            <p className="mt-4 text-foreground-muted leading-relaxed">
-              {caseStudy.problem}
-            </p>
-          </section>
-
-          {/* Solution */}
-          <section>
-            <h2 className="mb-6 font-semibold text-foreground text-2xl">
-              Ce que j’ai développé
-            </h2>
-            <div className="flex flex-col gap-4 max-w-3xl">
-              {caseStudy.solution.map((step, index) => (
-                <div
-                  key={step.slice(0, 40)}
-                  className="flex gap-4 bg-card p-5 border border-stroke rounded-2xl"
-                >
-                  <div className="flex justify-center items-center bg-primary/15 rounded-xl w-10 h-10 font-display font-semibold text-primary shrink-0">
-                    {index + 1}
-                  </div>
-                  <p className="text-foreground-muted text-sm leading-relaxed">
-                    {step}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Résultats */}
-          <SpotlightCard
-            corner="tr"
-            cornerColor="#3b82f6"
-            hover={false}
-            glow={false}
-          >
-            <section className="p-8">
-              <h2 className="mb-6 font-semibold text-foreground text-xl">
-                {project.status === "live"
-                  ? "Fonctionnalités réalisées"
-                  : "Fonctionnalités du prototype"}
-              </h2>
-
-              <div className="flex flex-col gap-3">
-                {caseStudy.results.map((result) => (
-                  <div
-                    key={result.slice(0, 40)}
-                    className="flex items-start gap-3"
-                  >
-                    <CheckCircle className="mt-0.5 w-5 h-5 text-green-500 shrink-0" />
-                    <p className="text-foreground-muted text-sm leading-relaxed">
-                      {result}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </section>
-          </SpotlightCard>
-
-          {/* Points techniques marquants */}
-          {caseStudy.highlights && caseStudy.highlights.length > 0 && (
-            <section className="max-w-3xl">
-              <h2 className="mb-6 font-semibold text-foreground text-xl">
-                Les choix que j’ai faits
-              </h2>
-              <div className="flex flex-col gap-3">
-                {caseStudy.highlights.map((highlight) => (
-                  <div
-                    key={highlight.slice(0, 40)}
-                    className="flex items-start gap-3"
-                  >
-                    <Lightbulb className="mt-0.5 w-5 h-5 text-primary shrink-0" />
-                    <p className="text-foreground-muted text-sm leading-relaxed">
-                      {highlight}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </section>
+        breadcrumbs={[
+          { label: "Accueil", href: "/" },
+          { label: "Projets", href: "/projects" },
+          { label: project.name },
+        ]}
+      >
+        <div className="flex flex-wrap items-center gap-3">
+          <ProjectStatus status={project.status} />
+          <span className="text-foreground-muted text-sm">
+            {project.sector}
+          </span>
+          {project.status === "live" && project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-primary text-sm hover:underline"
+            >
+              Voir le projet en ligne
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
           )}
+        </div>
+      </PageHeader>
 
-          {/* D’autres projets sur lesquels j’ai travaillé */}
-          <section>
-            <h2 className="mb-6 font-semibold text-foreground text-xl">
-              D’autres projets sur lesquels j’ai travaillé
-            </h2>
-            <div className="gap-3 grid grid-cols-1 sm:grid-cols-3">
-              {otherProjects.map((other) => (
-                <Link
-                  key={other.slug}
-                  href={`/projects/${other.slug}`}
-                  className="group bg-card/50 hover:bg-card p-4 border border-stroke hover:border-primary/40 rounded-xl transition"
-                >
-                  <p className="font-medium text-foreground group-hover:text-primary transition">
-                    {other.name}
-                  </p>
-                  <p className="mt-1 text-foreground-muted text-xs">
-                    {other.sector}
-                  </p>
-                </Link>
-              ))}
-            </div>
-          </section>
+      {hasShots && (
+        <SectionWrapper variant="light" className="py-12 md:py-16">
+          <Container>
+            <ProjectGallery images={project.images} name={project.name} />
+          </Container>
+        </SectionWrapper>
+      )}
 
-          {/* CTA */}
-          <section className="text-center">
-            <h2 className="font-semibold text-foreground text-2xl">
-              Un projet similaire en tête ?
-            </h2>
-            <p className="mt-3 text-foreground-muted">
-              Parlez-moi de votre idée. Je vous réponds sous 24h pour regarder
-              ce que nous pouvons construire.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 mt-6">
-              <WhatsAppCta
-                label="Discuter de mon projet"
-                message={`Bonjour Néhémie, j'ai vu l'étude de cas « ${project.name} » et j'ai un projet similaire à discuter.`}
-              />
-              <Link
-                href={contactHref(
-                  project.tech.includes("Flutter")
-                    ? "creation-application-mobile"
-                    : "creation-application-web",
-                  `/projects/${project.slug}`,
-                )}
-                className="btn-primary"
-              >
-                Décrire un projet similaire
-              </Link>
-              <Link href="/services" className="btn-secondary">
-                Voir les services
-              </Link>
-            </div>
-          </section>
+      {/* Récit + fiche */}
+      <SectionWrapper variant="dark" className="py-16 md:py-24">
+        <Container className="items-start gap-12 grid lg:grid-cols-[1fr_20rem]">
+          <div className="flex flex-col gap-14 min-w-0">
+            <section>
+              <h2 className="font-semibold text-foreground text-2xl">
+                Le point de départ
+              </h2>
+              <p className="mt-4 text-foreground-muted leading-relaxed">
+                {caseStudy.context}
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-semibold text-foreground text-2xl">
+                Le besoin à résoudre
+              </h2>
+              <p className="mt-4 text-foreground-muted leading-relaxed">
+                {caseStudy.problem}
+              </p>
+            </section>
+
+            <section>
+              <h2 className="mb-6 font-semibold text-foreground text-2xl">
+                Ce que j’ai développé
+              </h2>
+              <ol className="flex flex-col divide-y divide-stroke card">
+                {caseStudy.solution.map((step, index) => (
+                  <li key={step.slice(0, 40)} className="flex gap-4 p-5">
+                    <span className="font-display font-semibold text-primary text-sm tabular-nums">
+                      0{index + 1}
+                    </span>
+                    <p className="text-foreground-muted text-sm leading-relaxed">
+                      {step}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            </section>
+
+            <SpotlightCard
+              corner="tr"
+              cornerColor="#3b82f6"
+              hover={false}
+              glow={false}
+            >
+              <section className="p-8">
+                <h2 className="mb-6 font-semibold text-foreground text-xl">
+                  {project.status === "live"
+                    ? "Fonctionnalités réalisées"
+                    : "Fonctionnalités du prototype"}
+                </h2>
+                <ul className="flex flex-col gap-3">
+                  {caseStudy.results.map((result) => (
+                    <li
+                      key={result.slice(0, 40)}
+                      className="flex items-start gap-3"
+                    >
+                      <CheckCircle className="mt-0.5 w-5 h-5 text-primary shrink-0" />
+                      <p className="text-foreground-muted text-sm leading-relaxed">
+                        {result}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </SpotlightCard>
+
+            {caseStudy.highlights && caseStudy.highlights.length > 0 && (
+              <section>
+                <h2 className="mb-6 font-semibold text-foreground text-xl">
+                  Les choix que j’ai faits
+                </h2>
+                <ul className="flex flex-col gap-3">
+                  {caseStudy.highlights.map((highlight) => (
+                    <li
+                      key={highlight.slice(0, 40)}
+                      className="flex items-start gap-3"
+                    >
+                      <Lightbulb className="mt-0.5 w-5 h-5 text-primary shrink-0" />
+                      <p className="text-foreground-muted text-sm leading-relaxed">
+                        {highlight}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
+          </div>
+
+          <aside className="lg:top-28 lg:sticky lg:order-none -order-1">
+            <dl className="flex flex-col divide-y divide-stroke text-sm card">
+              <div className="p-5">
+                <dt className="text-foreground-muted text-xs uppercase tracking-wider">
+                  Mon rôle
+                </dt>
+                <dd className="mt-2 text-foreground leading-relaxed">
+                  {project.role}
+                </dd>
+              </div>
+              <div className="gap-4 grid grid-cols-2 p-5">
+                <div>
+                  <dt className="text-foreground-muted text-xs uppercase tracking-wider">
+                    Année
+                  </dt>
+                  <dd className="mt-2 text-foreground">{project.year}</dd>
+                </div>
+                <div>
+                  <dt className="text-foreground-muted text-xs uppercase tracking-wider">
+                    Secteur
+                  </dt>
+                  <dd className="mt-2 text-foreground">
+                    {project.sector.split("•")[0].trim()}
+                  </dd>
+                </div>
+              </div>
+              <div className="p-5">
+                <dt className="text-foreground-muted text-xs uppercase tracking-wider">
+                  Technologies
+                </dt>
+                <dd className="flex flex-wrap gap-2 mt-3">
+                  {project.tech.map((t) => (
+                    <TechBadge key={t}>{t}</TechBadge>
+                  ))}
+                </dd>
+              </div>
+            </dl>
+          </aside>
         </Container>
-      </div>
+      </SectionWrapper>
+
+      {/* Autres projets */}
+      <SectionWrapper variant="light" className="py-16 md:py-24">
+        <Container className="gap-10 grid">
+          <div className="flex flex-wrap justify-between items-end gap-4">
+            <SectionHeading
+              kicker="Projets"
+              title="D’autres projets sur lesquels j’ai travaillé"
+            />
+            <Link
+              href="/projects"
+              className="font-medium text-primary text-sm hover:underline"
+            >
+              Tous les projets →
+            </Link>
+          </div>
+          <div className="gap-6 grid md:grid-cols-2 lg:grid-cols-3">
+            {otherProjects.map((other, index) => (
+              <ProjectCard
+                key={other.slug}
+                project={other}
+                accent={["#ff4d3d", "#3b82f6", "#f59e0b"][index % 3]}
+              />
+            ))}
+          </div>
+        </Container>
+      </SectionWrapper>
+
+      <FinalCta
+        title="Un projet similaire en tête ?"
+        text="Parlez-moi de votre idée. Je vous réponds sous 24h pour regarder ce que nous pouvons construire."
+        whatsappLabel="Discuter de mon projet"
+        whatsappMessage={`Bonjour Néhémie, j'ai vu l'étude de cas « ${project.name} » et j'ai un projet similaire à discuter.`}
+        secondary={{
+          href: contactHref(
+            project.tech.includes("Flutter")
+              ? "creation-application-mobile"
+              : "creation-application-web",
+            `/projects/${project.slug}`,
+          ),
+          label: "Décrire un projet similaire",
+        }}
+      />
     </>
   );
 }

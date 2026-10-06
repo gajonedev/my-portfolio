@@ -1,10 +1,5 @@
-"use client";
-
-import { m } from "framer-motion";
 import Link from "next/link";
 import type { ReactNode } from "react";
-
-const MotionLink = m.create(Link);
 
 interface OutlineButtonProps {
   children: ReactNode;
@@ -16,9 +11,7 @@ interface OutlineButtonProps {
   ariaLabel?: string;
 }
 
-const hover = { scale: 1.02 };
-const tap = { scale: 0.98 };
-
+// Secondary action. Hover / press states live in .btn-secondary (pure CSS).
 export default function OutlineButton({
   children,
   href,
@@ -33,28 +26,24 @@ export default function OutlineButton({
       ? { href, target: "_blank", rel: "noopener noreferrer" }
       : { href };
     return (
-      <MotionLink
+      <Link
         {...linkProps}
         aria-label={ariaLabel}
         className={`btn-secondary ${className}`}
-        whileHover={hover}
-        whileTap={tap}
       >
         {children}
-      </MotionLink>
+      </Link>
     );
   }
 
   return (
-    <m.button
+    <button
       type={type}
       onClick={onClick}
       aria-label={ariaLabel}
       className={`btn-secondary ${className}`}
-      whileHover={hover}
-      whileTap={tap}
     >
       {children}
-    </m.button>
+    </button>
   );
 }
