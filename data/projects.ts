@@ -36,6 +36,7 @@ export interface Project {
   /** Résumé détaillé — page Projets */
   summary: string;
   tech: string[];
+  skills?: string[];
   link?: string;
   year?: string;
   status?: "live" | "preview" | "in-dev";
@@ -50,6 +51,65 @@ export function getProjectBySlug(slug: string): Project | undefined {
 }
 
 export const projects: Project[] = [
+  // {
+  //   slug: "agrifresh",
+  //   name: "AgriFresh",
+  //   sector: "Agriculture • Marketplace",
+  //   iconName: "Sprout",
+  //   status: "in-dev",
+  //   role:
+  //     "Je conçois et développe la solution pour AgroConnect, de l’architecture technique aux applications. Je prendrai aussi en charge sa mise en production.",
+  //   description:
+  //     "Pour AgroConnect, je développe une plateforme qui met en relation les producteurs de produits frais et les consommateurs au Bénin, avec une application mobile et un espace de gestion web.",
+  //   summary:
+  //     "Avec AgriFresh, AgroConnect souhaite rapprocher les producteurs de produits frais des consommateurs au Bénin. Je développe l’application mobile, le dashboard d’administration et le backend qui les relie. Le projet est en cours de développement.",
+  //   tech: [],
+  //   skills: [
+  //     "Développement mobile",
+  //     "Développement web",
+  //     "Backend / API",
+  //     "Base de données",
+  //     "Authentification",
+  //     "Gestion administrative",
+  //     "Intégration de services externes",
+  //     "Déploiement",
+  //   ],
+  //   images: [
+  //     {
+  //       alt: "Application mobile AgriFresh destinée aux producteurs et aux consommateurs",
+  //       src: "/projects/agrifresh/mobile-placeholder.svg",
+  //       caption: "Application mobile",
+  //     },
+  //     {
+  //       alt: "Dashboard web d’administration et de gestion d’AgriFresh",
+  //       src: "/projects/agrifresh/dashboard-placeholder.svg",
+  //       caption: "Dashboard d’administration",
+  //     },
+  //   ],
+  //   caseStudy: {
+  //     context:
+  //       "AgroConnect m’a confié la conception et le développement d’AgriFresh, une marketplace de produits frais pour le secteur agroalimentaire béninois. Je travaille sur les deux volets du projet : l’application destinée aux utilisateurs et les outils de gestion de la plateforme.",
+  //     problem:
+  //       "Le besoin est de faciliter les échanges entre producteurs et consommateurs, tout en donnant à AgroConnect un espace central pour administrer la plateforme. L’application mobile et le dashboard doivent partager les mêmes données pour que l’équipe puisse suivre l’activité.",
+  //     solution: [
+  //       "Je conçois l’architecture et le backend communs à l’application mobile et au dashboard web.",
+  //       "Je développe l’application mobile pour la mise en relation entre producteurs de produits frais et consommateurs.",
+  //       "Je construis le dashboard web pour qu’AgroConnect administre la plateforme et gère son activité au même endroit.",
+  //       "Je développe la gestion des données et l’authentification, puis j’intègre les services de notifications et de SMS.",
+  //       "Je prépare le déploiement. La mise en production reste une étape à venir.",
+  //     ],
+  //     results: [
+  //       "Une application mobile pour les utilisateurs de la marketplace.",
+  //       "Un dashboard web pour l’administration et la gestion de la plateforme.",
+  //       "Un backend centralisé pour partager les données entre les deux applications.",
+  //       "Un système de notifications et de SMS pour les échanges avec les utilisateurs.",
+  //     ],
+  //     highlights: [
+  //       "Je développe les interfaces mobile et web autour d’un backend commun pour garder les données cohérentes.",
+  //       "Je prends en charge la conception et le développement de l’ensemble, avec un déploiement prévu à l’issue du développement.",
+  //     ],
+  //   },
+  // },
   {
     slug: "weman-lms",
     role: "Je conçois et développe la plateforme web, les paiements et les traitements automatiques.",

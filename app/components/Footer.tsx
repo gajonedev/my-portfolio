@@ -22,6 +22,13 @@ const socialIconMap: Record<
   Twitter: Twitter,
 };
 
+// Brand fill revealed on hover (icon color on top keeps >= 4.5:1).
+const socialBrands: Record<string, { color: string; foreground: string }> = {
+  GitHub: { color: "#f0f6fc", foreground: "#0d1117" },
+  LinkedIn: { color: "#0a66c2", foreground: "#ffffff" },
+  Twitter: { color: "#1d6fb8", foreground: "#ffffff" },
+};
+
 const featuredCities = featuredCitySlugs
   .map((slug) => localCities.find((city) => city.slug === slug))
   .filter((city) => city !== undefined);
@@ -46,19 +53,24 @@ export default function Footer() {
           <p className="max-w-md text-foreground-muted text-sm">
             {siteConfig.description}
           </p>
-          <div className="flex gap-3">
+          <ul className="social-dock">
             {socialLinks.map((social) => {
               const Icon = socialIconMap[social.name];
+              const brand = socialBrands[social.name];
               return (
-                <SocialButton
-                  key={social.name}
-                  href={social.href}
-                  label={social.name}
-                  icon={<Icon className="h-4 w-4" />}
-                />
+                <li key={social.name}>
+                  <SocialButton
+                    href={social.href}
+                    label={social.name}
+                    handle={social.username}
+                    brand={brand?.color}
+                    brandForeground={brand?.foreground}
+                    icon={<Icon className="w-[18px] h-[18px]" />}
+                  />
+                </li>
               );
             })}
-          </div>
+          </ul>
         </div>
 
         <div className="flex flex-col gap-4">

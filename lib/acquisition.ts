@@ -24,6 +24,7 @@ export function serviceFromPath(path: string) {
   const service = validService(slug);
   if (service) return service;
   if (path.startsWith("/projects/")) {
+    if (slug === "agrifresh") return "creation-ecommerce";
     if (
       ["afcom", "afreel", "fintech", "smartvilla", "iveges"].includes(
         slug || "",

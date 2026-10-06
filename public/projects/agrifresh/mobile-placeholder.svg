@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#111318"/>
+  <rect x="670" y="120" width="260" height="430" rx="36" fill="#1b2025" stroke="#64756b" stroke-width="3"/>
+  <rect x="755" y="143" width="90" height="8" rx="4" fill="#64756b"/>
+  <path d="M800 360c-70-5-80-65-70-100 65 0 100 30 70 100Zm0 0c0-75 40-105 90-100 0 55-25 95-90 100Z" fill="none" stroke="#8ab398" stroke-width="5"/>
+  <g fill="#eef1ef" font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="800" y="640" font-size="42">AgriFresh</text>
+    <text x="800" y="704" font-size="28">Application mobile</text>
+    <text x="800" y="756" font-size="24" fill="#9ca9a1">Capture à venir</text>
+  </g>
+</svg>

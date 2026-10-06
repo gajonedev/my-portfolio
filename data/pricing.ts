@@ -82,7 +82,7 @@ export const pricingTiers: PricingTier[] = [
     description:
       "Je développe votre application pour iOS et Android et je vous accompagne pour la proposer sur les stores.",
     includes: [
-      "iOS + Android en un seul code",
+      "iOS + Android",
       "Backend complet inclus",
       "Mode hors-ligne si nécessaire",
       "Préparation et accompagnement pour la soumission aux stores",

@@ -39,12 +39,12 @@ export const testimonials: Testimonial[] = [
     quote:
       "Sur le projet iVeges, Néhémie a géré toute la partie application mobile et l'architecture de communication avec les capteurs. Sa capacité à connecter le hardware au software, c'est ce qui a rendu le système complet.",
   },
-  {
-    name: "Osée Amoussou",
-    kind: "client",
-    projectSlug: "agrifresh",
-    role: "Promoteur AgriFresh",
-    quote:
-      "Je vous remercie Mr Néhémie pour le travail fait, la présentation de l'application et tout. Je ne peux que dire qu'on a bien fait de vous choisir.  ",
-  },
+  // {
+  //   name: "Osée Amoussou",
+  //   kind: "client",
+  //   projectSlug: "agrifresh",
+  //   role: "Promoteur AgriFresh",
+  //   quote:
+  //     "Je vous remercie Mr Néhémie pour le travail fait, la présentation de l'application et tout. Je ne peux que dire qu'on a bien fait de vous choisir.  ",
+  // },
 ];

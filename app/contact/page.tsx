@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Container from "../components/Container";
 import SectionWrapper from "../components/layout/SectionWrapper";
 import PageHeader from "../components/PageHeader";
-import BottomGlow from "../components/ui/BottomGlow";
+import ContactAura from "../components/ui/ContactAura";
 import ContactForm from "../components/ui/ContactForm";
 import WhatsAppCta from "../components/ui/WhatsAppCta";
 import { Mail, Phone, MapPin, Clock } from "@/lib/icons";
@@ -51,7 +51,7 @@ export default async function ContactPage({
       <SectionWrapper variant="dark" className="py-16 md:py-20">
         <Container className="items-start gap-8 grid lg:grid-cols-[1.5fr_1fr]">
           <div className="relative bg-card border border-stroke rounded-[2rem] overflow-hidden">
-            <BottomGlow />
+            <ContactAura />
             <ContactForm
               initialService={selected}
               initialSource={source}

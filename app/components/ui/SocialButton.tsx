@@ -1,28 +1,32 @@
-"use client";
-
-import { m } from "framer-motion";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 
 interface SocialButtonProps {
   href: string;
   label: string;
-  /** Rendered icon element (color is inherited from each swap layer) */
+  /** Handle shown in the tooltip (e.g. "@gajonedev"). */
+  handle?: string;
   icon: ReactNode;
+  /** Brand fill revealed on hover, and the icon color on top of it. */
+  brand?: string;
+  brandForeground?: string;
   /** internal links (mailto/tel) shouldn't open a new tab */
   external?: boolean;
 }
 
-const easeOut = [0.16, 1, 0.3, 1] as const;
-
 /**
- * Social icon button with a compound hover: a coral fill rises from the
- * bottom, the icon barrel-rolls (current one slides up & out while a white
- * clone slides in from below), and a ring pulse radiates outward.
+ * Social icon button, pure CSS (.social-btn in globals.css). Place several in
+ * a `.social-dock` list for the macOS-dock magnification: the hovered button
+ * lifts and grows, its neighbours rise a little. On hover the brand color
+ * fills the circle from the bottom, a ring ripples out and a tooltip shows
+ * the network and handle.
  */
 export default function SocialButton({
   href,
   label,
+  handle,
   icon,
+  brand = "var(--primary-fill)",
+  brandForeground = "#ffffff",
   external = true,
 }: SocialButtonProps) {
   const linkProps = external
@@ -30,58 +34,20 @@ export default function SocialButton({
     : {};
 
   return (
-    <m.a
+    <a
       href={href}
       {...linkProps}
-      aria-label={label}
-      initial="rest"
-      animate="rest"
-      whileHover="hover"
-      whileFocus="hover"
-      variants={{
-        rest: { borderColor: "var(--stroke)", boxShadow: "0 0 0 rgba(0,0,0,0)" },
-        hover: {
-          borderColor: "var(--primary)",
-          boxShadow: "0 8px 22px var(--primary-glow-strong)",
-        },
-      }}
-      transition={{ duration: 0.3 }}
-      className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border bg-background text-foreground-muted"
+      aria-label={handle ? `${label} (${handle})` : label}
+      className="social-btn"
+      style={
+        { "--brand": brand, "--brand-fg": brandForeground } as CSSProperties
+      }
     >
-      {/* coral fill rising from the bottom */}
-      <m.span
-        aria-hidden="true"
-        className="absolute inset-0 z-0 rounded-full bg-primary-fill"
-        variants={{ rest: { y: "101%" }, hover: { y: "0%" } }}
-        transition={{ type: "spring", stiffness: 320, damping: 28 }}
-      />
-      {/* ring pulse radiating outward on hover */}
-      <m.span
-        aria-hidden="true"
-        className="absolute inset-0 z-0 rounded-full border border-primary"
-        variants={{
-          rest: { scale: 1, opacity: 0 },
-          hover: { scale: 1.7, opacity: [0, 0.5, 0] },
-        }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-      />
-      {/* icon barrel-roll swap */}
-      <span className="relative z-10 block h-4 w-4">
-        <m.span
-          className="absolute inset-0 flex items-center justify-center"
-          variants={{ rest: { y: 0, opacity: 1 }, hover: { y: "-150%", opacity: 0 } }}
-          transition={{ duration: 0.32, ease: easeOut }}
-        >
-          {icon}
-        </m.span>
-        <m.span
-          className="absolute inset-0 flex items-center justify-center text-primary-foreground"
-          variants={{ rest: { y: "150%", opacity: 0 }, hover: { y: 0, opacity: 1 } }}
-          transition={{ duration: 0.32, ease: easeOut }}
-        >
-          {icon}
-        </m.span>
+      <span className="social-icon">{icon}</span>
+      <span aria-hidden="true" className="social-tip">
+        <span className="font-semibold">{label}</span>
+        {handle && <span className="opacity-60"> {handle}</span>}
       </span>
-    </m.a>
+    </a>
   );
 }

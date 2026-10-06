@@ -1,7 +1,7 @@
 import SpotlightCard from "../../components/ui/SpotlightCard";
 import { serializeJsonLd } from "@/lib/seo";
 import ProjectGallery from "../../components/ui/ProjectGallery";
-import { contactHref } from "@/lib/acquisition";
+import { contactHref, serviceFromPath } from "@/lib/acquisition";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -172,7 +172,9 @@ export default async function ProjectCaseStudyPage({
 
             <section>
               <h2 className="mb-6 font-semibold text-foreground text-2xl">
-                Ce que j’ai développé
+                {project.status === "in-dev"
+                  ? "Ce que je développe"
+                  : "Ce que j’ai développé"}
               </h2>
               <ol className="flex flex-col divide-y divide-stroke card">
                 {caseStudy.solution.map((step, index) => (
@@ -198,7 +200,9 @@ export default async function ProjectCaseStudyPage({
                 <h2 className="mb-6 font-semibold text-foreground text-xl">
                   {project.status === "live"
                     ? "Fonctionnalités réalisées"
-                    : "Fonctionnalités du prototype"}
+                    : project.status === "in-dev"
+                      ? "Fonctionnalités en développement"
+                      : "Fonctionnalités du prototype"}
                 </h2>
                 <ul className="flex flex-col gap-3">
                   {caseStudy.results.map((result) => (
@@ -266,10 +270,10 @@ export default async function ProjectCaseStudyPage({
               </div>
               <div className="p-5">
                 <dt className="text-foreground-muted text-xs uppercase tracking-wider">
-                  Technologies
+                  {project.skills ? "Compétences mises en œuvre" : "Technologies"}
                 </dt>
                 <dd className="flex flex-wrap gap-2 mt-3">
-                  {project.tech.map((t) => (
+                  {(project.skills ?? project.tech).map((t) => (
                     <TechBadge key={t}>{t}</TechBadge>
                   ))}
                 </dd>
@@ -313,9 +317,10 @@ export default async function ProjectCaseStudyPage({
         whatsappMessage={`Bonjour Néhémie, j'ai vu l'étude de cas « ${project.name} » et j'ai un projet similaire à discuter.`}
         secondary={{
           href: contactHref(
-            project.tech.includes("Flutter")
-              ? "creation-application-mobile"
-              : "creation-application-web",
+            serviceFromPath(`/projects/${project.slug}`) ??
+              (project.tech.includes("Flutter")
+                ? "creation-application-mobile"
+                : "creation-application-web"),
             `/projects/${project.slug}`,
           ),
           label: "Décrire un projet similaire",
