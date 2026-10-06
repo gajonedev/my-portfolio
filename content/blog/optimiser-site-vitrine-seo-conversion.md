@@ -178,6 +178,6 @@ Voici les points que je vous propose de vérifier :
 
 ## Conclusion
 
-L'optimisation d'un site vitrine est un processus continu. Ces principes donnent une base solide, mais les progrès dépendent du marché, de l'offre et du point de départ. Mesurez quelques indicateurs avant les changements, puis comparez-les après chaque amélioration.
+Commencez par essayer votre site sur un téléphone : comprend-on ce que vous proposez et trouve-t-on facilement comment vous joindre ? Corrigez d’abord ce qui bloque ce parcours. Comparez ensuite la vitesse et les prises de contact avant et après les changements pour savoir lesquels ont été utiles.
 
 Si vous ne savez pas quoi corriger en premier, [envoyez-moi l’adresse de votre site](/contact). Je vous aiderai à distinguer les problèmes techniques des points à clarifier dans votre offre.

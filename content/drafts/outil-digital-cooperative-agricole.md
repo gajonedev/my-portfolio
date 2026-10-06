@@ -17,13 +17,13 @@ Le premier gain est concret : retrouver les informations d’un producteur et pr
 
 La fiche de chaque producteur regroupe les coordonnées, le village, les cotisations et les informations utiles aux campagnes. Votre bureau dispose ainsi d’un même endroit pour retrouver ces informations, plutôt que de les chercher dans plusieurs registres.
 
-Je regarde avec vous qui peut les consulter ou les modifier, comment reprendre les registres existants et quelles sauvegardes prévoir. Mettre les informations dans une application ne suffit pas à les rendre exactes.
+Nous partons de vos registres actuels pour préparer les fiches. Je vous aide à repérer les doublons et les informations manquantes avant de les importer, puis nous choisissons qui les consulte et qui les modifie.
 
 ## Le suivi des intrants et des crédits
 
 Pour une distribution d’engrais ou de semences, vous pouvez enregistrer le bénéficiaire, la quantité, la date et les conditions de remboursement. Une confirmation ou un récapitulatif aide ensuite à vérifier les opérations avec le producteur.
 
-L’historique de l’outil permet de comparer les distributions enregistrées et les remboursements. Il faut aussi prévoir les corrections et leur validation : un enregistrement numérique n’empêche pas une erreur de saisie ou un désaccord.
+Un producteur conteste la quantité d’engrais reçue ? Votre équipe retrouve la distribution enregistrée et les remboursements associés. Si une saisie est erronée, je prévois une correction qui garde la trace du changement.
 
 ## Les pesées et les collectes
 
@@ -49,7 +49,7 @@ Nous devons également prévoir les téléphones disponibles, la formation et la
 
 Pour compléter l’outil de gestion, je crée une présentation web de vos produits, des volumes disponibles et des moyens de vous joindre si vous retenez ce volet. Il donne aux acheteurs des informations à consulter avant de vous écrire.
 
-Pour une coopérative à [Kandi](/developpeur-web-kandi), [Djougou](/developpeur-web-djougou) ou [Savalou](/developpeur-web-savalou), nous précisons les contacts, les périodes de disponibilité et les conditions de livraison à publier. Le site accompagne votre prospection ; il ne remplace pas les échanges avec les acheteurs.
+Pour une coopérative à [Kandi](/developpeur-web-kandi), [Djougou](/developpeur-web-djougou) ou [Savalou](/developpeur-web-savalou), le site indique qui joindre, quand les produits sont disponibles et comment organiser la livraison. Les acheteurs disposent de ces premiers renseignements avant de vous appeler.
 
 ## Choisir une première version
 

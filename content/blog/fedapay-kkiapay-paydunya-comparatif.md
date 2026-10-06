@@ -35,7 +35,7 @@ Née au Bénin, FedaPay fait partie des solutions bien implantées localement. E
 
 ### KkiaPay : examiner le widget et les fonctions serveur
 
-Également béninoise, KkiaPay s'est fait connaître par la simplicité de son widget : le widget fournit une interface de paiement à intégrer au site. Je vérifie les moyens de paiement disponibles et le traitement des confirmations côté serveur avant de le proposer.
+KkiaPay propose un widget de paiement à intégrer au site. Pour votre boutique, je regarde les moyens de paiement disponibles et la façon dont une transaction confirmée déclenche la suite de la commande.
 
 **Ses forces** : la rapidité de mise en œuvre, notamment pour un site qui veut encaisser sans développement lourd. Sa tarification peut être intéressante, mais elle doit être comparée au moment du projet car les grilles évoluent.
 

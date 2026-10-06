@@ -285,8 +285,8 @@ Utilisez le **versioning sémantique** (semver) pour vos composants. Un changeme
 
 ## Conclusion
 
-Construire un design system demande du temps au départ. Il devient rentable lorsque les mêmes composants et décisions reviennent souvent. Le meilleur indicateur n'est pas un pourcentage universel, mais le temps que votre équipe cesse de perdre à recréer ou corriger les mêmes éléments.
+Si votre équipe recrée le même formulaire sur trois écrans, commencez par ce formulaire. Regrouper ses champs, ses messages d’erreur et ses états dans un composant partagé vous évite de refaire ces choix à chaque page.
 
-La clé est de **commencer petit, d'itérer et de documenter régulièrement**. Vous n'avez pas besoin d'un système parfait dès le premier jour. Vous avez besoin d'un système qui évolue avec votre produit.
+C’est ainsi que je construis le système : à partir des éléments qui servent déjà, avec quelques exemples pour expliquer leur usage. J’ajoute les variantes quand un nouvel écran en a besoin, plutôt que de préparer une bibliothèque entière avant de développer le produit.
 
 Vous lancez un SaaS et souhaitez partir sur des bases solides ? [Parlons-en](/contact) et construisons ensemble un design system taillé pour votre produit.

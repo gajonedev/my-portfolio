@@ -23,13 +23,13 @@ Je distingue la demande reçue de l’inscription validée. Nous devons précise
 
 Si vous souhaitez proposer le **Mobile Money**, nous regardons les prestataires disponibles et leur connexion à votre outil de gestion. Le portail regroupe les échéances, les paiements confirmés et les justificatifs.
 
-Il faut aussi prévoir les règlements effectués à la caisse, les erreurs de référence et les confirmations retardées. L’historique permet à votre équipe de retrouver un règlement et son justificatif plus facilement. Nous prévoyons aussi le rapprochement avec les relevés pour vérifier les montants.
+Un parent paie à la caisse plutôt qu’en ligne ? Son règlement doit apparaître dans le même historique. Je prévois aussi les références à corriger et les paiements en attente de confirmation, pour que votre équipe retrouve les justificatifs et compare les montants avec ses relevés.
 
 Si vous retenez les relances par SMS ou notification, je les configure selon vos échéances et vos règles. Je vous explique les points techniques dans [mon article sur les paiements en ligne](/blog/accepter-paiements-mobile-money-site-web).
 
 ## Les notes et les bulletins
 
-Dans le module de notes, les enseignants saisissent les résultats et préparent les bulletins au format de votre établissement. Avant le développement, nous précisons les coefficients, les absences, les corrections et la validation avant publication.
+Dans le module de notes, les enseignants saisissent les résultats et préparent les bulletins au format de votre établissement. Je pars de vos bulletins actuels : comment calculez-vous les moyennes, traitez-vous les absences et validez-vous les notes avant de les communiquer aux parents ?
 
 Si les parents consultent les résultats en ligne, les accès doivent correspondre à leurs enfants. Les droits de la direction, du secrétariat et des enseignants demandent aussi à être définis.
 
@@ -37,7 +37,7 @@ Si les parents consultent les résultats en ligne, les accès doivent correspond
 
 L’espace de communication regroupe les annonces et les documents à consulter. Si vous souhaitez envoyer des rappels importants par SMS ou notification, je connecte le service retenu à ce même espace.
 
-Je vous conseille de choisir qui publie et comment les coordonnées sont mises à jour. Le portail doit rendre les messages plus faciles à retrouver, sans supposer que toutes les familles les liront immédiatement.
+Un parent cherche la date d’une réunion ou un document demandé par l’école ? Il les retrouve dans cet espace. Avec votre équipe, nous décidons qui publie les messages et qui tient les coordonnées des familles à jour.
 
 ## Choisir les premières fonctions
 
@@ -48,13 +48,13 @@ Je vous propose de partir d’un besoin prioritaire, puis de faire essayer une p
 3. Les notes et bulletins si les règles de calcul et de validation sont prêtes.
 4. D’autres fonctions, comme les emplois du temps ou la cantine, si leur utilité se confirme.
 
-Nous ajustons cet ordre à vos priorités. Je regroupe les fonctions retenues dans votre [logiciel métier](/services/creation-application-web), en tenant compte des outils que vous utilisez déjà.
+Vous avez déjà un outil qui vous convient pour les notes ? Nous le prenons en compte. Votre [logiciel métier](/services/creation-application-web) doit d’abord répondre à ce qui vous manque aujourd’hui.
 
 ## Accompagner la prise en main
 
 Je prépare les parcours avec les personnes qui s’en serviront. Un écran pour un enseignant n’a pas nécessairement les mêmes besoins qu’un écran pour le secrétariat.
 
-Nous prévoyons les essais, la formation et le traitement des premiers retours. Les difficultés peuvent venir de l’interface, de l’équipement, de la connexion ou de l’organisation : il faut les identifier avant d’ajouter des fonctions.
+Je fais essayer l’outil à vos équipes et je leur montre comment l’utiliser. Si un enseignant bloque sur une saisie ou si le secrétariat peine à retrouver un dossier, nous regardons ce qui gêne et je corrige les écrans concernés. Nous vérifions aussi les téléphones et la connexion utilisés à l’école.
 
 ## Quel budget prévoir ?
 

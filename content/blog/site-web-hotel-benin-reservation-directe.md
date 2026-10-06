@@ -3,7 +3,7 @@ title: "Site web pour hôtel au Bénin : préparer la réservation directe"
 date: "2026-10-05"
 updated: "2026-10-06"
 readTime: "4 min"
-summary: "Je développe le parcours de réservation de votre hôtel : présentation des chambres, demandes structurées et paiement selon les fonctions retenues."
+summary: "Je développe le parcours de réservation de votre hôtel : des chambres faciles à consulter, des demandes de réservation complètes et le paiement en ligne si vous le souhaitez."
 category: "Secteurs"
 author: "Néhémie Gandonou"
 tags: ["Hôtellerie", "Tourisme", "Réservation en ligne", "Bénin", "Site web"]
@@ -44,7 +44,7 @@ Si vous utilisez déjà un logiciel hôtelier, nous regardons comment le connect
 
 ## Prévoir le paiement et les annulations
 
-Si vous souhaitez demander un acompte, nous précisons le montant, les conditions d’annulation et la manière de traiter les remboursements. Les moyens de paiement se choisissent selon les clients que vous recevez : Mobile Money, carte ou d’autres options disponibles auprès du prestataire retenu.
+Vous demandez un acompte pour confirmer une chambre ? Le visiteur doit connaître le montant à payer et ce qui se passe s’il annule. Je prépare le paiement avec vos règles, puis nous choisissons les moyens utilisés par votre clientèle parmi ceux proposés par le prestataire : Mobile Money, carte ou autres options disponibles.
 
 Le paiement en ligne peut faciliter l’engagement du voyageur, mais il ne supprime pas les annulations. Je prévois aussi le parcours en cas d’échec ou de confirmation retardée.
 
@@ -58,7 +58,7 @@ Je propose une version française et anglaise dans mon [service de création de 
 
 Pour décider, relevez vos demandes directes actuelles, les commissions réellement payées et le temps consacré à leur traitement. Comparez ensuite ces données au coût du site et à son entretien.
 
-Après la mise en ligne, vous pourrez suivre les demandes reçues, les réservations confirmées et les annulations. Ce suivi vous aidera à décider des évolutions, sans supposer que chaque réservation directe aurait autrement généré une commission.
+Après la mise en ligne, regardez combien de demandes arrivent par le site et combien deviennent des séjours. Vous verrez quel rôle il joue réellement dans vos réservations et ce qu’il faut améliorer.
 
 ## Par où commencer ?
 

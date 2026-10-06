@@ -11,7 +11,7 @@ tags: ["ONG", "Association", "Site web", "Financement", "Bénin"]
 
 Un partenaire qui souhaite mieux connaître votre organisation peut commencer par votre site. Il y cherche vos actions, vos contacts ou un rapport d’activité. Si ces informations sont absentes ou difficiles à trouver, il devra passer par d’autres canaux pour comprendre votre travail.
 
-Un site bien organisé donne à vos partenaires un accès direct à vos projets, à vos rapports et à la bonne personne à contacter. Voici cinq points que je travaillerais avec vous pour rendre votre activité plus facile à comprendre et vos démarches plus simples.
+Un site bien organisé donne à vos partenaires un accès direct à vos projets, à vos rapports et à la bonne personne à contacter. Voici les cinq points que je regarde pour que vos visiteurs comprennent votre travail et trouvent ce qu’ils cherchent.
 
 ## 1. Des informations qui ne reflètent plus vos activités
 
@@ -41,16 +41,16 @@ Je vérifie les dimensions des images et le poids des PDF. J’allège les fichi
 
 Si le domaine et l’hébergement sont gérés depuis le compte d’une personne qui quitte l’organisation, le renouvellement ou les mises à jour peuvent devenir compliqués.
 
-Je précise avec vous les titulaires des comptes, les accès à remettre et la procédure de transmission. Le contrat doit également expliquer les droits sur le code, les contenus et les éventuels services tiers. Vous pouvez consulter mon [accompagnement pour un site vitrine](/services/creation-site-vitrine) pour préparer ces questions.
+Votre organisation doit savoir où renouveler son domaine, qui gère l’hébergement et comment accéder au site. Je rassemble ces informations à la livraison. Le contrat précise aussi les droits que vous récupérez sur le code et les contenus, ainsi que les services sous abonnement. Ces questions font partie de mon [accompagnement pour un site vitrine](/services/creation-site-vitrine).
 
 ## Une version anglaise si vos partenaires en ont besoin
 
-Avec une version française et anglaise, vos partenaires lisent vos pages dans la langue qu’ils comprennent. Les deux versions présentent vos actions et les moyens de vous joindre. Nous prévoyons aussi la vérification et la mise à jour des deux versions.
+Avec une version française et anglaise, vos partenaires lisent vos pages dans la langue qu’ils comprennent. Les deux versions présentent vos actions et les moyens de vous joindre. Quand une page change, nous décidons aussi qui met sa traduction à jour.
 
-J’ai travaillé sur le site bilingue de [GAIN](/projects/gain). Pour votre organisation, nous choisissons les pages à traduire selon le public visé, plutôt que de supposer que le bilinguisme doublera l’audience.
+J’ai travaillé sur le site bilingue de [GAIN](/projects/gain). Pour votre organisation, je commence par une question simple : quelles informations vos partenaires anglophones viennent-ils chercher ? Cela nous aide à choisir les pages à traduire en premier.
 
 ## Préparer le budget
 
-Un site vitrine démarre à **170 000 FCFA** dans mes [offres](/tarifs). L’administration des actualités, les traductions et un éventuel module de dons se chiffrent selon les fonctions retenues.
+Un site vitrine démarre à **170 000 FCFA** dans mes [offres](/tarifs). Vous voulez publier vos actualités vous-même, ajouter une version anglaise ou recevoir des dons ? Je détaille le coût de ces ajouts dans votre devis.
 
 J’accompagne votre organisation à [Porto-Novo](/developpeur-web-porto-novo), [Lokossa](/developpeur-web-lokossa) ou à distance. [Expliquez-moi ce que vous souhaitez publier et à qui vous vous adressez](/contact). Nous choisirons les pages utiles et je vous préparerai un devis adapté.

@@ -44,15 +44,15 @@ Visiteur → Widget chat → API OpenAI / Claude → Base de connaissances
 - La base de connaissances de l'entreprise (services, tarifs, FAQ)
 - Des instructions de comportement (ton, limites, objectifs)
 - Des actions automatiques (prise de RDV, envoi de documentation)
-- Un fallback vers un humain quand la question dépasse son périmètre
+- Un relais vers votre équipe quand le chatbot ne sait pas répondre
 
 ### Ce qu'il faut mesurer
 
-Le chatbot traite les questions couvertes par sa base et recueille les informations utiles avant le passage à un humain. Son intérêt doit toutefois être vérifié sur vos propres données. Je regarde surtout le nombre de conversations utiles, les demandes réellement qualifiées, le délai de réponse et le taux de transfert vers un conseiller. Sans ce suivi, le chatbot risque de n'être qu'un widget de plus sur le site.
+Un visiteur demande vos tarifs, puis veut savoir si vous intervenez dans sa ville. Le chatbot lui répond à partir des informations fournies et transmet sa demande à votre équipe si elle nécessite un échange. Pour juger son utilité, je regarde si vos équipes reçoivent des demandes plus complètes et passent moins de temps à répéter les mêmes réponses. Nous suivons aussi les questions qu’il ne sait pas traiter.
 
 ## 2. La génération de contenu assistée
 
-### Le workflow que je recommande
+### De l’idée au texte publié
 
 J’utilise l’IA pour préparer un plan ou un brouillon, avec des consignes adaptées au contenu à produire. Le texte final demande encore une relecture, des exemples et la vérification des informations. Voici le déroulement que je vous propose :
 
@@ -115,7 +115,7 @@ Des règles simples peuvent suffire pour commencer. Un modèle statistique deman
 
 Je prépare des séquences différentes selon les besoins exprimés par vos contacts. L’IA peut aider à rédiger, mais une segmentation simple et des contenus relus sont parfois suffisants.
 
-### Architecture d'un workflow type
+### Comment organiser les envois
 
 1. **Trigger** : Le visiteur remplit un formulaire ou dépasse un seuil de scoring
 2. **Segmentation** : L'IA catégorise le lead (startup early-stage, PME en croissance, etc.)

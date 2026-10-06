@@ -64,7 +64,7 @@ Après la mise en ligne, prévoyez :
 - **Hébergement** : de quelques milliers de FCFA par mois pour un site vitrine à davantage pour une application avec base de données
 - **Maintenance** (optionnelle) : selon le contrat, pour les mises à jour et sauvegardes
 
-Méfiez-vous des prestataires qui gardent ces accès pour vous facturer des « frais annuels » opaques. Chez moi, ces services sont [à votre nom et facturés en direct](/tarifs) : les accès et les droits transmis sont précisés dans le devis.
+Demandez à quoi correspondent les frais annuels : domaine, hébergement ou travail de maintenance. Pour les services [à votre nom et facturés en direct](/tarifs), je vous indique les comptes à utiliser et les accès que vous récupérez à la livraison.
 
 ## Comment obtenir un devis fiable
 

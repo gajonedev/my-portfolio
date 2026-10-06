@@ -41,9 +41,9 @@ J’utilise [Flutter](/developpeur-flutter-benin) pour AfCom. Le choix du framew
 
 ## Ce que l’utilisateur doit comprendre
 
-La saisie hors ligne permet de travailler sans surveiller le réseau à chaque opération. En revanche, elle doit pouvoir distinguer une opération enregistrée sur son téléphone d’une opération déjà synchronisée.
+La commerçante enregistre sa vente sans surveiller le réseau. Elle doit néanmoins savoir si cette vente reste uniquement sur son téléphone ou si elle a déjà été transmise au serveur.
 
-Cette différence devient importante si le téléphone est perdu ou remplacé avant la transmission des données. Je prévois donc des indications compréhensibles, la possibilité de reprendre un envoi et une procédure de récupération adaptée au projet.
+Si le téléphone est perdu avant cet envoi, les opérations restées uniquement sur l’appareil risquent de ne pas être récupérables. Je prévois donc un état visible pour les données en attente et un moyen de relancer leur envoi. Le changement de téléphone se prépare aussi : quelles données ont été sauvegardées et comment les retrouver ?
 
 ## À quels usages cette approche répond
 
