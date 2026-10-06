@@ -17,7 +17,7 @@ export default function FloatingWhatsApp() {
       rel="noopener noreferrer"
       data-floating-whatsapp
       aria-label="Discuter de mon projet sur WhatsApp"
-      className="right-4 sm:right-6 bottom-4 sm:bottom-6 z-50 fixed flex items-center gap-2 bg-[#1a9c4a] shadow-[0_8px_30px_rgba(37,211,102,0.45)] px-4 py-3 rounded-full font-body font-semibold text-white text-sm floating-whatsapp"
+      className="right-4 sm:right-6 bottom-4 sm:bottom-6 z-50 fixed flex items-center gap-2 bg-[#0e7a3d] shadow-[0_8px_30px_rgba(37,211,102,0.45)] px-4 py-3 rounded-full font-body font-semibold text-white text-sm floating-whatsapp"
     >
       <WhatsAppIcon className="w-6 h-6" />
       <span className="hidden sm:inline">Discuter sur WhatsApp</span>

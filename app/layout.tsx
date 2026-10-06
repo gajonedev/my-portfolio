@@ -10,6 +10,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { localCities, siteConfig, contactInfo, socialLinks } from "@/data";
 import AcquisitionTracker from "./components/AcquisitionTracker";
+import NavigationFlag from "./components/NavigationFlag";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -196,6 +197,7 @@ export default function RootLayout({
             Aller au contenu
           </a>
           <AcquisitionTracker />
+          <NavigationFlag />
           <Header />
           <main id="main-content" tabIndex={-1} className="pt-17 min-h-screen">
             {children}

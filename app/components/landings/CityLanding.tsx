@@ -339,7 +339,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
           {/* Présentation */}
           <section className="gap-8 grid md:grid-cols-[160px_1fr] items-center p-7 card">
             <Image
-              src="/portrait.png"
+              src="/portrait.webp"
               alt="Néhémie Gandonou, développeur web et mobile au Bénin"
               width={160}
               height={160}

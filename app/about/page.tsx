@@ -49,7 +49,7 @@ export default async function AboutPage() {
           <div className="relative mx-auto lg:mx-0 w-full max-w-sm beam-frame">
             <div className="bg-background-soft p-3 border border-stroke rounded-[2rem]">
               <Image
-                src="/portrait.png"
+                src="/portrait.webp"
                 alt="Portrait de Néhémie Gandonou"
                 width={480}
                 height={600}

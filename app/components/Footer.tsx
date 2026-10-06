@@ -36,7 +36,7 @@ export default function Footer() {
       <Container className="gap-10 grid md:grid-cols-2 lg:grid-cols-4">
         <div className="flex flex-col gap-4">
           <Link href="/" className="flex items-center gap-3">
-            <div className="flex justify-center items-center bg-primary rounded-xl w-9 h-9 font-display font-bold text-primary-foreground text-sm glow-sm">
+            <div className="flex justify-center items-center bg-primary-fill rounded-xl w-9 h-9 font-display font-bold text-primary-foreground text-sm glow-sm">
               {siteConfig.shortName}
             </div>
             <span className="font-display font-semibold text-foreground text-lg">

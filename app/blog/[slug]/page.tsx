@@ -121,7 +121,7 @@ export default async function BlogPostPage({ params }: Props) {
       >
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-foreground-muted text-sm">
           <span className="flex items-center gap-3">
-            <span className="flex justify-center items-center bg-primary rounded-full w-9 h-9 font-display font-bold text-primary-foreground text-xs">
+            <span className="flex justify-center items-center bg-primary-fill rounded-full w-9 h-9 font-display font-bold text-primary-foreground text-xs">
               {siteConfig.shortName}
             </span>
             <span className="font-medium text-foreground">{post.author}</span>

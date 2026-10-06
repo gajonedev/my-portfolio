@@ -21,7 +21,7 @@ export default function PriceTag({
 
   return (
     <span
-      className={`inline-block bg-primary px-4 py-2 font-display font-bold text-primary-foreground ${rotation} ${className ?? ""}`}
+      className={`inline-block bg-primary-fill px-4 py-2 font-display font-bold text-primary-foreground ${rotation} ${className ?? ""}`}
       style={{ clipPath: CLIP_PATH }}
     >
       {children}

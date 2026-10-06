@@ -29,7 +29,7 @@ export default function Hero() {
 
           <p
             className="max-w-xl font-body text-foreground-muted text-base md:text-lg leading-relaxed hero-anim-up"
-            style={{ animationDelay: "0.5s" }}
+            style={{ animationDelay: "0.05s" }}
           >
             Je suis Néhémie Gandonou, développeur de logiciels à Cotonou. Vous
             voulez gérer votre activité, proposer un service en ligne ou créer
@@ -39,7 +39,7 @@ export default function Hero() {
 
           <div
             className="flex flex-wrap gap-4 hero-anim-up"
-            style={{ animationDelay: "0.7s" }}
+            style={{ animationDelay: "0.1s" }}
           >
             <GlowButton href={whatsappUrl()} external>
               <WhatsAppIcon className="w-4 h-4" />
@@ -52,7 +52,7 @@ export default function Hero() {
 
           <ul
             className="flex flex-wrap gap-x-5 gap-y-2 font-body text-foreground-subtle text-sm hero-anim-up"
-            style={{ animationDelay: "0.8s" }}
+            style={{ animationDelay: "0.15s" }}
           >
             {homeTrust.map((item) => (
               <li key={item} className="flex items-center gap-2">
@@ -65,14 +65,13 @@ export default function Hero() {
 
         <div
           className="relative flex justify-center mx-auto hero-anim-pop"
-          style={{ animationDelay: "0.3s" }}
         >
           {/* two glowing traces circulating around the border (Huly style) */}
           <div className="beam-frame">
             {/* glass card kept as-is */}
             <div className="bg-background-soft/60 backdrop-blur-md p-3 border border-stroke rounded-[2rem] glassw">
               <Image
-                src="/portrait.png"
+                src="/portrait.webp"
                 alt="Portrait de Néhémie Gandonou, développeur web et mobile"
                 width={360}
                 height={440}

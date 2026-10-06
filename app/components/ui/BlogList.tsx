@@ -94,7 +94,7 @@ export default function BlogList({ posts }: { posts: BlogPostMeta[] }) {
               onClick={() => setActive(category)}
               className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
                 selected
-                  ? "border-primary bg-primary text-primary-foreground"
+                  ? "border-primary-fill bg-primary-fill text-primary-foreground"
                   : "border-stroke bg-card text-foreground-muted hover:border-primary hover:text-foreground"
               }`}
             >

@@ -51,7 +51,7 @@ export default function SocialButton({
       {/* coral fill rising from the bottom */}
       <m.span
         aria-hidden="true"
-        className="absolute inset-0 z-0 rounded-full bg-primary"
+        className="absolute inset-0 z-0 rounded-full bg-primary-fill"
         variants={{ rest: { y: "101%" }, hover: { y: "0%" } }}
         transition={{ type: "spring", stiffness: 320, damping: 28 }}
       />

@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
 import type { ProjectImage } from "@/data/projects";
 
 const NAV_BUTTON =
-  "flex justify-center items-center bg-black/60 hover:bg-primary backdrop-blur border border-white/15 rounded-full w-10 h-10 text-white transition-colors";
+  "flex justify-center items-center bg-black/60 hover:bg-primary-fill backdrop-blur border border-white/15 rounded-full w-10 h-10 text-white transition-colors";
 
 // Case-study gallery: a browser-framed stage, a thumbnail strip and a
 // full-screen viewer built on the native <dialog> (focus trap + Esc for free).

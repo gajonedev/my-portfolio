@@ -209,7 +209,7 @@ export default async function ServicePage({
                 }`}
               >
                 {offer.recommended && (
-                  <span className="-top-3 left-7 absolute bg-primary px-3 py-1 rounded-full font-semibold text-[0.7rem] text-primary-foreground uppercase tracking-wider">
+                  <span className="-top-3 left-7 absolute bg-primary-fill px-3 py-1 rounded-full font-semibold text-[0.7rem] text-primary-foreground uppercase tracking-wider">
                     Recommandé
                   </span>
                 )}

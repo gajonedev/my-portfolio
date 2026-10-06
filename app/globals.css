@@ -46,6 +46,10 @@
   --primary: #ff4d3d; /* coral-500 */
   --primary-strong: #ff6f59; /* coral-400 (hover, brighter on dark) */
   --primary-foreground: #ffffff;
+  /* Solid coral behind white text: deeper than --primary so white label
+     text stays >= 4.5:1 (WCAG AA). Never use --primary as a text background. */
+  --primary-fill: #d92e20; /* 4.9:1 with white */
+  --primary-fill-strong: #c8271a; /* 5.6:1 */
   --primary-glow: rgba(255, 77, 61, 0.16);
   --primary-glow-strong: rgba(255, 77, 61, 0.32);
 
@@ -73,8 +77,8 @@
   --stroke: #e2e2ea; /* light-border */
   --stroke-hover: #d0d0da; /* light-border-hover */
 
-  --primary: #ed3424; /* coral-600, deeper for contrast on white */
-  --primary-strong: #c8271a;
+  --primary: #c8271a; /* coral-700 : 5.4:1 on the light background */
+  --primary-strong: #a3251b;
   --primary-glow: rgba(237, 52, 36, 0.1);
   --primary-glow-strong: rgba(237, 52, 36, 0.18);
 
@@ -124,6 +128,7 @@
   --color-primary: var(--primary);
   --color-primary-strong: var(--primary-strong);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-fill: var(--primary-fill);
 
   --font-sans: var(--font-body);
   --font-body: var(--font-body);
@@ -258,9 +263,11 @@ h6 {
     transform: translateY(0);
   }
 }
+/* Portrait is the mobile LCP element : start visible (0.6) so it paints on
+   the first frame, the zoom alone carries the entrance. */
 @keyframes hero-pop {
   from {
-    opacity: 0;
+    opacity: 0.6;
     transform: scale(0.94);
   }
   to {
@@ -291,7 +298,6 @@ h6 {
 }
 /* portrait (LCP): fade + scale, no blur */
 .hero-anim-pop {
-  opacity: 0;
   animation: hero-pop 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 .hero-word {
@@ -593,7 +599,8 @@ h6 {
   border-width: 1.5px;
   color: var(--primary-foreground);
   background:
-    linear-gradient(180deg, var(--primary-strong), var(--primary)) padding-box,
+    linear-gradient(180deg, var(--primary-fill), var(--primary-fill-strong))
+      padding-box,
     conic-gradient(
         from var(--btn-angle),
         transparent 0deg 240deg,
@@ -603,7 +610,7 @@ h6 {
         transparent 360deg
       )
       border-box,
-    linear-gradient(var(--primary), var(--primary)) border-box;
+    linear-gradient(var(--primary-fill), var(--primary-fill)) border-box;
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.28) inset,
     0 6px 22px var(--primary-glow-strong);
@@ -715,13 +722,14 @@ h6 {
   color: var(--primary);
 }
 
+/* Deep WhatsApp green : 5.4:1 with white (brand #25d366 is only 2:1). */
 .btn-whatsapp {
-  background-color: #1a9c4a;
+  background-color: #0e7a3d;
   color: #ffffff;
   box-shadow: 0 6px 20px rgba(37, 211, 102, 0.18);
 }
 .btn-whatsapp:hover {
-  background-color: #16853f;
+  background-color: #0b6532;
   box-shadow: 0 8px 24px rgba(37, 211, 102, 0.28);
 }
 
@@ -1029,7 +1037,9 @@ h6 {
   }
 }
 
-.page-transition {
+/* Only after a client-side navigation (NavigationFlag sets the attribute):
+   the first visit paints sharp immediately. */
+html[data-navigated] .page-transition {
   animation: page-unblur 300ms ease-out;
 }
 
@@ -1055,7 +1065,7 @@ h6 {
   transform: translateY(-200%);
   border-radius: 0.75rem;
   padding: 0.75rem 1rem;
-  background: var(--primary);
+  background: var(--primary-fill);
   color: var(--primary-foreground);
 }
 .skip-link:focus {
