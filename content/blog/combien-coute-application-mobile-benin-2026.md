@@ -1,14 +1,13 @@
 ---
 title: "Combien coûte une application mobile au Bénin en 2026 ?"
 date: "2026-07-03"
-updated: "2026-10-04"
+updated: "2026-10-06"
 readTime: "6 min"
 summary: "Je détaille mes repères de prix en FCFA, les dépenses à prévoir et les choix qui font varier le budget d’une application mobile."
 category: "Business"
 author: "Néhémie Gandonou"
 tags: ["Prix", "Application mobile", "Flutter", "Bénin", "Budget"]
 ---
-
 
 « J'ai une idée d'application, ça coûterait combien ? » C'est probablement la question qu'on me pose le plus souvent. La réponse commence par une autre question : *quelle application ?* Entre une app simple qui affiche un catalogue et une plateforme avec paiements, notifications et mode hors-ligne, le budget varie fortement. En tant que [développeur mobile basé à Cotonou](/developpeur-web-cotonou), voici les fourchettes que j'utilise comme repères et les facteurs qui les expliquent.
 
@@ -18,8 +17,8 @@ Pour un développement professionnel sur iOS **et** Android, avec un serveur et 
 
 | Type d'application | Fourchette (FCFA) |
 | ------------------ | ----------------- |
-| App MVP (fonctionnalité cœur, prête à tester) | 900 000 – 1 400 000 |
-| App business (paiement Mobile Money, hors-ligne, notifications) | 1 500 000 – 2 500 000 |
+| App MVP (fonctionnalité cœur, prête à tester) | 900 000 à 1 400 000 |
+| App business (paiement Mobile Money, hors-ligne, notifications) | 1 500 000 à 2 500 000 |
 | Plateforme complexe (multi-rôles, temps réel, intégrations poussées) | 2 500 000 et + |
 
 Le détail de ce que chaque formule inclut est sur ma [page tarifs](/tarifs) et sur la page dédiée à la [création d'applications mobiles](/services/creation-application-mobile).
@@ -33,14 +32,14 @@ Une application mobile professionnelle, ce n'est pas que des écrans. C'est :
 - **L'interface** que vos utilisateurs voient et manipulent
 - **Le socle technique** : le serveur, la base de données et l'authentification forment le moteur invisible de l'application. Selon le projet, cette partie peut représenter une part importante du travail
 - **Les intégrations** : paiement Mobile Money, SMS, notifications push, cartographie
-- **Les tests** sur de vrais téléphones, y compris les modèles d'entrée de gamme les plus vendus au Bénin
+- **Les tests** sur de vrais téléphones, y compris les modèles d’entrée de gamme prévus pour vos utilisateurs
 - **La publication** sur l'App Store et Google Play, avec leurs règles strictes et leurs allers-retours de validation
 
-## Le facteur qui change tout : Flutter
+## Ce que Flutter peut changer dans le budget
 
 C'est un levier budgétaire important. Historiquement, il fallait développer **deux applications distinctes** : une pour iPhone en Swift et une pour Android en Kotlin. Cela impliquait deux bases de code à développer et à maintenir.
 
-[Flutter](/developpeur-flutter-benin), la technologie créée par Google, permet de développer les deux versions **à partir d'une base de code partagée**, avec des performances proches du natif. Cela évite de refaire séparément une grande partie du travail. L'économie exacte dépend néanmoins des fonctions natives et des différences souhaitées entre iOS et Android. C'est l'une des raisons pour lesquelles je peux proposer une première formule à partir de 900 000 FCFA.
+[Flutter](/developpeur-flutter-benin), la technologie créée par Google, permet de développer les deux versions **à partir d'une base de code partagée**, avec des performances proches du natif. Cela évite de refaire séparément une grande partie du travail. L'économie exacte dépend néanmoins des fonctions natives et des différences souhaitées entre iOS et Android. C’est l’une des raisons pour lesquelles je propose une première formule à partir de 900 000 FCFA.
 
 ## Ce qui fait varier le budget
 
@@ -52,9 +51,9 @@ Une app avec un seul type d'utilisateur et 6 écrans n'a rien à voir avec une m
 
 Intégrer [MTN MoMo, Moov Money ou FedaPay](/blog/accepter-paiements-mobile-money-site-web) proprement demande un vrai travail côté serveur : vérification des transactions, gestion des échecs et traçabilité. Ce travail doit être prévu dans le budget.
 
-### 3. Le mode hors-ligne
+### 3. Les fonctions hors ligne
 
-Au Bénin, la connexion n'est pas toujours au rendez-vous. Une application conçue pour fonctionner sans réseau et se synchroniser au retour de la connexion demande une architecture spécifique dès le départ. C'est l'approche utilisée pour [AfCom, une application de gestion pour commerçants](/projects/afcom).
+Au Bénin, la connexion n'est pas toujours au rendez-vous. Une application conçue pour fonctionner sans réseau et se synchroniser au retour de la connexion demande une architecture spécifique dès le départ. C'est l'approche utilisée pour [AfCom, mon prototype de gestion pour commerçants](/projects/afcom).
 
 ### 4. Le temps réel et les intégrations spéciales
 
@@ -64,27 +63,27 @@ Chat, suivi de livraison en direct, contrôle d'équipements connectés ([comme 
 
 Prévoyez, en plus du développement :
 
-- **Compte développeur Apple** : 99 $ / an (obligatoire pour être sur l'App Store)
-- **Compte Google Play** : 25 $ une seule fois
+- **Compte développeur Apple** : vérifiez les frais et les conditions applicables à votre compte avant la publication
+- **Compte Google Play** : prévoyez les frais d’inscription et les étapes de validation du compte
 - **Hébergement du backend** : quelques milliers à quelques dizaines de milliers de FCFA par mois selon votre volume d'utilisateurs
 - **Maintenance** : les stores et les téléphones évoluent ; prévoyez un budget de mise à jour adapté au produit
 
-Un prestataire sérieux vous annonce tout cela **avant** de signer. C'est votre meilleur test de fiabilité.
+Je vous conseille de demander ces coûts avant de signer, ainsi que la personne qui prendra en charge chaque service.
 
 ## Les pièges de l'app « pas chère »
 
-Des offres à 200 000 – 400 000 FCFA existent et peuvent convenir à un prototype très simple. Avant de choisir, vérifiez précisément ce qu'elles incluent :
+Des offres à 200 000 à 400 000 FCFA existent et peuvent convenir à un prototype très simple. Avant de choisir, vérifiez précisément ce qu'elles incluent :
 
-- **Pas de backend réel** : vos données vivent dans un tableur bricolé ou un service gratuit qui s'écroulera au premier pic
+- **Le stockage et le serveur** : vérifiez où vivent les données, les limites du service choisi et les options de sauvegarde
 - **Publication non incluse** : l'app peut être livrée sous forme de fichier sans accompagnement pour les stores
-- **Template rhabillé** : une app générique avec votre logo, impossible à faire évoluer
-- **Le code ne vous appartient pas** : le jour où le prestataire disparaît, votre application meurt avec lui
+- **L’utilisation d’un modèle existant** : demandez quelles personnalisations et évolutions sont possibles
+- **Les droits et les accès** : précisez ce que vous récupérez et comment un autre prestataire pourrait reprendre le projet
 
 Comme pour les sites web, [dont j'ai détaillé les prix ici](/blog/combien-coute-site-web-benin-2026), le prix d'achat doit être rapproché de l'usage réel. Une application abordable peut être une bonne décision si elle répond au besoin ; une application plus chère n'a de valeur que si elle est utilisée et maintenable.
 
 ## Comment réduire le budget intelligemment
 
-La bonne méthode n'est pas de négocier le prix, c'est de **réduire le périmètre** :
+Pour réduire le budget, je vous propose d’abord de **choisir les fonctions prioritaires** :
 
 1. **Commencez par un MVP** : concentrez-vous sur la fonctionnalité qui prouve la valeur. Une application de livraison n'a pas nécessairement besoin d'un chat intégré au lancement ; elle doit d'abord permettre de recevoir et de traiter les commandes.
 2. **Phasez** : lancez la version 1, mesurez ce que vos utilisateurs font réellement, puis investissez dans les fonctionnalités qu'ils demandent, pas celles qu'on imagine en réunion.
@@ -94,4 +93,4 @@ C'est exactement la logique de mes trois formules, MVP Mobile, Business, Platefo
 
 ## Obtenir un chiffrage précis
 
-Pour recevoir un devis fiable, préparez trois choses : **le problème que l'application doit résoudre**, **les personnes qui l'utiliseront** et **votre budget indicatif**. Je pourrai alors préparer [un devis détaillé](/contact) et vous signaler si une autre première étape me paraît plus adaptée.
+Pour recevoir un devis fiable, préparez trois choses : **le problème que l'application doit résoudre**, **les personnes qui l'utiliseront** et **votre budget indicatif**. Avec ces éléments, je prépare [un devis détaillé](/contact) et je vous signale si une autre première étape me paraît plus adaptée.

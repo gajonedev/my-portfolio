@@ -1,55 +1,58 @@
 ---
-title: "Comment j'ai construit une application qui fonctionne sans internet"
+title: "Comment j’ai conçu AfCom pour enregistrer les ventes sans internet"
 date: "2026-07-03"
-readTime: "7 min"
-summary: "Retour d'expérience sur AfCom, une app de gestion pour commerçants conçue offline-first : pourquoi le serveur doit être une copie du téléphone — et pas l'inverse."
+updated: "2026-10-06"
+readTime: "3 min"
+summary: "Je présente les choix derrière le prototype AfCom : stockage sur le téléphone, synchronisation et gestion des coupures."
 category: "Développement"
 author: "Néhémie Gandonou"
 tags: ["Offline-first", "Flutter", "Architecture", "Mobile", "AfCom"]
 ---
 
-# Comment j'ai construit une application qui fonctionne sans internet
+Imaginez une commerçante qui veut enregistrer une vente alors que son téléphone ne capte pas. Si elle doit attendre le retour du réseau, l’application lui rend peu service à ce moment-là. C’est l’un des usages que j’ai voulu prendre en compte avec [AfCom](/projects/afcom), mon prototype de gestion pour les petits commerces.
 
-Une vendeuse enregistre une vente dans sa boutique de quartier. Le réseau ? Peut-être. Peut-être pas. Peut-être dans une heure. Si l'application affiche « erreur de connexion, veuillez réessayer », elle ressort son cahier — et elle a raison. C'est le problème que j'ai résolu en construisant [AfCom](/projects/afcom), une application de gestion pour petits commerçants. Voici comment, et ce que ce projet m'a appris sur la conception d'applications pour le terrain africain.
+Dans ce prototype, les ventes et les dépenses courantes sont enregistrées sur le téléphone. Ce fonctionnement permet de continuer la saisie pendant une coupure, puis de transmettre les opérations au retour du réseau. Voici les choix de conception qui rendent ce fonctionnement possible.
 
-## Le renversement mental : offline-first, pas offline-toléré
+## Enregistrer sur le téléphone avant de synchroniser
 
-La plupart des applications sont construites *online-first* : chaque action interroge le serveur, et le mode hors-ligne est une rustine ajoutée après coup — un cache, un message d'excuse. Ça produit des applications qui *tolèrent* mal les coupures.
+Dans une application qui dépend du serveur pour enregistrer chaque action, une coupure peut interrompre la saisie. Pour AfCom, j’ai choisi de conserver localement les opérations courantes, notamment les ventes et les dépenses. La saisie de ces opérations reste ainsi disponible lorsque la connexion manque.
 
-L'approche inverse — **offline-first** — pose un principe radical : **le téléphone est la source de vérité, le serveur n'en est qu'une copie de sauvegarde**. Chaque vente, chaque entrée de stock, chaque dépense s'écrit d'abord dans la base de données locale du téléphone (SQLite). L'application fonctionne à 100 % sans aucun réseau — pas en mode dégradé : à 100 %. La synchronisation devient une tâche de fond opportuniste : quand le réseau apparaît, les données montent ; quand il disparaît, rien ne change pour l'utilisatrice.
+C’est le principe de l’approche **offline-first** : on prévoit les tâches hors ligne dès la conception, puis on organise leurs échanges avec le serveur. Cela ne veut pas dire que toutes les fonctions deviennent accessibles sans réseau. Un paiement en ligne, par exemple, reste dépendant d’un service extérieur.
 
-Ce n'est pas un détail d'implémentation — c'est une décision d'architecture qui doit être prise le premier jour. L'ajouter après coup revient à reconstruire l'application.
+## Les points à prévoir au-delà du stockage local
 
-## Les trois problèmes durs (et leurs solutions)
+### La reprise après une coupure
 
-### 1. La synchronisation sans perte
+Une synchronisation peut s’interrompre. Il faut savoir quelles opérations ont été transmises et lesquelles restent à envoyer. Je prévois aussi le cas où une même demande est renvoyée : elle ne devrait pas créer une seconde vente.
 
-Que se passe-t-il si le téléphone s'éteint pendant une synchro ? Si la même donnée est modifiée sur deux appareils ? La réponse tient en deux mécanismes : un **journal local des opérations** (chaque action est un événement daté, conservé jusqu'à confirmation du serveur) et des **écritures idempotentes** (rejouer deux fois la même opération ne crée pas de doublon). Le résultat sur AfCom : testée en conditions réelles de coupures prolongées, **zéro perte de données**.
+Le journal des opérations et les identifiants stables servent à repérer les envois confirmés et à reprendre ceux qui restent en attente. Il faut ensuite vérifier le comportement avec des coupures, des redémarrages et des confirmations retardées. Le mécanisme de reprise renvoie les opérations en attente sans demander à la personne de ressaisir ses ventes. Les sauvegardes et le suivi des erreurs complètent ce fonctionnement.
 
-### 2. Les conflits
+### Les modifications sur plusieurs appareils
 
-Deux vendeurs modifient le même stock hors-ligne ; qui a raison ? La leçon contre-intuitive : la plupart des « conflits » se dissolvent quand on modélise les données en **événements plutôt qu'en états**. On ne stocke pas « stock = 47 » (deux valeurs concurrentes = conflit) ; on stocke « vente de 3 » et « vente de 2 » (deux événements = tous valides, le stock se calcule). Ce simple choix de modélisation élimine 90 % des cas de conflit avant qu'ils existent.
+Si deux personnes modifient un stock sans connexion, leurs téléphones ne voient pas forcément la même information. Il faut décider comment rapprocher leurs opérations au retour du réseau.
 
-### 3. Les téléphones réels
+Pour des mouvements de stock, enregistrer « vente de trois unités » plutôt que remplacer directement le total peut faciliter ce rapprochement. D’autres changements, comme une correction de fiche produit, demandent des règles différentes. Je préfère définir ces cas avec vous plutôt que laisser l’application décider sans explication.
 
-Le terrain, ce sont des appareils à 40 000 FCFA avec peu de mémoire et des versions Android anciennes. Ça impose une discipline : base locale légère, pas d'images superflues, interface fluide même sur un processeur modeste. **Flutter** s'est révélé excellent pour ça — [j'explique pourquoi c'est ma technologie mobile de référence ici](/developpeur-flutter-benin).
+### Les appareils utilisés au quotidien
 
-## Ce que ça change pour l'utilisateur final
+Le choix du téléphone compte aussi : mémoire disponible, version du système, autonomie et taille de l’écran. Une interface agréable sur mon appareil peut être moins pratique sur celui de votre équipe.
 
-Tout. La vendeuse enregistre sa vente en trois secondes, réseau ou pas — l'application ne lui parle jamais de connexion, ce n'est pas son problème. Le soir, quand le téléphone accroche du réseau, tout se synchronise silencieusement : ses données sont sauvegardées, son historique est complet, et si elle change de téléphone, elle retrouve tout.
+J’utilise [Flutter](/developpeur-flutter-benin) pour AfCom. Le choix du framework ne dispense pas de limiter les traitements inutiles et d’essayer les parcours sur les appareils prévus.
 
-C'est la différence entre une application qu'on *essaie* et une application qu'on *adopte*. Sur le terrain africain, l'offline-first n'est pas une fonctionnalité premium — c'est la condition d'adoption.
+## Ce que l’utilisateur doit comprendre
 
-## Au-delà du commerce
+La saisie hors ligne permet de travailler sans surveiller le réseau à chaque opération. En revanche, elle doit pouvoir distinguer une opération enregistrée sur son téléphone d’une opération déjà synchronisée.
 
-Ce même principe s'applique partout où le réseau est incertain : les [coopératives agricoles](/blog/outil-digital-cooperative-agricole) dont les agents collectent au village, les équipes de santé communautaire, les enquêteurs de terrain, la logistique hors des grands axes. À chaque fois, la question à poser à votre prestataire est la même : *« que se passe-t-il exactement quand il n'y a pas de réseau ? »* — et « un message d'erreur » est la mauvaise réponse.
+Cette différence devient importante si le téléphone est perdu ou remplacé avant la transmission des données. Je prévois donc des indications compréhensibles, la possibilité de reprendre un envoi et une procédure de récupération adaptée au projet.
 
-## Si vous avez un projet de terrain
+## À quels usages cette approche répond
 
-L'offline-first demande plus de rigueur en amont — modélisation, synchro, tests de coupure — mais c'est ce qui sépare les applications utilisées des applications désinstallées. C'est une de mes spécialités sur les [applications mobiles](/services/creation-application-mobile) que je conçois, d'AfCom au monitoring IoT d'[iVeges](/projects/iveges) qui applique la même philosophie aux capteurs agricoles.
+Le besoin ne concerne pas seulement les commerces. Une [coopérative agricole](/blog/outil-digital-cooperative-agricole), une équipe de collecte ou des agents qui se déplacent peuvent avoir des tâches à effectuer dans des zones peu couvertes.
 
-Votre projet doit fonctionner là où le réseau ne suit pas ? [Décrivez-le-moi](/contact) — c'est exactement le genre de défi que j'aime, et le devis arrive sous 24h.
+La question que je vous conseille de poser est concrète : **quelles actions restent possibles sans réseau, et que se passe-t-il quand il revient ?** Une liste précise de ces actions sera plus utile qu’une promesse générale de fonctionnement hors ligne.
 
----
+## Préparer votre projet
 
-*Néhémie Gandonou conçoit des applications offline-first en Flutter depuis Cotonou. L'étude de cas complète d'AfCom est [disponible ici](/projects/afcom).*
+Avant de chiffrer une [application mobile](/services/creation-application-mobile), je regarde avec vous les données à conserver, les appareils utilisés et les situations où plusieurs personnes travaillent sur les mêmes informations. Nous choisissons ensuite les fonctions qui doivent rester disponibles hors ligne.
+
+Votre équipe rencontre ce problème ? [Décrivez-moi ses conditions de travail](/contact). Je vous aiderai à préciser ce qui doit fonctionner sans connexion et ce qui peut attendre son retour.

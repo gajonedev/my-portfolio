@@ -1,7 +1,7 @@
 ---
 title: "FedaPay, KkiaPay ou PayDunya : quel agrégateur de paiement choisir au Bénin ?"
 date: "2026-07-18"
-updated: "2026-10-04"
+updated: "2026-10-06"
 readTime: "5 min"
 summary: "Les critères que je compare pour choisir un prestataire de paiement adapté aux pays, aux clients et aux commandes de votre projet."
 category: "E-commerce"
@@ -17,8 +17,7 @@ tags:
   ]
 ---
 
-
-Dès qu'un projet doit encaisser en ligne au Bénin, une question se pose : quel agrégateur de paiement utiliser ? J'ai intégré plusieurs de ces solutions sur des projets réels. Voici les critères que je regarde, du point de vue du développement comme de l'encaissement.
+Dès qu'un projet doit encaisser en ligne au Bénin, une question se pose : quel agrégateur de paiement utiliser ? J’ai travaillé sur des parcours de paiement, et je commence par vérifier les besoins du marchand. Voici les critères que je regarde, du point de vue du développement comme de l'encaissement.
 
 ## Le rappel utile : pourquoi un agrégateur ?
 
@@ -34,9 +33,9 @@ Née au Bénin, FedaPay fait partie des solutions bien implantées localement. E
 
 **À savoir** : comme partout, les fonctionnalités avancées (paiements récurrents, transferts sortants) méritent d'être validées par rapport à votre besoin précis avant de signer.
 
-### KkiaPay : l'intégration éclair
+### KkiaPay : examiner le widget et les fonctions serveur
 
-Également béninoise, KkiaPay s'est fait connaître par la simplicité de son widget : quelques lignes de code et un bouton de paiement fonctionne sur votre site. MTN, Moov et cartes sont couverts.
+Également béninoise, KkiaPay s'est fait connaître par la simplicité de son widget : le widget fournit une interface de paiement à intégrer au site. Je vérifie les moyens de paiement disponibles et le traitement des confirmations côté serveur avant de le proposer.
 
 **Ses forces** : la rapidité de mise en œuvre, notamment pour un site qui veut encaisser sans développement lourd. Sa tarification peut être intéressante, mais elle doit être comparée au moment du projet car les grilles évoluent.
 
@@ -44,9 +43,9 @@ Née au Bénin, FedaPay fait partie des solutions bien implantées localement. E
 
 ### PayDunya : la couverture sous-régionale
 
-Née au Sénégal, PayDunya brille par sa couverture : Sénégal, Côte d'Ivoire, Bénin, Togo, Burkina, Mali… et surtout les wallets qui dominent ces marchés, Orange Money et Wave inclus, ce que les acteurs béninois ne couvrent pas.
+Pour PayDunya comme pour les autres prestataires, je compare les pays, les moyens de paiement et les fonctions disponibles pour le compte marchand. Une couverture annoncée doit être vérifiée pour votre activité avant de développer.
 
-**Ses forces** : si vos clients sont répartis dans plusieurs pays UEMOA, c'est l'option qui évite d'empiler les intégrations.
+**Ses forces** : si vos clients sont répartis dans plusieurs pays UEMOA, une couverture adaptée peut éviter de multiplier les intégrations.
 
 **À savoir** : pour un marchand uniquement actif au Bénin, cette couverture élargie n'est pas nécessairement un avantage. Les moyens de paiement couverts, le support et les frais peuvent alors peser davantage dans le choix.
 
@@ -54,24 +53,26 @@ Née au Sénégal, PayDunya brille par sa couverture : Sénégal, Côte d'Ivoire
 
 Les grilles tarifaires évoluent régulièrement. Consultez les pages officielles pour connaître les taux applicables au moment du projet. Voici surtout **comment** les comparer :
 
-- Les commissions se situent généralement **entre 1 et 3 % par transaction** selon l'acteur et le canal (le Mobile Money est souvent moins cher que la carte bancaire)
+- Comparez les **commissions par transaction** pour les canaux utilisés, avec les frais fixes et les éventuels minimums
 - Vérifiez les **frais de reversement** (le transfert de votre solde vers votre compte) et leur délai
 - Attention aux **minimums par transaction** si vous vendez des petits montants
 - À volume important, **négociez** : les grilles publiques ne sont pas gravées dans le marbre
 
-## Mon verdict par cas d'usage
+## Ce que je compare selon votre projet
 
-| Votre situation                   | Mon choix                          |
-| --------------------------------- | ---------------------------------- |
-| Boutique ou service 100 % Bénin   | FedaPay ou KkiaPay                 |
-| Encaisser vite sur un site simple | KkiaPay                            |
-| Clients dans plusieurs pays UEMOA | PayDunya                           |
-| Besoin d'Orange Money / Wave      | PayDunya                           |
-| SaaS avec abonnements récurrents  | À valider selon l'API, parlons-en |
+| Votre situation | Les points à vérifier |
+| --- | --- |
+| Boutique active au Bénin | Canaux locaux, ouverture du compte et suivi des transactions |
+| Paiement sur un site simple | Widget disponible et confirmation côté serveur |
+| Clients dans plusieurs pays | Couverture effective pour votre compte et devises acceptées |
+| Besoin d’Orange Money ou de Wave | Disponibilité du canal dans les pays concernés |
+| SaaS avec abonnements | Fonctions de paiement récurrent et gestion des échecs |
+
+Je ne retiens pas un prestataire uniquement sur sa liste de pays ou son prix affiché. Je compare aussi les confirmations, les exports et les conditions de reversement.
 
 ## Le vrai sujet : la qualité de l'intégration
 
-Quel que soit l'agrégateur, ce qui protège votre argent, c'est le code qui l'entoure : **vérification des webhooks** côté serveur (jamais confiance au navigateur), **idempotence** (un paiement confirmé deux fois ne débloque pas deux commandes), gestion des échecs et journalisation complète. C'est le cœur de mon travail sur les [boutiques e-commerce](/services/creation-ecommerce) et les [backends](/services/backend-api) que je développe.
+Quel que soit l'agrégateur, je vérifie le code qui relie le paiement à vos commandes : **vérification des webhooks** côté serveur (jamais confiance au navigateur), **idempotence** (un paiement confirmé deux fois ne débloque pas deux commandes), gestion des échecs et journalisation complète. C'est le cœur de mon travail sur les [boutiques e-commerce](/services/creation-ecommerce) et les [backends](/services/backend-api) que je développe.
 
 Un bon agrégateur ne compense pas une intégration fragile. À l'inverse, une solution correctement choisie et soigneusement intégrée peut répondre durablement au besoin, même si elle n'est pas la plus connue.
 

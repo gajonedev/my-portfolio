@@ -104,7 +104,7 @@ export const expertises: Expertise[] = [
       {
         question: "Qu'avez-vous déjà construit avec Flutter ?",
         answer:
-          "J’ai travaillé sur AfCom pour le suivi des ventes hors ligne, Afreel pour la facturation, SmartVilla pour la domotique et iVeges pour l’irrigation. Vous pouvez consulter leurs pages pour voir mon rôle et l’état de chaque projet.",
+          "J’ai travaillé sur AfCom pour le suivi des ventes hors ligne, Afreel pour la facturation, SmartVilla pour la domotique et iVeges pour l’irrigation. Vous pouvez consulter leurs pages pour voir l’état de chaque projet.",
       },
     ],
     relatedProjectSlugs: ["afcom", "smartvilla", "afreel", "iveges"],

@@ -1,7 +1,7 @@
 ---
 title: "Optimiser un site vitrine pour le SEO et la conversion"
 date: "2026-02-09"
-updated: "2026-10-04"
+updated: "2026-10-06"
 readTime: "7 min"
 summary: "Les points que je vérifie pour rendre votre site plus facile à trouver, plus rapide et plus clair pour vos visiteurs."
 category: "Performance"
@@ -9,10 +9,9 @@ author: "Néhémie Gandonou"
 tags: ["SEO", "Performance", "Core Web Vitals", "Conversion", "Site vitrine"]
 ---
 
-
 Votre site vitrine est souvent l'un des premiers contacts entre un prospect et votre entreprise. S'il est lent, difficile à trouver ou confus, une partie des visiteurs repartira sans vous contacter. Voici les points que je vérifie en priorité pour améliorer sa visibilité et faciliter le passage à l'action.
 
-## Pourquoi le SEO et la conversion sont indissociables
+## Ce que le SEO et le parcours client ont en commun
 
 Le SEO et la conversion répondent à des objectifs différents, mais ils partagent plusieurs fondations : une page rapide, compréhensible et agréable sur mobile aide les moteurs de recherche comme les visiteurs. L'effet exact sur les ventes varie selon l'audience ; il vaut donc mieux mesurer votre situation que reprendre une moyenne générale.
 
@@ -65,12 +64,12 @@ Une structure de titres claire aide Google à comprendre votre contenu :
 
 ### Les balises meta essentielles
 
-Chaque page doit avoir :
+Je vérifie notamment :
 
-- Un **title** unique de 50 à 60 caractères incluant le mot-clé cible
-- Une **meta description** de 150 à 160 caractères qui donne envie de cliquer
+- Un **title** précis et distinct des autres pages, qui annonce le contenu
+- Une **meta description** lisible qui résume la page, sans accumuler les mots-clés
 - Des **balises Open Graph** pour un partage optimal sur les réseaux sociaux
-- Un **canonical URL** pour éviter le contenu dupliqué
+- Une **URL canonique** pour indiquer la version de référence lorsque plusieurs adresses présentent le même contenu
 
 ### Le Schema.org (données structurées)
 
@@ -108,12 +107,12 @@ Un bon CTA doit être :
 
 ### La preuve sociale
 
-Intégrez des éléments de confiance à des endroits stratégiques :
+Utilisez les éléments que vous pouvez justifier et que vous avez le droit de publier :
 
 - Témoignages clients près du CTA principal
 - Logos de clients ou partenaires dans le hero
-- Chiffres clés (nombre de clients, taux de satisfaction)
-- Badges de certification ou de sécurité
+- Chiffres documentés, avec leur contexte et leur date
+- Certifications réellement obtenues, avec leur périmètre
 
 ## Étape 4 : La performance technique
 
@@ -122,9 +121,9 @@ Intégrez des éléments de confiance à des endroits stratégiques :
 Les images représentent souvent une part importante du poids d'une page. Voici ma checklist :
 
 1. **Compresser** avec des outils comme Squoosh ou Sharp
-2. **Format moderne** : WebP pour la compatibilité, AVIF pour la compression maximale
+2. **Format moderne** : comparer WebP et AVIF selon les images et les navigateurs visés
 3. **Responsive** : Utiliser `srcset` et `sizes` pour servir la bonne taille
-4. **Lazy loading** : `loading="lazy"` sur toutes les images sous la ligne de flottaison
+4. **Chargement différé** : `loading="lazy"` pour les images qui ne sont pas nécessaires au premier affichage
 5. **Priorité** : `priority` sur l'image hero avec le composant `next/image`
 
 ### Minimiser le CSS et le JavaScript
@@ -136,7 +135,7 @@ Les images représentent souvent une part importante du poids d'une page. Voici 
 
 ### Le caching et le CDN
 
-Configurez des headers de cache agressifs pour les assets statiques :
+Adaptez le cache aux fichiers et à leur fréquence de modification. Voici des exemples à vérifier selon votre hébergement :
 
 - **Images et polices** : `Cache-Control: public, max-age=31536000, immutable`
 - **HTML** : `Cache-Control: public, max-age=0, must-revalidate`
@@ -144,11 +143,11 @@ Configurez des headers de cache agressifs pour les assets statiques :
 
 ## Étape 5 : Mesurer et itérer
 
-### Les outils indispensables
+### Les outils que vous pouvez utiliser
 
 - **Google Search Console** : Suivi de l'indexation et des performances de recherche
 - **Google PageSpeed Insights** : Audit Core Web Vitals
-- **Vercel Analytics** : Données de performance réelles (RUM)
+- **Mesures de performance réelles** : comparer les données disponibles aux tests de laboratoire
 - **Hotjar ou Microsoft Clarity** : Heatmaps et enregistrements de sessions
 
 ### Les KPI à suivre
@@ -164,7 +163,7 @@ Configurez des headers de cache agressifs pour les assets statiques :
 
 ## Checklist récapitulative
 
-Voici votre checklist actionnable pour optimiser votre site vitrine :
+Voici les points que je vous propose de vérifier :
 
 - [ ] Core Web Vitals au vert (LCP < 2,5s, INP < 200ms, CLS < 0,1)
 - [ ] Images optimisées en WebP avec lazy loading

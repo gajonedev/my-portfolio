@@ -1,62 +1,65 @@
 ---
 title: "Digitaliser son école au Bénin : inscriptions, notes et scolarité en ligne"
 date: "2026-10-05"
-readTime: "7 min"
-summary: "Inscriptions en ligne, portail parents, paiement de la scolarité par Mobile Money : ce que le digital change concrètement pour un établissement scolaire béninois."
+updated: "2026-10-06"
+readTime: "3 min"
+summary: "Inscriptions, paiements, bulletins : voici comment je regroupe le suivi de votre école dans un portail adapté à vos équipes et aux familles."
 category: "Secteurs"
 author: "Néhémie Gandonou"
 tags: ["Éducation", "École", "Digitalisation", "Mobile Money", "Bénin"]
 ---
 
-# Digitaliser son école au Bénin : inscriptions, notes et scolarité en ligne
+Dans votre école, quelles tâches prennent le plus de temps : les inscriptions, le suivi des paiements ou la préparation des bulletins ? C’est par cette question que je commence. Le portail que je développe centralise les tâches retenues avec votre équipe et donne aux familles un accès aux informations qui les concernent.
 
-Chaque rentrée, le même spectacle dans les établissements privés : files d'attente pour les inscriptions, registres manuscrits, parents qui se déplacent pour payer une tranche de scolarité, bulletins recopiés à la main. Pendant ce temps, les parents — eux — comparent les écoles sur Google et paient tout le reste de leur vie par Mobile Money. L'école qui se digitalise ne fait pas du luxe : elle s'aligne sur la vie réelle de ses familles.
+Vous retrouvez les dossiers, les règlements et les résultats dans un même espace, avec des accès adaptés à chaque personne. Les parents consultent les informations publiées sans devoir appeler le secrétariat pour chacune d’elles. Voici comment j’organise ces fonctions avec vous.
 
-## Ce que la digitalisation change, poste par poste
+## Les inscriptions et réinscriptions
 
-### Les inscriptions et réinscriptions
+Avec le formulaire en ligne, les parents transmettent leur demande sans se déplacer. L’administration consulte ensuite le dossier, demande les pièces manquantes et confirme l’inscription.
 
-Un formulaire en ligne remplace la file d'attente : les parents pré-inscrivent depuis leur téléphone, l'administration valide les dossiers dans un tableau de bord, les places se gèrent en temps réel. La rentrée se prépare en semaines apaisées plutôt qu'en journées de cohue — et l'école qui offre ça marque des points avant même le premier cours.
+Je distingue la demande reçue de l’inscription validée. Nous devons préciser qui décide, comment les places sont suivies et quel autre canal reste disponible pour les familles qui ne peuvent pas utiliser le formulaire.
 
-### Le paiement de la scolarité
+## Le suivi de la scolarité
 
-C'est le poste au retour le plus immédiat. Le paiement des tranches par **MTN MoMo ou Moov Money** :
+Si vous souhaitez proposer le **Mobile Money**, nous regardons les prestataires disponibles et leur connexion à votre outil de gestion. Le portail regroupe les échéances, les paiements confirmés et les justificatifs.
 
-- supprime les déplacements des parents et les files à la caisse
-- **trace chaque franc** : reçu automatique, historique complet, fin des contestations « j'avais payé »
-- donne à la direction une vue en temps réel des impayés, avec relances automatiques par SMS aux échéances
+Il faut aussi prévoir les règlements effectués à la caisse, les erreurs de référence et les confirmations retardées. L’historique permet à votre équipe de retrouver un règlement et son justificatif plus facilement. Nous prévoyons aussi le rapprochement avec les relevés pour vérifier les montants.
 
-La sécurité de ces flux repose sur une intégration sérieuse — [le même standard que j'applique au e-commerce](/blog/accepter-paiements-mobile-money-site-web).
+Si vous retenez les relances par SMS ou notification, je les configure selon vos échéances et vos règles. Je vous explique les points techniques dans [mon article sur les paiements en ligne](/blog/accepter-paiements-mobile-money-site-web).
 
-### Le suivi pédagogique : notes et bulletins
+## Les notes et les bulletins
 
-Les enseignants saisissent les notes, le système calcule moyennes et rangs, les bulletins sortent en PDF au format de l'établissement. Les parents consultent les résultats depuis leur téléphone au lieu d'attendre la remise physique — et l'école conserve un historique propre, année après année.
+Dans le module de notes, les enseignants saisissent les résultats et préparent les bulletins au format de votre établissement. Avant le développement, nous précisons les coefficients, les absences, les corrections et la validation avant publication.
 
-### La communication avec les familles
+Si les parents consultent les résultats en ligne, les accès doivent correspondre à leurs enfants. Les droits de la direction, du secrétariat et des enseignants demandent aussi à être définis.
 
-Annonces, convocations, rappels d'échéances : un canal officiel (SMS ou notifications) remplace le téléphone arabe des groupes WhatsApp de classe, où l'information officielle se noie entre deux mèmes.
+## La communication avec les familles
 
-## Ce dont votre école a réellement besoin (et dans quel ordre)
+L’espace de communication regroupe les annonces et les documents à consulter. Si vous souhaitez envoyer des rappels importants par SMS ou notification, je connecte le service retenu à ce même espace.
 
-Mon conseil honnête : ne visez pas tout d'un coup. La digitalisation réussie se fait par étapes, chacune rentabilisée avant la suivante :
+Je vous conseille de choisir qui publie et comment les coordonnées sont mises à jour. Le portail doit rendre les messages plus faciles à retrouver, sans supposer que toutes les familles les liront immédiatement.
 
-1. **Un site web d'établissement** : présentation, filières, tarifs, formulaire de pré-inscription. C'est la vitrine que les parents consultent — [à partir de 170 000 FCFA](/tarifs).
-2. **Le paiement Mobile Money** de la scolarité, avec suivi des impayés — le gain administratif le plus rapide.
-3. **Le portail notes et bulletins**, quand les équipes sont prêtes.
-4. Le reste (emplois du temps, bibliothèque, cantine…) selon vos priorités réelles.
+## Choisir les premières fonctions
 
-Chaque étape s'appuie sur la précédente : c'est l'avantage d'un [outil sur-mesure](/services/creation-application-web) construit sur une base solide, par rapport à des logiciels séparés qui ne se parlent pas.
+Je vous propose de partir d’un besoin prioritaire, puis de faire essayer une première version :
 
-## « Nos enseignants ne sont pas à l'aise avec l'informatique »
+1. Une présentation de l’établissement et des demandes de préinscription si l’accueil des nouvelles familles est le principal besoin.
+2. Le suivi de la scolarité si votre équipe passe beaucoup de temps à rapprocher les règlements.
+3. Les notes et bulletins si les règles de calcul et de validation sont prêtes.
+4. D’autres fonctions, comme les emplois du temps ou la cantine, si leur utilité se confirme.
 
-C'est l'objection que j'entends à chaque fois — et elle se résout par la conception, pas par la formation forcée : interfaces en français simple, parcours réduits à l'essentiel, saisie pensée pour aller vite. Je forme chaque profil (direction, secrétariat, enseignants) à la livraison, et les premiers retours du terrain servent à ajuster l'outil. Un système que les équipes n'utilisent pas est un échec de conception, pas un échec des équipes.
+Nous ajustons cet ordre à vos priorités. Je regroupe les fonctions retenues dans votre [logiciel métier](/services/creation-application-web), en tenant compte des outils que vous utilisez déjà.
 
-## Combien ça coûte ?
+## Accompagner la prise en main
 
-Un site d'établissement avec pré-inscriptions démarre autour de **170 000 à 450 000 FCFA** ; une plateforme de gestion complète (paiements, notes, communication) est un projet de [logiciel métier à partir de 650 000 FCFA](/services/creation-application-web), déployable par phases pour étaler l'investissement. Mis en face des heures administratives économisées et des impayés récupérés, le calcul se fait vite.
+Je prépare les parcours avec les personnes qui s’en serviront. Un écran pour un enseignant n’a pas nécessairement les mêmes besoins qu’un écran pour le secrétariat.
 
-Je travaille avec les établissements de [Cotonou](/developpeur-web-cotonou), d'[Abomey-Calavi](/developpeur-web-abomey-calavi) — la commune la plus scolarisée du pays — et de tout le Bénin. [Décrivez-moi votre établissement](/contact) : devis détaillé sous 24h, et un plan de digitalisation par étapes adapté à votre taille.
+Nous prévoyons les essais, la formation et le traitement des premiers retours. Les difficultés peuvent venir de l’interface, de l’équipement, de la connexion ou de l’organisation : il faut les identifier avant d’ajouter des fonctions.
 
----
+## Quel budget prévoir ?
 
-*Néhémie Gandonou conçoit des plateformes de gestion scolaire avec paiement Mobile Money pour les établissements béninois.*
+Mes sites vitrines démarrent à **170 000 FCFA** et mes logiciels web à **650 000 FCFA**. Ces prix de départ ne couvrent pas automatiquement tous les modules décrits ici. La gestion des inscriptions, les paiements, la reprise des dossiers et les droits d’accès sont chiffrés selon votre établissement. Les [tarifs](/tarifs) donnent des premiers repères.
+
+Pour préparer notre échange, listez les tâches à simplifier, les personnes concernées et les documents utilisés aujourd’hui. J’accompagne votre école à [Cotonou](/developpeur-web-cotonou), à [Abomey-Calavi](/developpeur-web-abomey-calavi) ou à distance.
+
+[Décrivez-moi votre établissement](/contact). Nous définirons une première version autour des tâches prioritaires de vos équipes et des informations attendues par les familles.

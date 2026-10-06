@@ -1,7 +1,7 @@
 ---
-title: "Créer une boutique en ligne au Bénin : le guide complet 2026"
+title: "Créer une boutique en ligne au Bénin : le guide pratique 2026"
 date: "2026-07-27"
-updated: "2026-10-04"
+updated: "2026-10-06"
 readTime: "5 min"
 summary: "Catalogue, paiement, livraison : je vous aide à préparer les décisions à prendre avant de lancer votre boutique."
 category: "E-commerce"
@@ -9,8 +9,7 @@ author: "Néhémie Gandonou"
 tags: ["E-commerce", "Boutique en ligne", "Bénin", "Mobile Money", "Vente en ligne"]
 ---
 
-
-Vendre en ligne au Bénin est devenu plus accessible grâce au Mobile Money et à l'évolution des services de livraison. Beaucoup de vendeurs commencent simplement sur WhatsApp, ce qui est souvent pertinent pour tester leur offre. Lorsque les commandes deviennent régulières, une boutique structurée peut faciliter le paiement, le suivi et la gestion du catalogue. Voici comment préparer cette étape.
+Vendre en ligne au Bénin est devenu plus accessible grâce au Mobile Money et à l'évolution des services de livraison. Beaucoup de vendeurs commencent simplement sur WhatsApp, ce qui est souvent pertinent pour tester leur offre. Lorsque les commandes deviennent régulières, une boutique structurée réunit le catalogue, le paiement et le suivi des commandes dans un même parcours. Voici comment préparer cette étape.
 
 ## Étape 1 : Valider le modèle avant le site
 
@@ -22,50 +21,50 @@ Trois questions à trancher **avant** toute chose technique :
 
 ## Étape 2 : Le nom de domaine et l'image
 
-Votre boutique a besoin d'un nom de domaine propre (`maboutique.com` ou `.bj`) et de **photos de produits soignées**. Le prix du domaine varie selon l'extension et le fournisseur. Sur un écran de téléphone, la photo joue un rôle décisif dans la perception du produit.
+Votre boutique a besoin d'un nom de domaine propre (`maboutique.com` ou `.bj`) et de **photos de produits soignées**. Le prix du domaine varie selon l'extension et le fournisseur. Sur un écran de téléphone, des photos lisibles aident le client à comprendre ce qu’il achète.
 
 ## Étape 3 : La boutique elle-même
 
 Trois approches selon votre budget et vos ambitions :
 
-1. **Les réseaux sociaux seuls** (WhatsApp/Instagram) : gratuit, mais aucune visibilité Google, pas de paiement intégré, et tout repose sur vous manuellement. Bien pour tester une idée, pas pour construire.
-2. **Les plateformes clé en main** internationales : rapides, mais mensualités en devises, paiement local souvent absent, et vous ne possédez rien.
+1. **Les réseaux sociaux seuls** (WhatsApp/Instagram) : ils peuvent servir à tester une offre et recevoir des commandes. Vérifiez toutefois les outils de suivi disponibles et votre dépendance à ces comptes.
+2. **Les plateformes clé en main** internationales : elles peuvent réduire le travail de départ. Comparez l’abonnement, les paiements disponibles, les possibilités d’export et les limites de personnalisation.
 3. **Une boutique sur-mesure** : catalogue et gestion des commandes adaptés à votre activité, paiement Mobile Money et bases du référencement prévues dès la conception. C'est ce que je construis [à partir de 500 000 FCFA](/services/creation-ecommerce), détails sur ma [page tarifs](/tarifs).
 
 Mon conseil : commencez par WhatsApp si vous testez encore votre offre. Envisagez un site lorsque les commandes deviennent régulières et que la gestion manuelle commence à vous ralentir.
 
 ## Étape 4 : Le paiement : l'étape décisive
 
-Au Bénin, proposer le Mobile Money réduit fortement la friction au paiement. MTN MoMo et Moov Money sont particulièrement importants pour le marché local, tandis que la carte peut servir la diaspora et certains clients internationaux. Un agrégateur comme FedaPay ou KkiaPay permet de regrouper plusieurs moyens de paiement ; [mon comparatif détaillé est ici](/blog/fedapay-kkiapay-paydunya-comparatif).
+Au Bénin, proposer le Mobile Money peut faciliter le paiement pour les clients qui l’utilisent. MTN MoMo et Moov Money sont particulièrement importants pour le marché local, tandis que la carte peut servir la diaspora et certains clients internationaux. Un agrégateur comme FedaPay ou KkiaPay permet de regrouper plusieurs moyens de paiement ; [mon comparatif détaillé est ici](/blog/fedapay-kkiapay-paydunya-comparatif).
 
 Le paiement à la livraison reste demandé. Selon vos marges et votre taux d'annulation, vous pouvez le proposer tel quel ou demander un acompte Mobile Money. Testez les deux options avant de généraliser une règle.
 
 ## Étape 5 : La livraison, votre vraie salle des machines
 
 - **Cotonou et environs** : relevez les tarifs et les zones des services de livraison que vous avez testés, puis intégrez-les directement dans la boutique.
-- **Intérieur du pays** : les compagnies de transport interurbain font office de messagerie vers [Parakou](/developpeur-web-parakou), Bohicon ou Natitingou. Le client récupère au terminus.
+- **Intérieur du pays** : vous pouvez examiner les services de transport interurbain vers [Parakou](/developpeur-web-parakou), Bohicon ou Natitingou. Vérifiez les conditions de dépôt, de retrait et de suivi avec le transporteur.
 - **Notifications automatiques** : des messages comme « commande confirmée » ou « en livraison » rassurent le client et peuvent réduire les demandes de suivi.
 
 ## Étape 6 : Être trouvé : Google d'abord
 
-Une boutique invisible ne vend rien. Trois leviers dans l'ordre :
+Votre boutique a besoin de visiteurs. Je compare ces canaux selon votre public :
 
 1. **Le SEO des produits** : une fiche bien structurée peut apparaître dans Google avec son prix et sa disponibilité. J'intègre les bases techniques nécessaires dans mes boutiques.
 2. **Une fiche Google Business** pour capter les recherches locales (« boutique X Cotonou »).
-3. **Les réseaux sociaux comme canal, pas comme boutique** : Instagram et TikTok amènent le trafic, le site convertit et encaisse.
+3. **Les réseaux sociaux pour compléter la boutique** : Instagram ou TikTok peuvent amener des visiteurs vers les fiches produits. Il faut ensuite suivre les commandes réellement obtenues.
 
 J'ai détaillé la méthode complète dans [mon guide pour apparaître sur Google au Bénin](/blog/apparaitre-sur-google-benin-seo-local).
 
 ## Étape 7 : Le cadre légal
 
-Formalisez l'activité (IFU, registre de commerce selon votre statut), indispensable dès que les volumes montent, et exigé par les agrégateurs de paiement pour les comptes marchands sérieux. Renseignez-vous auprès de l'APIEx ou d'un comptable pour votre situation précise.
+Avant le lancement, renseignez-vous auprès de l’APIEx ou d’un comptable sur les démarches adaptées à votre activité. Demandez également au prestataire de paiement les documents nécessaires à l’ouverture de votre compte.
 
 ## Les erreurs qui coûtent cher
 
 - **Lancer avec 300 produits** mal photographiés au lieu de 20 impeccables
-- **Négliger les délais annoncés** : une promesse de livraison non tenue = un client perdu et un avis négatif
+- **Négliger les délais annoncés** : un retard non expliqué peut entraîner une annulation ou diminuer la confiance du client
 - **Ignorer les stocks** : vendre un produit épuisé abîme la confiance. L'espace de gestion doit devenir la référence pour les disponibilités
-- **Tout construire sur un compte tiers** : si votre business vit sur Instagram uniquement, Instagram peut le tuer du jour au lendemain
+- **Tout construire sur un compte tiers** : si votre business vit sur Instagram uniquement, une restriction de compte peut interrompre vos échanges et votre visibilité
 
 ## Combien de temps, combien d'argent ?
 

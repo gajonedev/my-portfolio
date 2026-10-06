@@ -1,7 +1,7 @@
 ---
-title: "Votre site est lent ? Voici pourquoi et ce que ça vous coûte vraiment"
+title: "Votre site est lent ? Comment trouver les causes et choisir les corrections"
 date: "2026-09-13"
-updated: "2026-10-04"
+updated: "2026-10-06"
 readTime: "4 min"
 summary: "Je vous montre comment repérer ce qui ralentit votre site et décider quelles corrections faire en premier."
 category: "Performance"
@@ -49,10 +49,10 @@ Je vous conseille de refaire la mesure dans des conditions similaires après une
 
 C'est la vraie question, et elle mérite un diagnostic honnête plutôt qu'un réflexe :
 
-- **Réparer** : quand la base est saine, je peux cibler les images, le cache, les scripts ou le serveur. Je mesure ensuite le résultat pour vérifier l’effet de ces corrections.
+- **Réparer** : quand la base est saine, je corrige les points identifiés dans les images, le cache, les scripts ou le serveur. Je mesure ensuite le résultat pour vérifier l’effet de ces corrections.
 - **Refaire** : quand les limites de l’existant empêchent les changements dont vous avez besoin. Je compare alors le coût des corrections avec celui d’une [refonte](/services/creation-site-vitrine), en prévoyant la reprise du contenu et des anciennes adresses.
 
-C'est exactement l'objet de mon [audit technique](/services/audit-optimisation) : pour 80 000 FCFA (déduits si je réalise les corrections), vous recevez un diagnostic complet sur la performance, le SEO et le code, avec un plan d'action chiffré poste par poste et une mesure avant/après pour constater le gain. Vous décidez ensuite en connaissance de cause, avec moi ou avec un autre prestataire : le rapport vous appartient.
+C'est exactement l'objet de mon [audit technique](/services/audit-optimisation) : pour 80 000 FCFA (déduits si je réalise les corrections), vous recevez un diagnostic des points examinés sur la performance, le SEO et le code, avec un plan de correction chiffré. Si je réalise les corrections, je compare les mesures avant et après. Vous décidez ensuite en connaissance de cause, avec moi ou avec un autre prestataire : le rapport vous appartient.
 
 ## Le mot de la fin
 

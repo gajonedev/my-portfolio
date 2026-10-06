@@ -1,59 +1,69 @@
 ---
-title: "Site web pour hôtel au Bénin : pourquoi la réservation directe change tout"
+title: "Site web pour hôtel au Bénin : préparer la réservation directe"
 date: "2026-10-05"
-readTime: "7 min"
-summary: "Entre les commissions des plateformes et les visiteurs qui préparent tout en ligne, un hôtel béninois sans réservation directe laisse de l'argent sur la table. Voici comment faire."
+updated: "2026-10-06"
+readTime: "4 min"
+summary: "Je développe le parcours de réservation de votre hôtel : présentation des chambres, demandes structurées et paiement selon les fonctions retenues."
 category: "Secteurs"
 author: "Néhémie Gandonou"
 tags: ["Hôtellerie", "Tourisme", "Réservation en ligne", "Bénin", "Site web"]
 ---
 
-# Site web pour hôtel au Bénin : pourquoi la réservation directe change tout
+Vous recevez des réservations par téléphone, WhatsApp ou des plateformes ? Votre site présente vos chambres et permet aux voyageurs de vous adresser une demande directement. Il faut toutefois choisir un fonctionnement que votre équipe pourra tenir à jour.
 
-Le tourisme béninois vit une accélération historique : les Vodun Days remplissent [Ouidah](/developpeur-web-ouidah), les palais royaux d'[Abomey](/developpeur-web-abomey) et la Pendjari attirent une clientèle internationale, et la diaspora revient en nombre. Ces visiteurs ont un point commun : **ils préparent et réservent tout en ligne, des semaines à l'avance**. La question pour votre hôtel n'est pas d'être sur internet — c'est d'y encaisser directement.
+Le voyageur consulte vos chambres et vous envoie ses dates depuis une même page. Votre équipe reçoit une demande structurée avec les informations nécessaires pour répondre. Voici comment je prépare ce parcours avec vous.
 
-## Le coût réel de la dépendance aux plateformes
+## Quelle place donner aux plateformes ?
 
-Booking et consorts apportent des clients, c'est vrai. Mais à quel prix :
+Une plateforme peut vous apporter de la visibilité et des clients. Votre site ouvre un canal de réservation directe en complément, notamment pour les voyageurs qui connaissent déjà votre établissement.
 
-- **Des commissions de l'ordre de 15 à 25 %** sur chaque réservation — sur une chambre à 40 000 FCFA, jusqu'à 10 000 FCFA partent à la plateforme, chaque nuit
-- **Le client ne vous appartient pas** : son email, son historique, sa fidélité restent chez la plateforme
-- **La comparaison permanente** : votre hôtel s'affiche à côté de dix concurrents, triés selon les intérêts de la plateforme
+Pour comparer les coûts, partez de vos contrats : commissions, frais de paiement et services inclus. Sur votre propre site, il faut aussi compter l’hébergement, la maintenance et le travail nécessaire pour attirer les visiteurs. Je compare ces éléments avec vous avant de recommander un changement de canal.
 
-La solution n'est pas de quitter ces plateformes — c'est de **ne plus en dépendre**. Les hôtels qui gagnent jouent sur les deux tableaux : les plateformes pour la découverte, leur propre site pour la réservation directe et la fidélisation.
+## Aider le voyageur à préparer son séjour
 
-## Ce qu'un bon site d'hôtel doit faire
+### Les chambres et les informations pratiques
 
-### 1. Être trouvé avant la plateforme
+Des photos récentes, les équipements, les conditions d’accueil et les coordonnées permettent de comprendre votre offre. Je vous conseille aussi de préciser les horaires d’arrivée, la localisation et les services qui demandent une réservation.
 
-Quand quelqu'un cherche « hôtel Ouidah » ou le nom de votre établissement, votre site doit apparaître — avec votre fiche Google Business à droite (photos, avis, itinéraire). Un site rapide et bien structuré y parvient ; [j'ai détaillé la méthode ici](/blog/apparaitre-sur-google-benin-seo-local).
+Pour un établissement à [Ouidah](/developpeur-web-ouidah), [Abomey](/developpeur-web-abomey) ou [Natitingou](/developpeur-web-natitingou), les informations sur l’accès et les activités voisines peuvent être utiles. Elles doivent rester exactes et faciles à mettre à jour.
 
-### 2. Convaincre en images
+### La visibilité dans les recherches
 
-Le visiteur choisit avec les yeux : photos professionnelles des chambres, de la piscine, du restaurant, du lever de soleil. Un site lent qui charge mal ces photos ruine l'effet — la performance n'est pas un détail technique, c'est votre vitrine.
+Je prépare les titres, la structure des pages et les informations locales pour aider les moteurs à comprendre votre établissement. Vous pouvez aussi travailler votre fiche d’entreprise si votre activité y est éligible.
 
-### 3. Réserver et payer, sans friction
+L’objectif est de faciliter la recherche de votre établissement et l’accès à vos offres. Les positions se suivent après la mise en ligne ; [mon guide du référencement local](/blog/apparaitre-sur-google-benin-seo-local) explique les actions à prévoir et le suivi à effectuer.
 
-Le cœur du réacteur : un calendrier de disponibilités en temps réel, une réservation en trois clics et le paiement adapté à chaque clientèle — **carte bancaire pour les internationaux, Mobile Money pour les locaux et la sous-région**. Un acompte en ligne réduit drastiquement les no-shows qui plombent votre taux d'occupation.
+## Demande de réservation ou confirmation immédiate ?
 
-### 4. Parler les deux langues
+Il s’agit de deux fonctionnements différents :
 
-Une clientèle vient du Nigeria, des États-Unis, du Brésil ; l'autre de Cotonou et de la sous-région. Un site **français-anglais** double votre marché adressable — c'est prévu dans ma [formule Vitrine Premium](/services/creation-site-vitrine).
+- **La demande de réservation** : le visiteur indique ses dates et ses besoins. Votre équipe vérifie les disponibilités puis répond.
+- **La réservation confirmée en ligne** : le site doit disposer d’un inventaire à jour, appliquer vos tarifs et éviter les conflits avec les autres canaux.
 
-## L'effet sur vos chiffres
+Si vous utilisez déjà un logiciel hôtelier, nous regardons comment le connecter. Sans cette coordination, un calendrier affiché sur le site peut donner une disponibilité erronée. Une simple demande à confirmer peut être une première étape plus adaptée.
 
-Faites le calcul pour votre établissement : prenez vos réservations annuelles via plateformes, multipliez par votre commission moyenne. C'est le budget que la réservation directe attaque. Un site professionnel avec réservation se rentabilise généralement en **quelques dizaines de réservations directes** — le reste de sa vie, il travaille en marge pure.
+## Prévoir le paiement et les annulations
 
-Ajoutez les gains moins visibles : la base d'emails de vos clients (relance pour la prochaine saison, offres directes), les avis collectés sur *votre* fiche Google, et l'image d'un établissement qui maîtrise son accueil dès le premier clic.
+Si vous souhaitez demander un acompte, nous précisons le montant, les conditions d’annulation et la manière de traiter les remboursements. Les moyens de paiement se choisissent selon les clients que vous recevez : Mobile Money, carte ou d’autres options disponibles auprès du prestataire retenu.
 
-## Par où commencer, selon votre situation
+Le paiement en ligne peut faciliter l’engagement du voyageur, mais il ne supprime pas les annulations. Je prévois aussi le parcours en cas d’échec ou de confirmation retardée.
 
-- **Pas de site du tout** : commencez par la fiche Google Business (gratuite, une heure de travail) puis un site avec réservation — c'est le combo gagnant.
-- **Un site vitrine sans réservation** : l'ajout d'un module de réservation et paiement transforme un site décoratif en canal de vente.
-- **Un site vieillissant** : mon [audit](/services/audit-optimisation) établit s'il faut optimiser ou refondre, chiffres à l'appui.
+## Quelles langues proposer ?
 
-J'accompagne les établissements de [Ouidah](/developpeur-web-ouidah), [Abomey](/developpeur-web-abomey), [Natitingou](/developpeur-web-natitingou), Cotonou et de toute la côte. [Parlons de votre établissement](/contact) — devis détaillé sous 24h, et un avis honnête sur ce qui rapportera le plus vite dans votre cas.
+Une version anglaise peut être utile si une partie de votre clientèle ne lit pas le français. Je vous demande quelles langues reviennent dans vos échanges, puis nous choisissons les pages à traduire et qui les maintiendra.
 
----
+Je propose une version française et anglaise dans mon [service de création de site vitrine](/services/creation-site-vitrine). Le système de réservation et ses intégrations se chiffrent séparément selon votre besoin.
 
-*Néhémie Gandonou conçoit des sites avec réservation et paiement en ligne pour les acteurs du tourisme béninois, de la côte à la Pendjari.*
+## Évaluer l’intérêt pour votre établissement
+
+Pour décider, relevez vos demandes directes actuelles, les commissions réellement payées et le temps consacré à leur traitement. Comparez ensuite ces données au coût du site et à son entretien.
+
+Après la mise en ligne, vous pourrez suivre les demandes reçues, les réservations confirmées et les annulations. Ce suivi vous aidera à décider des évolutions, sans supposer que chaque réservation directe aurait autrement généré une commission.
+
+## Par où commencer ?
+
+- **Vous n’avez pas de site** : rassemblez les photos, les informations sur les chambres et les contacts à publier.
+- **Vous avez un site de présentation** : regardons si un formulaire de demande suffit ou si vous avez besoin d’une connexion à votre outil de gestion.
+- **Votre site est difficile à utiliser** : mon [audit](/services/audit-optimisation) identifie les problèmes et compare les corrections nécessaires avec une refonte.
+
+[Parlez-moi de votre établissement](/contact), de vos canaux de réservation et de la manière dont vous gérez les disponibilités. Nous choisirons une première version que votre équipe pourra utiliser au quotidien.

@@ -13,11 +13,7 @@ import SectionWrapper from "../../components/layout/SectionWrapper";
 import SectionHeading from "../../components/ui/SectionHeading";
 import ProjectCard from "../../components/ui/ProjectCard";
 import FinalCta from "../../components/ui/FinalCta";
-import {
-  CheckCircle,
-  ExternalLink,
-  Lightbulb,
-} from "@/lib/icons";
+import { CheckCircle, ExternalLink, Lightbulb } from "@/lib/icons";
 import { projects, getProjectBySlug, siteConfig } from "@/data";
 
 export const dynamicParams = false;
@@ -181,7 +177,7 @@ export default async function ProjectCaseStudyPage({
               <ol className="flex flex-col divide-y divide-stroke card">
                 {caseStudy.solution.map((step, index) => (
                   <li key={step.slice(0, 40)} className="flex gap-4 p-5">
-                    <span className="font-display font-semibold text-primary text-sm tabular-nums">
+                    <span className="font-display font-semibold tabular-nums text-primary text-sm">
                       0{index + 1}
                     </span>
                     <p className="text-foreground-muted text-sm leading-relaxed">
@@ -242,16 +238,16 @@ export default async function ProjectCaseStudyPage({
             )}
           </div>
 
-          <aside className="lg:top-28 lg:sticky lg:order-none -order-1">
+          <aside className="lg:top-28 lg:sticky -order-1 lg:order-none">
             <dl className="flex flex-col divide-y divide-stroke text-sm card">
-              <div className="p-5">
+              {/* <div className="p-5">
                 <dt className="text-foreground-muted text-xs uppercase tracking-wider">
                   Mon rôle
                 </dt>
                 <dd className="mt-2 text-foreground leading-relaxed">
                   {project.role}
                 </dd>
-              </div>
+              </div> */}
               <div className="gap-4 grid grid-cols-2 p-5">
                 <div>
                   <dt className="text-foreground-muted text-xs uppercase tracking-wider">

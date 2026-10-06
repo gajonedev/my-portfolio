@@ -1,14 +1,13 @@
 ---
 title: "Créer un design system efficace pour un SaaS"
 date: "2026-02-02"
-updated: "2026-10-04"
+updated: "2026-10-06"
 readTime: "8 min"
 summary: "Voici comment je prépare des composants réutilisables pour garder une interface cohérente quand un logiciel évolue."
 category: "Design"
 author: "Néhémie Gandonou"
 tags: ["Design System", "SaaS", "UI/UX", "Composants", "React"]
 ---
-
 
 Un design system n'est pas réservé aux grandes entreprises. Bien dimensionné, il réduit les décisions répétitives et rend l'interface plus cohérente au fil des évolutions. Voici la méthode que j'utilise sur des projets SaaS, à adapter à la taille de l'équipe et à la maturité du produit.
 
@@ -27,8 +26,8 @@ Un design system est un **ensemble de composants réutilisables, de règles de d
 | ------------------------ | ----------------------------------------------------------- |
 | Cohérence visuelle       | Expérience utilisateur unifiée sur toutes les pages         |
 | Vitesse de développement | Moins de composants recréés et de décisions répétées |
-| Onboarding développeurs  | Nouveaux membres productifs en quelques jours               |
-| Maintenance              | Un seul endroit à modifier pour les changements globaux     |
+| Onboarding développeurs  | Repères partagés pour faciliter la prise en main               |
+| Maintenance              | Des règles communes plus faciles à modifier     |
 | Qualité                  | Moins de bugs visuels et d'incohérences                     |
 
 ## Étape 1 : Auditer l'existant
@@ -42,7 +41,7 @@ Avant de construire, faites un inventaire complet de votre interface actuelle :
 3. **Catégorisez** : regroupez les éléments similaires
 4. **Priorisez** : quels composants sont utilisés le plus souvent ?
 
-En général, lors de cet audit, on découvre que la plupart des SaaS utilisent **3 à 5 variantes de boutons au lieu d'une seule avec des props**, et **plus de 15 nuances de gris au lieu de 5 à 7 bien définies**.
+Je cherche surtout les variantes qui répondent au même usage. L’objectif est de regrouper les doublons utiles à simplifier, sans supprimer les différences nécessaires au produit.
 
 ### L'audit technique
 
@@ -87,7 +86,7 @@ Structurez votre palette en couches sémantiques :
 --input-focus: var(--color-primary);
 ```
 
-Cette architecture en 3 couches permet de **changer de thème en modifiant uniquement la couche sémantique**, sans toucher aux composants.
+Avec ces trois couches, je centralise les règles de couleur et les changements de thème. Il reste à vérifier les composants pour lesquels une couleur ou un état demande un traitement particulier.
 
 ### La typographie
 
@@ -128,7 +127,7 @@ Utilisez une échelle basée sur un **multiplicateur de 4px** :
 
 ### L'approche Atomic Design
 
-Organisez vos composants en 5 niveaux :
+L’approche Atomic Design propose cinq niveaux. Vous pouvez les utiliser si cette organisation aide votre équipe :
 
 1. **Atomes** : Button, Input, Badge, Avatar, Icon
 2. **Molécules** : SearchBar (Input + Button), FormField (Label + Input + Error)
@@ -136,9 +135,9 @@ Organisez vos composants en 5 niveaux :
 4. **Templates** : DashboardLayout, AuthLayout, SettingsLayout
 5. **Pages** : L'assemblage final
 
-### Construire un bouton universel
+### Préparer un bouton réutilisable
 
-Prenons l'exemple du composant le plus utilisé dans tout SaaS, le bouton :
+Prenons un composant courant : le bouton.
 
 ```tsx
 interface ButtonProps {
@@ -154,7 +153,7 @@ interface ButtonProps {
 **Principes clés :**
 
 - **Variants** : Chaque bouton a un rôle sémantique clair
-- **Tailles** : 3 tailles couvrent 99 % des cas d'usage
+- **Tailles** : commencez par quelques tailles, puis vérifiez les besoins de votre interface
 - **États** : default, hover, focus, active, disabled, loading
 - **Accessibilité** : focus visible, `aria-label` si icon-only, `aria-busy` si loading
 
@@ -189,7 +188,7 @@ Ce pattern offre **flexibilité et lisibilité** tout en gardant le contrôle su
 
 ## Étape 4 : Implémenter avec Tailwind CSS
 
-Tailwind CSS est l'outil idéal pour implémenter un design system dans un projet React / Next.js. Voici comment structurer les choses efficacement.
+J’utilise Tailwind CSS sur certains projets React et Next.js pour appliquer les mêmes règles de style. Voici une manière d’organiser les variables et les composants.
 
 ### Les CSS custom properties + Tailwind
 
@@ -238,7 +237,7 @@ const button = cva(
 
 ### La documentation vivante
 
-Un design system sans documentation est un design system mort. Chaque composant doit avoir :
+Une documentation courte aide l’équipe à comprendre et réutiliser les composants. Pour chacun, je prévois notamment :
 
 - **Description** : À quoi sert ce composant ?
 - **Props** : Liste complète avec types et valeurs par défaut
@@ -246,14 +245,14 @@ Un design system sans documentation est un design system mort. Chaque composant 
 - **Do's and Don'ts** : Bonnes et mauvaises pratiques
 - **Accessibilité** : Exigences ARIA et navigation clavier
 
-### Outils recommandés
+### Des outils pour documenter et vérifier les composants
 
 - **Storybook** : Pour documenter et tester visuellement les composants
 - **Figma** : Pour la source de vérité design
 - **Chromatic** : Pour les tests de régression visuelle
 - **Changesets** : Pour versionner les modifications du design system
 
-### Le workflow de contribution
+### Un exemple de contribution en équipe
 
 1. Un designer propose un changement dans Figma
 2. Un développeur implémente dans une branche dédiée
@@ -273,7 +272,7 @@ Chaque composant a des états : default, hover, focus, active, disabled, error, 
 
 ### 3. Oublier l'accessibilité
 
-Le design system est l'endroit idéal pour intégrer l'accessibilité dès la base :
+Préparer les composants partagés est une bonne occasion de vérifier l’accessibilité :
 
 - Contraste minimum WCAG AA (4.5:1 pour le texte, 3:1 pour les éléments UI)
 - Navigation clavier complète

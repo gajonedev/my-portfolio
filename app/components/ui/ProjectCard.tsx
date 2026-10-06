@@ -26,7 +26,7 @@ export default function ProjectCard({
   const href = `/projects/${project.slug}`;
 
   return (
-    <article className="group relative flex flex-col bg-background-soft has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-primary has-[a:focus-visible]:outline-offset-4 border border-stroke hover:border-primary/40 rounded-3xl h-full overflow-hidden transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(0,0,0,0.18)] motion-reduce:hover:translate-y-0">
+    <article className="group relative flex flex-col bg-background-soft hover:shadow-[0_24px_60px_rgba(0,0,0,0.18)] border border-stroke hover:border-primary/40 rounded-3xl has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-primary has-[a:focus-visible]:outline-offset-4 h-full overflow-hidden transition hover:-translate-y-1 motion-reduce:hover:translate-y-0 duration-300">
       <div className="relative border-stroke border-b aspect-[16/10] overflow-hidden">
         {cover?.src ? (
           <Image
@@ -34,12 +34,16 @@ export default function ProjectCard({
             alt={cover.alt}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 400px"
-            className="object-cover object-top group-hover:scale-[1.03] transition-transform duration-500 motion-reduce:group-hover:scale-100"
+            className="object-cover object-top motion-reduce:group-hover:scale-100 group-hover:scale-[1.03] transition-transform duration-500"
           />
         ) : (
           <div
             className="absolute inset-0 flex flex-col justify-center items-center gap-3 project-cover-fallback"
-            style={accent ? ({ "--cover": accent } as React.CSSProperties) : undefined}
+            style={
+              accent
+                ? ({ "--cover": accent } as React.CSSProperties)
+                : undefined
+            }
           >
             <span className="flex justify-center items-center bg-background-soft/80 shadow-sm border border-stroke rounded-2xl w-14 h-14 text-primary">
               {createElement(getIcon(project.iconName), {
@@ -62,7 +66,9 @@ export default function ProjectCard({
 
       <div className="flex flex-col flex-1 gap-3 p-6">
         <div className="flex flex-wrap justify-between items-center gap-2">
-          <span className="text-foreground-muted text-xs">{project.sector}</span>
+          <span className="text-foreground-muted text-xs">
+            {project.sector}
+          </span>
           <div className="flex items-center gap-2">
             <ProjectStatus status={project.status} />
             {detailed && project.link && (
@@ -82,7 +88,7 @@ export default function ProjectCard({
         <h3 className="font-semibold text-xl">
           <Link
             href={href}
-            className="after:absolute after:inset-0 after:content-[''] focus-visible:outline-none group-hover:text-primary transition-colors"
+            className="after:absolute after:inset-0 focus-visible:outline-none group-hover:text-primary after:content-[''] transition-colors"
           >
             {project.name}
           </Link>
@@ -92,12 +98,12 @@ export default function ProjectCard({
           {detailed ? project.summary : project.description}
         </p>
 
-        {detailed && (
+        {/* {detailed && (
           <p className="text-foreground-muted text-sm leading-relaxed">
             <span className="font-medium text-foreground">Mon rôle : </span>
             {project.role}
           </p>
-        )}
+        )} */}
 
         <span
           aria-hidden="true"

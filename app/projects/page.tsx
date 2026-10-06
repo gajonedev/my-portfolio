@@ -31,7 +31,7 @@ export default async function ProjectsPage() {
       <PageHeader
         kicker="Réalisations"
         title="Mes projets"
-        description="Voici des projets que j’ai développés pour des clients ou pour explorer une idée. Je vous explique mon rôle, mes choix et où chacun en est."
+        description="Voici des projets que j’ai développés pour des clients ou pour explorer une idée. Je vous explique mes choix et où chacun en est."
       />
       <SectionWrapper variant="light" className="py-16 md:py-24">
         <Container className="gap-6 grid md:grid-cols-2">

@@ -1,7 +1,7 @@
 ---
 title: "Application mobile ou site web : par quoi commencer ?"
 date: "2026-08-16"
-updated: "2026-10-04"
+updated: "2026-10-06"
 readTime: "4 min"
 summary: "Je vous aide à choisir par quoi commencer selon vos utilisateurs, votre budget et les fonctions dont vous avez besoin."
 category: "Business"
@@ -9,27 +9,26 @@ author: "Néhémie Gandonou"
 tags: ["Application mobile", "Site web", "Stratégie", "Startup", "Bénin"]
 ---
 
-
 « Il me faut une application. » C'est une phrase que j'entends souvent au début d'un projet. Ma première réaction est généralement de revenir à l'usage : qui utilisera le produit, à quelle fréquence et dans quelles conditions ? Une application peut être le bon choix, mais pas nécessairement le premier investissement. Voici les critères que j'utilise pour orienter mes clients.
 
 ## La différence fondamentale : l'accès
 
-- Un **site web** est accessible instantanément : on clique sur un lien, c'est là. Zéro installation, zéro friction. Et Google le trouve.
+- Un **site web** s’ouvre depuis un lien, sans installation. Ses pages publiques peuvent aussi être découvertes dans les moteurs de recherche.
 - Une **application mobile** doit être découverte, téléchargée, puis installée. Chaque étape ajoute de la friction. En échange, elle vit sur le téléphone : icône visible, notifications, accès hors ligne et utilisation du matériel comme la caméra ou le GPS.
 
-Toute la décision découle de cette différence.
+Cette différence compte, mais je regarde aussi les usages et les fonctions attendues.
 
 ## Choisissez le site web d'abord si…
 
 - **Vos clients doivent vous trouver** : les pages d'un site peuvent apparaître directement dans Google. Pour capter une recherche comme « hôtel Ouidah » ou « boutique chaussures Cotonou », le web part généralement avec un avantage.
-- **L'usage est occasionnel** : personne n'installe une app pour consulter un menu ou demander un devis une fois par trimestre.
-- **Vous vendez en ligne** : une [boutique web](/services/creation-ecommerce) touche tout le monde, y compris ceux qui n'installeront jamais votre app. L'app e-commerce viendra récompenser vos clients fidèles, plus tard.
+- **L'usage est occasionnel** : demander une installation pour consulter un menu ou obtenir un devis ponctuel peut décourager certains visiteurs.
+- **Vous vendez en ligne** : une [boutique web](/services/creation-ecommerce) permet de commander sans installer une application. Une version mobile peut ensuite être envisagée si vos clients réguliers en ont l’usage.
 - **Le budget est serré** : un [site professionnel démarre à 170 000 FCFA](/tarifs), une [application mobile à 900 000](/blog/combien-coute-application-mobile-benin-2026). Un site de présentation peut être une première étape moins coûteuse ; un logiciel web complet demande un autre budget.
 
 ## Choisissez l'application mobile d'abord si…
 
 - **L'usage est quotidien ou terrain** : pour la gestion d'un commerce, le suivi d'activité ou le travail d'agents sur le terrain, une application installée peut être plus pratique qu'un site.
-- **Le hors-ligne est vital** : un outil de terrain qui dépend d'une connexion permanente peut devenir inutilisable au mauvais moment. Une application conçue en mode *offline-first* peut conserver les données localement et les synchroniser au retour du réseau.
+- **Le hors-ligne est vital** : un outil de terrain qui dépend d'une connexion permanente peut devenir inutilisable au mauvais moment. Dans une application conçue en mode *offline-first*, les données des tâches prévues hors ligne sont conservées sur le téléphone, puis synchronisées au retour du réseau.
 - **Les notifications sont importantes** : rappels, alertes et relances peuvent soutenir un usage régulier.
 - **Vous utilisez le matériel du téléphone** en profondeur : scan, GPS temps réel, Bluetooth, capteurs.
 
@@ -41,13 +40,13 @@ Voici les étapes que je vous propose pour éviter de tout financer dès le dép
 
 1. **Lancez sur un seul canal**, celui que les critères ci-dessus désignent
 2. **Mesurez** ce que les utilisateurs font réellement
-3. **Étendez** avec le second canal quand la demande le justifie, en réutilisant le [backend](/services/backend-api) déjà construit, qui sert les deux sans être refait
+3. **Étendez** avec le second canal quand la demande le justifie, en réutilisant les fonctions du [backend](/services/backend-api) qui restent adaptées
 
-C'est exactement pour ça que je construis les backends séparés de l'interface : le moteur qui alimente votre site web aujourd'hui alimentera votre app Flutter demain, en réutilisant le serveur si les besoins restent compatibles.
+Lorsque le projet le justifie, je sépare le serveur de l’interface pour faciliter sa réutilisation. Nous vérifions les besoins de la version mobile avant de décider ce qui peut être conservé.
 
 ## Et la PWA, l'entre-deux ?
 
-Une Progressive Web App est un site web qui peut s'installer comme une application, avec une icône, un affichage plein écran et certaines fonctions hors ligne. Elle peut être une bonne manière de tester un usage sans financer immédiatement deux applications natives. Ses limites dépendent néanmoins du navigateur et des fonctions attendues ; pour certains projets, elle peut tout à fait rester la solution finale.
+Une Progressive Web App propose une installation depuis les navigateurs compatibles, avec une icône, un affichage plein écran et certaines fonctions hors ligne. Elle peut être une bonne manière de tester un usage sans financer immédiatement deux applications natives. Ses limites dépendent néanmoins du navigateur et des fonctions attendues ; pour certains projets, elle peut tout à fait rester la solution finale.
 
 ## En résumé
 
