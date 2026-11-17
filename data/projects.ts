@@ -56,7 +56,7 @@ export const projects: Project[] = [
     name: "AgriFresh",
     sector: "Agriculture • Marketplace",
     iconName: "Sprout",
-    status: "in-dev",
+    // status: "in-dev",
     role: "Je conçois et développe la solution pour AgroConnect, de l’architecture technique aux applications. Je prendrai aussi en charge sa mise en production.",
     description:
       "Pour AgroConnect, je développe une plateforme qui met en relation les producteurs de produits frais et les consommateurs au Bénin, avec une application mobile et un espace de gestion web.",
@@ -75,14 +75,108 @@ export const projects: Project[] = [
     ],
     images: [
       {
-        alt: "Application mobile AgriFresh destinée aux producteurs et aux consommateurs",
-        src: "/projects/agrifresh/mobile-placeholder.svg",
-        caption: "Application mobile",
+        alt: "agrifresh",
+        src: "/projects/agrifresh/1.png",
       },
       {
-        alt: "Dashboard web d’administration et de gestion d’AgriFresh",
-        src: "/projects/agrifresh/dashboard-placeholder.svg",
-        caption: "Dashboard d’administration",
+        alt: "agrifresh",
+        src: "/projects/agrifresh/2.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/3.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/4.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/5.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/6.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/7.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/8.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/9.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/10.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/11.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/12.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/13.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/14.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/16.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/17.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/18.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/19.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/20.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/21.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/22.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/23.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/24.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/25.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/26.png",
+      },
+      {
+        alt: "agrifresh",
+        src: "/projects/agrifresh/27.png",
       },
     ],
     caseStudy: {
@@ -91,11 +185,11 @@ export const projects: Project[] = [
       problem:
         "Le besoin est de faciliter les échanges entre producteurs et consommateurs, tout en donnant à AgroConnect un espace central pour administrer la plateforme. L’application mobile et le dashboard doivent partager les mêmes données pour que l’équipe puisse suivre l’activité.",
       solution: [
-        "Je conçois l’architecture et le backend communs à l’application mobile et au dashboard web.",
-        "Je développe l’application mobile pour la mise en relation entre producteurs de produits frais et consommateurs.",
-        "Je construis le dashboard web pour qu’AgroConnect administre la plateforme et gère son activité au même endroit.",
-        "Je développe la gestion des données et l’authentification, puis j’intègre les services de notifications et de SMS.",
-        "Je prépare le déploiement. La mise en production reste une étape à venir.",
+        "J'ai conçu l’architecture et le backend communs à l’application mobile et au dashboard web.",
+        "J'ai développé l’application mobile pour la mise en relation entre producteurs de produits frais et consommateurs.",
+        "J'ai construit le dashboard web pour qu’AgroConnect administre la plateforme et gère son activité au même endroit.",
+        "J'ai développé la gestion des données et l’authentification, puis j’ai intégré les services de notifications et de SMS.",
+        "J'ai préparé le déploiement. La mise en production reste une étape à venir.",
       ],
       results: [
         "Une application mobile pour les utilisateurs de la marketplace.",
@@ -104,14 +198,14 @@ export const projects: Project[] = [
         "Un système de notifications et de SMS pour les échanges avec les utilisateurs.",
       ],
       highlights: [
-        "Je développe les interfaces mobile et web autour d’un backend commun pour garder les données cohérentes.",
-        "Je prends en charge la conception et le développement de l’ensemble, avec un déploiement prévu à l’issue du développement.",
+        "J'ai développé les interfaces mobile et web autour d’un backend commun pour garder les données cohérentes.",
+        "J'ai pris en charge la conception et le développement de l’ensemble, avec un déploiement prévu à l’issue du développement.",
       ],
     },
   },
   {
     slug: "weman-lms",
-    role: "Je conçois et développe la plateforme web, les paiements et les traitements automatiques.",
+    role: "J'ai conçu et développé la plateforme web, les paiements et les traitements automatiques.",
     images: [
       {
         alt: "Vue d’ensemble du produit",
@@ -158,11 +252,11 @@ export const projects: Project[] = [
     sector: "eLearning • Plateforme",
     iconName: "GraduationCap",
     description:
-      "Je développe une plateforme où les formateurs peuvent publier leurs cours et les apprenants payer par Mobile Money, suivre leur progression et obtenir un certificat.",
+      "J'ai développé une plateforme où les formateurs peuvent publier leurs cours et les apprenants payer par Mobile Money, suivre leur progression et obtenir un certificat.",
     impact:
       "Le parcours d’achat, l’accès aux vidéos et le suivi de progression sont réunis dans la plateforme.",
     summary:
-      "Je développe une plateforme où les formateurs peuvent publier leurs cours et les apprenants payer par Mobile Money, suivre leur progression et obtenir un certificat. Avec Wéman, je travaille sur une plateforme de cours en ligne adaptée aux usages du Bénin : paiement Mobile Money, consultation sur téléphone et connexions parfois limitées.",
+      "J'ai développé une plateforme où les formateurs peuvent publier leurs cours et les apprenants payer par Mobile Money, suivre leur progression et obtenir un certificat. Une plateforme de cours en ligne adaptée aux usages du Bénin : paiement Mobile Money, consultation sur téléphone et connexions parfois limitées.",
     tech: [
       "Next.js",
       "Drizzle ORM",
@@ -172,7 +266,7 @@ export const projects: Project[] = [
       "PostgreSQL",
     ],
     year: "2026",
-    status: "in-dev",
+    // status: "in-dev",
     featured: true,
     caseStudy: {
       context:
@@ -181,7 +275,7 @@ export const projects: Project[] = [
         "Je voulais réunir la publication des cours, l’achat, le suivi et les certificats dans un même parcours, sans demander aux formateurs de gérer eux-mêmes les opérations techniques.",
       solution: [
         "J’ai prévu un espace par formateur pour publier des cours, organiser les chapitres et suivre les apprenants.",
-        "J’utilise Mux pour la vidéo afin d’adapter la qualité de lecture au débit disponible.",
+        "J’ai utilisé Mux pour la vidéo afin d’adapter la qualité de lecture au débit disponible.",
         "J’ai relié le paiement Mobile Money à l’ouverture de l’accès au cours.",
         "J’ai mis en place la génération des certificats PDF après la validation du parcours.",
         "Les formateurs disposent de tableaux de bord pour consulter les ventes et la progression.",
@@ -199,7 +293,7 @@ export const projects: Project[] = [
   },
   {
     slug: "afcom",
-    role: "Je conçois l’application mobile, son stockage sur le téléphone et sa synchronisation.",
+    role: "J'ai conçu l’application mobile, son stockage sur le téléphone et sa synchronisation.",
     images: [
       {
         alt: "Vue d’ensemble du produit",
@@ -212,11 +306,11 @@ export const projects: Project[] = [
     sector: "Mobile • Commerce",
     iconName: "Store",
     description:
-      "Avec AfCom, je travaille sur une application qui permet aux commerçants de suivre leurs ventes, leurs stocks et leurs dépenses, même sans connexion.",
+      "Avec AfCom, j'ai travaillé sur une application qui permet aux commerçants de suivre leurs ventes, leurs stocks et leurs dépenses, même sans connexion.",
     impact:
       "Le prototype permet de saisir des ventes et des dépenses sans réseau.",
     summary:
-      "Avec AfCom, je travaille sur une application qui permet aux commerçants de suivre leurs ventes, leurs stocks et leurs dépenses, même sans connexion. AfCom part d’un besoin simple : garder une trace des ventes et des stocks sans dépendre d’un cahier ni d’une connexion permanente.",
+      "Avec AfCom, j'ai travaillé sur une application qui permet aux commerçants de suivre leurs ventes, leurs stocks et leurs dépenses, même sans connexion. AfCom part d’un besoin simple : garder une trace des ventes et des stocks sans dépendre d’un cahier ni d’une connexion permanente.",
     tech: ["Flutter", "Dart", "Supabase", "SQLite"],
     year: "2025",
     status: "preview",
@@ -245,7 +339,7 @@ export const projects: Project[] = [
   },
   {
     slug: "smartvilla",
-    role: "Je développe l’application mobile et ses échanges avec les équipements de la villa.",
+    role: "J'ai développé l’application mobile et ses échanges avec les équipements de la villa.",
     images: [
       {
         alt: "Vue d’ensemble du produit",
@@ -504,6 +598,6 @@ export const projects: Project[] = [
 ];
 
 // Sous-ensemble mis en avant sur la page d'accueil
-export const projectsPreview = ["weman-lms", "afcom", "archiform"]
+export const projectsPreview = ["agrifresh", "weman-lms", "archiform"]
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => project !== undefined);
