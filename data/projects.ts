@@ -57,11 +57,11 @@ export const projects: Project[] = [
     sector: "Agriculture • Marketplace",
     iconName: "Sprout",
     // status: "in-dev",
-    role: "Je conçois et développe la solution pour AgroConnect, de l’architecture technique aux applications. Je prendrai aussi en charge sa mise en production.",
+    role: "J'ai conçu et développé la solution pour AgroConnect, de l’architecture technique aux applications. J'ai aussi pris en charge sa mise en production.",
     description:
-      "Pour AgroConnect, je développe une plateforme qui met en relation les producteurs de produits frais et les consommateurs au Bénin, avec une application mobile et un espace de gestion web.",
+      "Pour AgroConnect, j'ai développé une plateforme qui met en relation les producteurs de produits frais et les consommateurs au Bénin, avec une application mobile et un espace de gestion web.",
     summary:
-      "Avec AgriFresh, AgroConnect souhaite rapprocher les producteurs de produits frais des consommateurs au Bénin. Je développe l’application mobile, le dashboard d’administration et le backend qui les relie. Le projet est en cours de développement.",
+      "Avec AgriFresh, AgroConnect souhaite rapprocher les producteurs de produits frais des consommateurs au Bénin. J'ai développé l’application mobile, le dashboard d’administration et le backend qui les relie.",
     tech: [],
     skills: [
       "Développement mobile",
@@ -199,7 +199,7 @@ export const projects: Project[] = [
       ],
       highlights: [
         "J'ai développé les interfaces mobile et web autour d’un backend commun pour garder les données cohérentes.",
-        "J'ai pris en charge la conception et le développement de l’ensemble, avec un déploiement prévu à l’issue du développement.",
+        "J'ai pris en charge la conception et le développement de l’ensemble, avec un déploiement effectué à l’issue du développement.",
       ],
     },
   },
