@@ -156,11 +156,22 @@ export default async function BlogPostPage({ params }: Props) {
               <TableOfContents headings={post.headings} />
             </div>
             <div className="p-6 card">
-              <p className="font-semibold text-foreground">{post.author}</p>
-              <p className="text-foreground-muted text-xs">
-                {siteConfig.title}
-              </p>
-              <p className="mt-3 text-foreground-muted text-sm leading-relaxed">
+              <div className="flex items-center gap-3">
+                <Image
+                  src="/portrait.webp"
+                  alt=""
+                  width={48}
+                  height={48}
+                  className="border border-white/15 rounded-full w-12 h-12 object-cover object-top shrink-0"
+                />
+                <div className="min-w-0">
+                  <p className="font-semibold text-foreground">{post.author}</p>
+                  <p className="text-foreground-muted text-xs">
+                    {siteConfig.title}
+                  </p>
+                </div>
+              </div>
+              <p className="mt-4 text-foreground-muted text-sm leading-relaxed">
                 {siteConfig.description}
               </p>
             </div>
