@@ -153,7 +153,7 @@ export default function MobileMenu({
             </ul>
           </nav>
 
-          {/* the horizon of the home page */}
+          {/* the lit line of the home page, centred in the free space */}
           <div aria-hidden="true" className="menu-horizon">
             <m.span
               className="menu-horizon-line"
@@ -161,10 +161,9 @@ export default function MobileMenu({
               animate={{ scaleX: 1, opacity: 1 }}
               transition={{ duration: 1.3, ease: EASE_IO, delay: 0.45 }}
             />
-            <span className="menu-floor" />
           </div>
 
-          <m.div className="flex flex-col gap-6 mt-auto" {...fade(0.7)}>
+          <m.div className="flex flex-col gap-6" {...fade(0.7)}>
             <Link href={contactHref} onClick={go(contactHref)} className="w-full pill-solid">
               <span className="pill-solid-label">Démarrer un projet</span>
               <span aria-hidden="true" className="pill-solid-badge">
