@@ -5,10 +5,12 @@ import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 import SectionWrapper from "../components/layout/SectionWrapper";
 import SectionHeading from "../components/ui/SectionHeading";
-import SpotlightCard from "../components/ui/SpotlightCard";
+import { serviceVisual } from "../components/home/ServiceVisuals";
+import { contactHref } from "@/lib/acquisition";
+import { ArrowUpRight } from "lucide-react";
 import TestimonialQuote from "../components/ui/TestimonialQuote";
 import FinalCta from "../components/ui/FinalCta";
-import { getIcon, ArrowRight, CheckCircle } from "@/lib/icons";
+import { getIcon, CheckCircle } from "@/lib/icons";
 import {
   servicesDetailed,
   servicesPreview,
@@ -16,9 +18,6 @@ import {
   pricingTiers,
   siteConfig,
 } from "@/data";
-
-const ACCENTS = ["#ff4d3d", "#3b82f6", "#f59e0b"];
-const CORNERS = ["tr", "tl", "br", "bl"] as const;
 
 const url = `${siteConfig.url}/services`;
 
@@ -55,45 +54,29 @@ export default async function ServicesPage() {
       />
 
       {/* Services principaux */}
-      <SectionWrapper variant="light" className="py-16 md:py-24">
-        <Container className="gap-6 grid md:grid-cols-2">
+      <SectionWrapper className="py-20 md:py-28">
+        <Container className="gap-6 grid lg:grid-cols-2">
           {mainServices.map((service, i) => {
+            const Visual = serviceVisual(service.slug);
             const price = pricingTiers.find(
               (tier) => tier.serviceSlug === service.slug,
             )?.priceFrom;
             return (
-              <SpotlightCard
-                key={service.slug}
-                corner={CORNERS[i % CORNERS.length]}
-                cornerColor={ACCENTS[i % ACCENTS.length]}
-                hover={false}
-                className="h-full [&>.spotlight-content]:h-full"
-              >
-                <article className="flex flex-col gap-5 p-7 md:p-9 h-full">
-                  <div className="flex justify-between items-start gap-4">
-                    <div className="flex justify-center items-center bg-primary/15 rounded-2xl w-12 h-12 text-primary">
-                      {createElement(getIcon(service.iconName), {
-                        className: "w-6 h-6",
-                      })}
-                    </div>
-                    {price && (
-                      <p className="text-right">
-                        <span className="block text-foreground-muted text-xs">
-                          À partir de
-                        </span>
-                        <span className="font-display font-bold text-foreground text-xl">
-                          {price}
-                        </span>
-                      </p>
-                    )}
-                  </div>
-                  <h2 className="font-display font-semibold text-foreground text-2xl">
+              <article key={service.slug} className="svc-card" data-anim="card">
+                <div className="svc-card-visual" data-draw-group>
+                  <Visual />
+                </div>
+                <div className="flex flex-col flex-1 gap-5 p-7 md:p-10 pt-0 md:pt-0">
+                  <span className="font-mono text-foreground-subtle text-xs">
+                    0{i + 1}
+                  </span>
+                  <h2 className="font-display font-medium text-foreground text-3xl md:text-4xl tracking-[-0.02em]">
                     {service.title}
                   </h2>
-                  <p className="text-foreground-muted text-sm leading-relaxed">
+                  <p className="text-foreground-muted leading-relaxed">
                     {service.details}
                   </p>
-                  <ul className="gap-2.5 grid sm:grid-cols-2">
+                  <ul className="gap-x-6 gap-y-2.5 grid sm:grid-cols-2">
                     {service.features.map((feature) => (
                       <li
                         key={feature}
@@ -104,74 +87,92 @@ export default async function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  <Link
-                    href={`/services/${service.slug}`}
-                    className="mt-auto pt-2 w-fit btn-secondary"
-                  >
-                    Découvrir ce service
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </article>
-              </SpotlightCard>
+                  {price ? (
+                    <p className="pt-5 border-white/[0.07] border-t text-foreground-muted text-sm">
+                      À partir de{" "}
+                      <span className="font-display font-semibold text-foreground text-xl">
+                        {price}
+                      </span>
+                    </p>
+                  ) : null}
+                  <div className="flex flex-wrap items-center gap-x-8 gap-y-3 mt-auto pt-2">
+                    <Link
+                      href={contactHref(service.slug, "/services")}
+                      className="btn-secondary"
+                    >
+                      Parler de ce projet
+                    </Link>
+                    <Link href={`/services/${service.slug}`} className="pill-ghost">
+                      <span className="pill-ghost-label">Découvrir ce service</span>
+                      <ArrowUpRight aria-hidden="true" className="w-4 h-4 pill-ghost-arrow" />
+                    </Link>
+                  </div>
+                </div>
+              </article>
             );
           })}
         </Container>
       </SectionWrapper>
 
       {/* Prestations complémentaires */}
-      <SectionWrapper variant="dark" className="py-16 md:py-24">
-        <Container className="gap-10 grid">
+      <SectionWrapper className="py-20 md:py-28">
+        <Container className="flex flex-col gap-12">
           <SectionHeading
+            index="02"
             kicker="Aussi"
             title="Prestations complémentaires"
             subtitle="SaaS, e-commerce, sites vitrines et optimisation : les autres projets que je réalise."
           />
-          <div className="gap-4 grid sm:grid-cols-2">
-            {otherServices.map((service) => (
-              <Link
-                key={service.slug}
-                href={`/services/${service.slug}`}
-                className="group flex gap-4 p-6 card-interactive"
-              >
-                <div className="flex justify-center items-center bg-primary/15 rounded-xl w-10 h-10 text-primary shrink-0">
+          <ul className="line-list">
+            {otherServices.map((service, index) => (
+              <li key={service.slug} className="line-item" data-anim="fade">
+                <span aria-hidden="true" className="line-item-num">
+                  0{index + 1}
+                </span>
+                <span aria-hidden="true" className="line-item-icon">
                   {createElement(getIcon(service.iconName), {
                     className: "w-5 h-5",
                   })}
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {service.title}
+                </span>
+                <div className="flex flex-col gap-2 min-w-0">
+                  <h3 className="line-item-title">
+                    <Link href={`/services/${service.slug}`} className="line-item-link">
+                      {service.title}
+                    </Link>
                   </h3>
-                  <p className="mt-2 text-foreground-muted text-sm leading-relaxed">
+                  <p className="max-w-2xl text-foreground-muted text-sm leading-relaxed">
                     {service.description}
                   </p>
                 </div>
-              </Link>
+                <span aria-hidden="true" className="line-item-arrow">
+                  <ArrowUpRight className="w-4 h-4" />
+                </span>
+              </li>
             ))}
-          </div>
+          </ul>
         </Container>
       </SectionWrapper>
 
       {/* Engagements + preuve */}
-      <SectionWrapper variant="light" className="py-16 md:py-24">
+      <SectionWrapper className="py-20 md:py-28">
         <Container className="items-stretch gap-6 grid lg:grid-cols-2">
-          <div className="flex flex-col gap-6 p-8 md:p-10 card">
-            <SectionHeading
-              kicker="Inclus"
-              title="Compris dans chaque projet"
-            />
-            <ul className="flex flex-col gap-4">
+          <div className="flex flex-col gap-8 p-8 md:p-10 svc-card" data-anim="card">
+            <SectionHeading index="03" kicker="Inclus" title="Compris dans chaque projet" />
+            <ul className="flex flex-col">
               {aboutGuarantees.map((item) => (
-                <li key={item} className="flex items-start gap-3">
+                <li
+                  key={item}
+                  className="flex items-start gap-3 py-4 border-white/[0.07] border-t"
+                >
                   <CheckCircle className="mt-0.5 w-5 h-5 text-primary shrink-0" />
-                  <span className="text-foreground-muted text-sm leading-relaxed">
+                  <span className="text-foreground-muted leading-relaxed">
                     {item}
                   </span>
                 </li>
               ))}
             </ul>
           </div>
-          <TestimonialQuote name="Nassamou Rachad" accent="#3b82f6" />
+          <TestimonialQuote name="Nassamou Rachad" />
         </Container>
       </SectionWrapper>
 

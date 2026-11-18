@@ -11,7 +11,7 @@ interface EditorialHeadingProps {
 }
 
 // Section heading of the home: numbered kicker, large title revealed word by
-// word on scroll (see HomeAnimations, [data-anim="words"]).
+// word on scroll (see PageAnimations, [data-anim="words"]).
 export default function EditorialHeading({
   index,
   kicker,

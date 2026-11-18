@@ -18,6 +18,8 @@ export interface BlogPost {
   author: string;
   tags: string[];
   content: string;
+  /** h2 of the article, with the id added to the HTML (table of contents). */
+  headings: { id: string; text: string }[];
 }
 
 export interface BlogPostMeta {
@@ -30,6 +32,51 @@ export interface BlogPostMeta {
   category: string;
   author: string;
   tags: string[];
+}
+
+const ENTITIES: Record<string, string> = {
+  amp: "&",
+  lt: "<",
+  gt: ">",
+  quot: '"',
+  apos: "'",
+  nbsp: "\u00a0",
+};
+
+const decode = (text: string) =>
+  text.replace(/&(#x?[0-9a-f]+|\w+);/gi, (entity, code: string) => {
+    if (code[0] !== "#") return ENTITIES[code] ?? entity;
+    const value = code[1].toLowerCase() === "x"
+      ? parseInt(code.slice(2), 16)
+      : parseInt(code.slice(1), 10);
+    return Number.isNaN(value) ? entity : String.fromCodePoint(value);
+  });
+
+const slugify = (text: string) =>
+  text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 60);
+
+// Gives each <h2> a stable id and returns the list for the table of contents.
+function withHeadingIds(htmlContent: string) {
+  const headings: { id: string; text: string }[] = [];
+  const used = new Set<string>();
+  const content = htmlContent.replace(
+    /<h2>([\s\S]*?)<\/h2>/g,
+    (_match, inner: string) => {
+      const text = decode(inner.replace(/<[^>]+>/g, "")).trim();
+      let id = slugify(text) || "section";
+      for (let n = 2; used.has(id); n++) id = `${slugify(text)}-${n}`;
+      used.add(id);
+      headings.push({ id, text });
+      return `<h2 id="${id}">${inner}</h2>`;
+    },
+  );
+  return { content, headings };
 }
 
 export function getAllPosts(): BlogPostMeta[] {
@@ -71,7 +118,9 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
       .use(remarkGfm)
       .use(html)
       .process(content);
-    const contentHtml = processedContent.toString();
+    const { content: contentHtml, headings } = withHeadingIds(
+      processedContent.toString(),
+    );
 
     return {
       slug,
@@ -84,6 +133,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
       author: data.author,
       tags: data.tags || [],
       content: contentHtml,
+      headings,
     };
   } catch {
     return null;

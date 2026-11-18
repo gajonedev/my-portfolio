@@ -1,14 +1,13 @@
-import { createElement } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ExternalLink, Images } from "lucide-react";
 import type { Project } from "@/data/projects";
-import { getIcon } from "@/lib/icons";
+import ProjectCover from "./ProjectCover";
 import ProjectStatus from "./ProjectStatus";
 
 interface ProjectCardProps {
   project: Project;
-  /** Accent color of the cover placeholder when there is no screenshot. */
+  /** Ignored: covers without screenshots use ProjectCover. */
   accent?: string;
   /** Projects page: long summary, role and live link instead of the short pitch. */
   detailed?: boolean;
@@ -18,7 +17,6 @@ interface ProjectCardProps {
 // secondary links sit above it with `relative z-10`. Pure CSS, no JS.
 export default function ProjectCard({
   project,
-  accent,
   detailed = false,
 }: ProjectCardProps) {
   const shots = project.images.filter((image) => image.src);
@@ -26,8 +24,8 @@ export default function ProjectCard({
   const href = `/projects/${project.slug}`;
 
   return (
-    <article className="group relative flex flex-col bg-background-soft hover:shadow-[0_24px_60px_rgba(0,0,0,0.18)] border border-stroke hover:border-primary/40 rounded-3xl has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-primary has-[a:focus-visible]:outline-offset-4 h-full overflow-hidden transition hover:-translate-y-1 motion-reduce:hover:translate-y-0 duration-300">
-      <div className="relative border-stroke border-b aspect-[16/10] overflow-hidden">
+    <article className="group relative flex flex-col bg-(image:--card-surface) border border-(--card-edge) hover:border-primary/40 rounded-[1.75rem] has-[a:focus-visible]:outline-2 has-[a:focus-visible]:outline-primary has-[a:focus-visible]:outline-offset-4 h-full overflow-hidden transition hover:-translate-y-1 motion-reduce:hover:translate-y-0 duration-300">
+      <div className="relative border-(--card-edge) border-b aspect-[16/10] overflow-hidden">
         {cover?.src ? (
           <Image
             src={cover.src}
@@ -37,24 +35,7 @@ export default function ProjectCard({
             className="object-cover object-top motion-reduce:group-hover:scale-100 group-hover:scale-[1.03] transition-transform duration-500"
           />
         ) : (
-          <div
-            className="absolute inset-0 flex flex-col justify-center items-center gap-3 project-cover-fallback"
-            style={
-              accent
-                ? ({ "--cover": accent } as React.CSSProperties)
-                : undefined
-            }
-          >
-            <span className="flex justify-center items-center bg-background-soft/80 shadow-sm border border-stroke rounded-2xl w-14 h-14 text-primary">
-              {createElement(getIcon(project.iconName), {
-                className: "w-6 h-6",
-                "aria-hidden": true,
-              })}
-            </span>
-            <span className="font-display font-semibold text-foreground text-lg">
-              {project.name}
-            </span>
-          </div>
+          <ProjectCover project={project} />
         )}
         {shots.length > 1 && (
           <span className="right-3 bottom-3 absolute flex items-center gap-1.5 bg-black/65 backdrop-blur px-2.5 py-1 rounded-full font-medium text-white text-xs">

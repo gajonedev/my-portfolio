@@ -6,9 +6,9 @@ import { testimonials } from "@/data/testimonials";
 // different voice instead of repeating the same quote.
 export default function TestimonialQuote({
   name,
-  accent = "#ff4d3d",
 }: {
   name: string;
+  /** Ignored: the quote follows the coral of the site. */
   accent?: string;
 }) {
   const item = testimonials.find((testimonial) => testimonial.name === name);
@@ -20,21 +20,14 @@ export default function TestimonialQuote({
     .join("");
 
   return (
-    <figure
-      className="h-full spotlight-card corner-tr"
-      style={{ "--corner": accent } as React.CSSProperties}
-    >
-      <div className="flex flex-col gap-6 p-8 md:p-10 h-full spotlight-content">
+    <figure className="h-full svc-card" data-anim="card">
+      <div className="z-10 relative flex flex-col gap-6 p-8 md:p-10 h-full">
         <Quote className="w-9 h-9 text-primary" aria-hidden="true" />
-        <blockquote className="text-foreground text-lg md:text-xl leading-relaxed">
+        <blockquote className="font-display text-foreground text-xl md:text-2xl leading-snug tracking-[-0.01em]">
           {item.quote}
         </blockquote>
-        <figcaption className="flex items-center gap-3 mt-auto pt-5 border-stroke border-t">
-          <span
-            aria-hidden="true"
-            className="flex justify-center items-center rounded-full w-10 h-10 font-display font-semibold text-white text-sm shrink-0"
-            style={{ background: accent }}
-          >
+        <figcaption className="flex items-center gap-3 mt-auto pt-5 border-white/[0.07] border-t">
+          <span aria-hidden="true" className="w-10! h-10! text-sm! quote-avatar shrink-0">
             {initials}
           </span>
           <span className="flex flex-col">
@@ -46,9 +39,9 @@ export default function TestimonialQuote({
           {item.projectSlug && (
             <Link
               href={`/projects/${item.projectSlug}`}
-              className="ml-auto text-primary text-sm hover:underline shrink-0"
+              className="z-10 relative ml-auto text-sm pill-ghost shrink-0"
             >
-              Voir le projet →
+              <span className="pill-ghost-label">Voir le projet</span>
             </Link>
           )}
         </figcaption>

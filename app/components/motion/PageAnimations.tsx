@@ -1,14 +1,32 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 /*
- * Every scroll animation of the home page, driven by data attributes on
- * server-rendered markup. GSAP is imported after hydration so it stays out of
- * the critical path; states are only applied from JS, so without JS (or with
+ * Every scroll animation of the site, driven by data attributes on
+ * server-rendered markup (mounted once in the root layout, re-run on each
+ * navigation). GSAP is imported after hydration so it stays out of the
+ * critical path; states are only applied from JS, so without JS (or with
  * reduced motion) the content is simply visible and static.
+ *
+ * Anything already on screen when the animations start is left alone: an
+ * element never disappears to play its entrance.
+ *
+ *   data-anim="words"  heading words rise out of their mask (SplitWords)
+ *   data-anim="fade"   short rise and fade
+ *   data-anim="card"   longer rise and fade
+ *   data-count         the number in the text counts up
+ *   data-draw-group    [data-draw] strokes trace themselves
+ *   data-process       --p goes 0 to 1, [data-step] get .is-on in turn
+ *   data-finale-beam   the closing horizon opens from the center
+ *   data-hero-parallax home hero copy drifts up
+ *   data-pin/-track    home projects: pinned horizontal scroll (desktop)
  */
-export default function HomeAnimations() {
+export default function PageAnimations() {
+  const pathname = usePathname();
+  const loaded = useRef(false);
+
   useEffect(() => {
     let cancelled = false;
     let revert: (() => void) | undefined;
@@ -21,10 +39,15 @@ export default function HomeAnimations() {
       if (cancelled) return;
       gsap.registerPlugin(ScrollTrigger);
 
-      const root = document.querySelector<HTMLElement>("[data-home]");
+      const root = document.getElementById("main-content");
       if (!root) return;
       const q = <T extends Element = HTMLElement>(selector: string) =>
         Array.from(root.querySelectorAll<T & Element>(selector)) as T[];
+      // already visible: keep it as it is
+      const onScreen = (el: Element) =>
+        el.getBoundingClientRect().top < window.innerHeight * 0.92;
+      const below = <T extends Element>(list: T[]) =>
+        list.filter((el) => !onScreen(el));
 
       const mm = gsap.matchMedia();
       mm.add(
@@ -40,7 +63,7 @@ export default function HomeAnimations() {
           if (!motion) return;
 
           // ---- headings: words rise out of their mask
-          q('[data-anim="words"]').forEach((el) => {
+          below(q('[data-anim="words"]')).forEach((el) => {
             gsap.from(el.querySelectorAll(".sw-i"), {
               yPercent: 115,
               rotate: 5,
@@ -51,7 +74,7 @@ export default function HomeAnimations() {
             });
           });
 
-          q('[data-anim="fade"]').forEach((el) => {
+          below(q('[data-anim="fade"]')).forEach((el) => {
             gsap.from(el, {
               y: 26,
               opacity: 0,
@@ -63,7 +86,7 @@ export default function HomeAnimations() {
             });
           });
 
-          q('[data-anim="card"]').forEach((el) => {
+          below(q('[data-anim="card"]')).forEach((el) => {
             gsap.from(el, {
               y: 70,
               opacity: 0,
@@ -74,8 +97,35 @@ export default function HomeAnimations() {
             });
           });
 
-          // ---- service drawings trace themselves
-          q("[data-draw-group]").forEach((group) => {
+          // ---- figures count up to the value already written in the page
+          below(q("[data-count]")).forEach((el) => {
+            const text = el.textContent ?? "";
+            const match = text.match(/\d+/);
+            if (!match) return;
+            const target = Number(match[0]);
+            const counter = { value: 0 };
+            gsap.to(counter, {
+              value: target,
+              duration: 1.6,
+              ease: "power3.out",
+              scrollTrigger: { trigger: el, start: "top 90%" },
+              onStart: () => {
+                el.textContent = text.replace(match[0], "0");
+              },
+              onUpdate: () => {
+                el.textContent = text.replace(
+                  match[0],
+                  String(Math.round(counter.value)),
+                );
+              },
+              onComplete: () => {
+                el.textContent = text;
+              },
+            });
+          });
+
+          // ---- line drawings trace themselves
+          below(q("[data-draw-group]")).forEach((group) => {
             gsap.from(group.querySelectorAll("[data-draw]"), {
               strokeDashoffset: 1,
               duration: 1.8,
@@ -85,8 +135,8 @@ export default function HomeAnimations() {
             });
           });
 
-          // ---- hero: content drifts up slightly as the page scrolls (no
-          // fade: the call to action must keep its full contrast)
+          // ---- home hero: content drifts up slightly as the page scrolls
+          // (no fade: the call to action must keep its full contrast)
           const hero = root.querySelector("[data-hero]");
           if (hero) {
             gsap.to(q("[data-hero-parallax]"), {
@@ -101,10 +151,11 @@ export default function HomeAnimations() {
             });
           }
 
-          // ---- process: the line fills, each step lights up when reached
-          const process = root.querySelector<HTMLElement>("[data-process]");
-          if (process) {
-            const steps = q("[data-step]");
+          // ---- steps: the line fills, each step lights up when reached
+          q("[data-process]").forEach((process) => {
+            const steps = Array.from(
+              process.querySelectorAll<HTMLElement>("[data-step]"),
+            );
             gsap.fromTo(
               process,
               { "--p": 0 },
@@ -126,11 +177,10 @@ export default function HomeAnimations() {
                 },
               },
             );
-          }
+          });
 
           // ---- finale: the horizon opens from the center
-          const beam = root.querySelector("[data-finale-beam]");
-          if (beam) {
+          below(q("[data-finale-beam]")).forEach((beam) => {
             gsap.from(beam, {
               scaleX: 0,
               opacity: 0,
@@ -138,15 +188,15 @@ export default function HomeAnimations() {
               ease: "expo.inOut",
               scrollTrigger: { trigger: beam, start: "top 85%" },
             });
-          }
+          });
 
-          // ---- projects
+          // ---- home projects
           const pin = root.querySelector<HTMLElement>("[data-pin]");
           const track = root.querySelector<HTMLElement>("[data-track]");
           if (!pin || !track) return;
 
           if (!desktop) {
-            q("[data-panel]").forEach((panel) => {
+            below(q("[data-panel]")).forEach((panel) => {
               gsap.from(panel, {
                 y: 60,
                 opacity: 0,
@@ -213,16 +263,17 @@ export default function HomeAnimations() {
               panel.querySelector("[data-media]"),
               { clipPath: "inset(12% 18% 12% 0% round 32px)" },
               {
-              clipPath: "inset(0% 0% 0% 0% round 28px)",
-              ease: "none",
-              scrollTrigger: {
-                trigger: panel,
-                containerAnimation: scroll,
-                start: "left 98%",
-                end: "left 45%",
-                scrub: true,
+                clipPath: "inset(0% 0% 0% 0% round 28px)",
+                ease: "none",
+                scrollTrigger: {
+                  trigger: panel,
+                  containerAnimation: scroll,
+                  start: "left 98%",
+                  end: "left 45%",
+                  scrub: true,
+                },
               },
-            });
+            );
           });
 
           return () => {
@@ -233,22 +284,36 @@ export default function HomeAnimations() {
 
       revert = () => mm.revert();
       // images and fonts change the layout after the first measure
-      window.addEventListener("load", () => ScrollTrigger.refresh(), {
-        once: true,
-      });
+      if (document.readyState !== "complete") {
+        window.addEventListener("load", () => ScrollTrigger.refresh(), {
+          once: true,
+        });
+      }
       document.fonts?.ready.then(() => {
         if (!cancelled) ScrollTrigger.refresh();
       });
     };
 
-    // Everything animated here sits below the fold: start on the first sign
-    // of intent, or once the page is idle, never during the initial load.
+    // After a client navigation GSAP is cached and the visitor is already
+    // interacting: start right away.
+    if (loaded.current) {
+      const frame = requestAnimationFrame(() => void init());
+      return () => {
+        cancelled = true;
+        cancelAnimationFrame(frame);
+        revert?.();
+      };
+    }
+
+    // First load: everything animated sits below the fold, so start on the
+    // first sign of intent, or once the page is idle, never during the load.
     const events = ["scroll", "wheel", "touchstart", "pointerdown", "keydown"];
     let started = false;
     let idle = 0;
     const kick = () => {
       if (started) return;
       started = true;
+      loaded.current = true;
       events.forEach((name) => window.removeEventListener(name, kick));
       if (idle) window.clearTimeout(idle);
       void init();
@@ -268,7 +333,7 @@ export default function HomeAnimations() {
       window.clearTimeout(idle);
       revert?.();
     };
-  }, []);
+  }, [pathname]);
 
   return null;
 }

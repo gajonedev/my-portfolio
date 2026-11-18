@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import Container from "./Container";
-import DotPattern from "./ui/DotPattern";
+import SplitWords from "./home/SplitWords";
+import HorizonPointer from "./ui/HorizonPointer";
 import { ChevronRight } from "@/lib/icons";
 
 export interface Crumb {
@@ -20,6 +21,11 @@ interface PageHeaderProps {
   children?: ReactNode;
 }
 
+/*
+ * Opening of every inner page: the horizon of the home, in CSS only.
+ * The title words rise with a transform (never transparent: it is usually
+ * the LCP element) and the light on the line follows the pointer.
+ */
 export default function PageHeader({
   title,
   description,
@@ -27,27 +33,16 @@ export default function PageHeader({
   breadcrumbs,
   children,
 }: PageHeaderProps) {
-  return (
-    <div className="relative bg-background pt-12 md:pt-16 pb-14 md:pb-20 overflow-hidden section-dark">
-      <DotPattern />
-      <div
-        aria-hidden="true"
-        className="-top-32 left-[10%] absolute bg-primary/20 blur-[110px] rounded-full w-md h-72 pointer-events-none"
-      />
-      <div
-        aria-hidden="true"
-        className="-right-24 bottom-0 absolute bg-accent-alt/10 blur-[110px] rounded-full w-80 h-64 pointer-events-none"
-      />
-      {/* coral hairline closing the header */}
-      <div
-        aria-hidden="true"
-        className="bottom-0 absolute inset-x-0 bg-linear-to-r from-transparent via-primary/50 to-transparent h-px"
-      />
+  const long = title.length > 48;
 
-      <Container className="relative flex flex-col gap-5">
+  return (
+    <div className="page-hero section-dark">
+      <div aria-hidden="true" className="page-hero-sky" />
+
+      <Container className="page-hero-inner">
         {breadcrumbs && breadcrumbs.length > 0 && (
-          <nav aria-label="Fil d'ariane">
-            <ol className="flex flex-wrap items-center gap-1.5 text-foreground-muted text-xs">
+          <nav aria-label="Fil d'ariane" className="page-hero-in" style={{ "--d": "0s" } as React.CSSProperties}>
+            <ol className="flex flex-wrap items-center gap-1.5 font-mono text-[0.7rem] text-foreground-subtle uppercase tracking-[0.12em]">
               {breadcrumbs.map((crumb, index) => {
                 const last = index === breadcrumbs.length - 1;
                 return (
@@ -62,13 +57,13 @@ export default function PageHeader({
                     ) : (
                       <span
                         aria-current={last ? "page" : undefined}
-                        className={last ? "text-foreground" : undefined}
+                        className={last ? "text-foreground-muted" : undefined}
                       >
                         {crumb.label}
                       </span>
                     )}
                     {!last && (
-                      <ChevronRight className="w-3.5 h-3.5" aria-hidden="true" />
+                      <ChevronRight className="w-3 h-3" aria-hidden="true" />
                     )}
                   </li>
                 );
@@ -78,22 +73,36 @@ export default function PageHeader({
         )}
 
         {kicker && (
-          <span className="flex items-center gap-2.5 bg-primary/10 px-3 py-1 border border-primary/30 rounded-full w-fit font-body text-primary text-xs uppercase tracking-[0.25em]">
-            <span className="inline-block bg-primary rounded-full w-1.5 h-1.5 glow-sm" />
+          <p className="ed-kicker page-hero-in" style={{ "--d": "0.05s" } as React.CSSProperties}>
+            <span aria-hidden="true" className="ed-kicker-line" />
             {kicker}
-          </span>
+          </p>
         )}
 
-        <h1 className="max-w-4xl font-display font-bold text-foreground text-4xl sm:text-5xl lg:text-6xl text-balance leading-[1.05] tracking-tight">
-          {title}
+        <h1 className={`page-hero-title${long ? " is-long" : ""}`}>
+          <SplitWords text={title} />
         </h1>
+
         {description ? (
-          <p className="max-w-2xl font-body text-foreground-muted text-base md:text-lg leading-relaxed">
+          <p
+            className="max-w-2xl text-foreground-muted md:text-lg leading-relaxed page-hero-in"
+            style={{ "--d": "0.25s" } as React.CSSProperties}
+          >
             {description}
           </p>
         ) : null}
-        {children ? <div className="mt-2">{children}</div> : null}
+        {children ? (
+          <div className="mt-1 page-hero-in" style={{ "--d": "0.35s" } as React.CSSProperties}>
+            {children}
+          </div>
+        ) : null}
       </Container>
+
+      <div aria-hidden="true" className="page-hero-horizon">
+        <span className="page-hero-beam" />
+        <span className="page-hero-flare" />
+      </div>
+      <HorizonPointer />
     </div>
   );
 }

@@ -4,7 +4,6 @@ import HomeProjects from "./components/home/HomeProjects";
 import HomeServices from "./components/home/HomeServices";
 import HomeProcess from "./components/home/HomeProcess";
 import HomeFinale from "./components/home/HomeFinale";
-import HomeAnimations from "./components/home/HomeAnimations";
 import EditorialHeading from "./components/home/EditorialHeading";
 import QuoteStage from "./components/home/QuoteStage";
 import "./home.css";
@@ -32,7 +31,6 @@ export default function Home() {
 
       <HomeProcess />
       <HomeFinale />
-      <HomeAnimations />
     </div>
   );
 }

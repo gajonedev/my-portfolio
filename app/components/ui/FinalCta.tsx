@@ -1,8 +1,7 @@
-import Link from "next/link";
 import Container from "../Container";
-import SectionWrapper from "../layout/SectionWrapper";
-import BottomGlow from "./BottomGlow";
-import WhatsAppCta from "./WhatsAppCta";
+import PillButton from "../home/PillButton";
+import SplitWords from "../home/SplitWords";
+import WhatsAppPill from "./WhatsAppPill";
 
 interface FinalCtaProps {
   title: string;
@@ -12,12 +11,13 @@ interface FinalCtaProps {
   whatsappMessage?: string;
   whatsappLabel?: string;
   secondary?: { href: string; label: string };
+  /** Kept for compatibility: the finale is always dark. */
   variant?: "dark" | "light";
   id?: string;
 }
 
-// Closing call-to-action shared by every page: one glowing card, the
-// WhatsApp action first and a single secondary route.
+// Closing scene shared by every page, as on the home: the horizon comes back
+// at the bottom and frames the call to action.
 export default function FinalCta({
   title,
   text,
@@ -25,34 +25,37 @@ export default function FinalCta({
   whatsappMessage,
   whatsappLabel = "Discuter sur WhatsApp",
   secondary = { href: "/contact", label: "Décrire mon projet" },
-  variant = "dark",
   id,
 }: FinalCtaProps) {
   return (
-    <SectionWrapper variant={variant} id={id} className="py-16 md:py-24">
-      <Container>
-        <div className="relative bg-background-soft border border-stroke rounded-[2rem] overflow-hidden">
-          <BottomGlow />
-          <div className="relative items-center gap-8 grid md:grid-cols-[1fr_auto] p-8 md:p-14">
-            <div className="flex flex-col gap-4 max-w-2xl">
-              <span className="flex items-center gap-2 font-body font-medium text-primary text-xs uppercase tracking-[0.3em]">
-                <span className="inline-block bg-primary rounded-full w-1.5 h-1.5 glow-sm" />
-                {kicker}
-              </span>
-              <h2 className="font-display font-semibold text-foreground text-3xl md:text-4xl text-balance tracking-tight">
-                {title}
-              </h2>
-              <p className="text-foreground-muted leading-relaxed">{text}</p>
-            </div>
-            <div className="flex md:flex-col flex-wrap gap-3">
-              <WhatsAppCta label={whatsappLabel} message={whatsappMessage} />
-              <Link href={secondary.href} className="btn-secondary">
-                {secondary.label}
-              </Link>
-            </div>
-          </div>
+    <section id={id} className="home-finale page-finale home-divider section-dark">
+      <div aria-hidden="true" className="finale-sky" />
+      <div aria-hidden="true" className="finale-beam" data-finale-beam />
+
+      <Container className="z-10 relative flex flex-col items-center gap-7 text-center">
+        <p className="ed-kicker" data-anim="fade">
+          <span aria-hidden="true" className="ed-kicker-line" />
+          {kicker}
+        </p>
+        <h2
+          data-anim="words"
+          className="max-w-[18ch] font-display font-medium text-[clamp(2.4rem,6vw,5rem)] text-foreground text-balance leading-[1] tracking-[-0.03em]"
+        >
+          <SplitWords text={title} />
+        </h2>
+        <p data-anim="fade" className="max-w-xl text-foreground-muted md:text-lg">
+          {text}
+        </p>
+        <div
+          data-anim="fade"
+          className="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 mt-3"
+        >
+          <WhatsAppPill label={whatsappLabel} message={whatsappMessage} />
+          <PillButton href={secondary.href} variant="ghost">
+            {secondary.label}
+          </PillButton>
         </div>
       </Container>
-    </SectionWrapper>
+    </section>
   );
 }

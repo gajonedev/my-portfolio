@@ -5,7 +5,7 @@ import SectionWrapper from "../components/layout/SectionWrapper";
 import PageHeader from "../components/PageHeader";
 import ContactAura from "../components/ui/ContactAura";
 import ContactForm from "../components/ui/ContactForm";
-import WhatsAppCta from "../components/ui/WhatsAppCta";
+import WhatsAppPill from "../components/ui/WhatsAppPill";
 import { Mail, Phone, MapPin, Clock } from "@/lib/icons";
 import { contactInfo, siteConfig } from "@/data";
 
@@ -48,9 +48,9 @@ export default async function ContactPage({
         title="Parlons de votre projet"
         description="Racontez-moi ce que vous voulez créer ou simplifier dans votre activité. Nous regarderons ensemble par où commencer."
       />
-      <SectionWrapper variant="dark" className="py-16 md:py-20">
+      <SectionWrapper className="py-16 md:py-24">
         <Container className="items-start gap-8 grid lg:grid-cols-[1.5fr_1fr]">
-          <div className="relative bg-card border border-stroke rounded-[2rem] overflow-hidden">
+          <div className="relative bg-[#08080b] border border-white/[0.08] rounded-[2rem] overflow-hidden" data-anim="card">
             <ContactAura />
             <ContactForm
               initialService={selected}
@@ -67,10 +67,10 @@ export default async function ContactPage({
               <p className="text-foreground-muted text-sm leading-relaxed">
                 WhatsApp reste le canal le plus rapide pour un premier échange.
               </p>
-              <WhatsAppCta
+              <WhatsAppPill
                 message={whatsappMessage(source || "/contact", selected)}
                 label="Discuter sur WhatsApp"
-                className="w-full"
+                className="justify-between w-full"
               />
             </div>
 

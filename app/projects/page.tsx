@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
-import ProjectCard from "../components/ui/ProjectCard";
+import ProjectIndex from "../components/projects/ProjectIndex";
 import SectionWrapper from "../components/layout/SectionWrapper";
 import FinalCta from "../components/ui/FinalCta";
 import { projects, siteConfig } from "@/data";
-
-const ACCENTS = ["#ff4d3d", "#3b82f6", "#f59e0b"];
 
 const url = `${siteConfig.url}/projects`;
 
@@ -33,16 +31,16 @@ export default async function ProjectsPage() {
         title="Mes projets"
         description="Voici des projets que j’ai développés pour des clients ou pour explorer une idée. Je vous explique mes choix et où chacun en est."
       />
-      <SectionWrapper variant="light" className="py-16 md:py-24">
-        <Container className="gap-6 grid md:grid-cols-2">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={project.slug}
-              project={project}
-              accent={ACCENTS[index % ACCENTS.length]}
-              detailed
-            />
-          ))}
+      <SectionWrapper className="pt-10 md:pt-14 pb-24 md:pb-32">
+        <Container className="flex flex-col gap-8">
+          <p className="ed-kicker">
+            <span className="font-mono text-foreground-subtle">
+              ({String(projects.length).padStart(2, "0")})
+            </span>
+            <span aria-hidden="true" className="ed-kicker-line" />
+            Projets clients et prototypes
+          </p>
+          <ProjectIndex projects={projects} />
         </Container>
       </SectionWrapper>
       <FinalCta

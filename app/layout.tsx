@@ -2,6 +2,7 @@ import { serializeJsonLd } from "@/lib/seo";
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import "./editorial.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import MotionProvider from "./components/MotionProvider";
@@ -11,6 +12,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { localCities, siteConfig, contactInfo, socialLinks } from "@/data";
 import AcquisitionTracker from "./components/AcquisitionTracker";
 import NavigationFlag from "./components/NavigationFlag";
+import PageAnimations from "./components/motion/PageAnimations";
 
 // NeverMind, the typeface released by Xmind under the SIL Open Font License
 // (app/fonts/nevermind/OFL.txt). Self-hosted, subset to Latin for French.
@@ -214,6 +216,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <PageAnimations />
           <FloatingWhatsApp />
         </MotionProvider>
         <Analytics />
