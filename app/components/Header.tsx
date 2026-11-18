@@ -33,7 +33,7 @@ export default function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const pendingHref = useRef<string | null>(null);
-  const { scrollY, scrollYProgress } = useScroll();
+  const { scrollY } = useScroll();
   const triggerRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
   const contextualContact = contactHref(serviceFromPath(pathname), pathname);
@@ -235,13 +235,6 @@ export default function Header() {
           </Container>
         </div>
       </m.header>
-
-      {/* reading progress, stays visible when the header hides */}
-      <m.div
-        aria-hidden="true"
-        className="scroll-progress"
-        style={{ scaleX: scrollYProgress, opacity: scrolled ? 1 : 0 }}
-      />
 
       {/* Mobile menu */}
       <AnimatePresence>

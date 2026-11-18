@@ -85,12 +85,12 @@ export default function HomeAnimations() {
             });
           });
 
-          // ---- hero: content drifts up and dims as the page scrolls
+          // ---- hero: content drifts up slightly as the page scrolls (no
+          // fade: the call to action must keep its full contrast)
           const hero = root.querySelector("[data-hero]");
           if (hero) {
             gsap.to(q("[data-hero-parallax]"), {
-              yPercent: -22,
-              opacity: 0,
+              yPercent: -10,
               ease: "none",
               scrollTrigger: {
                 trigger: hero,

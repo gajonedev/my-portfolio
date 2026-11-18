@@ -2,23 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import type { HeroRenderer } from "./heroRenderer";
-
-// Probe the GPU on a throwaway context before downloading Three.js: with a
-// software rasterizer every frame would run on the CPU.
-function hasHardwareWebGL() {
-  try {
-    const gl = document.createElement("canvas").getContext("webgl2");
-    if (!gl) return false;
-    const info = gl.getExtension("WEBGL_debug_renderer_info");
-    const name = String(
-      gl.getParameter(info ? info.UNMASKED_RENDERER_WEBGL : gl.RENDERER),
-    );
-    gl.getExtension("WEBGL_lose_context")?.loseContext();
-    return !/swiftshader|llvmpipe|softpipe|software|basic render/i.test(name);
-  } catch {
-    return false;
-  }
-}
+import { hasHardwareWebGL, webglForced } from "./gpu";
 
 // Decorative WebGL layer of the hero. Three.js is fetched once the browser is
 // idle, so it never competes with the text (LCP) or the intro. Without a GPU,
@@ -42,7 +26,8 @@ export default function HeroScene() {
     ).matches;
 
     const start = async () => {
-      if (!hasHardwareWebGL()) return; // keep the CSS horizon, skip 500 KB
+      // keep the CSS horizon and skip 500 KB of Three.js without a GPU
+      if (!hasHardwareWebGL() && !webglForced()) return;
       const { createHeroRenderer } = await import("./heroRenderer");
       if (cancelled) return;
       try {
