@@ -33,8 +33,8 @@ export default function Hero() {
           >
             Je suis Néhémie Gandonou, développeur de logiciels à Cotonou. Vous
             voulez gérer votre activité, proposer un service en ligne ou créer
-            une application pour vos clients ? Je vous accompagne de la première
-            discussion jusqu’à la mise en ligne.
+            une application pour vos clients ? Je vous accompagne durant tout le
+            processus.
           </p>
 
           <div
@@ -63,9 +63,7 @@ export default function Hero() {
           </ul>
         </div>
 
-        <div
-          className="relative flex justify-center mx-auto hero-anim-pop"
-        >
+        <div className="relative flex justify-center mx-auto hero-anim-pop">
           {/* two glowing traces circulating around the border (Huly style) */}
           <div className="beam-frame">
             {/* glass card kept as-is */}
