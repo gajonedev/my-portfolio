@@ -56,14 +56,21 @@ export default async function AboutPage() {
               priority
               className="w-full h-auto aspect-[4/5] object-cover object-top"
             />
-            <span aria-hidden="true" className="about-portrait-horizon" />
           </div>
           <div className="flex flex-col gap-6">
             <SectionHeading
               index="01"
               kicker="Qui je suis"
-              title="Je pars de ce que votre application doit permettre de faire"
+              title="Je développe les outils d’entreprises, de formateurs et d’associations"
             />
+            <p data-anim="fade" className="text-foreground-muted md:text-lg leading-relaxed">
+              Je travaille sur place ou à distance. Pour AgroConnect, j’ai
+              développé une marketplace de produits frais, avec son application
+              mobile et son espace de gestion. Pour des formateurs, j’ai créé
+              des plateformes de cours et d’inscription payées par Mobile Money.
+              Pour le Gospel Activists International Network, j’ai réalisé un
+              site en français et en anglais.
+            </p>
             <p data-anim="fade" className="text-foreground-muted md:text-lg leading-relaxed">
               Ce qui m’intéresse dans un projet, c’est ce que votre application
               va permettre de faire : gérer des inscriptions, suivre une
@@ -72,11 +79,9 @@ export default async function AboutPage() {
               développer les fonctionnalités.
             </p>
             <p data-anim="fade" className="text-foreground-muted md:text-lg leading-relaxed">
-              Je développe aussi bien les écrans que le serveur qui les fait
-              fonctionner. Vous échangez directement avec moi, y compris pour
-              comprendre un choix technique ou préparer la mise en ligne. Si
-              votre besoin dépasse ce que je peux prendre en charge, je vous le
-              dis.
+              Je développe les écrans comme le serveur qui les fait
+              fonctionner, et vous échangez directement avec moi. Si votre
+              besoin dépasse ce que je peux prendre en charge, je vous le dis.
             </p>
             <dl className="about-stats" data-anim="fade">
               {aboutStats.map((stat) => (
