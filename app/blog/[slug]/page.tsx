@@ -1,6 +1,7 @@
 import { serializeJsonLd } from "@/lib/seo";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import Container from "../../components/Container";
 import PageHeader from "../../components/PageHeader";
@@ -123,9 +124,13 @@ export default async function BlogPostPage({ params }: Props) {
       >
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-foreground-muted text-sm">
           <span className="flex items-center gap-3">
-            <span className="flex justify-center items-center bg-primary-fill rounded-full w-9 h-9 font-display font-bold text-primary-foreground text-xs">
-              {siteConfig.shortName}
-            </span>
+            <Image
+              src="/portrait.webp"
+              alt=""
+              width={40}
+              height={40}
+              className="border border-white/15 rounded-full w-10 h-10 object-cover object-top"
+            />
             <span className="font-medium text-foreground">{post.author}</span>
           </span>
           <span className="flex items-center gap-1.5">
