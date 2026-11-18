@@ -136,6 +136,416 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
+
+@layer components {
+  /* ============================================================
+     ACTIONS (pill buttons, moved from home.css: used by the menu too)
+     ============================================================ */
+
+  :root {
+    --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-io: cubic-bezier(0.76, 0, 0.24, 1);
+    --beam: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 140, 120, 0.55) 18%,
+      #fff 50%,
+      rgba(255, 140, 120, 0.55) 82%,
+      transparent
+    );
+  }
+
+
+  .pill-solid {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    overflow: hidden;
+    border-radius: 999px;
+    padding: 0.375rem 0.375rem 0.375rem 1.5rem;
+    background: #f4efe9;
+    color: #0b0b10;
+    font-weight: 500;
+    font-size: 0.95rem;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.12),
+      0 8px 24px -14px rgba(255, 77, 61, 0.35);
+    transition:
+      color 0.45s var(--ease-out),
+      transform 0.3s var(--ease-out),
+      box-shadow 0.45s var(--ease-out);
+  }
+  .pill-solid::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    right: 0.375rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    background: var(--primary-fill);
+    transform: translateY(-50%) scale(1);
+    transition: transform 0.75s var(--ease-out);
+  }
+  .pill-solid-badge {
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    color: #fff;
+  }
+  .pill-solid-icon {
+    grid-area: 1 / 1;
+    display: grid;
+    place-items: center;
+    transition: transform 0.55s var(--ease-out);
+  }
+  .pill-solid-icon-next {
+    transform: translate(-160%, 160%);
+  }
+  .pill-solid:hover,
+  .pill-solid:focus-visible {
+    color: #fff;
+    box-shadow:
+      0 0 0 1px rgba(255, 77, 61, 0.5),
+      0 10px 30px -14px rgba(255, 77, 61, 0.5);
+  }
+  .pill-solid:hover::before,
+  .pill-solid:focus-visible::before {
+    transform: translateY(-50%) scale(14);
+  }
+  .pill-solid:hover .pill-solid-icon,
+  .pill-solid:focus-visible .pill-solid-icon {
+    transform: translate(160%, -160%);
+  }
+  .pill-solid:hover .pill-solid-icon-next,
+  .pill-solid:focus-visible .pill-solid-icon-next {
+    transform: none;
+  }
+  .pill-solid:active {
+    transform: scale(0.97);
+  }
+  .pill-solid:focus-visible,
+  .pill-ghost:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 4px;
+  }
+
+  .pill-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0;
+    border-radius: 4px;
+    color: var(--foreground);
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  .pill-ghost-label {
+    padding-bottom: 3px;
+    background:
+      linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat,
+      linear-gradient(rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.16)) 0
+        100% / 100% 1px no-repeat;
+    transition: background-size 0.55s var(--ease-out);
+  }
+  .pill-ghost-arrow {
+    transition:
+      transform 0.45s var(--ease-out),
+      color 0.3s;
+  }
+  .pill-ghost:hover .pill-ghost-label {
+    background-size:
+      100% 1px,
+      100% 1px;
+  }
+  .pill-ghost:hover .pill-ghost-arrow {
+    transform: rotate(45deg);
+    color: var(--primary);
+  }
+
+
+  /* ============================================================
+     BURGER + MOBILE MENU
+     ============================================================ */
+
+  .burger {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid var(--stroke);
+    border-radius: 999px;
+    background: var(--background-soft);
+    color: var(--foreground);
+    transition: border-color 0.3s;
+  }
+  .burger:hover {
+    border-color: var(--primary);
+  }
+  .burger:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+  }
+  .burger-lines {
+    position: relative;
+    width: 18px;
+    height: 8px;
+  }
+  .burger-lines span {
+    position: absolute;
+    right: 0;
+    height: 1.5px;
+    border-radius: 2px;
+    background: currentColor;
+    transition:
+      width 0.45s var(--ease-out),
+      transform 0.45s var(--ease-out);
+  }
+  .burger-lines span:first-child {
+    top: 0;
+    width: 100%;
+  }
+  .burger-lines span:last-child {
+    bottom: 0;
+    width: 60%;
+  }
+  .burger:hover .burger-lines span:last-child {
+    width: 100%;
+  }
+  /* the cross is drawn from the same two lines */
+  .burger.is-open .burger-lines span {
+    top: 50%;
+    bottom: auto;
+    width: 100%;
+    animation: burger-cross 0.6s var(--ease-out) 0.35s both;
+  }
+  .burger.is-open .burger-lines span:last-child {
+    animation-name: burger-cross-alt;
+  }
+  @keyframes burger-cross {
+    from {
+      transform: translateY(-4px);
+    }
+    to {
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+  @keyframes burger-cross-alt {
+    from {
+      transform: translateY(4px);
+    }
+    to {
+      transform: translateY(-50%) rotate(-45deg);
+    }
+  }
+
+  .menu {
+    background: #050507;
+  }
+  .menu .pill-solid {
+    justify-content: space-between;
+  }
+  .menu .pill-solid:hover::before,
+  .menu .pill-solid:focus-visible::before {
+    transform: translateY(-50%) scale(22);
+  }
+  .menu-sky {
+    position: absolute;
+    inset: 0;
+    background: #050507;
+    pointer-events: none;
+  }
+
+  .menu-list {
+    display: grid;
+  }
+  .menu-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .menu-mask {
+    display: block;
+    overflow: hidden;
+  }
+  .menu-link {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    color: var(--foreground);
+    transition: color 0.3s;
+  }
+  .menu-index {
+    width: 1.5rem;
+    color: var(--foreground-subtle);
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+  }
+  .menu-label {
+    flex: 1;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.85rem, 8vw, 2.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    transition: transform 0.5s var(--ease-out);
+  }
+  .menu-arrow {
+    width: 1.25rem;
+    height: 1.25rem;
+    align-self: center;
+    color: var(--primary);
+    opacity: 0;
+    transform: translate(-8px, 8px);
+    transition:
+      opacity 0.4s,
+      transform 0.5s var(--ease-out);
+  }
+  .menu-link:hover .menu-label,
+  .menu-link:focus-visible .menu-label {
+    transform: translateX(0.5rem);
+  }
+  .menu-link:hover .menu-arrow,
+  .menu-link:focus-visible .menu-arrow,
+  .menu-link[aria-current] .menu-arrow {
+    opacity: 1;
+    transform: none;
+  }
+  .menu-link[aria-current] {
+    color: var(--primary);
+  }
+  .menu-link[aria-current] .menu-index {
+    color: var(--primary);
+  }
+  .menu-link:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* same lit line and halo as the section dividers of the home page */
+  .menu-horizon {
+    position: relative;
+    flex: 1;
+    min-height: 3rem;
+  }
+  .menu-horizon::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 70%;
+    height: 90px;
+    translate: -50% -50%;
+    background: radial-gradient(closest-side, rgba(255, 77, 61, 0.14), transparent);
+    pointer-events: none;
+  }
+  .menu-horizon-line {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.07) 18%,
+      rgba(255, 140, 120, 0.55) 50%,
+      rgba(255, 255, 255, 0.07) 82%,
+      transparent
+    );
+  }
+
+  /* ============================================================
+     HEADER : logo, compact pill, lit edge when scrolled, progress
+     ============================================================ */
+
+  .logo-mark {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.7rem;
+    background: linear-gradient(180deg, #121218, #08080b);
+    color: var(--foreground);
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: -0.02em;
+  }
+  .logo-mark::after {
+    content: "";
+    position: absolute;
+    right: 24%;
+    bottom: 7px;
+    left: 24%;
+    height: 1px;
+    background: var(--beam);
+    box-shadow: 0 0 8px 1px rgba(255, 77, 61, 0.7);
+    transition:
+      left 0.5s var(--ease-out),
+      right 0.5s var(--ease-out);
+  }
+  a:hover > .logo-mark::after,
+  a:focus-visible > .logo-mark::after {
+    right: 10%;
+    left: 10%;
+  }
+
+  .pill-solid.pill-sm {
+    gap: 0.7rem;
+    padding: 0.25rem 0.25rem 0.25rem 1.1rem;
+    font-size: 0.85rem;
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, 0.12),
+      0 6px 18px -12px rgba(255, 77, 61, 0.3);
+  }
+  .pill-sm::before,
+  .pill-sm .pill-solid-badge {
+    width: 2rem;
+    height: 2rem;
+  }
+  .pill-sm::before {
+    right: 0.25rem;
+  }
+
+  .header-bar {
+    position: relative;
+  }
+  .header-bar::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.08) 20%,
+      rgba(255, 140, 120, 0.5) 50%,
+      rgba(255, 255, 255, 0.08) 80%,
+      transparent
+    );
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .header-bar[data-scrolled]::after {
+    opacity: 1;
+  }
+
+
+}
+
 /* ---- Card system : two variants only ----
    .card             static surface (lists, FAQ, facts)
    .card-interactive whole-card link (hover : coral edge + 2px lift)
@@ -170,13 +580,14 @@
    ============================================================ */
 
 body {
+  --font-display: var(--font-body);
   background: var(--background);
   color: var(--foreground);
   min-height: 100vh;
   font-family: var(--font-body), system-ui, sans-serif;
 }
 
-/* All headings use the display font (Outfit) by default.
+/* All headings use the display font (NeverMind, like the body) by default.
    Use `font-body` explicitly to opt out on a given element. */
 h1,
 h2,

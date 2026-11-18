@@ -3,7 +3,7 @@
 export const siteConfig = {
   name: "Néhémie Gandonou",
   shortName: "NG",
-  title: "Plateformes web & Apps mobiles",
+  title: "Développeur web et mobile",
   description:
     "Je suis Néhémie, développeur indépendant à Cotonou. Je vous accompagne pour créer votre plateforme web, votre logiciel métier ou votre application mobile.",
   url: "https://gajone.dev",

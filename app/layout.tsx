@@ -1,6 +1,6 @@
 import { serializeJsonLd } from "@/lib/seo";
-import type { Metadata } from "next";
-import { Outfit, Plus_Jakarta_Sans } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -12,19 +12,30 @@ import { localCities, siteConfig, contactInfo, socialLinks } from "@/data";
 import AcquisitionTracker from "./components/AcquisitionTracker";
 import NavigationFlag from "./components/NavigationFlag";
 
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-});
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
+// NeverMind, the typeface released by Xmind under the SIL Open Font License
+// (app/fonts/nevermind/OFL.txt). Self-hosted, subset to Latin for French.
+// Headings and body share it: globals.css maps --font-display to --font-body.
+const nevermind = localFont({
+  src: [
+    { path: "./fonts/nevermind/NeverMind-Light.woff2", weight: "300" },
+    { path: "./fonts/nevermind/NeverMind-Regular.woff2", weight: "400" },
+    { path: "./fonts/nevermind/NeverMind-Medium.woff2", weight: "500" },
+    { path: "./fonts/nevermind/NeverMind-DemiBold.woff2", weight: "600" },
+    { path: "./fonts/nevermind/NeverMind-Bold.woff2", weight: "700" },
+  ],
   variable: "--font-body",
   display: "swap",
+  fallback: ["system-ui", "sans-serif"],
 });
 
 const baseUrl = siteConfig.url;
+
+// Mobile browser bar (Chrome Android, Safari iOS 15+): same black as the
+// header, so the page runs edge to edge without a visible seam.
+export const viewport: Viewport = {
+  themeColor: "#050507",
+  colorScheme: "dark",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -190,7 +201,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${outfit.variable} ${plusJakarta.variable} antialiased bg-background text-foreground font-sans`}
+        className={`${nevermind.variable} antialiased bg-background text-foreground font-sans`}
       >
         <MotionProvider>
           <a href="#main-content" className="skip-link">
