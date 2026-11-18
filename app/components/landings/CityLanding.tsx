@@ -1,11 +1,12 @@
 import { serializeJsonLd } from "@/lib/seo";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import Container from "../Container";
 import SectionWrapper from "../layout/SectionWrapper";
 import FaqList from "../ui/FaqList";
 import FinalCta from "../ui/FinalCta";
 import PageHeader from "../PageHeader";
-import WhatsAppCta from "../ui/WhatsAppCta";
+import WhatsAppPill from "../ui/WhatsAppPill";
 import Image from "next/image";
 import {
   getIcon,
@@ -171,10 +172,11 @@ export default function CityLanding({ city }: { city: LocalCity }) {
           {/* Promesse et premier passage à l'action */}
           <section className="gap-8 grid lg:grid-cols-[1.4fr_0.8fr] items-start">
             <div>
-              <p className="font-semibold text-primary text-sm">
+              <p className="ed-kicker">
+                <span aria-hidden="true" className="ed-kicker-line" />
                 Votre projet, depuis la première idée
               </p>
-              <h2 className="mt-3 max-w-3xl font-semibold text-foreground text-2xl sm:text-3xl leading-tight">
+              <h2 className="mt-5 max-w-3xl ed-h2 is-lg">
                 Construisons l’outil dont votre activité a besoin
               </h2>
               <p className="mt-4 max-w-2xl text-foreground-muted leading-relaxed">
@@ -182,13 +184,14 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                 utilisateurs doivent pouvoir faire. Je vous propose les
                 fonctionnalités à développer, un budget et un calendrier.
               </p>
-              <div className="flex flex-wrap gap-4 mt-6">
-                <WhatsAppCta
+              <div className="flex flex-wrap items-center gap-x-8 gap-y-4 mt-7">
+                <WhatsAppPill
                   label="Décrire mon projet"
                   message={`Bonjour Néhémie, j'ai un projet à ${city.name}. Voici mon besoin :`}
                 />
-                <Link href="/projects" className="btn-secondary">
-                  Voir mes réalisations
+                <Link href="/projects" className="pill-ghost">
+                  <span className="pill-ghost-label">Voir mes réalisations</span>
+                  <ArrowUpRight aria-hidden="true" className="w-4 h-4 pill-ghost-arrow" />
                 </Link>
               </div>
             </div>
@@ -209,7 +212,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
 
           {/* Problèmes vécus par le visiteur */}
           <section>
-            <h2 className="font-semibold text-foreground text-2xl">
+            <h2 className="ed-h2">
               Est-ce que vous vous reconnaissez ?
             </h2>
             <p className="mt-2 text-foreground-muted">
@@ -241,7 +244,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
         <Container className="gap-16 grid">
           {/* Introduction */}
           <section className="max-w-3xl">
-            <h2 className="font-semibold text-foreground text-2xl">
+            <h2 className="ed-h2">
               Je vous accompagne à {city.name}
             </h2>
             {city.intro.map((paragraph) => (
@@ -256,7 +259,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
 
           {/* Solutions locales */}
           <section>
-            <h2 className="mb-2 font-semibold text-foreground text-xl">
+            <h2 className="mb-3 ed-h2">
               Ce que je peux mettre en place à {city.name}
             </h2>
             <p className="mb-6 text-foreground-muted text-sm">
@@ -271,7 +274,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                     key={opportunity.title}
                     className="flex gap-4 p-5 card"
                   >
-                    <div className="flex justify-center items-center bg-primary/20 rounded-xl w-12 h-12 text-primary shrink-0">
+                    <div className="line-item-icon shrink-0">
                       <Icon className="w-6 h-6" />
                     </div>
                     <div>
@@ -290,7 +293,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
 
           {/* Preuves */}
           <section>
-            <h2 className="font-semibold text-foreground text-2xl">
+            <h2 className="ed-h2">
               Des projets qui répondent à des problèmes concrets
             </h2>
             <p className="mt-2 text-foreground-muted">
@@ -307,7 +310,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                     className="group p-6 card-interactive"
                   >
                     <div className="flex items-center gap-3">
-                      <div className="flex justify-center items-center bg-primary/20 rounded-xl w-11 h-11 text-primary">
+                      <div className="line-item-icon shrink-0">
                         <Icon className="w-5 h-5" />
                       </div>
                       <div>
@@ -346,10 +349,11 @@ export default function CityLanding({ city }: { city: LocalCity }) {
               className="rounded-2xl w-32 md:w-40 h-32 md:h-40 object-cover"
             />
             <div>
-              <p className="font-medium text-primary text-sm">
+              <p className="ed-kicker">
+                <span aria-hidden="true" className="ed-kicker-line" />
                 Votre interlocuteur
               </p>
-              <h2 className="mt-2 font-semibold text-foreground text-2xl">
+              <h2 className="mt-4 ed-h2">
                 Je suis Néhémie Gandonou
               </h2>
               <p className="mt-3 text-foreground-muted leading-relaxed">
@@ -359,22 +363,24 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                 comprendre votre activité, puis de construire l&apos;outil dont
                 vous avez réellement besoin.
               </p>
-              <Link
-                href="/about"
-                className="inline-flex mt-4 font-medium text-primary text-sm hover:underline"
-              >
-                En savoir plus sur mon parcours
+              <Link href="/about" className="mt-5 pill-ghost">
+                <span className="pill-ghost-label">En savoir plus sur mon parcours</span>
+                <ArrowUpRight aria-hidden="true" className="w-4 h-4 pill-ghost-arrow" />
               </Link>
             </div>
           </section>
 
           {/* Déroulement et budget */}
           <section>
-            <h2 className="font-semibold text-foreground text-2xl">
+            <h2 className="ed-h2">
               Comment le projet se déroule
             </h2>
-            <div className="gap-4 grid sm:grid-cols-2 lg:grid-cols-4 mt-6">
-              {[
+            <div className="mt-10 process" data-process>
+              <div aria-hidden="true" className="process-line">
+                <span className="process-line-fill" />
+              </div>
+              <ol className="process-steps">
+                {[
                 [
                   "1",
                   "On échange",
@@ -396,23 +402,23 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                   "Je mets l'outil en ligne, vous forme et reste disponible après la livraison.",
                 ],
               ].map(([number, title, description]) => (
-                <div
-                  key={number}
-                  className="p-5 border border-stroke rounded-2xl"
-                >
-                  <span className="font-bold text-primary text-sm">
-                    Étape {number}
-                  </span>
-                  <h3 className="mt-2 font-semibold text-foreground">
-                    {title}
-                  </h3>
-                  <p className="mt-2 text-foreground-muted text-sm leading-relaxed">
-                    {description}
-                  </p>
-                </div>
-              ))}
+                  <li key={number} className="process-step" data-step>
+                    <span aria-hidden="true" className="process-dot" />
+                    <span className="font-mono text-primary text-xs">
+                      Étape {number}
+                    </span>
+                    <h3 className="font-display font-medium text-foreground text-xl tracking-[-0.01em]">
+                      {title}
+                    </h3>
+                    <p className="text-foreground-muted text-sm leading-relaxed">
+                      {description}
+                    </p>
+                  </li>
+                ))}
+              </ol>
             </div>
-            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 bg-primary/10 mt-6 p-6 border border-primary/20 rounded-2xl">
+            <div className="mt-12 h-auto! tier is-main">
+              <div className="z-10 relative flex sm:flex-row flex-col sm:justify-between sm:items-center gap-5 p-6 md:p-8">
               <div>
                 <p className="font-semibold text-foreground">
                   Un budget annoncé avant de commencer
@@ -425,6 +431,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
               <Link href="/tarifs" className="btn-secondary shrink-0">
                 Consulter les tarifs
               </Link>
+              </div>
             </div>
           </section>
 
@@ -435,7 +442,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
         <Container className="gap-16 grid">
           {/* Services */}
           <section>
-            <h2 className="mb-6 font-semibold text-foreground text-xl">
+            <h2 className="mb-8 ed-h2">
               Services disponibles à {city.name}
             </h2>
             <div className="gap-4 grid md:grid-cols-2">
@@ -443,7 +450,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                 const Icon = getIcon(service.iconName);
                 const card = (
                   <>
-                    <div className="flex justify-center items-center bg-primary/20 rounded-xl w-12 h-12 text-primary shrink-0">
+                    <div className="line-item-icon shrink-0">
                       <Icon className="w-6 h-6" />
                     </div>
                     <div>
@@ -478,7 +485,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
 
           {/* Ancrage local */}
           <section className="p-8 card">
-            <h2 className="mb-6 font-semibold text-foreground text-xl">
+            <h2 className="mb-8 ed-h2">
               Votre activité à {city.name}
             </h2>
             <div className="gap-8 grid md:grid-cols-2">
@@ -522,7 +529,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
         <Container className="gap-16 grid">
           {/* FAQ */}
           <section>
-            <h2 className="mb-6 font-semibold text-foreground text-xl">
+            <h2 className="mb-8 ed-h2">
               Questions fréquentes, {city.name}
             </h2>
             <FaqList items={city.faq} />
@@ -531,7 +538,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
           {/* Villes voisines, maillage interne */}
           {nearbyCities.length > 0 && (
             <section>
-              <h2 className="mb-6 font-semibold text-foreground text-xl">
+              <h2 className="mb-8 ed-h2">
                 J&apos;interviens aussi près de {city.name}
               </h2>
               <div className="gap-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
@@ -557,7 +564,7 @@ export default function CityLanding({ city }: { city: LocalCity }) {
                 Retrouvez toutes les villes sur la page{" "}
                 <Link
                   href="/developpeur-web-benin"
-                  className="text-primary hover:underline"
+                  className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
                 >
                   développeur web au Bénin
                 </Link>
