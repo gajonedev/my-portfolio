@@ -57,6 +57,8 @@ export const projects: Project[] = [
     sector: "Agriculture • Marketplace",
     iconName: "Sprout",
     // status: "in-dev",
+    year: "2026",
+    featured: true,
     role: "J'ai conçu et développé la solution pour AgroConnect, de l’architecture technique aux applications. J'ai aussi pris en charge sa mise en production.",
     description:
       "Pour AgroConnect, j'ai développé une plateforme qui met en relation les producteurs de produits frais et les consommateurs au Bénin, avec une application mobile et un espace de gestion web.",
@@ -265,7 +267,7 @@ export const projects: Project[] = [
       "Mux",
       "PostgreSQL",
     ],
-    year: "2026",
+    year: "2025",
     // status: "in-dev",
     featured: true,
     caseStudy: {
@@ -312,8 +314,7 @@ export const projects: Project[] = [
     summary:
       "Avec AfCom, j'ai travaillé sur une application qui permet aux commerçants de suivre leurs ventes, leurs stocks et leurs dépenses, même sans connexion. AfCom part d’un besoin simple : garder une trace des ventes et des stocks sans dépendre d’un cahier ni d’une connexion permanente.",
     tech: ["Flutter", "Dart", "Supabase", "SQLite"],
-    year: "2025",
-    status: "preview",
+    year: "2024",
     featured: true,
     caseStudy: {
       context:
@@ -488,7 +489,7 @@ export const projects: Project[] = [
     summary:
       "Je travaille sur une application pour réunir revenus, dépenses, budgets et objectifs d’épargne, quel que soit le compte utilisé. Les dépenses peuvent passer par les espèces, le Mobile Money ou la banque. Je voulais permettre de les suivre dans une même application sans perdre la distinction entre les comptes.",
     tech: ["Flutter", "Dart", "Node.js", "PostgreSQL"],
-    year: "2025",
+    year: "2024",
     status: "preview",
     caseStudy: {
       context:
