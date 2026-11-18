@@ -115,7 +115,7 @@ export default async function DeveloppeurWebBeninPage() {
         <Container className="gap-16 grid">
           {/* Introduction SEO */}
           <section className="max-w-3xl">
-            <h2 className="font-semibold text-foreground text-2xl">
+            <h2 className="ed-h2">
               Votre développeur web freelance au Bénin
             </h2>
             <p className="mt-4 text-foreground-muted leading-relaxed">
@@ -141,7 +141,7 @@ export default async function DeveloppeurWebBeninPage() {
 
           {/* Services */}
           <section>
-            <h2 className="mb-6 font-semibold text-foreground text-xl">
+            <h2 className="mb-8 ed-h2">
               Ce que je peux réaliser pour vous
             </h2>
             <div className="gap-4 grid md:grid-cols-2">
@@ -149,7 +149,7 @@ export default async function DeveloppeurWebBeninPage() {
                 const Icon = getIcon(service.iconName);
                 const card = (
                   <>
-                    <div className="flex justify-center items-center bg-primary/20 rounded-xl w-12 h-12 text-primary shrink-0">
+                    <div className="line-item-icon shrink-0">
                       <Icon className="w-6 h-6" />
                     </div>
                     <div>
@@ -189,7 +189,7 @@ export default async function DeveloppeurWebBeninPage() {
         <Container className="gap-16 grid">
           {/* Villes couvertes */}
           <section>
-            <h2 className="mb-6 font-semibold text-foreground text-xl">
+            <h2 className="mb-8 ed-h2">
               Villes où j&apos;interviens
             </h2>
             <div className="gap-3 grid grid-cols-2 md:grid-cols-3">
@@ -230,7 +230,7 @@ export default async function DeveloppeurWebBeninPage() {
         <Container className="gap-16 grid">
           {/* Avantages */}
           <section className="p-8 card">
-            <h2 className="mb-6 font-semibold text-foreground text-xl">
+            <h2 className="mb-8 ed-h2">
               Ce que cela change de travailler avec moi
             </h2>
             <div className="gap-3 grid md:grid-cols-2">
@@ -250,7 +250,7 @@ export default async function DeveloppeurWebBeninPage() {
         <Container className="gap-16 grid">
           {/* FAQ */}
           <section>
-            <h2 className="mb-6 font-semibold text-foreground text-xl">
+            <h2 className="mb-8 ed-h2">
               Questions fréquentes
             </h2>
             <FaqList items={beninFaq} />

@@ -1542,3 +1542,237 @@
   outline-offset: 2px;
   border-radius: 4px;
 }
+
+/* ============================================================
+   LOCAL PAGES — section titles of the city and expertise pages
+   ============================================================ */
+
+.ed-h2 {
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+.ed-h2.is-lg {
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  line-height: 1.04;
+}
+
+/* ============================================================
+   LEGAL — mentions légales, politique de confidentialité
+   ============================================================ */
+
+.legal {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+.legal-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+.legal-section:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+@media (min-width: 768px) {
+  .legal-section {
+    grid-template-columns: 4rem minmax(0, 1fr);
+    gap: 1.5rem;
+    padding: 3rem 0;
+  }
+}
+.legal-num {
+  padding-top: 0.55rem;
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+.legal-title {
+  scroll-margin-top: 6.5rem;
+  color: var(--foreground);
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+.legal-body {
+  display: grid;
+  gap: 1rem;
+  max-width: 65ch;
+  color: var(--foreground-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.legal-body ul {
+  display: grid;
+  gap: 0.6rem;
+}
+.legal-body li {
+  position: relative;
+  padding-left: 1.4rem;
+}
+.legal-body li::before {
+  content: "";
+  position: absolute;
+  top: 0.75em;
+  left: 0;
+  width: 0.6rem;
+  height: 1px;
+  background: var(--primary);
+  box-shadow: 0 0 6px rgba(255, 77, 61, 0.8);
+}
+.legal-body a {
+  color: var(--foreground);
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 77, 61, 0.6);
+  text-underline-offset: 3px;
+  transition: color 0.3s;
+}
+.legal-body a:hover {
+  color: var(--primary);
+}
+.legal-facts {
+  display: grid;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+.legal-facts > div {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+@media (min-width: 640px) {
+  .legal-facts > div {
+    grid-template-columns: 9rem minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+}
+.legal-facts dt {
+  padding-top: 0.2rem;
+  color: var(--foreground-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.legal-facts dd {
+  color: var(--foreground);
+}
+
+/* ============================================================
+   404 — the horizon at sunset
+   ============================================================ */
+
+.nf {
+  --hx: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100svh - 4.25rem);
+  overflow: clip;
+  background: var(--background);
+}
+.nf-sky {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 38% at 50% 52%, rgba(255, 77, 61, 0.2), transparent 70%),
+    radial-gradient(ellipse 22% 16% at var(--hx) 52%, rgba(255, 122, 69, 0.18), transparent 70%);
+  pointer-events: none;
+}
+.nf-stage {
+  position: relative;
+  display: flex;
+  flex: 1 0 auto;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.04em;
+  min-height: 14rem;
+  padding-top: 3rem;
+  overflow: hidden;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(7rem, 26vw, 17rem);
+  line-height: 0.78;
+  letter-spacing: -0.04em;
+  user-select: none;
+}
+.nf-digit {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.28);
+  transform: translateY(0.04em);
+}
+/* the 0: a sun half sunk below the horizon, rising a little on load */
+.nf-sun {
+  position: relative;
+  width: 0.62em;
+  aspect-ratio: 1;
+  margin-inline: 0.04em;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 30%,
+    #fff 0,
+    #ffd2c8 14%,
+    #ff7a5c 38%,
+    var(--primary) 62%,
+    #b8251a 100%
+  );
+  box-shadow:
+    0 0 60px 10px rgba(255, 77, 61, 0.45),
+    0 0 160px 40px rgba(255, 77, 61, 0.2);
+  transform: translateY(48%);
+  animation:
+    sun-rise 2.4s var(--ease-out) 0.2s both,
+    sun-breathe 6s ease-in-out 2.6s infinite;
+}
+@keyframes sun-rise {
+  from {
+    transform: translateY(85%);
+  }
+}
+@keyframes sun-breathe {
+  50% {
+    box-shadow:
+      0 0 80px 16px rgba(255, 77, 61, 0.55),
+      0 0 200px 50px rgba(255, 77, 61, 0.24);
+  }
+}
+.nf-horizon {
+  position: relative;
+  z-index: 2;
+  height: 1px;
+}
+.nf-ground {
+  position: relative;
+  padding: 3.5rem 0 5rem;
+}
+@media (min-width: 768px) {
+  .nf-ground {
+    padding: 4.5rem 0 6rem;
+  }
+}
+.nf-floor {
+  position: absolute;
+  inset: 0 -30% auto;
+  height: 100%;
+  transform: perspective(320px) rotateX(58deg);
+  transform-origin: top;
+  background-image:
+    linear-gradient(rgba(255, 90, 70, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 90, 70, 0.16) 1px, transparent 1px);
+  background-size: 64px 40px;
+  background-position: center top;
+  mask-image: radial-gradient(ellipse 45% 85% at 50% 0%, #000 10%, transparent 75%);
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .nf-sun {
+    animation: none;
+  }
+}

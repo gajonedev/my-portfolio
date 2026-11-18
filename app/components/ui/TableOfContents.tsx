@@ -8,8 +8,11 @@ import { useEffect, useState } from "react";
  */
 export default function TableOfContents({
   headings,
+  label = "Sommaire de l’article",
 }: {
   headings: { id: string; text: string }[];
+  /** Accessible name of the navigation. */
+  label?: string;
 }) {
   const [active, setActive] = useState(headings[0]?.id);
 
@@ -34,7 +37,7 @@ export default function TableOfContents({
   if (headings.length < 2) return null;
 
   return (
-    <nav aria-label="Sommaire de l’article" className="toc">
+    <nav aria-label={label} className="toc">
       <p className="toc-title">Sommaire</p>
       <ol className="toc-list">
         {headings.map((heading, index) => (

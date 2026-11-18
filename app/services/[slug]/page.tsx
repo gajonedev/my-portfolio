@@ -264,7 +264,7 @@ export default async function ServicePage({
             Vous avez besoin d’autres fonctionnalités ?{" "}
             <Link
               href={contactHref(service.slug, `/services/${service.slug}`)}
-              className="text-primary hover:underline"
+              className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
             >
               Parlez-moi de votre projet
             </Link>{" "}
@@ -350,7 +350,7 @@ export default async function ServicePage({
             <SectionHeading kicker="FAQ" title="Questions fréquentes" />
             <p className="text-foreground-muted text-sm">
               Une question sur le budget ? Consultez les{" "}
-              <Link href="/tarifs" className="text-primary hover:underline">
+              <Link href="/tarifs" className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary">
                 tarifs indicatifs
               </Link>
               .

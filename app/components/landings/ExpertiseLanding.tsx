@@ -104,7 +104,7 @@ export default function ExpertiseLanding({
         <Container className="gap-16 grid">
           {/* Introduction */}
           <section className="max-w-3xl">
-            <h2 className="font-semibold text-foreground text-2xl">
+            <h2 className="ed-h2">
               Comment j’utilise {expertise.techName} pour votre projet
             </h2>
             {expertise.intro.map((paragraph) => (
@@ -119,7 +119,7 @@ export default function ExpertiseLanding({
 
           {/* Points forts */}
           <section>
-            <h2 className="mb-6 font-semibold text-foreground text-xl">
+            <h2 className="mb-8 ed-h2">
               Ce que {expertise.techName} apporte à votre projet
             </h2>
             <div className="gap-4 grid md:grid-cols-2">
@@ -130,7 +130,7 @@ export default function ExpertiseLanding({
                     key={strength.title}
                     className="flex gap-4 p-5 card"
                   >
-                    <div className="flex justify-center items-center bg-primary/20 rounded-xl w-12 h-12 text-primary shrink-0">
+                    <div className="line-item-icon shrink-0">
                       <Icon className="w-6 h-6" />
                     </div>
                     <div>
@@ -154,7 +154,7 @@ export default function ExpertiseLanding({
         <Container className="gap-16 grid">
           {/* Cas d'usage */}
           <section className="p-8 card">
-            <h2 className="mb-6 font-semibold text-foreground text-xl">
+            <h2 className="mb-8 ed-h2">
               Ce que je construis avec {expertise.techName}
             </h2>
             <div className="gap-3 grid md:grid-cols-2">
@@ -170,7 +170,7 @@ export default function ExpertiseLanding({
           {/* Projets liés */}
           {relatedProjects.length > 0 && (
             <section>
-              <h2 className="mb-6 font-semibold text-foreground text-xl">
+              <h2 className="mb-8 ed-h2">
                 Projets réalisés avec {expertise.techName}
               </h2>
               <div className="gap-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
@@ -204,7 +204,7 @@ export default function ExpertiseLanding({
         <Container className="gap-16 grid">
           {/* FAQ */}
           <section>
-            <h2 className="mb-6 font-semibold text-foreground text-xl">
+            <h2 className="mb-8 ed-h2">
               Questions fréquentes
             </h2>
             <FaqList items={expertise.faq} />
@@ -213,7 +213,7 @@ export default function ExpertiseLanding({
                 En savoir plus sur le service associé :{" "}
                 <Link
                   href={`/services/${relatedService.slug}`}
-                  className="text-primary hover:underline"
+                  className="text-primary underline underline-offset-2 decoration-primary/50 hover:decoration-primary"
                 >
                   {relatedService.title.toLowerCase()}
                 </Link>
