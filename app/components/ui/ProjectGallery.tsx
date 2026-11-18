@@ -66,14 +66,14 @@ export default function ProjectGallery({
       className="gap-4 grid grid-cols-1 w-full min-w-0"
     >
       {/* Stage */}
-      <div className="group bg-background-soft shadow-[0_24px_60px_rgba(0,0,0,0.25)] border border-stroke rounded-2xl overflow-hidden">
-        <div className="flex items-center gap-3 bg-background-muted px-4 py-2.5 border-stroke border-b">
+      <div className="group bg-[#0a0a0f] shadow-[0_40px_120px_-30px_rgba(0,0,0,0.9)] border border-white/10 rounded-[1.5rem] overflow-hidden">
+        <div className="flex items-center gap-3 bg-[#0d0d12] px-4 py-2.5 border-white/[0.07] border-b">
           <span className="flex gap-1.5" aria-hidden="true">
-            <span className="bg-[#ff5f57] rounded-full w-2.5 h-2.5" />
-            <span className="bg-[#febc2e] rounded-full w-2.5 h-2.5" />
-            <span className="bg-[#28c840] rounded-full w-2.5 h-2.5" />
+            <span className="bg-primary shadow-[0_0_8px_var(--primary)] rounded-full w-2.5 h-2.5" />
+            <span className="bg-white/20 rounded-full w-2.5 h-2.5" />
+            <span className="bg-white/20 rounded-full w-2.5 h-2.5" />
           </span>
-          <span className="flex-1 bg-background-soft px-3 py-1 border border-stroke rounded-md text-foreground-muted text-xs text-center truncate">
+          <span className="flex-1 bg-white/[0.03] px-3 py-1 border border-white/[0.07] rounded-full font-mono text-[0.7rem] text-foreground-subtle text-center truncate">
             {name}
           </span>
           <span className="text-foreground-muted text-xs tabular-nums">

@@ -10,7 +10,7 @@ import EditorialHeading from "./EditorialHeading";
 
 const pad = (value: number) => String(value).padStart(2, "0");
 
-// Desktop: the track is pinned and scrolls horizontally (HomeAnimations).
+// Desktop: the track is pinned and scrolls horizontally (PageAnimations).
 // Mobile and reduced motion: the same markup reads as a vertical list.
 export default function HomeProjects() {
   const total = projectsPreview.length;

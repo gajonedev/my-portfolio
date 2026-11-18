@@ -5,7 +5,7 @@ import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 import SectionWrapper from "../components/layout/SectionWrapper";
 import SectionHeading from "../components/ui/SectionHeading";
-import Testimonials from "../components/ui/Testimonials";
+import QuoteStage from "../components/home/QuoteStage";
 import FinalCta from "../components/ui/FinalCta";
 import { skills, values, aboutStats, projects, siteConfig } from "@/data";
 
@@ -44,48 +44,45 @@ export default async function AboutPage() {
       />
 
       {/* Portrait + histoire */}
-      <SectionWrapper variant="light" className="py-16 md:py-24">
-        <Container className="items-center gap-12 grid lg:grid-cols-[0.8fr_1.2fr]">
-          <div className="relative mx-auto lg:mx-0 w-full max-w-sm beam-frame">
-            <div className="bg-background-soft p-3 border border-stroke rounded-[2rem]">
-              <Image
-                src="/portrait.webp"
-                alt="Portrait de Néhémie Gandonou"
-                width={480}
-                height={600}
-                sizes="(max-width: 1024px) 80vw, 380px"
-                className="rounded-[1.5rem] w-full h-auto aspect-[4/5] object-cover object-top"
-              />
-            </div>
+      <SectionWrapper className="py-20 md:py-28">
+        <Container className="items-center gap-14 lg:gap-20 grid lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="mx-auto lg:mx-0 w-full max-w-sm about-portrait" data-anim="card">
+            <Image
+              src="/portrait.webp"
+              alt="Portrait de Néhémie Gandonou"
+              width={480}
+              height={600}
+              sizes="(max-width: 1024px) 80vw, 380px"
+              priority
+              className="w-full h-auto aspect-[4/5] object-cover object-top"
+            />
+            <span aria-hidden="true" className="about-portrait-horizon" />
           </div>
           <div className="flex flex-col gap-6">
             <SectionHeading
+              index="01"
               kicker="Qui je suis"
               title="Je pars de ce que votre application doit permettre de faire"
             />
-            <p className="text-foreground-muted leading-relaxed">
+            <p data-anim="fade" className="text-foreground-muted md:text-lg leading-relaxed">
               Ce qui m’intéresse dans un projet, c’est ce que votre application
               va permettre de faire : gérer des inscriptions, suivre une
               activité, recevoir des commandes ou rendre un service plus
               accessible. Je pars de ces usages pour concevoir les écrans et
               développer les fonctionnalités.
             </p>
-            <p className="text-foreground-muted leading-relaxed">
+            <p data-anim="fade" className="text-foreground-muted md:text-lg leading-relaxed">
               Je développe aussi bien les écrans que le serveur qui les fait
               fonctionner. Vous échangez directement avec moi, y compris pour
               comprendre un choix technique ou préparer la mise en ligne. Si
               votre besoin dépasse ce que je peux prendre en charge, je vous le
               dis.
             </p>
-            <dl className="gap-px grid grid-cols-2 sm:grid-cols-4 bg-stroke mt-2 border border-stroke rounded-2xl overflow-hidden">
+            <dl className="about-stats" data-anim="fade">
               {aboutStats.map((stat) => (
-                <div key={stat.label} className="flex flex-col gap-1 bg-card p-4">
-                  <dt className="order-2 text-foreground-muted text-xs">
-                    {stat.label}
-                  </dt>
-                  <dd className="order-1 font-display font-bold text-foreground text-2xl tracking-tight">
-                    {stat.value}
-                  </dd>
+                <div key={stat.label} className="about-stat">
+                  <dt>{stat.label}</dt>
+                  <dd data-count={/\d/.test(stat.value) || undefined}>{stat.value}</dd>
                 </div>
               ))}
             </dl>
@@ -94,61 +91,59 @@ export default async function AboutPage() {
       </SectionWrapper>
 
       {/* Façon de travailler */}
-      <SectionWrapper variant="dark" className="py-16 md:py-24">
-        <Container className="gap-10 grid">
+      <SectionWrapper className="py-20 md:py-28">
+        <Container className="flex flex-col gap-14">
           <SectionHeading
+            index="02"
             kicker="Ma façon de travailler"
             title="Quatre principes que j’applique à chaque projet"
+            size="lg"
           />
-          <div className="gap-4 grid md:grid-cols-2">
+          <ol className="about-values">
             {values.map((value, index) => (
-              <article key={value.title} className="flex gap-5 p-6 card">
-                <span className="font-display font-semibold text-primary text-sm tabular-nums">
+              <li key={value.title} className="about-value" data-anim="fade">
+                <span aria-hidden="true" className="about-value-num">
                   0{index + 1}
                 </span>
-                <div>
-                  <h3 className="font-semibold text-foreground text-lg">
-                    {value.title}
-                  </h3>
-                  <p className="mt-2 text-foreground-muted text-sm leading-relaxed">
-                    {value.description}
-                  </p>
-                </div>
-              </article>
+                <h3 className="font-display font-medium text-foreground text-xl md:text-2xl tracking-[-0.01em]">
+                  {value.title}
+                </h3>
+                <p className="text-foreground-muted leading-relaxed">
+                  {value.description}
+                </p>
+              </li>
             ))}
-          </div>
+          </ol>
         </Container>
       </SectionWrapper>
 
       {/* Frise des projets */}
-      <SectionWrapper variant="light" className="py-16 md:py-24">
-        <Container className="gap-10 grid lg:grid-cols-[0.8fr_1.2fr]">
-          <SectionHeading
-            kicker="Parcours"
-            title="Ce que j’ai construit, année après année"
-            subtitle="Des plateformes web et des applications mobiles, pour des clients ou pour explorer une idée."
-          />
-          <ol className="relative flex flex-col gap-10 pl-8 border-stroke border-l">
+      <SectionWrapper className="py-20 md:py-28">
+        <Container className="items-start gap-14 grid lg:grid-cols-[0.8fr_1.2fr]">
+          <div className="lg:top-28 lg:sticky">
+            <SectionHeading
+              index="03"
+              kicker="Parcours"
+              title="Ce que j’ai construit, année après année"
+              subtitle="Des plateformes web et des applications mobiles, pour des clients ou pour explorer une idée."
+            />
+          </div>
+          <ol className="vsteps is-timeline" data-process>
             {timeline.map(([year, items]) => (
-              <li key={year} className="relative">
-                <span
-                  aria-hidden="true"
-                  className="top-1 -left-[2.4rem] absolute bg-primary shadow-[0_0_0_4px_var(--primary-glow)] rounded-full w-3 h-3"
-                />
-                <p className="font-display font-bold text-foreground text-2xl">
-                  {year}
-                </p>
-                <ul className="flex flex-wrap gap-2 mt-4">
+              <li key={year} className="vstep" data-step>
+                <span aria-hidden="true" className="vstep-dot" />
+                <p className="vstep-year">{year}</p>
+                <ul className="flex flex-wrap gap-2">
                   {items.map((project) => (
                     <li key={project.slug}>
                       <Link
                         href={`/projects/${project.slug}`}
-                        className="inline-flex items-center gap-2 px-4 py-2 text-sm card-interactive"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full! text-sm card-interactive"
                       >
                         <span className="font-medium text-foreground">
                           {project.name}
                         </span>
-                        <span className="text-foreground-muted text-xs">
+                        <span className="text-foreground-subtle text-xs">
                           {project.sector.split("•")[0].trim()}
                         </span>
                       </Link>
@@ -162,27 +157,28 @@ export default async function AboutPage() {
       </SectionWrapper>
 
       {/* Outils */}
-      <SectionWrapper variant="dark" className="py-16 md:py-24">
-        <Container className="gap-10 grid lg:grid-cols-[0.8fr_1.2fr]">
+      <SectionWrapper className="py-20 md:py-28">
+        <Container className="items-start gap-12 grid lg:grid-cols-[0.8fr_1.2fr]">
           <SectionHeading
+            index="04"
             kicker="Outils"
             title="Des technologies répandues, faciles à reprendre"
             subtitle="Votre application reste maintenable, avec moi ou avec un autre développeur."
           />
-          <dl className="flex flex-col divide-y divide-stroke card">
+          <dl className="flex flex-col divide-y divide-white/[0.07] card" data-anim="card">
             {skills.map((category) => (
               <div
                 key={category.name}
-                className="gap-3 grid sm:grid-cols-[9rem_1fr] p-5"
+                className="gap-3 grid sm:grid-cols-[9rem_1fr] p-5 md:p-6"
               >
-                <dt className="font-semibold text-foreground text-sm">
+                <dt className="font-mono text-[0.7rem] text-foreground-subtle uppercase tracking-[0.14em]">
                   {category.name}
                 </dt>
                 <dd className="flex flex-wrap gap-2">
                   {category.items.map((item) => (
                     <span
                       key={item}
-                      className="bg-background-muted px-3 py-1 border border-stroke rounded-full text-foreground-muted text-xs"
+                      className="px-3 py-1 border border-white/10 rounded-full text-foreground-muted text-xs"
                     >
                       {item}
                     </span>
@@ -195,13 +191,15 @@ export default async function AboutPage() {
       </SectionWrapper>
 
       {/* Témoignages */}
-      <SectionWrapper variant="light" className="py-16 md:py-24">
-        <Container className="gap-8 grid">
+      <SectionWrapper className="py-20 md:py-28">
+        <Container className="gap-14 md:gap-20 grid">
           <SectionHeading
+            index="05"
             kicker="Ils en parlent"
             title="Ce que disent ceux qui ont travaillé avec moi"
+            size="lg"
           />
-          <Testimonials />
+          <QuoteStage />
         </Container>
       </SectionWrapper>
 

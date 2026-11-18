@@ -11,7 +11,7 @@ interface SpotlightCardProps {
   className?: string;
   /** Position of the static corner light bleed */
   corner?: Corner;
-  /** CSS color for the corner bleed (defaults to primary) */
+  /** Ignored: the corner light is always coral, as on the home page. */
   cornerColor?: string;
   /** Lift on hover */
   hover?: boolean;
@@ -23,7 +23,6 @@ export default function SpotlightCard({
   children,
   className = "",
   corner = "br",
-  cornerColor,
   hover = true,
   glow = false,
 }: SpotlightCardProps) {
@@ -106,11 +105,6 @@ export default function SpotlightCard({
       whileHover={hover && !reducedMotion ? { y: -6 } : undefined}
       transition={springSoft}
       className={`spotlight-card ${cornerClass} ${className}`}
-      style={
-        cornerColor
-          ? ({ "--corner": cornerColor } as React.CSSProperties)
-          : undefined
-      }
     >
       {glow && <span className="spotlight-glow" aria-hidden="true" />}
       <div className="spotlight-content">{children}</div>

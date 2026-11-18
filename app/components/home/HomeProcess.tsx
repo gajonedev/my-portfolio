@@ -7,7 +7,7 @@ import Container from "../Container";
 import EditorialHeading from "./EditorialHeading";
 
 // The line fills with the scroll and lights each step as it reaches it
-// (HomeAnimations, [data-process]).
+// (PageAnimations, [data-process]).
 export default function HomeProcess() {
   return (
     <section className="relative home-divider py-28 md:py-40 section-dark">

@@ -6,8 +6,10 @@ import Container from "../../components/Container";
 import PageHeader from "../../components/PageHeader";
 import SectionWrapper from "../../components/layout/SectionWrapper";
 import FinalCta from "../../components/ui/FinalCta";
+import SectionHeading from "../../components/ui/SectionHeading";
+import TableOfContents from "../../components/ui/TableOfContents";
 import { getPostBySlug, getAllSlugs, getAllPosts } from "@/lib/blog";
-import { Calendar, Clock, ChevronRight } from "lucide-react";
+import { ArrowUpRight, Calendar, Clock } from "lucide-react";
 import { siteConfig } from "@/data";
 
 interface Props {
@@ -137,7 +139,7 @@ export default async function BlogPostPage({ params }: Props) {
         </div>
       </PageHeader>
 
-      <SectionWrapper variant="light" className="py-12 md:py-20">
+      <SectionWrapper className="py-14 md:py-20">
         <Container className="gap-12 grid lg:grid-cols-[minmax(0,1fr)_17rem]">
           <article
             className="prose-blog"
@@ -145,6 +147,9 @@ export default async function BlogPostPage({ params }: Props) {
           />
 
           <aside className="flex flex-col gap-4 lg:top-28 lg:sticky lg:self-start">
+            <div className="hidden lg:block">
+              <TableOfContents headings={post.headings} />
+            </div>
             <div className="p-6 card">
               <p className="font-semibold text-foreground">{post.author}</p>
               <p className="text-foreground-muted text-xs">
@@ -159,7 +164,7 @@ export default async function BlogPostPage({ params }: Props) {
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="bg-background-muted px-3 py-1 border border-stroke rounded-full text-foreground-muted text-xs"
+                    className="px-3 py-1 border border-white/10 rounded-full text-foreground-muted text-xs"
                   >
                     #{tag}
                   </span>
@@ -191,42 +196,38 @@ export default async function BlogPostPage({ params }: Props) {
       </SectionWrapper>
 
       {relatedPosts.length > 0 && (
-        <SectionWrapper variant="dark" className="py-16 md:py-20">
-          <Container className="flex flex-col gap-8">
-            <div className="flex flex-wrap justify-between items-end gap-4">
-              <h2 className="font-display font-semibold text-foreground text-2xl md:text-3xl">
-                Articles similaires
-              </h2>
-              <Link
-                href="/blog"
-                className="font-medium text-primary text-sm hover:underline"
-              >
-                Tous les articles →
+        <SectionWrapper className="py-20 md:py-24">
+          <Container className="flex flex-col gap-12">
+            <div className="flex flex-wrap justify-between items-end gap-6">
+              <SectionHeading kicker="À lire ensuite" title="Articles similaires" />
+              <Link href="/blog" className="pill-ghost" data-anim="fade">
+                <span className="pill-ghost-label">Tous les articles</span>
+                <ArrowUpRight aria-hidden="true" className="w-4 h-4 pill-ghost-arrow" />
               </Link>
             </div>
-            <div className="gap-6 grid md:grid-cols-2">
+            <ul className="line-list">
               {relatedPosts.map((related) => (
-                <Link
-                  key={related.slug}
-                  href={`/blog/${related.slug}`}
-                  className="group flex flex-col gap-3 p-6 card-interactive"
-                >
-                  <span className="font-semibold text-foreground-muted text-xs uppercase tracking-wider">
-                    {related.category} · {related.readTime}
+                <li key={related.slug} className="post-row line-item" data-anim="fade">
+                  <span className="post-row-date">{related.readTime}</span>
+                  <div className="flex flex-col gap-2 min-w-0">
+                    <h3 className="line-item-title">
+                      <Link href={`/blog/${related.slug}`} className="line-item-link">
+                        {related.title}
+                      </Link>
+                    </h3>
+                    <p className="max-w-2xl text-foreground-muted text-sm line-clamp-2 leading-relaxed">
+                      {related.summary}
+                    </p>
+                  </div>
+                  <span className="post-row-meta">
+                    <span className="text-primary">{related.category}</span>
                   </span>
-                  <h3 className="font-semibold text-foreground group-hover:text-primary text-lg transition-colors">
-                    {related.title}
-                  </h3>
-                  <p className="text-foreground-muted text-sm line-clamp-2">
-                    {related.summary}
-                  </p>
-                  <span className="flex items-center gap-1 mt-auto pt-2 font-semibold text-primary text-sm">
-                    Lire l’article
-                    <ChevronRight className="w-4 h-4" />
+                  <span aria-hidden="true" className="line-item-arrow">
+                    <ArrowUpRight className="w-4 h-4" />
                   </span>
-                </Link>
+                </li>
               ))}
-            </div>
+            </ul>
           </Container>
         </SectionWrapper>
       )}

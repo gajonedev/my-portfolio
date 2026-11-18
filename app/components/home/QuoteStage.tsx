@@ -124,11 +124,14 @@ export default function QuoteStage() {
                 type="button"
                 onClick={() => setActive(index)}
                 aria-current={isActive || undefined}
-                aria-label={`Témoignage de ${item.name}`}
                 className="quote-tab"
               >
-                <span className="font-mono text-xs">0{index + 1}</span>
-                <span className="quote-tab-name">{item.name.split(" ")[0]}</span>
+                <span aria-hidden="true" className="font-mono text-xs">0{index + 1}</span>
+                <span className="quote-tab-name">
+                  <span className="sr-only">Témoignage de </span>
+                  {item.name.split(" ")[0]}
+                  <span className="sr-only"> {item.name.split(" ").slice(1).join(" ")}</span>
+                </span>
                 <span aria-hidden="true" className="quote-tab-bar">
                   {isActive ? (
                     <span

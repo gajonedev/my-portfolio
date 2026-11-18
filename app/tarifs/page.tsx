@@ -6,7 +6,6 @@ import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 import SectionWrapper from "../components/layout/SectionWrapper";
 import SectionHeading from "../components/ui/SectionHeading";
-import SpotlightCard from "../components/ui/SpotlightCard";
 import TestimonialQuote from "../components/ui/TestimonialQuote";
 import FaqList from "../components/ui/FaqList";
 import FinalCta from "../components/ui/FinalCta";
@@ -16,14 +15,13 @@ import {
   alwaysIncluded,
   priceFactors,
   pricingFaq,
+  servicesPreview,
   siteConfig,
 } from "@/data";
 import { getAllPosts } from "@/lib/blog";
 
 const url = `${siteConfig.url}/tarifs`;
 
-const ACCENTS = ["#ff4d3d", "#3b82f6", "#f59e0b"];
-const CORNERS = ["tr", "tl", "br", "bl"] as const;
 const TIER_ORDER = [
   "creation-application-web",
   "creation-application-mobile",
@@ -32,6 +30,9 @@ const TIER_ORDER = [
   "creation-site-vitrine",
   "audit-optimisation",
 ];
+
+// The two main services get the lit edge (same pair as the home page).
+const MAIN = new Set(servicesPreview.map((service) => service.slug ?? ""));
 
 // Cluster « prix » : /tarifs (pilier) renvoie vers les articles coût + paiement
 const PRICING_CLUSTER_SLUGS = [
@@ -125,26 +126,27 @@ export default async function TarifsPage() {
                 TIER_ORDER.indexOf(a.serviceSlug || "") -
                 TIER_ORDER.indexOf(b.serviceSlug || ""),
             )
-            .map((tier, index) => (
-              <SpotlightCard
+            .map((tier) => (
+              <article
                 key={tier.title}
-                corner={CORNERS[index % CORNERS.length]}
-                cornerColor={ACCENTS[index % ACCENTS.length]}
-                hover={false}
-                className="h-full [&>.spotlight-content]:h-full"
+                className={`tier${MAIN.has(tier.serviceSlug ?? "") ? " is-main" : ""}`}
+                data-anim="card"
               >
-                <article className="flex flex-col p-7 h-full">
+                <div className="z-10 relative flex flex-col p-7 md:p-8 h-full">
+                  {MAIN.has(tier.serviceSlug ?? "") ? (
+                    <span className="mb-4 tier-badge">Service principal</span>
+                  ) : null}
                   <h2 className="font-display font-semibold text-foreground text-lg">
                     {tier.title}
                   </h2>
                   <p className="mt-2 text-foreground-muted text-sm leading-relaxed">
                     {tier.description}
                   </p>
-                  <div className="my-6 py-5 border-stroke border-y">
+                  <div className="my-6 py-5 border-white/[0.07] border-y">
                     <span className="text-foreground-muted text-xs">
                       À partir de
                     </span>
-                    <p className="font-display font-bold text-foreground text-3xl tracking-tight">
+                    <p className="font-display font-semibold text-foreground text-[2.1rem] leading-tight tracking-[-0.02em]">
                       {tier.priceFrom}
                     </p>
                     <p className="flex items-center gap-1.5 mt-2 text-foreground-muted text-xs">
@@ -177,14 +179,14 @@ export default async function TarifsPage() {
                     {tier.serviceSlug && (
                       <Link
                         href={`/services/${tier.serviceSlug}`}
-                        className="font-medium text-primary text-sm hover:underline"
+                        className="text-sm pill-ghost"
                       >
-                        Détails →
+                        <span className="pill-ghost-label">Détails</span>
                       </Link>
                     )}
                   </div>
-                </article>
-              </SpotlightCard>
+                </div>
+              </article>
             ))}
         </Container>
       </SectionWrapper>
@@ -194,6 +196,7 @@ export default async function TarifsPage() {
         <Container className="items-start gap-10 grid lg:grid-cols-2">
           <div className="flex flex-col gap-8">
             <SectionHeading
+              index="02"
               kicker="Inclus"
               title="Toujours inclus, quel que soit le projet"
             />
@@ -210,6 +213,7 @@ export default async function TarifsPage() {
           </div>
           <div className="flex flex-col gap-8">
             <SectionHeading
+              index="03"
               kicker="Variables"
               title="Ce qui fait varier le prix"
             />
@@ -240,7 +244,8 @@ export default async function TarifsPage() {
           <div className="items-start gap-10 grid lg:grid-cols-[0.8fr_1.2fr]">
             <div className="lg:top-28 lg:sticky flex flex-col gap-6">
               <SectionHeading
-                kicker="FAQ"
+                index="04"
+              kicker="FAQ"
                 title="Questions fréquentes sur les prix"
               />
               <TestimonialQuote name="Rodolphe Gandonou" />
@@ -251,7 +256,8 @@ export default async function TarifsPage() {
           {relatedPosts.length > 0 && (
             <div className="flex flex-col gap-8">
               <SectionHeading
-                kicker="Pour approfondir"
+                index="05"
+              kicker="Pour approfondir"
                 title="Des repères avant de décider"
                 subtitle="Les prix et les moyens de paiement au Bénin, en détail."
               />
