@@ -101,15 +101,11 @@ export const stats = [
 export const aboutStats = [
   {
     label: "Projets livrés",
-    value: "+15",
+    value: "15+",
   },
   {
     label: "Clients accompagnés",
-    value: "+8",
-  },
-  {
-    label: "Spécialités",
-    value: "Web et mobile",
+    value: "8+",
   },
   {
     label: "Années d'expérience",
