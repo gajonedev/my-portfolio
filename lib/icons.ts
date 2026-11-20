@@ -40,10 +40,12 @@ import {
   Sprout,
   Receipt,
   Wallet,
+  Crown,
   type LucideIcon,
 } from "lucide-react";
 
 export const iconMap: Record<string, LucideIcon> = {
+  Crown,
   GraduationCap,
   Home,
   CreditCard,

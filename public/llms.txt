@@ -36,7 +36,7 @@ Informations clés :
 
 ## Réalisations
 
-- [Portfolio et études de cas](https://gajone.dev/projects) : Wéman LMS (e-learning avec paiement MoMo), AfCom (gestion offline-first pour commerçants), SmartVilla (domotique IoT temps réel), iVeges (irrigation autonome IoT), et autres projets détaillés
+- [Portfolio et études de cas](https://gajone.dev/projects) : Miss & Mister ENSET (site de concours avec vote payant par Mobile Money), Wéman LMS (e-learning avec paiement MoMo), AfCom (gestion offline-first pour commerçants), SmartVilla (domotique IoT temps réel), iVeges (irrigation autonome IoT), et autres projets détaillés
 
 ## Ressources
 

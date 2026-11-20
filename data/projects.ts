@@ -52,6 +52,79 @@ export function getProjectBySlug(slug: string): Project | undefined {
 
 export const projects: Project[] = [
   {
+    slug: "miss-mister-enset",
+    name: "Miss & Mister ENSET",
+    sector: "Événementiel • Vote en ligne",
+    iconName: "Crown",
+    year: "2026",
+    status: "live",
+    featured: true,
+    link: "https://miss-mister-enset.gajone.dev",
+    role: "J'ai conçu et développé le site, le vote payant et l’espace d’administration du concours.",
+    description:
+      "Pour le comité d’organisation du concours Miss & Mister ENSET de Lokossa, j'ai développé le site de l’événement : présentation des candidats, vote en ligne payé par Mobile Money et publication du palmarès.",
+    impact:
+      "Le site est en ligne et le palmarès de la 8e édition y est publié.",
+    summary:
+      "Pour le comité d’organisation du concours Miss & Mister ENSET de Lokossa, j'ai développé le site de l’événement : présentation des candidats, vote en ligne payé par Mobile Money et publication du palmarès. Le comité gère chaque édition depuis un espace d’administration.",
+    tech: [
+      "Next.js",
+      "tRPC",
+      "Drizzle ORM",
+      "PostgreSQL",
+      "FedaPay",
+      "Cloudinary",
+      "GSAP",
+    ],
+    images: [
+      {
+        src: "/projects/miss-mister-enset/1.webp",
+        alt: "Page d’accueil du concours Miss & Mister ENSET 2026",
+      },
+      {
+        src: "/projects/miss-mister-enset/2.webp",
+        alt: "Podium de la grande finale",
+      },
+      {
+        src: "/projects/miss-mister-enset/3.webp",
+        alt: "Les candidates de la 8e édition",
+      },
+      {
+        src: "/projects/miss-mister-enset/4.webp",
+        alt: "Profil d’une candidate",
+      },
+      {
+        src: "/projects/miss-mister-enset/5.webp",
+        alt: "Présentation de l’événement",
+      },
+      {
+        src: "/projects/miss-mister-enset/6.webp",
+        alt: "Galerie des moments forts",
+      },
+    ],
+    caseStudy: {
+      context:
+        "Le concours Miss & Mister ENSET a lieu chaque année à l’ENSET de Lokossa, dans le cadre de la Journée des Élèves Professeurs de l’Enseignement Technique (JEPET). Le comité d’organisation m’a confié le site de l’événement.",
+      problem:
+        "Le comité voulait présenter les candidats, recueillir des votes payants en ligne et publier les résultats, tout en gérant lui-même chaque édition.",
+      solution: [
+        "J'ai conçu le site public : l’événement, les candidats, la galerie et les éditions précédentes.",
+        "J'ai intégré FedaPay pour le vote : le votant paie par Mobile Money et ses votes sont crédités après la confirmation du paiement.",
+        "Je traite chaque issue du paiement (réussi, échoué, expiré, remboursé) et je relis régulièrement les commandes restées ouvertes.",
+        "J'ai construit un espace d’administration par édition : candidats, médias, partenaires, ouverture et clôture des votes, suivi des paiements et publication du palmarès.",
+        "J'ai travaillé la mise en scène : ouverture animée, palmarès révélé au défilement, palette bordeaux et or propre au concours.",
+      ],
+      results: [
+        "Le site est en ligne avec les candidats et le palmarès de la 8e édition.",
+        "Chaque vote est relié à un paiement confirmé, et le comité garde un journal des opérations.",
+      ],
+      highlights: [
+        "Un même paiement ne crédite les votes qu’une seule fois, même si FedaPay envoie plusieurs notifications.",
+        "J'ai limité les tentatives de paiement par appareil et par numéro pour éviter les abus.",
+      ],
+    },
+  },
+  {
     slug: "agrifresh",
     name: "AgriFresh",
     sector: "Agriculture • Marketplace",
@@ -599,6 +672,11 @@ export const projects: Project[] = [
 ];
 
 // Sous-ensemble mis en avant sur la page d'accueil
-export const projectsPreview = ["agrifresh", "weman-lms", "archiform"]
+export const projectsPreview = [
+  "miss-mister-enset",
+  "agrifresh",
+  "weman-lms",
+  "archiform",
+]
   .map((slug) => projects.find((project) => project.slug === slug))
   .filter((project): project is Project => project !== undefined);
